@@ -6,11 +6,9 @@ from sqlalchemy import engine_from_config, pool
 from core.config.settings import Settings
 from core.db.base import Base
 
-# Uncomment once Tasks 3, 7, and 10 have added these modules (needed only for
-# `alembic revision --autogenerate`, not for applying this plan's hand-written revisions):
-# from app.reference_data import models as reference_data_models  # noqa: F401
-# from app.intake import models as intake_models  # noqa: F401
-# from app.dedupe import models as dedupe_models  # noqa: F401
+from app.reference_data import models as reference_data_models  # noqa: F401
+from app.intake import models as intake_models  # noqa: F401
+from app.dedupe import models as dedupe_models  # noqa: F401
 
 config = context.config
 

@@ -1,0 +1,4846 @@
+[
+  {
+    "customer_id": "CUST-0001",
+    "name": "Crown Services",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Anil Iyer",
+        "email": "anil.iyer@crownservices.example.com",
+        "phone": "555-367-9818"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0001",
+        "address": "9441 Main St, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0001",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-02-14",
+        "effective_to": "2024-05-16"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0002",
+    "name": "Apex HVAC",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Priya Shah",
+        "email": "priya.shah@apexhvac.example.com",
+        "phone": "555-593-6564"
+      },
+      {
+        "name": "Ravi Iyer",
+        "email": "ravi.iyer@apexhvac.example.com",
+        "phone": "555-328-1163"
+      },
+      {
+        "name": "Kiran Nair",
+        "email": "kiran.nair@apexhvac.example.com",
+        "phone": "555-755-3462"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0002",
+        "address": "7289 5th Ave, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0003",
+        "address": "7285 5th Ave, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0002",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-06-14",
+        "effective_to": "2027-01-23"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0003",
+    "name": "Peak Services",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Ravi Joshi",
+        "email": "ravi.joshi@peakservices.example.com",
+        "phone": "555-863-1406"
+      },
+      {
+        "name": "Suresh Shah",
+        "email": "suresh.shah@peakservices.example.com",
+        "phone": "555-888-4790"
+      },
+      {
+        "name": "Kiran Rao",
+        "email": "kiran.rao@peakservices.example.com",
+        "phone": "555-725-9463"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0004",
+        "address": "2793 Industrial Pkwy, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0003",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "Electrical-Supplies",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-04-14",
+        "effective_to": "2026-07-11"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0004",
+    "name": "Zenith Contractors",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Suresh Iyer",
+        "email": "suresh.iyer@zenithcontractors.example.com",
+        "phone": "555-466-6452"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0005",
+        "address": "6361 Commerce Dr, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0006",
+        "address": "5359 5th Ave, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0004",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-07-06",
+        "effective_to": "2025-07-23"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0005",
+    "name": "Titan Group",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Vikram Reddy",
+        "email": "vikram.reddy@titangroup.example.com",
+        "phone": "555-639-1796"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0007",
+        "address": "2153 River Rd, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0005",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-07-02",
+        "effective_to": "2026-06-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0006",
+    "name": "Peak Contractors",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Devika Gupta",
+        "email": "devika.gupta@peakcontractors.example.com",
+        "phone": "555-290-5172"
+      },
+      {
+        "name": "Suresh Gupta",
+        "email": "suresh.gupta@peakcontractors.example.com",
+        "phone": "555-471-3190"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0008",
+        "address": "5061 Elm St, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0006",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Equipment",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-06-14",
+        "effective_to": "2026-07-21"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0007",
+    "name": "Riverside Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Arjun Nair",
+        "email": "arjun.nair@riversideplumbing.example.com",
+        "phone": "555-675-8713"
+      },
+      {
+        "name": "Nisha Shah",
+        "email": "nisha.shah@riversideplumbing.example.com",
+        "phone": "555-109-8973"
+      },
+      {
+        "name": "Arjun Shah",
+        "email": "arjun.shah@riversideplumbing.example.com",
+        "phone": "555-394-2763"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0009",
+        "address": "1446 Commerce Dr, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0007",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Equipment",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-01-08",
+        "effective_to": "2024-04-01"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0008",
+    "name": "Harbor Group",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Suresh Gupta",
+        "email": "suresh.gupta@harborgroup.example.com",
+        "phone": "555-955-6266"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0010",
+        "address": "5849 Main St, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0008",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "Plumbing-Fittings",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-03-02",
+        "effective_to": "2024-03-12"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0009",
+    "name": "Apex Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Kiran Shah",
+        "email": "kiran.shah@apexmechanical.example.com",
+        "phone": "555-305-4465"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0011",
+        "address": "6514 Oak St, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0009",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-11-08",
+        "effective_to": "2024-12-04"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0010",
+    "name": "Elite HVAC",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Kiran Reddy",
+        "email": "kiran.reddy@elitehvac.example.com",
+        "phone": "555-384-7518"
+      },
+      {
+        "name": "Vikram Menon",
+        "email": "vikram.menon@elitehvac.example.com",
+        "phone": "555-910-3756"
+      },
+      {
+        "name": "Anil Nair",
+        "email": "anil.nair@elitehvac.example.com",
+        "phone": "555-918-7723"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0012",
+        "address": "7538 5th Ave, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0013",
+        "address": "3351 Industrial Pkwy, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0010",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "HVAC-Parts",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-03-26",
+        "effective_to": "2025-04-28"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0011",
+    "name": "Harbor HVAC",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Arjun Shah",
+        "email": "arjun.shah@harborhvac.example.com",
+        "phone": "555-572-2719"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0014",
+        "address": "4129 Commerce Dr, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0011",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2023-11-17",
+        "effective_to": "2025-11-25"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0012",
+    "name": "Metro HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Ravi Patel",
+        "email": "ravi.patel@metrohvac.example.com",
+        "phone": "555-635-2180"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0015",
+        "address": "633 Commerce Dr, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0012",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-04-16",
+        "effective_to": "2025-11-07"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0013",
+    "name": "Union Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@unionplumbing.example.com",
+        "phone": "555-428-7131"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0016",
+        "address": "8906 Oak St, Bristol, CT",
+        "zip": "06010"
+      },
+      {
+        "site_id": "SITE-0017",
+        "address": "1459 Oak St, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0013",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-01-21",
+        "effective_to": "2025-04-02"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0014",
+    "name": "Redstone Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Priya Patel",
+        "email": "priya.patel@redstoneco.example.com",
+        "phone": "555-464-8382"
+      },
+      {
+        "name": "Priya Patel",
+        "email": "priya.patel@redstoneco.example.com",
+        "phone": "555-227-7515"
+      },
+      {
+        "name": "Priya Reddy",
+        "email": "priya.reddy@redstoneco.example.com",
+        "phone": "555-872-6121"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0018",
+        "address": "730 River Rd, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0014",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-03-02",
+        "effective_to": "2026-02-03"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0015",
+    "name": "Peak Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Priya Shah",
+        "email": "priya.shah@peakplumbing.example.com",
+        "phone": "555-607-6854"
+      },
+      {
+        "name": "Nisha Menon",
+        "email": "nisha.menon@peakplumbing.example.com",
+        "phone": "555-211-8284"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0019",
+        "address": "7856 Main St, Bristol, CT",
+        "zip": "06010"
+      },
+      {
+        "site_id": "SITE-0020",
+        "address": "9829 Commerce Dr, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0015",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-02-21",
+        "effective_to": "2025-06-04"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0016",
+    "name": "Bluewater HVAC",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Suresh Joshi",
+        "email": "suresh.joshi@bluewaterhvac.example.com",
+        "phone": "555-620-9374"
+      },
+      {
+        "name": "Arjun Gupta",
+        "email": "arjun.gupta@bluewaterhvac.example.com",
+        "phone": "555-593-5221"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0021",
+        "address": "588 Oak St, Bristol, CT",
+        "zip": "06010"
+      },
+      {
+        "site_id": "SITE-0022",
+        "address": "2778 5th Ave, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0016",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-06-08",
+        "effective_to": "2025-11-19"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0017",
+    "name": "Cascade Group",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Meera Reddy",
+        "email": "meera.reddy@cascadegroup.example.com",
+        "phone": "555-748-5093"
+      },
+      {
+        "name": "Nisha Iyer",
+        "email": "nisha.iyer@cascadegroup.example.com",
+        "phone": "555-410-1148"
+      },
+      {
+        "name": "Vikram Gupta",
+        "email": "vikram.gupta@cascadegroup.example.com",
+        "phone": "555-994-3817"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0023",
+        "address": "2146 Oak St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0017",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures",
+          "Electrical-Supplies",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-01-30",
+        "effective_to": "2025-12-27"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0018",
+    "name": "Highline Contractors",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Ravi Joshi",
+        "email": "ravi.joshi@highlinecontractors.example.com",
+        "phone": "555-551-9220"
+      },
+      {
+        "name": "Meera Menon",
+        "email": "meera.menon@highlinecontractors.example.com",
+        "phone": "555-194-7249"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0024",
+        "address": "9793 Main St, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0025",
+        "address": "5898 River Rd, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0018",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-04-03",
+        "effective_to": "2027-02-22"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0019",
+    "name": "Summit Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Arjun Joshi",
+        "email": "arjun.joshi@summitplumbing.example.com",
+        "phone": "555-168-2797"
+      },
+      {
+        "name": "Ravi Menon",
+        "email": "ravi.menon@summitplumbing.example.com",
+        "phone": "555-597-7809"
+      },
+      {
+        "name": "Priya Iyer",
+        "email": "priya.iyer@summitplumbing.example.com",
+        "phone": "555-378-2002"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0026",
+        "address": "7504 Elm St, Georgetown, OH",
+        "zip": "45121"
+      },
+      {
+        "site_id": "SITE-0027",
+        "address": "9286 5th Ave, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0019",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Electrical-Supplies",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-09-08",
+        "effective_to": "2025-03-13"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0020",
+    "name": "Summit HVAC",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Nisha Nair",
+        "email": "nisha.nair@summithvac.example.com",
+        "phone": "555-821-1214"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0028",
+        "address": "4866 Elm St, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0029",
+        "address": "3971 Main St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0020",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "HVAC-Equipment",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-09-02",
+        "effective_to": "2025-07-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0021",
+    "name": "Total Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Priya Iyer",
+        "email": "priya.iyer@totalco.example.com",
+        "phone": "555-216-8897"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0030",
+        "address": "6191 Oak St, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0031",
+        "address": "4754 5th Ave, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0021",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-02-04",
+        "effective_to": "2026-09-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0022",
+    "name": "Nexus HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Patel",
+        "email": "anil.patel@nexushvac.example.com",
+        "phone": "555-132-8773"
+      },
+      {
+        "name": "Devika Shah",
+        "email": "devika.shah@nexushvac.example.com",
+        "phone": "555-343-3158"
+      },
+      {
+        "name": "Meera Joshi",
+        "email": "meera.joshi@nexushvac.example.com",
+        "phone": "555-537-6708"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0032",
+        "address": "4082 Oak St, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0022",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-08-21",
+        "effective_to": "2025-07-20"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0023",
+    "name": "Union Mechanical",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Vikram Kapoor",
+        "email": "vikram.kapoor@unionmechanical.example.com",
+        "phone": "555-959-6780"
+      },
+      {
+        "name": "Anil Shah",
+        "email": "anil.shah@unionmechanical.example.com",
+        "phone": "555-545-6110"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0033",
+        "address": "6858 Industrial Pkwy, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0023",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-02-18",
+        "effective_to": "2024-09-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0024",
+    "name": "Lakeview Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Kiran Kapoor",
+        "email": "kiran.kapoor@lakeviewplumbing.example.com",
+        "phone": "555-566-3682"
+      },
+      {
+        "name": "Vikram Gupta",
+        "email": "vikram.gupta@lakeviewplumbing.example.com",
+        "phone": "555-883-2432"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0034",
+        "address": "434 Industrial Pkwy, Georgetown, OH",
+        "zip": "45121"
+      },
+      {
+        "site_id": "SITE-0035",
+        "address": "282 Elm St, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0024",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-05-05",
+        "effective_to": "2026-07-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0025",
+    "name": "Ironclad Services",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Meera Shah",
+        "email": "meera.shah@ironcladservices.example.com",
+        "phone": "555-565-1749"
+      },
+      {
+        "name": "Devika Patel",
+        "email": "devika.patel@ironcladservices.example.com",
+        "phone": "555-826-5625"
+      },
+      {
+        "name": "Nisha Nair",
+        "email": "nisha.nair@ironcladservices.example.com",
+        "phone": "555-376-3272"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0036",
+        "address": "4192 River Rd, Madison, WI",
+        "zip": "53703"
+      },
+      {
+        "site_id": "SITE-0037",
+        "address": "9027 River Rd, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0025",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-12-12",
+        "effective_to": "2025-09-29"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0026",
+    "name": "Coastal HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Gupta",
+        "email": "anil.gupta@coastalhvac.example.com",
+        "phone": "555-882-8580"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0038",
+        "address": "9880 River Rd, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0039",
+        "address": "9276 Main St, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0026",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-03-22",
+        "effective_to": "2025-03-23"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0027",
+    "name": "Vanguard Contractors",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Suresh Menon",
+        "email": "suresh.menon@vanguardcontractors.example.com",
+        "phone": "555-628-1523"
+      },
+      {
+        "name": "Devika Rao",
+        "email": "devika.rao@vanguardcontractors.example.com",
+        "phone": "555-506-8467"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0040",
+        "address": "7212 Elm St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0027",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-09-07",
+        "effective_to": "2026-03-31"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0028",
+    "name": "Northgate Services",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Ravi Reddy",
+        "email": "ravi.reddy@northgateservices.example.com",
+        "phone": "555-370-9001"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0041",
+        "address": "215 Industrial Pkwy, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0042",
+        "address": "549 5th Ave, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0028",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-01-02",
+        "effective_to": "2024-11-02"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0029",
+    "name": "Total Services",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Kiran Reddy",
+        "email": "kiran.reddy@totalservices.example.com",
+        "phone": "555-696-1267"
+      },
+      {
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@totalservices.example.com",
+        "phone": "555-914-4386"
+      },
+      {
+        "name": "Meera Shah",
+        "email": "meera.shah@totalservices.example.com",
+        "phone": "555-321-6562"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0043",
+        "address": "8552 5th Ave, Madison, WI",
+        "zip": "53703"
+      },
+      {
+        "site_id": "SITE-0044",
+        "address": "707 5th Ave, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0029",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-01-23",
+        "effective_to": "2024-10-03"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0030",
+    "name": "Prairie Contractors",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@prairiecontractors.example.com",
+        "phone": "555-937-7145"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0045",
+        "address": "5081 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0046",
+        "address": "7034 Oak St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0030",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-04-20",
+        "effective_to": "2026-06-18"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0031",
+    "name": "Zenith Services",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Devika Kapoor",
+        "email": "devika.kapoor@zenithservices.example.com",
+        "phone": "555-953-2976"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0047",
+        "address": "9516 River Rd, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0031",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Equipment",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-01-26",
+        "effective_to": "2024-09-19"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0032",
+    "name": "Coastal Mechanical",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Meera Joshi",
+        "email": "meera.joshi@coastalmechanical.example.com",
+        "phone": "555-115-8490"
+      },
+      {
+        "name": "Anil Menon",
+        "email": "anil.menon@coastalmechanical.example.com",
+        "phone": "555-853-4774"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0048",
+        "address": "6193 Oak St, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0049",
+        "address": "5008 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0032",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fixtures",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2023-10-08",
+        "effective_to": "2026-08-03"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0033",
+    "name": "Union HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Meera Reddy",
+        "email": "meera.reddy@unionhvac.example.com",
+        "phone": "555-581-2890"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0050",
+        "address": "3112 Elm St, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0033",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-07-16",
+        "effective_to": "2027-03-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0034",
+    "name": "Cascade Mechanical",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Nisha Reddy",
+        "email": "nisha.reddy@cascademechanical.example.com",
+        "phone": "555-826-9238"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0051",
+        "address": "6236 Commerce Dr, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0034",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-05-17",
+        "effective_to": "2024-12-30"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0035",
+    "name": "Apex Services",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Devika Shah",
+        "email": "devika.shah@apexservices.example.com",
+        "phone": "555-721-1500"
+      },
+      {
+        "name": "Arjun Patel",
+        "email": "arjun.patel@apexservices.example.com",
+        "phone": "555-795-3119"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0052",
+        "address": "4250 Elm St, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0053",
+        "address": "6290 Industrial Pkwy, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0035",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-01-21",
+        "effective_to": "2025-09-08"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0036",
+    "name": "Titan Plumbing",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Meera Shah",
+        "email": "meera.shah@titanplumbing.example.com",
+        "phone": "555-100-3826"
+      },
+      {
+        "name": "Priya Nair",
+        "email": "priya.nair@titanplumbing.example.com",
+        "phone": "555-453-4607"
+      },
+      {
+        "name": "Kiran Shah",
+        "email": "kiran.shah@titanplumbing.example.com",
+        "phone": "555-620-6711"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0054",
+        "address": "9748 River Rd, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0055",
+        "address": "520 Main St, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0036",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-11-23",
+        "effective_to": "2024-12-15"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0037",
+    "name": "Redstone Group",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Ravi Iyer",
+        "email": "ravi.iyer@redstonegroup.example.com",
+        "phone": "555-680-9623"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0056",
+        "address": "4586 Elm St, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0037",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-04-15",
+        "effective_to": "2024-04-26"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0038",
+    "name": "Prairie Services",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Priya Patel",
+        "email": "priya.patel@prairieservices.example.com",
+        "phone": "555-448-5472"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0057",
+        "address": "6927 Industrial Pkwy, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0038",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-08-14",
+        "effective_to": "2025-12-14"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0039",
+    "name": "Peak Group",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Vikram Shah",
+        "email": "vikram.shah@peakgroup.example.com",
+        "phone": "555-640-1820"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0058",
+        "address": "3940 River Rd, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0059",
+        "address": "453 Oak St, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0039",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-11-07",
+        "effective_to": "2026-04-20"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0040",
+    "name": "Crown Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Devika Rao",
+        "email": "devika.rao@crownmechanical.example.com",
+        "phone": "555-965-9964"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0060",
+        "address": "2676 Commerce Dr, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0061",
+        "address": "3895 Industrial Pkwy, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0040",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Parts",
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-08-22",
+        "effective_to": "2025-10-03"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0041",
+    "name": "Bluewater Group",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Devika Reddy",
+        "email": "devika.reddy@bluewatergroup.example.com",
+        "phone": "555-405-2587"
+      },
+      {
+        "name": "Suresh Menon",
+        "email": "suresh.menon@bluewatergroup.example.com",
+        "phone": "555-940-8853"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0062",
+        "address": "1805 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0063",
+        "address": "5654 River Rd, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0041",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-08-23",
+        "effective_to": "2025-09-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0042",
+    "name": "Peak Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Gupta",
+        "email": "anil.gupta@peakco.example.com",
+        "phone": "555-973-6584"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0064",
+        "address": "2579 Elm St, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0042",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Electrical-Supplies",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-12-20",
+        "effective_to": "2026-11-22"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0043",
+    "name": "Elite Contractors",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Kiran Joshi",
+        "email": "kiran.joshi@elitecontractors.example.com",
+        "phone": "555-232-1362"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0065",
+        "address": "8086 River Rd, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0066",
+        "address": "6295 Oak St, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0043",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-01-22",
+        "effective_to": "2024-03-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0044",
+    "name": "Nexus Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Arjun Kapoor",
+        "email": "arjun.kapoor@nexusplumbing.example.com",
+        "phone": "555-296-1373"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0067",
+        "address": "1209 5th Ave, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0068",
+        "address": "1290 Commerce Dr, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0044",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-10-10",
+        "effective_to": "2026-03-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0045",
+    "name": "Ironclad HVAC",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Suresh Reddy",
+        "email": "suresh.reddy@ironcladhvac.example.com",
+        "phone": "555-186-8059"
+      },
+      {
+        "name": "Priya Iyer",
+        "email": "priya.iyer@ironcladhvac.example.com",
+        "phone": "555-454-7930"
+      },
+      {
+        "name": "Ravi Nair",
+        "email": "ravi.nair@ironcladhvac.example.com",
+        "phone": "555-554-5105"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0069",
+        "address": "1479 River Rd, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0070",
+        "address": "9342 5th Ave, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0045",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-11-14",
+        "effective_to": "2024-12-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0046",
+    "name": "Advanced Co",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Nisha Gupta",
+        "email": "nisha.gupta@advancedco.example.com",
+        "phone": "555-248-3676"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0071",
+        "address": "8409 5th Ave, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0072",
+        "address": "6750 Oak St, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0046",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-11-06",
+        "effective_to": "2026-09-15"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0047",
+    "name": "Advanced Services",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Suresh Nair",
+        "email": "suresh.nair@advancedservices.example.com",
+        "phone": "555-523-1303"
+      },
+      {
+        "name": "Priya Iyer",
+        "email": "priya.iyer@advancedservices.example.com",
+        "phone": "555-776-1356"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0073",
+        "address": "6856 Commerce Dr, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0074",
+        "address": "5687 River Rd, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0047",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-01-25",
+        "effective_to": "2026-08-21"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0048",
+    "name": "Titan Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Priya Nair",
+        "email": "priya.nair@titanco.example.com",
+        "phone": "555-433-2261"
+      },
+      {
+        "name": "Priya Gupta",
+        "email": "priya.gupta@titanco.example.com",
+        "phone": "555-799-9772"
+      },
+      {
+        "name": "Arjun Patel",
+        "email": "arjun.patel@titanco.example.com",
+        "phone": "555-102-1417"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0075",
+        "address": "1851 Main St, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0076",
+        "address": "8856 Industrial Pkwy, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0048",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-05-22",
+        "effective_to": "2026-02-07"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0049",
+    "name": "Nexus Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Kiran Nair",
+        "email": "kiran.nair@nexusmechanical.example.com",
+        "phone": "555-472-9123"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0077",
+        "address": "7822 River Rd, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0078",
+        "address": "1330 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0049",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures",
+          "Electrical-Supplies",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-01-08",
+        "effective_to": "2024-03-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0050",
+    "name": "Highline Services",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Nisha Patel",
+        "email": "nisha.patel@highlineservices.example.com",
+        "phone": "555-575-7399"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0079",
+        "address": "1495 Industrial Pkwy, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0050",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts"
+        ],
+        "effective_from": "2023-05-30",
+        "effective_to": "2025-03-02"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0051",
+    "name": "Metro Services",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Anil Rao",
+        "email": "anil.rao@metroservices.example.com",
+        "phone": "555-373-6430"
+      },
+      {
+        "name": "Devika Gupta",
+        "email": "devika.gupta@metroservices.example.com",
+        "phone": "555-305-3417"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0080",
+        "address": "5159 Commerce Dr, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0051",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Electrical-Supplies",
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-04-16",
+        "effective_to": "2025-07-23"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0052",
+    "name": "Riverside HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Suresh Rao",
+        "email": "suresh.rao@riversidehvac.example.com",
+        "phone": "555-533-4261"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0081",
+        "address": "5071 River Rd, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0082",
+        "address": "5756 Main St, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0052",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-11-23",
+        "effective_to": "2025-11-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0053",
+    "name": "Bluewater Co",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Nisha Patel",
+        "email": "nisha.patel@bluewaterco.example.com",
+        "phone": "555-120-8454"
+      },
+      {
+        "name": "Arjun Gupta",
+        "email": "arjun.gupta@bluewaterco.example.com",
+        "phone": "555-817-9914"
+      },
+      {
+        "name": "Nisha Nair",
+        "email": "nisha.nair@bluewaterco.example.com",
+        "phone": "555-531-7792"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0083",
+        "address": "5697 Industrial Pkwy, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0084",
+        "address": "1705 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0053",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-09-16",
+        "effective_to": "2025-06-25"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0054",
+    "name": "Northgate Group",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Anil Menon",
+        "email": "anil.menon@northgategroup.example.com",
+        "phone": "555-286-5019"
+      },
+      {
+        "name": "Priya Joshi",
+        "email": "priya.joshi@northgategroup.example.com",
+        "phone": "555-956-5183"
+      },
+      {
+        "name": "Arjun Kapoor",
+        "email": "arjun.kapoor@northgategroup.example.com",
+        "phone": "555-867-3711"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0085",
+        "address": "9714 Industrial Pkwy, Bristol, CT",
+        "zip": "06010"
+      },
+      {
+        "site_id": "SITE-0086",
+        "address": "798 Main St, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0054",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-06-24",
+        "effective_to": "2026-11-16"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0055",
+    "name": "Highline HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Suresh Patel",
+        "email": "suresh.patel@highlinehvac.example.com",
+        "phone": "555-951-6531"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0087",
+        "address": "4464 Industrial Pkwy, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0088",
+        "address": "3554 Elm St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0055",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-02-04",
+        "effective_to": "2026-01-11"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0056",
+    "name": "Highline Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Nisha Iyer",
+        "email": "nisha.iyer@highlinemechanical.example.com",
+        "phone": "555-848-9355"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0089",
+        "address": "2327 5th Ave, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0090",
+        "address": "1388 Commerce Dr, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0056",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "HVAC-Parts",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-10-19",
+        "effective_to": "2025-02-10"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0057",
+    "name": "Lakeview Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@lakeviewmechanical.example.com",
+        "phone": "555-318-8157"
+      },
+      {
+        "name": "Meera Rao",
+        "email": "meera.rao@lakeviewmechanical.example.com",
+        "phone": "555-422-7044"
+      },
+      {
+        "name": "Vikram Gupta",
+        "email": "vikram.gupta@lakeviewmechanical.example.com",
+        "phone": "555-177-6758"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0091",
+        "address": "7522 Commerce Dr, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0057",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-11-23",
+        "effective_to": "2025-09-19"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0058",
+    "name": "Apex Group",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Vikram Rao",
+        "email": "vikram.rao@apexgroup.example.com",
+        "phone": "555-294-2897"
+      },
+      {
+        "name": "Nisha Joshi",
+        "email": "nisha.joshi@apexgroup.example.com",
+        "phone": "555-871-8493"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0092",
+        "address": "2127 Main St, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0058",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-02-27",
+        "effective_to": "2025-04-28"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0059",
+    "name": "Prairie HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@prairiehvac.example.com",
+        "phone": "555-805-1318"
+      },
+      {
+        "name": "Devika Rao",
+        "email": "devika.rao@prairiehvac.example.com",
+        "phone": "555-702-6162"
+      },
+      {
+        "name": "Nisha Nair",
+        "email": "nisha.nair@prairiehvac.example.com",
+        "phone": "555-463-3398"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0093",
+        "address": "780 Elm St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0059",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-03-13",
+        "effective_to": "2026-02-27"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0060",
+    "name": "Riverside Contractors",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Nisha Menon",
+        "email": "nisha.menon@riversidecontractors.example.com",
+        "phone": "555-217-2810"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0094",
+        "address": "9211 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0060",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-02-17",
+        "effective_to": "2024-08-08"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0061",
+    "name": "Nexus Contractors",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Ravi Menon",
+        "email": "ravi.menon@nexuscontractors.example.com",
+        "phone": "555-193-4669"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0095",
+        "address": "6392 5th Ave, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0096",
+        "address": "6053 River Rd, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0061",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-07-18",
+        "effective_to": "2025-09-22"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0062",
+    "name": "Bluewater Services",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Nisha Rao",
+        "email": "nisha.rao@bluewaterservices.example.com",
+        "phone": "555-840-8369"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0097",
+        "address": "9682 Elm St, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0062",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-03-03",
+        "effective_to": "2025-11-30"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0063",
+    "name": "Titan HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Vikram Gupta",
+        "email": "vikram.gupta@titanhvac.example.com",
+        "phone": "555-804-9215"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0098",
+        "address": "6807 Commerce Dr, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0063",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-02-23",
+        "effective_to": "2026-01-14"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0064",
+    "name": "Sterling Group",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Nisha Nair",
+        "email": "nisha.nair@sterlinggroup.example.com",
+        "phone": "555-422-2107"
+      },
+      {
+        "name": "Devika Nair",
+        "email": "devika.nair@sterlinggroup.example.com",
+        "phone": "555-664-2727"
+      },
+      {
+        "name": "Priya Joshi",
+        "email": "priya.joshi@sterlinggroup.example.com",
+        "phone": "555-726-8090"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0099",
+        "address": "4372 Industrial Pkwy, Clinton, IA",
+        "zip": "52732"
+      },
+      {
+        "site_id": "SITE-0100",
+        "address": "1946 5th Ave, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0064",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "Plumbing-Fixtures",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-11-16",
+        "effective_to": "2025-09-19"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0065",
+    "name": "Ironclad Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Ravi Rao",
+        "email": "ravi.rao@ironcladmechanical.example.com",
+        "phone": "555-129-8697"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0101",
+        "address": "9570 Main St, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0065",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Parts",
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-01-12",
+        "effective_to": "2025-04-20"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0066",
+    "name": "Precision HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@precisionhvac.example.com",
+        "phone": "555-407-5313"
+      },
+      {
+        "name": "Vikram Kapoor",
+        "email": "vikram.kapoor@precisionhvac.example.com",
+        "phone": "555-897-7857"
+      },
+      {
+        "name": "Ravi Reddy",
+        "email": "ravi.reddy@precisionhvac.example.com",
+        "phone": "555-486-8405"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0102",
+        "address": "2604 Industrial Pkwy, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0066",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-07-26",
+        "effective_to": "2026-02-02"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0067",
+    "name": "Coastal Contractors",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Ravi Menon",
+        "email": "ravi.menon@coastalcontractors.example.com",
+        "phone": "555-590-8411"
+      },
+      {
+        "name": "Anil Shah",
+        "email": "anil.shah@coastalcontractors.example.com",
+        "phone": "555-796-7465"
+      },
+      {
+        "name": "Nisha Nair",
+        "email": "nisha.nair@coastalcontractors.example.com",
+        "phone": "555-778-2919"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0103",
+        "address": "5684 Industrial Pkwy, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0067",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "HVAC-Equipment",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-10-13",
+        "effective_to": "2026-04-27"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0068",
+    "name": "Prairie Group",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@prairiegroup.example.com",
+        "phone": "555-264-8687"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0104",
+        "address": "5263 Elm St, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0068",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-04-28",
+        "effective_to": "2025-04-07"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0069",
+    "name": "Elite Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Vikram Shah",
+        "email": "vikram.shah@eliteplumbing.example.com",
+        "phone": "555-665-8569"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0105",
+        "address": "435 Oak St, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0069",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-03-09",
+        "effective_to": "2026-07-04"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0070",
+    "name": "Ironclad Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Suresh Nair",
+        "email": "suresh.nair@ironcladplumbing.example.com",
+        "phone": "555-604-8568"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0106",
+        "address": "1836 River Rd, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0070",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-02-10",
+        "effective_to": "2025-08-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0071",
+    "name": "Coastal Group",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Suresh Menon",
+        "email": "suresh.menon@coastalgroup.example.com",
+        "phone": "555-189-2497"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0107",
+        "address": "7067 River Rd, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0071",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures",
+          "HVAC-Equipment",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-06-16",
+        "effective_to": "2027-03-25"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0072",
+    "name": "Bluewater Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Gupta",
+        "email": "anil.gupta@bluewatermechanical.example.com",
+        "phone": "555-738-6404"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0108",
+        "address": "8078 River Rd, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0072",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-07-09",
+        "effective_to": "2025-12-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0073",
+    "name": "Union Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Ravi Rao",
+        "email": "ravi.rao@unionco.example.com",
+        "phone": "555-574-9728"
+      },
+      {
+        "name": "Vikram Reddy",
+        "email": "vikram.reddy@unionco.example.com",
+        "phone": "555-844-5911"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0109",
+        "address": "5994 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0110",
+        "address": "6248 Oak St, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0073",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-07-02",
+        "effective_to": "2026-05-01"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0074",
+    "name": "Elite Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Devika Rao",
+        "email": "devika.rao@elitemechanical.example.com",
+        "phone": "555-995-9443"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0111",
+        "address": "1223 Industrial Pkwy, Clinton, IA",
+        "zip": "52732"
+      },
+      {
+        "site_id": "SITE-0112",
+        "address": "5409 Main St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0074",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-08-26",
+        "effective_to": "2025-09-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0075",
+    "name": "Redstone Services",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Suresh Gupta",
+        "email": "suresh.gupta@redstoneservices.example.com",
+        "phone": "555-288-7551"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0113",
+        "address": "8302 Oak St, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0114",
+        "address": "8267 Main St, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0075",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-08-13",
+        "effective_to": "2027-06-20"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0076",
+    "name": "Prairie Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Nisha Rao",
+        "email": "nisha.rao@prairiemechanical.example.com",
+        "phone": "555-750-3346"
+      },
+      {
+        "name": "Anil Kapoor",
+        "email": "anil.kapoor@prairiemechanical.example.com",
+        "phone": "555-810-5394"
+      },
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@prairiemechanical.example.com",
+        "phone": "555-257-3956"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0115",
+        "address": "2340 Oak St, Clinton, IA",
+        "zip": "52732"
+      },
+      {
+        "site_id": "SITE-0116",
+        "address": "6752 Main St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0076",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-05-02",
+        "effective_to": "2026-04-10"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0077",
+    "name": "Cascade HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Ravi Nair",
+        "email": "ravi.nair@cascadehvac.example.com",
+        "phone": "555-874-4537"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0117",
+        "address": "5145 Oak St, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0077",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-06-06",
+        "effective_to": "2024-11-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0078",
+    "name": "Metro Mechanical",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Kiran Kapoor",
+        "email": "kiran.kapoor@metromechanical.example.com",
+        "phone": "555-337-7889"
+      },
+      {
+        "name": "Nisha Patel",
+        "email": "nisha.patel@metromechanical.example.com",
+        "phone": "555-202-3688"
+      },
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@metromechanical.example.com",
+        "phone": "555-589-8541"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0118",
+        "address": "4277 Industrial Pkwy, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0078",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fittings",
+          "HVAC-Equipment",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-06-12",
+        "effective_to": "2026-01-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0079",
+    "name": "Titan Contractors",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Devika Gupta",
+        "email": "devika.gupta@titancontractors.example.com",
+        "phone": "555-811-3993"
+      },
+      {
+        "name": "Anil Gupta",
+        "email": "anil.gupta@titancontractors.example.com",
+        "phone": "555-496-1459"
+      },
+      {
+        "name": "Anil Rao",
+        "email": "anil.rao@titancontractors.example.com",
+        "phone": "555-582-3255"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0119",
+        "address": "2732 Main St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0079",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Electrical-Supplies",
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-08-30",
+        "effective_to": "2025-11-14"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0080",
+    "name": "Precision Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Kiran Nair",
+        "email": "kiran.nair@precisionmechanical.example.com",
+        "phone": "555-872-2878"
+      },
+      {
+        "name": "Anil Gupta",
+        "email": "anil.gupta@precisionmechanical.example.com",
+        "phone": "555-860-1588"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0120",
+        "address": "9489 Industrial Pkwy, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0121",
+        "address": "2697 5th Ave, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0080",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-12-03",
+        "effective_to": "2025-05-26"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0081",
+    "name": "Redstone Contractors",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Devika Iyer",
+        "email": "devika.iyer@redstonecontractors.example.com",
+        "phone": "555-524-3925"
+      },
+      {
+        "name": "Kiran Iyer",
+        "email": "kiran.iyer@redstonecontractors.example.com",
+        "phone": "555-768-4465"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0122",
+        "address": "184 River Rd, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0123",
+        "address": "1166 Elm St, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0081",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Parts",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-08-27",
+        "effective_to": "2025-02-10"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0082",
+    "name": "Metro Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Suresh Iyer",
+        "email": "suresh.iyer@metroplumbing.example.com",
+        "phone": "555-260-2432"
+      },
+      {
+        "name": "Devika Joshi",
+        "email": "devika.joshi@metroplumbing.example.com",
+        "phone": "555-274-4814"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0124",
+        "address": "6226 5th Ave, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0125",
+        "address": "9670 Oak St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0082",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Parts",
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-07-01",
+        "effective_to": "2026-01-23"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0083",
+    "name": "Northgate Contractors",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Vikram Menon",
+        "email": "vikram.menon@northgatecontractors.example.com",
+        "phone": "555-180-7415"
+      },
+      {
+        "name": "Suresh Joshi",
+        "email": "suresh.joshi@northgatecontractors.example.com",
+        "phone": "555-895-9663"
+      },
+      {
+        "name": "Kiran Reddy",
+        "email": "kiran.reddy@northgatecontractors.example.com",
+        "phone": "555-863-3066"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0126",
+        "address": "9187 5th Ave, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0127",
+        "address": "1254 Elm St, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0083",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-08-25",
+        "effective_to": "2026-07-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0084",
+    "name": "Vanguard HVAC",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Vikram Patel",
+        "email": "vikram.patel@vanguardhvac.example.com",
+        "phone": "555-723-3435"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0128",
+        "address": "3202 Commerce Dr, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0129",
+        "address": "4247 Elm St, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0084",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-09-05",
+        "effective_to": "2024-12-08"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0085",
+    "name": "Apex Plumbing",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Arjun Gupta",
+        "email": "arjun.gupta@apexplumbing.example.com",
+        "phone": "555-701-8649"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0130",
+        "address": "4426 5th Ave, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0085",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-01-11",
+        "effective_to": "2025-08-13"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0086",
+    "name": "Bluewater Plumbing",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Nisha Joshi",
+        "email": "nisha.joshi@bluewaterplumbing.example.com",
+        "phone": "555-315-2114"
+      },
+      {
+        "name": "Devika Joshi",
+        "email": "devika.joshi@bluewaterplumbing.example.com",
+        "phone": "555-336-9162"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0131",
+        "address": "5088 Commerce Dr, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0086",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Plumbing-Fixtures",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-02-12",
+        "effective_to": "2025-03-23"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0087",
+    "name": "Ironclad Co",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Arjun Patel",
+        "email": "arjun.patel@ironcladco.example.com",
+        "phone": "555-829-9810"
+      },
+      {
+        "name": "Vikram Nair",
+        "email": "vikram.nair@ironcladco.example.com",
+        "phone": "555-104-4304"
+      },
+      {
+        "name": "Ravi Nair",
+        "email": "ravi.nair@ironcladco.example.com",
+        "phone": "555-649-6734"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0132",
+        "address": "7192 Main St, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0087",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-11-04",
+        "effective_to": "2025-04-11"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0088",
+    "name": "Highline Co",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Priya Reddy",
+        "email": "priya.reddy@highlineco.example.com",
+        "phone": "555-779-7202"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0133",
+        "address": "7316 Oak St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0088",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fittings",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-07-01",
+        "effective_to": "2026-08-21"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0089",
+    "name": "Summit Group",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Arjun Gupta",
+        "email": "arjun.gupta@summitgroup.example.com",
+        "phone": "555-944-7787"
+      },
+      {
+        "name": "Devika Shah",
+        "email": "devika.shah@summitgroup.example.com",
+        "phone": "555-428-4122"
+      },
+      {
+        "name": "Suresh Menon",
+        "email": "suresh.menon@summitgroup.example.com",
+        "phone": "555-679-3711"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0134",
+        "address": "5355 5th Ave, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0135",
+        "address": "9361 Industrial Pkwy, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0089",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Equipment",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-06-02",
+        "effective_to": "2026-05-11"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0090",
+    "name": "Vanguard Mechanical",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Iyer",
+        "email": "anil.iyer@vanguardmechanical.example.com",
+        "phone": "555-963-5476"
+      },
+      {
+        "name": "Priya Patel",
+        "email": "priya.patel@vanguardmechanical.example.com",
+        "phone": "555-803-5985"
+      },
+      {
+        "name": "Suresh Reddy",
+        "email": "suresh.reddy@vanguardmechanical.example.com",
+        "phone": "555-795-8363"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0136",
+        "address": "373 Oak St, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0137",
+        "address": "222 Commerce Dr, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0090",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-08-06",
+        "effective_to": "2025-12-04"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0091",
+    "name": "Nexus Co",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Suresh Menon",
+        "email": "suresh.menon@nexusco.example.com",
+        "phone": "555-876-8947"
+      },
+      {
+        "name": "Vikram Iyer",
+        "email": "vikram.iyer@nexusco.example.com",
+        "phone": "555-136-3182"
+      },
+      {
+        "name": "Kiran Nair",
+        "email": "kiran.nair@nexusco.example.com",
+        "phone": "555-971-5579"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0138",
+        "address": "882 5th Ave, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0139",
+        "address": "9377 Elm St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0091",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Parts",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-01-03",
+        "effective_to": "2026-01-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0092",
+    "name": "Precision Services",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Ravi Menon",
+        "email": "ravi.menon@precisionservices.example.com",
+        "phone": "555-278-7032"
+      },
+      {
+        "name": "Nisha Patel",
+        "email": "nisha.patel@precisionservices.example.com",
+        "phone": "555-373-8853"
+      },
+      {
+        "name": "Kiran Nair",
+        "email": "kiran.nair@precisionservices.example.com",
+        "phone": "555-647-4388"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0140",
+        "address": "905 5th Ave, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0092",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-08-29",
+        "effective_to": "2026-06-03"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0093",
+    "name": "Redstone HVAC",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Devika Kapoor",
+        "email": "devika.kapoor@redstonehvac.example.com",
+        "phone": "555-884-5172"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0141",
+        "address": "8869 Industrial Pkwy, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0142",
+        "address": "5034 5th Ave, Milton, PA",
+        "zip": "17847"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0093",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-06-03",
+        "effective_to": "2024-11-21"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0094",
+    "name": "Summit Contractors",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Priya Nair",
+        "email": "priya.nair@summitcontractors.example.com",
+        "phone": "555-920-9768"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0143",
+        "address": "6889 5th Ave, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0094",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-05-05",
+        "effective_to": "2025-02-19"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0095",
+    "name": "Prairie Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Devika Kapoor",
+        "email": "devika.kapoor@prairieco.example.com",
+        "phone": "555-131-6222"
+      },
+      {
+        "name": "Anil Menon",
+        "email": "anil.menon@prairieco.example.com",
+        "phone": "555-353-5132"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0144",
+        "address": "5092 5th Ave, Clinton, IA",
+        "zip": "52732"
+      },
+      {
+        "site_id": "SITE-0145",
+        "address": "8047 Elm St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0095",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-02-09",
+        "effective_to": "2025-04-29"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0096",
+    "name": "Total Contractors",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Vikram Reddy",
+        "email": "vikram.reddy@totalcontractors.example.com",
+        "phone": "555-901-6450"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0146",
+        "address": "7404 River Rd, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0147",
+        "address": "1961 Oak St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0096",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-03-09",
+        "effective_to": "2024-10-31"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0097",
+    "name": "Zenith Group",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Suresh Joshi",
+        "email": "suresh.joshi@zenithgroup.example.com",
+        "phone": "555-576-7027"
+      },
+      {
+        "name": "Ravi Gupta",
+        "email": "ravi.gupta@zenithgroup.example.com",
+        "phone": "555-774-7339"
+      },
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@zenithgroup.example.com",
+        "phone": "555-158-8315"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0148",
+        "address": "1488 Elm St, Madison, WI",
+        "zip": "53703"
+      },
+      {
+        "site_id": "SITE-0149",
+        "address": "5177 Industrial Pkwy, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0097",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-05-16",
+        "effective_to": "2025-09-29"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0098",
+    "name": "Apex Co",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Ravi Shah",
+        "email": "ravi.shah@apexco.example.com",
+        "phone": "555-277-3862"
+      },
+      {
+        "name": "Anil Iyer",
+        "email": "anil.iyer@apexco.example.com",
+        "phone": "555-226-9375"
+      },
+      {
+        "name": "Kiran Gupta",
+        "email": "kiran.gupta@apexco.example.com",
+        "phone": "555-226-3494"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0150",
+        "address": "9694 Elm St, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0151",
+        "address": "7346 Elm St, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0098",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Parts",
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-09-20",
+        "effective_to": "2026-03-11"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0099",
+    "name": "Crown HVAC",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Suresh Rao",
+        "email": "suresh.rao@crownhvac.example.com",
+        "phone": "555-418-5573"
+      },
+      {
+        "name": "Devika Reddy",
+        "email": "devika.reddy@crownhvac.example.com",
+        "phone": "555-183-8151"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0152",
+        "address": "4177 Main St, Fairview, TX",
+        "zip": "75069"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0099",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Electrical-Supplies",
+          "HVAC-Parts",
+          "Plumbing-Fittings",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-07-10",
+        "effective_to": "2026-11-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0100",
+    "name": "Ironclad Contractors",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Nair",
+        "email": "anil.nair@ironcladcontractors.example.com",
+        "phone": "555-606-1749"
+      },
+      {
+        "name": "Devika Rao",
+        "email": "devika.rao@ironcladcontractors.example.com",
+        "phone": "555-744-2717"
+      },
+      {
+        "name": "Nisha Patel",
+        "email": "nisha.patel@ironcladcontractors.example.com",
+        "phone": "555-268-5713"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0153",
+        "address": "579 Industrial Pkwy, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0100",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-09-30",
+        "effective_to": "2025-11-12"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0101",
+    "name": "Bluewater Contractors",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Arjun Menon",
+        "email": "arjun.menon@bluewatercontractors.example.com",
+        "phone": "555-486-8628"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0154",
+        "address": "4965 Main St, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0155",
+        "address": "58 Oak St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0101",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-11-14",
+        "effective_to": "2025-02-22"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0102",
+    "name": "Metro Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Priya Rao",
+        "email": "priya.rao@metroco.example.com",
+        "phone": "555-807-7879"
+      },
+      {
+        "name": "Vikram Menon",
+        "email": "vikram.menon@metroco.example.com",
+        "phone": "555-197-2940"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0156",
+        "address": "4201 Commerce Dr, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0102",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2024-01-09",
+        "effective_to": "2026-05-07"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0103",
+    "name": "Ironclad Group",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@ironcladgroup.example.com",
+        "phone": "555-112-5145"
+      },
+      {
+        "name": "Devika Iyer",
+        "email": "devika.iyer@ironcladgroup.example.com",
+        "phone": "555-904-1979"
+      },
+      {
+        "name": "Ravi Menon",
+        "email": "ravi.menon@ironcladgroup.example.com",
+        "phone": "555-760-4510"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0157",
+        "address": "7584 Industrial Pkwy, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0103",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-06-01",
+        "effective_to": "2026-05-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0104",
+    "name": "Harbor Plumbing",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Meera Nair",
+        "email": "meera.nair@harborplumbing.example.com",
+        "phone": "555-293-8025"
+      },
+      {
+        "name": "Arjun Nair",
+        "email": "arjun.nair@harborplumbing.example.com",
+        "phone": "555-151-8518"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0158",
+        "address": "2917 Elm St, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0104",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-04-08",
+        "effective_to": "2025-05-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0105",
+    "name": "Advanced Group",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Nisha Iyer",
+        "email": "nisha.iyer@advancedgroup.example.com",
+        "phone": "555-270-9134"
+      },
+      {
+        "name": "Ravi Nair",
+        "email": "ravi.nair@advancedgroup.example.com",
+        "phone": "555-959-2036"
+      },
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@advancedgroup.example.com",
+        "phone": "555-264-8896"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0159",
+        "address": "2723 Elm St, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0160",
+        "address": "6547 Oak St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0105",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-08-18",
+        "effective_to": "2025-10-15"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0106",
+    "name": "Vanguard Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Devika Joshi",
+        "email": "devika.joshi@vanguardco.example.com",
+        "phone": "555-453-2217"
+      },
+      {
+        "name": "Kiran Shah",
+        "email": "kiran.shah@vanguardco.example.com",
+        "phone": "555-972-8469"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0161",
+        "address": "9857 5th Ave, Clinton, IA",
+        "zip": "52732"
+      },
+      {
+        "site_id": "SITE-0162",
+        "address": "3946 Elm St, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0106",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Electrical-Supplies",
+          "HVAC-Parts",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-01-08",
+        "effective_to": "2026-04-12"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0107",
+    "name": "Apex Contractors",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Ravi Kapoor",
+        "email": "ravi.kapoor@apexcontractors.example.com",
+        "phone": "555-387-9302"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0163",
+        "address": "6000 Industrial Pkwy, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0164",
+        "address": "9580 Industrial Pkwy, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0107",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-12-21",
+        "effective_to": "2025-11-10"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0108",
+    "name": "Highline Plumbing",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Ravi Rao",
+        "email": "ravi.rao@highlineplumbing.example.com",
+        "phone": "555-751-5490"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0165",
+        "address": "4100 Elm St, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0108",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment"
+        ],
+        "effective_from": "2023-03-20",
+        "effective_to": "2025-10-24"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0109",
+    "name": "Lakeview Services",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Ravi Rao",
+        "email": "ravi.rao@lakeviewservices.example.com",
+        "phone": "555-163-9445"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0166",
+        "address": "2755 Industrial Pkwy, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0167",
+        "address": "4650 Industrial Pkwy, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0109",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-06-05",
+        "effective_to": "2026-01-05"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0110",
+    "name": "Titan Services",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Arjun Iyer",
+        "email": "arjun.iyer@titanservices.example.com",
+        "phone": "555-788-6911"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0168",
+        "address": "604 Elm St, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0110",
+        "discount_category": "Electrical-Supplies",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fixtures",
+          "HVAC-Parts",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-04-05",
+        "effective_to": "2025-08-11"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0111",
+    "name": "Total HVAC",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Devika Kapoor",
+        "email": "devika.kapoor@totalhvac.example.com",
+        "phone": "555-891-4706"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0169",
+        "address": "8673 5th Ave, Madison, WI",
+        "zip": "53703"
+      },
+      {
+        "site_id": "SITE-0170",
+        "address": "141 Oak St, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0111",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-03-11",
+        "effective_to": "2025-09-07"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0112",
+    "name": "Precision Contractors",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Devika Nair",
+        "email": "devika.nair@precisioncontractors.example.com",
+        "phone": "555-666-7607"
+      },
+      {
+        "name": "Anil Gupta",
+        "email": "anil.gupta@precisioncontractors.example.com",
+        "phone": "555-706-6924"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0171",
+        "address": "5834 Elm St, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0172",
+        "address": "9669 Industrial Pkwy, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0112",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts"
+        ],
+        "effective_from": "2024-01-18",
+        "effective_to": "2026-05-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0113",
+    "name": "Nexus Group",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Meera Iyer",
+        "email": "meera.iyer@nexusgroup.example.com",
+        "phone": "555-747-5051"
+      },
+      {
+        "name": "Anil Reddy",
+        "email": "anil.reddy@nexusgroup.example.com",
+        "phone": "555-469-6279"
+      },
+      {
+        "name": "Devika Reddy",
+        "email": "devika.reddy@nexusgroup.example.com",
+        "phone": "555-578-6220"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0173",
+        "address": "2236 Elm St, Clinton, IA",
+        "zip": "52732"
+      },
+      {
+        "site_id": "SITE-0174",
+        "address": "4370 Industrial Pkwy, Bristol, CT",
+        "zip": "06010"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0113",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-01-23",
+        "effective_to": "2024-06-18"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0114",
+    "name": "Prairie Plumbing",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Nisha Kapoor",
+        "email": "nisha.kapoor@prairieplumbing.example.com",
+        "phone": "555-304-9357"
+      },
+      {
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@prairieplumbing.example.com",
+        "phone": "555-111-1731"
+      },
+      {
+        "name": "Meera Joshi",
+        "email": "meera.joshi@prairieplumbing.example.com",
+        "phone": "555-666-9496"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0175",
+        "address": "1606 Commerce Dr, Milton, PA",
+        "zip": "17847"
+      },
+      {
+        "site_id": "SITE-0176",
+        "address": "3844 Commerce Dr, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0114",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-04-11",
+        "effective_to": "2025-11-16"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0115",
+    "name": "Redstone Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Ravi Iyer",
+        "email": "ravi.iyer@redstonemechanical.example.com",
+        "phone": "555-302-8045"
+      },
+      {
+        "name": "Suresh Reddy",
+        "email": "suresh.reddy@redstonemechanical.example.com",
+        "phone": "555-619-9260"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0177",
+        "address": "5896 River Rd, Bristol, CT",
+        "zip": "06010"
+      },
+      {
+        "site_id": "SITE-0178",
+        "address": "2348 Oak St, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0115",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2023-07-07",
+        "effective_to": "2026-01-17"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0116",
+    "name": "Riverside Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Anil Kapoor",
+        "email": "anil.kapoor@riversidemechanical.example.com",
+        "phone": "555-927-5581"
+      },
+      {
+        "name": "Devika Iyer",
+        "email": "devika.iyer@riversidemechanical.example.com",
+        "phone": "555-518-7971"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0179",
+        "address": "2058 Main St, Greenville, SC",
+        "zip": "29601"
+      },
+      {
+        "site_id": "SITE-0180",
+        "address": "3255 Main St, Ashland, KY",
+        "zip": "41101"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0116",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "Plumbing-Fittings",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-09-27",
+        "effective_to": "2025-03-02"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0117",
+    "name": "Harbor Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Anil Reddy",
+        "email": "anil.reddy@harbormechanical.example.com",
+        "phone": "555-327-8335"
+      },
+      {
+        "name": "Priya Kapoor",
+        "email": "priya.kapoor@harbormechanical.example.com",
+        "phone": "555-185-3987"
+      },
+      {
+        "name": "Arjun Kapoor",
+        "email": "arjun.kapoor@harbormechanical.example.com",
+        "phone": "555-171-3470"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0181",
+        "address": "2866 Main St, Greenville, SC",
+        "zip": "29601"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0117",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts"
+        ],
+        "effective_from": "2023-11-18",
+        "effective_to": "2026-04-25"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0118",
+    "name": "Advanced HVAC",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Kiran Shah",
+        "email": "kiran.shah@advancedhvac.example.com",
+        "phone": "555-845-5377"
+      },
+      {
+        "name": "Anil Kapoor",
+        "email": "anil.kapoor@advancedhvac.example.com",
+        "phone": "555-713-7234"
+      },
+      {
+        "name": "Priya Patel",
+        "email": "priya.patel@advancedhvac.example.com",
+        "phone": "555-232-1920"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0182",
+        "address": "9781 Oak St, Madison, WI",
+        "zip": "53703"
+      },
+      {
+        "site_id": "SITE-0183",
+        "address": "3713 River Rd, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0118",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-08-21",
+        "effective_to": "2026-05-20"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0119",
+    "name": "Union Group",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Anil Rao",
+        "email": "anil.rao@uniongroup.example.com",
+        "phone": "555-313-7852"
+      },
+      {
+        "name": "Anil Joshi",
+        "email": "anil.joshi@uniongroup.example.com",
+        "phone": "555-735-2804"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0184",
+        "address": "4144 Main St, Ashland, KY",
+        "zip": "41101"
+      },
+      {
+        "site_id": "SITE-0185",
+        "address": "1584 Elm St, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0119",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "Plumbing-Fixtures",
+          "HVAC-Parts",
+          "HVAC-Equipment",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2024-07-20",
+        "effective_to": "2025-09-19"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0120",
+    "name": "Precision Co",
+    "account_tier": "Enterprise",
+    "contacts": [
+      {
+        "name": "Anil Shah",
+        "email": "anil.shah@precisionco.example.com",
+        "phone": "555-388-7631"
+      },
+      {
+        "name": "Meera Menon",
+        "email": "meera.menon@precisionco.example.com",
+        "phone": "555-920-7885"
+      },
+      {
+        "name": "Meera Shah",
+        "email": "meera.shah@precisionco.example.com",
+        "phone": "555-510-4405"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0186",
+        "address": "277 Elm St, Springfield, IL",
+        "zip": "62701"
+      },
+      {
+        "site_id": "SITE-0187",
+        "address": "3868 Oak St, Springfield, IL",
+        "zip": "62701"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0120",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Electrical-Supplies"
+        ],
+        "effective_from": "2023-05-25",
+        "effective_to": "2025-03-06"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0121",
+    "name": "Sterling Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Arjun Gupta",
+        "email": "arjun.gupta@sterlingmechanical.example.com",
+        "phone": "555-112-4757"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0188",
+        "address": "9318 Commerce Dr, Clinton, IA",
+        "zip": "52732"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0121",
+        "discount_category": "Plumbing-Fixtures",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-07-14",
+        "effective_to": "2026-07-03"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0122",
+    "name": "Metro Group",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Meera Nair",
+        "email": "meera.nair@metrogroup.example.com",
+        "phone": "555-187-3616"
+      },
+      {
+        "name": "Devika Nair",
+        "email": "devika.nair@metrogroup.example.com",
+        "phone": "555-482-2181"
+      },
+      {
+        "name": "Arjun Shah",
+        "email": "arjun.shah@metrogroup.example.com",
+        "phone": "555-356-3559"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0189",
+        "address": "772 Commerce Dr, Salem, OR",
+        "zip": "97301"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0122",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "HVAC-Parts",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-05-06",
+        "effective_to": "2026-08-08"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0123",
+    "name": "Lakeview Co",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Anil Shah",
+        "email": "anil.shah@lakeviewco.example.com",
+        "phone": "555-280-7802"
+      },
+      {
+        "name": "Arjun Shah",
+        "email": "arjun.shah@lakeviewco.example.com",
+        "phone": "555-978-4280"
+      },
+      {
+        "name": "Vikram Kapoor",
+        "email": "vikram.kapoor@lakeviewco.example.com",
+        "phone": "555-334-6291"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0190",
+        "address": "3291 5th Ave, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0123",
+        "discount_category": "HVAC-Equipment",
+        "covered_categories": [
+          "HVAC-Equipment",
+          "Plumbing-Fittings"
+        ],
+        "effective_from": "2024-07-19",
+        "effective_to": "2027-03-28"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0124",
+    "name": "Total Mechanical",
+    "account_tier": "Standard",
+    "contacts": [
+      {
+        "name": "Devika Rao",
+        "email": "devika.rao@totalmechanical.example.com",
+        "phone": "555-783-5960"
+      },
+      {
+        "name": "Suresh Joshi",
+        "email": "suresh.joshi@totalmechanical.example.com",
+        "phone": "555-708-3675"
+      },
+      {
+        "name": "Nisha Nair",
+        "email": "nisha.nair@totalmechanical.example.com",
+        "phone": "555-238-5244"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0191",
+        "address": "7925 5th Ave, Salem, OR",
+        "zip": "97301"
+      },
+      {
+        "site_id": "SITE-0192",
+        "address": "2484 Industrial Pkwy, Madison, WI",
+        "zip": "53703"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0124",
+        "discount_category": "Plumbing-Fittings",
+        "covered_categories": [
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2024-03-01",
+        "effective_to": "2025-12-30"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-0125",
+    "name": "Summit Services",
+    "account_tier": "Preferred",
+    "contacts": [
+      {
+        "name": "Anil Rao",
+        "email": "anil.rao@summitservices.example.com",
+        "phone": "555-603-1512"
+      }
+    ],
+    "sites": [
+      {
+        "site_id": "SITE-0193",
+        "address": "2551 Commerce Dr, Fairview, TX",
+        "zip": "75069"
+      },
+      {
+        "site_id": "SITE-0194",
+        "address": "1944 Elm St, Georgetown, OH",
+        "zip": "45121"
+      }
+    ],
+    "contracts": [
+      {
+        "contract_id": "CTR-0125",
+        "discount_category": "HVAC-Parts",
+        "covered_categories": [
+          "HVAC-Parts",
+          "Plumbing-Fittings",
+          "Electrical-Supplies",
+          "Plumbing-Fixtures"
+        ],
+        "effective_from": "2023-08-09",
+        "effective_to": "2025-07-11"
+      }
+    ]
+  }
+]

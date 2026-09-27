@@ -1,0 +1,6686 @@
+[
+  {
+    "sku_id": "SKU-0001",
+    "name": "Copper Adapter 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 199.33,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0002",
+    "name": "Commercial Condenser 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 25.02,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0003",
+    "name": "GFCI Relay 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 216.02,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0004",
+    "name": "Commercial Evaporator Coil 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 181.52,
+    "discontinued": true,
+    "replaced_by": "SKU-0027",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0005",
+    "name": "Weatherproof Breaker 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 283.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0006",
+    "name": "High-Efficiency Evaporator Coil 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 68.84,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0007",
+    "name": "Chrome Shutoff Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 138.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0008",
+    "name": "PEX Bushing 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 55.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0009",
+    "name": "Brass Sprayer Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 273.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0010",
+    "name": "Standard Junction Box 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 103.11,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0011",
+    "name": "Aftermarket Capacitor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 203.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0012",
+    "name": "Heavy-Duty Outlet 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 387.35,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0013",
+    "name": "Aftermarket Sensor Small",
+    "category": "HVAC-Parts",
+    "list_price": 138.81,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0014",
+    "name": "Heavy-Duty Belt Large",
+    "category": "HVAC-Parts",
+    "list_price": 275.11,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0015",
+    "name": "Heavy-Duty Contactor Large",
+    "category": "HVAC-Parts",
+    "list_price": 426.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0016",
+    "name": "Galvanized Coupling 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 96.54,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0017",
+    "name": "OEM Sensor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 72.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0407"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0018",
+    "name": "Copper Nipple 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 35.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0097"
+    ],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0019",
+    "name": "Aftermarket Sensor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 203.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0020",
+    "name": "Heavy-Duty Gasket 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 132.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0021",
+    "name": "Copper Cap 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 318.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0022",
+    "name": "Heavy-Duty Motor Mount Small",
+    "category": "HVAC-Parts",
+    "list_price": 205.41,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0023",
+    "name": "Matte Black Trap Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 415.91,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0024",
+    "name": "Galvanized Elbow 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 282.03,
+    "discontinued": true,
+    "replaced_by": "SKU-0353",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0025",
+    "name": "Weatherproof Junction Box 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 420.28,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0026",
+    "name": "PVC Nipple 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 245.96,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0027",
+    "name": "High-Efficiency Blower 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 408.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0028",
+    "name": "GFCI Junction Box 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 33.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0029",
+    "name": "OEM Thermostat Large",
+    "category": "HVAC-Parts",
+    "list_price": 139.81,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0030",
+    "name": "PVC Nipple 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 257.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0031",
+    "name": "Standard Conduit 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 57.71,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0032",
+    "name": "Heavy-Duty Sensor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 315.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0033",
+    "name": "Heavy-Duty Relay 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 226.21,
+    "discontinued": true,
+    "replaced_by": "SKU-0279",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0034",
+    "name": "OEM Sensor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 38.04,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0035",
+    "name": "Galvanized Coupling 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 195.55,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0036",
+    "name": "Aftermarket Sensor Large",
+    "category": "HVAC-Parts",
+    "list_price": 114.16,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0037",
+    "name": "OEM Gasket Small",
+    "category": "HVAC-Parts",
+    "list_price": 432.94,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0038",
+    "name": "Plastic Shutoff Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 259.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0039",
+    "name": "PEX Elbow 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 449.81,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0040",
+    "name": "OEM Thermostat Medium",
+    "category": "HVAC-Parts",
+    "list_price": 122.74,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0041",
+    "name": "Heavy-Duty Conduit 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 340.81,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0042",
+    "name": "Copper Tee 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 293.88,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0043",
+    "name": "High-Efficiency Air Handler 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 83.31,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0044",
+    "name": "Aftermarket Contactor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 286.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0011"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0045",
+    "name": "Brass Cap 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 42.88,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0046",
+    "name": "Matte Black Drain Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 151.32,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0047",
+    "name": "Heavy-Duty Motor Mount Medium",
+    "category": "HVAC-Parts",
+    "list_price": 386.26,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0048",
+    "name": "PEX Nipple 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 312.77,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0049",
+    "name": "Copper Nipple 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 425.45,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0050",
+    "name": "Brass Valve Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 248.44,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0258"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0051",
+    "name": "PVC Adapter 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 142.9,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0052",
+    "name": "Stainless Shutoff Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 436.64,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0397"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0053",
+    "name": "Aftermarket Thermostat Medium",
+    "category": "HVAC-Parts",
+    "list_price": 232.54,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0054",
+    "name": "GFCI Breaker 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 296.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0055",
+    "name": "Stainless Aerator Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 187.13,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0056",
+    "name": "Galvanized Tee 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 164.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0619"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0057",
+    "name": "Matte Black Shutoff Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 282.18,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0058",
+    "name": "GFCI Wire Nut 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 93.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0059",
+    "name": "Galvanized Union 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 417.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0060",
+    "name": "Heavy-Duty Gasket Small",
+    "category": "HVAC-Parts",
+    "list_price": 314.82,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0061",
+    "name": "Weatherproof Switch 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 437.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0062",
+    "name": "Chrome Drain Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 109.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0063",
+    "name": "Matte Black Stopper Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 248.78,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0057"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0064",
+    "name": "Chrome Stopper Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 43.76,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0065",
+    "name": "Standard Wire Nut 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 410.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0066",
+    "name": "Universal Contactor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 54.62,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0266"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0067",
+    "name": "OEM Belt Small",
+    "category": "HVAC-Parts",
+    "list_price": 225.27,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0068",
+    "name": "Universal Capacitor Large",
+    "category": "HVAC-Parts",
+    "list_price": 229.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0069",
+    "name": "Heavy-Duty Belt 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 375.96,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0070",
+    "name": "GFCI Wire Nut 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 111.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0071",
+    "name": "PVC Cap 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 173.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0072",
+    "name": "Matte Black Aerator Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 229.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0073",
+    "name": "Heavy-Duty Thermostat Large",
+    "category": "HVAC-Parts",
+    "list_price": 389.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0074",
+    "name": "PEX Union 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 355.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0075",
+    "name": "Copper Union 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 420.54,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0076",
+    "name": "High-Efficiency Blower 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 369.61,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0077",
+    "name": "Chrome Trap Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 135.75,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0078",
+    "name": "Standard Wire Nut 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 449.51,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0336"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0079",
+    "name": "High-Efficiency Evaporator Coil 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 68.57,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0080",
+    "name": "GFCI Wire Nut 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 156.62,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0081",
+    "name": "Stainless Faucet Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 245.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0082",
+    "name": "Plastic Stopper Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 146.16,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0083",
+    "name": "Copper Adapter 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 314.48,
+    "discontinued": true,
+    "replaced_by": "SKU-0195",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0084",
+    "name": "Standard Breaker 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 106.64,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0085",
+    "name": "Plastic Trap Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 21.55,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0530"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0086",
+    "name": "OEM Thermostat 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 317.94,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0087",
+    "name": "Brass Faucet Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 174.96,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0088",
+    "name": "Brass Valve Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 369.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0089",
+    "name": "Stainless Valve Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 223.91,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0090",
+    "name": "GFCI Relay 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 227.03,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0091",
+    "name": "Brass Trap Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 391.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0092",
+    "name": "Standard Relay 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 199.26,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0093",
+    "name": "PVC Adapter 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 206.7,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0094",
+    "name": "PEX Coupling 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 185.67,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0095",
+    "name": "Weatherproof Breaker 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 71.15,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0096",
+    "name": "Stainless Drain Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 436.2,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0097",
+    "name": "Galvanized Adapter 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 312.33,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0098",
+    "name": "Heavy-Duty Sensor Small",
+    "category": "HVAC-Parts",
+    "list_price": 383.59,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0099",
+    "name": "Stainless Sprayer Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 386.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0082"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0100",
+    "name": "Standard Outlet 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 143.86,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0101",
+    "name": "Copper Adapter 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 342.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0102",
+    "name": "Galvanized Adapter 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 18.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0103",
+    "name": "Aftermarket Gasket Medium",
+    "category": "HVAC-Parts",
+    "list_price": 284.76,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0104",
+    "name": "Aftermarket Filter Medium",
+    "category": "HVAC-Parts",
+    "list_price": 448.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0105",
+    "name": "Brass Trap Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 196.42,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0091"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0106",
+    "name": "Standard Conduit 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 285.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0107",
+    "name": "Stainless Stopper Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 200.77,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0108",
+    "name": "Chrome Trap Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 406.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0109",
+    "name": "Matte Black Stopper Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 358.67,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0110",
+    "name": "Chrome Aerator Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 169.93,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0111",
+    "name": "Matte Black Drain Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 239.96,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0112",
+    "name": "PEX Cap 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 357.05,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0113",
+    "name": "Universal Sensor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 37.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0114",
+    "name": "Weatherproof Relay 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 279.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0115",
+    "name": "High-Efficiency Evaporator Coil 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 410.95,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0116",
+    "name": "Standard Relay 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 208.6,
+    "discontinued": true,
+    "replaced_by": "SKU-0368",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0117",
+    "name": "Stainless Aerator Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 116.39,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0118",
+    "name": "OEM Sensor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 362.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0119",
+    "name": "Plastic Shutoff Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 305.57,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0120",
+    "name": "PEX Coupling 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 199.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0121",
+    "name": "Aftermarket Thermostat 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 265.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0122",
+    "name": "Universal Contactor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 192.09,
+    "discontinued": true,
+    "replaced_by": "SKU-0017",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0123",
+    "name": "Heavy-Duty Sensor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 380.7,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0124",
+    "name": "Weatherproof Junction Box 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 174.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0125",
+    "name": "Residential Furnace 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 108.27,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0126",
+    "name": "PEX Adapter 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 259.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0127",
+    "name": "OEM Capacitor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 134.26,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0376"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0128",
+    "name": "PEX Union 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 296.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0129",
+    "name": "Standard Breaker 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 255.54,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0130",
+    "name": "Standard Outlet 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 335.61,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0131",
+    "name": "GFCI Breaker 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 273.67,
+    "discontinued": true,
+    "replaced_by": "SKU-0286",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0132",
+    "name": "High-Efficiency Compressor 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 407.06,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0133",
+    "name": "Brass Tee 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 359.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0134",
+    "name": "Aftermarket Gasket 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 159.84,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0135",
+    "name": "Stainless Aerator Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 280.16,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0136",
+    "name": "PEX Tee 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 324.98,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0137",
+    "name": "PVC Adapter 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 377.58,
+    "discontinued": true,
+    "replaced_by": "SKU-0102",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0138",
+    "name": "Galvanized Adapter 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 406.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0139",
+    "name": "GFCI Outlet 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 140.4,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0140",
+    "name": "Chrome Shutoff Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 261.65,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0141",
+    "name": "Copper Union 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 42.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0142",
+    "name": "GFCI Breaker 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 336.87,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0143",
+    "name": "Matte Black Sprayer Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 61.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0144",
+    "name": "Copper Nipple 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 437.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0145",
+    "name": "Universal Gasket 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 411.24,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0146",
+    "name": "Residential Compressor 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 117.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0132"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0147",
+    "name": "Brass Cap 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 217.87,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0148",
+    "name": "Galvanized Adapter 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 336.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0149",
+    "name": "Brass Cap 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 53.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0150",
+    "name": "GFCI Conduit 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 65.06,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0151",
+    "name": "Matte Black Aerator Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 387.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0152",
+    "name": "Aftermarket Belt 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 441.01,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0153",
+    "name": "Weatherproof Switch 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 362.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0154",
+    "name": "Universal Capacitor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 356.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0155",
+    "name": "Universal Filter Large",
+    "category": "HVAC-Parts",
+    "list_price": 242.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0156",
+    "name": "Stainless Faucet Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 303.43,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0082"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0157",
+    "name": "Weatherproof Switch 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 263.88,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0158",
+    "name": "Commercial Heat Exchanger 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 423.25,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0605"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0159",
+    "name": "Galvanized Adapter 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 106.75,
+    "discontinued": true,
+    "replaced_by": "SKU-0301",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0160",
+    "name": "Copper Adapter 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 398.14,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0161",
+    "name": "Weatherproof Switch 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 412.03,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0162",
+    "name": "Stainless Valve Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 30.32,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0409"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0163",
+    "name": "PVC Elbow 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 409.41,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0164",
+    "name": "Heavy-Duty Relay 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 184.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0165",
+    "name": "Commercial Heat Exchanger 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 425.93,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0166",
+    "name": "Weatherproof Outlet 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 222.7,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0167",
+    "name": "Aftermarket Sensor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 399.49,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0168",
+    "name": "Plastic Faucet Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 205.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0169",
+    "name": "Commercial Furnace 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 334.93,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0170",
+    "name": "Copper Coupling 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 189.77,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0171",
+    "name": "Galvanized Elbow 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 71.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0172",
+    "name": "Copper Tee 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 46.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0173",
+    "name": "Weatherproof Wire Nut 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 184.84,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0174",
+    "name": "OEM Motor Mount Small",
+    "category": "HVAC-Parts",
+    "list_price": 16.66,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0175",
+    "name": "Brass Stopper Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 200.64,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0176",
+    "name": "Copper Coupling 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 385.24,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0177",
+    "name": "Brass Union 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 309.18,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0178",
+    "name": "Copper Elbow 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 440.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0179",
+    "name": "Commercial Blower 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 180.37,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0180",
+    "name": "OEM Belt Large",
+    "category": "HVAC-Parts",
+    "list_price": 56.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0181",
+    "name": "PVC Coupling 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 205.71,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0182",
+    "name": "PEX Elbow 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 289.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0183",
+    "name": "Weatherproof Conduit 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 11.57,
+    "discontinued": true,
+    "replaced_by": "SKU-0570",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0184",
+    "name": "Universal Belt Small",
+    "category": "HVAC-Parts",
+    "list_price": 111.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0185",
+    "name": "Weatherproof Wire Nut 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 254.93,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0186",
+    "name": "Chrome Valve Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 344.79,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0187",
+    "name": "Standard Relay 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 98.75,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0188",
+    "name": "Plastic Aerator Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 149.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0189",
+    "name": "Aftermarket Filter Small",
+    "category": "HVAC-Parts",
+    "list_price": 405.44,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0190",
+    "name": "PEX Tee 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 386.57,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0488"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0191",
+    "name": "PVC Coupling 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 60.24,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0192",
+    "name": "Standard Outlet 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 80.17,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0193",
+    "name": "Weatherproof Conduit 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 13.55,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0194",
+    "name": "PEX Cap 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 355.91,
+    "discontinued": true,
+    "replaced_by": "SKU-0536",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0195",
+    "name": "Copper Adapter 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 147.05,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0196",
+    "name": "Brass Drain Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 25.47,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0197",
+    "name": "Stainless Trap Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 237.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0198",
+    "name": "OEM Capacitor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 215.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0199",
+    "name": "Standard Breaker 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 231.93,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0200",
+    "name": "Universal Filter 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 227.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0554"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0201",
+    "name": "Brass Adapter 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 21.43,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0202",
+    "name": "Weatherproof Wire Nut 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 390.41,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0203",
+    "name": "GFCI Wire Nut 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 207.2,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0204",
+    "name": "GFCI Wire Nut 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 29.25,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0341"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0205",
+    "name": "Matte Black Trap Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 181.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0206",
+    "name": "Universal Capacitor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 221.64,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0014"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0207",
+    "name": "Plastic Stopper Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 34.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0502"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0208",
+    "name": "Brass Coupling 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 274.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0209",
+    "name": "Copper Bushing 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 125.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0210",
+    "name": "Galvanized Tee 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 247.66,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0211",
+    "name": "Weatherproof Junction Box 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 447.59,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0212",
+    "name": "Heavy-Duty Breaker 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 205.26,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0213",
+    "name": "Galvanized Elbow 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 46.43,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0214",
+    "name": "Standard Wire Nut 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 384.05,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0215",
+    "name": "Brass Trap Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 346.5,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0216",
+    "name": "Stainless Stopper Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 98.33,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0217",
+    "name": "Heavy-Duty Junction Box 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 104.37,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0218",
+    "name": "Galvanized Nipple 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 205.17,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0219",
+    "name": "Heavy-Duty Gasket Medium",
+    "category": "HVAC-Parts",
+    "list_price": 44.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0220",
+    "name": "Aftermarket Contactor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 299.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0013"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0221",
+    "name": "Plastic Valve Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 70.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0468"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0222",
+    "name": "Chrome Sprayer Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 32.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0223",
+    "name": "PVC Elbow 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 43.77,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0224",
+    "name": "Weatherproof Relay 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 332.98,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0225",
+    "name": "Standard Outlet 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 251.25,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0010"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0226",
+    "name": "Universal Belt Large",
+    "category": "HVAC-Parts",
+    "list_price": 253.59,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0227",
+    "name": "Galvanized Tee 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 56.76,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0228",
+    "name": "Galvanized Union 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 300.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0289"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0229",
+    "name": "Universal Contactor Large",
+    "category": "HVAC-Parts",
+    "list_price": 390.91,
+    "discontinued": true,
+    "replaced_by": "SKU-0522",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0230",
+    "name": "PEX Union 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 435.84,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0231",
+    "name": "Heavy-Duty Wire Nut 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 159.54,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0232",
+    "name": "OEM Contactor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 97.31,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0233",
+    "name": "Chrome Valve Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 102.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0234",
+    "name": "Heavy-Duty Relay 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 380.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0235",
+    "name": "Galvanized Union 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 343.65,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0396"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0236",
+    "name": "OEM Thermostat 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 363.64,
+    "discontinued": true,
+    "replaced_by": "SKU-0361",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0237",
+    "name": "Chrome Shutoff Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 438.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0238",
+    "name": "Copper Elbow 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 276.88,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0239",
+    "name": "Heavy-Duty Switch 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 13.76,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0240",
+    "name": "Plastic Shutoff Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 373.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0186"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0241",
+    "name": "Brass Cap 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 82.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0242",
+    "name": "Standard Junction Box 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 140.43,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0243",
+    "name": "Plastic Drain Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 4.74,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0244",
+    "name": "Heavy-Duty Junction Box 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 255.71,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0611"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0245",
+    "name": "Copper Elbow 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 65.56,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0246",
+    "name": "Galvanized Coupling 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 15.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0247",
+    "name": "Matte Black Drain Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 98.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0248",
+    "name": "Brass Cap 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 154.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0249",
+    "name": "Stainless Stopper Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 325.27,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0250",
+    "name": "PEX Coupling 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 256.28,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0251",
+    "name": "Brass Valve Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 25.57,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0252",
+    "name": "Stainless Faucet Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 278.79,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0253",
+    "name": "Galvanized Bushing 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 123.9,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0254",
+    "name": "OEM Filter Small",
+    "category": "HVAC-Parts",
+    "list_price": 219.58,
+    "discontinued": true,
+    "replaced_by": "SKU-0155",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0255",
+    "name": "Weatherproof Relay 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 124.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0256",
+    "name": "Heavy-Duty Breaker 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 52.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0257",
+    "name": "Brass Stopper Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 128.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0258",
+    "name": "Stainless Shutoff Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 220.01,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0259",
+    "name": "Matte Black Aerator Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 22.35,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0260",
+    "name": "High-Efficiency Air Handler 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 270.5,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0115"
+    ],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0261",
+    "name": "Commercial Heat Exchanger 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 137.04,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0165"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0262",
+    "name": "Plastic Aerator Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 63.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0263",
+    "name": "PVC Union 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 149.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0074"
+    ],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0264",
+    "name": "Chrome Aerator Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 336.66,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0265",
+    "name": "Heavy-Duty Switch 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 172.33,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0266",
+    "name": "Heavy-Duty Thermostat 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 226.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0267",
+    "name": "Universal Sensor Large",
+    "category": "HVAC-Parts",
+    "list_price": 363.18,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0268",
+    "name": "Copper Cap 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 388.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0269",
+    "name": "Heavy-Duty Breaker 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 10.4,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0270",
+    "name": "Plastic Shutoff Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 388.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0271",
+    "name": "Brass Union 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 258.88,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0272",
+    "name": "Brass Valve Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 189.13,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0273",
+    "name": "Matte Black Faucet Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 11.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0274",
+    "name": "Copper Cap 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 360.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0275",
+    "name": "Commercial Blower 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 374.75,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0276",
+    "name": "Brass Adapter 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 41.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0170"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0277",
+    "name": "Aftermarket Contactor Small",
+    "category": "HVAC-Parts",
+    "list_price": 111.01,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0278",
+    "name": "Residential Evaporator Coil 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 236.74,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0279",
+    "name": "Weatherproof Junction Box 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 141.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0280",
+    "name": "Standard Relay 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 151.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0281",
+    "name": "Brass Tee 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 230.7,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0282",
+    "name": "Brass Tee 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 230.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0510"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0283",
+    "name": "Commercial Evaporator Coil 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 158.52,
+    "discontinued": true,
+    "replaced_by": "SKU-0447",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0284",
+    "name": "Chrome Stopper Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 368.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0285",
+    "name": "Matte Black Valve Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 107.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0286",
+    "name": "GFCI Relay 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 90.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0287",
+    "name": "Brass Aerator Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 342.58,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0288",
+    "name": "Residential Air Handler 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 81.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0289",
+    "name": "PEX Adapter 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 223.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0290",
+    "name": "Residential Furnace 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 342.42,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0445"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0291",
+    "name": "Brass Nipple 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 416.02,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0292",
+    "name": "OEM Capacitor Small",
+    "category": "HVAC-Parts",
+    "list_price": 286.61,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0293",
+    "name": "Heavy-Duty Contactor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 389.18,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0294",
+    "name": "Standard Junction Box 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 69.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0295",
+    "name": "PVC Coupling 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 200.11,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0296",
+    "name": "Brass Aerator Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 125.05,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0297",
+    "name": "Weatherproof Outlet 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 229.29,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0157"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0298",
+    "name": "Standard Junction Box 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 204.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0299",
+    "name": "Heavy-Duty Sensor Large",
+    "category": "HVAC-Parts",
+    "list_price": 374.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0300",
+    "name": "GFCI Relay 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 389.18,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0301",
+    "name": "PEX Coupling 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 277.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0302",
+    "name": "PEX Cap 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 209.29,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0303",
+    "name": "GFCI Junction Box 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 356.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0304",
+    "name": "Standard Relay 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 203.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0305",
+    "name": "Heavy-Duty Junction Box 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 294.02,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0316"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0306",
+    "name": "Copper Nipple 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 215.08,
+    "discontinued": true,
+    "replaced_by": "SKU-0396",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0307",
+    "name": "Heavy-Duty Belt Medium",
+    "category": "HVAC-Parts",
+    "list_price": 29.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0308",
+    "name": "Heavy-Duty Outlet 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 404.81,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0309",
+    "name": "Brass Coupling 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 322.01,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0310",
+    "name": "Plastic Drain Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 79.31,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0311",
+    "name": "Commercial Evaporator Coil 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 198.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0312",
+    "name": "Heavy-Duty Motor Mount 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 236.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0313",
+    "name": "Residential Blower 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 169.04,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0314",
+    "name": "Chrome Trap Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 185.13,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0315",
+    "name": "Galvanized Bushing 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 269.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0316",
+    "name": "Weatherproof Conduit 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 291.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0317",
+    "name": "Copper Cap 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 44.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0318",
+    "name": "Chrome Aerator Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 129.3,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0319",
+    "name": "Residential Heat Exchanger 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 296.14,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0320",
+    "name": "Brass Coupling 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 393.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0321",
+    "name": "Copper Union 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 263.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0322",
+    "name": "Plastic Aerator Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 158.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0323",
+    "name": "High-Efficiency Heat Exchanger 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 314.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0324",
+    "name": "PVC Bushing 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 268.58,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0325"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0325",
+    "name": "Brass Elbow 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 140.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0326",
+    "name": "Stainless Valve Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 356.66,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0327",
+    "name": "Brass Coupling 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 302.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0274"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0328",
+    "name": "Copper Bushing 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 332.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0329",
+    "name": "Galvanized Elbow 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 237.82,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0330",
+    "name": "Heavy-Duty Sensor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 191.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0331",
+    "name": "Brass Faucet Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 164.44,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0332",
+    "name": "PEX Cap 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 97.96,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0581"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0333",
+    "name": "Brass Adapter 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 219.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0334",
+    "name": "Copper Bushing 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 63.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0335",
+    "name": "PVC Adapter 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 380.3,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0336",
+    "name": "GFCI Conduit 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 347.35,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0337",
+    "name": "Standard Switch 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 397.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0164"
+    ],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0338",
+    "name": "Universal Capacitor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 152.87,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0339",
+    "name": "Stainless Trap Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 60.71,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0340",
+    "name": "PEX Elbow 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 74.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0341",
+    "name": "Weatherproof Junction Box 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 347.45,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0342",
+    "name": "Brass Nipple 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 76.16,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0343",
+    "name": "Brass Drain Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 186.06,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0513"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0344",
+    "name": "Matte Black Drain Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 108.41,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0453"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0345",
+    "name": "Weatherproof Junction Box 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 129.65,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0346",
+    "name": "Stainless Shutoff Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 203.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0107"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0347",
+    "name": "Residential Compressor 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 140.64,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0348",
+    "name": "Heavy-Duty Junction Box 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 212.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0349",
+    "name": "Brass Bushing 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 166.79,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0350",
+    "name": "GFCI Switch 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 443.03,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0351",
+    "name": "Chrome Faucet Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 128.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0352",
+    "name": "Galvanized Cap 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 238.3,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0353",
+    "name": "Brass Bushing 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 367.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0354",
+    "name": "Universal Thermostat 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 64.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0355",
+    "name": "Chrome Stopper Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 289.25,
+    "discontinued": true,
+    "replaced_by": "SKU-0638",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0356",
+    "name": "GFCI Switch 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 250.43,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0150"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0357",
+    "name": "Commercial Compressor 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 380.96,
+    "discontinued": true,
+    "replaced_by": "SKU-0496",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0358",
+    "name": "Heavy-Duty Breaker 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 129.71,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0359",
+    "name": "Heavy-Duty Switch 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 124.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0308"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0360",
+    "name": "Universal Capacitor Small",
+    "category": "HVAC-Parts",
+    "list_price": 68.01,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0361",
+    "name": "Aftermarket Capacitor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 425.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0362",
+    "name": "OEM Contactor Small",
+    "category": "HVAC-Parts",
+    "list_price": 204.11,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0363",
+    "name": "Aftermarket Thermostat Large",
+    "category": "HVAC-Parts",
+    "list_price": 13.95,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0364",
+    "name": "Brass Cap 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 226.9,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0365",
+    "name": "Brass Stopper Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 447.55,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0366",
+    "name": "Galvanized Cap 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 14.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0367",
+    "name": "Heavy-Duty Relay 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 377.95,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0368",
+    "name": "Heavy-Duty Switch 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 356.54,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0369",
+    "name": "OEM Filter Medium",
+    "category": "HVAC-Parts",
+    "list_price": 130.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0370",
+    "name": "Heavy-Duty Breaker 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 313.84,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0371",
+    "name": "PEX Cap 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 318.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0250"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0372",
+    "name": "Brass Cap 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 4.35,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0373",
+    "name": "Stainless Sprayer Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 116.65,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0374",
+    "name": "PVC Coupling 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 247.86,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0375",
+    "name": "Brass Drain Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 238.44,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0376",
+    "name": "Universal Thermostat Large",
+    "category": "HVAC-Parts",
+    "list_price": 131.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0377",
+    "name": "Commercial Heat Exchanger 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 23.39,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0378",
+    "name": "Heavy-Duty Capacitor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 357.67,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0379",
+    "name": "Brass Shutoff Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 51.66,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0380",
+    "name": "Plastic Sprayer Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 269.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0381",
+    "name": "OEM Contactor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 232.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0382",
+    "name": "Heavy-Duty Capacitor Large",
+    "category": "HVAC-Parts",
+    "list_price": 66.32,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0383",
+    "name": "Commercial Furnace 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 277.43,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0384",
+    "name": "Brass Shutoff Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 188.62,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0385",
+    "name": "High-Efficiency Blower 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 40.36,
+    "discontinued": true,
+    "replaced_by": "SKU-0260",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0386",
+    "name": "Weatherproof Wire Nut 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 32.32,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0387",
+    "name": "Stainless Valve Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 229.28,
+    "discontinued": true,
+    "replaced_by": "SKU-0046",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0388",
+    "name": "Commercial Air Handler 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 250.26,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0169"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0389",
+    "name": "PEX Nipple 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 212.62,
+    "discontinued": true,
+    "replaced_by": "SKU-0144",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0390",
+    "name": "PEX Bushing 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 441.51,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0248"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0391",
+    "name": "High-Efficiency Furnace 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 9.28,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0392",
+    "name": "Plastic Faucet Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 156.47,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0393",
+    "name": "Residential Blower 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 283.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0394",
+    "name": "Copper Union 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 331.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0395",
+    "name": "Brass Tee 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 21.86,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0396",
+    "name": "PVC Cap 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 366.45,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0397",
+    "name": "Chrome Drain Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 351.06,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0398",
+    "name": "Galvanized Adapter 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 313.53,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0399",
+    "name": "Plastic Trap Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 365.55,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0400",
+    "name": "PEX Cap 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 349.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0401",
+    "name": "Chrome Aerator Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 133.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0422"
+    ],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0402",
+    "name": "GFCI Outlet 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 91.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0403",
+    "name": "Brass Bushing 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 420.15,
+    "discontinued": true,
+    "replaced_by": "SKU-0596",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0404",
+    "name": "Plastic Faucet Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 445.13,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0405",
+    "name": "Weatherproof Wire Nut 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 115.48,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0406",
+    "name": "Galvanized Coupling 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 87.61,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0407",
+    "name": "Aftermarket Gasket Small",
+    "category": "HVAC-Parts",
+    "list_price": 351.82,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0408",
+    "name": "Standard Breaker 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 150.7,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0092"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0409",
+    "name": "Matte Black Valve Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 166.87,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0046"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0410",
+    "name": "Matte Black Faucet Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 335.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0411",
+    "name": "Heavy-Duty Motor Mount Large",
+    "category": "HVAC-Parts",
+    "list_price": 175.22,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0412",
+    "name": "Chrome Drain Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 224.3,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0175"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0413",
+    "name": "Matte Black Shutoff Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 416.09,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0513"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0414",
+    "name": "OEM Gasket Medium",
+    "category": "HVAC-Parts",
+    "list_price": 360.91,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0415",
+    "name": "Aftermarket Motor Mount 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 37.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0416",
+    "name": "Copper Tee 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 370.41,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0417",
+    "name": "Standard Conduit 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 145.9,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0418",
+    "name": "Heavy-Duty Conduit 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 298.09,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0419",
+    "name": "Heavy-Duty Gasket Large",
+    "category": "HVAC-Parts",
+    "list_price": 271.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0420",
+    "name": "Plastic Sprayer Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 311.01,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0259"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0421",
+    "name": "PEX Cap 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 20.98,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0422",
+    "name": "Brass Valve Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 159.95,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0423",
+    "name": "Heavy-Duty Conduit 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 125.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0424",
+    "name": "Plastic Sprayer Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 426.66,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0425",
+    "name": "Stainless Stopper Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 287.61,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0426",
+    "name": "Copper Cap 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 360.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0427",
+    "name": "Heavy-Duty Wire Nut 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 428.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0428",
+    "name": "Heavy-Duty Belt 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 274.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0429",
+    "name": "Galvanized Cap 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 17.59,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0182"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0430",
+    "name": "PVC Bushing 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 350.77,
+    "discontinued": true,
+    "replaced_by": "SKU-0281",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0431",
+    "name": "Brass Drain Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 173.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0432",
+    "name": "Standard Relay 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 273.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0433",
+    "name": "High-Efficiency Air Handler 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 427.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0434",
+    "name": "Brass Elbow 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 343.86,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0435",
+    "name": "OEM Belt 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 239.2,
+    "discontinued": true,
+    "replaced_by": "SKU-0113",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0436",
+    "name": "Weatherproof Outlet 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 293.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0437",
+    "name": "Standard Breaker 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 52.82,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0438",
+    "name": "Galvanized Coupling 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 225.57,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0439",
+    "name": "Commercial Blower 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 253.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0440",
+    "name": "Plastic Drain Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 118.61,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0441",
+    "name": "Aftermarket Motor Mount Large",
+    "category": "HVAC-Parts",
+    "list_price": 448.37,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0442",
+    "name": "Brass Elbow 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 412.58,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0443",
+    "name": "Aftermarket Contactor Large",
+    "category": "HVAC-Parts",
+    "list_price": 56.94,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0069"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0444",
+    "name": "Plastic Stopper Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 204.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0445",
+    "name": "High-Efficiency Heat Exchanger 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 201.41,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0446",
+    "name": "Galvanized Union 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 307.5,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0447",
+    "name": "Residential Condenser 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 145.18,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0602"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0448",
+    "name": "Brass Stopper Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 31.09,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0237"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0449",
+    "name": "Plastic Faucet Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 401.32,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0450",
+    "name": "Weatherproof Junction Box 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 320.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0451",
+    "name": "Brass Union 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 287.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0446"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0452",
+    "name": "OEM Filter Large",
+    "category": "HVAC-Parts",
+    "list_price": 229.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0487"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0453",
+    "name": "Matte Black Sprayer Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 92.04,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0454",
+    "name": "Stainless Drain Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 356.09,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0455",
+    "name": "Universal Gasket Medium",
+    "category": "HVAC-Parts",
+    "list_price": 250.2,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0456",
+    "name": "Brass Shutoff Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 362.04,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0457",
+    "name": "Standard Outlet 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 276.15,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0458",
+    "name": "Galvanized Bushing 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 140.56,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0459",
+    "name": "Plastic Faucet Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 324.05,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0460",
+    "name": "Heavy-Duty Contactor Small",
+    "category": "HVAC-Parts",
+    "list_price": 346.59,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0461",
+    "name": "Stainless Drain Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 35.04,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0462",
+    "name": "PVC Cap 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 289.77,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0531"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0463",
+    "name": "Copper Coupling 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 306.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0464",
+    "name": "Galvanized Bushing 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 395.33,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0465",
+    "name": "Matte Black Trap Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 288.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0466",
+    "name": "PVC Adapter 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 434.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0467",
+    "name": "Plastic Drain Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 410.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0468",
+    "name": "Plastic Valve Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 57.62,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0469",
+    "name": "Aftermarket Capacitor Large",
+    "category": "HVAC-Parts",
+    "list_price": 75.77,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0470",
+    "name": "Matte Black Faucet Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 319.78,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0471",
+    "name": "Brass Coupling 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 423.53,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0472",
+    "name": "PVC Union 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 380.98,
+    "discontinued": true,
+    "replaced_by": "SKU-0218",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0473",
+    "name": "Stainless Shutoff Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 286.51,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0474",
+    "name": "Chrome Stopper Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 58.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0475",
+    "name": "Universal Belt 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 241.0,
+    "discontinued": true,
+    "replaced_by": "SKU-0121",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0476",
+    "name": "Matte Black Valve Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 77.55,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0477",
+    "name": "OEM Sensor Large",
+    "category": "HVAC-Parts",
+    "list_price": 71.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0478",
+    "name": "Chrome Valve Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 324.84,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0479",
+    "name": "Heavy-Duty Belt Small",
+    "category": "HVAC-Parts",
+    "list_price": 379.45,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0480",
+    "name": "Galvanized Coupling 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 371.71,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0481",
+    "name": "Universal Filter 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 22.37,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0482",
+    "name": "Residential Heat Exchanger 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 260.39,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0483",
+    "name": "Weatherproof Switch 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 345.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0484",
+    "name": "Brass Sprayer Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 288.27,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0485",
+    "name": "PVC Nipple 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 282.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0486",
+    "name": "Galvanized Tee 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 430.58,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0487",
+    "name": "OEM Capacitor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 362.5,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0338"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0488",
+    "name": "Copper Tee 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 135.25,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0489",
+    "name": "Matte Black Faucet Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 28.84,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0490",
+    "name": "Plastic Valve Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 218.94,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0491",
+    "name": "Matte Black Stopper Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 273.78,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0492",
+    "name": "Matte Black Shutoff Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 323.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0493",
+    "name": "Galvanized Tee 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 387.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0494",
+    "name": "Brass Bushing 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 60.58,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0495",
+    "name": "Weatherproof Conduit 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 253.62,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0496",
+    "name": "Commercial Compressor 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 210.98,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0497",
+    "name": "GFCI Breaker 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 113.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0498",
+    "name": "Universal Motor Mount 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 132.01,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0499",
+    "name": "Chrome Faucet Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 277.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0500",
+    "name": "Chrome Drain Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 389.66,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0501",
+    "name": "Galvanized Union 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 148.69,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0510"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0502",
+    "name": "Plastic Sprayer Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 142.1,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0503",
+    "name": "Copper Tee 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 225.22,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0504",
+    "name": "PEX Nipple 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 225.44,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0241"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0505",
+    "name": "PVC Tee 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 12.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0506",
+    "name": "Commercial Evaporator Coil 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 228.44,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0507",
+    "name": "Brass Aerator Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 98.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0420"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0508",
+    "name": "OEM Motor Mount 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 24.64,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0509",
+    "name": "OEM Filter 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 397.29,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0510",
+    "name": "Copper Cap 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 212.82,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0511",
+    "name": "Heavy-Duty Outlet 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 381.53,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0298"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0512",
+    "name": "Universal Gasket Large",
+    "category": "HVAC-Parts",
+    "list_price": 397.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0513",
+    "name": "Plastic Stopper Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 344.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0514",
+    "name": "Matte Black Trap Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 181.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0515",
+    "name": "High-Efficiency Furnace 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 89.21,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0516",
+    "name": "PEX Bushing 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 34.94,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0517",
+    "name": "Brass Union 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 344.45,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0018"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0518",
+    "name": "Brass Shutoff Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 445.11,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0519",
+    "name": "Standard Conduit 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 55.23,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0520",
+    "name": "Copper Bushing 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 178.47,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0521",
+    "name": "Chrome Faucet Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 153.91,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0522",
+    "name": "Heavy-Duty Filter Medium",
+    "category": "HVAC-Parts",
+    "list_price": 340.22,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0523",
+    "name": "Weatherproof Relay 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 230.09,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0524",
+    "name": "Copper Nipple 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 22.3,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0525",
+    "name": "GFCI Switch 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 151.2,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0526",
+    "name": "High-Efficiency Heat Exchanger 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 206.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0527",
+    "name": "GFCI Conduit 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 232.95,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0528",
+    "name": "Universal Contactor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 276.65,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0529",
+    "name": "Galvanized Cap 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 445.8,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0530",
+    "name": "Brass Aerator Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 136.06,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0531",
+    "name": "Galvanized Bushing 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 373.07,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0532",
+    "name": "Chrome Valve Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 319.52,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0533",
+    "name": "PEX Nipple 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 367.46,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0534",
+    "name": "GFCI Breaker 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 303.87,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0622"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0535",
+    "name": "PVC Nipple 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 263.5,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0536",
+    "name": "Brass Elbow 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 326.95,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0268"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0537",
+    "name": "Weatherproof Relay 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 13.94,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0538",
+    "name": "Brass Union 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 435.25,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0539",
+    "name": "PVC Nipple 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 349.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0540",
+    "name": "Chrome Sprayer Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 325.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0541",
+    "name": "Copper Coupling 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 78.39,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0542",
+    "name": "Chrome Sprayer Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 279.64,
+    "discontinued": true,
+    "replaced_by": "SKU-0072",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0543",
+    "name": "Commercial Air Handler 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 68.2,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0544",
+    "name": "Heavy-Duty Switch 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 16.14,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0545",
+    "name": "Chrome Trap Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 51.23,
+    "discontinued": true,
+    "replaced_by": "SKU-0081",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0546",
+    "name": "Stainless Drain Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 142.53,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0547",
+    "name": "Heavy-Duty Relay 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 311.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0548",
+    "name": "Aftermarket Contactor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 349.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0549",
+    "name": "Brass Stopper Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 393.02,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0550",
+    "name": "Standard Conduit 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 29.9,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0551",
+    "name": "Aftermarket Filter 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 94.89,
+    "discontinued": true,
+    "replaced_by": "SKU-0415",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0552",
+    "name": "OEM Gasket 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 298.68,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0553",
+    "name": "Heavy-Duty Capacitor Medium",
+    "category": "HVAC-Parts",
+    "list_price": 142.56,
+    "discontinued": true,
+    "replaced_by": "SKU-0029",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0554",
+    "name": "Universal Motor Mount Small",
+    "category": "HVAC-Parts",
+    "list_price": 410.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0555",
+    "name": "PVC Tee 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 160.72,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0556",
+    "name": "PVC Bushing 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 324.97,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0333"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0557",
+    "name": "Heavy-Duty Junction Box 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 312.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0558",
+    "name": "Copper Coupling 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 88.13,
+    "discontinued": true,
+    "replaced_by": "SKU-0488",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0559",
+    "name": "PVC Tee 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 252.02,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0560",
+    "name": "Heavy-Duty Filter Small",
+    "category": "HVAC-Parts",
+    "list_price": 437.86,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0561",
+    "name": "Matte Black Sprayer Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 131.47,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0562",
+    "name": "Chrome Sprayer Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 317.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0563",
+    "name": "Brass Union 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 158.26,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0564",
+    "name": "Heavy-Duty Junction Box 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 358.34,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0565",
+    "name": "GFCI Outlet 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 56.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0193"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0566",
+    "name": "PEX Tee 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 172.1,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0567",
+    "name": "Standard Breaker 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 368.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0568",
+    "name": "Galvanized Cap 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 362.47,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0569",
+    "name": "PEX Bushing 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 130.86,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0609"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0570",
+    "name": "Heavy-Duty Outlet 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 157.17,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0571",
+    "name": "Universal Contactor Small",
+    "category": "HVAC-Parts",
+    "list_price": 116.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0572",
+    "name": "GFCI Junction Box 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 92.53,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0573",
+    "name": "PVC Union 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 419.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0574",
+    "name": "Copper Cap 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 63.5,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0395"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0575",
+    "name": "Heavy-Duty Wire Nut 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 264.9,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0405"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0576",
+    "name": "Brass Coupling 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 302.09,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0577",
+    "name": "Plastic Trap Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 287.8,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0578",
+    "name": "PEX Tee 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 187.16,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0372"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0579",
+    "name": "Residential Furnace 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 47.04,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0580",
+    "name": "High-Efficiency Compressor 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 4.32,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0543"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0581",
+    "name": "Galvanized Union 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 418.24,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0582",
+    "name": "PVC Union 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 420.89,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0524"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0583",
+    "name": "Universal Filter Small",
+    "category": "HVAC-Parts",
+    "list_price": 215.9,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0584",
+    "name": "Aftermarket Sensor 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 433.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0585",
+    "name": "Standard Junction Box 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 291.36,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0586",
+    "name": "Weatherproof Conduit 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 42.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0587",
+    "name": "OEM Motor Mount 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 241.75,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0588",
+    "name": "OEM Belt 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 421.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0589",
+    "name": "Heavy-Duty Thermostat Small",
+    "category": "HVAC-Parts",
+    "list_price": 80.43,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0590",
+    "name": "PVC Elbow 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 80.75,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0591",
+    "name": "Brass Faucet Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 448.73,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0592",
+    "name": "Heavy-Duty Gasket 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 223.93,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0593",
+    "name": "Universal Gasket Small",
+    "category": "HVAC-Parts",
+    "list_price": 433.03,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0594",
+    "name": "Aftermarket Motor Mount 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 394.78,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0601"
+    ],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0595",
+    "name": "High-Efficiency Evaporator Coil 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 256.45,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0596",
+    "name": "Galvanized Nipple 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 442.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0597",
+    "name": "Chrome Shutoff Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 445.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0598",
+    "name": "Weatherproof Outlet 20A",
+    "category": "Electrical-Supplies",
+    "list_price": 223.27,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0599",
+    "name": "Brass Bushing 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 383.27,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0600",
+    "name": "OEM Contactor 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 88.38,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0601",
+    "name": "Aftermarket Belt 20x25",
+    "category": "HVAC-Parts",
+    "list_price": 74.8,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0481"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0602",
+    "name": "Residential Blower 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 117.25,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0506"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0603",
+    "name": "Chrome Trap Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 332.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0604",
+    "name": "Matte Black Sprayer Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 256.37,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0605",
+    "name": "High-Efficiency Condenser 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 80.62,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0506"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0606",
+    "name": "Stainless Stopper Corner-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 403.88,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0607",
+    "name": "Copper Elbow 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 232.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0093"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0608",
+    "name": "Heavy-Duty Switch 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 301.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0609",
+    "name": "Galvanized Elbow 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 64.99,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0446"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0610",
+    "name": "Commercial Condenser 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 113.13,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0611",
+    "name": "Heavy-Duty Conduit 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 107.51,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0432"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0612",
+    "name": "Galvanized Nipple 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 429.41,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0613",
+    "name": "OEM Capacitor Large",
+    "category": "HVAC-Parts",
+    "list_price": 325.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0614",
+    "name": "Residential Air Handler 5 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 294.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0615",
+    "name": "Heavy-Duty Relay 200A",
+    "category": "Electrical-Supplies",
+    "list_price": 29.83,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0616",
+    "name": "Galvanized Elbow 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 139.45,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0617",
+    "name": "PEX Tee 1-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 227.13,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0618",
+    "name": "GFCI Outlet 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 317.19,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0619",
+    "name": "Copper Tee 3/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 54.6,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0620",
+    "name": "Universal Motor Mount 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 134.18,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0621",
+    "name": "Copper Nipple 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 100.17,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0622",
+    "name": "Standard Wire Nut 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 70.63,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0623",
+    "name": "Aftermarket Filter 16x20",
+    "category": "HVAC-Parts",
+    "list_price": 273.37,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0624",
+    "name": "Matte Black Trap Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 248.06,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0625",
+    "name": "PVC Union 1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 242.81,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0626",
+    "name": "PEX Adapter 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 99.85,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0627",
+    "name": "Heavy-Duty Relay 15A",
+    "category": "Electrical-Supplies",
+    "list_price": 340.12,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0628",
+    "name": "Residential Heat Exchanger 2 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 38.68,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0629",
+    "name": "Galvanized Tee 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 317.29,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0520"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0630",
+    "name": "Heavy-Duty Wire Nut 50A",
+    "category": "Electrical-Supplies",
+    "list_price": 254.75,
+    "discontinued": true,
+    "replaced_by": "SKU-0173",
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0631",
+    "name": "Brass Adapter 1-1/4 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 247.35,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0632",
+    "name": "GFCI Junction Box 30A",
+    "category": "Electrical-Supplies",
+    "list_price": 258.57,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0633",
+    "name": "Weatherproof Switch 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 149.0,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0031"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0634",
+    "name": "Residential Compressor 3 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 54.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0635",
+    "name": "Weatherproof Conduit 100A",
+    "category": "Electrical-Supplies",
+    "list_price": 263.25,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0636",
+    "name": "PEX Adapter 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 230.65,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0637",
+    "name": "PVC Nipple 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 205.14,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0638",
+    "name": "Brass Sprayer Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 206.65,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0270"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0639",
+    "name": "Plastic Trap Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 209.15,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0640",
+    "name": "PVC Elbow 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 326.03,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0641",
+    "name": "PVC Bushing 1 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 367.77,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0642",
+    "name": "Copper Nipple 2-1/2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 261.08,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": false
+  },
+  {
+    "sku_id": "SKU-0643",
+    "name": "Matte Black Stopper Deck-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 156.35,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0644",
+    "name": "Plastic Shutoff Standard",
+    "category": "Plumbing-Fixtures",
+    "list_price": 447.37,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0009"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0645",
+    "name": "Commercial Furnace 4 Ton",
+    "category": "HVAC-Equipment",
+    "list_price": 32.92,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0646",
+    "name": "Stainless Faucet Wall-Mount",
+    "category": "Plumbing-Fixtures",
+    "list_price": 16.22,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0647",
+    "name": "Matte Black Faucet Compact",
+    "category": "Plumbing-Fixtures",
+    "list_price": 346.5,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0205"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0648",
+    "name": "Weatherproof Relay 60A",
+    "category": "Electrical-Supplies",
+    "list_price": 440.29,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0432"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0649",
+    "name": "PVC Cap 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 190.32,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [
+      "SKU-0295"
+    ],
+    "in_stock": true
+  },
+  {
+    "sku_id": "SKU-0650",
+    "name": "Galvanized Union 2 in",
+    "category": "Plumbing-Fittings",
+    "list_price": 173.35,
+    "discontinued": false,
+    "replaced_by": null,
+    "requires": [],
+    "in_stock": true
+  }
+]

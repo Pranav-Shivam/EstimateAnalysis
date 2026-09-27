@@ -1,0 +1,7310 @@
+[
+  {
+    "from": "SKU-0001",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0002",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0003",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0004",
+    "to": "SKU-0027",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0004",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0005",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0006",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0007",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0008",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0009",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0010",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0011",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0012",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0013",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0014",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0015",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0016",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0017",
+    "to": "SKU-0407",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0017",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0018",
+    "to": "SKU-0097",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0018",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0019",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0020",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0021",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0022",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0023",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0024",
+    "to": "SKU-0353",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0024",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0025",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0026",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0027",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0028",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0029",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0030",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0031",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0032",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0033",
+    "to": "SKU-0279",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0033",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0034",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0035",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0036",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0037",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0038",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0039",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0040",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0041",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0042",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0043",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0044",
+    "to": "SKU-0011",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0044",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0045",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0046",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0047",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0048",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0049",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0050",
+    "to": "SKU-0258",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0050",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0051",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0052",
+    "to": "SKU-0397",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0052",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0053",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0054",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0055",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0056",
+    "to": "SKU-0619",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0056",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0057",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0058",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0059",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0060",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0061",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0062",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0063",
+    "to": "SKU-0057",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0063",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0064",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0065",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0066",
+    "to": "SKU-0266",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0066",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0067",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0068",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0069",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0070",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0071",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0072",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0073",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0074",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0075",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0076",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0077",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0078",
+    "to": "SKU-0336",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0078",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0079",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0080",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0081",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0082",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0083",
+    "to": "SKU-0195",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0083",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0084",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0085",
+    "to": "SKU-0530",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0085",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0086",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0087",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0088",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0089",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0090",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0091",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0092",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0093",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0094",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0095",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0096",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0097",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0098",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0099",
+    "to": "SKU-0082",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0099",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0100",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0101",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0102",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0103",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0104",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0105",
+    "to": "SKU-0091",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0105",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0106",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0107",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0108",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0109",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0110",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0111",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0112",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0113",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0114",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0115",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0116",
+    "to": "SKU-0368",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0116",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0117",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0118",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0119",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0120",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0121",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0122",
+    "to": "SKU-0017",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0122",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0123",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0124",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0125",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0126",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0127",
+    "to": "SKU-0376",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0127",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0128",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0129",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0130",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0131",
+    "to": "SKU-0286",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0131",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0132",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0133",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0134",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0135",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0136",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0137",
+    "to": "SKU-0102",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0137",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0138",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0139",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0140",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0141",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0142",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0143",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0144",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0145",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0146",
+    "to": "SKU-0132",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0146",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0147",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0148",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0149",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0150",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0151",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0152",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0153",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0154",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0155",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0156",
+    "to": "SKU-0082",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0156",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0157",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0158",
+    "to": "SKU-0605",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0158",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0159",
+    "to": "SKU-0301",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0159",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0160",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0161",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0162",
+    "to": "SKU-0409",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0162",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0163",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0164",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0165",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0166",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0167",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0168",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0169",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0170",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0171",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0172",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0173",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0174",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0175",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0176",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0177",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0178",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0179",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0180",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0181",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0182",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0183",
+    "to": "SKU-0570",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0183",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0184",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0185",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0186",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0187",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0188",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0189",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0190",
+    "to": "SKU-0488",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0190",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0191",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0192",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0193",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0194",
+    "to": "SKU-0536",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0194",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0195",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0196",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0197",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0198",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0199",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0200",
+    "to": "SKU-0554",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0200",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0201",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0202",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0203",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0204",
+    "to": "SKU-0341",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0204",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0205",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0206",
+    "to": "SKU-0014",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0206",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0207",
+    "to": "SKU-0502",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0207",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0208",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0209",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0210",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0211",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0212",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0213",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0214",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0215",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0216",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0217",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0218",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0219",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0220",
+    "to": "SKU-0013",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0220",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0221",
+    "to": "SKU-0468",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0221",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0222",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0223",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0224",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0225",
+    "to": "SKU-0010",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0225",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0226",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0227",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0228",
+    "to": "SKU-0289",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0228",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0229",
+    "to": "SKU-0522",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0229",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0230",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0231",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0232",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0233",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0234",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0235",
+    "to": "SKU-0396",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0235",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0236",
+    "to": "SKU-0361",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0236",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0237",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0238",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0239",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0240",
+    "to": "SKU-0186",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0240",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0241",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0242",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0243",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0244",
+    "to": "SKU-0611",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0244",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0245",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0246",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0247",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0248",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0249",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0250",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0251",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0252",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0253",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0254",
+    "to": "SKU-0155",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0254",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0255",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0256",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0257",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0258",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0259",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0260",
+    "to": "SKU-0115",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0260",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0261",
+    "to": "SKU-0165",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0261",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0262",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0263",
+    "to": "SKU-0074",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0263",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0264",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0265",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0266",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0267",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0268",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0269",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0270",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0271",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0272",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0273",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0274",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0275",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0276",
+    "to": "SKU-0170",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0276",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0277",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0278",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0279",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0280",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0281",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0282",
+    "to": "SKU-0510",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0282",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0283",
+    "to": "SKU-0447",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0283",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0284",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0285",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0286",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0287",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0288",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0289",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0290",
+    "to": "SKU-0445",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0290",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0291",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0292",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0293",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0294",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0295",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0296",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0297",
+    "to": "SKU-0157",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0297",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0298",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0299",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0300",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0301",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0302",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0303",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0304",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0305",
+    "to": "SKU-0316",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0305",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0306",
+    "to": "SKU-0396",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0306",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0307",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0308",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0309",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0310",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0311",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0312",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0313",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0314",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0315",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0316",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0317",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0318",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0319",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0320",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0321",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0322",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0323",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0324",
+    "to": "SKU-0325",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0324",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0325",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0326",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0327",
+    "to": "SKU-0274",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0327",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0328",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0329",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0330",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0331",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0332",
+    "to": "SKU-0581",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0332",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0333",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0334",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0335",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0336",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0337",
+    "to": "SKU-0164",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0337",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0338",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0339",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0340",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0341",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0342",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0343",
+    "to": "SKU-0513",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0343",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0344",
+    "to": "SKU-0453",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0344",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0345",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0346",
+    "to": "SKU-0107",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0346",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0347",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0348",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0349",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0350",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0351",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0352",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0353",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0354",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0355",
+    "to": "SKU-0638",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0355",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0356",
+    "to": "SKU-0150",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0356",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0357",
+    "to": "SKU-0496",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0357",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0358",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0359",
+    "to": "SKU-0308",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0359",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0360",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0361",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0362",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0363",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0364",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0365",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0366",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0367",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0368",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0369",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0370",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0371",
+    "to": "SKU-0250",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0371",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0372",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0373",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0374",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0375",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0376",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0377",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0378",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0379",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0380",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0381",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0382",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0383",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0384",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0385",
+    "to": "SKU-0260",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0385",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0386",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0387",
+    "to": "SKU-0046",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0387",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0388",
+    "to": "SKU-0169",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0388",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0389",
+    "to": "SKU-0144",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0389",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0390",
+    "to": "SKU-0248",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0390",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0391",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0392",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0393",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0394",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0395",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0396",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0397",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0398",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0399",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0400",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0401",
+    "to": "SKU-0422",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0401",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0402",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0403",
+    "to": "SKU-0596",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0403",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0404",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0405",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0406",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0407",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0408",
+    "to": "SKU-0092",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0408",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0409",
+    "to": "SKU-0046",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0409",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0410",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0411",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0412",
+    "to": "SKU-0175",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0412",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0413",
+    "to": "SKU-0513",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0413",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0414",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0415",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0416",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0417",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0418",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0419",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0420",
+    "to": "SKU-0259",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0420",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0421",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0422",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0423",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0424",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0425",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0426",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0427",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0428",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0429",
+    "to": "SKU-0182",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0429",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0430",
+    "to": "SKU-0281",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0430",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0431",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0432",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0433",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0434",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0435",
+    "to": "SKU-0113",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0435",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0436",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0437",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0438",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0439",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0440",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0441",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0442",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0443",
+    "to": "SKU-0069",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0443",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0444",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0445",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0446",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0447",
+    "to": "SKU-0602",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0447",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0448",
+    "to": "SKU-0237",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0448",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0449",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0450",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0451",
+    "to": "SKU-0446",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0451",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0452",
+    "to": "SKU-0487",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0452",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0453",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0454",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0455",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0456",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0457",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0458",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0459",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0460",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0461",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0462",
+    "to": "SKU-0531",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0462",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0463",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0464",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0465",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0466",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0467",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0468",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0469",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0470",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0471",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0472",
+    "to": "SKU-0218",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0472",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0473",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0474",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0475",
+    "to": "SKU-0121",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0475",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0476",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0477",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0478",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0479",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0480",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0481",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0482",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0483",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0484",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0485",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0486",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0487",
+    "to": "SKU-0338",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0487",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0488",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0489",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0490",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0491",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0492",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0493",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0494",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0495",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0496",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0497",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0498",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0499",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0500",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0501",
+    "to": "SKU-0510",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0501",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0502",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0503",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0504",
+    "to": "SKU-0241",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0504",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0505",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0506",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0507",
+    "to": "SKU-0420",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0507",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0508",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0509",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0510",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0511",
+    "to": "SKU-0298",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0511",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0512",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0513",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0514",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0515",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0516",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0517",
+    "to": "SKU-0018",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0517",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0518",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0519",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0520",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0521",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0522",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0523",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0524",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0525",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0526",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0527",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0528",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0529",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0530",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0531",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0532",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0533",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0534",
+    "to": "SKU-0622",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0534",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0535",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0536",
+    "to": "SKU-0268",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0536",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0537",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0538",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0539",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0540",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0541",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0542",
+    "to": "SKU-0072",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0542",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0543",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0544",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0545",
+    "to": "SKU-0081",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0545",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0546",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0547",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0548",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0549",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0550",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0551",
+    "to": "SKU-0415",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0551",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0552",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0553",
+    "to": "SKU-0029",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0553",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0554",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0555",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0556",
+    "to": "SKU-0333",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0556",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0557",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0558",
+    "to": "SKU-0488",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0558",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0559",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0560",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0561",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0562",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0563",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0564",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0565",
+    "to": "SKU-0193",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0565",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0566",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0567",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0568",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0569",
+    "to": "SKU-0609",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0569",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0570",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0571",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0572",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0573",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0574",
+    "to": "SKU-0395",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0574",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0575",
+    "to": "SKU-0405",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0575",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0576",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0577",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0578",
+    "to": "SKU-0372",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0578",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0579",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0580",
+    "to": "SKU-0543",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0580",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0581",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0582",
+    "to": "SKU-0524",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0582",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0583",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0584",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0585",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0586",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0587",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0588",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0589",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0590",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0591",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0592",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0593",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0594",
+    "to": "SKU-0601",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0594",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0595",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0596",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0597",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0598",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0599",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0600",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0601",
+    "to": "SKU-0481",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0601",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0602",
+    "to": "SKU-0506",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0602",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0603",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0604",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0605",
+    "to": "SKU-0506",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0605",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0606",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0607",
+    "to": "SKU-0093",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0607",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0608",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0609",
+    "to": "SKU-0446",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0609",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0610",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0611",
+    "to": "SKU-0432",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0611",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0612",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0613",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0614",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0615",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0616",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0617",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0618",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0619",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0620",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0621",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0622",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0623",
+    "to": "HVAC-Parts",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0624",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0625",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0626",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0627",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0628",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0629",
+    "to": "SKU-0520",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0629",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0630",
+    "to": "SKU-0173",
+    "type": "REPLACED_BY",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0630",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0631",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0632",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0633",
+    "to": "SKU-0031",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0633",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0634",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0635",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0636",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0637",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0638",
+    "to": "SKU-0270",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0638",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0639",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0640",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0641",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0642",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0643",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0644",
+    "to": "SKU-0009",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0644",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0645",
+    "to": "HVAC-Equipment",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0646",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0647",
+    "to": "SKU-0205",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0647",
+    "to": "Plumbing-Fixtures",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0648",
+    "to": "SKU-0432",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0648",
+    "to": "Electrical-Supplies",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0649",
+    "to": "SKU-0295",
+    "type": "REQUIRES",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0649",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "SKU-0650",
+    "to": "Plumbing-Fittings",
+    "type": "BELONGS_TO",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0001",
+    "to": "CTR-0001",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0001",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0001",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0002",
+    "to": "CTR-0002",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0002",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0002",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0002",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0002",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0003",
+    "to": "CTR-0003",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0003",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0003",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0003",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0003",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0004",
+    "to": "CTR-0004",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0004",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0004",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0005",
+    "to": "CTR-0005",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0005",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0005",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0006",
+    "to": "CTR-0006",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0006",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0006",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0006",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0007",
+    "to": "CTR-0007",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0007",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0007",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0007",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0007",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0008",
+    "to": "CTR-0008",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0008",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0008",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0008",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0009",
+    "to": "CTR-0009",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0009",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0010",
+    "to": "CTR-0010",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0010",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0010",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0010",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0010",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0011",
+    "to": "CTR-0011",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0011",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0011",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0011",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0011",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0012",
+    "to": "CTR-0012",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0012",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0013",
+    "to": "CTR-0013",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0013",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0014",
+    "to": "CTR-0014",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0014",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0014",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0015",
+    "to": "CTR-0015",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0015",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0015",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0015",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0016",
+    "to": "CTR-0016",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0016",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0016",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0017",
+    "to": "CTR-0017",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0017",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0017",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0017",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0017",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0018",
+    "to": "CTR-0018",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0018",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0019",
+    "to": "CTR-0019",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0019",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0019",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0019",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0020",
+    "to": "CTR-0020",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0020",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0020",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0020",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0020",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0021",
+    "to": "CTR-0021",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0021",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0021",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0022",
+    "to": "CTR-0022",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0022",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0022",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0022",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0023",
+    "to": "CTR-0023",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0023",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0024",
+    "to": "CTR-0024",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0024",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0024",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0024",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0025",
+    "to": "CTR-0025",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0025",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0025",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0025",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0026",
+    "to": "CTR-0026",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0026",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0027",
+    "to": "CTR-0027",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0027",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0027",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0028",
+    "to": "CTR-0028",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0028",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0029",
+    "to": "CTR-0029",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0029",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0030",
+    "to": "CTR-0030",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0030",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0031",
+    "to": "CTR-0031",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0031",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0031",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0031",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0032",
+    "to": "CTR-0032",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0032",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0032",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0032",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0033",
+    "to": "CTR-0033",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0033",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0033",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0034",
+    "to": "CTR-0034",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0034",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0034",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0034",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0034",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0035",
+    "to": "CTR-0035",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0035",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0035",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0035",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0035",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0036",
+    "to": "CTR-0036",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0036",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0036",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0036",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0036",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0037",
+    "to": "CTR-0037",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0037",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0037",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0038",
+    "to": "CTR-0038",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0038",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0038",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0039",
+    "to": "CTR-0039",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0039",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0039",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0039",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0039",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0040",
+    "to": "CTR-0040",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0040",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0040",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0040",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0040",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0041",
+    "to": "CTR-0041",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0041",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0042",
+    "to": "CTR-0042",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0042",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0042",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0042",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0043",
+    "to": "CTR-0043",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0043",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0043",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0044",
+    "to": "CTR-0044",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0044",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0044",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0045",
+    "to": "CTR-0045",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0045",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0045",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0046",
+    "to": "CTR-0046",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0046",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0047",
+    "to": "CTR-0047",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0047",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0047",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0048",
+    "to": "CTR-0048",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0048",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0049",
+    "to": "CTR-0049",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0049",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0049",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0049",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0049",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0050",
+    "to": "CTR-0050",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0050",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0051",
+    "to": "CTR-0051",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0051",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0051",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0051",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0051",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0052",
+    "to": "CTR-0052",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0052",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0052",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0052",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0052",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0053",
+    "to": "CTR-0053",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0053",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0053",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0053",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0053",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0054",
+    "to": "CTR-0054",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0054",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0055",
+    "to": "CTR-0055",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0055",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0055",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0056",
+    "to": "CTR-0056",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0056",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0056",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0056",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0057",
+    "to": "CTR-0057",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0057",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0057",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0057",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0058",
+    "to": "CTR-0058",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0058",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0059",
+    "to": "CTR-0059",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0059",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0059",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0059",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0059",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0060",
+    "to": "CTR-0060",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0060",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0060",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0061",
+    "to": "CTR-0061",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0061",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0062",
+    "to": "CTR-0062",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0062",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0062",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0063",
+    "to": "CTR-0063",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0063",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0063",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0064",
+    "to": "CTR-0064",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0064",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0064",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0064",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0064",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0065",
+    "to": "CTR-0065",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0065",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0065",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0065",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0066",
+    "to": "CTR-0066",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0066",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0066",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0066",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0067",
+    "to": "CTR-0067",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0067",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0067",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0067",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0067",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0068",
+    "to": "CTR-0068",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0068",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0068",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0068",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0068",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0069",
+    "to": "CTR-0069",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0069",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0069",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0069",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0070",
+    "to": "CTR-0070",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0070",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0071",
+    "to": "CTR-0071",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0071",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0071",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0071",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0071",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0072",
+    "to": "CTR-0072",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0072",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0072",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0072",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0073",
+    "to": "CTR-0073",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0073",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0073",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0074",
+    "to": "CTR-0074",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0074",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0074",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0074",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0075",
+    "to": "CTR-0075",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0075",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0075",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0076",
+    "to": "CTR-0076",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0076",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0076",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0076",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0077",
+    "to": "CTR-0077",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0077",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0077",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0078",
+    "to": "CTR-0078",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0078",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0078",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0078",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0078",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0079",
+    "to": "CTR-0079",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0079",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0079",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0079",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0079",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0080",
+    "to": "CTR-0080",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0080",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0080",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0081",
+    "to": "CTR-0081",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0081",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0081",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0081",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0082",
+    "to": "CTR-0082",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0082",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0082",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0082",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0083",
+    "to": "CTR-0083",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0083",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0083",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0084",
+    "to": "CTR-0084",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0084",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0085",
+    "to": "CTR-0085",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0085",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0086",
+    "to": "CTR-0086",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0086",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0086",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0086",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0087",
+    "to": "CTR-0087",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0087",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0087",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0088",
+    "to": "CTR-0088",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0088",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0088",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0088",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0089",
+    "to": "CTR-0089",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0089",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0089",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0089",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0090",
+    "to": "CTR-0090",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0090",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0091",
+    "to": "CTR-0091",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0091",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0091",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0091",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0092",
+    "to": "CTR-0092",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0092",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0092",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0093",
+    "to": "CTR-0093",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0093",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0093",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0093",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0093",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0094",
+    "to": "CTR-0094",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0094",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0094",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0094",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0095",
+    "to": "CTR-0095",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0095",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0095",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0095",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0096",
+    "to": "CTR-0096",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0096",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0096",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0097",
+    "to": "CTR-0097",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0097",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0097",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0098",
+    "to": "CTR-0098",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0098",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0098",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0098",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0098",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0099",
+    "to": "CTR-0099",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0099",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0099",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0099",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0099",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0100",
+    "to": "CTR-0100",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0100",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0100",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0100",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0100",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0101",
+    "to": "CTR-0101",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0101",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0102",
+    "to": "CTR-0102",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0102",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0102",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0103",
+    "to": "CTR-0103",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0103",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0103",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0103",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0104",
+    "to": "CTR-0104",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0104",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0105",
+    "to": "CTR-0105",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0105",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0105",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0105",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0106",
+    "to": "CTR-0106",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0106",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0106",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0106",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0106",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0107",
+    "to": "CTR-0107",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0107",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0108",
+    "to": "CTR-0108",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0108",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0109",
+    "to": "CTR-0109",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0109",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0109",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0109",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0110",
+    "to": "CTR-0110",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0110",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0110",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0110",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0110",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0111",
+    "to": "CTR-0111",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0111",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0112",
+    "to": "CTR-0112",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0112",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0112",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0113",
+    "to": "CTR-0113",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0113",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0114",
+    "to": "CTR-0114",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0114",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0115",
+    "to": "CTR-0115",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0115",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0115",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0115",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0115",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0116",
+    "to": "CTR-0116",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0116",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0116",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0116",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0117",
+    "to": "CTR-0117",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0117",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0118",
+    "to": "CTR-0118",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0118",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0118",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0118",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0119",
+    "to": "CTR-0119",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0119",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0119",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0119",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0119",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0120",
+    "to": "CTR-0120",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0120",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0120",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0121",
+    "to": "CTR-0121",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0121",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0121",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0122",
+    "to": "CTR-0122",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0122",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0122",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0122",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0123",
+    "to": "CTR-0123",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0123",
+    "to": "HVAC-Equipment",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0123",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0124",
+    "to": "CTR-0124",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0124",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0124",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0124",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CUST-0125",
+    "to": "CTR-0125",
+    "type": "HAS_CONTRACT",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0125",
+    "to": "HVAC-Parts",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0125",
+    "to": "Plumbing-Fittings",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0125",
+    "to": "Electrical-Supplies",
+    "type": "COVERS",
+    "properties": {}
+  },
+  {
+    "from": "CTR-0125",
+    "to": "Plumbing-Fixtures",
+    "type": "COVERS",
+    "properties": {}
+  }
+]

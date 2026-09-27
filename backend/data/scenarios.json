@@ -1,0 +1,1140 @@
+[
+  {
+    "case_id": "sc-0001",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Zenith Contractors",
+      "contact": "Suresh Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0004",
+      "sku_id": "SKU-0542",
+      "sku_name": "Chrome Sprayer Corner-Mount"
+    },
+    "email_text": "Hi, we're looking for a quote on Chrome Sprayer Corner-Mount. We have a job coming up and need about 4 or 5 of these. Can you let me know pricing and availability? We're on a bit of a timeline here. Our account is under Zenith Contractors. Thanks, Suresh"
+  },
+  {
+    "case_id": "sc-0002",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Peak Plumbing",
+      "contact": "Priya Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0015",
+      "sku_id": "SKU-0355",
+      "sku_name": "Chrome Stopper Standard"
+    },
+    "email_text": "Good morning, Peak Plumbing here. Need pricing on Chrome Stopper Standard - I think we need maybe 12 units for the next phase of the commercial build we're doing. Can you send me a quote? Let me know if you need any other info. Priya Shah, Peak Plumbing"
+  },
+  {
+    "case_id": "sc-0003",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Union Plumbing",
+      "contact": "Anil Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0013",
+      "sku_id": "SKU-0357",
+      "sku_name": "Commercial Compressor 4 Ton"
+    },
+    "email_text": "Yo, we're looking at a new HVAC job and we need a Commercial Compressor 4 Ton. Just need one for now but might need more down the road. What's the price look like? Can you get it to us quick? -Anil"
+  },
+  {
+    "case_id": "sc-0004",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Ironclad Contractors",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0100",
+      "sku_id": "SKU-0430",
+      "sku_name": "PVC Bushing 1/2 in"
+    },
+    "email_text": "Hello, Ironclad Contractors here. We need pricing on PVC Bushing 1/2 in - quite a few actually, prob around 30-40 for a residential complex we're working on. Need them ASAP ideally. Can you give us a quote? Thanks, Nisha"
+  },
+  {
+    "case_id": "sc-0005",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Summit Group",
+      "contact": "Devika Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0089",
+      "sku_id": "SKU-0545",
+      "sku_name": "Chrome Trap Compact"
+    },
+    "email_text": "Hi there, Summit Group checking in. We need a quote for Chrome Trap Compact. We've got several jobs running at the moment and need about 6 units. Can you send pricing and lead times? Thanks! Devika"
+  },
+  {
+    "case_id": "sc-0006",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Summit Group",
+      "contact": "Suresh Menon"
+    },
+    "entities": {
+      "customer_id": "CUST-0089",
+      "sku_id": "SKU-0083",
+      "sku_name": "Copper Adapter 2 in"
+    },
+    "email_text": "Quick question - do you have Copper Adapter 2 in in stock? We need 8 pieces for a retrofit job we're doing. If you do, can you email me a quote? We're Summit Group. Thanks, Suresh Menon"
+  },
+  {
+    "case_id": "sc-0007",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Nexus Mechanical",
+      "contact": "Kiran Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0049",
+      "sku_id": "SKU-0122",
+      "sku_name": "Universal Contactor 16x20"
+    },
+    "email_text": "Hey, Nexus Mechanical here. We're running low on Universal Contactor 16x20 and need to reorder. Give us pricing on 3 units and let me know when you can ship. Kiran Nair here. Thanks!"
+  },
+  {
+    "case_id": "sc-0008",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Crown HVAC",
+      "contact": "Devika Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0099",
+      "sku_id": "SKU-0236",
+      "sku_name": "OEM Thermostat 20x25"
+    },
+    "email_text": "Hi, we're Crown HVAC. Looking for an OEM Thermostat 20x25 - need 2 of them for a couple of installs coming up next week. Can you quote it for me? Want to know pricing and if you have stock. - Devika Reddy"
+  },
+  {
+    "case_id": "sc-0009",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Advanced Co",
+      "contact": "Nisha Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0046",
+      "sku_id": "SKU-0137",
+      "sku_name": "PVC Adapter 1-1/2 in"
+    },
+    "email_text": "We need PVC Adapter 1-1/2 in asap. About 20 pieces. Can you send me pricing? We're Advanced Co. Nisha Gupta. Also need to know shipping time to [job site]. Thanks"
+  },
+  {
+    "case_id": "sc-0010",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Nexus Plumbing",
+      "contact": "Arjun Kapoor"
+    },
+    "entities": {
+      "customer_id": "CUST-0044",
+      "sku_id": "SKU-0183",
+      "sku_name": "Weatherproof Conduit 50A"
+    },
+    "email_text": "Hello, Nexus Plumbing. Requesting a quote for Weatherproof Conduit 50A - we need 2 spools for an exterior run we're doing. What's your pricing and lead time? Can you get back to me by EOD? - Arjun"
+  },
+  {
+    "case_id": "sc-0011",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Sterling Mechanical",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0121",
+      "sku_id": "SKU-0601",
+      "sku_name": "Aftermarket Belt 20x25"
+    },
+    "email_text": "Hi,\n\nWe need a quote for Aftermarket Belt 20x25 (SKU-0601). Got a project coming up next month and need to line up parts. Can you send over pricing and availability?\n\nThanks,\nArjun Gupta\nSterling Mechanical"
+  },
+  {
+    "case_id": "sc-0012",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Titan Group",
+      "contact": "Vikram Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0005",
+      "sku_id": "SKU-0206",
+      "sku_name": "Universal Capacitor 16x20"
+    },
+    "email_text": "Hello,\n\nI'm looking for a Universal Capacitor 16x20 (SKU-0206) for one of our units. We need about 3 of them right now but might need more if the first batch goes well. What's your best price for bulk?\n\nThanks,\nVikram Reddy\nTitan Group"
+  },
+  {
+    "case_id": "sc-0013",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Highline Services",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0050",
+      "sku_id": "SKU-0156",
+      "sku_name": "Stainless Faucet Compact"
+    },
+    "email_text": "Hi there,\n\nNeed to get a Stainless Faucet Compact (SKU-0156) for a client install. They want it done ASAP so if you got it in stock lemme know. Also whats your lead time if not?\n\nNisha Patel\nHighline Services"
+  },
+  {
+    "case_id": "sc-0014",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Bluewater Services",
+      "contact": "Nisha Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0062",
+      "sku_id": "SKU-0507",
+      "sku_name": "Brass Aerator Deck-Mount"
+    },
+    "email_text": "Hi,\n\nCan you quote me on the Brass Aerator Deck-Mount (SKU-0507)? We have a few residential jobs that need these. Interested in both unit cost and volume pricing if I order like 10 or more.\n\nThanks,\nNisha Rao\nBluewater Services"
+  },
+  {
+    "case_id": "sc-0015",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Advanced HVAC",
+      "contact": "Kiran Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0118",
+      "sku_id": "SKU-0078",
+      "sku_name": "Standard Wire Nut 50A"
+    },
+    "email_text": "Hi there,\n\nWe need Standard Wire Nut 50A (SKU-0078) - need about 50 units for a job we're starting this week. Can you get us pricing and confirm stock?\n\nThanks,\nKiran Shah\nAdvanced HVAC"
+  },
+  {
+    "case_id": "sc-0016",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Ironclad Services",
+      "contact": "Meera Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0025",
+      "sku_id": "SKU-0578",
+      "sku_name": "PEX Tee 1 in"
+    },
+    "email_text": "Hello,\n\nQuote request for PEX Tee 1 in (SKU-0578). We've got about 25 of these on the materials list for a new installation. Can you send pricing asap?\n\nThanks,\nMeera Shah\nIronclad Services"
+  },
+  {
+    "case_id": "sc-0017",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Cascade Mechanical",
+      "contact": "Nisha Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0034",
+      "sku_id": "SKU-0127",
+      "sku_name": "OEM Capacitor 16x20"
+    },
+    "email_text": "Hi,\n\nLooking for OEM Capacitor 16x20 (SKU-0127). We had good luck with you guys before, want to see if you can do better on price this time around. Need 2 to start with.\n\nThanks,\nNisha Reddy\nCascade Mechanical"
+  },
+  {
+    "case_id": "sc-0018",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Ironclad Contractors",
+      "contact": "Anil Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0100",
+      "sku_id": "SKU-0290",
+      "sku_name": "Residential Furnace 2 Ton"
+    },
+    "email_text": "Hello,\n\nQuick question - what's your pricing on the Residential Furnace 2 Ton (SKU-0290)? We've got a customer that needs a replacement unit pretty soon and wanted to check if we can source it from you.\n\nThanks,\nAnil Nair\nIronclad Contractors"
+  },
+  {
+    "case_id": "sc-0019",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Peak Contractors",
+      "contact": "Suresh Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0006",
+      "sku_id": "SKU-0337",
+      "sku_name": "Standard Switch 200A"
+    },
+    "email_text": "Hi,\n\nNeed to get pricing for a Standard Switch 200A (SKU-0337). We're upgrading an electrical panel and this is one of the main pieces we need. Can you let me know cost and availability?\n\nThanks,\nSuresh Gupta\nPeak Contractors"
+  },
+  {
+    "case_id": "sc-0020",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Nexus Co",
+      "contact": "Suresh Menon"
+    },
+    "entities": {
+      "customer_id": "CUST-0091",
+      "sku_id": "SKU-0146",
+      "sku_name": "Residential Compressor 2 Ton"
+    },
+    "email_text": "Hello,\n\nWe're looking at the Residential Compressor 2 Ton (SKU-0146) for a new HVAC system. Can you quote that for us? Also, would appreciate if you could throw in freight estimate to our usual address.\n\nThanks,\nSuresh Menon\nNexus Co"
+  },
+  {
+    "case_id": "sc-0021",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Elite Mechanical",
+      "contact": "Devika Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0074",
+      "contract_id": "CTR-0074",
+      "covered_categories": [
+        "Plumbing-Fittings",
+        "Plumbing-Fixtures",
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0041",
+      "sku_name": "Heavy-Duty Conduit 60A",
+      "sku_category": "Electrical-Supplies"
+    },
+    "email_text": "Hi there,\n\nI need to get pricing on some Heavy-Duty Conduit 60A for a commercial retrofit we're starting next month. Can you send me a quote? We'll probably need about 500 feet to start, but might order more depending on how the job goes.\n\nLet me know availability and if there's any volume discount.\n\nThanks,\nDevika Rao\nElite Mechanical"
+  },
+  {
+    "case_id": "sc-0022",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Vanguard HVAC",
+      "contact": "Vikram Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0084",
+      "contract_id": "CTR-0084",
+      "covered_categories": [
+        "Plumbing-Fittings"
+      ],
+      "sku_id": "SKU-0239",
+      "sku_name": "Heavy-Duty Switch 100A",
+      "sku_category": "Electrical-Supplies"
+    },
+    "email_text": "Hi,\n\nWe need pricing on Heavy-Duty Switch 100A. Its for a client project - industrial facility expansion. Can you tell me what you have in stock and pricing? Qty: 2 to start with.\n\nThx\nVikram Patel\nVanguard HVAC"
+  },
+  {
+    "case_id": "sc-0023",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Advanced Group",
+      "contact": "Nisha Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0105",
+      "contract_id": "CTR-0105",
+      "covered_categories": [
+        "HVAC-Parts",
+        "Plumbing-Fixtures",
+        "Electrical-Supplies"
+      ],
+      "sku_id": "SKU-0079",
+      "sku_name": "High-Efficiency Evaporator Coil 2 Ton",
+      "sku_category": "HVAC-Equipment"
+    },
+    "email_text": "Hello,\n\nNeed a quote on High-Efficiency Evaporator Coil 2 Ton. Looking for SKU-0079 specifically. We have a customer that needs this for a system upgrade - need to know lead time and best price you can offer.\n\nPlease respond ASAP if possible.\n\nBest regards,\nNisha Iyer\nAdvanced Group"
+  },
+  {
+    "case_id": "sc-0024",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Metro Co",
+      "contact": "Priya Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0102",
+      "contract_id": "CTR-0102",
+      "covered_categories": [
+        "Plumbing-Fixtures",
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0274",
+      "sku_name": "Copper Cap 1-1/2 in",
+      "sku_category": "Plumbing-Fittings"
+    },
+    "email_text": "Hello,\n\nWe need some Copper Cap 1-1/2 in fittings for a plumbing job next week. Can you provide a quote? We usually order around 50-100 units per project, but for this one looking at maybe 30-40 to start.\n\nWhat's your pricing and can you ship quickly?\n\nRegards,\nPriya Rao\nMetro Co"
+  },
+  {
+    "case_id": "sc-0025",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Precision Co",
+      "contact": "Anil Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0120",
+      "contract_id": "CTR-0120",
+      "covered_categories": [
+        "HVAC-Equipment",
+        "Electrical-Supplies"
+      ],
+      "sku_id": "SKU-0156",
+      "sku_name": "Stainless Faucet Compact",
+      "sku_category": "Plumbing-Fixtures"
+    },
+    "email_text": "Hi,\n\nOne of our techs broke a faucet on a job and I need to replace it ASAP. Looking for Stainless Faucet Compact - how much is that and when can I pick it up or get delivery?\n\nQty: 1 for now\n\nThanks,\nAnil Shah\nPrecision Co"
+  },
+  {
+    "case_id": "sc-0026",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Coastal Mechanical",
+      "contact": "Meera Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0032",
+      "contract_id": "CTR-0032",
+      "covered_categories": [
+        "HVAC-Equipment",
+        "Plumbing-Fixtures",
+        "HVAC-Parts"
+      ],
+      "sku_id": "SKU-0368",
+      "sku_name": "Heavy-Duty Switch 15A",
+      "sku_category": "Electrical-Supplies"
+    },
+    "email_text": "Hi there,\n\nWe're doing some electrical work on a facility upgrade and need a Heavy-Duty Switch 15A. Can you quote us? Need to know price and if its available soon.\n\nThanks\nMeera Joshi\nCoastal Mechanical"
+  },
+  {
+    "case_id": "sc-0027",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Highline Services",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0050",
+      "contract_id": "CTR-0050",
+      "covered_categories": [
+        "HVAC-Parts"
+      ],
+      "sku_id": "SKU-0358",
+      "sku_name": "Heavy-Duty Breaker 50A",
+      "sku_category": "Electrical-Supplies"
+    },
+    "email_text": "Hello,\n\nWe need pricing on Heavy-Duty Breaker 50A. Its for a commercial HVAC system expansion. Can you tell me unit price and availability? Looking to order maybe 3-4 units.\n\nPlease send quote by end of day if possible.\n\nThank you,\nNisha Patel\nHighline Services"
+  },
+  {
+    "case_id": "sc-0028",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Highline Plumbing",
+      "contact": "Ravi Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0108",
+      "contract_id": "CTR-0108",
+      "covered_categories": [
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0368",
+      "sku_name": "Heavy-Duty Switch 15A",
+      "sku_category": "Electrical-Supplies"
+    },
+    "email_text": "Hi,\n\nNeed a quote for Heavy-Duty Switch 15A. We have a service call that needs this part and our usual vendor is backordered. Can you help?\n\nQty 1, need asap\n\nRavi Rao\nHighline Plumbing"
+  },
+  {
+    "case_id": "sc-0029",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Metro Co",
+      "contact": "Priya Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0102",
+      "contract_id": "CTR-0102",
+      "covered_categories": [
+        "Plumbing-Fixtures",
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0084",
+      "sku_name": "Standard Breaker 60A",
+      "sku_category": "Electrical-Supplies"
+    },
+    "email_text": "Hello,\n\nQuick question - what's your pricing on Standard Breaker 60A? We're looking to stock up for the season and might need 10-15 units. Let me know best pricing you can offer.\n\nThanks,\nPriya Rao\nMetro Co"
+  },
+  {
+    "case_id": "sc-0030",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Metro Mechanical",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0078",
+      "contract_id": "CTR-0078",
+      "covered_categories": [
+        "HVAC-Parts",
+        "Plumbing-Fittings",
+        "HVAC-Equipment",
+        "Plumbing-Fixtures"
+      ],
+      "sku_id": "SKU-0557",
+      "sku_name": "Heavy-Duty Junction Box 20A",
+      "sku_category": "Electrical-Supplies"
+    },
+    "email_text": "Hi,\n\nWe're installing new electrical systems in some of our service trucks and need Heavy-Duty Junction Box 20A. Can you provide a quote for qty 6? Pricing and lead time appreciated.\n\nThanks,\nNisha Patel\nMetro Mechanical"
+  },
+  {
+    "case_id": "sc-0031",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Peak Plumbing",
+      "contact": "Priya Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0015",
+      "site_id": "SITE-0020",
+      "sku_ids": [
+        "SKU-0121",
+        "SKU-0243"
+      ],
+      "sku_names": [
+        "Aftermarket Thermostat 16x20",
+        "Plastic Drain Wall-Mount"
+      ],
+      "pair_id": "dup-0001",
+      "pair_role": "first"
+    },
+    "email_text": "Hi there,\n\nWe need to get a quote for our current project. We're looking for the Aftermarket Thermostat 16x20 and Plastic Drain Wall-Mount. Can you give us pricing on these?\n\nThanks,\nPriya Shah\nPeak Plumbing"
+  },
+  {
+    "case_id": "sc-0032",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Peak Plumbing",
+      "contact": "Nisha Menon"
+    },
+    "entities": {
+      "customer_id": "CUST-0015",
+      "site_id": "SITE-0020",
+      "sku_ids": [
+        "SKU-0121",
+        "SKU-0243"
+      ],
+      "sku_names": [
+        "Aftermarket Thermostat 16x20",
+        "Plastic Drain Wall-Mount"
+      ],
+      "pair_id": "dup-0001",
+      "pair_role": "second"
+    },
+    "email_text": "Hello,\n\nI'm Nisha from Peak Plumbing. Could you send us a quote for SKU-0121 (Aftermarket Thermostat 16x20) and SKU-0243 (Plastic Drain Wall-Mount)? We need pricing ASAP.\n\nBest,\nNisha Menon"
+  },
+  {
+    "case_id": "sc-0033",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Apex Co",
+      "contact": "Ravi Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0098",
+      "site_id": "SITE-0150",
+      "sku_ids": [
+        "SKU-0133",
+        "SKU-0155"
+      ],
+      "sku_names": [
+        "Brass Tee 1-1/4 in",
+        "Universal Filter Large"
+      ],
+      "pair_id": "dup-0002",
+      "pair_role": "first"
+    },
+    "email_text": "Hey,\n\nWe need to order some supplies. Can I get a quote on:\n- Brass Tee 1-1/4 in (SKU-0133)\n- Universal Filter Large (SKU-0155)\n\nLet me know the price and availability.\n\nRavi Shah\nApex Co"
+  },
+  {
+    "case_id": "sc-0034",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Apex Co",
+      "contact": "Kiran Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0098",
+      "site_id": "SITE-0150",
+      "sku_ids": [
+        "SKU-0133",
+        "SKU-0155"
+      ],
+      "sku_names": [
+        "Brass Tee 1-1/4 in",
+        "Universal Filter Large"
+      ],
+      "pair_id": "dup-0002",
+      "pair_role": "second"
+    },
+    "email_text": "Good morning,\n\nI'm following up on some materials we need for our job site. Please send pricing for:\nBrass Tee 1-1/4 in and Universal Filter Large\n\nWhat's your lead time?\n\nThanks,\nKiran Gupta\nApex Co"
+  },
+  {
+    "case_id": "sc-0035",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Prairie Co",
+      "contact": "Devika Kapoor"
+    },
+    "entities": {
+      "customer_id": "CUST-0095",
+      "site_id": "SITE-0144",
+      "sku_ids": [
+        "SKU-0068",
+        "SKU-0294"
+      ],
+      "sku_names": [
+        "Universal Capacitor Large",
+        "Standard Junction Box 60A"
+      ],
+      "pair_id": "dup-0003",
+      "pair_role": "first"
+    },
+    "email_text": "Hi,\n\nWe're looking for a quote on the following items:\n- SKU-0068 Universal Capacitor Large\n- SKU-0294 Standard Junction Box 60A\n\nCan you get back to me with pricing and bulk discount options?\n\nDevika Kapoor\nPrairie Co"
+  },
+  {
+    "case_id": "sc-0036",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Prairie Co",
+      "contact": "Devika Kapoor"
+    },
+    "entities": {
+      "customer_id": "CUST-0095",
+      "site_id": "SITE-0144",
+      "sku_ids": [
+        "SKU-0068",
+        "SKU-0294"
+      ],
+      "sku_names": [
+        "Universal Capacitor Large",
+        "Standard Junction Box 60A"
+      ],
+      "pair_id": "dup-0003",
+      "pair_role": "second"
+    },
+    "email_text": "Hello,\n\nI need to get pricing on two items for our upcoming project:\nUniversal Capacitor Large (SKU-0068)\nStandard Junction Box 60A (SKU-0294)\n\nPlease advise on price and delivery timeframe.\n\nRegards,\nDevika Kapoor\nPrairie Co"
+  },
+  {
+    "case_id": "sc-0037",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Highline Mechanical",
+      "contact": "Nisha Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0056",
+      "site_id": "SITE-0090",
+      "sku_ids": [
+        "SKU-0568"
+      ],
+      "sku_names": [
+        "Galvanized Cap 2-1/2 in"
+      ],
+      "pair_id": "dup-0004",
+      "pair_role": "first"
+    },
+    "email_text": "Hi,\n\nQuick request: can you quote me on the Galvanized Cap 2-1/2 in (SKU-0568)? We need a couple for an emergency repair.\n\nThanks,\nNisha Iyer\nHighline Mechanical"
+  },
+  {
+    "case_id": "sc-0038",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Highline Mechanical",
+      "contact": "Nisha Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0056",
+      "site_id": "SITE-0090",
+      "sku_ids": [
+        "SKU-0568"
+      ],
+      "sku_names": [
+        "Galvanized Cap 2-1/2 in"
+      ],
+      "pair_id": "dup-0004",
+      "pair_role": "second"
+    },
+    "email_text": "Hello,\n\nNeed pricing on SKU-0568 Galvanized Cap 2-1/2 in. What's your current price?\n\nNisha Iyer\nHighline Mechanical"
+  },
+  {
+    "case_id": "sc-0039",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Titan Plumbing",
+      "contact": "Kiran Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0036",
+      "site_id": "SITE-0055",
+      "sku_ids": [
+        "SKU-0070",
+        "SKU-0555"
+      ],
+      "sku_names": [
+        "GFCI Wire Nut 50A",
+        "PVC Tee 2 in"
+      ],
+      "pair_id": "dup-0005",
+      "pair_role": "first"
+    },
+    "email_text": "Good afternoon,\n\nI'm requesting a quote for:\n- GFCI Wire Nut 50A (SKU-0070)\n- PVC Tee 2 in (SKU-0555)\n\nWe have a job coming up and need this ASAP. What's your pricing?\n\nKiran Shah\nTitan Plumbing"
+  },
+  {
+    "case_id": "sc-0040",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Titan Plumbing",
+      "contact": "Priya Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0036",
+      "site_id": "SITE-0055",
+      "sku_ids": [
+        "SKU-0070",
+        "SKU-0555"
+      ],
+      "sku_names": [
+        "GFCI Wire Nut 50A",
+        "PVC Tee 2 in"
+      ],
+      "pair_id": "dup-0005",
+      "pair_role": "second"
+    },
+    "email_text": "Hi there,\n\nCan I get a price on GFCI Wire Nut 50A and PVC Tee 2 in? We use these regularly so if you have volume discounts that would be great.\n\nThanks,\nPriya Nair\nTitan Plumbing"
+  },
+  {
+    "case_id": "sc-0041",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Ironclad Plumbing",
+      "contact": "Suresh Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0070",
+      "site_id": "SITE-0106",
+      "sku_ids": [
+        "SKU-0307"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Medium"
+      ],
+      "pair_id": "rev-0001",
+      "pair_role": "original"
+    },
+    "email_text": "Hi, I need to get a quote for some belts for a job we're doing on 5th Street. Can I get pricing on the Heavy-Duty Belt Medium? Just need to know what you have in stock and your best pricing. Thanks\n\nSuresh Nair\nIronclad Plumbing"
+  },
+  {
+    "case_id": "sc-0042",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Ironclad Plumbing",
+      "contact": "Suresh Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0070",
+      "site_id": "SITE-0106",
+      "sku_ids": [
+        "SKU-0307",
+        "SKU-0530"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Medium",
+        "Brass Aerator Compact"
+      ],
+      "pair_id": "rev-0001",
+      "pair_role": "revision"
+    },
+    "email_text": "Hey there,\n\nFollowing up on our earlier inquiry about the Heavy-Duty Belt Medium. We also need a couple of the Brass Aerator Compact for the same job. Can you quote us both items together? Qty on each is TBD depending on your pricing.\n\nThanks,\nSuresh\nIronclad Plumbing\nCUST-0070"
+  },
+  {
+    "case_id": "sc-0043",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Riverside HVAC",
+      "contact": "Suresh Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0052",
+      "site_id": "SITE-0082",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0342"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Brass Nipple 1-1/4 in"
+      ],
+      "pair_id": "rev-0002",
+      "pair_role": "original"
+    },
+    "email_text": "We need quote on the following for our SITE-0082 project:\n\n- Standard Wire Nut 50A\n- Brass Nipple 1-1/4 in\n\nCan you send pricing ASAP? We're trying to finalize the estimate by end of week.\n\nArjun Shah\nRiverside HVAC"
+  },
+  {
+    "case_id": "sc-0044",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Riverside HVAC",
+      "contact": "Suresh Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0052",
+      "site_id": "SITE-0082",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0342",
+        "SKU-0274"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Brass Nipple 1-1/4 in",
+        "Copper Cap 1-1/2 in"
+      ],
+      "pair_id": "rev-0002",
+      "pair_role": "revision"
+    },
+    "email_text": "Hi,\n\nCan I add one more thing to the previous quote? We'll also need the Copper Cap 1-1/2 in. Updated list:\n\n- Standard Wire Nut 50A\n- Brass Nipple 1-1/4 in  \n- Copper Cap 1-1/2 in\n\nWhat's your best price on all three?\n\nSuresh Rao\nRiverside HVAC"
+  },
+  {
+    "case_id": "sc-0045",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Apex Plumbing",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0085",
+      "site_id": "SITE-0130",
+      "sku_ids": [
+        "SKU-0479"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Small"
+      ],
+      "pair_id": "rev-0003",
+      "pair_role": "original"
+    },
+    "email_text": "Suresh here from Apex Plumbing. Quick question - do you have the Heavy-Duty Belt Small in stock? Need it for a residential project coming up. What's the price?\n\nThanks"
+  },
+  {
+    "case_id": "sc-0046",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Apex Plumbing",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0085",
+      "site_id": "SITE-0130",
+      "sku_ids": [
+        "SKU-0479",
+        "SKU-0428"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Small",
+        "Heavy-Duty Belt 16x20"
+      ],
+      "pair_id": "rev-0003",
+      "pair_role": "revision"
+    },
+    "email_text": "Hey,\n\nSo we need the Heavy-Duty Belt Small like I mentioned before, but also need to grab a Heavy-Duty Belt 16x20. Can you bundle those for us? How much for qty 2 of each?\n\nArjun Gupta\nApex Plumbing"
+  },
+  {
+    "case_id": "sc-0047",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Harbor HVAC",
+      "contact": "Arjun Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0011",
+      "site_id": "SITE-0014",
+      "sku_ids": [
+        "SKU-0301"
+      ],
+      "sku_names": [
+        "PEX Coupling 2-1/2 in"
+      ],
+      "pair_id": "rev-0004",
+      "pair_role": "original"
+    },
+    "email_text": "Good afternoon,\n\nI'm calling about the PEX Coupling 2-1/2 in. We've got a water line job at one of our residential installations. Can I get a price quote and lead time?\n\nThanks,\nArjun Shah\nHarbor HVAC Services"
+  },
+  {
+    "case_id": "sc-0048",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Harbor HVAC",
+      "contact": "Arjun Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0011",
+      "site_id": "SITE-0014",
+      "sku_ids": [
+        "SKU-0301",
+        "SKU-0579"
+      ],
+      "sku_names": [
+        "PEX Coupling 2-1/2 in",
+        "Residential Furnace 4 Ton"
+      ],
+      "pair_id": "rev-0004",
+      "pair_role": "revision"
+    },
+    "email_text": "Hi there,\n\nI need to update our earlier quote. In addition to the PEX Coupling 2-1/2 in, we also need a Residential Furnace 4 Ton for a larger job that just came in. Can you get me pricing on both items?\n\nPrefer email response.\n\nViktor\nHarbor HVAC\nCUST-0011"
+  },
+  {
+    "case_id": "sc-0049",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Titan Group",
+      "contact": "Vikram Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0005",
+      "site_id": "SITE-0007",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0544"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Heavy-Duty Switch 60A"
+      ],
+      "pair_id": "rev-0005",
+      "pair_role": "original"
+    },
+    "email_text": "Need a quick quote. We're working on a commercial electrical installation and need:\n\n- Standard Wire Nut 50A (about a case)\n- Heavy-Duty Switch 60A (need 3-4)\n\nWhat's your pricing and can you ship within 2 days?\n\nVikram Reddy\nTitan Group"
+  },
+  {
+    "case_id": "sc-0050",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Titan Group",
+      "contact": "Vikram Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0005",
+      "site_id": "SITE-0007",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0544",
+        "SKU-0295"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Heavy-Duty Switch 60A",
+        "PVC Coupling 2 in"
+      ],
+      "pair_id": "rev-0005",
+      "pair_role": "revision"
+    },
+    "email_text": "Hey,\n\nRe: our earlier estimate for SITE-0007 -- we need to add a PVC Coupling 2 in to the order. So that's:\n\nStandard Wire Nut 50A\nHeavy-Duty Switch 60A  \nPVC Coupling 2 in\n\nCan you resend pricing with all three items? Thanks\n\nVikram\nTitan Group"
+  },
+  {
+    "case_id": "sc-0051",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Sterling Mechanical",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0121",
+      "sku_ids": [
+        "SKU-0271",
+        "SKU-0143"
+      ],
+      "sku_names": [
+        "Brass Union 2-1/2 in",
+        "Matte Black Sprayer Wall-Mount"
+      ]
+    },
+    "email_text": "Hi, this is Arjun from Sterling Mechanical. We need pricing on a couple items for an upcoming job. Can you send us a quote for:\n\n- Brass Union 2-1/2 in (need qty 4)\n- Matte Black Sprayer Wall-Mount (just 2 of these)\n\nWe've been ordering from you guys for a while now under account CUST-0121. Usually need this stuff within the week. Thanks\n\nArjun Gupta\nSterling Mechanical"
+  },
+  {
+    "case_id": "sc-0052",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Union Group",
+      "contact": "Anil Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0119",
+      "sku_ids": [
+        "SKU-0396",
+        "SKU-0572",
+        "SKU-0121"
+      ],
+      "sku_names": [
+        "PVC Cap 2-1/2 in",
+        "GFCI Junction Box 60A",
+        "Aftermarket Thermostat 16x20"
+      ]
+    },
+    "email_text": "Good afternoon,\n\nAnil Joshi here, Union Group. We have a mixed order coming up and need quotes asap:\n\n1. PVC Cap 2-1/2 in - qty 6\n2. GFCI Junction Box 60A - qty 2\n3. Aftermarket Thermostat 16x20 - qty 1\n\nThis is rush, we need this by Wed if possible. Please send pricing to my email. Our account is CUST-0119.\n\nThanks,\nAnil"
+  },
+  {
+    "case_id": "sc-0053",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Total Mechanical",
+      "contact": "Devika Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0124",
+      "sku_ids": [
+        "SKU-0535",
+        "SKU-0157"
+      ],
+      "sku_names": [
+        "PVC Nipple 1-1/2 in",
+        "Weatherproof Switch 15A"
+      ]
+    },
+    "email_text": "Hello, Total Mechanical here. Devika Rao calling. Need a quick quote for two items:\n\nPVC Nipple 1-1/2 in - about 8 pieces\nWeatherproof Switch 15A - 3 units\n\nCan you get back to me with pricing? Customer number is CUST-0124. Normal lead time is fine.\n\nBest,\nDevika"
+  },
+  {
+    "case_id": "sc-0054",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Harbor HVAC",
+      "contact": "Arjun Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0011",
+      "sku_ids": [
+        "SKU-0437",
+        "SKU-0414"
+      ],
+      "sku_names": [
+        "Standard Breaker 20A",
+        "OEM Gasket Medium"
+      ]
+    },
+    "email_text": "Hey team, Arjun Shah from Harbor HVAC. We're working on a retrofit job and running short on a couple components. Can you quote:\n\nStandard Breaker 20A - qty 5\nOEM Gasket Medium - qty 12\n\nEverything goes on our account CUST-0011. Just need your best pricing, thanks.\n\nArjun\nHarbor HVAC"
+  },
+  {
+    "case_id": "sc-0055",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Total Services",
+      "contact": "Meera Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0029",
+      "sku_ids": [
+        "SKU-0170"
+      ],
+      "sku_names": [
+        "Copper Coupling 1-1/4 in"
+      ]
+    },
+    "email_text": "Hi, quick one: Copper Coupling 1-1/4 in, qty 10. Meera Shah, Total Services. Account CUST-0029. Can you send price? Thanks."
+  },
+  {
+    "case_id": "sc-0056",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Summit Plumbing",
+      "contact": "Arjun Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0019",
+      "sku_ids": [
+        "SKU-0007",
+        "SKU-0360",
+        "SKU-0335"
+      ],
+      "sku_names": [
+        "Chrome Shutoff Corner-Mount",
+        "Universal Capacitor Small",
+        "PVC Adapter 1 in"
+      ]
+    },
+    "email_text": "Arjun here from Summit Plumbing. We're doing a full kitchen/bath remodel over in the northeast quadrant, and we need several items. Can you give us pricing on:\n\n1. Chrome Shutoff Corner-Mount - qty 4 (one for each bathroom plus spares)\n2. Universal Capacitor Small - qty 2 \n3. PVC Adapter 1 in - qty 15 (we go through a lot of these)\n\nWe need this quote by end of day tomorrow. The job starts next week. Our account is CUST-0019. Thanks!\n\nArjun Joshi\nSummit Plumbing"
+  },
+  {
+    "case_id": "sc-0057",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Elite Plumbing",
+      "contact": "Vikram Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0069",
+      "sku_ids": [
+        "SKU-0228",
+        "SKU-0141",
+        "SKU-0180"
+      ],
+      "sku_names": [
+        "Galvanized Union 1 in",
+        "Copper Union 2 in",
+        "OEM Belt Large"
+      ]
+    },
+    "email_text": "Hi there, Vikram Shah from Elite Plumbing. We're setting up a new crew and stocking inventory, so I need pricing on a few different fittings and components:\n\nGalvanized Union 1 in - qty 20\nCopper Union 2 in - qty 15  \nOEM Belt Large - qty 4\n\nThis is a larger order and we may need these delivered to the warehouse. We're CUST-0069. Please send pricing and let me know what your typical turnaround is for orders this size?\n\nThanks,\nVikram"
+  },
+  {
+    "case_id": "sc-0058",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Ironclad Plumbing",
+      "contact": "Suresh Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0070",
+      "sku_ids": [
+        "SKU-0084"
+      ],
+      "sku_names": [
+        "Standard Breaker 60A"
+      ]
+    },
+    "email_text": "Standard Breaker 60A - qty 3, urgent. Suresh Nair, Ironclad Plumbing, CUST-0070. Job site needs this tomorrow if u can do it. Let me know."
+  },
+  {
+    "case_id": "sc-0059",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Union Plumbing",
+      "contact": "Anil Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0013",
+      "sku_ids": [
+        "SKU-0578",
+        "SKU-0540"
+      ],
+      "sku_names": [
+        "PEX Tee 1 in",
+        "Chrome Sprayer Compact"
+      ]
+    },
+    "email_text": "Hello, Anil Joshi here again with Union Plumbing (CUST-0013). Looks like I need to pull some stock for this weeks jobs:\n\nPEX Tee 1 in - qty 25\nChrome Sprayer Compact - qty 3\n\nSame day or next day would be great. Call or email is fine. Thanks"
+  },
+  {
+    "case_id": "sc-0060",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Metro Plumbing",
+      "contact": "Devika Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0082",
+      "sku_ids": [
+        "SKU-0437",
+        "SKU-0140"
+      ],
+      "sku_names": [
+        "Standard Breaker 20A",
+        "Chrome Shutoff Compact"
+      ]
+    },
+    "email_text": "Good afternoon, Devika Joshi from Metro Plumbing here. We need pricing on two items for a project:\n\nStandard Breaker 20A qty 4\nChrome Shutoff Compact qty 6\n\nAccount number is CUST-0082. Can we get a quote and delivery options? Thanks."
+  }
+]

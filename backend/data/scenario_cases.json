@@ -1,0 +1,1080 @@
+[
+  {
+    "case_id": "sc-0001",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Zenith Contractors",
+      "contact": "Suresh Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0004",
+      "sku_id": "SKU-0542",
+      "sku_name": "Chrome Sprayer Corner-Mount"
+    }
+  },
+  {
+    "case_id": "sc-0002",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Peak Plumbing",
+      "contact": "Priya Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0015",
+      "sku_id": "SKU-0355",
+      "sku_name": "Chrome Stopper Standard"
+    }
+  },
+  {
+    "case_id": "sc-0003",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Union Plumbing",
+      "contact": "Anil Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0013",
+      "sku_id": "SKU-0357",
+      "sku_name": "Commercial Compressor 4 Ton"
+    }
+  },
+  {
+    "case_id": "sc-0004",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Ironclad Contractors",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0100",
+      "sku_id": "SKU-0430",
+      "sku_name": "PVC Bushing 1/2 in"
+    }
+  },
+  {
+    "case_id": "sc-0005",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Summit Group",
+      "contact": "Devika Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0089",
+      "sku_id": "SKU-0545",
+      "sku_name": "Chrome Trap Compact"
+    }
+  },
+  {
+    "case_id": "sc-0006",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Summit Group",
+      "contact": "Suresh Menon"
+    },
+    "entities": {
+      "customer_id": "CUST-0089",
+      "sku_id": "SKU-0083",
+      "sku_name": "Copper Adapter 2 in"
+    }
+  },
+  {
+    "case_id": "sc-0007",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Nexus Mechanical",
+      "contact": "Kiran Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0049",
+      "sku_id": "SKU-0122",
+      "sku_name": "Universal Contactor 16x20"
+    }
+  },
+  {
+    "case_id": "sc-0008",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Crown HVAC",
+      "contact": "Devika Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0099",
+      "sku_id": "SKU-0236",
+      "sku_name": "OEM Thermostat 20x25"
+    }
+  },
+  {
+    "case_id": "sc-0009",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Advanced Co",
+      "contact": "Nisha Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0046",
+      "sku_id": "SKU-0137",
+      "sku_name": "PVC Adapter 1-1/2 in"
+    }
+  },
+  {
+    "case_id": "sc-0010",
+    "scenario_type": "discontinued_swap",
+    "customer": {
+      "name": "Nexus Plumbing",
+      "contact": "Arjun Kapoor"
+    },
+    "entities": {
+      "customer_id": "CUST-0044",
+      "sku_id": "SKU-0183",
+      "sku_name": "Weatherproof Conduit 50A"
+    }
+  },
+  {
+    "case_id": "sc-0011",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Sterling Mechanical",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0121",
+      "sku_id": "SKU-0601",
+      "sku_name": "Aftermarket Belt 20x25"
+    }
+  },
+  {
+    "case_id": "sc-0012",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Titan Group",
+      "contact": "Vikram Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0005",
+      "sku_id": "SKU-0206",
+      "sku_name": "Universal Capacitor 16x20"
+    }
+  },
+  {
+    "case_id": "sc-0013",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Highline Services",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0050",
+      "sku_id": "SKU-0156",
+      "sku_name": "Stainless Faucet Compact"
+    }
+  },
+  {
+    "case_id": "sc-0014",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Bluewater Services",
+      "contact": "Nisha Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0062",
+      "sku_id": "SKU-0507",
+      "sku_name": "Brass Aerator Deck-Mount"
+    }
+  },
+  {
+    "case_id": "sc-0015",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Advanced HVAC",
+      "contact": "Kiran Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0118",
+      "sku_id": "SKU-0078",
+      "sku_name": "Standard Wire Nut 50A"
+    }
+  },
+  {
+    "case_id": "sc-0016",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Ironclad Services",
+      "contact": "Meera Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0025",
+      "sku_id": "SKU-0578",
+      "sku_name": "PEX Tee 1 in"
+    }
+  },
+  {
+    "case_id": "sc-0017",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Cascade Mechanical",
+      "contact": "Nisha Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0034",
+      "sku_id": "SKU-0127",
+      "sku_name": "OEM Capacitor 16x20"
+    }
+  },
+  {
+    "case_id": "sc-0018",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Ironclad Contractors",
+      "contact": "Anil Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0100",
+      "sku_id": "SKU-0290",
+      "sku_name": "Residential Furnace 2 Ton"
+    }
+  },
+  {
+    "case_id": "sc-0019",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Peak Contractors",
+      "contact": "Suresh Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0006",
+      "sku_id": "SKU-0337",
+      "sku_name": "Standard Switch 200A"
+    }
+  },
+  {
+    "case_id": "sc-0020",
+    "scenario_type": "missing_required_part",
+    "customer": {
+      "name": "Nexus Co",
+      "contact": "Suresh Menon"
+    },
+    "entities": {
+      "customer_id": "CUST-0091",
+      "sku_id": "SKU-0146",
+      "sku_name": "Residential Compressor 2 Ton"
+    }
+  },
+  {
+    "case_id": "sc-0021",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Elite Mechanical",
+      "contact": "Devika Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0074",
+      "contract_id": "CTR-0074",
+      "covered_categories": [
+        "Plumbing-Fittings",
+        "Plumbing-Fixtures",
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0041",
+      "sku_name": "Heavy-Duty Conduit 60A",
+      "sku_category": "Electrical-Supplies"
+    }
+  },
+  {
+    "case_id": "sc-0022",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Vanguard HVAC",
+      "contact": "Vikram Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0084",
+      "contract_id": "CTR-0084",
+      "covered_categories": [
+        "Plumbing-Fittings"
+      ],
+      "sku_id": "SKU-0239",
+      "sku_name": "Heavy-Duty Switch 100A",
+      "sku_category": "Electrical-Supplies"
+    }
+  },
+  {
+    "case_id": "sc-0023",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Advanced Group",
+      "contact": "Nisha Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0105",
+      "contract_id": "CTR-0105",
+      "covered_categories": [
+        "HVAC-Parts",
+        "Plumbing-Fixtures",
+        "Electrical-Supplies"
+      ],
+      "sku_id": "SKU-0079",
+      "sku_name": "High-Efficiency Evaporator Coil 2 Ton",
+      "sku_category": "HVAC-Equipment"
+    }
+  },
+  {
+    "case_id": "sc-0024",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Metro Co",
+      "contact": "Priya Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0102",
+      "contract_id": "CTR-0102",
+      "covered_categories": [
+        "Plumbing-Fixtures",
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0274",
+      "sku_name": "Copper Cap 1-1/2 in",
+      "sku_category": "Plumbing-Fittings"
+    }
+  },
+  {
+    "case_id": "sc-0025",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Precision Co",
+      "contact": "Anil Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0120",
+      "contract_id": "CTR-0120",
+      "covered_categories": [
+        "HVAC-Equipment",
+        "Electrical-Supplies"
+      ],
+      "sku_id": "SKU-0156",
+      "sku_name": "Stainless Faucet Compact",
+      "sku_category": "Plumbing-Fixtures"
+    }
+  },
+  {
+    "case_id": "sc-0026",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Coastal Mechanical",
+      "contact": "Meera Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0032",
+      "contract_id": "CTR-0032",
+      "covered_categories": [
+        "HVAC-Equipment",
+        "Plumbing-Fixtures",
+        "HVAC-Parts"
+      ],
+      "sku_id": "SKU-0368",
+      "sku_name": "Heavy-Duty Switch 15A",
+      "sku_category": "Electrical-Supplies"
+    }
+  },
+  {
+    "case_id": "sc-0027",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Highline Services",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0050",
+      "contract_id": "CTR-0050",
+      "covered_categories": [
+        "HVAC-Parts"
+      ],
+      "sku_id": "SKU-0358",
+      "sku_name": "Heavy-Duty Breaker 50A",
+      "sku_category": "Electrical-Supplies"
+    }
+  },
+  {
+    "case_id": "sc-0028",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Highline Plumbing",
+      "contact": "Ravi Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0108",
+      "contract_id": "CTR-0108",
+      "covered_categories": [
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0368",
+      "sku_name": "Heavy-Duty Switch 15A",
+      "sku_category": "Electrical-Supplies"
+    }
+  },
+  {
+    "case_id": "sc-0029",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Metro Co",
+      "contact": "Priya Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0102",
+      "contract_id": "CTR-0102",
+      "covered_categories": [
+        "Plumbing-Fixtures",
+        "HVAC-Equipment"
+      ],
+      "sku_id": "SKU-0084",
+      "sku_name": "Standard Breaker 60A",
+      "sku_category": "Electrical-Supplies"
+    }
+  },
+  {
+    "case_id": "sc-0030",
+    "scenario_type": "discount_category_mismatch",
+    "customer": {
+      "name": "Metro Mechanical",
+      "contact": "Nisha Patel"
+    },
+    "entities": {
+      "customer_id": "CUST-0078",
+      "contract_id": "CTR-0078",
+      "covered_categories": [
+        "HVAC-Parts",
+        "Plumbing-Fittings",
+        "HVAC-Equipment",
+        "Plumbing-Fixtures"
+      ],
+      "sku_id": "SKU-0557",
+      "sku_name": "Heavy-Duty Junction Box 20A",
+      "sku_category": "Electrical-Supplies"
+    }
+  },
+  {
+    "case_id": "sc-0031",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Peak Plumbing",
+      "contact": "Priya Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0015",
+      "site_id": "SITE-0020",
+      "sku_ids": [
+        "SKU-0121",
+        "SKU-0243"
+      ],
+      "sku_names": [
+        "Aftermarket Thermostat 16x20",
+        "Plastic Drain Wall-Mount"
+      ],
+      "pair_id": "dup-0001",
+      "pair_role": "first"
+    }
+  },
+  {
+    "case_id": "sc-0032",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Peak Plumbing",
+      "contact": "Nisha Menon"
+    },
+    "entities": {
+      "customer_id": "CUST-0015",
+      "site_id": "SITE-0020",
+      "sku_ids": [
+        "SKU-0121",
+        "SKU-0243"
+      ],
+      "sku_names": [
+        "Aftermarket Thermostat 16x20",
+        "Plastic Drain Wall-Mount"
+      ],
+      "pair_id": "dup-0001",
+      "pair_role": "second"
+    }
+  },
+  {
+    "case_id": "sc-0033",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Apex Co",
+      "contact": "Ravi Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0098",
+      "site_id": "SITE-0150",
+      "sku_ids": [
+        "SKU-0133",
+        "SKU-0155"
+      ],
+      "sku_names": [
+        "Brass Tee 1-1/4 in",
+        "Universal Filter Large"
+      ],
+      "pair_id": "dup-0002",
+      "pair_role": "first"
+    }
+  },
+  {
+    "case_id": "sc-0034",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Apex Co",
+      "contact": "Kiran Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0098",
+      "site_id": "SITE-0150",
+      "sku_ids": [
+        "SKU-0133",
+        "SKU-0155"
+      ],
+      "sku_names": [
+        "Brass Tee 1-1/4 in",
+        "Universal Filter Large"
+      ],
+      "pair_id": "dup-0002",
+      "pair_role": "second"
+    }
+  },
+  {
+    "case_id": "sc-0035",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Prairie Co",
+      "contact": "Devika Kapoor"
+    },
+    "entities": {
+      "customer_id": "CUST-0095",
+      "site_id": "SITE-0144",
+      "sku_ids": [
+        "SKU-0068",
+        "SKU-0294"
+      ],
+      "sku_names": [
+        "Universal Capacitor Large",
+        "Standard Junction Box 60A"
+      ],
+      "pair_id": "dup-0003",
+      "pair_role": "first"
+    }
+  },
+  {
+    "case_id": "sc-0036",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Prairie Co",
+      "contact": "Devika Kapoor"
+    },
+    "entities": {
+      "customer_id": "CUST-0095",
+      "site_id": "SITE-0144",
+      "sku_ids": [
+        "SKU-0068",
+        "SKU-0294"
+      ],
+      "sku_names": [
+        "Universal Capacitor Large",
+        "Standard Junction Box 60A"
+      ],
+      "pair_id": "dup-0003",
+      "pair_role": "second"
+    }
+  },
+  {
+    "case_id": "sc-0037",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Highline Mechanical",
+      "contact": "Nisha Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0056",
+      "site_id": "SITE-0090",
+      "sku_ids": [
+        "SKU-0568"
+      ],
+      "sku_names": [
+        "Galvanized Cap 2-1/2 in"
+      ],
+      "pair_id": "dup-0004",
+      "pair_role": "first"
+    }
+  },
+  {
+    "case_id": "sc-0038",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Highline Mechanical",
+      "contact": "Nisha Iyer"
+    },
+    "entities": {
+      "customer_id": "CUST-0056",
+      "site_id": "SITE-0090",
+      "sku_ids": [
+        "SKU-0568"
+      ],
+      "sku_names": [
+        "Galvanized Cap 2-1/2 in"
+      ],
+      "pair_id": "dup-0004",
+      "pair_role": "second"
+    }
+  },
+  {
+    "case_id": "sc-0039",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Titan Plumbing",
+      "contact": "Kiran Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0036",
+      "site_id": "SITE-0055",
+      "sku_ids": [
+        "SKU-0070",
+        "SKU-0555"
+      ],
+      "sku_names": [
+        "GFCI Wire Nut 50A",
+        "PVC Tee 2 in"
+      ],
+      "pair_id": "dup-0005",
+      "pair_role": "first"
+    }
+  },
+  {
+    "case_id": "sc-0040",
+    "scenario_type": "duplicate_pair",
+    "customer": {
+      "name": "Titan Plumbing",
+      "contact": "Priya Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0036",
+      "site_id": "SITE-0055",
+      "sku_ids": [
+        "SKU-0070",
+        "SKU-0555"
+      ],
+      "sku_names": [
+        "GFCI Wire Nut 50A",
+        "PVC Tee 2 in"
+      ],
+      "pair_id": "dup-0005",
+      "pair_role": "second"
+    }
+  },
+  {
+    "case_id": "sc-0041",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Ironclad Plumbing",
+      "contact": "Suresh Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0070",
+      "site_id": "SITE-0106",
+      "sku_ids": [
+        "SKU-0307"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Medium"
+      ],
+      "pair_id": "rev-0001",
+      "pair_role": "original"
+    }
+  },
+  {
+    "case_id": "sc-0042",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Ironclad Plumbing",
+      "contact": "Suresh Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0070",
+      "site_id": "SITE-0106",
+      "sku_ids": [
+        "SKU-0307",
+        "SKU-0530"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Medium",
+        "Brass Aerator Compact"
+      ],
+      "pair_id": "rev-0001",
+      "pair_role": "revision"
+    }
+  },
+  {
+    "case_id": "sc-0043",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Riverside HVAC",
+      "contact": "Suresh Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0052",
+      "site_id": "SITE-0082",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0342"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Brass Nipple 1-1/4 in"
+      ],
+      "pair_id": "rev-0002",
+      "pair_role": "original"
+    }
+  },
+  {
+    "case_id": "sc-0044",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Riverside HVAC",
+      "contact": "Suresh Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0052",
+      "site_id": "SITE-0082",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0342",
+        "SKU-0274"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Brass Nipple 1-1/4 in",
+        "Copper Cap 1-1/2 in"
+      ],
+      "pair_id": "rev-0002",
+      "pair_role": "revision"
+    }
+  },
+  {
+    "case_id": "sc-0045",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Apex Plumbing",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0085",
+      "site_id": "SITE-0130",
+      "sku_ids": [
+        "SKU-0479"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Small"
+      ],
+      "pair_id": "rev-0003",
+      "pair_role": "original"
+    }
+  },
+  {
+    "case_id": "sc-0046",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Apex Plumbing",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0085",
+      "site_id": "SITE-0130",
+      "sku_ids": [
+        "SKU-0479",
+        "SKU-0428"
+      ],
+      "sku_names": [
+        "Heavy-Duty Belt Small",
+        "Heavy-Duty Belt 16x20"
+      ],
+      "pair_id": "rev-0003",
+      "pair_role": "revision"
+    }
+  },
+  {
+    "case_id": "sc-0047",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Harbor HVAC",
+      "contact": "Arjun Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0011",
+      "site_id": "SITE-0014",
+      "sku_ids": [
+        "SKU-0301"
+      ],
+      "sku_names": [
+        "PEX Coupling 2-1/2 in"
+      ],
+      "pair_id": "rev-0004",
+      "pair_role": "original"
+    }
+  },
+  {
+    "case_id": "sc-0048",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Harbor HVAC",
+      "contact": "Arjun Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0011",
+      "site_id": "SITE-0014",
+      "sku_ids": [
+        "SKU-0301",
+        "SKU-0579"
+      ],
+      "sku_names": [
+        "PEX Coupling 2-1/2 in",
+        "Residential Furnace 4 Ton"
+      ],
+      "pair_id": "rev-0004",
+      "pair_role": "revision"
+    }
+  },
+  {
+    "case_id": "sc-0049",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Titan Group",
+      "contact": "Vikram Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0005",
+      "site_id": "SITE-0007",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0544"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Heavy-Duty Switch 60A"
+      ],
+      "pair_id": "rev-0005",
+      "pair_role": "original"
+    }
+  },
+  {
+    "case_id": "sc-0050",
+    "scenario_type": "revision_pair",
+    "customer": {
+      "name": "Titan Group",
+      "contact": "Vikram Reddy"
+    },
+    "entities": {
+      "customer_id": "CUST-0005",
+      "site_id": "SITE-0007",
+      "sku_ids": [
+        "SKU-0078",
+        "SKU-0544",
+        "SKU-0295"
+      ],
+      "sku_names": [
+        "Standard Wire Nut 50A",
+        "Heavy-Duty Switch 60A",
+        "PVC Coupling 2 in"
+      ],
+      "pair_id": "rev-0005",
+      "pair_role": "revision"
+    }
+  },
+  {
+    "case_id": "sc-0051",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Sterling Mechanical",
+      "contact": "Arjun Gupta"
+    },
+    "entities": {
+      "customer_id": "CUST-0121",
+      "sku_ids": [
+        "SKU-0271",
+        "SKU-0143"
+      ],
+      "sku_names": [
+        "Brass Union 2-1/2 in",
+        "Matte Black Sprayer Wall-Mount"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0052",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Union Group",
+      "contact": "Anil Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0119",
+      "sku_ids": [
+        "SKU-0396",
+        "SKU-0572",
+        "SKU-0121"
+      ],
+      "sku_names": [
+        "PVC Cap 2-1/2 in",
+        "GFCI Junction Box 60A",
+        "Aftermarket Thermostat 16x20"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0053",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Total Mechanical",
+      "contact": "Devika Rao"
+    },
+    "entities": {
+      "customer_id": "CUST-0124",
+      "sku_ids": [
+        "SKU-0535",
+        "SKU-0157"
+      ],
+      "sku_names": [
+        "PVC Nipple 1-1/2 in",
+        "Weatherproof Switch 15A"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0054",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Harbor HVAC",
+      "contact": "Arjun Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0011",
+      "sku_ids": [
+        "SKU-0437",
+        "SKU-0414"
+      ],
+      "sku_names": [
+        "Standard Breaker 20A",
+        "OEM Gasket Medium"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0055",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Total Services",
+      "contact": "Meera Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0029",
+      "sku_ids": [
+        "SKU-0170"
+      ],
+      "sku_names": [
+        "Copper Coupling 1-1/4 in"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0056",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Summit Plumbing",
+      "contact": "Arjun Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0019",
+      "sku_ids": [
+        "SKU-0007",
+        "SKU-0360",
+        "SKU-0335"
+      ],
+      "sku_names": [
+        "Chrome Shutoff Corner-Mount",
+        "Universal Capacitor Small",
+        "PVC Adapter 1 in"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0057",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Elite Plumbing",
+      "contact": "Vikram Shah"
+    },
+    "entities": {
+      "customer_id": "CUST-0069",
+      "sku_ids": [
+        "SKU-0228",
+        "SKU-0141",
+        "SKU-0180"
+      ],
+      "sku_names": [
+        "Galvanized Union 1 in",
+        "Copper Union 2 in",
+        "OEM Belt Large"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0058",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Ironclad Plumbing",
+      "contact": "Suresh Nair"
+    },
+    "entities": {
+      "customer_id": "CUST-0070",
+      "sku_ids": [
+        "SKU-0084"
+      ],
+      "sku_names": [
+        "Standard Breaker 60A"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0059",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Union Plumbing",
+      "contact": "Anil Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0013",
+      "sku_ids": [
+        "SKU-0578",
+        "SKU-0540"
+      ],
+      "sku_names": [
+        "PEX Tee 1 in",
+        "Chrome Sprayer Compact"
+      ]
+    }
+  },
+  {
+    "case_id": "sc-0060",
+    "scenario_type": "clean_distinct",
+    "customer": {
+      "name": "Metro Plumbing",
+      "contact": "Devika Joshi"
+    },
+    "entities": {
+      "customer_id": "CUST-0082",
+      "sku_ids": [
+        "SKU-0437",
+        "SKU-0140"
+      ],
+      "sku_names": [
+        "Standard Breaker 20A",
+        "Chrome Shutoff Compact"
+      ]
+    }
+  }
+]

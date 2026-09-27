@@ -356,3 +356,17 @@ def test_duplicate_pair_explicit_leak_without_the_word_pair_is_caught(tmp_path):
     accepted, rejected = ingest_responses(cases, tmp_path)
     assert rejected.get("sc-0011") == "email_text leaks scenario_type label"
     assert accepted == []
+
+
+def test_snake_case_scenario_type_as_one_token_is_caught(tmp_path):
+    cases = [{
+        "case_id": "sc-0012", "scenario_type": "duplicate_pair",
+        "customer": {"name": "A", "contact": "B"},
+        "sku_ids": ["S1"], "sku_names": ["Widget"],
+    }]
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0012", "email_text": "flagging this duplicate_pair case for review"},
+    ]))
+    accepted, rejected = ingest_responses(cases, tmp_path)
+    assert rejected.get("sc-0012") == "email_text leaks scenario_type label"
+    assert accepted == []

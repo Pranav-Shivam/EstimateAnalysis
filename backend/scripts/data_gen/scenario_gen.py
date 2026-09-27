@@ -286,9 +286,15 @@ def ingest_responses(cases: list[dict], responses_dir: Path) -> tuple[list[dict]
                 continue
 
             lowered = email_text.lower()
+            # Underscore counts as a word character to \b, so a literal snake_case
+            # scenario_type typed as one token (e.g. "duplicate_pair") would otherwise
+            # dodge word-boundary matching. Replacing it with a space before matching
+            # restores real boundaries without reopening the substring false-positive
+            # this scheme was built to avoid (e.g. "pair" inside "repair").
+            normalized = lowered.replace("_", " ")
             signal_words = _LABEL_LEAK_SIGNAL_WORDS.get(scenario_type, [])
-            leaks = any(_contains_word(lowered, word) for word in signal_words) or all(
-                _contains_word(lowered, word) for word in label_words
+            leaks = any(_contains_word(normalized, word) for word in signal_words) or all(
+                _contains_word(normalized, word) for word in label_words
             )
             # A response file processed later (sorted by filename, e.g. a re-batch round) overrides
             # an earlier verdict for the same case_id: last write wins, and a case never ends up in

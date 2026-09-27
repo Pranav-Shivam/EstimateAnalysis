@@ -217,10 +217,18 @@ def build_prompt_batches(cases: list[dict], batch_size: int = 10) -> list[str]:
 
 def write_prompt_batches(batches: list[str], prompts_dir: Path) -> list[Path]:
     prompts_dir.mkdir(parents=True, exist_ok=True)
-    next_index = len(sorted(prompts_dir.glob("batch_*.md"))) + 1
+    # Find the max numeric index from existing batch_NNN.md files
+    existing_indices = []
+    for path in prompts_dir.glob("batch_*.md"):
+        match = re.search(r"batch_(\d+)\.md", path.name)
+        if match:
+            existing_indices.append(int(match.group(1)))
+    next_index = max(existing_indices) + 1 if existing_indices else 1
     paths = []
     for offset, batch in enumerate(batches):
         path = prompts_dir / f"batch_{next_index + offset:03d}.md"
+        if path.exists():
+            raise FileExistsError(f"{path} already exists; will not overwrite")
         path.write_text(batch)
         paths.append(path)
     return paths

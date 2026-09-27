@@ -104,3 +104,15 @@ def test_write_prompt_batches_continues_numbering_on_second_call(tmp_path):
     write_prompt_batches(build_prompt_batches(_sample_cases()[:5], batch_size=10), tmp_path)
     second = write_prompt_batches(build_prompt_batches(_sample_cases()[5:10], batch_size=10), tmp_path)
     assert second[0].name == "batch_002.md"
+
+
+def test_write_prompt_batches_skips_gaps_in_numbering(tmp_path):
+    # Pre-seed directory with batch_001.md and batch_003.md (gap at 002)
+    (tmp_path / "batch_001.md").write_text("batch 1")
+    (tmp_path / "batch_003.md").write_text("batch 3")
+    # Writing new batches should start at 004.md (max existing + 1), not overwrite existing
+    batches = build_prompt_batches(_sample_cases()[:5], batch_size=10)
+    paths = write_prompt_batches(batches, tmp_path)
+    assert paths[0].name == "batch_004.md"
+    assert not (tmp_path / "batch_002.md").exists()
+    assert (tmp_path / "batch_003.md").exists()  # Original file untouched

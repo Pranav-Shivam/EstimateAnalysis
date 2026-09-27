@@ -44,6 +44,7 @@ def check_scenario_coverage(scenarios: list[dict]) -> list[str]:
 
     case_ids = [c["case_id"] for c in scenarios]
     seen = set()
+    # set.add() returns None (falsy), so condition is True only on re-occurrence: c in seen (second+ time) or None
     duplicates = sorted({c for c in case_ids if c in seen or seen.add(c)})
     if duplicates:
         failures.append(f"duplicate case_ids: {duplicates}")

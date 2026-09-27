@@ -1,0 +1,75 @@
+Backend struct. Layer order: route -> service -> repo -> DB/LLM whatever is needed.
+
+backend/
+├── api/v1/{module}/          route.py · request.py · response.py
+│   ├── admin/
+│   ├── audit_log/
+│   ├── common/
+│   ├── estimate/
+│   ├── master_data/
+│   ├── project/
+│   ├── rule_catalog/
+│   ├── rule_engine/
+│   ├── takeoff/
+│   └── users/
+│
+├── app/{module}/             service.py · repository.py · helper.py · schema.py · constant.py · enum.py · mapping.py
+│   ├── audit_log/
+│   ├── common/
+│   ├── estimate/
+│   ├── master_data/          (sub-modules: corporate_costs, die_recovery, epicor_die, equation_qty,
+│   │                           equations_assembly, equipment, escalation, export_workbook, frame_comp,
+│   │                           glass_pricing, glass_vendor_costs, locations, metal_overhead,
+│   │                           product_data, product_selection)
+│   ├── okta/
+│   ├── project/
+│   ├── rule_catalog/
+│   ├── rule_engine/
+│   ├── takeoff/
+│   ├── takeoff_estimate/     dto/, formula_engine/, orchestrators/, serializers/, takeoff_inputs/, validators/
+│   └── users/
+│
+├── auth/                     Okta integration
+│
+├── core/                     cross-cutting infra
+│   ├── blob/                 Azure blob storage
+│   ├── config/                settings, constant loading
+│   ├── db/                   Postgress_pool.py + db/Postgress/ (PostgressClient lives here)
+│   ├── exceptions/            ServiceUnavailableError etc — error boundary
+│   ├── ingestion/            EXCLUDED — not part of project
+│   ├── keyvault/              Azure Key Vault
+│   ├── llm/                   LLM utils
+│   ├── logging/               Loguru setup
+│   ├── middleware/            request/response middleware
+│   ├── research/             EXCLUDED — not part of project
+│   ├── rule_engine/           estimate/, take_off/, takeoff/ — calc engine core
+│   ├── security/              auth/, authorization/
+│   └── utils/                 api_status_mapping (ApiResponse), datetime_management, generate_id, safe_sort_column
+│
+├── migrations/               DB migrations
+├── scripts/                  standalone scripts
+├── storage/                  uploads/, logs/
+├── tests/                    formula_engine/, etc
+├── docs/                     gotchas.md, architecture.md
+├── graphify-out/             GRAPH_REPORT_backend.md + json
+└── required/rule_engine_total_cost/   app/, core/ subset
+
+Example module (takeoff — full layer order):
+
+api/v1/takeoff/
+├── routes.py       # route handlers, def not async def, ApiResponse[T] envelope
+├── request.py      # Pydantic request models, from_attributes=True
+└── response.py     # Pydantic response models
+
+app/takeoff/
+├── services.py            # business logic, calls self._repo only
+├── repository.py          # DB ops via PostgressClient, _dict_to_*() converters
+├── schemas.py              # @dataclass, matches Postgress columns
+├── constants.py            # DB coords, sort whitelist, search cols
+├── enums.py                # SortOrder(str, Enum) + domain enums
+├── mapping.py              # static dict literals
+├── helper.py               # generate_id(), safe_sort_column()
+├── project_estimate_engine.py   # extra: calc logic specific to takeoff
+├── rule_engine_bridge.py         # extra: bridges to core/rule_engine
+├── breakdown_persist.py           # extra: persistence helper
+└── Postgress_udfs.py               # extra: UDF wrappers

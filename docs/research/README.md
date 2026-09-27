@@ -1,0 +1,12 @@
+# Research Index
+
+Findings from web research done for this project, saved here so they don't need to be re-searched. Check this folder before running a new web search on a topic already covered below.
+
+| File | Covers |
+|---|---|
+| [graphrag-vs-vector-rag.md](graphrag-vs-vector-rag.md) | GraphRAG vs vector RAG benchmark numbers, which claims are verified vs. unverified, which source (TigerGraph) doesn't actually contain the stat it's often cited for |
+| [entity-resolution-and-dedupe.md](entity-resolution-and-dedupe.md) | Blocking strategies, reversible merge design, Jaccard similarity, academic references for the dedupe agent |
+| [quote-turnaround-and-win-rate.md](quote-turnaround-and-win-rate.md) | B2B quote response time stats, win-rate-by-speed data, named-company RFQ automation ROI examples |
+| [llm-judge-calibration.md](llm-judge-calibration.md) | How to calibrate an LLM-as-judge confidence threshold against human reviewer agreement (Cohen's kappa bands, golden-set sizing) |
+
+Each file records: what was verified by directly fetching the source, what came from search only (secondary, unverified), and what came back blocked (403/429) so it isn't retried needlessly.

@@ -912,7 +912,7 @@ from core.llm.openai_client import ExtractionError, OpenAIExtractionClient
 
 def test_extract_quote_request_returns_parsed_model():
     fake_parsed = QuoteRequestExtraction(
-        customer_name_as_written="Zenith Contractors",
+        customer_name_as_written="Bramblewick Contractors",
         line_items=[LineItemExtraction(sku_name_as_written="Widget", quantity="4")],
         raw_text="need 4 widgets",
     )
@@ -923,7 +923,7 @@ def test_extract_quote_request_returns_parsed_model():
     client = OpenAIExtractionClient(client=fake_openai_client)
     result = client.extract_quote_request("need 4 widgets")
 
-    assert result.customer_name_as_written == "Zenith Contractors"
+    assert result.customer_name_as_written == "Bramblewick Contractors"
     assert result.line_items[0].sku_name_as_written == "Widget"
 
 
@@ -1030,9 +1030,9 @@ from app.reference_data.repository import upsert_customer, upsert_sku
 
 
 def _seed(db_session):
-    upsert_customer(db_session, customer_id="CUST-A", name="Zenith Contractors", account_tier="Standard")
-    upsert_customer(db_session, customer_id="CUST-B", name="Zenith Plumbing", account_tier="Standard")
-    upsert_sku(db_session, sku_id="SKU-A", name="Chrome Sprayer Corner-Mount", category="C",
+    upsert_customer(db_session, customer_id="CUST-A", name="Bramblewick Contractors", account_tier="Standard")
+    upsert_customer(db_session, customer_id="CUST-B", name="Bramblewick Plumbing", account_tier="Standard")
+    upsert_sku(db_session, sku_id="SKU-A", name="Quazzlebolt Sprayer Assembly", category="C",
                list_price=1.0, discontinued=False, replaced_by=None, in_stock=True)
     db_session.flush()
 
@@ -1040,8 +1040,8 @@ def _seed(db_session):
 def test_exact_match_resolves_customer_and_sku(db_session):
     _seed(db_session)
     extraction = QuoteRequestExtraction(
-        customer_name_as_written="Zenith Contractors",
-        line_items=[LineItemExtraction(sku_name_as_written="Chrome Sprayer Corner-Mount", quantity="4")],
+        customer_name_as_written="Bramblewick Contractors",
+        line_items=[LineItemExtraction(sku_name_as_written="Quazzlebolt Sprayer Assembly", quantity="4")],
         raw_text="text",
     )
     result = resolve_extraction(db_session, extraction)
@@ -1050,10 +1050,10 @@ def test_exact_match_resolves_customer_and_sku(db_session):
 
 
 def test_fuzzy_match_resolves_shorthand_name(db_session):
-    upsert_customer(db_session, customer_id="CUST-C", name="Advanced Contractors Group", account_tier="Standard")
+    upsert_customer(db_session, customer_id="CUST-C", name="Quazzlebolt Industrial Group", account_tier="Standard")
     db_session.flush()
     extraction = QuoteRequestExtraction(
-        customer_name_as_written="Advanced Contractors Grp",
+        customer_name_as_written="Quazzlebolt Industrial Grp",
         line_items=[],
         raw_text="text",
     )
@@ -1063,7 +1063,7 @@ def test_fuzzy_match_resolves_shorthand_name(db_session):
 
 def test_ambiguous_name_tie_resolves_to_none(db_session):
     _seed(db_session)
-    extraction = QuoteRequestExtraction(customer_name_as_written="Zenith", line_items=[], raw_text="text")
+    extraction = QuoteRequestExtraction(customer_name_as_written="Bramblewick", line_items=[], raw_text="text")
     result = resolve_extraction(db_session, extraction)
     assert result.customer_id is None
 
@@ -1071,9 +1071,9 @@ def test_ambiguous_name_tie_resolves_to_none(db_session):
 def test_unresolvable_sku_name_stays_unresolved_without_blocking_others(db_session):
     _seed(db_session)
     extraction = QuoteRequestExtraction(
-        customer_name_as_written="Zenith Contractors",
+        customer_name_as_written="Bramblewick Contractors",
         line_items=[
-            LineItemExtraction(sku_name_as_written="Chrome Sprayer Corner-Mount", quantity="1"),
+            LineItemExtraction(sku_name_as_written="Quazzlebolt Sprayer Assembly", quantity="1"),
             LineItemExtraction(sku_name_as_written="Some Totally Unknown Part", quantity="1"),
         ],
         raw_text="text",
@@ -1085,7 +1085,7 @@ def test_unresolvable_sku_name_stays_unresolved_without_blocking_others(db_sessi
 
 def test_empty_line_items_resolves_to_empty_list(db_session):
     _seed(db_session)
-    extraction = QuoteRequestExtraction(customer_name_as_written="Zenith Contractors", line_items=[], raw_text="text")
+    extraction = QuoteRequestExtraction(customer_name_as_written="Bramblewick Contractors", line_items=[], raw_text="text")
     result = resolve_extraction(db_session, extraction)
     assert result.line_items == []
 ```
@@ -1277,8 +1277,8 @@ from core.llm.openai_client import ExtractionError
 
 
 def _seed(db_session):
-    upsert_customer(db_session, customer_id="CUST-A", name="Zenith Contractors", account_tier="Standard")
-    upsert_sku(db_session, sku_id="SKU-A", name="Chrome Sprayer Corner-Mount", category="C",
+    upsert_customer(db_session, customer_id="CUST-A", name="Bramblewick Contractors", account_tier="Standard")
+    upsert_sku(db_session, sku_id="SKU-A", name="Quazzlebolt Sprayer Assembly", category="C",
                list_price=1.0, discontinued=False, replaced_by=None, in_stock=True)
     db_session.flush()
 
@@ -1286,8 +1286,8 @@ def _seed(db_session):
 def test_process_email_stores_resolved_quote_request(db_session):
     _seed(db_session)
     extraction = QuoteRequestExtraction(
-        customer_name_as_written="Zenith Contractors",
-        line_items=[LineItemExtraction(sku_name_as_written="Chrome Sprayer Corner-Mount", quantity="4")],
+        customer_name_as_written="Bramblewick Contractors",
+        line_items=[LineItemExtraction(sku_name_as_written="Quazzlebolt Sprayer Assembly", quantity="4")],
         raw_text="need 4",
     )
     fake_client = MagicMock()
@@ -1302,7 +1302,7 @@ def test_process_email_stores_resolved_quote_request(db_session):
 
 def test_process_email_handles_zero_line_items(db_session):
     _seed(db_session)
-    extraction = QuoteRequestExtraction(customer_name_as_written="Zenith Contractors", line_items=[], raw_text="just asking")
+    extraction = QuoteRequestExtraction(customer_name_as_written="Bramblewick Contractors", line_items=[], raw_text="just asking")
     fake_client = MagicMock()
     fake_client.extract_quote_request.return_value = extraction
 
@@ -1463,15 +1463,15 @@ def _client_with_overrides(db_session, fake_llm_client):
 
 
 def test_submit_email_returns_resolved_quote_request(db_session):
-    upsert_customer(db_session, customer_id="CUST-A", name="Zenith Contractors", account_tier="Standard")
-    upsert_sku(db_session, sku_id="SKU-A", name="Chrome Sprayer Corner-Mount", category="C",
+    upsert_customer(db_session, customer_id="CUST-A", name="Bramblewick Contractors", account_tier="Standard")
+    upsert_sku(db_session, sku_id="SKU-A", name="Quazzlebolt Sprayer Assembly", category="C",
                list_price=1.0, discontinued=False, replaced_by=None, in_stock=True)
     db_session.flush()
 
     fake_llm_client = MagicMock()
     fake_llm_client.extract_quote_request.return_value = QuoteRequestExtraction(
-        customer_name_as_written="Zenith Contractors",
-        line_items=[LineItemExtraction(sku_name_as_written="Chrome Sprayer Corner-Mount", quantity="4")],
+        customer_name_as_written="Bramblewick Contractors",
+        line_items=[LineItemExtraction(sku_name_as_written="Quazzlebolt Sprayer Assembly", quantity="4")],
         raw_text="need 4",
     )
 

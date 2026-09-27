@@ -61,7 +61,7 @@ Run: `uv add --dev httpx`
 ```yaml
 services:
   postgres:
-    image: pgvector/pgvector:0.8.6-pg16
+    image: pgvector/pgvector:0.8.6-pg18
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

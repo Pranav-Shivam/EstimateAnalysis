@@ -100,14 +100,15 @@ def test_settings_loads_from_env(monkeypatch):
     assert settings.openai_api_key == "sk-test"
 
 
-def test_settings_database_url_has_compose_default(monkeypatch):
+def test_settings_missing_database_url_raises(monkeypatch):
     monkeypatch.delenv("DATABASE_URL", raising=False)
     monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
-    settings = Settings(_env_file=None)
-    assert settings.database_url == "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
+    with pytest.raises(ValidationError):
+        Settings(_env_file=None)
 
 
 def test_settings_missing_openai_key_raises(monkeypatch):
+    monkeypatch.setenv("DATABASE_URL", "postgresql+psycopg://u:p@localhost:5432/db")
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     with pytest.raises(ValidationError):
         Settings(_env_file=None)
@@ -127,9 +128,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
-    database_url: str = "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
+    database_url: str
     openai_api_key: str
 ```
+
+(Updated after Task 1 shipped: `database_url` was originally given a hardcoded compose-matching default, but that duplicated the connection string across `settings.py`, `.env.example`, and `docker-compose.yml` — exactly the kind of drift that caused a real port-mismatch incident during Task 2. It is now required, sourced only from `.env`, same as `openai_api_key`.)
 
 Also create empty `backend/core/__init__.py` and `backend/core/config/__init__.py`, and `backend/tests/core/__init__.py`.
 

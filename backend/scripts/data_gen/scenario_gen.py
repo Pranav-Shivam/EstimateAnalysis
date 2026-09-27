@@ -1,4 +1,7 @@
+import json
 import random
+import re
+from pathlib import Path
 
 SCENARIO_TYPES = [
     "discontinued_swap",
@@ -178,3 +181,46 @@ def select_cases(config, catalog: list[dict], customers: list[dict]) -> list[dic
     cases += _select_revision_pair(catalog, customers, rng, pair_count, len(cases) + 1)
     cases += _select_clean_distinct(catalog, customers, rng, per_type, len(cases) + 1)
     return cases
+
+
+PROMPT_TEMPLATE_PATH = Path(__file__).resolve().parents[3] / "docs" / "prompts" / "scenarios_gen_prompt.md"
+
+
+def _load_prompt_template() -> str:
+    text = PROMPT_TEMPLATE_PATH.read_text()
+    match = re.search(r"```\n(You write realistic.*?)\n```", text, re.DOTALL)
+    if not match:
+        raise ValueError(f"could not find prompt template block in {PROMPT_TEMPLATE_PATH}")
+    return match.group(1)
+
+
+def build_prompt_batches(cases: list[dict], batch_size: int = 10) -> list[str]:
+    template = _load_prompt_template()
+    batches = []
+    for i in range(0, len(cases), batch_size):
+        batch = cases[i : i + batch_size]
+        batch_json = json.dumps(
+            [
+                {
+                    "case_id": c["case_id"],
+                    "scenario_type": c["scenario_type"],
+                    "customer": c["customer"],
+                    "entities": c["entities"],
+                }
+                for c in batch
+            ],
+            indent=2,
+        )
+        batches.append(template.replace("{{BATCH_CASES_JSON}}", batch_json))
+    return batches
+
+
+def write_prompt_batches(batches: list[str], prompts_dir: Path) -> list[Path]:
+    prompts_dir.mkdir(parents=True, exist_ok=True)
+    next_index = len(sorted(prompts_dir.glob("batch_*.md"))) + 1
+    paths = []
+    for offset, batch in enumerate(batches):
+        path = prompts_dir / f"batch_{next_index + offset:03d}.md"
+        path.write_text(batch)
+        paths.append(path)
+    return paths

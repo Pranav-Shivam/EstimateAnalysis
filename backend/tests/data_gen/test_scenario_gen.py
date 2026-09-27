@@ -59,3 +59,48 @@ def test_discount_mismatch_survives_a_fully_covered_customer():
     cases = select_cases(config, catalog, customers)
     mismatch_cases = [c for c in cases if c["scenario_type"] == "discount_category_mismatch"]
     assert len(mismatch_cases) == 10
+
+
+import json
+
+from data_gen.scenario_gen import build_prompt_batches, write_prompt_batches
+
+
+def _sample_cases():
+    return [
+        {
+            "case_id": f"sc-{i:04d}",
+            "scenario_type": "clean_distinct",
+            "customer": {"name": "Metro Plumbing", "contact": "Ravi Patel"},
+            "entities": {"customer_id": "CUST-0001", "sku_ids": ["SKU-0001"]},
+        }
+        for i in range(1, 26)
+    ]
+
+
+def test_batches_split_by_batch_size():
+    batches = build_prompt_batches(_sample_cases(), batch_size=10)
+    assert len(batches) == 3  # 25 cases -> 10 + 10 + 5
+
+
+def test_each_batch_embeds_valid_json_for_its_cases():
+    cases = _sample_cases()[:10]
+    batches = build_prompt_batches(cases, batch_size=10)
+    start = batches[0].index("Cases:\n") + len("Cases:\n")
+    embedded = json.loads(batches[0][start:])
+    assert len(embedded) == 10
+    assert embedded[0]["case_id"] == "sc-0001"
+
+
+def test_write_prompt_batches_numbers_files_sequentially(tmp_path):
+    batches = build_prompt_batches(_sample_cases(), batch_size=10)
+    paths = write_prompt_batches(batches, tmp_path)
+    assert [p.name for p in paths] == ["batch_001.md", "batch_002.md", "batch_003.md"]
+    for path in paths:
+        assert path.exists()
+
+
+def test_write_prompt_batches_continues_numbering_on_second_call(tmp_path):
+    write_prompt_batches(build_prompt_batches(_sample_cases()[:5], batch_size=10), tmp_path)
+    second = write_prompt_batches(build_prompt_batches(_sample_cases()[5:10], batch_size=10), tmp_path)
+    assert second[0].name == "batch_002.md"

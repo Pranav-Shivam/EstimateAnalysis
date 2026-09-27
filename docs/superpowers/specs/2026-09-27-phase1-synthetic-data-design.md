@@ -57,7 +57,7 @@ backend/data/
 `graph_export.py` emits only what `catalog_gen.py` and `customer_gen.py` actually produce:
 
 - Nodes: `SKU`, `Customer`, `Contract`, `Category`.
-- Edges: `REPLACED_BY` (SKU to SKU), `REQUIRES` (SKU to SKU), `COVERS` (Contract to Category), `BELONGS_TO` (SKU to Category).
+- Edges: `REPLACED_BY` (SKU to SKU), `REQUIRES` (SKU to SKU), `COVERS` (Contract to Category), `BELONGS_TO` (SKU to Category), `HAS_CONTRACT` (Customer to Contract).
 
 This is deliberately not the full 10-node/15-edge-type schema mentioned in `docs/roadmap.md`'s Phase 4 description. That fuller schema gets defined in Phase 4's own spec, once there is a knowledge-graph consumer to justify each edge type; this file's job is only to export what Phase 1's data actually contains. Output format: `backend/data/graph/nodes.json` and `backend/data/graph/edges.json`, each a flat JSON array of `{id, label, properties}` (nodes) or `{from, to, type, properties}` (edges), loadable into Neo4j once it exists.
 

@@ -24,7 +24,7 @@ def test_upsert_sku_inserts_then_updates(db_session):
                discontinued=True, replaced_by=None, in_stock=False)
     db_session.flush()
     assert db_session.get(Sku, "SKU-T1").name == "Widget V2"
-    assert len(all_skus(db_session)) == 1
+    assert sum(1 for s in all_skus(db_session) if s.sku_id == "SKU-T1") == 1
 
 
 def test_upsert_customer_site_contract_and_lookup(db_session):

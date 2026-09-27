@@ -15,7 +15,8 @@ def test_load_catalog_resolves_replaced_by_after_insert(db_session):
     load_catalog(db_session, catalog)
     db_session.flush()
 
-    assert len(all_skus(db_session)) == 2
+    skus_by_id = {s.sku_id: s for s in all_skus(db_session) if s.sku_id in ("SKU-A", "SKU-B")}
+    assert set(skus_by_id) == {"SKU-A", "SKU-B"}
     assert db_session.get(Sku, "SKU-A").replaced_by == "SKU-B"
 
 

@@ -2,7 +2,7 @@ from datetime import date
 
 from sqlalchemy import ForeignKey, Text
 from sqlalchemy.dialects.postgresql import ARRAY
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from core.db.base import Base
 
@@ -26,6 +26,9 @@ class Customer(Base):
     name: Mapped[str]
     account_tier: Mapped[str]
 
+    sites: Mapped[list["Site"]] = relationship(back_populates="customer")
+    contracts: Mapped[list["Contract"]] = relationship(back_populates="customer")
+
 
 class Site(Base):
     __tablename__ = "sites"
@@ -34,6 +37,8 @@ class Site(Base):
     customer_id: Mapped[str] = mapped_column(ForeignKey("customers.customer_id"))
     address: Mapped[str]
     zip: Mapped[str]
+
+    customer: Mapped[Customer] = relationship(back_populates="sites")
 
 
 class Contract(Base):
@@ -45,3 +50,5 @@ class Contract(Base):
     covered_categories: Mapped[list[str]] = mapped_column(ARRAY(Text))
     effective_from: Mapped[date]
     effective_to: Mapped[date]
+
+    customer: Mapped[Customer] = relationship(back_populates="contracts")

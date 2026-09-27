@@ -67,6 +67,20 @@ def check_scenario_coverage(scenarios: list[dict]) -> list[str]:
     return failures
 
 
+def check_determinism(regenerate_fn) -> list[str]:
+    """regenerate_fn() returns (catalog, customers) freshly built from config; called twice and compared
+    structurally (Python == on the loaded lists/dicts), not byte-for-byte, since JSON key order is not
+    semantically meaningful and shouldn't fail a determinism check on its own."""
+    first_catalog, first_customers = regenerate_fn()
+    second_catalog, second_customers = regenerate_fn()
+    failures = []
+    if first_catalog != second_catalog:
+        failures.append("catalog.json is not deterministic across two runs with the same seed")
+    if first_customers != second_customers:
+        failures.append("customers.json is not deterministic across two runs with the same seed")
+    return failures
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Validate the generated Phase 1 dataset")
     parser.add_argument("--catalog", type=Path, default=Path("data/catalog.json"))

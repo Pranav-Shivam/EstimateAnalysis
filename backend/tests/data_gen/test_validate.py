@@ -1,4 +1,4 @@
-from data_gen.validate import check_referential_integrity, check_scenario_coverage
+from data_gen.validate import check_determinism, check_referential_integrity, check_scenario_coverage
 
 
 def _valid_catalog():
@@ -87,3 +87,20 @@ def test_scenario_coverage_catches_empty_email_text():
     scenario["email_text"] = ""
     failures = check_scenario_coverage([scenario])
     assert any("missing email_text" in f for f in failures)
+
+
+def test_check_determinism_passes_for_a_pure_deterministic_function():
+    def regenerate():
+        return ({"a": 1}, [{"b": 2}])
+    assert check_determinism(regenerate) == []
+
+
+def test_check_determinism_catches_a_non_deterministic_function():
+    calls = {"n": 0}
+
+    def regenerate():
+        calls["n"] += 1
+        return ({"a": calls["n"]}, [{"b": 2}])
+
+    failures = check_determinism(regenerate)
+    assert any("catalog.json" in f for f in failures)

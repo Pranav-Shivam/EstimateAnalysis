@@ -80,6 +80,8 @@ def test_dedupe_classifier_matches_phase1_ground_truth(db_session):
         matched = [v for v in verdicts if v.candidate_quote_request_id == rows_by_case_id[case_ids[0]].id]
         assert len(matched) == 1
         assert matched[0].verdict == "DUPLICATE_OF"
+        others = [v for v in verdicts if v.candidate_quote_request_id != rows_by_case_id[case_ids[0]].id]
+        assert all(v.verdict == "DISTINCT" for v in others)
 
     for case_ids in revision_pairs.values():
         assert len(case_ids) == 2
@@ -88,9 +90,12 @@ def test_dedupe_classifier_matches_phase1_ground_truth(db_session):
         matched = [v for v in verdicts if v.candidate_quote_request_id == rows_by_case_id[case_ids[0]].id]
         assert len(matched) == 1
         assert matched[0].verdict == "REVISION_OF"
+        others = [v for v in verdicts if v.candidate_quote_request_id != rows_by_case_id[case_ids[0]].id]
+        assert all(v.verdict == "DISTINCT" for v in others)
 
-    clean_distinct_cases = [c for c in scenarios if c["scenario_type"] == "clean_distinct"]
-    for case in clean_distinct_cases:
+    non_pair_types = {"discontinued_swap", "missing_required_part", "discount_category_mismatch", "clean_distinct"}
+    non_pair_cases = [c for c in scenarios if c["scenario_type"] in non_pair_types]
+    for case in non_pair_cases:
         row = rows_by_case_id[case["case_id"]]
         verdicts = run_dedupe(db_session, row.id)
         assert all(v.verdict == "DISTINCT" for v in verdicts)

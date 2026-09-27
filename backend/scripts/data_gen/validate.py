@@ -1,8 +1,13 @@
 import argparse
 import json
+import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from data_gen.scenario_gen import SCENARIO_TYPES
+
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
 
 def check_referential_integrity(catalog: list[dict], customers: list[dict], scenarios: list[dict]) -> list[str]:
@@ -17,7 +22,10 @@ def check_referential_integrity(catalog: list[dict], customers: list[dict], scen
                 failures.append(f"catalog: {sku['sku_id']}.requires -> missing SKU {req}")
 
     customer_ids = {c["customer_id"] for c in customers}
-    contract_ids = {ctr["contract_id"] for c in customers for ctr in c["contracts"]}
+    site_ids = {site["site_id"] for c in customers for site in c["sites"]}
+    contract_ids_by_customer = {
+        c["customer_id"]: {ctr["contract_id"] for ctr in c["contracts"]} for c in customers
+    }
 
     for case in scenarios:
         entities = case["entities"]
@@ -25,9 +33,17 @@ def check_referential_integrity(catalog: list[dict], customers: list[dict], scen
         if customer_id and customer_id not in customer_ids:
             failures.append(f"scenario {case['case_id']}: unknown customer_id {customer_id}")
 
+        site_id = entities.get("site_id")
+        if site_id and site_id not in site_ids:
+            failures.append(f"scenario {case['case_id']}: unknown site_id {site_id}")
+
         contract_id = entities.get("contract_id")
-        if contract_id and contract_id not in contract_ids:
-            failures.append(f"scenario {case['case_id']}: unknown contract_id {contract_id}")
+        if contract_id:
+            customer_contract_ids = contract_ids_by_customer.get(customer_id, set())
+            if contract_id not in customer_contract_ids:
+                failures.append(
+                    f"scenario {case['case_id']}: contract_id {contract_id} does not belong to customer_id {customer_id}"
+                )
 
         referenced_skus = entities.get("sku_ids", [])
         if "sku_id" in entities:
@@ -83,14 +99,14 @@ def check_determinism(regenerate_fn) -> list[str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Validate the generated Phase 1 dataset")
-    parser.add_argument("--catalog", type=Path, default=Path("data/catalog.json"))
-    parser.add_argument("--customers", type=Path, default=Path("data/customers.json"))
-    parser.add_argument("--scenarios", type=Path, default=Path("data/scenarios.json"))
+    parser.add_argument("--catalog", type=Path, default=DATA_DIR / "catalog.json")
+    parser.add_argument("--customers", type=Path, default=DATA_DIR / "customers.json")
+    parser.add_argument("--scenarios", type=Path, default=DATA_DIR / "scenarios.json")
     args = parser.parse_args()
 
-    catalog = json.loads(args.catalog.read_text())
-    customers = json.loads(args.customers.read_text())
-    scenarios = json.loads(args.scenarios.read_text())
+    catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+    customers = json.loads(args.customers.read_text(encoding="utf-8"))
+    scenarios = json.loads(args.scenarios.read_text(encoding="utf-8"))
 
     failures = check_referential_integrity(catalog, customers, scenarios) + check_scenario_coverage(scenarios)
 

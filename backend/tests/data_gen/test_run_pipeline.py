@@ -28,6 +28,12 @@ def test_check_output_paths_are_clear_allows_force(tmp_path):
     check_output_paths_are_clear(paths, force=True)  # must not raise
 
 
+def test_data_dir_default_resolves_to_backend_data_regardless_of_cwd():
+    from data_gen.run_pipeline import DATA_DIR
+    assert DATA_DIR.name == "data"
+    assert DATA_DIR.parent.name == "backend"
+
+
 def test_full_pipeline_is_deterministic():
     def regenerate():
         catalog = generate_catalog(DEFAULT)

@@ -1,10 +1,15 @@
 import argparse
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from data_gen.catalog_gen import generate_catalog, write_catalog
 from data_gen.config import DEFAULT
 from data_gen.customer_gen import generate_customers, write_customers
 from data_gen.graph_export import build_edges, build_nodes, write_graph
+
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
 
 def check_output_paths_are_clear(paths: list[Path], force: bool) -> None:
@@ -39,7 +44,7 @@ def run(data_dir: Path, force: bool = False) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the full Phase 1 data generation pipeline (catalog, customers, graph)")
-    parser.add_argument("--data-dir", type=Path, default=Path("data"))
+    parser.add_argument("--data-dir", type=Path, default=DATA_DIR)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
     run(args.data_dir, force=args.force)

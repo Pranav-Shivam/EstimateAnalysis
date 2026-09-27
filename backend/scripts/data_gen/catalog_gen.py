@@ -2,9 +2,14 @@ import argparse
 import itertools
 import json
 import random
+import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from data_gen.config import DEFAULT, Config, validate_config
+
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
 CATEGORIES = [
     "Plumbing-Fittings",
@@ -116,12 +121,12 @@ def write_catalog(skus: list[dict], path: Path, force: bool = False) -> None:
     if path.exists() and not force:
         raise FileExistsError(f"{path} already exists; pass --force to overwrite")
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(skus, indent=2))
+    path.write_text(json.dumps(skus, indent=2), encoding="utf-8")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate the synthetic SKU catalog")
-    parser.add_argument("--out", type=Path, default=Path("data/catalog.json"))
+    parser.add_argument("--out", type=Path, default=DATA_DIR / "catalog.json")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 

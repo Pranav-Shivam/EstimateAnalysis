@@ -1,6 +1,11 @@
 import argparse
 import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+DATA_DIR = Path(__file__).resolve().parents[2] / "data"
 
 
 def build_nodes(catalog: list[dict], customers: list[dict]) -> list[dict]:
@@ -75,21 +80,21 @@ def write_graph(nodes: list[dict], edges: list[dict], nodes_path: Path, edges_pa
             raise FileExistsError(f"{path} already exists; pass --force to overwrite")
     nodes_path.parent.mkdir(parents=True, exist_ok=True)
     edges_path.parent.mkdir(parents=True, exist_ok=True)
-    nodes_path.write_text(json.dumps(nodes, indent=2))
-    edges_path.write_text(json.dumps(edges, indent=2))
+    nodes_path.write_text(json.dumps(nodes, indent=2), encoding="utf-8")
+    edges_path.write_text(json.dumps(edges, indent=2), encoding="utf-8")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Export catalog/customer data to graph nodes and edges")
-    parser.add_argument("--catalog", type=Path, default=Path("data/catalog.json"))
-    parser.add_argument("--customers", type=Path, default=Path("data/customers.json"))
-    parser.add_argument("--nodes-out", type=Path, default=Path("data/graph/nodes.json"))
-    parser.add_argument("--edges-out", type=Path, default=Path("data/graph/edges.json"))
+    parser.add_argument("--catalog", type=Path, default=DATA_DIR / "catalog.json")
+    parser.add_argument("--customers", type=Path, default=DATA_DIR / "customers.json")
+    parser.add_argument("--nodes-out", type=Path, default=DATA_DIR / "graph" / "nodes.json")
+    parser.add_argument("--edges-out", type=Path, default=DATA_DIR / "graph" / "edges.json")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
-    catalog = json.loads(args.catalog.read_text())
-    customers = json.loads(args.customers.read_text())
+    catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
+    customers = json.loads(args.customers.read_text(encoding="utf-8"))
     nodes = build_nodes(catalog, customers)
     edges = build_edges(catalog, customers)
     write_graph(nodes, edges, args.nodes_out, args.edges_out, force=args.force)

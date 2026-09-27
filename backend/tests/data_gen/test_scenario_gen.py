@@ -51,6 +51,42 @@ def test_duplicate_pair_cases_share_entities_except_role():
         assert len(skus) == 1, f"pair {pair_id} disagrees on sku_ids"
 
 
+def test_duplicate_pair_entities_include_sku_names():
+    config, catalog, customers = _dataset()
+    catalog_by_id = {s["sku_id"]: s for s in catalog}
+    cases = select_cases(config, catalog, customers)
+    duplicates = [c for c in cases if c["scenario_type"] == "duplicate_pair"]
+    assert duplicates
+    for case in duplicates:
+        sku_names = case["entities"]["sku_names"]
+        sku_ids = case["entities"]["sku_ids"]
+        assert sku_names == [catalog_by_id[sid]["name"] for sid in sku_ids]
+
+
+def test_revision_pair_entities_include_sku_names():
+    config, catalog, customers = _dataset()
+    catalog_by_id = {s["sku_id"]: s for s in catalog}
+    cases = select_cases(config, catalog, customers)
+    revisions = [c for c in cases if c["scenario_type"] == "revision_pair"]
+    assert revisions
+    for case in revisions:
+        sku_names = case["entities"]["sku_names"]
+        sku_ids = case["entities"]["sku_ids"]
+        assert sku_names == [catalog_by_id[sid]["name"] for sid in sku_ids]
+
+
+def test_clean_distinct_entities_include_sku_names():
+    config, catalog, customers = _dataset()
+    catalog_by_id = {s["sku_id"]: s for s in catalog}
+    cases = select_cases(config, catalog, customers)
+    clean = [c for c in cases if c["scenario_type"] == "clean_distinct"]
+    assert clean
+    for case in clean:
+        sku_names = case["entities"]["sku_names"]
+        sku_ids = case["entities"]["sku_ids"]
+        assert sku_names == [catalog_by_id[sid]["name"] for sid in sku_ids]
+
+
 def test_discount_mismatch_survives_a_fully_covered_customer():
     config, catalog, customers = _dataset()
     # simulate a customer whose contract covers every category: must not crash selection
@@ -237,3 +273,86 @@ def test_wrong_shaped_response_json_does_not_crash_other_batches(tmp_path):
     assert accepted_ids == {"sc-0002", "sc-0003"}
     # sc-0001 is missing (was in malformed batch_001)
     assert rejected.get("sc-0001") == "missing from any response file"
+
+
+def test_rebatch_last_write_wins_when_earlier_rejection_is_later_accepted(tmp_path):
+    # batch_001 rejects sc-0002 (duplicate_pair) as a label leak; batch_002, processed after it
+    # in filename order (simulating a re-batch round), accepts the same case with a clean rewrite.
+    # The later verdict must win: sc-0002 ends up accepted, not stuck in rejected forever.
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0002", "email_text": "this is a duplicate pair of my last request"},
+    ]))
+    (tmp_path / "batch_002.json").write_text(json.dumps([
+        {"case_id": "sc-0002", "email_text": "quote for the usual parts please"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    accepted_ids = {c["case_id"] for c in accepted}
+    assert "sc-0002" in accepted_ids
+    assert "sc-0002" not in rejected
+
+
+def test_rebatch_last_write_wins_when_earlier_acceptance_is_later_rejected(tmp_path):
+    # Reverse order: batch_001 accepts sc-0002; batch_002, processed after it, rejects the
+    # same case. The later (rejecting) verdict must win.
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0002", "email_text": "quote for the usual parts please"},
+    ]))
+    (tmp_path / "batch_002.json").write_text(json.dumps([
+        {"case_id": "sc-0002", "email_text": "this is a duplicate pair of my last request"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    accepted_ids = {c["case_id"] for c in accepted}
+    assert "sc-0002" not in accepted_ids
+    assert rejected.get("sc-0002") == "email_text leaks scenario_type label"
+
+
+def test_utf8_email_text_round_trips_without_mojibake(tmp_path):
+    text = "Need the “deluxe” version, café spec please"
+    (tmp_path / "batch_001.json").write_text(
+        json.dumps([{"case_id": "sc-0001", "email_text": text}]), encoding="utf-8"
+    )
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    matched = next(c for c in accepted if c["case_id"] == "sc-0001")
+    assert matched["email_text"] == text
+
+
+def test_non_string_email_text_is_rejected_not_crashed(tmp_path):
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0001", "email_text": None},
+        {"case_id": "sc-0002", "email_text": "quote for the usual parts please"},
+        {"case_id": "sc-0003", "email_text": "can you price this out for me"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)  # must not raise
+    assert rejected.get("sc-0001") == "empty email_text"
+    accepted_ids = {c["case_id"] for c in accepted}
+    assert "sc-0001" not in accepted_ids
+
+
+def test_revision_pair_word_repair_is_not_a_false_label_leak(tmp_path):
+    cases = [{
+        "case_id": "sc-0010", "scenario_type": "revision_pair",
+        "customer": {"name": "A", "contact": "B"},
+        "entities": {"customer_id": "CUST-0001", "site_id": "SITE-0001", "sku_ids": ["SKU-0001"],
+                     "pair_id": "rev-0001", "pair_role": "original"},
+    }]
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0010", "email_text": "need pricing for the boiler repair job, thanks"},
+    ]))
+    accepted, rejected = ingest_responses(cases, tmp_path)
+    assert "sc-0010" not in rejected
+    assert {c["case_id"] for c in accepted} == {"sc-0010"}
+
+
+def test_duplicate_pair_explicit_leak_without_the_word_pair_is_caught(tmp_path):
+    cases = [{
+        "case_id": "sc-0011", "scenario_type": "duplicate_pair",
+        "customer": {"name": "A", "contact": "B"},
+        "entities": {"customer_id": "CUST-0001", "site_id": "SITE-0001", "sku_ids": ["SKU-0001"],
+                     "pair_id": "dup-0001", "pair_role": "first"},
+    }]
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0011", "email_text": "this is a duplicate of my request"},
+    ]))
+    accepted, rejected = ingest_responses(cases, tmp_path)
+    assert rejected.get("sc-0011") == "email_text leaks scenario_type label"
+    assert accepted == []

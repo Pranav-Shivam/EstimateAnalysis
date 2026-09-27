@@ -48,6 +48,43 @@ def test_referential_integrity_catches_unknown_customer_in_scenario():
     assert any("CUST-9999" in f for f in failures)
 
 
+def test_referential_integrity_catches_unknown_site_id():
+    scenario = _valid_scenario()
+    scenario["entities"]["site_id"] = "SITE-9999"
+    failures = check_referential_integrity(_valid_catalog(), _valid_customers(), [scenario])
+    assert any("SITE-9999" in f for f in failures)
+
+
+def test_referential_integrity_allows_a_valid_site_id():
+    scenario = _valid_scenario()
+    scenario["entities"]["site_id"] = "SITE-0001"  # belongs to CUST-0001 in _valid_customers()
+    failures = check_referential_integrity(_valid_catalog(), _valid_customers(), [scenario])
+    assert failures == []
+
+
+def test_referential_integrity_allows_contract_id_belonging_to_its_own_customer():
+    scenario = _valid_scenario()
+    scenario["entities"]["contract_id"] = "CTR-0001"  # belongs to CUST-0001 in _valid_customers()
+    failures = check_referential_integrity(_valid_catalog(), _valid_customers(), [scenario])
+    assert failures == []
+
+
+def test_referential_integrity_catches_contract_id_belonging_to_a_different_customer():
+    customers = _valid_customers()
+    customers.append({
+        "customer_id": "CUST-0002", "name": "B", "account_tier": "Standard",
+        "contacts": [{"name": "n", "email": "e", "phone": "p"}],
+        "sites": [{"site_id": "SITE-0002", "address": "a", "zip": "1"}],
+        "contracts": [{"contract_id": "CTR-0002", "discount_category": "X",
+                       "covered_categories": ["X"], "effective_from": "2023-01-01", "effective_to": "2024-01-01"}],
+    })
+    scenario = _valid_scenario()
+    scenario["entities"]["customer_id"] = "CUST-0001"
+    scenario["entities"]["contract_id"] = "CTR-0002"  # exists, but belongs to CUST-0002, not CUST-0001
+    failures = check_referential_integrity(_valid_catalog(), customers, [scenario])
+    assert any("CTR-0002" in f for f in failures)
+
+
 def test_scenario_coverage_passes_for_exactly_ten_per_type():
     from data_gen.scenario_gen import SCENARIO_TYPES
     scenarios = [

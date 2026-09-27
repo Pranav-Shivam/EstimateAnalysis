@@ -97,6 +97,7 @@ def _select_duplicate_pair(catalog, customers, rng, pair_count, next_index):
             "customer_id": customer["customer_id"],
             "site_id": site["site_id"],
             "sku_ids": [s["sku_id"] for s in line_items],
+            "sku_names": [s["name"] for s in line_items],
             "pair_id": f"dup-{p + 1:04d}",
         }
         for role in ("first", "second"):
@@ -130,12 +131,14 @@ def _select_revision_pair(catalog, customers, rng, pair_count, next_index):
                 "customer_id": customer["customer_id"],
                 "site_id": site["site_id"],
                 "sku_ids": [s["sku_id"] for s in original_items],
+                "sku_names": [s["name"] for s in original_items],
                 "pair_id": pair_id,
                 "pair_role": "original",
             },
         })
         index += 1
 
+        revised_items = original_items + [added_item]
         cases.append({
             "case_id": f"sc-{index:04d}",
             "scenario_type": "revision_pair",
@@ -143,7 +146,8 @@ def _select_revision_pair(catalog, customers, rng, pair_count, next_index):
             "entities": {
                 "customer_id": customer["customer_id"],
                 "site_id": site["site_id"],
-                "sku_ids": [s["sku_id"] for s in original_items] + [added_item["sku_id"]],
+                "sku_ids": [s["sku_id"] for s in revised_items],
+                "sku_names": [s["name"] for s in revised_items],
                 "pair_id": pair_id,
                 "pair_role": "revision",
             },
@@ -162,7 +166,11 @@ def _select_clean_distinct(catalog, customers, rng, count, next_index):
             "case_id": f"sc-{next_index + i:04d}",
             "scenario_type": "clean_distinct",
             "customer": _customer_contact(customer, rng),
-            "entities": {"customer_id": customer["customer_id"], "sku_ids": [s["sku_id"] for s in line_items]},
+            "entities": {
+                "customer_id": customer["customer_id"],
+                "sku_ids": [s["sku_id"] for s in line_items],
+                "sku_names": [s["name"] for s in line_items],
+            },
         })
     return cases
 
@@ -187,7 +195,7 @@ PROMPT_TEMPLATE_PATH = Path(__file__).resolve().parents[3] / "docs" / "prompts" 
 
 
 def _load_prompt_template() -> str:
-    text = PROMPT_TEMPLATE_PATH.read_text()
+    text = PROMPT_TEMPLATE_PATH.read_text(encoding="utf-8")
     match = re.search(r"```\n(You write realistic.*?)\n```", text, re.DOTALL)
     if not match:
         raise ValueError(f"could not find prompt template block in {PROMPT_TEMPLATE_PATH}")
@@ -229,9 +237,23 @@ def write_prompt_batches(batches: list[str], prompts_dir: Path) -> list[Path]:
         path = prompts_dir / f"batch_{next_index + offset:03d}.md"
         if path.exists():
             raise FileExistsError(f"{path} already exists; will not overwrite")
-        path.write_text(batch)
+        path.write_text(batch, encoding="utf-8")
         paths.append(path)
     return paths
+
+
+# Scenario types whose label is distinctive enough on its own that a single strong signal
+# word appearing in the email is a reliable sign of a leak, even if the other half of the
+# label (e.g. "pair") doesn't appear. Word-boundary matched, same as the all-words check.
+_LABEL_LEAK_SIGNAL_WORDS = {
+    "discontinued_swap": ["discontinued"],
+    "duplicate_pair": ["duplicate"],
+    "revision_pair": ["revision"],
+}
+
+
+def _contains_word(text: str, word: str) -> bool:
+    return re.search(rf"\b{re.escape(word)}\b", text) is not None
 
 
 def ingest_responses(cases: list[dict], responses_dir: Path) -> tuple[list[dict], dict[str, str]]:
@@ -241,7 +263,7 @@ def ingest_responses(cases: list[dict], responses_dir: Path) -> tuple[list[dict]
 
     for response_path in sorted(responses_dir.glob("*.json")):
         try:
-            entries = json.loads(response_path.read_text())
+            entries = json.loads(response_path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             continue  # every case_id in this batch stays unresolved; caught by the missing-case check below
 
@@ -257,12 +279,26 @@ def ingest_responses(cases: list[dict], responses_dir: Path) -> tuple[list[dict]
             email_text = entry.get("email_text", "")
             scenario_type = cases_by_id[case_id]["scenario_type"]
             label_words = scenario_type.split("_")
-            if not email_text.strip():
+
+            if not isinstance(email_text, str) or not email_text.strip():
                 rejected[case_id] = "empty email_text"
-            elif all(word in email_text.lower() for word in label_words):
+                email_text_by_id.pop(case_id, None)
+                continue
+
+            lowered = email_text.lower()
+            signal_words = _LABEL_LEAK_SIGNAL_WORDS.get(scenario_type, [])
+            leaks = any(_contains_word(lowered, word) for word in signal_words) or all(
+                _contains_word(lowered, word) for word in label_words
+            )
+            # A response file processed later (sorted by filename, e.g. a re-batch round) overrides
+            # an earlier verdict for the same case_id: last write wins, and a case never ends up in
+            # both `accepted` and `rejected` at once.
+            if leaks:
                 rejected[case_id] = "email_text leaks scenario_type label"
+                email_text_by_id.pop(case_id, None)
             else:
                 email_text_by_id[case_id] = email_text
+                rejected.pop(case_id, None)
 
     accepted = []
     for case in cases:
@@ -286,4 +322,4 @@ def write_scenarios(accepted_cases: list[dict], path: Path, force: bool = False)
         raise FileExistsError(f"{path} already exists; pass --force to overwrite")
     path.parent.mkdir(parents=True, exist_ok=True)
     ordered = sorted(accepted_cases, key=lambda c: c["case_id"])
-    path.write_text(json.dumps(ordered, indent=2))
+    path.write_text(json.dumps(ordered, indent=2), encoding="utf-8")

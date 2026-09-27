@@ -219,3 +219,21 @@ def test_write_scenarios_refuses_to_overwrite_without_force(tmp_path):
         assert False, "expected FileExistsError"
     except FileExistsError:
         pass
+
+
+def test_wrong_shaped_response_json_does_not_crash_other_batches(tmp_path):
+    # Top-level object (dict) instead of array in batch_001.json
+    (tmp_path / "batch_001.json").write_text(json.dumps({
+        "case_id": "sc-0001", "email_text": "need a couple of these, thanks"
+    }))
+    # Valid batch in batch_002.json
+    (tmp_path / "batch_002.json").write_text(json.dumps([
+        {"case_id": "sc-0002", "email_text": "quote for the usual parts please"},
+        {"case_id": "sc-0003", "email_text": "can you price this out for me"},
+    ]))
+    # Should not raise, should process batch_002 successfully
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    accepted_ids = {c["case_id"] for c in accepted}
+    assert accepted_ids == {"sc-0002", "sc-0003"}
+    # sc-0001 is missing (was in malformed batch_001)
+    assert rejected.get("sc-0001") == "missing from any response file"

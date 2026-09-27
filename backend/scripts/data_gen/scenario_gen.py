@@ -245,7 +245,12 @@ def ingest_responses(cases: list[dict], responses_dir: Path) -> tuple[list[dict]
         except json.JSONDecodeError:
             continue  # every case_id in this batch stays unresolved; caught by the missing-case check below
 
+        if not isinstance(entries, list):
+            continue
+
         for entry in entries:
+            if not isinstance(entry, dict):
+                continue
             case_id = entry.get("case_id")
             if case_id not in cases_by_id:
                 continue

@@ -116,3 +116,106 @@ def test_write_prompt_batches_skips_gaps_in_numbering(tmp_path):
     assert paths[0].name == "batch_004.md"
     assert not (tmp_path / "batch_002.md").exists()
     assert (tmp_path / "batch_003.md").exists()  # Original file untouched
+
+
+from data_gen.scenario_gen import ingest_responses, rebatch_rejected, write_scenarios
+
+
+def _three_cases():
+    return [
+        {
+            "case_id": "sc-0001", "scenario_type": "clean_distinct",
+            "customer": {"name": "A", "contact": "B"}, "entities": {"customer_id": "CUST-0001", "sku_ids": ["SKU-0001"]},
+        },
+        {
+            "case_id": "sc-0002", "scenario_type": "duplicate_pair",
+            "customer": {"name": "A", "contact": "B"}, "entities": {"customer_id": "CUST-0001", "sku_ids": ["SKU-0001"]},
+        },
+        {
+            "case_id": "sc-0003", "scenario_type": "clean_distinct",
+            "customer": {"name": "A", "contact": "B"}, "entities": {"customer_id": "CUST-0001", "sku_ids": ["SKU-0002"]},
+        },
+    ]
+
+
+def test_accepts_a_valid_response(tmp_path):
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0001", "email_text": "need a couple of these for the job, thanks"},
+        {"case_id": "sc-0002", "email_text": "quote for the usual parts please"},
+        {"case_id": "sc-0003", "email_text": "can you price this out for me"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    assert len(accepted) == 3
+    assert rejected == {}
+
+
+def test_rejects_empty_email_text(tmp_path):
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0001", "email_text": "   "},
+        {"case_id": "sc-0002", "email_text": "quote for the usual parts please"},
+        {"case_id": "sc-0003", "email_text": "can you price this out for me"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    assert "sc-0001" in rejected
+    assert rejected["sc-0001"] == "empty email_text"
+
+
+def test_rejects_label_leaking_email(tmp_path):
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0001", "email_text": "need a couple of these, thanks"},
+        {"case_id": "sc-0002", "email_text": "this is a duplicate pair of my last request"},
+        {"case_id": "sc-0003", "email_text": "can you price this out for me"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    assert rejected.get("sc-0002") == "email_text leaks scenario_type label"
+
+
+def test_one_malformed_batch_does_not_block_other_batches(tmp_path):
+    (tmp_path / "batch_001.json").write_text("{not valid json")
+    (tmp_path / "batch_002.json").write_text(json.dumps([
+        {"case_id": "sc-0002", "email_text": "quote for the usual parts please"},
+        {"case_id": "sc-0003", "email_text": "can you price this out for me"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    accepted_ids = {c["case_id"] for c in accepted}
+    assert accepted_ids == {"sc-0002", "sc-0003"}
+    assert rejected.get("sc-0001") == "missing from any response file"
+
+
+def test_missing_case_is_reported(tmp_path):
+    (tmp_path / "batch_001.json").write_text(json.dumps([
+        {"case_id": "sc-0001", "email_text": "need a couple of these, thanks"},
+    ]))
+    accepted, rejected = ingest_responses(_three_cases(), tmp_path)
+    assert rejected["sc-0002"] == "missing from any response file"
+    assert rejected["sc-0003"] == "missing from any response file"
+
+
+def test_rebatch_rejected_writes_only_rejected_cases(tmp_path):
+    cases = _three_cases()
+    rejected = {"sc-0002": "missing from any response file"}
+    paths = rebatch_rejected(cases, rejected, tmp_path / "prompts")
+    content = paths[0].read_text()
+    assert "sc-0002" in content
+    assert "sc-0001" not in content
+
+
+def test_write_scenarios_sorts_by_case_id(tmp_path):
+    accepted = [
+        {"case_id": "sc-0003", "email_text": "c"},
+        {"case_id": "sc-0001", "email_text": "a"},
+    ]
+    out = tmp_path / "scenarios.json"
+    write_scenarios(accepted, out)
+    written = json.loads(out.read_text())
+    assert [c["case_id"] for c in written] == ["sc-0001", "sc-0003"]
+
+
+def test_write_scenarios_refuses_to_overwrite_without_force(tmp_path):
+    out = tmp_path / "scenarios.json"
+    write_scenarios([{"case_id": "sc-0001", "email_text": "a"}], out)
+    try:
+        write_scenarios([{"case_id": "sc-0002", "email_text": "b"}], out)
+        assert False, "expected FileExistsError"
+    except FileExistsError:
+        pass

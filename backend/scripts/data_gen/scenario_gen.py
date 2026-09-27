@@ -232,3 +232,53 @@ def write_prompt_batches(batches: list[str], prompts_dir: Path) -> list[Path]:
         path.write_text(batch)
         paths.append(path)
     return paths
+
+
+def ingest_responses(cases: list[dict], responses_dir: Path) -> tuple[list[dict], dict[str, str]]:
+    cases_by_id = {c["case_id"]: c for c in cases}
+    email_text_by_id: dict[str, str] = {}
+    rejected: dict[str, str] = {}
+
+    for response_path in sorted(responses_dir.glob("*.json")):
+        try:
+            entries = json.loads(response_path.read_text())
+        except json.JSONDecodeError:
+            continue  # every case_id in this batch stays unresolved; caught by the missing-case check below
+
+        for entry in entries:
+            case_id = entry.get("case_id")
+            if case_id not in cases_by_id:
+                continue
+            email_text = entry.get("email_text", "")
+            scenario_type = cases_by_id[case_id]["scenario_type"]
+            label_words = scenario_type.split("_")
+            if not email_text.strip():
+                rejected[case_id] = "empty email_text"
+            elif all(word in email_text.lower() for word in label_words):
+                rejected[case_id] = "email_text leaks scenario_type label"
+            else:
+                email_text_by_id[case_id] = email_text
+
+    accepted = []
+    for case in cases:
+        case_id = case["case_id"]
+        if case_id in email_text_by_id:
+            accepted.append({**case, "email_text": email_text_by_id[case_id]})
+        elif case_id not in rejected:
+            rejected[case_id] = "missing from any response file"
+
+    return accepted, rejected
+
+
+def rebatch_rejected(cases: list[dict], rejected: dict[str, str], prompts_dir: Path, batch_size: int = 10) -> list[Path]:
+    rejected_cases = [c for c in cases if c["case_id"] in rejected]
+    batches = build_prompt_batches(rejected_cases, batch_size)
+    return write_prompt_batches(batches, prompts_dir)
+
+
+def write_scenarios(accepted_cases: list[dict], path: Path, force: bool = False) -> None:
+    if path.exists() and not force:
+        raise FileExistsError(f"{path} already exists; pass --force to overwrite")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    ordered = sorted(accepted_cases, key=lambda c: c["case_id"])
+    path.write_text(json.dumps(ordered, indent=2))

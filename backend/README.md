@@ -53,3 +53,21 @@ Output lands in `backend/data/` (gitignored; regenerate rather than commit it).
 ```
 uv run pytest -v
 ```
+
+## Phase 2: Intake and dedupe
+
+Prerequisites: Postgres running (`docker compose up -d` from the repo root, via WSL), `OPENAI_API_KEY` set in `backend/.env`.
+
+One-time setup:
+```
+uv run alembic upgrade head
+uv run python scripts/load_data.py
+```
+
+Run the API:
+```
+uv run python main.py
+```
+
+`POST /v1/intake` with `{"email_text": "..."}` extracts and stores a structured quote request.
+`POST /v1/dedupe/{quote_request_id}` classifies it against existing requests as `DUPLICATE_OF`, `REVISION_OF`, or `DISTINCT`.

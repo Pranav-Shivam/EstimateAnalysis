@@ -18,24 +18,24 @@ BASE_NAMES = {
     "Plumbing-Fittings": ["Elbow", "Coupling", "Tee", "Union", "Adapter", "Cap", "Bushing", "Nipple"],
     "Plumbing-Fixtures": ["Faucet", "Valve", "Trap", "Drain", "Shutoff", "Sprayer", "Aerator", "Stopper"],
     "HVAC-Parts": ["Filter", "Belt", "Capacitor", "Contactor", "Thermostat", "Sensor", "Motor Mount", "Gasket"],
-    "HVAC-Equipment": ["Condenser", "Blower", "Compressor", "Evaporator Coil", "Air Handler", "Heat Exchanger"],
+    "HVAC-Equipment": ["Condenser", "Blower", "Compressor", "Evaporator Coil", "Air Handler", "Heat Exchanger", "Furnace"],
     "Electrical-Supplies": ["Breaker", "Wire Nut", "Junction Box", "Conduit", "Outlet", "Switch", "Relay"],
 }
 
 MATERIALS = {
-    "Plumbing-Fittings": ["Copper", "PVC", "Brass", "Galvanized"],
-    "Plumbing-Fixtures": ["Chrome", "Brass", "Stainless", "Plastic"],
-    "HVAC-Parts": ["OEM", "Universal", "Aftermarket"],
+    "Plumbing-Fittings": ["Copper", "PVC", "Brass", "Galvanized", "PEX"],
+    "Plumbing-Fixtures": ["Chrome", "Brass", "Stainless", "Plastic", "Matte Black"],
+    "HVAC-Parts": ["OEM", "Universal", "Aftermarket", "Heavy-Duty"],
     "HVAC-Equipment": ["Residential", "Commercial", "High-Efficiency"],
-    "Electrical-Supplies": ["Standard", "Heavy-Duty", "Weatherproof"],
+    "Electrical-Supplies": ["Standard", "Heavy-Duty", "Weatherproof", "GFCI"],
 }
 
 SIZES = {
     "Plumbing-Fittings": ["1/2 in", "3/4 in", "1 in", "1-1/4 in", "1-1/2 in", "2 in", "2-1/2 in"],
-    "Plumbing-Fixtures": ["Standard", "Compact", "Wall-Mount", "Deck-Mount"],
+    "Plumbing-Fixtures": ["Standard", "Compact", "Wall-Mount", "Deck-Mount", "Corner-Mount"],
     "HVAC-Parts": ["Small", "Medium", "Large", "16x20", "20x25"],
     "HVAC-Equipment": ["2 Ton", "3 Ton", "4 Ton", "5 Ton"],
-    "Electrical-Supplies": ["15A", "20A", "30A", "50A", "60A", "100A"],
+    "Electrical-Supplies": ["15A", "20A", "30A", "50A", "60A", "100A", "200A"],
 }
 
 
@@ -91,7 +91,12 @@ def generate_catalog(config: Config) -> list[dict]:
                 s for s in by_category[sku["category"]]
                 if s["sku_id"] != sku["sku_id"] and s["sku_id"] not in discontinued_ids
             ]
-            sku["replaced_by"] = rng.choice(fallback)["sku_id"] if fallback else None
+            if fallback:
+                sku["replaced_by"] = rng.choice(fallback)["sku_id"]
+            else:
+                raise ValueError(
+                    f"SKU {sku['sku_id']} in category {sku['category']} is discontinued but has no non-discontinued replacement available"
+                )
 
     eligible = [s for s in skus if not s["discontinued"]]
     requires_count = int(len(eligible) * 0.15)

@@ -44,3 +44,8 @@ def test_rejects_sku_count_larger_than_available_combinations():
         assert False, "expected ValueError for an unreachable sku_count"
     except ValueError:
         pass
+
+
+def test_supports_maximum_documented_sku_count():
+    catalog = generate_catalog(_config(sku_count=800))
+    assert len(catalog) == 800

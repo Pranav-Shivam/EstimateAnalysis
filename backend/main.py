@@ -1,6 +1,6 @@
-def main():
-    print("Hello from backend!")
+from fastapi import FastAPI
 
+from api.v1.intake.route import router as intake_router
 
-if __name__ == "__main__":
-    main()
+app = FastAPI(title="Estimate Analysis Backend")
+app.include_router(intake_router)

@@ -50,8 +50,13 @@ def test_process_email_raises_and_stores_nothing_on_extraction_failure(db_sessio
     fake_client.extract_quote_request.side_effect = ExtractionError("boom")
 
     with pytest.raises(ExtractionError):
-        process_email(db_session, "some email", fake_client)
+        process_email(db_session, "some email that triggers extraction failure", fake_client)
 
     from sqlalchemy import select
     from app.intake.models import QuoteRequestRow
-    assert db_session.scalars(select(QuoteRequestRow)).all() == []
+    rows = db_session.scalars(
+        select(QuoteRequestRow).where(
+            QuoteRequestRow.raw_email_text == "some email that triggers extraction failure"
+        )
+    ).all()
+    assert rows == []

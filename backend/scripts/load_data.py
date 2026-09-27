@@ -1,4 +1,5 @@
 import json
+import re
 import sys
 from datetime import date
 from pathlib import Path
@@ -52,7 +53,8 @@ def run(data_dir: Path = DATA_DIR) -> None:
         load_catalog(session, catalog)
         load_customers(session, customers)
         session.commit()
-        print(f"loaded {len(catalog)} SKUs, {len(customers)} customers into {settings.database_url}")
+        redacted_url = re.sub(r"//([^:/@]+):[^@]*@", r"//\1:***@", settings.database_url)
+        print(f"loaded {len(catalog)} SKUs, {len(customers)} customers into {redacted_url}")
     finally:
         session.close()
 

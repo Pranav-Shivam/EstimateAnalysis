@@ -12,11 +12,11 @@
 
 ## Prerequisites (read before dispatching Task 1)
 
-Postgres must be reachable at `postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis` before Task 2 (and everything after it) can run its own tests. This project's Docker runs through WSL, not the Windows-native Docker Desktop pipe — start it with `docker compose up -d` from a WSL terminal, using the `docker-compose.yml` Task 1 creates. Confirm the port is reachable (e.g. `docker compose ps` shows the service healthy) before proceeding past Task 1. Every implementer subagent from Task 2 onward needs this already running; it is not something any task starts itself.
+Postgres must be reachable at `postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis` before Task 2 (and everything after it) can run its own tests. This project's Docker runs through WSL, not the Windows-native Docker Desktop pipe (start it with `docker compose up -d` from a WSL terminal, using the `docker-compose.yml` Task 1 creates). Confirm the port is reachable (e.g. `docker compose ps` shows the service healthy) before proceeding past Task 1. Every implementer subagent from Task 2 onward needs this already running; it is not something any task starts itself.
 
 ## Global Constraints
 
-- Postgres via `docker-compose.yml` at repo root, `pgvector/pgvector:pg16` image (ADR-0001). No task or test invokes `docker` directly; starting/stopping the container is the human's job.
+- Postgres via `docker-compose.yml` at repo root, `pgvector/pgvector:0.8.6-pg18` image (ADR-0001). No task or test invokes `docker` directly; starting/stopping the container is the human's job.
 - Alembic migrations live under `backend/migrations/`; one revision (`0001_initial_schema`) creates all 6 tables together.
 - `core/config/settings.py` reads `DATABASE_URL` and `OPENAI_API_KEY` from the environment/`.env` via `pydantic-settings`. `backend/.env.example` lists variable names only, never real values. No code or test ever reads or prints the contents of `backend/.env`.
 - No test in the default `pytest` run makes a real OpenAI API call; intake's LLM call is mocked/stubbed everywhere except an explicitly separate, non-default integration check.
@@ -49,7 +49,7 @@ Postgres must be reachable at `postgresql+psycopg://postgres:postgres@localhost:
 - Test: `backend/tests/core/test_settings.py`
 
 **Interfaces:**
-- Produces: `core.config.settings.Settings` (pydantic-settings `BaseSettings` subclass with `database_url: str` (defaulted to the compose connection string) and `openai_api_key: str` (required, no default)).
+- Produces: `core.config.settings.Settings` (pydantic-settings `BaseSettings` subclass with `database_url: str` (required, no default, sourced from `.env`) and `openai_api_key: str` (required, no default)).
 
 - [ ] **Step 1: Add dependencies**
 
@@ -132,7 +132,7 @@ class Settings(BaseSettings):
     openai_api_key: str
 ```
 
-(Updated after Task 1 shipped: `database_url` was originally given a hardcoded compose-matching default, but that duplicated the connection string across `settings.py`, `.env.example`, and `docker-compose.yml` — exactly the kind of drift that caused a real port-mismatch incident during Task 2. It is now required, sourced only from `.env`, same as `openai_api_key`.)
+(Updated after Task 1 shipped: `database_url` was originally given a hardcoded compose-matching default, but that duplicated the connection string across `settings.py`, `.env.example`, and `docker-compose.yml` (exactly the kind of drift that caused a real port-mismatch incident during Task 2). It is now required, sourced only from `.env`, same as `openai_api_key`.)
 
 Also create empty `backend/core/__init__.py` and `backend/core/config/__init__.py`, and `backend/tests/core/__init__.py`.
 

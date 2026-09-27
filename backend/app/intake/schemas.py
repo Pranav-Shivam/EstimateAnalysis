@@ -7,7 +7,7 @@ class LineItemExtraction(BaseModel):
 
 
 class QuoteRequestExtraction(BaseModel):
-    customer_name_as_written: str
+    customer_name_as_written: str | None = None
     contact_name_as_written: str | None = None
     site_hint: str | None = None
     line_items: list[LineItemExtraction]

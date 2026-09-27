@@ -32,8 +32,16 @@ def process_email(
         if len(contracts) == 1:
             contract_id = contracts[0].contract_id
 
+    parsed_json = {
+        "extraction": extraction.model_dump(),
+        "resolved_line_items": [
+            {"sku_name_as_written": li.sku_name_as_written, "sku_id": li.sku_id, "quantity": li.quantity}
+            for li in resolved.line_items
+        ],
+    }
+
     row = save_quote_request(
-        session, raw_email_text=email_text, parsed_json=extraction.model_dump(),
+        session, raw_email_text=email_text, parsed_json=parsed_json,
         content_fingerprint=content_fingerprint, style_fingerprint=style_fingerprint,
         customer_id=resolved.customer_id, site_id=resolved.site_id, contract_id=contract_id, case_id=case_id,
     )

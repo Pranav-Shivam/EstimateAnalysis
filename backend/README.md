@@ -1,16 +1,28 @@
 # Backend
 
 Synthetic data generation for the Phase 1 POC (see the repo root `README.md` and
-`docs/adr/` for the overall system design). This directory has no application code yet,
-only the `scripts/data_gen/` pipeline that produces a structurally realistic dataset
-(catalog, customers, graph, scenarios) for downstream components to work against.
+`docs/adr/` for the overall system design), plus the Phase 2 intake and dedupe
+application (FastAPI routes over a service/repository layering; see the Phase 2
+section below). The `scripts/data_gen/` pipeline produces a structurally realistic
+dataset (catalog, customers, graph, scenarios) for downstream components to work
+against.
 
 ## Setup
 
-Requires `uv` (Python 3.11+). Install dependencies from `backend/`:
+Requires `uv` (Python 3.11+). All commands in this README are run from `backend/`,
+since settings load `.env` relative to the current working directory.
+
+Install dependencies:
 
 ```
 uv sync
+```
+
+Copy the example environment file and fill in real values before running anything
+that touches Postgres or OpenAI:
+
+```
+cp .env.example .env
 ```
 
 ## Running the data generation pipeline
@@ -46,7 +58,8 @@ Validate a generated dataset (referential integrity, scenario coverage):
 uv run python scripts/data_gen/validate.py
 ```
 
-Output lands in `backend/data/` (gitignored; regenerate rather than commit it).
+Output lands in `backend/data/` (committed to the repo as the synthetic dataset used
+by later phases; regenerate with `--force` rather than hand-editing it).
 
 ## Running the test suite
 

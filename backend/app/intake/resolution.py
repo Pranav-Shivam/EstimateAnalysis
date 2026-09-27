@@ -43,7 +43,11 @@ def resolve_extraction(session: Session, extraction: QuoteRequestExtraction) -> 
     customer_candidates = {c.customer_id: c.name for c in all_customers(session)}
     sku_candidates = {s.sku_id: s.name for s in all_skus(session)}
 
-    customer_id = _match_name(extraction.customer_name_as_written, customer_candidates)
+    customer_id = (
+        _match_name(extraction.customer_name_as_written, customer_candidates)
+        if extraction.customer_name_as_written
+        else None
+    )
     line_items = [
         ResolvedLineItem(
             sku_name_as_written=item.sku_name_as_written,

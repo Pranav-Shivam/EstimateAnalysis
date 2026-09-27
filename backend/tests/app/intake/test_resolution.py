@@ -62,3 +62,10 @@ def test_empty_line_items_resolves_to_empty_list(db_session):
     extraction = QuoteRequestExtraction(customer_name_as_written="Bramblewick Contractors", line_items=[], raw_text="text")
     result = resolve_extraction(db_session, extraction)
     assert result.line_items == []
+
+
+def test_missing_customer_name_resolves_to_none_without_crashing(db_session):
+    _seed(db_session)
+    extraction = QuoteRequestExtraction(customer_name_as_written=None, line_items=[], raw_text="-Anil")
+    result = resolve_extraction(db_session, extraction)
+    assert result.customer_id is None

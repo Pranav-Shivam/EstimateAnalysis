@@ -17,6 +17,8 @@ def dedupe_quote_request(quote_request_id: uuid.UUID, session: Session = Depends
     except ValueError as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
 
+    session.commit()
+
     return DedupeResponse(
         quote_request_id=quote_request_id,
         verdicts=[

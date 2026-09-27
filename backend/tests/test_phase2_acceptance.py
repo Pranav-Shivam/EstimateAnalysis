@@ -1,11 +1,9 @@
 import json
-from datetime import date
 from pathlib import Path
 
 from app.intake.repository import save_quote_request
-from app.reference_data.models import Sku
-from app.reference_data.repository import upsert_contract, upsert_customer, upsert_site, upsert_sku
 from app.dedupe.service import run_dedupe
+from load_data import load_catalog, load_customers
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
@@ -14,28 +12,8 @@ def _load_reference_data(session):
     catalog = json.loads((DATA_DIR / "catalog.json").read_text(encoding="utf-8"))
     customers = json.loads((DATA_DIR / "customers.json").read_text(encoding="utf-8"))
 
-    for sku in catalog:
-        upsert_sku(
-            session, sku_id=sku["sku_id"], name=sku["name"], category=sku["category"],
-            list_price=sku["list_price"], discontinued=sku["discontinued"], replaced_by=None,
-            in_stock=sku["in_stock"],
-        )
-    session.flush()
-    for sku in catalog:
-        if sku["discontinued"] and sku["replaced_by"]:
-            session.get(Sku, sku["sku_id"]).replaced_by = sku["replaced_by"]
-
-    for customer in customers:
-        upsert_customer(session, customer_id=customer["customer_id"], name=customer["name"], account_tier=customer["account_tier"])
-        for site in customer["sites"]:
-            upsert_site(session, site_id=site["site_id"], customer_id=customer["customer_id"], address=site["address"], zip_code=site["zip"])
-        for contract in customer["contracts"]:
-            upsert_contract(
-                session, contract_id=contract["contract_id"], customer_id=customer["customer_id"],
-                discount_category=contract["discount_category"], covered_categories=contract["covered_categories"],
-                effective_from=date.fromisoformat(contract["effective_from"]),
-                effective_to=date.fromisoformat(contract["effective_to"]),
-            )
+    load_catalog(session, catalog)
+    load_customers(session, customers)
     session.flush()
 
 

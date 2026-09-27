@@ -1,8 +1,7 @@
 from sqlalchemy import inspect
 
+from tests.conftest import TEST_DATABASE_URL
 from core.db.session import make_engine
-
-TEST_DATABASE_URL = "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
 
 
 def test_all_six_tables_exist():

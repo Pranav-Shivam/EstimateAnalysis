@@ -5,7 +5,7 @@ import pytest
 from core.db.session import make_engine, make_session_factory
 
 TEST_DATABASE_URL = os.environ.get(
-    "DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/estimate_analysis"
+    "DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
 )
 
 

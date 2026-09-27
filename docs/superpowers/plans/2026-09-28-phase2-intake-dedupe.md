@@ -12,7 +12,7 @@
 
 ## Prerequisites (read before dispatching Task 1)
 
-Postgres must be reachable at `postgresql+psycopg://postgres:postgres@localhost:5432/estimate_analysis` before Task 2 (and everything after it) can run its own tests. This project's Docker runs through WSL, not the Windows-native Docker Desktop pipe — start it with `docker compose up -d` from a WSL terminal, using the `docker-compose.yml` Task 1 creates. Confirm the port is reachable (e.g. `docker compose ps` shows the service healthy) before proceeding past Task 1. Every implementer subagent from Task 2 onward needs this already running; it is not something any task starts itself.
+Postgres must be reachable at `postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis` before Task 2 (and everything after it) can run its own tests. This project's Docker runs through WSL, not the Windows-native Docker Desktop pipe — start it with `docker compose up -d` from a WSL terminal, using the `docker-compose.yml` Task 1 creates. Confirm the port is reachable (e.g. `docker compose ps` shows the service healthy) before proceeding past Task 1. Every implementer subagent from Task 2 onward needs this already running; it is not something any task starts itself.
 
 ## Global Constraints
 
@@ -67,9 +67,9 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: estimate_analysis
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
 
 volumes:
   postgres_data:
@@ -78,7 +78,7 @@ volumes:
 - [ ] **Step 3: Write `backend/.env.example`**
 
 ```
-DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/estimate_analysis
+DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis
 OPENAI_API_KEY=
 ```
 
@@ -104,7 +104,7 @@ def test_settings_database_url_has_compose_default(monkeypatch):
     monkeypatch.delenv("DATABASE_URL", raising=False)
     monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
     settings = Settings(_env_file=None)
-    assert settings.database_url == "postgresql+psycopg://postgres:postgres@localhost:5432/estimate_analysis"
+    assert settings.database_url == "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
 
 
 def test_settings_missing_openai_key_raises(monkeypatch):
@@ -127,7 +127,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
-    database_url: str = "postgresql+psycopg://postgres:postgres@localhost:5432/estimate_analysis"
+    database_url: str = "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
     openai_api_key: str
 ```
 
@@ -236,7 +236,7 @@ import pytest
 from core.db.session import make_engine, make_session_factory
 
 TEST_DATABASE_URL = os.environ.get(
-    "DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5432/estimate_analysis"
+    "DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
 )
 
 
@@ -481,7 +481,7 @@ from sqlalchemy import inspect
 
 from core.db.session import make_engine
 
-TEST_DATABASE_URL = "postgresql+psycopg://postgres:postgres@localhost:5432/estimate_analysis"
+TEST_DATABASE_URL = "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
 
 
 def test_all_six_tables_exist():

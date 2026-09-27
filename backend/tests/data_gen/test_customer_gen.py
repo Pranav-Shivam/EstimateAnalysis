@@ -47,3 +47,9 @@ def test_rejects_customer_count_larger_than_available_combinations():
         assert False, "expected ValueError for an unreachable customer_count"
     except ValueError:
         pass
+
+
+def test_supports_maximum_documented_customer_count():
+    """Verify customer_count can reach the documented ceiling of 150."""
+    customers = generate_customers(_config(customer_count=150), _catalog())
+    assert len(customers) == 150

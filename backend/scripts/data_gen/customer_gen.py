@@ -13,6 +13,7 @@ COMPANY_WORDS = [
     "Metro", "Summit", "Northgate", "Riverside", "Union", "Lakeview", "Cascade",
     "Ironclad", "Bluewater", "Highline", "Coastal", "Prairie", "Redstone", "Harbor",
     "Peak", "Elite", "Crown", "Apex", "Sterling", "Precision", "Advanced", "Total",
+    "Zenith", "Titan", "Vanguard", "Nexus",
 ]
 COMPANY_SUFFIXES = ["Plumbing", "HVAC", "Mechanical", "Services", "Contractors", "Co", "Group"]
 

@@ -165,3 +165,56 @@ def test_wrong_typed_tool_argument_is_rejected_before_it_reaches_the_database(db
     state, _ = _run(db_session, [call_turn("search_price_book", {"query": 123}), second])
 
     assert state["status"] == "ready"
+
+
+def test_discontinued_swap_is_submitted_with_its_adjustment_and_ends_ready(db_session):
+    def after_lookup(messages):
+        assert messages[-1]["role"] == "tool"
+        assert "SKU-E-A1" in messages[-1]["content"]
+        adjustment = {"kind": "substituted", "sku_id": "SKU-E-A1", "detail": "replaced discontinued SKU-E-OLD"}
+        return submit_turn(_draft([_line()], adjustments=[adjustment]), call_id="call-2")
+
+    state, _ = _run(db_session, [call_turn("get_related_parts", {"sku_id": "SKU-E-OLD"}), after_lookup])
+
+    assert state["status"] == "ready"
+    assert state["last_draft"].lines[0].sku_id == "SKU-E-A1"
+    assert [(a.kind, a.sku_id, a.detail) for a in state["last_draft"].adjustments] == [
+        ("substituted", "SKU-E-A1", "replaced discontinued SKU-E-OLD"),
+    ]
+
+
+def test_missing_required_part_is_added_with_its_adjustment_and_ends_ready(db_session):
+    def after_lookup(messages):
+        assert "required_parts" in messages[-1]["content"] and "SKU-E-A1" in messages[-1]["content"]
+        lines = [_line(sku_id="SKU-E-B1", unit_price=50.0), _line()]
+        adjustment = {"kind": "added_required", "sku_id": "SKU-E-A1", "detail": "SKU-E-B1 requires SKU-E-A1"}
+        return submit_turn(_draft(lines, adjustments=[adjustment]), call_id="call-2")
+
+    state, _ = _run(db_session, [call_turn("get_related_parts", {"sku_id": "SKU-E-B1"}), after_lookup])
+
+    assert state["status"] == "ready"
+    assert [line.sku_id for line in state["last_draft"].lines] == ["SKU-E-B1", "SKU-E-A1"]
+    assert state["last_draft"].adjustments[0].kind == "added_required"
+
+
+def test_predicted_price_from_the_tool_is_accepted_when_used_verbatim(db_session):
+    def after_prediction(messages):
+        assert '"predicted_price": 20.0' in messages[-1]["content"]
+        line = _line(sku_id="SKU-E-GAP", unit_price=20.0, price_source="predicted")
+        return submit_turn(_draft([line]), call_id="call-2")
+
+    state, _ = _run(db_session, [call_turn("predict_price", {"sku_id": "SKU-E-GAP"}), after_prediction])
+
+    assert state["status"] == "ready"
+    assert state["last_draft"].lines[0].price_source == "predicted"
+
+
+def test_made_up_predicted_price_is_blocked_and_ends_needs_review(db_session):
+    made_up = _draft([_line(sku_id="SKU-E-GAP", unit_price=99.0, price_source="predicted")])
+    turns = [submit_turn(made_up, call_id=f"call-{i}") for i in range(4)]
+
+    state, _ = _run(db_session, turns)
+
+    assert state["status"] == "needs_review"
+    assert state["violations"][0].guardrail == "price_provenance"
+    assert "predicted price" in state["violations"][0].message

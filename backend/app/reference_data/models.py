@@ -66,6 +66,6 @@ class PriceHistory(Base):
     __tablename__ = "price_history"
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    sku_id: Mapped[str] = mapped_column(ForeignKey("skus.sku_id"))
+    sku_id: Mapped[str] = mapped_column(ForeignKey("skus.sku_id"), index=True)
     unit_price: Mapped[float]
     quoted_on: Mapped[date]

@@ -3,9 +3,11 @@ from sqlalchemy.orm import Session
 
 from api.v1.intake.request import IntakeRequest
 from api.v1.intake.response import IntakeResponse, LineItemResponse
+from app.graph.service import sync_best_effort, sync_quote_request
 from app.intake.service import process_email
 from core.config.settings import Settings
 from core.db.session import get_session
+from core.graph.client import GraphClient, get_graph_client, get_graph_namespace
 from core.llm.openai_client import ExtractionError, OpenAIExtractionClient
 
 router = APIRouter(prefix="/v1/intake", tags=["intake"])
@@ -23,6 +25,8 @@ def submit_email(
     body: IntakeRequest,
     session: Session = Depends(get_session),
     llm_client: OpenAIExtractionClient = Depends(get_llm_client),
+    graph_client: GraphClient = Depends(get_graph_client),
+    ns: str = Depends(get_graph_namespace),
 ) -> IntakeResponse:
     try:
         result = process_email(session, body.email_text, llm_client)
@@ -30,6 +34,7 @@ def submit_email(
         raise HTTPException(status_code=502, detail="failed to extract quote request from email") from exc
 
     session.commit()
+    sync_best_effort("quote request", sync_quote_request, session, graph_client, ns, result.row.id)
 
     return IntakeResponse(
         quote_request_id=result.row.id,

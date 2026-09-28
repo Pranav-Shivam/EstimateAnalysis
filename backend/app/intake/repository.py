@@ -1,5 +1,6 @@
 import uuid
 
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.intake.models import QuoteRequestRow
@@ -22,3 +23,7 @@ def save_quote_request(
 
 def get_quote_request(session: Session, quote_request_id: uuid.UUID) -> QuoteRequestRow | None:
     return session.get(QuoteRequestRow, quote_request_id)
+
+
+def all_quote_request_ids(session: Session) -> list[uuid.UUID]:
+    return list(session.scalars(select(QuoteRequestRow.id).order_by(QuoteRequestRow.created_at, QuoteRequestRow.id)))

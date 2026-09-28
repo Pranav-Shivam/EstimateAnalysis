@@ -102,6 +102,20 @@ def fetch_contract_coverage(client: GraphClient, ns: str, customer_id: str, sku_
     )
 
 
+def replace_price_variance(client: GraphClient, ns: str, quote_id: str, rows: list[dict]) -> None:
+    """Delete then recreate a quote's PRICE_VARIANCE edges, so a re-sync never duplicates them. Two lines for the
+    same SKU stay two edges, which MERGE would collapse."""
+    quote_key = node_key(ns, quote_id)
+    client.write("MATCH ({key: $key})-[r:PRICE_VARIANCE]->() DELETE r", key=quote_key)
+    if rows:
+        client.write(
+            "UNWIND $rows AS row MATCH (q:Quote {key: $quote_key}) MATCH (s:SKU {key: row.sku_key}) "
+            "CREATE (q)-[r:PRICE_VARIANCE]->(s) SET r += row.props",
+            quote_key=quote_key,
+            rows=[{"sku_key": node_key(ns, r["sku_id"]), "props": r["props"]} for r in rows],
+        )
+
+
 def fetch_fingerprint(client: GraphClient, ns: str) -> str | None:
     rows = client.read(
         "MATCH (m:GraphMeta {key: $key}) RETURN m.reference_fingerprint AS fingerprint", key=node_key(ns, ns),

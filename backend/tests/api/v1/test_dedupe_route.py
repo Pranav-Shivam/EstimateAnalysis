@@ -5,7 +5,9 @@ from fastapi.testclient import TestClient
 from app.intake.repository import save_quote_request
 from app.reference_data.repository import upsert_customer, upsert_site
 from core.db.session import get_session
+from core.graph.client import get_graph_client
 from main import app
+from tests.graph_support import FailingGraphClient, graph_edge_count
 
 
 def _seed_customer_and_site(db_session):
@@ -50,3 +52,36 @@ def test_dedupe_endpoint_returns_404_for_unknown_id(db_session):
         app.dependency_overrides.clear()
 
     assert response.status_code == 404
+
+
+def _two_identical_requests(db_session):
+    _seed_customer_and_site(db_session)
+    kwargs = dict(parsed_json={}, content_fingerprint={"sku_ids": ["SKU-A"]}, style_fingerprint={"tokens": []},
+                  customer_id="CUST-A", site_id="SITE-A")
+    first = save_quote_request(db_session, raw_email_text="t1", **kwargs)
+    second = save_quote_request(db_session, raw_email_text="t2", **kwargs)
+    db_session.flush()
+    return first, second
+
+
+def test_dedupe_endpoint_syncs_the_duplicate_edge_into_the_graph(db_session, graph_client, graph_ns):
+    first, second = _two_identical_requests(db_session)
+    app.dependency_overrides[get_session] = lambda: db_session
+    try:
+        TestClient(app).post(f"/v1/dedupe/{second.id}")
+    finally:
+        app.dependency_overrides.clear()
+
+    assert graph_edge_count(graph_client, graph_ns, str(second.id), "DUPLICATE_OF", str(first.id)) == 1
+
+
+def test_dedupe_endpoint_still_succeeds_when_the_graph_is_down(db_session):
+    _, second = _two_identical_requests(db_session)
+    app.dependency_overrides[get_session] = lambda: db_session
+    app.dependency_overrides[get_graph_client] = lambda: FailingGraphClient()
+    try:
+        response = TestClient(app).post(f"/v1/dedupe/{second.id}")
+    finally:
+        app.dependency_overrides.clear()
+
+    assert response.status_code == 200

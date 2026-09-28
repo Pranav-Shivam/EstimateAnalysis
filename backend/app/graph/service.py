@@ -1,13 +1,28 @@
+import logging
+import uuid
 from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
-from app.graph.repository import drop_namespace, ensure_constraints, merge_edges, merge_nodes
+from app.dedupe.repository import all_verdict_request_ids, verdicts_for_request
+from app.estimate.models import EstimateDraftRow
+from app.estimate.repository import all_estimate_draft_ids, get_estimate_draft, previous_estimate_draft
+from app.graph.constant import VARIANT_MIN_JACCARD
+from app.graph.helper import match_site
+from app.graph.repository import (
+    count_edges_by_type, count_nodes_by_label, drop_namespace, ensure_constraints, merge_edges, merge_nodes,
+    replace_price_variance,
+)
+from app.graph.schemas import RebuildSummary
+from app.intake.models import QuoteRequestRow
+from app.intake.repository import all_quote_request_ids, get_quote_request
 from app.reference_data.repository import (
     all_contacts, all_contracts, all_customers, all_families, all_projects, all_requirements, all_sites, all_skus,
-    reference_fingerprint,
+    get_sku, project_for_site, reference_fingerprint, sites_for_customer,
 )
-from core.graph.client import GraphClient
+from core.graph.client import GraphClient, GraphError
+
+logger = logging.getLogger(__name__)
 
 
 def _edge(source: str, target: str) -> dict:
@@ -69,3 +84,121 @@ def rebuild_reference_graph(session: Session, client: GraphClient, ns: str) -> N
         "reference_fingerprint": reference_fingerprint(session),
         "built_at": datetime.now(timezone.utc).isoformat(),
     }}])
+
+
+def _created_at(row) -> str | None:
+    return row.created_at.isoformat() if row.created_at else None
+
+
+def _project_for_request(session: Session, row: QuoteRequestRow) -> str | None:
+    site_id = row.site_id
+    if site_id is None:
+        hint = (row.parsed_json.get("extraction") or {}).get("site_hint")
+        if not hint or row.customer_id is None:
+            return None
+        site_id = match_site(hint, sites_for_customer(session, row.customer_id))
+    if site_id is None:
+        return None
+    project = project_for_site(session, site_id)
+    return project.project_id if project else None
+
+
+def sync_quote_request(session: Session, client: GraphClient, ns: str, quote_request_id: uuid.UUID) -> None:
+    row = get_quote_request(session, quote_request_id)
+    if row is None:
+        raise ValueError(f"quote request {quote_request_id} not found")
+    merge_nodes(client, ns, "QuoteRequest", [
+        {"id": str(row.id), "props": {"case_id": row.case_id, "created_at": _created_at(row)}},
+    ])
+    project_id = _project_for_request(session, row)
+    if project_id is not None:
+        merge_edges(client, ns, "FOR_PROJECT", "QuoteRequest", "Project", [_edge(str(row.id), project_id)])
+
+
+def _verdict_edge_type(verdict, target: QuoteRequestRow, candidate: QuoteRequestRow) -> str | None:
+    if verdict.verdict in ("DUPLICATE_OF", "REVISION_OF"):
+        return verdict.verdict
+    same_customer = target.customer_id is not None and target.customer_id == candidate.customer_id
+    if verdict.verdict == "DISTINCT" and same_customer and verdict.content_jaccard >= VARIANT_MIN_JACCARD:
+        return "VARIANT_OF"
+    return None
+
+
+def sync_dedupe_verdicts(session: Session, client: GraphClient, ns: str, quote_request_id: uuid.UUID) -> None:
+    verdicts = verdicts_for_request(session, quote_request_id)
+    if not verdicts:
+        return
+    target = get_quote_request(session, quote_request_id)
+    sync_quote_request(session, client, ns, quote_request_id)
+    rows_by_type: dict[str, list[dict]] = {}
+    for verdict in verdicts:
+        candidate = get_quote_request(session, verdict.candidate_quote_request_id)
+        edge_type = _verdict_edge_type(verdict, target, candidate)
+        if edge_type is None:
+            continue
+        sync_quote_request(session, client, ns, candidate.id)
+        rows_by_type.setdefault(edge_type, []).append({
+            "from": str(target.id), "to": str(candidate.id), "props": {"content_jaccard": verdict.content_jaccard},
+        })
+    for edge_type, rows in rows_by_type.items():
+        merge_edges(client, ns, edge_type, "QuoteRequest", "QuoteRequest", rows)
+
+
+def _merge_quote_node(client: GraphClient, ns: str, row: EstimateDraftRow) -> None:
+    merge_nodes(client, ns, "Quote", [{"id": str(row.id), "props": {
+        "quote_request_id": str(row.quote_request_id), "status": row.status, "created_at": _created_at(row),
+    }}])
+
+
+def _price_variance_rows(session: Session, row: EstimateDraftRow) -> list[dict]:
+    rows = []
+    for index, line in enumerate((row.draft or {}).get("lines", [])):
+        sku_id = line.get("sku_id")
+        discount = line.get("discount_pct") or 0.0
+        source = line.get("price_source")
+        if sku_id is None or (discount == 0 and source != "predicted"):
+            continue
+        unit_price = line.get("unit_price")
+        sku = get_sku(session, sku_id)
+        rows.append({"sku_id": sku_id, "props": {
+            "line_index": index, "list_price": sku.list_price if sku else None, "unit_price": unit_price,
+            "discount_pct": discount, "price_source": source,
+            "net_unit_price": round(unit_price * (1 - discount / 100), 4) if unit_price is not None else None,
+        }})
+    return rows
+
+
+def sync_quote(session: Session, client: GraphClient, ns: str, estimate_id: uuid.UUID) -> None:
+    row = get_estimate_draft(session, estimate_id)
+    if row is None:
+        raise ValueError(f"estimate draft {estimate_id} not found")
+    _merge_quote_node(client, ns, row)
+    previous = previous_estimate_draft(session, row)
+    if previous is not None:
+        _merge_quote_node(client, ns, previous)
+        merge_edges(client, ns, "SUPERSEDES", "Quote", "Quote", [_edge(str(row.id), str(previous.id))])
+    replace_price_variance(client, ns, str(row.id), _price_variance_rows(session, row))
+
+
+def rebuild_graph(session: Session, client: GraphClient, ns: str) -> RebuildSummary:
+    """Reload the whole namespace, runtime entities included, from Postgres."""
+    rebuild_reference_graph(session, client, ns)
+    for request_id in all_quote_request_ids(session):
+        sync_quote_request(session, client, ns, request_id)
+    for request_id in all_verdict_request_ids(session):
+        sync_dedupe_verdicts(session, client, ns, request_id)
+    for estimate_id in all_estimate_draft_ids(session):
+        sync_quote(session, client, ns, estimate_id)
+    return RebuildSummary(
+        namespace=ns, fingerprint=reference_fingerprint(session),
+        node_counts=count_nodes_by_label(client, ns), edge_counts=count_edges_by_type(client, ns),
+    )
+
+
+def sync_best_effort(description: str, sync, *args) -> None:
+    """Run a sync after Postgres has committed. The graph is derived, so a failure is logged and a rebuild repairs
+    it; it must never fail the request that already succeeded."""
+    try:
+        sync(*args)
+    except GraphError:
+        logger.warning("graph sync failed for %s; run a rebuild to repair the graph", description, exc_info=True)

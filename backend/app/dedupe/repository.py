@@ -35,3 +35,14 @@ def save_verdict(
     session.add(row)
     session.flush()
     return row
+
+
+def verdicts_for_request(session: Session, quote_request_id: uuid.UUID) -> list[DedupeVerdictRow]:
+    return list(session.scalars(
+        select(DedupeVerdictRow).where(DedupeVerdictRow.quote_request_id == quote_request_id)
+        .order_by(DedupeVerdictRow.created_at, DedupeVerdictRow.id)
+    ))
+
+
+def all_verdict_request_ids(session: Session) -> list[uuid.UUID]:
+    return list(session.scalars(select(DedupeVerdictRow.quote_request_id).distinct()))

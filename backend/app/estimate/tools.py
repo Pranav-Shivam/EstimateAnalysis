@@ -3,20 +3,13 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import date
 
-from rapidfuzz import fuzz, process
 from sqlalchemy.orm import Session
 
 from app.estimate.pricing import PEER_MIN, predict_price_for_sku
 from app.estimate.schemas import EstimateDraft
 from app.reference_data.models import Customer, Sku
-from app.reference_data.repository import (
-    all_customers, all_skus, contracts_for_customer, get_customer, get_sku, latest_realized_price, required_sku_ids,
-)
-
-# Looser than intake's 90: here the agent reads the candidate list and judges, it does not auto-resolve.
-CUSTOMER_MATCH_THRESHOLD = 80
-SKU_SEARCH_CUTOFF = 60
-SKU_SEARCH_LIMIT = 5
+from app.reference_data.repository import contracts_for_customer, get_sku, latest_realized_price, required_sku_ids
+from app.reference_data.search import find_customers, find_skus
 
 
 @dataclass(frozen=True)
@@ -53,31 +46,11 @@ def _customer_entry(ctx: ToolContext, customer: Customer) -> dict:
 
 
 def lookup_customer(ctx: ToolContext, *, query: str) -> dict:
-    exact = get_customer(ctx.session, query)
-    if exact is not None:
-        customers = [exact]
-    else:
-        names = {c.customer_id: c.name for c in all_customers(ctx.session)}
-        hits = process.extract(
-            query, names, scorer=fuzz.token_sort_ratio, processor=str.lower, limit=3,
-            score_cutoff=CUSTOMER_MATCH_THRESHOLD,
-        )
-        customers = [get_customer(ctx.session, key) for _, _, key in hits]
-    return {"matches": [_customer_entry(ctx, c) for c in customers]}
+    return {"matches": [_customer_entry(ctx, c) for c in find_customers(ctx.session, query)]}
 
 
 def search_price_book(ctx: ToolContext, *, query: str) -> dict:
-    exact = get_sku(ctx.session, query)
-    if exact is not None:
-        skus = [exact]
-    else:
-        names = {s.sku_id: s.name for s in all_skus(ctx.session)}
-        hits = process.extract(
-            query, names, scorer=fuzz.WRatio, processor=str.lower, limit=SKU_SEARCH_LIMIT,
-            score_cutoff=SKU_SEARCH_CUTOFF,
-        )
-        skus = [get_sku(ctx.session, key) for _, _, key in hits]
-    return {"results": [_sku_entry(ctx.session, s) for s in skus]}
+    return {"results": [_sku_entry(ctx.session, s) for s in find_skus(ctx.session, query)]}
 
 
 def check_stock(ctx: ToolContext, *, sku_id: str) -> dict:

@@ -101,7 +101,8 @@ uv run python scripts/data_gen/price_gen.py --force
 `POST /v1/estimate` with `{"quote_request_id": "<uuid>", "as_of": "2024-09-01"}` (`as_of` optional, defaults to
 `DATASET_AS_OF`) runs the LangGraph agent over a stored quote request and returns a priced draft with status `ready`
 or `needs_review`, plus any guardrail violations. The agent calls OpenAI (real API cost); the test suite never does.
+Each call to `POST /v1/estimate` is a new attempt and writes a new `estimate_drafts` row.
 
-The guardrails (contract discount, required fields, price provenance) are plain functions in
+The guardrails (contract discount, required fields, customer identity, price provenance) are plain functions in
 `app/estimate/guardrails.py`. `tests/test_phase3_acceptance.py` proves that a discount on an uncovered category is
 blocked for all 10 planted `discount_category_mismatch` cases.

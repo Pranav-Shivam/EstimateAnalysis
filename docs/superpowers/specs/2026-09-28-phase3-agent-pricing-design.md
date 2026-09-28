@@ -41,7 +41,7 @@ Layer order follows `docs/backend-structure.txt`: route, service, repository, DB
 
 ### Module `app/estimate/`
 
-- `schemas.py`: `DraftLine` (sku_id, quantity, unit_price, price_source, discount_pct), `Adjustment` (kind, from, to, reason), `Violation` (guardrail, line index or null, message), `EstimateDraft` (customer_id, contract_id, lines, adjustments, flags), `Totals`, `EstimateResult` (status, as_of, draft, totals, violations, iterations, reason). `flags` are free-text reviewer notes the agent adds when it cannot auto-fix (for example an out-of-stock replacement); a draft with flags ends as `needs_review` even when every guardrail passes. Totals are computed by code, never submitted by the agent.
+- `schemas.py`: `DraftLine` (sku_id, quantity, unit_price, price_source, discount_pct), `Adjustment` (kind, sku_id, detail), `Violation` (guardrail, line index or null, message), `EstimateDraft` (customer_id, contract_id, lines, adjustments, flags), `Totals`, `EstimateResult` (status, as_of, draft, totals, violations, iterations, reason). `flags` are free-text reviewer notes the agent adds when it cannot auto-fix (for example an out-of-stock replacement); a draft with flags ends as `needs_review` even when every guardrail passes. Totals are computed by code, never submitted by the agent.
 - `tools.py`: plain functions over a session, each returning data plus its source:
   - `lookup_customer`: customer, contract terms, whether the contract is active on `as_of`.
   - `search_price_book`: list price and last realized price, or "unpriced".
@@ -76,6 +76,8 @@ Run on every submitted draft, in code only:
 2. **Required-field completeness.** Customer resolved; each line has a resolved SKU, an integer quantity above 0, a unit price and a `price_source`. An ambiguous quantity in the email ("4 or 5") must be recorded as an adjustment with the assumed value.
 3. **Price provenance.** `unit_price` must equal the price-book value for that SKU, or be marked `predicted` and match `predict_price` output. Stops the LLM inventing a price.
 
+The draft's own fields are written by the model, so they cannot vouch for each other. The draft's customer must exist and must equal the quote request's resolved customer (guardrail id `customer_identity`). When intake did not resolve a customer for the request, no discount is allowed at all (an extra rule inside `contract_discount`, since a discount cannot be verified without a customer).
+
 Violations are returned to the agent as per-line messages.
 
 ## Error handling
@@ -98,5 +100,8 @@ Violations are returned to the agent as per-line messages.
 - No live-OpenAI run over the 60 real emails. It costs real money; it will not run without explicit approval.
 - Phase 2 dedupe is not idempotent and has no timestamps. Phase 3 does not depend on either.
 - `DATASET_AS_OF` is a synthetic-data convention, not production behavior.
-- The three guardrails do not block a draft that leaves a discontinued SKU in place or omits a required part; those two cases are handled by agent policy only in Phase 3 (the graph in Phase 4 is the natural place to enforce them).
+- The guardrails do not block a draft that leaves a discontinued SKU in place or omits a required part; those two cases are handled by agent policy only in Phase 3 (the graph in Phase 4 is the natural place to enforce them).
 - Predicted prices are noise-level accurate because Phase 1 list prices are random per SKU. They are tagged and low-confidence by design; calibration is Phase 5.
+- The requirement that an ambiguous quantity ("4 or 5") be recorded as an adjustment with the assumed value is policy-only in Phase 3 (enforced by the system prompt, not by a guardrail); an agent can pick a quantity silently.
+- The agent run holds one database transaction open across up to 12 model calls. That is acceptable for a POC; later phases should read in short transactions, write at the end, and set an explicit client timeout.
+- Running the estimate twice for one quote request writes two `estimate_drafts` rows (each run is an attempt). `iterations` counts guardrail submissions, so a run that hit the step cap without submitting stores 0.

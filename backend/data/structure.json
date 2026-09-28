@@ -1,0 +1,2627 @@
+{
+  "families": [
+    {
+      "family_id": "FAM-0001",
+      "name": "GFCI Breaker",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0002",
+      "name": "GFCI Conduit",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0003",
+      "name": "GFCI Junction Box",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0004",
+      "name": "GFCI Outlet",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0005",
+      "name": "GFCI Relay",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0006",
+      "name": "GFCI Switch",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0007",
+      "name": "GFCI Wire Nut",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0008",
+      "name": "Heavy-Duty Breaker",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0009",
+      "name": "Heavy-Duty Conduit",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0010",
+      "name": "Heavy-Duty Junction Box",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0011",
+      "name": "Heavy-Duty Outlet",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0012",
+      "name": "Heavy-Duty Relay",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0013",
+      "name": "Heavy-Duty Switch",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0014",
+      "name": "Heavy-Duty Wire Nut",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0015",
+      "name": "Standard Breaker",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0016",
+      "name": "Standard Conduit",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0017",
+      "name": "Standard Junction Box",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0018",
+      "name": "Standard Outlet",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0019",
+      "name": "Standard Relay",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0020",
+      "name": "Standard Switch",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0021",
+      "name": "Standard Wire Nut",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0022",
+      "name": "Weatherproof Breaker",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0023",
+      "name": "Weatherproof Conduit",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0024",
+      "name": "Weatherproof Junction Box",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0025",
+      "name": "Weatherproof Outlet",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0026",
+      "name": "Weatherproof Relay",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0027",
+      "name": "Weatherproof Switch",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0028",
+      "name": "Weatherproof Wire Nut",
+      "category": "Electrical-Supplies"
+    },
+    {
+      "family_id": "FAM-0029",
+      "name": "Commercial Air Handler",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0030",
+      "name": "Commercial Blower",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0031",
+      "name": "Commercial Compressor",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0032",
+      "name": "Commercial Condenser",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0033",
+      "name": "Commercial Evaporator Coil",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0034",
+      "name": "Commercial Furnace",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0035",
+      "name": "Commercial Heat Exchanger",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0036",
+      "name": "High-Efficiency Air Handler",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0037",
+      "name": "High-Efficiency Blower",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0038",
+      "name": "High-Efficiency Compressor",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0039",
+      "name": "High-Efficiency Condenser",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0040",
+      "name": "High-Efficiency Evaporator Coil",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0041",
+      "name": "High-Efficiency Furnace",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0042",
+      "name": "High-Efficiency Heat Exchanger",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0043",
+      "name": "Residential Air Handler",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0044",
+      "name": "Residential Blower",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0045",
+      "name": "Residential Compressor",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0046",
+      "name": "Residential Condenser",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0047",
+      "name": "Residential Evaporator Coil",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0048",
+      "name": "Residential Furnace",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0049",
+      "name": "Residential Heat Exchanger",
+      "category": "HVAC-Equipment"
+    },
+    {
+      "family_id": "FAM-0050",
+      "name": "Aftermarket Belt",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0051",
+      "name": "Aftermarket Capacitor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0052",
+      "name": "Aftermarket Contactor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0053",
+      "name": "Aftermarket Filter",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0054",
+      "name": "Aftermarket Gasket",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0055",
+      "name": "Aftermarket Motor Mount",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0056",
+      "name": "Aftermarket Sensor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0057",
+      "name": "Aftermarket Thermostat",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0058",
+      "name": "Heavy-Duty Belt",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0059",
+      "name": "Heavy-Duty Capacitor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0060",
+      "name": "Heavy-Duty Contactor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0061",
+      "name": "Heavy-Duty Filter",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0062",
+      "name": "Heavy-Duty Gasket",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0063",
+      "name": "Heavy-Duty Motor Mount",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0064",
+      "name": "Heavy-Duty Sensor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0065",
+      "name": "Heavy-Duty Thermostat",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0066",
+      "name": "OEM Belt",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0067",
+      "name": "OEM Capacitor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0068",
+      "name": "OEM Contactor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0069",
+      "name": "OEM Filter",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0070",
+      "name": "OEM Gasket",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0071",
+      "name": "OEM Motor Mount",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0072",
+      "name": "OEM Sensor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0073",
+      "name": "OEM Thermostat",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0074",
+      "name": "Universal Belt",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0075",
+      "name": "Universal Capacitor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0076",
+      "name": "Universal Contactor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0077",
+      "name": "Universal Filter",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0078",
+      "name": "Universal Gasket",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0079",
+      "name": "Universal Motor Mount",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0080",
+      "name": "Universal Sensor",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0081",
+      "name": "Universal Thermostat",
+      "category": "HVAC-Parts"
+    },
+    {
+      "family_id": "FAM-0082",
+      "name": "Brass Adapter",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0083",
+      "name": "Brass Bushing",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0084",
+      "name": "Brass Cap",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0085",
+      "name": "Brass Coupling",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0086",
+      "name": "Brass Elbow",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0087",
+      "name": "Brass Nipple",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0088",
+      "name": "Brass Tee",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0089",
+      "name": "Brass Union",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0090",
+      "name": "Copper Adapter",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0091",
+      "name": "Copper Bushing",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0092",
+      "name": "Copper Cap",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0093",
+      "name": "Copper Coupling",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0094",
+      "name": "Copper Elbow",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0095",
+      "name": "Copper Nipple",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0096",
+      "name": "Copper Tee",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0097",
+      "name": "Copper Union",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0098",
+      "name": "Galvanized Adapter",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0099",
+      "name": "Galvanized Bushing",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0100",
+      "name": "Galvanized Cap",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0101",
+      "name": "Galvanized Coupling",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0102",
+      "name": "Galvanized Elbow",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0103",
+      "name": "Galvanized Nipple",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0104",
+      "name": "Galvanized Tee",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0105",
+      "name": "Galvanized Union",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0106",
+      "name": "PEX Adapter",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0107",
+      "name": "PEX Bushing",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0108",
+      "name": "PEX Cap",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0109",
+      "name": "PEX Coupling",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0110",
+      "name": "PEX Elbow",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0111",
+      "name": "PEX Nipple",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0112",
+      "name": "PEX Tee",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0113",
+      "name": "PEX Union",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0114",
+      "name": "PVC Adapter",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0115",
+      "name": "PVC Bushing",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0116",
+      "name": "PVC Cap",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0117",
+      "name": "PVC Coupling",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0118",
+      "name": "PVC Elbow",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0119",
+      "name": "PVC Nipple",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0120",
+      "name": "PVC Tee",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0121",
+      "name": "PVC Union",
+      "category": "Plumbing-Fittings"
+    },
+    {
+      "family_id": "FAM-0122",
+      "name": "Brass Aerator",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0123",
+      "name": "Brass Drain",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0124",
+      "name": "Brass Faucet",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0125",
+      "name": "Brass Shutoff",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0126",
+      "name": "Brass Sprayer",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0127",
+      "name": "Brass Stopper",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0128",
+      "name": "Brass Trap",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0129",
+      "name": "Brass Valve",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0130",
+      "name": "Chrome Aerator",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0131",
+      "name": "Chrome Drain",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0132",
+      "name": "Chrome Faucet",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0133",
+      "name": "Chrome Shutoff",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0134",
+      "name": "Chrome Sprayer",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0135",
+      "name": "Chrome Stopper",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0136",
+      "name": "Chrome Trap",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0137",
+      "name": "Chrome Valve",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0138",
+      "name": "Matte Black Aerator",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0139",
+      "name": "Matte Black Drain",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0140",
+      "name": "Matte Black Faucet",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0141",
+      "name": "Matte Black Shutoff",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0142",
+      "name": "Matte Black Sprayer",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0143",
+      "name": "Matte Black Stopper",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0144",
+      "name": "Matte Black Trap",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0145",
+      "name": "Matte Black Valve",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0146",
+      "name": "Plastic Aerator",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0147",
+      "name": "Plastic Drain",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0148",
+      "name": "Plastic Faucet",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0149",
+      "name": "Plastic Shutoff",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0150",
+      "name": "Plastic Sprayer",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0151",
+      "name": "Plastic Stopper",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0152",
+      "name": "Plastic Trap",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0153",
+      "name": "Plastic Valve",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0154",
+      "name": "Stainless Aerator",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0155",
+      "name": "Stainless Drain",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0156",
+      "name": "Stainless Faucet",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0157",
+      "name": "Stainless Shutoff",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0158",
+      "name": "Stainless Sprayer",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0159",
+      "name": "Stainless Stopper",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0160",
+      "name": "Stainless Trap",
+      "category": "Plumbing-Fixtures"
+    },
+    {
+      "family_id": "FAM-0161",
+      "name": "Stainless Valve",
+      "category": "Plumbing-Fixtures"
+    }
+  ],
+  "sku_family": {
+    "SKU-0001": "FAM-0090",
+    "SKU-0002": "FAM-0032",
+    "SKU-0003": "FAM-0005",
+    "SKU-0004": "FAM-0033",
+    "SKU-0005": "FAM-0022",
+    "SKU-0006": "FAM-0040",
+    "SKU-0007": "FAM-0133",
+    "SKU-0008": "FAM-0107",
+    "SKU-0009": "FAM-0126",
+    "SKU-0010": "FAM-0017",
+    "SKU-0011": "FAM-0051",
+    "SKU-0012": "FAM-0011",
+    "SKU-0013": "FAM-0056",
+    "SKU-0014": "FAM-0058",
+    "SKU-0015": "FAM-0060",
+    "SKU-0016": "FAM-0101",
+    "SKU-0017": "FAM-0072",
+    "SKU-0018": "FAM-0095",
+    "SKU-0019": "FAM-0056",
+    "SKU-0020": "FAM-0062",
+    "SKU-0021": "FAM-0092",
+    "SKU-0022": "FAM-0063",
+    "SKU-0023": "FAM-0144",
+    "SKU-0024": "FAM-0102",
+    "SKU-0025": "FAM-0024",
+    "SKU-0026": "FAM-0119",
+    "SKU-0027": "FAM-0037",
+    "SKU-0028": "FAM-0003",
+    "SKU-0029": "FAM-0073",
+    "SKU-0030": "FAM-0119",
+    "SKU-0031": "FAM-0016",
+    "SKU-0032": "FAM-0064",
+    "SKU-0033": "FAM-0012",
+    "SKU-0034": "FAM-0072",
+    "SKU-0035": "FAM-0101",
+    "SKU-0036": "FAM-0056",
+    "SKU-0037": "FAM-0070",
+    "SKU-0038": "FAM-0149",
+    "SKU-0039": "FAM-0110",
+    "SKU-0040": "FAM-0073",
+    "SKU-0041": "FAM-0009",
+    "SKU-0042": "FAM-0096",
+    "SKU-0043": "FAM-0036",
+    "SKU-0044": "FAM-0052",
+    "SKU-0045": "FAM-0084",
+    "SKU-0046": "FAM-0139",
+    "SKU-0047": "FAM-0063",
+    "SKU-0048": "FAM-0111",
+    "SKU-0049": "FAM-0095",
+    "SKU-0050": "FAM-0129",
+    "SKU-0051": "FAM-0114",
+    "SKU-0052": "FAM-0157",
+    "SKU-0053": "FAM-0057",
+    "SKU-0054": "FAM-0001",
+    "SKU-0055": "FAM-0154",
+    "SKU-0056": "FAM-0104",
+    "SKU-0057": "FAM-0141",
+    "SKU-0058": "FAM-0007",
+    "SKU-0059": "FAM-0105",
+    "SKU-0060": "FAM-0062",
+    "SKU-0061": "FAM-0027",
+    "SKU-0062": "FAM-0131",
+    "SKU-0063": "FAM-0143",
+    "SKU-0064": "FAM-0135",
+    "SKU-0065": "FAM-0021",
+    "SKU-0066": "FAM-0076",
+    "SKU-0067": "FAM-0066",
+    "SKU-0068": "FAM-0075",
+    "SKU-0069": "FAM-0058",
+    "SKU-0070": "FAM-0007",
+    "SKU-0071": "FAM-0116",
+    "SKU-0072": "FAM-0138",
+    "SKU-0073": "FAM-0065",
+    "SKU-0074": "FAM-0113",
+    "SKU-0075": "FAM-0097",
+    "SKU-0076": "FAM-0037",
+    "SKU-0077": "FAM-0136",
+    "SKU-0078": "FAM-0021",
+    "SKU-0079": "FAM-0040",
+    "SKU-0080": "FAM-0007",
+    "SKU-0081": "FAM-0156",
+    "SKU-0082": "FAM-0151",
+    "SKU-0083": "FAM-0090",
+    "SKU-0084": "FAM-0015",
+    "SKU-0085": "FAM-0152",
+    "SKU-0086": "FAM-0073",
+    "SKU-0087": "FAM-0124",
+    "SKU-0088": "FAM-0129",
+    "SKU-0089": "FAM-0161",
+    "SKU-0090": "FAM-0005",
+    "SKU-0091": "FAM-0128",
+    "SKU-0092": "FAM-0019",
+    "SKU-0093": "FAM-0114",
+    "SKU-0094": "FAM-0109",
+    "SKU-0095": "FAM-0022",
+    "SKU-0096": "FAM-0155",
+    "SKU-0097": "FAM-0098",
+    "SKU-0098": "FAM-0064",
+    "SKU-0099": "FAM-0158",
+    "SKU-0100": "FAM-0018",
+    "SKU-0101": "FAM-0090",
+    "SKU-0102": "FAM-0098",
+    "SKU-0103": "FAM-0054",
+    "SKU-0104": "FAM-0053",
+    "SKU-0105": "FAM-0128",
+    "SKU-0106": "FAM-0016",
+    "SKU-0107": "FAM-0159",
+    "SKU-0108": "FAM-0136",
+    "SKU-0109": "FAM-0143",
+    "SKU-0110": "FAM-0130",
+    "SKU-0111": "FAM-0139",
+    "SKU-0112": "FAM-0108",
+    "SKU-0113": "FAM-0080",
+    "SKU-0114": "FAM-0026",
+    "SKU-0115": "FAM-0040",
+    "SKU-0116": "FAM-0019",
+    "SKU-0117": "FAM-0154",
+    "SKU-0118": "FAM-0072",
+    "SKU-0119": "FAM-0149",
+    "SKU-0120": "FAM-0109",
+    "SKU-0121": "FAM-0057",
+    "SKU-0122": "FAM-0076",
+    "SKU-0123": "FAM-0064",
+    "SKU-0124": "FAM-0024",
+    "SKU-0125": "FAM-0048",
+    "SKU-0126": "FAM-0106",
+    "SKU-0127": "FAM-0067",
+    "SKU-0128": "FAM-0113",
+    "SKU-0129": "FAM-0015",
+    "SKU-0130": "FAM-0018",
+    "SKU-0131": "FAM-0001",
+    "SKU-0132": "FAM-0038",
+    "SKU-0133": "FAM-0088",
+    "SKU-0134": "FAM-0054",
+    "SKU-0135": "FAM-0154",
+    "SKU-0136": "FAM-0112",
+    "SKU-0137": "FAM-0114",
+    "SKU-0138": "FAM-0098",
+    "SKU-0139": "FAM-0004",
+    "SKU-0140": "FAM-0133",
+    "SKU-0141": "FAM-0097",
+    "SKU-0142": "FAM-0001",
+    "SKU-0143": "FAM-0142",
+    "SKU-0144": "FAM-0095",
+    "SKU-0145": "FAM-0078",
+    "SKU-0146": "FAM-0045",
+    "SKU-0147": "FAM-0084",
+    "SKU-0148": "FAM-0098",
+    "SKU-0149": "FAM-0084",
+    "SKU-0150": "FAM-0002",
+    "SKU-0151": "FAM-0138",
+    "SKU-0152": "FAM-0050",
+    "SKU-0153": "FAM-0027",
+    "SKU-0154": "FAM-0075",
+    "SKU-0155": "FAM-0077",
+    "SKU-0156": "FAM-0156",
+    "SKU-0157": "FAM-0027",
+    "SKU-0158": "FAM-0035",
+    "SKU-0159": "FAM-0098",
+    "SKU-0160": "FAM-0090",
+    "SKU-0161": "FAM-0027",
+    "SKU-0162": "FAM-0161",
+    "SKU-0163": "FAM-0118",
+    "SKU-0164": "FAM-0012",
+    "SKU-0165": "FAM-0035",
+    "SKU-0166": "FAM-0025",
+    "SKU-0167": "FAM-0056",
+    "SKU-0168": "FAM-0148",
+    "SKU-0169": "FAM-0034",
+    "SKU-0170": "FAM-0093",
+    "SKU-0171": "FAM-0102",
+    "SKU-0172": "FAM-0096",
+    "SKU-0173": "FAM-0028",
+    "SKU-0174": "FAM-0071",
+    "SKU-0175": "FAM-0127",
+    "SKU-0176": "FAM-0093",
+    "SKU-0177": "FAM-0089",
+    "SKU-0178": "FAM-0094",
+    "SKU-0179": "FAM-0030",
+    "SKU-0180": "FAM-0066",
+    "SKU-0181": "FAM-0117",
+    "SKU-0182": "FAM-0110",
+    "SKU-0183": "FAM-0023",
+    "SKU-0184": "FAM-0074",
+    "SKU-0185": "FAM-0028",
+    "SKU-0186": "FAM-0137",
+    "SKU-0187": "FAM-0019",
+    "SKU-0188": "FAM-0146",
+    "SKU-0189": "FAM-0053",
+    "SKU-0190": "FAM-0112",
+    "SKU-0191": "FAM-0117",
+    "SKU-0192": "FAM-0018",
+    "SKU-0193": "FAM-0023",
+    "SKU-0194": "FAM-0108",
+    "SKU-0195": "FAM-0090",
+    "SKU-0196": "FAM-0123",
+    "SKU-0197": "FAM-0160",
+    "SKU-0198": "FAM-0067",
+    "SKU-0199": "FAM-0015",
+    "SKU-0200": "FAM-0077",
+    "SKU-0201": "FAM-0082",
+    "SKU-0202": "FAM-0028",
+    "SKU-0203": "FAM-0007",
+    "SKU-0204": "FAM-0007",
+    "SKU-0205": "FAM-0144",
+    "SKU-0206": "FAM-0075",
+    "SKU-0207": "FAM-0151",
+    "SKU-0208": "FAM-0085",
+    "SKU-0209": "FAM-0091",
+    "SKU-0210": "FAM-0104",
+    "SKU-0211": "FAM-0024",
+    "SKU-0212": "FAM-0008",
+    "SKU-0213": "FAM-0102",
+    "SKU-0214": "FAM-0021",
+    "SKU-0215": "FAM-0128",
+    "SKU-0216": "FAM-0159",
+    "SKU-0217": "FAM-0010",
+    "SKU-0218": "FAM-0103",
+    "SKU-0219": "FAM-0062",
+    "SKU-0220": "FAM-0052",
+    "SKU-0221": "FAM-0153",
+    "SKU-0222": "FAM-0134",
+    "SKU-0223": "FAM-0118",
+    "SKU-0224": "FAM-0026",
+    "SKU-0225": "FAM-0018",
+    "SKU-0226": "FAM-0074",
+    "SKU-0227": "FAM-0104",
+    "SKU-0228": "FAM-0105",
+    "SKU-0229": "FAM-0076",
+    "SKU-0230": "FAM-0113",
+    "SKU-0231": "FAM-0014",
+    "SKU-0232": "FAM-0068",
+    "SKU-0233": "FAM-0137",
+    "SKU-0234": "FAM-0012",
+    "SKU-0235": "FAM-0105",
+    "SKU-0236": "FAM-0073",
+    "SKU-0237": "FAM-0133",
+    "SKU-0238": "FAM-0094",
+    "SKU-0239": "FAM-0013",
+    "SKU-0240": "FAM-0149",
+    "SKU-0241": "FAM-0084",
+    "SKU-0242": "FAM-0017",
+    "SKU-0243": "FAM-0147",
+    "SKU-0244": "FAM-0010",
+    "SKU-0245": "FAM-0094",
+    "SKU-0246": "FAM-0101",
+    "SKU-0247": "FAM-0139",
+    "SKU-0248": "FAM-0084",
+    "SKU-0249": "FAM-0159",
+    "SKU-0250": "FAM-0109",
+    "SKU-0251": "FAM-0129",
+    "SKU-0252": "FAM-0156",
+    "SKU-0253": "FAM-0099",
+    "SKU-0254": "FAM-0069",
+    "SKU-0255": "FAM-0026",
+    "SKU-0256": "FAM-0008",
+    "SKU-0257": "FAM-0127",
+    "SKU-0258": "FAM-0157",
+    "SKU-0259": "FAM-0138",
+    "SKU-0260": "FAM-0036",
+    "SKU-0261": "FAM-0035",
+    "SKU-0262": "FAM-0146",
+    "SKU-0263": "FAM-0121",
+    "SKU-0264": "FAM-0130",
+    "SKU-0265": "FAM-0013",
+    "SKU-0266": "FAM-0065",
+    "SKU-0267": "FAM-0080",
+    "SKU-0268": "FAM-0092",
+    "SKU-0269": "FAM-0008",
+    "SKU-0270": "FAM-0149",
+    "SKU-0271": "FAM-0089",
+    "SKU-0272": "FAM-0129",
+    "SKU-0273": "FAM-0140",
+    "SKU-0274": "FAM-0092",
+    "SKU-0275": "FAM-0030",
+    "SKU-0276": "FAM-0082",
+    "SKU-0277": "FAM-0052",
+    "SKU-0278": "FAM-0047",
+    "SKU-0279": "FAM-0024",
+    "SKU-0280": "FAM-0019",
+    "SKU-0281": "FAM-0088",
+    "SKU-0282": "FAM-0088",
+    "SKU-0283": "FAM-0033",
+    "SKU-0284": "FAM-0135",
+    "SKU-0285": "FAM-0145",
+    "SKU-0286": "FAM-0005",
+    "SKU-0287": "FAM-0122",
+    "SKU-0288": "FAM-0043",
+    "SKU-0289": "FAM-0106",
+    "SKU-0290": "FAM-0048",
+    "SKU-0291": "FAM-0087",
+    "SKU-0292": "FAM-0067",
+    "SKU-0293": "FAM-0060",
+    "SKU-0294": "FAM-0017",
+    "SKU-0295": "FAM-0117",
+    "SKU-0296": "FAM-0122",
+    "SKU-0297": "FAM-0025",
+    "SKU-0298": "FAM-0017",
+    "SKU-0299": "FAM-0064",
+    "SKU-0300": "FAM-0005",
+    "SKU-0301": "FAM-0109",
+    "SKU-0302": "FAM-0108",
+    "SKU-0303": "FAM-0003",
+    "SKU-0304": "FAM-0019",
+    "SKU-0305": "FAM-0010",
+    "SKU-0306": "FAM-0095",
+    "SKU-0307": "FAM-0058",
+    "SKU-0308": "FAM-0011",
+    "SKU-0309": "FAM-0085",
+    "SKU-0310": "FAM-0147",
+    "SKU-0311": "FAM-0033",
+    "SKU-0312": "FAM-0063",
+    "SKU-0313": "FAM-0044",
+    "SKU-0314": "FAM-0136",
+    "SKU-0315": "FAM-0099",
+    "SKU-0316": "FAM-0023",
+    "SKU-0317": "FAM-0092",
+    "SKU-0318": "FAM-0130",
+    "SKU-0319": "FAM-0049",
+    "SKU-0320": "FAM-0085",
+    "SKU-0321": "FAM-0097",
+    "SKU-0322": "FAM-0146",
+    "SKU-0323": "FAM-0042",
+    "SKU-0324": "FAM-0115",
+    "SKU-0325": "FAM-0086",
+    "SKU-0326": "FAM-0161",
+    "SKU-0327": "FAM-0085",
+    "SKU-0328": "FAM-0091",
+    "SKU-0329": "FAM-0102",
+    "SKU-0330": "FAM-0064",
+    "SKU-0331": "FAM-0124",
+    "SKU-0332": "FAM-0108",
+    "SKU-0333": "FAM-0082",
+    "SKU-0334": "FAM-0091",
+    "SKU-0335": "FAM-0114",
+    "SKU-0336": "FAM-0002",
+    "SKU-0337": "FAM-0020",
+    "SKU-0338": "FAM-0075",
+    "SKU-0339": "FAM-0160",
+    "SKU-0340": "FAM-0110",
+    "SKU-0341": "FAM-0024",
+    "SKU-0342": "FAM-0087",
+    "SKU-0343": "FAM-0123",
+    "SKU-0344": "FAM-0139",
+    "SKU-0345": "FAM-0024",
+    "SKU-0346": "FAM-0157",
+    "SKU-0347": "FAM-0045",
+    "SKU-0348": "FAM-0010",
+    "SKU-0349": "FAM-0083",
+    "SKU-0350": "FAM-0006",
+    "SKU-0351": "FAM-0132",
+    "SKU-0352": "FAM-0100",
+    "SKU-0353": "FAM-0083",
+    "SKU-0354": "FAM-0081",
+    "SKU-0355": "FAM-0135",
+    "SKU-0356": "FAM-0006",
+    "SKU-0357": "FAM-0031",
+    "SKU-0358": "FAM-0008",
+    "SKU-0359": "FAM-0013",
+    "SKU-0360": "FAM-0075",
+    "SKU-0361": "FAM-0051",
+    "SKU-0362": "FAM-0068",
+    "SKU-0363": "FAM-0057",
+    "SKU-0364": "FAM-0084",
+    "SKU-0365": "FAM-0127",
+    "SKU-0366": "FAM-0100",
+    "SKU-0367": "FAM-0012",
+    "SKU-0368": "FAM-0013",
+    "SKU-0369": "FAM-0069",
+    "SKU-0370": "FAM-0008",
+    "SKU-0371": "FAM-0108",
+    "SKU-0372": "FAM-0084",
+    "SKU-0373": "FAM-0158",
+    "SKU-0374": "FAM-0117",
+    "SKU-0375": "FAM-0123",
+    "SKU-0376": "FAM-0081",
+    "SKU-0377": "FAM-0035",
+    "SKU-0378": "FAM-0059",
+    "SKU-0379": "FAM-0125",
+    "SKU-0380": "FAM-0150",
+    "SKU-0381": "FAM-0068",
+    "SKU-0382": "FAM-0059",
+    "SKU-0383": "FAM-0034",
+    "SKU-0384": "FAM-0125",
+    "SKU-0385": "FAM-0037",
+    "SKU-0386": "FAM-0028",
+    "SKU-0387": "FAM-0161",
+    "SKU-0388": "FAM-0029",
+    "SKU-0389": "FAM-0111",
+    "SKU-0390": "FAM-0107",
+    "SKU-0391": "FAM-0041",
+    "SKU-0392": "FAM-0148",
+    "SKU-0393": "FAM-0044",
+    "SKU-0394": "FAM-0097",
+    "SKU-0395": "FAM-0088",
+    "SKU-0396": "FAM-0116",
+    "SKU-0397": "FAM-0131",
+    "SKU-0398": "FAM-0098",
+    "SKU-0399": "FAM-0152",
+    "SKU-0400": "FAM-0108",
+    "SKU-0401": "FAM-0130",
+    "SKU-0402": "FAM-0004",
+    "SKU-0403": "FAM-0083",
+    "SKU-0404": "FAM-0148",
+    "SKU-0405": "FAM-0028",
+    "SKU-0406": "FAM-0101",
+    "SKU-0407": "FAM-0054",
+    "SKU-0408": "FAM-0015",
+    "SKU-0409": "FAM-0145",
+    "SKU-0410": "FAM-0140",
+    "SKU-0411": "FAM-0063",
+    "SKU-0412": "FAM-0131",
+    "SKU-0413": "FAM-0141",
+    "SKU-0414": "FAM-0070",
+    "SKU-0415": "FAM-0055",
+    "SKU-0416": "FAM-0096",
+    "SKU-0417": "FAM-0016",
+    "SKU-0418": "FAM-0009",
+    "SKU-0419": "FAM-0062",
+    "SKU-0420": "FAM-0150",
+    "SKU-0421": "FAM-0108",
+    "SKU-0422": "FAM-0129",
+    "SKU-0423": "FAM-0009",
+    "SKU-0424": "FAM-0150",
+    "SKU-0425": "FAM-0159",
+    "SKU-0426": "FAM-0092",
+    "SKU-0427": "FAM-0014",
+    "SKU-0428": "FAM-0058",
+    "SKU-0429": "FAM-0100",
+    "SKU-0430": "FAM-0115",
+    "SKU-0431": "FAM-0123",
+    "SKU-0432": "FAM-0019",
+    "SKU-0433": "FAM-0036",
+    "SKU-0434": "FAM-0086",
+    "SKU-0435": "FAM-0066",
+    "SKU-0436": "FAM-0025",
+    "SKU-0437": "FAM-0015",
+    "SKU-0438": "FAM-0101",
+    "SKU-0439": "FAM-0030",
+    "SKU-0440": "FAM-0147",
+    "SKU-0441": "FAM-0055",
+    "SKU-0442": "FAM-0086",
+    "SKU-0443": "FAM-0052",
+    "SKU-0444": "FAM-0151",
+    "SKU-0445": "FAM-0042",
+    "SKU-0446": "FAM-0105",
+    "SKU-0447": "FAM-0046",
+    "SKU-0448": "FAM-0127",
+    "SKU-0449": "FAM-0148",
+    "SKU-0450": "FAM-0024",
+    "SKU-0451": "FAM-0089",
+    "SKU-0452": "FAM-0069",
+    "SKU-0453": "FAM-0142",
+    "SKU-0454": "FAM-0155",
+    "SKU-0455": "FAM-0078",
+    "SKU-0456": "FAM-0125",
+    "SKU-0457": "FAM-0018",
+    "SKU-0458": "FAM-0099",
+    "SKU-0459": "FAM-0148",
+    "SKU-0460": "FAM-0060",
+    "SKU-0461": "FAM-0155",
+    "SKU-0462": "FAM-0116",
+    "SKU-0463": "FAM-0093",
+    "SKU-0464": "FAM-0099",
+    "SKU-0465": "FAM-0144",
+    "SKU-0466": "FAM-0114",
+    "SKU-0467": "FAM-0147",
+    "SKU-0468": "FAM-0153",
+    "SKU-0469": "FAM-0051",
+    "SKU-0470": "FAM-0140",
+    "SKU-0471": "FAM-0085",
+    "SKU-0472": "FAM-0121",
+    "SKU-0473": "FAM-0157",
+    "SKU-0474": "FAM-0135",
+    "SKU-0475": "FAM-0074",
+    "SKU-0476": "FAM-0145",
+    "SKU-0477": "FAM-0072",
+    "SKU-0478": "FAM-0137",
+    "SKU-0479": "FAM-0058",
+    "SKU-0480": "FAM-0101",
+    "SKU-0481": "FAM-0077",
+    "SKU-0482": "FAM-0049",
+    "SKU-0483": "FAM-0027",
+    "SKU-0484": "FAM-0126",
+    "SKU-0485": "FAM-0119",
+    "SKU-0486": "FAM-0104",
+    "SKU-0487": "FAM-0067",
+    "SKU-0488": "FAM-0096",
+    "SKU-0489": "FAM-0140",
+    "SKU-0490": "FAM-0153",
+    "SKU-0491": "FAM-0143",
+    "SKU-0492": "FAM-0141",
+    "SKU-0493": "FAM-0104",
+    "SKU-0494": "FAM-0083",
+    "SKU-0495": "FAM-0023",
+    "SKU-0496": "FAM-0031",
+    "SKU-0497": "FAM-0001",
+    "SKU-0498": "FAM-0079",
+    "SKU-0499": "FAM-0132",
+    "SKU-0500": "FAM-0131",
+    "SKU-0501": "FAM-0105",
+    "SKU-0502": "FAM-0150",
+    "SKU-0503": "FAM-0096",
+    "SKU-0504": "FAM-0111",
+    "SKU-0505": "FAM-0120",
+    "SKU-0506": "FAM-0033",
+    "SKU-0507": "FAM-0122",
+    "SKU-0508": "FAM-0071",
+    "SKU-0509": "FAM-0069",
+    "SKU-0510": "FAM-0092",
+    "SKU-0511": "FAM-0011",
+    "SKU-0512": "FAM-0078",
+    "SKU-0513": "FAM-0151",
+    "SKU-0514": "FAM-0144",
+    "SKU-0515": "FAM-0041",
+    "SKU-0516": "FAM-0107",
+    "SKU-0517": "FAM-0089",
+    "SKU-0518": "FAM-0125",
+    "SKU-0519": "FAM-0016",
+    "SKU-0520": "FAM-0091",
+    "SKU-0521": "FAM-0132",
+    "SKU-0522": "FAM-0061",
+    "SKU-0523": "FAM-0026",
+    "SKU-0524": "FAM-0095",
+    "SKU-0525": "FAM-0006",
+    "SKU-0526": "FAM-0042",
+    "SKU-0527": "FAM-0002",
+    "SKU-0528": "FAM-0076",
+    "SKU-0529": "FAM-0100",
+    "SKU-0530": "FAM-0122",
+    "SKU-0531": "FAM-0099",
+    "SKU-0532": "FAM-0137",
+    "SKU-0533": "FAM-0111",
+    "SKU-0534": "FAM-0001",
+    "SKU-0535": "FAM-0119",
+    "SKU-0536": "FAM-0086",
+    "SKU-0537": "FAM-0026",
+    "SKU-0538": "FAM-0089",
+    "SKU-0539": "FAM-0119",
+    "SKU-0540": "FAM-0134",
+    "SKU-0541": "FAM-0093",
+    "SKU-0542": "FAM-0134",
+    "SKU-0543": "FAM-0029",
+    "SKU-0544": "FAM-0013",
+    "SKU-0545": "FAM-0136",
+    "SKU-0546": "FAM-0155",
+    "SKU-0547": "FAM-0012",
+    "SKU-0548": "FAM-0052",
+    "SKU-0549": "FAM-0127",
+    "SKU-0550": "FAM-0016",
+    "SKU-0551": "FAM-0053",
+    "SKU-0552": "FAM-0070",
+    "SKU-0553": "FAM-0059",
+    "SKU-0554": "FAM-0079",
+    "SKU-0555": "FAM-0120",
+    "SKU-0556": "FAM-0115",
+    "SKU-0557": "FAM-0010",
+    "SKU-0558": "FAM-0093",
+    "SKU-0559": "FAM-0120",
+    "SKU-0560": "FAM-0061",
+    "SKU-0561": "FAM-0142",
+    "SKU-0562": "FAM-0134",
+    "SKU-0563": "FAM-0089",
+    "SKU-0564": "FAM-0010",
+    "SKU-0565": "FAM-0004",
+    "SKU-0566": "FAM-0112",
+    "SKU-0567": "FAM-0015",
+    "SKU-0568": "FAM-0100",
+    "SKU-0569": "FAM-0107",
+    "SKU-0570": "FAM-0011",
+    "SKU-0571": "FAM-0076",
+    "SKU-0572": "FAM-0003",
+    "SKU-0573": "FAM-0121",
+    "SKU-0574": "FAM-0092",
+    "SKU-0575": "FAM-0014",
+    "SKU-0576": "FAM-0085",
+    "SKU-0577": "FAM-0152",
+    "SKU-0578": "FAM-0112",
+    "SKU-0579": "FAM-0048",
+    "SKU-0580": "FAM-0038",
+    "SKU-0581": "FAM-0105",
+    "SKU-0582": "FAM-0121",
+    "SKU-0583": "FAM-0077",
+    "SKU-0584": "FAM-0056",
+    "SKU-0585": "FAM-0017",
+    "SKU-0586": "FAM-0023",
+    "SKU-0587": "FAM-0071",
+    "SKU-0588": "FAM-0066",
+    "SKU-0589": "FAM-0065",
+    "SKU-0590": "FAM-0118",
+    "SKU-0591": "FAM-0124",
+    "SKU-0592": "FAM-0062",
+    "SKU-0593": "FAM-0078",
+    "SKU-0594": "FAM-0055",
+    "SKU-0595": "FAM-0040",
+    "SKU-0596": "FAM-0103",
+    "SKU-0597": "FAM-0133",
+    "SKU-0598": "FAM-0025",
+    "SKU-0599": "FAM-0083",
+    "SKU-0600": "FAM-0068",
+    "SKU-0601": "FAM-0050",
+    "SKU-0602": "FAM-0044",
+    "SKU-0603": "FAM-0136",
+    "SKU-0604": "FAM-0142",
+    "SKU-0605": "FAM-0039",
+    "SKU-0606": "FAM-0159",
+    "SKU-0607": "FAM-0094",
+    "SKU-0608": "FAM-0013",
+    "SKU-0609": "FAM-0102",
+    "SKU-0610": "FAM-0032",
+    "SKU-0611": "FAM-0009",
+    "SKU-0612": "FAM-0103",
+    "SKU-0613": "FAM-0067",
+    "SKU-0614": "FAM-0043",
+    "SKU-0615": "FAM-0012",
+    "SKU-0616": "FAM-0102",
+    "SKU-0617": "FAM-0112",
+    "SKU-0618": "FAM-0004",
+    "SKU-0619": "FAM-0096",
+    "SKU-0620": "FAM-0079",
+    "SKU-0621": "FAM-0095",
+    "SKU-0622": "FAM-0021",
+    "SKU-0623": "FAM-0053",
+    "SKU-0624": "FAM-0144",
+    "SKU-0625": "FAM-0121",
+    "SKU-0626": "FAM-0106",
+    "SKU-0627": "FAM-0012",
+    "SKU-0628": "FAM-0049",
+    "SKU-0629": "FAM-0104",
+    "SKU-0630": "FAM-0014",
+    "SKU-0631": "FAM-0082",
+    "SKU-0632": "FAM-0003",
+    "SKU-0633": "FAM-0027",
+    "SKU-0634": "FAM-0045",
+    "SKU-0635": "FAM-0023",
+    "SKU-0636": "FAM-0106",
+    "SKU-0637": "FAM-0119",
+    "SKU-0638": "FAM-0126",
+    "SKU-0639": "FAM-0152",
+    "SKU-0640": "FAM-0118",
+    "SKU-0641": "FAM-0115",
+    "SKU-0642": "FAM-0095",
+    "SKU-0643": "FAM-0143",
+    "SKU-0644": "FAM-0149",
+    "SKU-0645": "FAM-0034",
+    "SKU-0646": "FAM-0156",
+    "SKU-0647": "FAM-0140",
+    "SKU-0648": "FAM-0026",
+    "SKU-0649": "FAM-0116",
+    "SKU-0650": "FAM-0105"
+  },
+  "projects": [
+    {
+      "project_id": "PRJ-0001",
+      "customer_id": "CUST-0001",
+      "site_id": "SITE-0001",
+      "name": "Crown Services job at 9441 Main St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0002",
+      "customer_id": "CUST-0002",
+      "site_id": "SITE-0002",
+      "name": "Apex HVAC job at 7289 5th Ave, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0003",
+      "customer_id": "CUST-0002",
+      "site_id": "SITE-0003",
+      "name": "Apex HVAC job at 7285 5th Ave, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0004",
+      "customer_id": "CUST-0003",
+      "site_id": "SITE-0004",
+      "name": "Peak Services job at 2793 Industrial Pkwy, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0005",
+      "customer_id": "CUST-0004",
+      "site_id": "SITE-0005",
+      "name": "Zenith Contractors job at 6361 Commerce Dr, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0006",
+      "customer_id": "CUST-0004",
+      "site_id": "SITE-0006",
+      "name": "Zenith Contractors job at 5359 5th Ave, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0007",
+      "customer_id": "CUST-0005",
+      "site_id": "SITE-0007",
+      "name": "Titan Group job at 2153 River Rd, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0008",
+      "customer_id": "CUST-0006",
+      "site_id": "SITE-0008",
+      "name": "Peak Contractors job at 5061 Elm St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0009",
+      "customer_id": "CUST-0007",
+      "site_id": "SITE-0009",
+      "name": "Riverside Plumbing job at 1446 Commerce Dr, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0010",
+      "customer_id": "CUST-0008",
+      "site_id": "SITE-0010",
+      "name": "Harbor Group job at 5849 Main St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0011",
+      "customer_id": "CUST-0009",
+      "site_id": "SITE-0011",
+      "name": "Apex Mechanical job at 6514 Oak St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0012",
+      "customer_id": "CUST-0010",
+      "site_id": "SITE-0012",
+      "name": "Elite HVAC job at 7538 5th Ave, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0013",
+      "customer_id": "CUST-0010",
+      "site_id": "SITE-0013",
+      "name": "Elite HVAC job at 3351 Industrial Pkwy, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0014",
+      "customer_id": "CUST-0011",
+      "site_id": "SITE-0014",
+      "name": "Harbor HVAC job at 4129 Commerce Dr, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0015",
+      "customer_id": "CUST-0012",
+      "site_id": "SITE-0015",
+      "name": "Metro HVAC job at 633 Commerce Dr, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0016",
+      "customer_id": "CUST-0013",
+      "site_id": "SITE-0016",
+      "name": "Union Plumbing job at 8906 Oak St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0017",
+      "customer_id": "CUST-0013",
+      "site_id": "SITE-0017",
+      "name": "Union Plumbing job at 1459 Oak St, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0018",
+      "customer_id": "CUST-0014",
+      "site_id": "SITE-0018",
+      "name": "Redstone Co job at 730 River Rd, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0019",
+      "customer_id": "CUST-0015",
+      "site_id": "SITE-0019",
+      "name": "Peak Plumbing job at 7856 Main St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0020",
+      "customer_id": "CUST-0015",
+      "site_id": "SITE-0020",
+      "name": "Peak Plumbing job at 9829 Commerce Dr, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0021",
+      "customer_id": "CUST-0016",
+      "site_id": "SITE-0021",
+      "name": "Bluewater HVAC job at 588 Oak St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0022",
+      "customer_id": "CUST-0016",
+      "site_id": "SITE-0022",
+      "name": "Bluewater HVAC job at 2778 5th Ave, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0023",
+      "customer_id": "CUST-0017",
+      "site_id": "SITE-0023",
+      "name": "Cascade Group job at 2146 Oak St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0024",
+      "customer_id": "CUST-0018",
+      "site_id": "SITE-0024",
+      "name": "Highline Contractors job at 9793 Main St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0025",
+      "customer_id": "CUST-0018",
+      "site_id": "SITE-0025",
+      "name": "Highline Contractors job at 5898 River Rd, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0026",
+      "customer_id": "CUST-0019",
+      "site_id": "SITE-0026",
+      "name": "Summit Plumbing job at 7504 Elm St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0027",
+      "customer_id": "CUST-0019",
+      "site_id": "SITE-0027",
+      "name": "Summit Plumbing job at 9286 5th Ave, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0028",
+      "customer_id": "CUST-0020",
+      "site_id": "SITE-0028",
+      "name": "Summit HVAC job at 4866 Elm St, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0029",
+      "customer_id": "CUST-0020",
+      "site_id": "SITE-0029",
+      "name": "Summit HVAC job at 3971 Main St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0030",
+      "customer_id": "CUST-0021",
+      "site_id": "SITE-0030",
+      "name": "Total Co job at 6191 Oak St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0031",
+      "customer_id": "CUST-0021",
+      "site_id": "SITE-0031",
+      "name": "Total Co job at 4754 5th Ave, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0032",
+      "customer_id": "CUST-0022",
+      "site_id": "SITE-0032",
+      "name": "Nexus HVAC job at 4082 Oak St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0033",
+      "customer_id": "CUST-0023",
+      "site_id": "SITE-0033",
+      "name": "Union Mechanical job at 6858 Industrial Pkwy, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0034",
+      "customer_id": "CUST-0024",
+      "site_id": "SITE-0034",
+      "name": "Lakeview Plumbing job at 434 Industrial Pkwy, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0035",
+      "customer_id": "CUST-0024",
+      "site_id": "SITE-0035",
+      "name": "Lakeview Plumbing job at 282 Elm St, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0036",
+      "customer_id": "CUST-0025",
+      "site_id": "SITE-0036",
+      "name": "Ironclad Services job at 4192 River Rd, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0037",
+      "customer_id": "CUST-0025",
+      "site_id": "SITE-0037",
+      "name": "Ironclad Services job at 9027 River Rd, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0038",
+      "customer_id": "CUST-0026",
+      "site_id": "SITE-0038",
+      "name": "Coastal HVAC job at 9880 River Rd, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0039",
+      "customer_id": "CUST-0026",
+      "site_id": "SITE-0039",
+      "name": "Coastal HVAC job at 9276 Main St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0040",
+      "customer_id": "CUST-0027",
+      "site_id": "SITE-0040",
+      "name": "Vanguard Contractors job at 7212 Elm St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0041",
+      "customer_id": "CUST-0028",
+      "site_id": "SITE-0041",
+      "name": "Northgate Services job at 215 Industrial Pkwy, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0042",
+      "customer_id": "CUST-0028",
+      "site_id": "SITE-0042",
+      "name": "Northgate Services job at 549 5th Ave, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0043",
+      "customer_id": "CUST-0029",
+      "site_id": "SITE-0043",
+      "name": "Total Services job at 8552 5th Ave, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0044",
+      "customer_id": "CUST-0029",
+      "site_id": "SITE-0044",
+      "name": "Total Services job at 707 5th Ave, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0045",
+      "customer_id": "CUST-0030",
+      "site_id": "SITE-0045",
+      "name": "Prairie Contractors job at 5081 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0046",
+      "customer_id": "CUST-0030",
+      "site_id": "SITE-0046",
+      "name": "Prairie Contractors job at 7034 Oak St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0047",
+      "customer_id": "CUST-0031",
+      "site_id": "SITE-0047",
+      "name": "Zenith Services job at 9516 River Rd, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0048",
+      "customer_id": "CUST-0032",
+      "site_id": "SITE-0048",
+      "name": "Coastal Mechanical job at 6193 Oak St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0049",
+      "customer_id": "CUST-0032",
+      "site_id": "SITE-0049",
+      "name": "Coastal Mechanical job at 5008 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0050",
+      "customer_id": "CUST-0033",
+      "site_id": "SITE-0050",
+      "name": "Union HVAC job at 3112 Elm St, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0051",
+      "customer_id": "CUST-0034",
+      "site_id": "SITE-0051",
+      "name": "Cascade Mechanical job at 6236 Commerce Dr, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0052",
+      "customer_id": "CUST-0035",
+      "site_id": "SITE-0052",
+      "name": "Apex Services job at 4250 Elm St, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0053",
+      "customer_id": "CUST-0035",
+      "site_id": "SITE-0053",
+      "name": "Apex Services job at 6290 Industrial Pkwy, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0054",
+      "customer_id": "CUST-0036",
+      "site_id": "SITE-0054",
+      "name": "Titan Plumbing job at 9748 River Rd, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0055",
+      "customer_id": "CUST-0036",
+      "site_id": "SITE-0055",
+      "name": "Titan Plumbing job at 520 Main St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0056",
+      "customer_id": "CUST-0037",
+      "site_id": "SITE-0056",
+      "name": "Redstone Group job at 4586 Elm St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0057",
+      "customer_id": "CUST-0038",
+      "site_id": "SITE-0057",
+      "name": "Prairie Services job at 6927 Industrial Pkwy, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0058",
+      "customer_id": "CUST-0039",
+      "site_id": "SITE-0058",
+      "name": "Peak Group job at 3940 River Rd, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0059",
+      "customer_id": "CUST-0039",
+      "site_id": "SITE-0059",
+      "name": "Peak Group job at 453 Oak St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0060",
+      "customer_id": "CUST-0040",
+      "site_id": "SITE-0060",
+      "name": "Crown Mechanical job at 2676 Commerce Dr, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0061",
+      "customer_id": "CUST-0040",
+      "site_id": "SITE-0061",
+      "name": "Crown Mechanical job at 3895 Industrial Pkwy, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0062",
+      "customer_id": "CUST-0041",
+      "site_id": "SITE-0062",
+      "name": "Bluewater Group job at 1805 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0063",
+      "customer_id": "CUST-0041",
+      "site_id": "SITE-0063",
+      "name": "Bluewater Group job at 5654 River Rd, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0064",
+      "customer_id": "CUST-0042",
+      "site_id": "SITE-0064",
+      "name": "Peak Co job at 2579 Elm St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0065",
+      "customer_id": "CUST-0043",
+      "site_id": "SITE-0065",
+      "name": "Elite Contractors job at 8086 River Rd, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0066",
+      "customer_id": "CUST-0043",
+      "site_id": "SITE-0066",
+      "name": "Elite Contractors job at 6295 Oak St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0067",
+      "customer_id": "CUST-0044",
+      "site_id": "SITE-0067",
+      "name": "Nexus Plumbing job at 1209 5th Ave, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0068",
+      "customer_id": "CUST-0044",
+      "site_id": "SITE-0068",
+      "name": "Nexus Plumbing job at 1290 Commerce Dr, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0069",
+      "customer_id": "CUST-0045",
+      "site_id": "SITE-0069",
+      "name": "Ironclad HVAC job at 1479 River Rd, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0070",
+      "customer_id": "CUST-0045",
+      "site_id": "SITE-0070",
+      "name": "Ironclad HVAC job at 9342 5th Ave, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0071",
+      "customer_id": "CUST-0046",
+      "site_id": "SITE-0071",
+      "name": "Advanced Co job at 8409 5th Ave, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0072",
+      "customer_id": "CUST-0046",
+      "site_id": "SITE-0072",
+      "name": "Advanced Co job at 6750 Oak St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0073",
+      "customer_id": "CUST-0047",
+      "site_id": "SITE-0073",
+      "name": "Advanced Services job at 6856 Commerce Dr, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0074",
+      "customer_id": "CUST-0047",
+      "site_id": "SITE-0074",
+      "name": "Advanced Services job at 5687 River Rd, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0075",
+      "customer_id": "CUST-0048",
+      "site_id": "SITE-0075",
+      "name": "Titan Co job at 1851 Main St, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0076",
+      "customer_id": "CUST-0048",
+      "site_id": "SITE-0076",
+      "name": "Titan Co job at 8856 Industrial Pkwy, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0077",
+      "customer_id": "CUST-0049",
+      "site_id": "SITE-0077",
+      "name": "Nexus Mechanical job at 7822 River Rd, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0078",
+      "customer_id": "CUST-0049",
+      "site_id": "SITE-0078",
+      "name": "Nexus Mechanical job at 1330 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0079",
+      "customer_id": "CUST-0050",
+      "site_id": "SITE-0079",
+      "name": "Highline Services job at 1495 Industrial Pkwy, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0080",
+      "customer_id": "CUST-0051",
+      "site_id": "SITE-0080",
+      "name": "Metro Services job at 5159 Commerce Dr, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0081",
+      "customer_id": "CUST-0052",
+      "site_id": "SITE-0081",
+      "name": "Riverside HVAC job at 5071 River Rd, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0082",
+      "customer_id": "CUST-0052",
+      "site_id": "SITE-0082",
+      "name": "Riverside HVAC job at 5756 Main St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0083",
+      "customer_id": "CUST-0053",
+      "site_id": "SITE-0083",
+      "name": "Bluewater Co job at 5697 Industrial Pkwy, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0084",
+      "customer_id": "CUST-0053",
+      "site_id": "SITE-0084",
+      "name": "Bluewater Co job at 1705 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0085",
+      "customer_id": "CUST-0054",
+      "site_id": "SITE-0085",
+      "name": "Northgate Group job at 9714 Industrial Pkwy, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0086",
+      "customer_id": "CUST-0054",
+      "site_id": "SITE-0086",
+      "name": "Northgate Group job at 798 Main St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0087",
+      "customer_id": "CUST-0055",
+      "site_id": "SITE-0087",
+      "name": "Highline HVAC job at 4464 Industrial Pkwy, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0088",
+      "customer_id": "CUST-0055",
+      "site_id": "SITE-0088",
+      "name": "Highline HVAC job at 3554 Elm St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0089",
+      "customer_id": "CUST-0056",
+      "site_id": "SITE-0089",
+      "name": "Highline Mechanical job at 2327 5th Ave, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0090",
+      "customer_id": "CUST-0056",
+      "site_id": "SITE-0090",
+      "name": "Highline Mechanical job at 1388 Commerce Dr, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0091",
+      "customer_id": "CUST-0057",
+      "site_id": "SITE-0091",
+      "name": "Lakeview Mechanical job at 7522 Commerce Dr, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0092",
+      "customer_id": "CUST-0058",
+      "site_id": "SITE-0092",
+      "name": "Apex Group job at 2127 Main St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0093",
+      "customer_id": "CUST-0059",
+      "site_id": "SITE-0093",
+      "name": "Prairie HVAC job at 780 Elm St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0094",
+      "customer_id": "CUST-0060",
+      "site_id": "SITE-0094",
+      "name": "Riverside Contractors job at 9211 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0095",
+      "customer_id": "CUST-0061",
+      "site_id": "SITE-0095",
+      "name": "Nexus Contractors job at 6392 5th Ave, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0096",
+      "customer_id": "CUST-0061",
+      "site_id": "SITE-0096",
+      "name": "Nexus Contractors job at 6053 River Rd, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0097",
+      "customer_id": "CUST-0062",
+      "site_id": "SITE-0097",
+      "name": "Bluewater Services job at 9682 Elm St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0098",
+      "customer_id": "CUST-0063",
+      "site_id": "SITE-0098",
+      "name": "Titan HVAC job at 6807 Commerce Dr, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0099",
+      "customer_id": "CUST-0064",
+      "site_id": "SITE-0099",
+      "name": "Sterling Group job at 4372 Industrial Pkwy, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0100",
+      "customer_id": "CUST-0064",
+      "site_id": "SITE-0100",
+      "name": "Sterling Group job at 1946 5th Ave, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0101",
+      "customer_id": "CUST-0065",
+      "site_id": "SITE-0101",
+      "name": "Ironclad Mechanical job at 9570 Main St, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0102",
+      "customer_id": "CUST-0066",
+      "site_id": "SITE-0102",
+      "name": "Precision HVAC job at 2604 Industrial Pkwy, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0103",
+      "customer_id": "CUST-0067",
+      "site_id": "SITE-0103",
+      "name": "Coastal Contractors job at 5684 Industrial Pkwy, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0104",
+      "customer_id": "CUST-0068",
+      "site_id": "SITE-0104",
+      "name": "Prairie Group job at 5263 Elm St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0105",
+      "customer_id": "CUST-0069",
+      "site_id": "SITE-0105",
+      "name": "Elite Plumbing job at 435 Oak St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0106",
+      "customer_id": "CUST-0070",
+      "site_id": "SITE-0106",
+      "name": "Ironclad Plumbing job at 1836 River Rd, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0107",
+      "customer_id": "CUST-0071",
+      "site_id": "SITE-0107",
+      "name": "Coastal Group job at 7067 River Rd, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0108",
+      "customer_id": "CUST-0072",
+      "site_id": "SITE-0108",
+      "name": "Bluewater Mechanical job at 8078 River Rd, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0109",
+      "customer_id": "CUST-0073",
+      "site_id": "SITE-0109",
+      "name": "Union Co job at 5994 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0110",
+      "customer_id": "CUST-0073",
+      "site_id": "SITE-0110",
+      "name": "Union Co job at 6248 Oak St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0111",
+      "customer_id": "CUST-0074",
+      "site_id": "SITE-0111",
+      "name": "Elite Mechanical job at 1223 Industrial Pkwy, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0112",
+      "customer_id": "CUST-0074",
+      "site_id": "SITE-0112",
+      "name": "Elite Mechanical job at 5409 Main St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0113",
+      "customer_id": "CUST-0075",
+      "site_id": "SITE-0113",
+      "name": "Redstone Services job at 8302 Oak St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0114",
+      "customer_id": "CUST-0075",
+      "site_id": "SITE-0114",
+      "name": "Redstone Services job at 8267 Main St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0115",
+      "customer_id": "CUST-0076",
+      "site_id": "SITE-0115",
+      "name": "Prairie Mechanical job at 2340 Oak St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0116",
+      "customer_id": "CUST-0076",
+      "site_id": "SITE-0116",
+      "name": "Prairie Mechanical job at 6752 Main St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0117",
+      "customer_id": "CUST-0077",
+      "site_id": "SITE-0117",
+      "name": "Cascade HVAC job at 5145 Oak St, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0118",
+      "customer_id": "CUST-0078",
+      "site_id": "SITE-0118",
+      "name": "Metro Mechanical job at 4277 Industrial Pkwy, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0119",
+      "customer_id": "CUST-0079",
+      "site_id": "SITE-0119",
+      "name": "Titan Contractors job at 2732 Main St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0120",
+      "customer_id": "CUST-0080",
+      "site_id": "SITE-0120",
+      "name": "Precision Mechanical job at 9489 Industrial Pkwy, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0121",
+      "customer_id": "CUST-0080",
+      "site_id": "SITE-0121",
+      "name": "Precision Mechanical job at 2697 5th Ave, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0122",
+      "customer_id": "CUST-0081",
+      "site_id": "SITE-0122",
+      "name": "Redstone Contractors job at 184 River Rd, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0123",
+      "customer_id": "CUST-0081",
+      "site_id": "SITE-0123",
+      "name": "Redstone Contractors job at 1166 Elm St, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0124",
+      "customer_id": "CUST-0082",
+      "site_id": "SITE-0124",
+      "name": "Metro Plumbing job at 6226 5th Ave, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0125",
+      "customer_id": "CUST-0082",
+      "site_id": "SITE-0125",
+      "name": "Metro Plumbing job at 9670 Oak St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0126",
+      "customer_id": "CUST-0083",
+      "site_id": "SITE-0126",
+      "name": "Northgate Contractors job at 9187 5th Ave, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0127",
+      "customer_id": "CUST-0083",
+      "site_id": "SITE-0127",
+      "name": "Northgate Contractors job at 1254 Elm St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0128",
+      "customer_id": "CUST-0084",
+      "site_id": "SITE-0128",
+      "name": "Vanguard HVAC job at 3202 Commerce Dr, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0129",
+      "customer_id": "CUST-0084",
+      "site_id": "SITE-0129",
+      "name": "Vanguard HVAC job at 4247 Elm St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0130",
+      "customer_id": "CUST-0085",
+      "site_id": "SITE-0130",
+      "name": "Apex Plumbing job at 4426 5th Ave, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0131",
+      "customer_id": "CUST-0086",
+      "site_id": "SITE-0131",
+      "name": "Bluewater Plumbing job at 5088 Commerce Dr, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0132",
+      "customer_id": "CUST-0087",
+      "site_id": "SITE-0132",
+      "name": "Ironclad Co job at 7192 Main St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0133",
+      "customer_id": "CUST-0088",
+      "site_id": "SITE-0133",
+      "name": "Highline Co job at 7316 Oak St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0134",
+      "customer_id": "CUST-0089",
+      "site_id": "SITE-0134",
+      "name": "Summit Group job at 5355 5th Ave, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0135",
+      "customer_id": "CUST-0089",
+      "site_id": "SITE-0135",
+      "name": "Summit Group job at 9361 Industrial Pkwy, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0136",
+      "customer_id": "CUST-0090",
+      "site_id": "SITE-0136",
+      "name": "Vanguard Mechanical job at 373 Oak St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0137",
+      "customer_id": "CUST-0090",
+      "site_id": "SITE-0137",
+      "name": "Vanguard Mechanical job at 222 Commerce Dr, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0138",
+      "customer_id": "CUST-0091",
+      "site_id": "SITE-0138",
+      "name": "Nexus Co job at 882 5th Ave, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0139",
+      "customer_id": "CUST-0091",
+      "site_id": "SITE-0139",
+      "name": "Nexus Co job at 9377 Elm St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0140",
+      "customer_id": "CUST-0092",
+      "site_id": "SITE-0140",
+      "name": "Precision Services job at 905 5th Ave, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0141",
+      "customer_id": "CUST-0093",
+      "site_id": "SITE-0141",
+      "name": "Redstone HVAC job at 8869 Industrial Pkwy, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0142",
+      "customer_id": "CUST-0093",
+      "site_id": "SITE-0142",
+      "name": "Redstone HVAC job at 5034 5th Ave, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0143",
+      "customer_id": "CUST-0094",
+      "site_id": "SITE-0143",
+      "name": "Summit Contractors job at 6889 5th Ave, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0144",
+      "customer_id": "CUST-0095",
+      "site_id": "SITE-0144",
+      "name": "Prairie Co job at 5092 5th Ave, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0145",
+      "customer_id": "CUST-0095",
+      "site_id": "SITE-0145",
+      "name": "Prairie Co job at 8047 Elm St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0146",
+      "customer_id": "CUST-0096",
+      "site_id": "SITE-0146",
+      "name": "Total Contractors job at 7404 River Rd, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0147",
+      "customer_id": "CUST-0096",
+      "site_id": "SITE-0147",
+      "name": "Total Contractors job at 1961 Oak St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0148",
+      "customer_id": "CUST-0097",
+      "site_id": "SITE-0148",
+      "name": "Zenith Group job at 1488 Elm St, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0149",
+      "customer_id": "CUST-0097",
+      "site_id": "SITE-0149",
+      "name": "Zenith Group job at 5177 Industrial Pkwy, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0150",
+      "customer_id": "CUST-0098",
+      "site_id": "SITE-0150",
+      "name": "Apex Co job at 9694 Elm St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0151",
+      "customer_id": "CUST-0098",
+      "site_id": "SITE-0151",
+      "name": "Apex Co job at 7346 Elm St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0152",
+      "customer_id": "CUST-0099",
+      "site_id": "SITE-0152",
+      "name": "Crown HVAC job at 4177 Main St, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0153",
+      "customer_id": "CUST-0100",
+      "site_id": "SITE-0153",
+      "name": "Ironclad Contractors job at 579 Industrial Pkwy, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0154",
+      "customer_id": "CUST-0101",
+      "site_id": "SITE-0154",
+      "name": "Bluewater Contractors job at 4965 Main St, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0155",
+      "customer_id": "CUST-0101",
+      "site_id": "SITE-0155",
+      "name": "Bluewater Contractors job at 58 Oak St, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0156",
+      "customer_id": "CUST-0102",
+      "site_id": "SITE-0156",
+      "name": "Metro Co job at 4201 Commerce Dr, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0157",
+      "customer_id": "CUST-0103",
+      "site_id": "SITE-0157",
+      "name": "Ironclad Group job at 7584 Industrial Pkwy, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0158",
+      "customer_id": "CUST-0104",
+      "site_id": "SITE-0158",
+      "name": "Harbor Plumbing job at 2917 Elm St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0159",
+      "customer_id": "CUST-0105",
+      "site_id": "SITE-0159",
+      "name": "Advanced Group job at 2723 Elm St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0160",
+      "customer_id": "CUST-0105",
+      "site_id": "SITE-0160",
+      "name": "Advanced Group job at 6547 Oak St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0161",
+      "customer_id": "CUST-0106",
+      "site_id": "SITE-0161",
+      "name": "Vanguard Co job at 9857 5th Ave, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0162",
+      "customer_id": "CUST-0106",
+      "site_id": "SITE-0162",
+      "name": "Vanguard Co job at 3946 Elm St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0163",
+      "customer_id": "CUST-0107",
+      "site_id": "SITE-0163",
+      "name": "Apex Contractors job at 6000 Industrial Pkwy, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0164",
+      "customer_id": "CUST-0107",
+      "site_id": "SITE-0164",
+      "name": "Apex Contractors job at 9580 Industrial Pkwy, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0165",
+      "customer_id": "CUST-0108",
+      "site_id": "SITE-0165",
+      "name": "Highline Plumbing job at 4100 Elm St, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0166",
+      "customer_id": "CUST-0109",
+      "site_id": "SITE-0166",
+      "name": "Lakeview Services job at 2755 Industrial Pkwy, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0167",
+      "customer_id": "CUST-0109",
+      "site_id": "SITE-0167",
+      "name": "Lakeview Services job at 4650 Industrial Pkwy, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0168",
+      "customer_id": "CUST-0110",
+      "site_id": "SITE-0168",
+      "name": "Titan Services job at 604 Elm St, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0169",
+      "customer_id": "CUST-0111",
+      "site_id": "SITE-0169",
+      "name": "Total HVAC job at 8673 5th Ave, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0170",
+      "customer_id": "CUST-0111",
+      "site_id": "SITE-0170",
+      "name": "Total HVAC job at 141 Oak St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0171",
+      "customer_id": "CUST-0112",
+      "site_id": "SITE-0171",
+      "name": "Precision Contractors job at 5834 Elm St, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0172",
+      "customer_id": "CUST-0112",
+      "site_id": "SITE-0172",
+      "name": "Precision Contractors job at 9669 Industrial Pkwy, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0173",
+      "customer_id": "CUST-0113",
+      "site_id": "SITE-0173",
+      "name": "Nexus Group job at 2236 Elm St, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0174",
+      "customer_id": "CUST-0113",
+      "site_id": "SITE-0174",
+      "name": "Nexus Group job at 4370 Industrial Pkwy, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0175",
+      "customer_id": "CUST-0114",
+      "site_id": "SITE-0175",
+      "name": "Prairie Plumbing job at 1606 Commerce Dr, Milton, PA"
+    },
+    {
+      "project_id": "PRJ-0176",
+      "customer_id": "CUST-0114",
+      "site_id": "SITE-0176",
+      "name": "Prairie Plumbing job at 3844 Commerce Dr, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0177",
+      "customer_id": "CUST-0115",
+      "site_id": "SITE-0177",
+      "name": "Redstone Mechanical job at 5896 River Rd, Bristol, CT"
+    },
+    {
+      "project_id": "PRJ-0178",
+      "customer_id": "CUST-0115",
+      "site_id": "SITE-0178",
+      "name": "Redstone Mechanical job at 2348 Oak St, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0179",
+      "customer_id": "CUST-0116",
+      "site_id": "SITE-0179",
+      "name": "Riverside Mechanical job at 2058 Main St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0180",
+      "customer_id": "CUST-0116",
+      "site_id": "SITE-0180",
+      "name": "Riverside Mechanical job at 3255 Main St, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0181",
+      "customer_id": "CUST-0117",
+      "site_id": "SITE-0181",
+      "name": "Harbor Mechanical job at 2866 Main St, Greenville, SC"
+    },
+    {
+      "project_id": "PRJ-0182",
+      "customer_id": "CUST-0118",
+      "site_id": "SITE-0182",
+      "name": "Advanced HVAC job at 9781 Oak St, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0183",
+      "customer_id": "CUST-0118",
+      "site_id": "SITE-0183",
+      "name": "Advanced HVAC job at 3713 River Rd, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0184",
+      "customer_id": "CUST-0119",
+      "site_id": "SITE-0184",
+      "name": "Union Group job at 4144 Main St, Ashland, KY"
+    },
+    {
+      "project_id": "PRJ-0185",
+      "customer_id": "CUST-0119",
+      "site_id": "SITE-0185",
+      "name": "Union Group job at 1584 Elm St, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0186",
+      "customer_id": "CUST-0120",
+      "site_id": "SITE-0186",
+      "name": "Precision Co job at 277 Elm St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0187",
+      "customer_id": "CUST-0120",
+      "site_id": "SITE-0187",
+      "name": "Precision Co job at 3868 Oak St, Springfield, IL"
+    },
+    {
+      "project_id": "PRJ-0188",
+      "customer_id": "CUST-0121",
+      "site_id": "SITE-0188",
+      "name": "Sterling Mechanical job at 9318 Commerce Dr, Clinton, IA"
+    },
+    {
+      "project_id": "PRJ-0189",
+      "customer_id": "CUST-0122",
+      "site_id": "SITE-0189",
+      "name": "Metro Group job at 772 Commerce Dr, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0190",
+      "customer_id": "CUST-0123",
+      "site_id": "SITE-0190",
+      "name": "Lakeview Co job at 3291 5th Ave, Georgetown, OH"
+    },
+    {
+      "project_id": "PRJ-0191",
+      "customer_id": "CUST-0124",
+      "site_id": "SITE-0191",
+      "name": "Total Mechanical job at 7925 5th Ave, Salem, OR"
+    },
+    {
+      "project_id": "PRJ-0192",
+      "customer_id": "CUST-0124",
+      "site_id": "SITE-0192",
+      "name": "Total Mechanical job at 2484 Industrial Pkwy, Madison, WI"
+    },
+    {
+      "project_id": "PRJ-0193",
+      "customer_id": "CUST-0125",
+      "site_id": "SITE-0193",
+      "name": "Summit Services job at 2551 Commerce Dr, Fairview, TX"
+    },
+    {
+      "project_id": "PRJ-0194",
+      "customer_id": "CUST-0125",
+      "site_id": "SITE-0194",
+      "name": "Summit Services job at 1944 Elm St, Georgetown, OH"
+    }
+  ]
+}

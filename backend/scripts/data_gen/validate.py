@@ -109,6 +109,43 @@ def check_pricing(catalog: list[dict], customers: list[dict], pricing: dict) -> 
     return failures
 
 
+def check_structure(catalog: list[dict], customers: list[dict], structure: dict) -> list[str]:
+    failures = []
+    category_by_sku = {s["sku_id"]: s["category"] for s in catalog}
+    family_category = {f["family_id"]: f["category"] for f in structure["families"]}
+    mapping = structure["sku_family"]
+
+    for sku_id in sorted(set(category_by_sku) - set(mapping)):
+        failures.append(f"structure: SKU {sku_id} has no family")
+    for sku_id in sorted(set(mapping) - set(category_by_sku)):
+        failures.append(f"structure: mapping references unknown SKU {sku_id}")
+    for sku_id, family_id in sorted(mapping.items()):
+        if family_id not in family_category:
+            failures.append(f"structure: SKU {sku_id} maps to unknown family {family_id}")
+        elif sku_id in category_by_sku and family_category[family_id] != category_by_sku[sku_id]:
+            failures.append(f"structure: SKU {sku_id} category differs from its family {family_id} category")
+
+    site_owner = {site["site_id"]: c["customer_id"] for c in customers for site in c["sites"]}
+    projects_per_site: dict[str, int] = {}
+    for project in structure["projects"]:
+        owner = site_owner.get(project["site_id"])
+        if owner is None:
+            failures.append(f"structure: project {project['project_id']} references unknown site {project['site_id']}")
+            continue
+        if owner != project["customer_id"]:
+            failures.append(
+                f"structure: project {project['project_id']} site {project['site_id']} belongs to {owner}, "
+                f"not {project['customer_id']}"
+            )
+        projects_per_site[project["site_id"]] = projects_per_site.get(project["site_id"], 0) + 1
+    for site_id in sorted(site_owner):
+        count = projects_per_site.get(site_id, 0)
+        if count != 1:
+            failures.append(f"structure: site {site_id} has {count} projects, expected exactly 1")
+
+    return failures
+
+
 def check_determinism(regenerate_fn) -> list[str]:
     """regenerate_fn() returns (catalog, customers) freshly built from config; called twice and compared
     structurally (Python == on the loaded lists/dicts), not byte-for-byte, since JSON key order is not
@@ -129,17 +166,20 @@ def main() -> None:
     parser.add_argument("--customers", type=Path, default=DATA_DIR / "customers.json")
     parser.add_argument("--scenarios", type=Path, default=DATA_DIR / "scenarios.json")
     parser.add_argument("--pricing", type=Path, default=DATA_DIR / "pricing.json")
+    parser.add_argument("--structure", type=Path, default=DATA_DIR / "structure.json")
     args = parser.parse_args()
 
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
     customers = json.loads(args.customers.read_text(encoding="utf-8"))
     scenarios = json.loads(args.scenarios.read_text(encoding="utf-8"))
     pricing = json.loads(args.pricing.read_text(encoding="utf-8"))
+    structure = json.loads(args.structure.read_text(encoding="utf-8"))
 
     failures = (
         check_referential_integrity(catalog, customers, scenarios)
         + check_scenario_coverage(scenarios)
         + check_pricing(catalog, customers, pricing)
+        + check_structure(catalog, customers, structure)
     )
 
     if failures:

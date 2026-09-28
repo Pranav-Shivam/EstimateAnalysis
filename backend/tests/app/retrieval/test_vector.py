@@ -2,6 +2,7 @@ import pytest
 from sqlalchemy import delete, select
 
 from app.reference_data.models import Sku
+from app.retrieval import vector
 from app.retrieval.models import SkuEmbedding
 from app.retrieval.repository import has_embeddings, skus_missing_embedding
 from app.retrieval.vector import (
@@ -45,6 +46,31 @@ def test_embedding_pending_skus_saves_vectors_in_batches_and_is_idempotent(db_se
     row = db_session.get(SkuEmbedding, "SKU-E-A1")
     assert row.model == EMBEDDING_MODEL and len(row.embedding) == 1536
     assert not [sku for sku, _ in skus_missing_embedding(db_session, EMBEDDING_MODEL)]
+
+
+def test_on_batch_saved_runs_only_after_its_batch_is_already_saved(db_session, monkeypatch):
+    """`on_batch_saved` is the caller's commit boundary. If it fired before the batch was flushed, a failure on
+    a later batch would lose vectors that looked already paid for. Prove the ordering by having
+    `on_batch_saved` read back, through the same session, the last SKU of the batch that was just processed.
+
+    Embed away whatever is already pending in the dev database first, then seed the small world and shrink
+    the batch size to 3, so the run under test covers exactly this world's 8 SKUs across multiple batches
+    instead of the dev database's full SKU list."""
+    embed_pending_skus(db_session, FakeEmbedder(), on_batch_saved=lambda: None)
+    _world(db_session)
+    monkeypatch.setattr(vector, "EMBED_BATCH_SIZE", 3)
+    pending_ids = [sku.sku_id for sku, _ in skus_missing_embedding(db_session, EMBEDDING_MODEL)]
+    assert len(pending_ids) == 8
+    seen = []
+
+    def on_batch_saved():
+        batch_end = min(len(pending_ids), (len(seen) + 1) * 3)
+        last_sku_id = pending_ids[batch_end - 1]
+        seen.append(db_session.get(SkuEmbedding, last_sku_id) is not None)
+
+    embed_pending_skus(db_session, FakeEmbedder(), on_batch_saved=on_batch_saved)
+
+    assert seen == [True, True, True]
 
 
 def test_a_sku_embedded_with_another_model_is_pending_again_and_replaced(db_session):

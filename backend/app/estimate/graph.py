@@ -80,7 +80,7 @@ def build_graph(llm, ctx: ToolContext):
 
     def guardrails_node(state: AgentState) -> dict:
         draft = state["pending_draft"]
-        violations = run_guardrails(ctx.session, draft, ctx.as_of)
+        violations = run_guardrails(ctx.session, draft, ctx.as_of, ctx.request_customer_id)
         update: dict = {
             "pending_draft": None, "last_draft": draft, "violations": violations,
             "submissions": state["submissions"] + 1,

@@ -13,13 +13,13 @@ from tests.app.estimate.fakes import ScriptedLLM, submit_turn, text_turn
 from tests.app.estimate.seed import AS_OF, seed_world
 
 
-def _quote_request(session):
+def _quote_request(session, customer_id="CUST-E1", contract_id="CTR-E1"):
     return save_quote_request(
         session, raw_email_text="need 3 Zorpwidget Alpha 9000",
         parsed_json={"resolved_line_items": [{"sku_name_as_written": "Zorpwidget Alpha 9000",
                                               "sku_id": "SKU-E-A1", "quantity": "3"}]},
         content_fingerprint={"sku_ids": ["SKU-E-A1"]}, style_fingerprint={"tokens": []},
-        customer_id="CUST-E1", contract_id="CTR-E1",
+        customer_id=customer_id, contract_id=contract_id,
     )
 
 
@@ -103,6 +103,44 @@ def test_run_estimate_persists_needs_review_for_a_flagged_draft(db_session):
     assert stored.violations == []
     assert stored.reason is not None
     assert stored.draft["flags"] == ["replacement SKU is out of stock"]
+
+
+def test_draft_for_another_customers_contract_never_ends_ready(db_session):
+    seed_world(db_session)
+    request = _quote_request(db_session, customer_id="CUST-E2", contract_id=None)
+    llm = ScriptedLLM([submit_turn(_good_draft(), call_id=f"c{i}") for i in range(4)])
+
+    run = run_estimate(db_session, request.id, AS_OF, llm)
+
+    assert run.result.status == "needs_review"
+    assert run.result.totals.discount_total == 30.0
+    assert [v.guardrail for v in run.result.violations] == ["customer_identity"]
+    assert "does not match" in run.result.violations[0].message
+    assert get_estimate_draft(db_session, run.row.id).status == "needs_review"
+
+
+def test_draft_for_a_nonexistent_customer_never_ends_ready(db_session):
+    seed_world(db_session)
+    request = _quote_request(db_session)
+    invented = {**_good_draft(), "customer_id": "CUST-NOPE", "contract_id": None}
+    invented["lines"] = [{**invented["lines"][0], "discount_pct": 0.0}]
+    llm = ScriptedLLM([submit_turn(invented, call_id=f"c{i}") for i in range(4)])
+
+    run = run_estimate(db_session, request.id, AS_OF, llm)
+
+    assert run.result.status == "needs_review"
+    assert "unknown customer" in run.result.violations[0].message
+
+
+def test_discount_is_never_ready_when_the_request_has_no_resolved_customer(db_session):
+    seed_world(db_session)
+    request = _quote_request(db_session, customer_id=None, contract_id=None)
+    llm = ScriptedLLM([submit_turn(_good_draft(), call_id=f"c{i}") for i in range(4)])
+
+    run = run_estimate(db_session, request.id, AS_OF, llm)
+
+    assert run.result.status == "needs_review"
+    assert any(v.guardrail == "contract_discount" and "did not resolve" in v.message for v in run.result.violations)
 
 
 def test_run_estimate_rejects_unknown_quote_request(db_session):

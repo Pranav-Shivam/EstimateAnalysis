@@ -25,7 +25,7 @@ def run_estimate(session: Session, quote_request_id: uuid.UUID, as_of: date, llm
     if quote_request is None:
         raise ValueError(f"quote request {quote_request_id} not found")
 
-    ctx = ToolContext(session=session, as_of=as_of)
+    ctx = ToolContext(session=session, as_of=as_of, request_customer_id=quote_request.customer_id)
     state = run_agent(llm_client, ctx, build_request_message(quote_request, as_of))
 
     draft = state["last_draft"]

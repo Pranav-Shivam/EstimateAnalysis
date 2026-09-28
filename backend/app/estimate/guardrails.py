@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from app.estimate.pricing import predict_price_for_sku
 from app.estimate.schemas import DraftLine, EstimateDraft, Violation
 from app.reference_data.models import Contract, Sku
-from app.reference_data.repository import get_contract, get_sku
+from app.reference_data.repository import get_contract, get_customer, get_sku
 
 # Tolerance checks are written as `not diff <= TOL` so a NaN or infinite value fails instead of slipping through.
 PRICE_TOLERANCE = 0.005
@@ -38,6 +38,23 @@ def check_required_fields(draft: EstimateDraft) -> list[Violation]:
             violations.append(Violation(
                 guardrail="required_fields", line_index=index, message="line discount_pct must be a finite number",
             ))
+    return violations
+
+
+def check_customer_identity(session: Session, draft: EstimateDraft, request_customer_id: str | None) -> list[Violation]:
+    if draft.customer_id is None:
+        return []
+    violations = []
+    if get_customer(session, draft.customer_id) is None:
+        violations.append(Violation(guardrail="customer_identity", message=f"unknown customer {draft.customer_id}"))
+    if request_customer_id is not None and draft.customer_id != request_customer_id:
+        violations.append(Violation(
+            guardrail="customer_identity",
+            message=(
+                f"draft customer {draft.customer_id} does not match the request's customer {request_customer_id}; "
+                f"use {request_customer_id}"
+            ),
+        ))
     return violations
 
 
@@ -74,10 +91,23 @@ def _provenance_problem(session: Session, line: DraftLine, sku: Sku) -> str | No
     return None
 
 
-def check_contract_discount(session: Session, draft: EstimateDraft, as_of: date) -> list[Violation]:
+def check_contract_discount(
+    session: Session, draft: EstimateDraft, as_of: date, request_customer_id: str | None,
+) -> list[Violation]:
     discounted = [(i, line) for i, line in enumerate(draft.lines) if line.discount_pct != 0]
     if not discounted:
         return []
+    if request_customer_id is None:
+        return [
+            Violation(
+                guardrail="contract_discount", line_index=index,
+                message=(
+                    "discount not allowed: intake did not resolve the customer for this request, "
+                    "so a discount cannot be verified"
+                ),
+            )
+            for index, _ in discounted
+        ]
 
     contract = _draft_contract(session, draft)
     violations = []
@@ -116,9 +146,12 @@ def _discount_problem(contract: Contract, category: str, discount_pct: float, as
     return None
 
 
-def run_guardrails(session: Session, draft: EstimateDraft, as_of: date) -> list[Violation]:
+def run_guardrails(
+    session: Session, draft: EstimateDraft, as_of: date, request_customer_id: str | None,
+) -> list[Violation]:
     return (
         check_required_fields(draft)
+        + check_customer_identity(session, draft, request_customer_id)
         + check_price_provenance(session, draft)
-        + check_contract_discount(session, draft, as_of)
+        + check_contract_discount(session, draft, as_of, request_customer_id)
     )

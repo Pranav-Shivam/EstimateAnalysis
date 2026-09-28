@@ -21,7 +21,7 @@ def _bad_discount_draft():
 def _run(db_session, turns):
     seed_world(db_session)
     llm = ScriptedLLM(turns)
-    state = run_agent(llm, ToolContext(session=db_session, as_of=AS_OF), "please quote 1 SKU-E-A1")
+    state = run_agent(llm, ToolContext(session=db_session, as_of=AS_OF, request_customer_id="CUST-E1"), "please quote 1 SKU-E-A1")
     return state, llm
 
 

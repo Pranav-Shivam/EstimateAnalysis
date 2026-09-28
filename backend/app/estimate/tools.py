@@ -23,6 +23,9 @@ SKU_SEARCH_LIMIT = 5
 class ToolContext:
     session: Session
     as_of: date
+    # The customer intake resolved for the quote request. Guardrails anchor on it because the draft's own
+    # customer_id is written by the model and cannot vouch for itself.
+    request_customer_id: str | None = None
 
 
 def _sku_entry(session: Session, sku: Sku) -> dict:

@@ -6,7 +6,7 @@ from app.estimate.pricing import predict_price_for_sku
 from app.estimate.service import run_estimate
 from app.estimate.tools import ToolContext, get_related_parts
 from app.intake.repository import save_quote_request
-from app.reference_data.repository import all_skus, contracts_for_customer, get_sku
+from app.reference_data.repository import all_customers, all_skus, contracts_for_customer, get_sku
 from load_data import load_catalog, load_customers, load_pricing
 from tests.app.estimate.fakes import ScriptedLLM, submit_turn
 
@@ -69,6 +69,29 @@ def test_every_planted_bad_discount_is_blocked_and_ends_needs_review(db_session)
         assert run.result.status == "needs_review", case["case_id"]
         assert run.result.violations[0].guardrail == "contract_discount", case["case_id"]
         assert "not covered" in run.result.violations[0].message, case["case_id"]
+
+
+def test_a_draft_borrowing_another_customers_covering_contract_never_ends_ready(db_session):
+    _load_world(db_session)
+    case = _scenarios("discount_category_mismatch")[0]
+    entities = case["entities"]
+    category = get_sku(db_session, entities["sku_id"]).category
+    donor, donor_contract = next(
+        (customer, contract)
+        for customer in all_customers(db_session) if customer.customer_id != entities["customer_id"]
+        for contract in contracts_for_customer(db_session, customer.customer_id)
+        if category in contract.covered_categories and contract.effective_from <= DATASET_AS_OF <= contract.effective_to
+    )
+    request = _quote_request(db_session, case)
+    borrowed = _draft_with_discount(db_session, case, donor_contract.discount_pct)
+    borrowed["customer_id"] = donor.customer_id
+    borrowed["contract_id"] = donor_contract.contract_id
+    llm = ScriptedLLM([submit_turn(borrowed, call_id=f"c{i}") for i in range(4)])
+
+    run = run_estimate(db_session, request.id, DATASET_AS_OF, llm)
+
+    assert run.result.status == "needs_review"
+    assert run.result.violations[0].guardrail == "customer_identity"
 
 
 def test_every_planted_bad_discount_passes_once_the_discount_is_removed(db_session):

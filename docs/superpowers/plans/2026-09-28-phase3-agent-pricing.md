@@ -3111,7 +3111,7 @@ In `docs/roadmap.md`, under Phase 3 add a line `Status: complete (see docs/super
 
 - [ ] **Step 4: Full verification**
 
-Run: `uv run pytest -q` (all pass), `uv run python scripts/data_gen/validate.py` (`all checks passed`), and grep the repo diff for em dashes: `git diff master...HEAD | grep -cP 'â'` should print 0 (the repo's default branch is `master`).
+Run: `uv run pytest -q` (all pass), `uv run python scripts/data_gen/validate.py` (`all checks passed`), and grep the changed files for the em dash character (Unicode U+2014; for example `git diff master...HEAD | python -c "import sys; print(sys.stdin.read().count(chr(0x2014)))"` should print 0) (the repo's default branch is `master`).
 
 - [ ] **Step 5: Commit**
 

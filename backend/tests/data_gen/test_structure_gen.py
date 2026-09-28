@@ -47,6 +47,20 @@ def test_family_name_rejects_a_name_with_no_known_size():
         family_name(_sku("SKU-9", "Mystery Gadget", "Plumbing-Fittings"))
 
 
+def test_family_name_prefers_the_longest_matching_size_suffix(monkeypatch):
+    # "Big 2 in" contains " 2 in" as its own tail, so a name ending in "Big 2 in" also
+    # ends in "2 in": shortest-first would wrongly peel off only "2 in" and leave "Big"
+    # stuck to the family name. No size pair in the real SIZES lists collides like this
+    # today, so this is exercised with a synthetic category instead.
+    import data_gen.structure_gen as structure_gen
+
+    monkeypatch.setattr(structure_gen, "SIZES", {"Cat-COLLIDE": ["2 in", "Big 2 in"]})
+
+    sku = _sku("SKU-X", "Widget Big 2 in", "Cat-COLLIDE")
+
+    assert structure_gen.family_name(sku) == "Widget"
+
+
 def test_skus_sharing_a_stem_share_a_family_and_others_do_not():
     structure = generate_structure(_catalog(), _customers())
     by_sku = structure["sku_family"]

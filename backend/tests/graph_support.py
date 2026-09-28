@@ -1,8 +1,13 @@
+import math
+import re
+import zlib
+
 from app.graph.reader import GraphReader
 from app.graph.repository import node_key
 from app.graph.service import rebuild_reference_graph
 from app.reference_data.repository import set_sku_family, upsert_family, upsert_requirement, upsert_sku
 from core.graph.client import GraphUnavailable
+from core.llm.openai_embedding_client import EMBEDDING_DIMENSIONS
 
 
 def build_reader(session, client, ns) -> GraphReader:
@@ -73,3 +78,23 @@ class FakeSummarizer:
     def summarize(self, prompt: str) -> str:
         self.prompts.append(prompt)
         return f"Fake summary number {len(self.prompts)}."
+
+
+class FakeEmbedder:
+    """Deterministic bag-of-words vectors: texts sharing words are close under cosine distance. Records every
+    batch it was asked to embed. Never touches the network."""
+
+    def __init__(self) -> None:
+        self.calls: list[list[str]] = []
+
+    def embed(self, texts: list[str]) -> list[list[float]]:
+        self.calls.append(list(texts))
+        return [self._vector(text) for text in texts]
+
+    @staticmethod
+    def _vector(text: str) -> list[float]:
+        vector = [0.0] * EMBEDDING_DIMENSIONS
+        for token in re.findall(r"[a-z0-9]+", text.lower()):
+            vector[zlib.crc32(token.encode("utf-8")) % EMBEDDING_DIMENSIONS] += 1.0
+        norm = math.sqrt(sum(value * value for value in vector)) or 1.0
+        return [value / norm for value in vector]

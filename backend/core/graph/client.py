@@ -8,6 +8,8 @@ from core.config.settings import Settings
 DATABASE = "neo4j"
 CONNECTION_TIMEOUT_SECONDS = 5
 QUERY_TIMEOUT_SECONDS = 30
+# A fail-closed guardrail must learn about an outage in seconds, not the driver's 30s default.
+MAX_RETRY_SECONDS = 3
 
 
 class GraphError(Exception):
@@ -27,7 +29,7 @@ class GraphClient:
         # Notifications off: GDS emits deprecation notices on some procedures that would flood the log.
         self._driver = GraphDatabase.driver(
             uri, auth=(user, password), connection_timeout=CONNECTION_TIMEOUT_SECONDS,
-            notifications_min_severity="OFF",
+            max_transaction_retry_time=MAX_RETRY_SECONDS, notifications_min_severity="OFF",
         )
 
     def read(self, query: str, **params) -> list[dict]:

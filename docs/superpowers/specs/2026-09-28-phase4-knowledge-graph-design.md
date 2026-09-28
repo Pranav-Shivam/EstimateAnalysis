@@ -31,7 +31,7 @@ Out (later phases): LLM judge and confidence (Phase 5), tracing and the consolid
 7. **FOR_PROJECT is resolved at graph-sync time only.** Intake never resolves a site (`resolve_extraction` hardcodes `site_id=None`). `sync_quote_request` matches `site_hint` to one of the customer's sites by a unique zip or street match, then follows Site to Project. Nothing in Postgres or Phase 2 changes.
 
 Decisions made without a question (constraints the owner set, or forced by the design):
-- **Neo4j Community, pinned image tag, host ports 17474 (HTTP) and 17687 (Bolt).** The tag is chosen in the plan after verifying `gds.version()` on the container. Candidates: `2026.09.0-community`, `5.26.31-community`. Never the default ports, never `latest`.
+- **Neo4j Community, pinned image tag, host ports 17474 (HTTP) and 17687 (Bolt).** The pinned tag is `neo4j:2026.09.0-community`, verified on 2026-09-28: the container started and `RETURN gds.version()` returned `2026.09.0`. Never the default ports, never `latest`. The `5.26.31-community` LTS tag is the untested fallback if a later pin bump breaks the plugin.
 - **Namespaces.** Every graph node carries an `ns` property and a `key` property equal to `ns + ":" + id`, with a uniqueness constraint on `key` per label (Community edition has no composite node key). The dev graph uses `ns="main"`; each test uses `ns="test-<uuid>"` and drops it on teardown. Rebuild and every query are namespace-scoped.
 - **Fail closed.** A graph-backed guardrail that cannot reach the graph, or finds it stale, ends the run as `needs_review`. It never skips silently.
 - **The SQL `contract_discount` guardrail stays the sole discount authority.** `check_contract_coverage` is advisory, so a stale graph cannot authorize a discount.
@@ -203,9 +203,9 @@ Vector arm: `scripts/embed_skus.py` embeds "name | category | family" per SKU wi
 
 ## Risks
 
-- The GDS plugin is downloaded at container start and has failed on some Neo4j versions. Mitigation: pin a tag, assert `gds.version()`, try the second candidate tag if the first fails, and stop and ask if both fail.
-- The dev Postgres must have the `vector` extension available for migration `0004`. The compose image is `pgvector/pgvector`, but the instance actually serving port 5433 must be checked before the migration runs.
-- Docker Desktop was not running when checked on 2026-09-28. Neo4j and every graph test need it.
+- The GDS plugin is downloaded at container start and has failed on some Neo4j versions. Resolved for the pinned tag (see Decisions). Mitigation going forward: the rebuild asserts `gds.version()` succeeds before running Leiden, so a broken plugin fails loudly.
+- Migration `0004` needs the `vector` extension. Checked on 2026-09-28: the dev Postgres on port 5433 (PostgreSQL 18.6) lists `vector` 0.8.6 as available and not yet installed, so `CREATE EXTENSION` in the migration will work.
+- Neo4j and every graph test need the Neo4j container running (`docker start neo4j-estimate` after a reboot; it is created with `--restart unless-stopped`). It is reachable from Windows at `localhost:17687` (Bolt) and `localhost:17474` (HTTP), checked 2026-09-28.
 
 ## Known gaps carried in
 

@@ -40,7 +40,11 @@ https://github.com/neo4j/neo4j/issues/13535
 
 `2026.09.0-community`, `2026.09-community`, `5.26.31-community` (LTS line), plus `latest`/`community`. GDS 2026.09 is the current manual version.
 
-## Local environment findings (2026-09-28)
+## Verified locally (2026-09-28)
+
+`docker run` of `neo4j:2026.09.0-community` with `NEO4J_PLUGINS='["graph-data-science"]'` started cleanly (log line `Started.`, GDS extension registered) and `RETURN gds.version()` returned `2026.09.0`. HTTP (17474) and Bolt (17687) answered from Windows through WSL port forwarding. The dev Postgres (PostgreSQL 18.6, port 5433) lists pgvector 0.8.6 as available.
+
+## Local environment findings (2026-09-28, earlier in the session)
 
 - Docker Desktop daemon was not running when checked (`docker ps` could not reach the engine pipe).
 - Host ports 5432 (an unrelated Postgres) and 5433 (the project Postgres) are in use. 7474 and 7687 were free at check time but are Neo4j defaults, so the project maps Neo4j to non-default host ports.

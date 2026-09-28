@@ -9,3 +9,6 @@ MAX_GUARDRAIL_RETRIES = 3
 MAX_AGENT_STEPS = 12
 # Each agent turn costs a few graph supersteps, so the library default of 25 would trip before MAX_AGENT_STEPS.
 RECURSION_LIMIT = 100
+# Rejects absurd quantities at parse time, so a runaway value cannot produce meaningless totals. The lower bound
+# stays a guardrail so a zero or negative quantity is reported per line.
+MAX_LINE_QUANTITY = 100_000

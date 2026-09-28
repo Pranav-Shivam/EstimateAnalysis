@@ -3,6 +3,8 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from app.estimate.constant import MAX_LINE_QUANTITY
+
 PriceSource = Literal["list", "predicted"]
 AdjustmentKind = Literal["substituted", "added_required", "discount_removed", "quantity_assumed"]
 EstimateStatus = Literal["ready", "needs_review"]
@@ -10,7 +12,7 @@ EstimateStatus = Literal["ready", "needs_review"]
 
 class DraftLine(BaseModel):
     sku_id: str | None = None
-    quantity: int | None = None
+    quantity: int | None = Field(default=None, le=MAX_LINE_QUANTITY)
     unit_price: float | None = None
     price_source: PriceSource | None = None
     discount_pct: float = 0.0

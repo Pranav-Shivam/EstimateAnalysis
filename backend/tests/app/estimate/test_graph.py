@@ -145,6 +145,19 @@ def test_malformed_submit_draft_arguments_get_an_error_and_do_not_count(db_sessi
     assert state["submissions"] == 1
 
 
+def test_absurd_quantity_gets_an_invalid_draft_error_and_does_not_count(db_session):
+    def second(messages):
+        assert messages[-1]["role"] == "tool"
+        assert "invalid draft" in messages[-1]["content"]
+        return submit_turn(_draft([_line()]), call_id="call-2")
+
+    state, llm = _run(db_session, [submit_turn(_draft([_line(quantity=10**20)])), second])
+
+    assert state["status"] == "ready"
+    assert state["submissions"] == 1
+    assert len(llm.calls) == 2
+
+
 def test_unknown_tool_gets_an_error_and_the_loop_continues(db_session):
     def second(messages):
         assert "unknown tool" in messages[-1]["content"]

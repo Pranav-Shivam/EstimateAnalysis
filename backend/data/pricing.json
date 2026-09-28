@@ -1,0 +1,6028 @@
+{
+  "discounts": {
+    "CTR-0001": 10.0,
+    "CTR-0002": 12.0,
+    "CTR-0003": 12.0,
+    "CTR-0004": 10.0,
+    "CTR-0005": 5.0,
+    "CTR-0006": 10.0,
+    "CTR-0007": 10.0,
+    "CTR-0008": 5.0,
+    "CTR-0009": 5.0,
+    "CTR-0010": 12.0,
+    "CTR-0011": 5.0,
+    "CTR-0012": 5.0,
+    "CTR-0013": 10.0,
+    "CTR-0014": 5.0,
+    "CTR-0015": 10.0,
+    "CTR-0016": 5.0,
+    "CTR-0017": 15.0,
+    "CTR-0018": 5.0,
+    "CTR-0019": 8.0,
+    "CTR-0020": 10.0,
+    "CTR-0021": 8.0,
+    "CTR-0022": 8.0,
+    "CTR-0023": 12.0,
+    "CTR-0024": 5.0,
+    "CTR-0025": 15.0,
+    "CTR-0026": 12.0,
+    "CTR-0027": 8.0,
+    "CTR-0028": 5.0,
+    "CTR-0029": 5.0,
+    "CTR-0030": 8.0,
+    "CTR-0031": 10.0,
+    "CTR-0032": 10.0,
+    "CTR-0033": 10.0,
+    "CTR-0034": 10.0,
+    "CTR-0035": 5.0,
+    "CTR-0036": 12.0,
+    "CTR-0037": 5.0,
+    "CTR-0038": 5.0,
+    "CTR-0039": 10.0,
+    "CTR-0040": 10.0,
+    "CTR-0041": 12.0,
+    "CTR-0042": 15.0,
+    "CTR-0043": 15.0,
+    "CTR-0044": 15.0,
+    "CTR-0045": 10.0,
+    "CTR-0046": 15.0,
+    "CTR-0047": 5.0,
+    "CTR-0048": 12.0,
+    "CTR-0049": 10.0,
+    "CTR-0050": 8.0,
+    "CTR-0051": 10.0,
+    "CTR-0052": 8.0,
+    "CTR-0053": 5.0,
+    "CTR-0054": 8.0,
+    "CTR-0055": 12.0,
+    "CTR-0056": 15.0,
+    "CTR-0057": 12.0,
+    "CTR-0058": 10.0,
+    "CTR-0059": 8.0,
+    "CTR-0060": 12.0,
+    "CTR-0061": 12.0,
+    "CTR-0062": 12.0,
+    "CTR-0063": 8.0,
+    "CTR-0064": 15.0,
+    "CTR-0065": 12.0,
+    "CTR-0066": 15.0,
+    "CTR-0067": 5.0,
+    "CTR-0068": 15.0,
+    "CTR-0069": 12.0,
+    "CTR-0070": 5.0,
+    "CTR-0071": 15.0,
+    "CTR-0072": 15.0,
+    "CTR-0073": 5.0,
+    "CTR-0074": 15.0,
+    "CTR-0075": 15.0,
+    "CTR-0076": 15.0,
+    "CTR-0077": 10.0,
+    "CTR-0078": 10.0,
+    "CTR-0079": 10.0,
+    "CTR-0080": 8.0,
+    "CTR-0081": 8.0,
+    "CTR-0082": 5.0,
+    "CTR-0083": 15.0,
+    "CTR-0084": 10.0,
+    "CTR-0085": 5.0,
+    "CTR-0086": 12.0,
+    "CTR-0087": 5.0,
+    "CTR-0088": 5.0,
+    "CTR-0089": 15.0,
+    "CTR-0090": 15.0,
+    "CTR-0091": 10.0,
+    "CTR-0092": 15.0,
+    "CTR-0093": 10.0,
+    "CTR-0094": 12.0,
+    "CTR-0095": 12.0,
+    "CTR-0096": 8.0,
+    "CTR-0097": 10.0,
+    "CTR-0098": 10.0,
+    "CTR-0099": 8.0,
+    "CTR-0100": 15.0,
+    "CTR-0101": 8.0,
+    "CTR-0102": 12.0,
+    "CTR-0103": 5.0,
+    "CTR-0104": 8.0,
+    "CTR-0105": 5.0,
+    "CTR-0106": 15.0,
+    "CTR-0107": 10.0,
+    "CTR-0108": 12.0,
+    "CTR-0109": 5.0,
+    "CTR-0110": 8.0,
+    "CTR-0111": 15.0,
+    "CTR-0112": 8.0,
+    "CTR-0113": 5.0,
+    "CTR-0114": 5.0,
+    "CTR-0115": 5.0,
+    "CTR-0116": 8.0,
+    "CTR-0117": 12.0,
+    "CTR-0118": 15.0,
+    "CTR-0119": 8.0,
+    "CTR-0120": 5.0,
+    "CTR-0121": 12.0,
+    "CTR-0122": 12.0,
+    "CTR-0123": 10.0,
+    "CTR-0124": 12.0,
+    "CTR-0125": 12.0
+  },
+  "gap_sku_ids": [
+    "SKU-0002",
+    "SKU-0010",
+    "SKU-0013",
+    "SKU-0023",
+    "SKU-0034",
+    "SKU-0038",
+    "SKU-0049",
+    "SKU-0055",
+    "SKU-0059",
+    "SKU-0063",
+    "SKU-0069",
+    "SKU-0076",
+    "SKU-0087",
+    "SKU-0097",
+    "SKU-0098",
+    "SKU-0099",
+    "SKU-0101",
+    "SKU-0116",
+    "SKU-0162",
+    "SKU-0165",
+    "SKU-0167",
+    "SKU-0179",
+    "SKU-0182",
+    "SKU-0199",
+    "SKU-0251",
+    "SKU-0258",
+    "SKU-0263",
+    "SKU-0268",
+    "SKU-0275",
+    "SKU-0279",
+    "SKU-0280",
+    "SKU-0292",
+    "SKU-0297",
+    "SKU-0319",
+    "SKU-0320",
+    "SKU-0332",
+    "SKU-0339",
+    "SKU-0378",
+    "SKU-0382",
+    "SKU-0388",
+    "SKU-0389",
+    "SKU-0395",
+    "SKU-0410",
+    "SKU-0438",
+    "SKU-0440",
+    "SKU-0447",
+    "SKU-0454",
+    "SKU-0458",
+    "SKU-0462",
+    "SKU-0466",
+    "SKU-0469",
+    "SKU-0477",
+    "SKU-0484",
+    "SKU-0486",
+    "SKU-0489",
+    "SKU-0492",
+    "SKU-0494",
+    "SKU-0520",
+    "SKU-0533",
+    "SKU-0552",
+    "SKU-0558",
+    "SKU-0618",
+    "SKU-0624",
+    "SKU-0635",
+    "SKU-0637"
+  ],
+  "history": [
+    {
+      "sku_id": "SKU-0001",
+      "unit_price": 185.53,
+      "quoted_on": "2023-04-09"
+    },
+    {
+      "sku_id": "SKU-0003",
+      "unit_price": 203.51,
+      "quoted_on": "2023-02-19"
+    },
+    {
+      "sku_id": "SKU-0003",
+      "unit_price": 194.6,
+      "quoted_on": "2024-07-20"
+    },
+    {
+      "sku_id": "SKU-0004",
+      "unit_price": 161.5,
+      "quoted_on": "2024-05-29"
+    },
+    {
+      "sku_id": "SKU-0004",
+      "unit_price": 177.96,
+      "quoted_on": "2023-10-06"
+    },
+    {
+      "sku_id": "SKU-0005",
+      "unit_price": 246.75,
+      "quoted_on": "2024-01-05"
+    },
+    {
+      "sku_id": "SKU-0005",
+      "unit_price": 253.44,
+      "quoted_on": "2024-07-01"
+    },
+    {
+      "sku_id": "SKU-0006",
+      "unit_price": 66.62,
+      "quoted_on": "2023-04-09"
+    },
+    {
+      "sku_id": "SKU-0006",
+      "unit_price": 65.32,
+      "quoted_on": "2023-06-22"
+    },
+    {
+      "sku_id": "SKU-0006",
+      "unit_price": 63.99,
+      "quoted_on": "2024-04-12"
+    },
+    {
+      "sku_id": "SKU-0007",
+      "unit_price": 119.08,
+      "quoted_on": "2023-04-21"
+    },
+    {
+      "sku_id": "SKU-0007",
+      "unit_price": 127.9,
+      "quoted_on": "2024-08-14"
+    },
+    {
+      "sku_id": "SKU-0008",
+      "unit_price": 48.41,
+      "quoted_on": "2023-12-23"
+    },
+    {
+      "sku_id": "SKU-0008",
+      "unit_price": 49.59,
+      "quoted_on": "2024-06-16"
+    },
+    {
+      "sku_id": "SKU-0009",
+      "unit_price": 237.49,
+      "quoted_on": "2024-02-27"
+    },
+    {
+      "sku_id": "SKU-0011",
+      "unit_price": 192.64,
+      "quoted_on": "2024-05-19"
+    },
+    {
+      "sku_id": "SKU-0011",
+      "unit_price": 179.07,
+      "quoted_on": "2024-02-27"
+    },
+    {
+      "sku_id": "SKU-0011",
+      "unit_price": 199.89,
+      "quoted_on": "2023-07-01"
+    },
+    {
+      "sku_id": "SKU-0012",
+      "unit_price": 349.82,
+      "quoted_on": "2023-01-24"
+    },
+    {
+      "sku_id": "SKU-0012",
+      "unit_price": 377.94,
+      "quoted_on": "2023-04-15"
+    },
+    {
+      "sku_id": "SKU-0012",
+      "unit_price": 359.71,
+      "quoted_on": "2024-05-26"
+    },
+    {
+      "sku_id": "SKU-0014",
+      "unit_price": 239.37,
+      "quoted_on": "2023-12-22"
+    },
+    {
+      "sku_id": "SKU-0014",
+      "unit_price": 247.96,
+      "quoted_on": "2023-02-14"
+    },
+    {
+      "sku_id": "SKU-0015",
+      "unit_price": 423.23,
+      "quoted_on": "2024-08-10"
+    },
+    {
+      "sku_id": "SKU-0015",
+      "unit_price": 397.42,
+      "quoted_on": "2023-06-12"
+    },
+    {
+      "sku_id": "SKU-0016",
+      "unit_price": 95.47,
+      "quoted_on": "2023-10-20"
+    },
+    {
+      "sku_id": "SKU-0017",
+      "unit_price": 71.97,
+      "quoted_on": "2024-06-12"
+    },
+    {
+      "sku_id": "SKU-0017",
+      "unit_price": 65.17,
+      "quoted_on": "2023-06-27"
+    },
+    {
+      "sku_id": "SKU-0017",
+      "unit_price": 66.09,
+      "quoted_on": "2023-10-22"
+    },
+    {
+      "sku_id": "SKU-0018",
+      "unit_price": 34.46,
+      "quoted_on": "2023-06-15"
+    },
+    {
+      "sku_id": "SKU-0019",
+      "unit_price": 184.73,
+      "quoted_on": "2024-02-07"
+    },
+    {
+      "sku_id": "SKU-0019",
+      "unit_price": 181.95,
+      "quoted_on": "2023-10-13"
+    },
+    {
+      "sku_id": "SKU-0019",
+      "unit_price": 178.72,
+      "quoted_on": "2023-04-15"
+    },
+    {
+      "sku_id": "SKU-0020",
+      "unit_price": 127.56,
+      "quoted_on": "2024-01-13"
+    },
+    {
+      "sku_id": "SKU-0020",
+      "unit_price": 131.26,
+      "quoted_on": "2023-05-27"
+    },
+    {
+      "sku_id": "SKU-0021",
+      "unit_price": 289.13,
+      "quoted_on": "2024-03-29"
+    },
+    {
+      "sku_id": "SKU-0021",
+      "unit_price": 311.32,
+      "quoted_on": "2024-06-07"
+    },
+    {
+      "sku_id": "SKU-0022",
+      "unit_price": 179.02,
+      "quoted_on": "2024-01-26"
+    },
+    {
+      "sku_id": "SKU-0022",
+      "unit_price": 183.2,
+      "quoted_on": "2023-04-08"
+    },
+    {
+      "sku_id": "SKU-0022",
+      "unit_price": 203.57,
+      "quoted_on": "2023-10-01"
+    },
+    {
+      "sku_id": "SKU-0024",
+      "unit_price": 242.83,
+      "quoted_on": "2023-09-30"
+    },
+    {
+      "sku_id": "SKU-0024",
+      "unit_price": 277.32,
+      "quoted_on": "2023-06-04"
+    },
+    {
+      "sku_id": "SKU-0025",
+      "unit_price": 397.29,
+      "quoted_on": "2023-07-06"
+    },
+    {
+      "sku_id": "SKU-0025",
+      "unit_price": 416.77,
+      "quoted_on": "2023-10-18"
+    },
+    {
+      "sku_id": "SKU-0025",
+      "unit_price": 362.41,
+      "quoted_on": "2023-02-09"
+    },
+    {
+      "sku_id": "SKU-0026",
+      "unit_price": 225.1,
+      "quoted_on": "2023-01-02"
+    },
+    {
+      "sku_id": "SKU-0026",
+      "unit_price": 231.06,
+      "quoted_on": "2024-04-04"
+    },
+    {
+      "sku_id": "SKU-0026",
+      "unit_price": 243.44,
+      "quoted_on": "2023-07-11"
+    },
+    {
+      "sku_id": "SKU-0027",
+      "unit_price": 385.3,
+      "quoted_on": "2024-05-30"
+    },
+    {
+      "sku_id": "SKU-0027",
+      "unit_price": 377.98,
+      "quoted_on": "2024-01-01"
+    },
+    {
+      "sku_id": "SKU-0027",
+      "unit_price": 366.12,
+      "quoted_on": "2023-02-27"
+    },
+    {
+      "sku_id": "SKU-0028",
+      "unit_price": 33.93,
+      "quoted_on": "2024-04-14"
+    },
+    {
+      "sku_id": "SKU-0028",
+      "unit_price": 33.14,
+      "quoted_on": "2024-06-30"
+    },
+    {
+      "sku_id": "SKU-0029",
+      "unit_price": 137.54,
+      "quoted_on": "2023-06-24"
+    },
+    {
+      "sku_id": "SKU-0029",
+      "unit_price": 126.18,
+      "quoted_on": "2023-12-15"
+    },
+    {
+      "sku_id": "SKU-0029",
+      "unit_price": 122.91,
+      "quoted_on": "2024-01-19"
+    },
+    {
+      "sku_id": "SKU-0030",
+      "unit_price": 254.29,
+      "quoted_on": "2023-07-14"
+    },
+    {
+      "sku_id": "SKU-0030",
+      "unit_price": 223.69,
+      "quoted_on": "2023-08-14"
+    },
+    {
+      "sku_id": "SKU-0031",
+      "unit_price": 56.64,
+      "quoted_on": "2023-05-12"
+    },
+    {
+      "sku_id": "SKU-0031",
+      "unit_price": 52.91,
+      "quoted_on": "2023-05-23"
+    },
+    {
+      "sku_id": "SKU-0031",
+      "unit_price": 53.15,
+      "quoted_on": "2023-10-04"
+    },
+    {
+      "sku_id": "SKU-0032",
+      "unit_price": 309.06,
+      "quoted_on": "2023-12-28"
+    },
+    {
+      "sku_id": "SKU-0032",
+      "unit_price": 272.21,
+      "quoted_on": "2023-04-20"
+    },
+    {
+      "sku_id": "SKU-0032",
+      "unit_price": 305.18,
+      "quoted_on": "2023-08-09"
+    },
+    {
+      "sku_id": "SKU-0033",
+      "unit_price": 214.43,
+      "quoted_on": "2023-12-08"
+    },
+    {
+      "sku_id": "SKU-0033",
+      "unit_price": 201.0,
+      "quoted_on": "2024-04-03"
+    },
+    {
+      "sku_id": "SKU-0035",
+      "unit_price": 182.72,
+      "quoted_on": "2024-03-17"
+    },
+    {
+      "sku_id": "SKU-0036",
+      "unit_price": 105.78,
+      "quoted_on": "2024-03-15"
+    },
+    {
+      "sku_id": "SKU-0036",
+      "unit_price": 109.65,
+      "quoted_on": "2023-05-14"
+    },
+    {
+      "sku_id": "SKU-0036",
+      "unit_price": 101.35,
+      "quoted_on": "2023-11-16"
+    },
+    {
+      "sku_id": "SKU-0037",
+      "unit_price": 422.21,
+      "quoted_on": "2024-01-12"
+    },
+    {
+      "sku_id": "SKU-0037",
+      "unit_price": 411.49,
+      "quoted_on": "2024-05-24"
+    },
+    {
+      "sku_id": "SKU-0039",
+      "unit_price": 427.94,
+      "quoted_on": "2023-06-26"
+    },
+    {
+      "sku_id": "SKU-0040",
+      "unit_price": 110.62,
+      "quoted_on": "2023-01-30"
+    },
+    {
+      "sku_id": "SKU-0040",
+      "unit_price": 120.34,
+      "quoted_on": "2023-12-15"
+    },
+    {
+      "sku_id": "SKU-0040",
+      "unit_price": 118.64,
+      "quoted_on": "2023-09-25"
+    },
+    {
+      "sku_id": "SKU-0041",
+      "unit_price": 300.58,
+      "quoted_on": "2024-05-13"
+    },
+    {
+      "sku_id": "SKU-0042",
+      "unit_price": 269.97,
+      "quoted_on": "2024-08-01"
+    },
+    {
+      "sku_id": "SKU-0042",
+      "unit_price": 273.6,
+      "quoted_on": "2023-11-08"
+    },
+    {
+      "sku_id": "SKU-0042",
+      "unit_price": 259.62,
+      "quoted_on": "2023-06-27"
+    },
+    {
+      "sku_id": "SKU-0043",
+      "unit_price": 77.93,
+      "quoted_on": "2023-06-13"
+    },
+    {
+      "sku_id": "SKU-0043",
+      "unit_price": 78.75,
+      "quoted_on": "2024-05-26"
+    },
+    {
+      "sku_id": "SKU-0043",
+      "unit_price": 73.7,
+      "quoted_on": "2023-05-21"
+    },
+    {
+      "sku_id": "SKU-0044",
+      "unit_price": 264.22,
+      "quoted_on": "2024-05-01"
+    },
+    {
+      "sku_id": "SKU-0044",
+      "unit_price": 256.48,
+      "quoted_on": "2024-01-22"
+    },
+    {
+      "sku_id": "SKU-0045",
+      "unit_price": 39.23,
+      "quoted_on": "2024-02-28"
+    },
+    {
+      "sku_id": "SKU-0045",
+      "unit_price": 38.13,
+      "quoted_on": "2024-01-26"
+    },
+    {
+      "sku_id": "SKU-0045",
+      "unit_price": 42.09,
+      "quoted_on": "2024-03-31"
+    },
+    {
+      "sku_id": "SKU-0046",
+      "unit_price": 143.07,
+      "quoted_on": "2024-05-02"
+    },
+    {
+      "sku_id": "SKU-0046",
+      "unit_price": 134.14,
+      "quoted_on": "2024-05-16"
+    },
+    {
+      "sku_id": "SKU-0046",
+      "unit_price": 146.89,
+      "quoted_on": "2024-06-20"
+    },
+    {
+      "sku_id": "SKU-0047",
+      "unit_price": 352.64,
+      "quoted_on": "2024-05-19"
+    },
+    {
+      "sku_id": "SKU-0047",
+      "unit_price": 371.37,
+      "quoted_on": "2023-07-07"
+    },
+    {
+      "sku_id": "SKU-0047",
+      "unit_price": 375.69,
+      "quoted_on": "2024-03-17"
+    },
+    {
+      "sku_id": "SKU-0048",
+      "unit_price": 311.37,
+      "quoted_on": "2023-08-24"
+    },
+    {
+      "sku_id": "SKU-0048",
+      "unit_price": 285.38,
+      "quoted_on": "2023-02-01"
+    },
+    {
+      "sku_id": "SKU-0050",
+      "unit_price": 247.52,
+      "quoted_on": "2023-04-16"
+    },
+    {
+      "sku_id": "SKU-0050",
+      "unit_price": 244.16,
+      "quoted_on": "2023-01-29"
+    },
+    {
+      "sku_id": "SKU-0051",
+      "unit_price": 126.84,
+      "quoted_on": "2023-07-14"
+    },
+    {
+      "sku_id": "SKU-0051",
+      "unit_price": 129.01,
+      "quoted_on": "2024-01-25"
+    },
+    {
+      "sku_id": "SKU-0051",
+      "unit_price": 137.59,
+      "quoted_on": "2024-03-28"
+    },
+    {
+      "sku_id": "SKU-0052",
+      "unit_price": 403.92,
+      "quoted_on": "2024-07-22"
+    },
+    {
+      "sku_id": "SKU-0052",
+      "unit_price": 389.19,
+      "quoted_on": "2024-04-25"
+    },
+    {
+      "sku_id": "SKU-0053",
+      "unit_price": 222.78,
+      "quoted_on": "2023-05-25"
+    },
+    {
+      "sku_id": "SKU-0054",
+      "unit_price": 286.34,
+      "quoted_on": "2023-12-24"
+    },
+    {
+      "sku_id": "SKU-0054",
+      "unit_price": 292.21,
+      "quoted_on": "2023-08-18"
+    },
+    {
+      "sku_id": "SKU-0054",
+      "unit_price": 266.29,
+      "quoted_on": "2023-09-21"
+    },
+    {
+      "sku_id": "SKU-0056",
+      "unit_price": 142.68,
+      "quoted_on": "2024-07-07"
+    },
+    {
+      "sku_id": "SKU-0057",
+      "unit_price": 244.76,
+      "quoted_on": "2023-05-10"
+    },
+    {
+      "sku_id": "SKU-0057",
+      "unit_price": 260.6,
+      "quoted_on": "2024-04-14"
+    },
+    {
+      "sku_id": "SKU-0058",
+      "unit_price": 90.92,
+      "quoted_on": "2023-10-03"
+    },
+    {
+      "sku_id": "SKU-0060",
+      "unit_price": 267.79,
+      "quoted_on": "2023-09-04"
+    },
+    {
+      "sku_id": "SKU-0060",
+      "unit_price": 302.09,
+      "quoted_on": "2023-12-11"
+    },
+    {
+      "sku_id": "SKU-0060",
+      "unit_price": 270.77,
+      "quoted_on": "2023-09-02"
+    },
+    {
+      "sku_id": "SKU-0061",
+      "unit_price": 395.11,
+      "quoted_on": "2024-02-03"
+    },
+    {
+      "sku_id": "SKU-0062",
+      "unit_price": 99.24,
+      "quoted_on": "2023-05-20"
+    },
+    {
+      "sku_id": "SKU-0062",
+      "unit_price": 93.98,
+      "quoted_on": "2024-07-15"
+    },
+    {
+      "sku_id": "SKU-0062",
+      "unit_price": 95.69,
+      "quoted_on": "2024-08-13"
+    },
+    {
+      "sku_id": "SKU-0064",
+      "unit_price": 37.76,
+      "quoted_on": "2024-01-26"
+    },
+    {
+      "sku_id": "SKU-0064",
+      "unit_price": 41.42,
+      "quoted_on": "2023-06-29"
+    },
+    {
+      "sku_id": "SKU-0064",
+      "unit_price": 42.41,
+      "quoted_on": "2023-12-01"
+    },
+    {
+      "sku_id": "SKU-0065",
+      "unit_price": 378.25,
+      "quoted_on": "2024-01-18"
+    },
+    {
+      "sku_id": "SKU-0065",
+      "unit_price": 385.05,
+      "quoted_on": "2024-02-04"
+    },
+    {
+      "sku_id": "SKU-0065",
+      "unit_price": 360.87,
+      "quoted_on": "2023-12-12"
+    },
+    {
+      "sku_id": "SKU-0066",
+      "unit_price": 53.66,
+      "quoted_on": "2023-01-13"
+    },
+    {
+      "sku_id": "SKU-0066",
+      "unit_price": 51.24,
+      "quoted_on": "2024-07-28"
+    },
+    {
+      "sku_id": "SKU-0067",
+      "unit_price": 208.29,
+      "quoted_on": "2023-01-13"
+    },
+    {
+      "sku_id": "SKU-0067",
+      "unit_price": 214.64,
+      "quoted_on": "2024-07-11"
+    },
+    {
+      "sku_id": "SKU-0067",
+      "unit_price": 209.1,
+      "quoted_on": "2023-06-27"
+    },
+    {
+      "sku_id": "SKU-0068",
+      "unit_price": 203.44,
+      "quoted_on": "2023-11-06"
+    },
+    {
+      "sku_id": "SKU-0068",
+      "unit_price": 223.03,
+      "quoted_on": "2024-07-01"
+    },
+    {
+      "sku_id": "SKU-0068",
+      "unit_price": 228.51,
+      "quoted_on": "2023-11-30"
+    },
+    {
+      "sku_id": "SKU-0070",
+      "unit_price": 105.09,
+      "quoted_on": "2023-01-14"
+    },
+    {
+      "sku_id": "SKU-0071",
+      "unit_price": 169.67,
+      "quoted_on": "2024-04-07"
+    },
+    {
+      "sku_id": "SKU-0072",
+      "unit_price": 224.68,
+      "quoted_on": "2023-01-21"
+    },
+    {
+      "sku_id": "SKU-0072",
+      "unit_price": 201.98,
+      "quoted_on": "2023-10-18"
+    },
+    {
+      "sku_id": "SKU-0072",
+      "unit_price": 217.66,
+      "quoted_on": "2023-12-15"
+    },
+    {
+      "sku_id": "SKU-0073",
+      "unit_price": 346.36,
+      "quoted_on": "2024-07-13"
+    },
+    {
+      "sku_id": "SKU-0073",
+      "unit_price": 342.63,
+      "quoted_on": "2024-01-22"
+    },
+    {
+      "sku_id": "SKU-0074",
+      "unit_price": 348.16,
+      "quoted_on": "2024-05-03"
+    },
+    {
+      "sku_id": "SKU-0075",
+      "unit_price": 378.96,
+      "quoted_on": "2023-08-08"
+    },
+    {
+      "sku_id": "SKU-0077",
+      "unit_price": 135.3,
+      "quoted_on": "2023-04-11"
+    },
+    {
+      "sku_id": "SKU-0077",
+      "unit_price": 127.34,
+      "quoted_on": "2023-08-15"
+    },
+    {
+      "sku_id": "SKU-0077",
+      "unit_price": 127.81,
+      "quoted_on": "2024-04-03"
+    },
+    {
+      "sku_id": "SKU-0078",
+      "unit_price": 418.07,
+      "quoted_on": "2023-06-03"
+    },
+    {
+      "sku_id": "SKU-0079",
+      "unit_price": 62.52,
+      "quoted_on": "2023-11-29"
+    },
+    {
+      "sku_id": "SKU-0080",
+      "unit_price": 153.37,
+      "quoted_on": "2023-03-27"
+    },
+    {
+      "sku_id": "SKU-0080",
+      "unit_price": 149.31,
+      "quoted_on": "2023-05-21"
+    },
+    {
+      "sku_id": "SKU-0080",
+      "unit_price": 140.71,
+      "quoted_on": "2024-01-08"
+    },
+    {
+      "sku_id": "SKU-0081",
+      "unit_price": 228.24,
+      "quoted_on": "2023-07-03"
+    },
+    {
+      "sku_id": "SKU-0082",
+      "unit_price": 144.95,
+      "quoted_on": "2024-06-24"
+    },
+    {
+      "sku_id": "SKU-0082",
+      "unit_price": 140.6,
+      "quoted_on": "2023-07-20"
+    },
+    {
+      "sku_id": "SKU-0082",
+      "unit_price": 143.58,
+      "quoted_on": "2024-04-19"
+    },
+    {
+      "sku_id": "SKU-0083",
+      "unit_price": 311.32,
+      "quoted_on": "2023-05-27"
+    },
+    {
+      "sku_id": "SKU-0083",
+      "unit_price": 308.74,
+      "quoted_on": "2024-07-19"
+    },
+    {
+      "sku_id": "SKU-0083",
+      "unit_price": 297.24,
+      "quoted_on": "2023-12-05"
+    },
+    {
+      "sku_id": "SKU-0084",
+      "unit_price": 103.27,
+      "quoted_on": "2024-05-13"
+    },
+    {
+      "sku_id": "SKU-0084",
+      "unit_price": 95.02,
+      "quoted_on": "2023-06-15"
+    },
+    {
+      "sku_id": "SKU-0085",
+      "unit_price": 18.76,
+      "quoted_on": "2024-07-03"
+    },
+    {
+      "sku_id": "SKU-0085",
+      "unit_price": 19.92,
+      "quoted_on": "2024-04-25"
+    },
+    {
+      "sku_id": "SKU-0086",
+      "unit_price": 304.54,
+      "quoted_on": "2024-03-28"
+    },
+    {
+      "sku_id": "SKU-0086",
+      "unit_price": 317.52,
+      "quoted_on": "2023-06-03"
+    },
+    {
+      "sku_id": "SKU-0088",
+      "unit_price": 327.78,
+      "quoted_on": "2024-04-04"
+    },
+    {
+      "sku_id": "SKU-0088",
+      "unit_price": 328.48,
+      "quoted_on": "2023-09-18"
+    },
+    {
+      "sku_id": "SKU-0088",
+      "unit_price": 319.93,
+      "quoted_on": "2023-05-23"
+    },
+    {
+      "sku_id": "SKU-0089",
+      "unit_price": 221.02,
+      "quoted_on": "2023-05-03"
+    },
+    {
+      "sku_id": "SKU-0089",
+      "unit_price": 203.96,
+      "quoted_on": "2023-02-05"
+    },
+    {
+      "sku_id": "SKU-0090",
+      "unit_price": 217.14,
+      "quoted_on": "2023-02-15"
+    },
+    {
+      "sku_id": "SKU-0090",
+      "unit_price": 195.1,
+      "quoted_on": "2023-03-06"
+    },
+    {
+      "sku_id": "SKU-0090",
+      "unit_price": 225.18,
+      "quoted_on": "2023-09-08"
+    },
+    {
+      "sku_id": "SKU-0091",
+      "unit_price": 346.61,
+      "quoted_on": "2023-01-23"
+    },
+    {
+      "sku_id": "SKU-0092",
+      "unit_price": 186.94,
+      "quoted_on": "2024-05-31"
+    },
+    {
+      "sku_id": "SKU-0092",
+      "unit_price": 175.27,
+      "quoted_on": "2024-08-08"
+    },
+    {
+      "sku_id": "SKU-0093",
+      "unit_price": 184.79,
+      "quoted_on": "2023-12-24"
+    },
+    {
+      "sku_id": "SKU-0094",
+      "unit_price": 169.06,
+      "quoted_on": "2023-10-08"
+    },
+    {
+      "sku_id": "SKU-0095",
+      "unit_price": 70.59,
+      "quoted_on": "2023-07-25"
+    },
+    {
+      "sku_id": "SKU-0096",
+      "unit_price": 395.46,
+      "quoted_on": "2024-04-02"
+    },
+    {
+      "sku_id": "SKU-0096",
+      "unit_price": 432.69,
+      "quoted_on": "2024-08-14"
+    },
+    {
+      "sku_id": "SKU-0096",
+      "unit_price": 385.85,
+      "quoted_on": "2023-06-08"
+    },
+    {
+      "sku_id": "SKU-0100",
+      "unit_price": 142.68,
+      "quoted_on": "2024-05-31"
+    },
+    {
+      "sku_id": "SKU-0100",
+      "unit_price": 142.26,
+      "quoted_on": "2024-08-05"
+    },
+    {
+      "sku_id": "SKU-0102",
+      "unit_price": 17.08,
+      "quoted_on": "2024-05-05"
+    },
+    {
+      "sku_id": "SKU-0103",
+      "unit_price": 274.38,
+      "quoted_on": "2023-09-18"
+    },
+    {
+      "sku_id": "SKU-0104",
+      "unit_price": 407.41,
+      "quoted_on": "2023-02-15"
+    },
+    {
+      "sku_id": "SKU-0105",
+      "unit_price": 183.54,
+      "quoted_on": "2023-09-25"
+    },
+    {
+      "sku_id": "SKU-0106",
+      "unit_price": 280.22,
+      "quoted_on": "2023-08-12"
+    },
+    {
+      "sku_id": "SKU-0107",
+      "unit_price": 177.9,
+      "quoted_on": "2023-12-10"
+    },
+    {
+      "sku_id": "SKU-0107",
+      "unit_price": 182.75,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0108",
+      "unit_price": 370.67,
+      "quoted_on": "2024-08-20"
+    },
+    {
+      "sku_id": "SKU-0108",
+      "unit_price": 355.8,
+      "quoted_on": "2024-04-20"
+    },
+    {
+      "sku_id": "SKU-0109",
+      "unit_price": 313.54,
+      "quoted_on": "2023-04-01"
+    },
+    {
+      "sku_id": "SKU-0109",
+      "unit_price": 343.34,
+      "quoted_on": "2024-07-27"
+    },
+    {
+      "sku_id": "SKU-0109",
+      "unit_price": 351.39,
+      "quoted_on": "2023-09-09"
+    },
+    {
+      "sku_id": "SKU-0110",
+      "unit_price": 153.23,
+      "quoted_on": "2023-03-09"
+    },
+    {
+      "sku_id": "SKU-0111",
+      "unit_price": 224.5,
+      "quoted_on": "2023-01-11"
+    },
+    {
+      "sku_id": "SKU-0111",
+      "unit_price": 211.0,
+      "quoted_on": "2023-07-06"
+    },
+    {
+      "sku_id": "SKU-0111",
+      "unit_price": 233.2,
+      "quoted_on": "2023-10-08"
+    },
+    {
+      "sku_id": "SKU-0112",
+      "unit_price": 355.57,
+      "quoted_on": "2023-07-18"
+    },
+    {
+      "sku_id": "SKU-0112",
+      "unit_price": 331.13,
+      "quoted_on": "2024-08-16"
+    },
+    {
+      "sku_id": "SKU-0112",
+      "unit_price": 317.05,
+      "quoted_on": "2023-02-14"
+    },
+    {
+      "sku_id": "SKU-0113",
+      "unit_price": 32.35,
+      "quoted_on": "2023-06-06"
+    },
+    {
+      "sku_id": "SKU-0113",
+      "unit_price": 37.28,
+      "quoted_on": "2023-08-11"
+    },
+    {
+      "sku_id": "SKU-0114",
+      "unit_price": 272.02,
+      "quoted_on": "2024-06-20"
+    },
+    {
+      "sku_id": "SKU-0115",
+      "unit_price": 362.18,
+      "quoted_on": "2023-08-14"
+    },
+    {
+      "sku_id": "SKU-0117",
+      "unit_price": 103.05,
+      "quoted_on": "2023-07-20"
+    },
+    {
+      "sku_id": "SKU-0118",
+      "unit_price": 353.02,
+      "quoted_on": "2023-07-09"
+    },
+    {
+      "sku_id": "SKU-0118",
+      "unit_price": 322.59,
+      "quoted_on": "2023-05-04"
+    },
+    {
+      "sku_id": "SKU-0119",
+      "unit_price": 299.58,
+      "quoted_on": "2023-02-13"
+    },
+    {
+      "sku_id": "SKU-0119",
+      "unit_price": 273.5,
+      "quoted_on": "2023-06-15"
+    },
+    {
+      "sku_id": "SKU-0120",
+      "unit_price": 199.33,
+      "quoted_on": "2023-12-19"
+    },
+    {
+      "sku_id": "SKU-0120",
+      "unit_price": 185.11,
+      "quoted_on": "2024-02-26"
+    },
+    {
+      "sku_id": "SKU-0120",
+      "unit_price": 173.04,
+      "quoted_on": "2024-06-14"
+    },
+    {
+      "sku_id": "SKU-0121",
+      "unit_price": 238.88,
+      "quoted_on": "2024-04-04"
+    },
+    {
+      "sku_id": "SKU-0122",
+      "unit_price": 168.76,
+      "quoted_on": "2024-06-06"
+    },
+    {
+      "sku_id": "SKU-0123",
+      "unit_price": 339.64,
+      "quoted_on": "2023-11-13"
+    },
+    {
+      "sku_id": "SKU-0123",
+      "unit_price": 361.21,
+      "quoted_on": "2024-02-13"
+    },
+    {
+      "sku_id": "SKU-0124",
+      "unit_price": 168.12,
+      "quoted_on": "2023-09-12"
+    },
+    {
+      "sku_id": "SKU-0124",
+      "unit_price": 151.04,
+      "quoted_on": "2024-03-02"
+    },
+    {
+      "sku_id": "SKU-0125",
+      "unit_price": 104.83,
+      "quoted_on": "2023-05-12"
+    },
+    {
+      "sku_id": "SKU-0126",
+      "unit_price": 236.9,
+      "quoted_on": "2023-01-17"
+    },
+    {
+      "sku_id": "SKU-0126",
+      "unit_price": 234.36,
+      "quoted_on": "2024-07-13"
+    },
+    {
+      "sku_id": "SKU-0127",
+      "unit_price": 125.57,
+      "quoted_on": "2024-03-15"
+    },
+    {
+      "sku_id": "SKU-0128",
+      "unit_price": 258.58,
+      "quoted_on": "2023-11-15"
+    },
+    {
+      "sku_id": "SKU-0128",
+      "unit_price": 257.67,
+      "quoted_on": "2024-05-20"
+    },
+    {
+      "sku_id": "SKU-0129",
+      "unit_price": 238.06,
+      "quoted_on": "2023-08-04"
+    },
+    {
+      "sku_id": "SKU-0130",
+      "unit_price": 308.83,
+      "quoted_on": "2023-01-02"
+    },
+    {
+      "sku_id": "SKU-0130",
+      "unit_price": 309.05,
+      "quoted_on": "2024-03-09"
+    },
+    {
+      "sku_id": "SKU-0130",
+      "unit_price": 298.6,
+      "quoted_on": "2023-04-04"
+    },
+    {
+      "sku_id": "SKU-0131",
+      "unit_price": 235.37,
+      "quoted_on": "2023-03-23"
+    },
+    {
+      "sku_id": "SKU-0132",
+      "unit_price": 373.21,
+      "quoted_on": "2024-05-11"
+    },
+    {
+      "sku_id": "SKU-0133",
+      "unit_price": 344.18,
+      "quoted_on": "2024-05-30"
+    },
+    {
+      "sku_id": "SKU-0134",
+      "unit_price": 150.76,
+      "quoted_on": "2024-07-04"
+    },
+    {
+      "sku_id": "SKU-0134",
+      "unit_price": 148.66,
+      "quoted_on": "2023-07-18"
+    },
+    {
+      "sku_id": "SKU-0134",
+      "unit_price": 140.62,
+      "quoted_on": "2023-10-22"
+    },
+    {
+      "sku_id": "SKU-0135",
+      "unit_price": 251.85,
+      "quoted_on": "2024-03-24"
+    },
+    {
+      "sku_id": "SKU-0135",
+      "unit_price": 259.46,
+      "quoted_on": "2023-02-19"
+    },
+    {
+      "sku_id": "SKU-0136",
+      "unit_price": 315.6,
+      "quoted_on": "2024-02-16"
+    },
+    {
+      "sku_id": "SKU-0137",
+      "unit_price": 324.01,
+      "quoted_on": "2024-01-13"
+    },
+    {
+      "sku_id": "SKU-0138",
+      "unit_price": 377.58,
+      "quoted_on": "2023-07-08"
+    },
+    {
+      "sku_id": "SKU-0139",
+      "unit_price": 138.72,
+      "quoted_on": "2023-03-17"
+    },
+    {
+      "sku_id": "SKU-0139",
+      "unit_price": 133.13,
+      "quoted_on": "2023-05-19"
+    },
+    {
+      "sku_id": "SKU-0140",
+      "unit_price": 260.65,
+      "quoted_on": "2023-11-19"
+    },
+    {
+      "sku_id": "SKU-0141",
+      "unit_price": 39.44,
+      "quoted_on": "2024-02-16"
+    },
+    {
+      "sku_id": "SKU-0141",
+      "unit_price": 38.09,
+      "quoted_on": "2024-05-24"
+    },
+    {
+      "sku_id": "SKU-0142",
+      "unit_price": 315.11,
+      "quoted_on": "2023-08-04"
+    },
+    {
+      "sku_id": "SKU-0142",
+      "unit_price": 328.09,
+      "quoted_on": "2023-04-23"
+    },
+    {
+      "sku_id": "SKU-0143",
+      "unit_price": 57.69,
+      "quoted_on": "2024-01-02"
+    },
+    {
+      "sku_id": "SKU-0143",
+      "unit_price": 54.34,
+      "quoted_on": "2023-10-11"
+    },
+    {
+      "sku_id": "SKU-0143",
+      "unit_price": 54.2,
+      "quoted_on": "2023-06-23"
+    },
+    {
+      "sku_id": "SKU-0144",
+      "unit_price": 418.63,
+      "quoted_on": "2023-03-14"
+    },
+    {
+      "sku_id": "SKU-0144",
+      "unit_price": 385.72,
+      "quoted_on": "2023-09-02"
+    },
+    {
+      "sku_id": "SKU-0144",
+      "unit_price": 420.4,
+      "quoted_on": "2023-07-19"
+    },
+    {
+      "sku_id": "SKU-0145",
+      "unit_price": 380.75,
+      "quoted_on": "2023-02-19"
+    },
+    {
+      "sku_id": "SKU-0145",
+      "unit_price": 385.56,
+      "quoted_on": "2024-03-22"
+    },
+    {
+      "sku_id": "SKU-0146",
+      "unit_price": 116.95,
+      "quoted_on": "2023-05-05"
+    },
+    {
+      "sku_id": "SKU-0147",
+      "unit_price": 201.27,
+      "quoted_on": "2023-02-14"
+    },
+    {
+      "sku_id": "SKU-0148",
+      "unit_price": 303.72,
+      "quoted_on": "2024-01-17"
+    },
+    {
+      "sku_id": "SKU-0148",
+      "unit_price": 293.35,
+      "quoted_on": "2024-04-06"
+    },
+    {
+      "sku_id": "SKU-0148",
+      "unit_price": 316.24,
+      "quoted_on": "2023-03-19"
+    },
+    {
+      "sku_id": "SKU-0149",
+      "unit_price": 49.66,
+      "quoted_on": "2024-03-08"
+    },
+    {
+      "sku_id": "SKU-0149",
+      "unit_price": 50.41,
+      "quoted_on": "2024-05-05"
+    },
+    {
+      "sku_id": "SKU-0150",
+      "unit_price": 64.65,
+      "quoted_on": "2023-03-10"
+    },
+    {
+      "sku_id": "SKU-0151",
+      "unit_price": 355.66,
+      "quoted_on": "2023-11-29"
+    },
+    {
+      "sku_id": "SKU-0151",
+      "unit_price": 371.66,
+      "quoted_on": "2024-04-23"
+    },
+    {
+      "sku_id": "SKU-0152",
+      "unit_price": 431.03,
+      "quoted_on": "2024-07-04"
+    },
+    {
+      "sku_id": "SKU-0153",
+      "unit_price": 314.26,
+      "quoted_on": "2023-11-13"
+    },
+    {
+      "sku_id": "SKU-0153",
+      "unit_price": 340.84,
+      "quoted_on": "2023-04-10"
+    },
+    {
+      "sku_id": "SKU-0154",
+      "unit_price": 320.9,
+      "quoted_on": "2023-06-26"
+    },
+    {
+      "sku_id": "SKU-0155",
+      "unit_price": 207.33,
+      "quoted_on": "2024-06-29"
+    },
+    {
+      "sku_id": "SKU-0156",
+      "unit_price": 301.19,
+      "quoted_on": "2023-12-09"
+    },
+    {
+      "sku_id": "SKU-0157",
+      "unit_price": 263.71,
+      "quoted_on": "2023-04-12"
+    },
+    {
+      "sku_id": "SKU-0157",
+      "unit_price": 262.46,
+      "quoted_on": "2024-01-11"
+    },
+    {
+      "sku_id": "SKU-0158",
+      "unit_price": 397.53,
+      "quoted_on": "2024-02-24"
+    },
+    {
+      "sku_id": "SKU-0158",
+      "unit_price": 370.9,
+      "quoted_on": "2023-08-27"
+    },
+    {
+      "sku_id": "SKU-0158",
+      "unit_price": 386.81,
+      "quoted_on": "2023-01-09"
+    },
+    {
+      "sku_id": "SKU-0159",
+      "unit_price": 95.73,
+      "quoted_on": "2023-11-09"
+    },
+    {
+      "sku_id": "SKU-0159",
+      "unit_price": 95.16,
+      "quoted_on": "2024-05-24"
+    },
+    {
+      "sku_id": "SKU-0160",
+      "unit_price": 367.4,
+      "quoted_on": "2024-05-07"
+    },
+    {
+      "sku_id": "SKU-0161",
+      "unit_price": 350.41,
+      "quoted_on": "2024-03-16"
+    },
+    {
+      "sku_id": "SKU-0161",
+      "unit_price": 385.64,
+      "quoted_on": "2024-06-16"
+    },
+    {
+      "sku_id": "SKU-0161",
+      "unit_price": 396.23,
+      "quoted_on": "2023-06-16"
+    },
+    {
+      "sku_id": "SKU-0163",
+      "unit_price": 358.71,
+      "quoted_on": "2023-03-15"
+    },
+    {
+      "sku_id": "SKU-0163",
+      "unit_price": 379.21,
+      "quoted_on": "2023-01-17"
+    },
+    {
+      "sku_id": "SKU-0163",
+      "unit_price": 355.86,
+      "quoted_on": "2024-06-27"
+    },
+    {
+      "sku_id": "SKU-0164",
+      "unit_price": 162.02,
+      "quoted_on": "2023-06-05"
+    },
+    {
+      "sku_id": "SKU-0164",
+      "unit_price": 161.84,
+      "quoted_on": "2023-01-11"
+    },
+    {
+      "sku_id": "SKU-0164",
+      "unit_price": 165.19,
+      "quoted_on": "2023-07-16"
+    },
+    {
+      "sku_id": "SKU-0166",
+      "unit_price": 214.37,
+      "quoted_on": "2024-05-03"
+    },
+    {
+      "sku_id": "SKU-0168",
+      "unit_price": 181.43,
+      "quoted_on": "2024-08-03"
+    },
+    {
+      "sku_id": "SKU-0168",
+      "unit_price": 181.26,
+      "quoted_on": "2023-06-29"
+    },
+    {
+      "sku_id": "SKU-0168",
+      "unit_price": 190.07,
+      "quoted_on": "2024-02-23"
+    },
+    {
+      "sku_id": "SKU-0169",
+      "unit_price": 293.2,
+      "quoted_on": "2023-12-24"
+    },
+    {
+      "sku_id": "SKU-0169",
+      "unit_price": 329.45,
+      "quoted_on": "2024-05-02"
+    },
+    {
+      "sku_id": "SKU-0170",
+      "unit_price": 165.4,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0170",
+      "unit_price": 181.15,
+      "quoted_on": "2023-04-02"
+    },
+    {
+      "sku_id": "SKU-0171",
+      "unit_price": 68.46,
+      "quoted_on": "2023-07-14"
+    },
+    {
+      "sku_id": "SKU-0172",
+      "unit_price": 39.84,
+      "quoted_on": "2024-07-08"
+    },
+    {
+      "sku_id": "SKU-0173",
+      "unit_price": 166.24,
+      "quoted_on": "2023-02-27"
+    },
+    {
+      "sku_id": "SKU-0173",
+      "unit_price": 159.37,
+      "quoted_on": "2024-06-11"
+    },
+    {
+      "sku_id": "SKU-0174",
+      "unit_price": 15.06,
+      "quoted_on": "2023-09-08"
+    },
+    {
+      "sku_id": "SKU-0175",
+      "unit_price": 187.74,
+      "quoted_on": "2023-01-26"
+    },
+    {
+      "sku_id": "SKU-0175",
+      "unit_price": 179.72,
+      "quoted_on": "2023-03-11"
+    },
+    {
+      "sku_id": "SKU-0175",
+      "unit_price": 185.57,
+      "quoted_on": "2023-04-14"
+    },
+    {
+      "sku_id": "SKU-0176",
+      "unit_price": 350.11,
+      "quoted_on": "2024-07-18"
+    },
+    {
+      "sku_id": "SKU-0177",
+      "unit_price": 307.58,
+      "quoted_on": "2024-02-12"
+    },
+    {
+      "sku_id": "SKU-0177",
+      "unit_price": 275.68,
+      "quoted_on": "2024-08-18"
+    },
+    {
+      "sku_id": "SKU-0177",
+      "unit_price": 265.9,
+      "quoted_on": "2023-02-25"
+    },
+    {
+      "sku_id": "SKU-0178",
+      "unit_price": 382.28,
+      "quoted_on": "2023-05-09"
+    },
+    {
+      "sku_id": "SKU-0178",
+      "unit_price": 420.74,
+      "quoted_on": "2023-10-01"
+    },
+    {
+      "sku_id": "SKU-0180",
+      "unit_price": 52.68,
+      "quoted_on": "2024-05-13"
+    },
+    {
+      "sku_id": "SKU-0181",
+      "unit_price": 200.29,
+      "quoted_on": "2024-03-27"
+    },
+    {
+      "sku_id": "SKU-0181",
+      "unit_price": 187.3,
+      "quoted_on": "2024-01-20"
+    },
+    {
+      "sku_id": "SKU-0183",
+      "unit_price": 10.42,
+      "quoted_on": "2023-06-26"
+    },
+    {
+      "sku_id": "SKU-0183",
+      "unit_price": 10.65,
+      "quoted_on": "2023-09-05"
+    },
+    {
+      "sku_id": "SKU-0183",
+      "unit_price": 10.98,
+      "quoted_on": "2023-09-28"
+    },
+    {
+      "sku_id": "SKU-0184",
+      "unit_price": 105.5,
+      "quoted_on": "2023-09-22"
+    },
+    {
+      "sku_id": "SKU-0184",
+      "unit_price": 104.88,
+      "quoted_on": "2023-03-30"
+    },
+    {
+      "sku_id": "SKU-0184",
+      "unit_price": 99.29,
+      "quoted_on": "2023-12-01"
+    },
+    {
+      "sku_id": "SKU-0185",
+      "unit_price": 253.47,
+      "quoted_on": "2023-12-01"
+    },
+    {
+      "sku_id": "SKU-0186",
+      "unit_price": 303.41,
+      "quoted_on": "2024-02-08"
+    },
+    {
+      "sku_id": "SKU-0186",
+      "unit_price": 322.82,
+      "quoted_on": "2023-04-22"
+    },
+    {
+      "sku_id": "SKU-0186",
+      "unit_price": 315.72,
+      "quoted_on": "2024-05-01"
+    },
+    {
+      "sku_id": "SKU-0187",
+      "unit_price": 94.25,
+      "quoted_on": "2024-04-14"
+    },
+    {
+      "sku_id": "SKU-0187",
+      "unit_price": 90.72,
+      "quoted_on": "2023-12-24"
+    },
+    {
+      "sku_id": "SKU-0187",
+      "unit_price": 93.68,
+      "quoted_on": "2024-03-14"
+    },
+    {
+      "sku_id": "SKU-0188",
+      "unit_price": 139.5,
+      "quoted_on": "2023-06-08"
+    },
+    {
+      "sku_id": "SKU-0188",
+      "unit_price": 131.88,
+      "quoted_on": "2024-03-10"
+    },
+    {
+      "sku_id": "SKU-0188",
+      "unit_price": 142.16,
+      "quoted_on": "2024-02-28"
+    },
+    {
+      "sku_id": "SKU-0189",
+      "unit_price": 360.93,
+      "quoted_on": "2023-01-06"
+    },
+    {
+      "sku_id": "SKU-0190",
+      "unit_price": 365.42,
+      "quoted_on": "2023-02-07"
+    },
+    {
+      "sku_id": "SKU-0191",
+      "unit_price": 53.6,
+      "quoted_on": "2023-08-14"
+    },
+    {
+      "sku_id": "SKU-0192",
+      "unit_price": 75.1,
+      "quoted_on": "2023-11-27"
+    },
+    {
+      "sku_id": "SKU-0192",
+      "unit_price": 73.87,
+      "quoted_on": "2023-02-01"
+    },
+    {
+      "sku_id": "SKU-0193",
+      "unit_price": 13.36,
+      "quoted_on": "2023-10-06"
+    },
+    {
+      "sku_id": "SKU-0193",
+      "unit_price": 12.13,
+      "quoted_on": "2023-07-13"
+    },
+    {
+      "sku_id": "SKU-0194",
+      "unit_price": 328.42,
+      "quoted_on": "2023-02-09"
+    },
+    {
+      "sku_id": "SKU-0195",
+      "unit_price": 125.53,
+      "quoted_on": "2023-01-20"
+    },
+    {
+      "sku_id": "SKU-0195",
+      "unit_price": 130.15,
+      "quoted_on": "2023-09-10"
+    },
+    {
+      "sku_id": "SKU-0195",
+      "unit_price": 143.06,
+      "quoted_on": "2024-05-25"
+    },
+    {
+      "sku_id": "SKU-0196",
+      "unit_price": 22.68,
+      "quoted_on": "2023-10-04"
+    },
+    {
+      "sku_id": "SKU-0197",
+      "unit_price": 233.83,
+      "quoted_on": "2023-11-01"
+    },
+    {
+      "sku_id": "SKU-0197",
+      "unit_price": 204.86,
+      "quoted_on": "2023-06-26"
+    },
+    {
+      "sku_id": "SKU-0198",
+      "unit_price": 195.27,
+      "quoted_on": "2024-05-07"
+    },
+    {
+      "sku_id": "SKU-0198",
+      "unit_price": 192.91,
+      "quoted_on": "2024-05-09"
+    },
+    {
+      "sku_id": "SKU-0200",
+      "unit_price": 208.37,
+      "quoted_on": "2024-03-01"
+    },
+    {
+      "sku_id": "SKU-0200",
+      "unit_price": 216.94,
+      "quoted_on": "2023-02-07"
+    },
+    {
+      "sku_id": "SKU-0201",
+      "unit_price": 18.29,
+      "quoted_on": "2024-05-30"
+    },
+    {
+      "sku_id": "SKU-0201",
+      "unit_price": 19.93,
+      "quoted_on": "2024-02-04"
+    },
+    {
+      "sku_id": "SKU-0202",
+      "unit_price": 336.6,
+      "quoted_on": "2023-12-07"
+    },
+    {
+      "sku_id": "SKU-0202",
+      "unit_price": 372.84,
+      "quoted_on": "2024-06-18"
+    },
+    {
+      "sku_id": "SKU-0202",
+      "unit_price": 370.59,
+      "quoted_on": "2023-07-26"
+    },
+    {
+      "sku_id": "SKU-0203",
+      "unit_price": 182.93,
+      "quoted_on": "2023-06-08"
+    },
+    {
+      "sku_id": "SKU-0203",
+      "unit_price": 181.99,
+      "quoted_on": "2023-08-29"
+    },
+    {
+      "sku_id": "SKU-0203",
+      "unit_price": 194.56,
+      "quoted_on": "2024-02-12"
+    },
+    {
+      "sku_id": "SKU-0204",
+      "unit_price": 29.18,
+      "quoted_on": "2023-12-23"
+    },
+    {
+      "sku_id": "SKU-0205",
+      "unit_price": 163.35,
+      "quoted_on": "2023-10-22"
+    },
+    {
+      "sku_id": "SKU-0205",
+      "unit_price": 178.26,
+      "quoted_on": "2024-07-01"
+    },
+    {
+      "sku_id": "SKU-0206",
+      "unit_price": 212.84,
+      "quoted_on": "2023-09-01"
+    },
+    {
+      "sku_id": "SKU-0206",
+      "unit_price": 198.25,
+      "quoted_on": "2024-04-30"
+    },
+    {
+      "sku_id": "SKU-0206",
+      "unit_price": 191.47,
+      "quoted_on": "2024-08-06"
+    },
+    {
+      "sku_id": "SKU-0207",
+      "unit_price": 32.84,
+      "quoted_on": "2024-06-07"
+    },
+    {
+      "sku_id": "SKU-0208",
+      "unit_price": 239.14,
+      "quoted_on": "2023-01-02"
+    },
+    {
+      "sku_id": "SKU-0208",
+      "unit_price": 238.45,
+      "quoted_on": "2023-02-04"
+    },
+    {
+      "sku_id": "SKU-0209",
+      "unit_price": 109.53,
+      "quoted_on": "2024-03-17"
+    },
+    {
+      "sku_id": "SKU-0210",
+      "unit_price": 239.28,
+      "quoted_on": "2024-02-19"
+    },
+    {
+      "sku_id": "SKU-0211",
+      "unit_price": 397.55,
+      "quoted_on": "2023-07-15"
+    },
+    {
+      "sku_id": "SKU-0211",
+      "unit_price": 443.99,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0211",
+      "unit_price": 435.99,
+      "quoted_on": "2023-02-02"
+    },
+    {
+      "sku_id": "SKU-0212",
+      "unit_price": 179.04,
+      "quoted_on": "2024-03-24"
+    },
+    {
+      "sku_id": "SKU-0212",
+      "unit_price": 181.75,
+      "quoted_on": "2023-08-06"
+    },
+    {
+      "sku_id": "SKU-0213",
+      "unit_price": 41.77,
+      "quoted_on": "2024-01-14"
+    },
+    {
+      "sku_id": "SKU-0214",
+      "unit_price": 342.22,
+      "quoted_on": "2024-02-01"
+    },
+    {
+      "sku_id": "SKU-0215",
+      "unit_price": 295.28,
+      "quoted_on": "2023-01-24"
+    },
+    {
+      "sku_id": "SKU-0216",
+      "unit_price": 85.76,
+      "quoted_on": "2023-02-10"
+    },
+    {
+      "sku_id": "SKU-0217",
+      "unit_price": 102.97,
+      "quoted_on": "2023-05-09"
+    },
+    {
+      "sku_id": "SKU-0218",
+      "unit_price": 201.25,
+      "quoted_on": "2024-05-28"
+    },
+    {
+      "sku_id": "SKU-0219",
+      "unit_price": 39.72,
+      "quoted_on": "2023-12-09"
+    },
+    {
+      "sku_id": "SKU-0219",
+      "unit_price": 40.13,
+      "quoted_on": "2024-04-12"
+    },
+    {
+      "sku_id": "SKU-0219",
+      "unit_price": 40.51,
+      "quoted_on": "2023-10-30"
+    },
+    {
+      "sku_id": "SKU-0220",
+      "unit_price": 295.86,
+      "quoted_on": "2024-06-02"
+    },
+    {
+      "sku_id": "SKU-0220",
+      "unit_price": 265.72,
+      "quoted_on": "2023-12-21"
+    },
+    {
+      "sku_id": "SKU-0220",
+      "unit_price": 278.66,
+      "quoted_on": "2023-07-30"
+    },
+    {
+      "sku_id": "SKU-0221",
+      "unit_price": 64.73,
+      "quoted_on": "2023-04-22"
+    },
+    {
+      "sku_id": "SKU-0221",
+      "unit_price": 61.53,
+      "quoted_on": "2023-08-12"
+    },
+    {
+      "sku_id": "SKU-0222",
+      "unit_price": 27.71,
+      "quoted_on": "2024-05-20"
+    },
+    {
+      "sku_id": "SKU-0222",
+      "unit_price": 28.77,
+      "quoted_on": "2023-07-22"
+    },
+    {
+      "sku_id": "SKU-0222",
+      "unit_price": 29.86,
+      "quoted_on": "2023-02-24"
+    },
+    {
+      "sku_id": "SKU-0223",
+      "unit_price": 39.81,
+      "quoted_on": "2023-02-26"
+    },
+    {
+      "sku_id": "SKU-0223",
+      "unit_price": 40.84,
+      "quoted_on": "2023-01-18"
+    },
+    {
+      "sku_id": "SKU-0224",
+      "unit_price": 321.39,
+      "quoted_on": "2024-01-08"
+    },
+    {
+      "sku_id": "SKU-0224",
+      "unit_price": 321.13,
+      "quoted_on": "2024-05-29"
+    },
+    {
+      "sku_id": "SKU-0224",
+      "unit_price": 307.03,
+      "quoted_on": "2023-07-12"
+    },
+    {
+      "sku_id": "SKU-0225",
+      "unit_price": 237.85,
+      "quoted_on": "2023-06-19"
+    },
+    {
+      "sku_id": "SKU-0226",
+      "unit_price": 235.31,
+      "quoted_on": "2023-12-01"
+    },
+    {
+      "sku_id": "SKU-0227",
+      "unit_price": 56.53,
+      "quoted_on": "2023-11-07"
+    },
+    {
+      "sku_id": "SKU-0228",
+      "unit_price": 294.24,
+      "quoted_on": "2024-03-28"
+    },
+    {
+      "sku_id": "SKU-0229",
+      "unit_price": 369.01,
+      "quoted_on": "2023-07-18"
+    },
+    {
+      "sku_id": "SKU-0230",
+      "unit_price": 392.03,
+      "quoted_on": "2024-07-23"
+    },
+    {
+      "sku_id": "SKU-0230",
+      "unit_price": 417.93,
+      "quoted_on": "2024-06-07"
+    },
+    {
+      "sku_id": "SKU-0230",
+      "unit_price": 380.2,
+      "quoted_on": "2023-01-07"
+    },
+    {
+      "sku_id": "SKU-0231",
+      "unit_price": 153.93,
+      "quoted_on": "2023-02-07"
+    },
+    {
+      "sku_id": "SKU-0231",
+      "unit_price": 149.45,
+      "quoted_on": "2024-05-28"
+    },
+    {
+      "sku_id": "SKU-0232",
+      "unit_price": 93.63,
+      "quoted_on": "2023-10-06"
+    },
+    {
+      "sku_id": "SKU-0232",
+      "unit_price": 83.11,
+      "quoted_on": "2023-03-31"
+    },
+    {
+      "sku_id": "SKU-0232",
+      "unit_price": 90.72,
+      "quoted_on": "2023-12-13"
+    },
+    {
+      "sku_id": "SKU-0233",
+      "unit_price": 100.26,
+      "quoted_on": "2023-06-04"
+    },
+    {
+      "sku_id": "SKU-0234",
+      "unit_price": 369.25,
+      "quoted_on": "2024-03-22"
+    },
+    {
+      "sku_id": "SKU-0234",
+      "unit_price": 341.32,
+      "quoted_on": "2024-01-14"
+    },
+    {
+      "sku_id": "SKU-0235",
+      "unit_price": 323.75,
+      "quoted_on": "2023-06-19"
+    },
+    {
+      "sku_id": "SKU-0236",
+      "unit_price": 309.63,
+      "quoted_on": "2023-06-14"
+    },
+    {
+      "sku_id": "SKU-0236",
+      "unit_price": 361.84,
+      "quoted_on": "2024-05-09"
+    },
+    {
+      "sku_id": "SKU-0236",
+      "unit_price": 316.46,
+      "quoted_on": "2023-03-19"
+    },
+    {
+      "sku_id": "SKU-0237",
+      "unit_price": 384.87,
+      "quoted_on": "2024-03-28"
+    },
+    {
+      "sku_id": "SKU-0238",
+      "unit_price": 238.61,
+      "quoted_on": "2023-02-18"
+    },
+    {
+      "sku_id": "SKU-0239",
+      "unit_price": 12.12,
+      "quoted_on": "2023-10-04"
+    },
+    {
+      "sku_id": "SKU-0240",
+      "unit_price": 339.42,
+      "quoted_on": "2023-04-10"
+    },
+    {
+      "sku_id": "SKU-0241",
+      "unit_price": 71.99,
+      "quoted_on": "2023-09-30"
+    },
+    {
+      "sku_id": "SKU-0241",
+      "unit_price": 77.91,
+      "quoted_on": "2024-06-01"
+    },
+    {
+      "sku_id": "SKU-0241",
+      "unit_price": 73.01,
+      "quoted_on": "2023-08-22"
+    },
+    {
+      "sku_id": "SKU-0242",
+      "unit_price": 130.45,
+      "quoted_on": "2024-01-09"
+    },
+    {
+      "sku_id": "SKU-0242",
+      "unit_price": 127.57,
+      "quoted_on": "2024-04-05"
+    },
+    {
+      "sku_id": "SKU-0242",
+      "unit_price": 120.18,
+      "quoted_on": "2024-06-06"
+    },
+    {
+      "sku_id": "SKU-0243",
+      "unit_price": 4.31,
+      "quoted_on": "2023-03-02"
+    },
+    {
+      "sku_id": "SKU-0244",
+      "unit_price": 250.11,
+      "quoted_on": "2023-08-03"
+    },
+    {
+      "sku_id": "SKU-0245",
+      "unit_price": 61.45,
+      "quoted_on": "2024-05-10"
+    },
+    {
+      "sku_id": "SKU-0245",
+      "unit_price": 62.07,
+      "quoted_on": "2023-04-06"
+    },
+    {
+      "sku_id": "SKU-0245",
+      "unit_price": 57.18,
+      "quoted_on": "2023-06-21"
+    },
+    {
+      "sku_id": "SKU-0246",
+      "unit_price": 15.57,
+      "quoted_on": "2023-10-23"
+    },
+    {
+      "sku_id": "SKU-0246",
+      "unit_price": 15.33,
+      "quoted_on": "2024-02-08"
+    },
+    {
+      "sku_id": "SKU-0247",
+      "unit_price": 85.08,
+      "quoted_on": "2024-05-03"
+    },
+    {
+      "sku_id": "SKU-0247",
+      "unit_price": 89.56,
+      "quoted_on": "2023-11-02"
+    },
+    {
+      "sku_id": "SKU-0247",
+      "unit_price": 97.06,
+      "quoted_on": "2024-07-14"
+    },
+    {
+      "sku_id": "SKU-0248",
+      "unit_price": 149.26,
+      "quoted_on": "2024-05-14"
+    },
+    {
+      "sku_id": "SKU-0248",
+      "unit_price": 141.42,
+      "quoted_on": "2023-07-15"
+    },
+    {
+      "sku_id": "SKU-0248",
+      "unit_price": 138.7,
+      "quoted_on": "2024-05-12"
+    },
+    {
+      "sku_id": "SKU-0249",
+      "unit_price": 310.24,
+      "quoted_on": "2023-11-22"
+    },
+    {
+      "sku_id": "SKU-0249",
+      "unit_price": 286.68,
+      "quoted_on": "2023-05-24"
+    },
+    {
+      "sku_id": "SKU-0250",
+      "unit_price": 252.57,
+      "quoted_on": "2023-10-24"
+    },
+    {
+      "sku_id": "SKU-0250",
+      "unit_price": 224.38,
+      "quoted_on": "2023-07-08"
+    },
+    {
+      "sku_id": "SKU-0250",
+      "unit_price": 220.0,
+      "quoted_on": "2023-05-01"
+    },
+    {
+      "sku_id": "SKU-0252",
+      "unit_price": 253.85,
+      "quoted_on": "2023-06-09"
+    },
+    {
+      "sku_id": "SKU-0252",
+      "unit_price": 241.69,
+      "quoted_on": "2024-04-26"
+    },
+    {
+      "sku_id": "SKU-0252",
+      "unit_price": 237.64,
+      "quoted_on": "2023-01-31"
+    },
+    {
+      "sku_id": "SKU-0253",
+      "unit_price": 115.24,
+      "quoted_on": "2023-04-25"
+    },
+    {
+      "sku_id": "SKU-0253",
+      "unit_price": 110.77,
+      "quoted_on": "2024-04-22"
+    },
+    {
+      "sku_id": "SKU-0254",
+      "unit_price": 209.46,
+      "quoted_on": "2023-05-27"
+    },
+    {
+      "sku_id": "SKU-0254",
+      "unit_price": 192.94,
+      "quoted_on": "2024-01-11"
+    },
+    {
+      "sku_id": "SKU-0254",
+      "unit_price": 198.49,
+      "quoted_on": "2024-04-25"
+    },
+    {
+      "sku_id": "SKU-0255",
+      "unit_price": 118.37,
+      "quoted_on": "2023-09-25"
+    },
+    {
+      "sku_id": "SKU-0256",
+      "unit_price": 45.57,
+      "quoted_on": "2024-05-19"
+    },
+    {
+      "sku_id": "SKU-0256",
+      "unit_price": 46.17,
+      "quoted_on": "2023-12-13"
+    },
+    {
+      "sku_id": "SKU-0256",
+      "unit_price": 50.67,
+      "quoted_on": "2023-03-11"
+    },
+    {
+      "sku_id": "SKU-0257",
+      "unit_price": 116.3,
+      "quoted_on": "2023-12-18"
+    },
+    {
+      "sku_id": "SKU-0257",
+      "unit_price": 111.19,
+      "quoted_on": "2023-12-27"
+    },
+    {
+      "sku_id": "SKU-0257",
+      "unit_price": 110.11,
+      "quoted_on": "2024-08-05"
+    },
+    {
+      "sku_id": "SKU-0259",
+      "unit_price": 19.95,
+      "quoted_on": "2023-10-23"
+    },
+    {
+      "sku_id": "SKU-0259",
+      "unit_price": 20.35,
+      "quoted_on": "2023-01-14"
+    },
+    {
+      "sku_id": "SKU-0259",
+      "unit_price": 20.31,
+      "quoted_on": "2023-08-27"
+    },
+    {
+      "sku_id": "SKU-0260",
+      "unit_price": 256.71,
+      "quoted_on": "2024-04-30"
+    },
+    {
+      "sku_id": "SKU-0260",
+      "unit_price": 265.54,
+      "quoted_on": "2024-05-29"
+    },
+    {
+      "sku_id": "SKU-0261",
+      "unit_price": 128.31,
+      "quoted_on": "2023-02-03"
+    },
+    {
+      "sku_id": "SKU-0262",
+      "unit_price": 58.79,
+      "quoted_on": "2023-09-26"
+    },
+    {
+      "sku_id": "SKU-0264",
+      "unit_price": 318.98,
+      "quoted_on": "2024-01-18"
+    },
+    {
+      "sku_id": "SKU-0264",
+      "unit_price": 316.3,
+      "quoted_on": "2023-03-07"
+    },
+    {
+      "sku_id": "SKU-0264",
+      "unit_price": 302.55,
+      "quoted_on": "2023-12-03"
+    },
+    {
+      "sku_id": "SKU-0265",
+      "unit_price": 156.65,
+      "quoted_on": "2023-01-19"
+    },
+    {
+      "sku_id": "SKU-0266",
+      "unit_price": 198.45,
+      "quoted_on": "2023-07-26"
+    },
+    {
+      "sku_id": "SKU-0267",
+      "unit_price": 309.02,
+      "quoted_on": "2023-05-25"
+    },
+    {
+      "sku_id": "SKU-0269",
+      "unit_price": 10.06,
+      "quoted_on": "2023-11-11"
+    },
+    {
+      "sku_id": "SKU-0270",
+      "unit_price": 343.8,
+      "quoted_on": "2023-07-02"
+    },
+    {
+      "sku_id": "SKU-0270",
+      "unit_price": 342.2,
+      "quoted_on": "2023-11-13"
+    },
+    {
+      "sku_id": "SKU-0270",
+      "unit_price": 378.04,
+      "quoted_on": "2024-06-09"
+    },
+    {
+      "sku_id": "SKU-0271",
+      "unit_price": 245.98,
+      "quoted_on": "2023-10-10"
+    },
+    {
+      "sku_id": "SKU-0271",
+      "unit_price": 248.9,
+      "quoted_on": "2023-06-19"
+    },
+    {
+      "sku_id": "SKU-0271",
+      "unit_price": 248.33,
+      "quoted_on": "2024-02-27"
+    },
+    {
+      "sku_id": "SKU-0272",
+      "unit_price": 175.75,
+      "quoted_on": "2023-01-02"
+    },
+    {
+      "sku_id": "SKU-0272",
+      "unit_price": 166.3,
+      "quoted_on": "2024-08-11"
+    },
+    {
+      "sku_id": "SKU-0273",
+      "unit_price": 9.65,
+      "quoted_on": "2023-06-18"
+    },
+    {
+      "sku_id": "SKU-0273",
+      "unit_price": 11.12,
+      "quoted_on": "2023-03-02"
+    },
+    {
+      "sku_id": "SKU-0274",
+      "unit_price": 332.13,
+      "quoted_on": "2023-10-19"
+    },
+    {
+      "sku_id": "SKU-0274",
+      "unit_price": 323.21,
+      "quoted_on": "2023-03-05"
+    },
+    {
+      "sku_id": "SKU-0274",
+      "unit_price": 359.03,
+      "quoted_on": "2023-05-01"
+    },
+    {
+      "sku_id": "SKU-0276",
+      "unit_price": 41.26,
+      "quoted_on": "2023-11-24"
+    },
+    {
+      "sku_id": "SKU-0277",
+      "unit_price": 105.2,
+      "quoted_on": "2023-08-10"
+    },
+    {
+      "sku_id": "SKU-0278",
+      "unit_price": 235.09,
+      "quoted_on": "2024-06-09"
+    },
+    {
+      "sku_id": "SKU-0281",
+      "unit_price": 219.34,
+      "quoted_on": "2023-03-06"
+    },
+    {
+      "sku_id": "SKU-0282",
+      "unit_price": 222.83,
+      "quoted_on": "2024-02-25"
+    },
+    {
+      "sku_id": "SKU-0283",
+      "unit_price": 155.47,
+      "quoted_on": "2023-05-19"
+    },
+    {
+      "sku_id": "SKU-0284",
+      "unit_price": 340.82,
+      "quoted_on": "2023-05-29"
+    },
+    {
+      "sku_id": "SKU-0284",
+      "unit_price": 331.26,
+      "quoted_on": "2023-12-01"
+    },
+    {
+      "sku_id": "SKU-0285",
+      "unit_price": 95.88,
+      "quoted_on": "2023-10-07"
+    },
+    {
+      "sku_id": "SKU-0285",
+      "unit_price": 97.31,
+      "quoted_on": "2023-12-07"
+    },
+    {
+      "sku_id": "SKU-0285",
+      "unit_price": 98.49,
+      "quoted_on": "2024-07-14"
+    },
+    {
+      "sku_id": "SKU-0286",
+      "unit_price": 79.5,
+      "quoted_on": "2023-09-23"
+    },
+    {
+      "sku_id": "SKU-0286",
+      "unit_price": 87.83,
+      "quoted_on": "2023-01-29"
+    },
+    {
+      "sku_id": "SKU-0286",
+      "unit_price": 86.67,
+      "quoted_on": "2024-03-27"
+    },
+    {
+      "sku_id": "SKU-0287",
+      "unit_price": 321.57,
+      "quoted_on": "2023-06-27"
+    },
+    {
+      "sku_id": "SKU-0287",
+      "unit_price": 313.31,
+      "quoted_on": "2023-03-09"
+    },
+    {
+      "sku_id": "SKU-0288",
+      "unit_price": 74.05,
+      "quoted_on": "2023-11-26"
+    },
+    {
+      "sku_id": "SKU-0288",
+      "unit_price": 72.35,
+      "quoted_on": "2023-03-19"
+    },
+    {
+      "sku_id": "SKU-0289",
+      "unit_price": 199.37,
+      "quoted_on": "2023-08-01"
+    },
+    {
+      "sku_id": "SKU-0289",
+      "unit_price": 192.47,
+      "quoted_on": "2024-08-08"
+    },
+    {
+      "sku_id": "SKU-0289",
+      "unit_price": 190.78,
+      "quoted_on": "2023-10-18"
+    },
+    {
+      "sku_id": "SKU-0290",
+      "unit_price": 327.03,
+      "quoted_on": "2024-06-16"
+    },
+    {
+      "sku_id": "SKU-0291",
+      "unit_price": 356.21,
+      "quoted_on": "2024-05-28"
+    },
+    {
+      "sku_id": "SKU-0291",
+      "unit_price": 357.89,
+      "quoted_on": "2024-04-05"
+    },
+    {
+      "sku_id": "SKU-0293",
+      "unit_price": 362.02,
+      "quoted_on": "2023-10-06"
+    },
+    {
+      "sku_id": "SKU-0293",
+      "unit_price": 385.0,
+      "quoted_on": "2024-04-07"
+    },
+    {
+      "sku_id": "SKU-0294",
+      "unit_price": 60.08,
+      "quoted_on": "2024-02-19"
+    },
+    {
+      "sku_id": "SKU-0294",
+      "unit_price": 65.96,
+      "quoted_on": "2023-08-25"
+    },
+    {
+      "sku_id": "SKU-0294",
+      "unit_price": 65.81,
+      "quoted_on": "2023-02-13"
+    },
+    {
+      "sku_id": "SKU-0295",
+      "unit_price": 175.87,
+      "quoted_on": "2023-06-29"
+    },
+    {
+      "sku_id": "SKU-0296",
+      "unit_price": 120.23,
+      "quoted_on": "2023-07-03"
+    },
+    {
+      "sku_id": "SKU-0296",
+      "unit_price": 117.43,
+      "quoted_on": "2024-01-18"
+    },
+    {
+      "sku_id": "SKU-0298",
+      "unit_price": 191.54,
+      "quoted_on": "2023-06-06"
+    },
+    {
+      "sku_id": "SKU-0298",
+      "unit_price": 189.58,
+      "quoted_on": "2023-05-24"
+    },
+    {
+      "sku_id": "SKU-0298",
+      "unit_price": 203.58,
+      "quoted_on": "2023-11-01"
+    },
+    {
+      "sku_id": "SKU-0299",
+      "unit_price": 322.55,
+      "quoted_on": "2023-03-30"
+    },
+    {
+      "sku_id": "SKU-0300",
+      "unit_price": 345.19,
+      "quoted_on": "2024-02-12"
+    },
+    {
+      "sku_id": "SKU-0301",
+      "unit_price": 252.99,
+      "quoted_on": "2024-04-09"
+    },
+    {
+      "sku_id": "SKU-0301",
+      "unit_price": 271.27,
+      "quoted_on": "2023-10-13"
+    },
+    {
+      "sku_id": "SKU-0302",
+      "unit_price": 203.32,
+      "quoted_on": "2024-05-10"
+    },
+    {
+      "sku_id": "SKU-0303",
+      "unit_price": 323.43,
+      "quoted_on": "2024-06-29"
+    },
+    {
+      "sku_id": "SKU-0303",
+      "unit_price": 331.2,
+      "quoted_on": "2023-07-16"
+    },
+    {
+      "sku_id": "SKU-0303",
+      "unit_price": 336.08,
+      "quoted_on": "2023-05-16"
+    },
+    {
+      "sku_id": "SKU-0304",
+      "unit_price": 174.46,
+      "quoted_on": "2023-06-16"
+    },
+    {
+      "sku_id": "SKU-0304",
+      "unit_price": 178.85,
+      "quoted_on": "2023-11-12"
+    },
+    {
+      "sku_id": "SKU-0304",
+      "unit_price": 198.56,
+      "quoted_on": "2024-02-14"
+    },
+    {
+      "sku_id": "SKU-0305",
+      "unit_price": 276.16,
+      "quoted_on": "2023-06-02"
+    },
+    {
+      "sku_id": "SKU-0306",
+      "unit_price": 214.96,
+      "quoted_on": "2024-05-08"
+    },
+    {
+      "sku_id": "SKU-0306",
+      "unit_price": 197.13,
+      "quoted_on": "2024-08-21"
+    },
+    {
+      "sku_id": "SKU-0306",
+      "unit_price": 210.99,
+      "quoted_on": "2024-03-15"
+    },
+    {
+      "sku_id": "SKU-0307",
+      "unit_price": 29.22,
+      "quoted_on": "2023-10-12"
+    },
+    {
+      "sku_id": "SKU-0307",
+      "unit_price": 25.48,
+      "quoted_on": "2023-03-22"
+    },
+    {
+      "sku_id": "SKU-0307",
+      "unit_price": 27.32,
+      "quoted_on": "2023-06-09"
+    },
+    {
+      "sku_id": "SKU-0308",
+      "unit_price": 357.63,
+      "quoted_on": "2023-07-28"
+    },
+    {
+      "sku_id": "SKU-0308",
+      "unit_price": 356.96,
+      "quoted_on": "2023-11-17"
+    },
+    {
+      "sku_id": "SKU-0309",
+      "unit_price": 287.21,
+      "quoted_on": "2023-09-29"
+    },
+    {
+      "sku_id": "SKU-0310",
+      "unit_price": 76.91,
+      "quoted_on": "2023-12-28"
+    },
+    {
+      "sku_id": "SKU-0310",
+      "unit_price": 74.26,
+      "quoted_on": "2023-10-08"
+    },
+    {
+      "sku_id": "SKU-0310",
+      "unit_price": 74.26,
+      "quoted_on": "2023-05-20"
+    },
+    {
+      "sku_id": "SKU-0311",
+      "unit_price": 187.15,
+      "quoted_on": "2023-03-30"
+    },
+    {
+      "sku_id": "SKU-0311",
+      "unit_price": 189.24,
+      "quoted_on": "2023-01-30"
+    },
+    {
+      "sku_id": "SKU-0312",
+      "unit_price": 215.06,
+      "quoted_on": "2023-11-19"
+    },
+    {
+      "sku_id": "SKU-0312",
+      "unit_price": 235.9,
+      "quoted_on": "2024-01-13"
+    },
+    {
+      "sku_id": "SKU-0312",
+      "unit_price": 200.81,
+      "quoted_on": "2024-06-11"
+    },
+    {
+      "sku_id": "SKU-0313",
+      "unit_price": 154.64,
+      "quoted_on": "2024-06-17"
+    },
+    {
+      "sku_id": "SKU-0314",
+      "unit_price": 176.45,
+      "quoted_on": "2023-08-14"
+    },
+    {
+      "sku_id": "SKU-0315",
+      "unit_price": 263.08,
+      "quoted_on": "2024-08-11"
+    },
+    {
+      "sku_id": "SKU-0315",
+      "unit_price": 233.65,
+      "quoted_on": "2023-03-30"
+    },
+    {
+      "sku_id": "SKU-0315",
+      "unit_price": 258.57,
+      "quoted_on": "2024-07-17"
+    },
+    {
+      "sku_id": "SKU-0316",
+      "unit_price": 273.12,
+      "quoted_on": "2024-04-08"
+    },
+    {
+      "sku_id": "SKU-0316",
+      "unit_price": 285.82,
+      "quoted_on": "2023-08-05"
+    },
+    {
+      "sku_id": "SKU-0317",
+      "unit_price": 42.97,
+      "quoted_on": "2023-09-11"
+    },
+    {
+      "sku_id": "SKU-0318",
+      "unit_price": 123.9,
+      "quoted_on": "2023-09-21"
+    },
+    {
+      "sku_id": "SKU-0318",
+      "unit_price": 125.38,
+      "quoted_on": "2023-09-16"
+    },
+    {
+      "sku_id": "SKU-0321",
+      "unit_price": 256.85,
+      "quoted_on": "2024-01-10"
+    },
+    {
+      "sku_id": "SKU-0322",
+      "unit_price": 147.37,
+      "quoted_on": "2023-05-14"
+    },
+    {
+      "sku_id": "SKU-0323",
+      "unit_price": 292.74,
+      "quoted_on": "2024-04-07"
+    },
+    {
+      "sku_id": "SKU-0323",
+      "unit_price": 297.23,
+      "quoted_on": "2024-04-10"
+    },
+    {
+      "sku_id": "SKU-0323",
+      "unit_price": 302.28,
+      "quoted_on": "2023-06-29"
+    },
+    {
+      "sku_id": "SKU-0324",
+      "unit_price": 236.58,
+      "quoted_on": "2024-05-05"
+    },
+    {
+      "sku_id": "SKU-0325",
+      "unit_price": 121.57,
+      "quoted_on": "2023-06-10"
+    },
+    {
+      "sku_id": "SKU-0325",
+      "unit_price": 120.14,
+      "quoted_on": "2023-06-08"
+    },
+    {
+      "sku_id": "SKU-0326",
+      "unit_price": 356.48,
+      "quoted_on": "2023-12-16"
+    },
+    {
+      "sku_id": "SKU-0326",
+      "unit_price": 340.09,
+      "quoted_on": "2023-04-18"
+    },
+    {
+      "sku_id": "SKU-0327",
+      "unit_price": 300.38,
+      "quoted_on": "2023-02-12"
+    },
+    {
+      "sku_id": "SKU-0327",
+      "unit_price": 275.76,
+      "quoted_on": "2024-05-10"
+    },
+    {
+      "sku_id": "SKU-0328",
+      "unit_price": 327.76,
+      "quoted_on": "2023-01-27"
+    },
+    {
+      "sku_id": "SKU-0328",
+      "unit_price": 319.63,
+      "quoted_on": "2023-01-04"
+    },
+    {
+      "sku_id": "SKU-0329",
+      "unit_price": 231.19,
+      "quoted_on": "2024-05-31"
+    },
+    {
+      "sku_id": "SKU-0330",
+      "unit_price": 184.46,
+      "quoted_on": "2023-05-16"
+    },
+    {
+      "sku_id": "SKU-0330",
+      "unit_price": 171.67,
+      "quoted_on": "2024-07-19"
+    },
+    {
+      "sku_id": "SKU-0331",
+      "unit_price": 146.93,
+      "quoted_on": "2024-04-02"
+    },
+    {
+      "sku_id": "SKU-0331",
+      "unit_price": 160.09,
+      "quoted_on": "2023-04-04"
+    },
+    {
+      "sku_id": "SKU-0333",
+      "unit_price": 193.36,
+      "quoted_on": "2024-01-13"
+    },
+    {
+      "sku_id": "SKU-0333",
+      "unit_price": 196.89,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0333",
+      "unit_price": 214.02,
+      "quoted_on": "2023-07-30"
+    },
+    {
+      "sku_id": "SKU-0334",
+      "unit_price": 61.95,
+      "quoted_on": "2024-01-04"
+    },
+    {
+      "sku_id": "SKU-0334",
+      "unit_price": 62.54,
+      "quoted_on": "2023-10-12"
+    },
+    {
+      "sku_id": "SKU-0335",
+      "unit_price": 360.52,
+      "quoted_on": "2024-01-07"
+    },
+    {
+      "sku_id": "SKU-0335",
+      "unit_price": 341.56,
+      "quoted_on": "2023-08-16"
+    },
+    {
+      "sku_id": "SKU-0335",
+      "unit_price": 344.13,
+      "quoted_on": "2024-02-21"
+    },
+    {
+      "sku_id": "SKU-0336",
+      "unit_price": 329.96,
+      "quoted_on": "2023-11-10"
+    },
+    {
+      "sku_id": "SKU-0337",
+      "unit_price": 378.42,
+      "quoted_on": "2023-12-13"
+    },
+    {
+      "sku_id": "SKU-0337",
+      "unit_price": 340.91,
+      "quoted_on": "2023-12-06"
+    },
+    {
+      "sku_id": "SKU-0338",
+      "unit_price": 134.41,
+      "quoted_on": "2023-11-21"
+    },
+    {
+      "sku_id": "SKU-0338",
+      "unit_price": 136.12,
+      "quoted_on": "2023-09-07"
+    },
+    {
+      "sku_id": "SKU-0338",
+      "unit_price": 148.58,
+      "quoted_on": "2023-01-21"
+    },
+    {
+      "sku_id": "SKU-0340",
+      "unit_price": 64.34,
+      "quoted_on": "2023-04-16"
+    },
+    {
+      "sku_id": "SKU-0340",
+      "unit_price": 72.48,
+      "quoted_on": "2024-04-12"
+    },
+    {
+      "sku_id": "SKU-0340",
+      "unit_price": 68.67,
+      "quoted_on": "2024-08-07"
+    },
+    {
+      "sku_id": "SKU-0341",
+      "unit_price": 315.08,
+      "quoted_on": "2023-01-09"
+    },
+    {
+      "sku_id": "SKU-0341",
+      "unit_price": 323.52,
+      "quoted_on": "2023-05-07"
+    },
+    {
+      "sku_id": "SKU-0342",
+      "unit_price": 65.41,
+      "quoted_on": "2023-10-06"
+    },
+    {
+      "sku_id": "SKU-0343",
+      "unit_price": 181.29,
+      "quoted_on": "2024-02-22"
+    },
+    {
+      "sku_id": "SKU-0343",
+      "unit_price": 176.49,
+      "quoted_on": "2024-01-07"
+    },
+    {
+      "sku_id": "SKU-0344",
+      "unit_price": 103.46,
+      "quoted_on": "2023-02-11"
+    },
+    {
+      "sku_id": "SKU-0344",
+      "unit_price": 92.91,
+      "quoted_on": "2024-07-20"
+    },
+    {
+      "sku_id": "SKU-0345",
+      "unit_price": 119.94,
+      "quoted_on": "2023-12-31"
+    },
+    {
+      "sku_id": "SKU-0345",
+      "unit_price": 122.97,
+      "quoted_on": "2023-01-14"
+    },
+    {
+      "sku_id": "SKU-0346",
+      "unit_price": 180.54,
+      "quoted_on": "2023-03-07"
+    },
+    {
+      "sku_id": "SKU-0346",
+      "unit_price": 192.67,
+      "quoted_on": "2024-08-14"
+    },
+    {
+      "sku_id": "SKU-0346",
+      "unit_price": 202.54,
+      "quoted_on": "2024-08-10"
+    },
+    {
+      "sku_id": "SKU-0347",
+      "unit_price": 122.24,
+      "quoted_on": "2023-05-13"
+    },
+    {
+      "sku_id": "SKU-0347",
+      "unit_price": 133.92,
+      "quoted_on": "2023-04-09"
+    },
+    {
+      "sku_id": "SKU-0347",
+      "unit_price": 139.41,
+      "quoted_on": "2024-07-09"
+    },
+    {
+      "sku_id": "SKU-0348",
+      "unit_price": 199.65,
+      "quoted_on": "2023-01-30"
+    },
+    {
+      "sku_id": "SKU-0348",
+      "unit_price": 210.59,
+      "quoted_on": "2023-07-21"
+    },
+    {
+      "sku_id": "SKU-0349",
+      "unit_price": 160.84,
+      "quoted_on": "2023-06-30"
+    },
+    {
+      "sku_id": "SKU-0350",
+      "unit_price": 420.79,
+      "quoted_on": "2024-05-07"
+    },
+    {
+      "sku_id": "SKU-0351",
+      "unit_price": 120.04,
+      "quoted_on": "2024-07-04"
+    },
+    {
+      "sku_id": "SKU-0352",
+      "unit_price": 202.65,
+      "quoted_on": "2024-02-09"
+    },
+    {
+      "sku_id": "SKU-0353",
+      "unit_price": 347.6,
+      "quoted_on": "2023-03-28"
+    },
+    {
+      "sku_id": "SKU-0353",
+      "unit_price": 325.01,
+      "quoted_on": "2023-02-06"
+    },
+    {
+      "sku_id": "SKU-0353",
+      "unit_price": 321.28,
+      "quoted_on": "2023-09-27"
+    },
+    {
+      "sku_id": "SKU-0354",
+      "unit_price": 61.47,
+      "quoted_on": "2023-01-20"
+    },
+    {
+      "sku_id": "SKU-0354",
+      "unit_price": 56.41,
+      "quoted_on": "2023-08-11"
+    },
+    {
+      "sku_id": "SKU-0354",
+      "unit_price": 56.39,
+      "quoted_on": "2024-07-13"
+    },
+    {
+      "sku_id": "SKU-0355",
+      "unit_price": 266.11,
+      "quoted_on": "2023-11-18"
+    },
+    {
+      "sku_id": "SKU-0355",
+      "unit_price": 258.4,
+      "quoted_on": "2023-10-09"
+    },
+    {
+      "sku_id": "SKU-0356",
+      "unit_price": 239.29,
+      "quoted_on": "2023-08-21"
+    },
+    {
+      "sku_id": "SKU-0356",
+      "unit_price": 224.49,
+      "quoted_on": "2023-06-17"
+    },
+    {
+      "sku_id": "SKU-0357",
+      "unit_price": 337.38,
+      "quoted_on": "2023-09-25"
+    },
+    {
+      "sku_id": "SKU-0357",
+      "unit_price": 347.91,
+      "quoted_on": "2023-10-07"
+    },
+    {
+      "sku_id": "SKU-0358",
+      "unit_price": 119.55,
+      "quoted_on": "2023-07-01"
+    },
+    {
+      "sku_id": "SKU-0359",
+      "unit_price": 108.28,
+      "quoted_on": "2023-04-09"
+    },
+    {
+      "sku_id": "SKU-0359",
+      "unit_price": 108.66,
+      "quoted_on": "2023-09-17"
+    },
+    {
+      "sku_id": "SKU-0360",
+      "unit_price": 58.79,
+      "quoted_on": "2023-09-28"
+    },
+    {
+      "sku_id": "SKU-0360",
+      "unit_price": 61.44,
+      "quoted_on": "2024-02-02"
+    },
+    {
+      "sku_id": "SKU-0361",
+      "unit_price": 370.38,
+      "quoted_on": "2023-06-24"
+    },
+    {
+      "sku_id": "SKU-0361",
+      "unit_price": 422.23,
+      "quoted_on": "2023-08-06"
+    },
+    {
+      "sku_id": "SKU-0362",
+      "unit_price": 179.59,
+      "quoted_on": "2024-02-28"
+    },
+    {
+      "sku_id": "SKU-0363",
+      "unit_price": 11.86,
+      "quoted_on": "2024-05-16"
+    },
+    {
+      "sku_id": "SKU-0364",
+      "unit_price": 224.85,
+      "quoted_on": "2023-10-27"
+    },
+    {
+      "sku_id": "SKU-0365",
+      "unit_price": 425.77,
+      "quoted_on": "2023-04-08"
+    },
+    {
+      "sku_id": "SKU-0365",
+      "unit_price": 411.63,
+      "quoted_on": "2023-06-05"
+    },
+    {
+      "sku_id": "SKU-0366",
+      "unit_price": 13.85,
+      "quoted_on": "2024-03-15"
+    },
+    {
+      "sku_id": "SKU-0366",
+      "unit_price": 14.43,
+      "quoted_on": "2023-06-30"
+    },
+    {
+      "sku_id": "SKU-0367",
+      "unit_price": 376.54,
+      "quoted_on": "2024-06-28"
+    },
+    {
+      "sku_id": "SKU-0367",
+      "unit_price": 329.18,
+      "quoted_on": "2024-03-24"
+    },
+    {
+      "sku_id": "SKU-0367",
+      "unit_price": 322.93,
+      "quoted_on": "2024-07-24"
+    },
+    {
+      "sku_id": "SKU-0368",
+      "unit_price": 311.98,
+      "quoted_on": "2024-05-18"
+    },
+    {
+      "sku_id": "SKU-0368",
+      "unit_price": 309.19,
+      "quoted_on": "2024-05-29"
+    },
+    {
+      "sku_id": "SKU-0368",
+      "unit_price": 344.89,
+      "quoted_on": "2023-12-08"
+    },
+    {
+      "sku_id": "SKU-0369",
+      "unit_price": 127.08,
+      "quoted_on": "2024-05-15"
+    },
+    {
+      "sku_id": "SKU-0369",
+      "unit_price": 117.67,
+      "quoted_on": "2023-05-18"
+    },
+    {
+      "sku_id": "SKU-0370",
+      "unit_price": 281.8,
+      "quoted_on": "2023-06-27"
+    },
+    {
+      "sku_id": "SKU-0370",
+      "unit_price": 299.98,
+      "quoted_on": "2023-11-04"
+    },
+    {
+      "sku_id": "SKU-0371",
+      "unit_price": 275.91,
+      "quoted_on": "2023-09-27"
+    },
+    {
+      "sku_id": "SKU-0371",
+      "unit_price": 300.07,
+      "quoted_on": "2024-01-16"
+    },
+    {
+      "sku_id": "SKU-0372",
+      "unit_price": 4.06,
+      "quoted_on": "2023-03-11"
+    },
+    {
+      "sku_id": "SKU-0372",
+      "unit_price": 3.82,
+      "quoted_on": "2023-07-17"
+    },
+    {
+      "sku_id": "SKU-0372",
+      "unit_price": 3.95,
+      "quoted_on": "2023-10-27"
+    },
+    {
+      "sku_id": "SKU-0373",
+      "unit_price": 115.7,
+      "quoted_on": "2023-11-03"
+    },
+    {
+      "sku_id": "SKU-0373",
+      "unit_price": 101.33,
+      "quoted_on": "2023-11-01"
+    },
+    {
+      "sku_id": "SKU-0374",
+      "unit_price": 213.49,
+      "quoted_on": "2024-02-05"
+    },
+    {
+      "sku_id": "SKU-0374",
+      "unit_price": 226.67,
+      "quoted_on": "2023-04-17"
+    },
+    {
+      "sku_id": "SKU-0375",
+      "unit_price": 226.96,
+      "quoted_on": "2024-07-30"
+    },
+    {
+      "sku_id": "SKU-0375",
+      "unit_price": 233.67,
+      "quoted_on": "2023-04-03"
+    },
+    {
+      "sku_id": "SKU-0376",
+      "unit_price": 128.34,
+      "quoted_on": "2023-05-14"
+    },
+    {
+      "sku_id": "SKU-0377",
+      "unit_price": 22.25,
+      "quoted_on": "2023-10-08"
+    },
+    {
+      "sku_id": "SKU-0377",
+      "unit_price": 20.04,
+      "quoted_on": "2024-03-27"
+    },
+    {
+      "sku_id": "SKU-0379",
+      "unit_price": 47.53,
+      "quoted_on": "2023-07-24"
+    },
+    {
+      "sku_id": "SKU-0379",
+      "unit_price": 46.87,
+      "quoted_on": "2023-07-19"
+    },
+    {
+      "sku_id": "SKU-0379",
+      "unit_price": 47.27,
+      "quoted_on": "2023-09-07"
+    },
+    {
+      "sku_id": "SKU-0380",
+      "unit_price": 259.85,
+      "quoted_on": "2023-03-09"
+    },
+    {
+      "sku_id": "SKU-0381",
+      "unit_price": 232.08,
+      "quoted_on": "2023-01-28"
+    },
+    {
+      "sku_id": "SKU-0381",
+      "unit_price": 232.44,
+      "quoted_on": "2023-01-04"
+    },
+    {
+      "sku_id": "SKU-0381",
+      "unit_price": 214.42,
+      "quoted_on": "2024-05-18"
+    },
+    {
+      "sku_id": "SKU-0383",
+      "unit_price": 249.5,
+      "quoted_on": "2023-05-29"
+    },
+    {
+      "sku_id": "SKU-0383",
+      "unit_price": 259.1,
+      "quoted_on": "2023-08-21"
+    },
+    {
+      "sku_id": "SKU-0383",
+      "unit_price": 249.56,
+      "quoted_on": "2024-05-23"
+    },
+    {
+      "sku_id": "SKU-0384",
+      "unit_price": 160.51,
+      "quoted_on": "2023-09-22"
+    },
+    {
+      "sku_id": "SKU-0385",
+      "unit_price": 37.46,
+      "quoted_on": "2023-11-26"
+    },
+    {
+      "sku_id": "SKU-0385",
+      "unit_price": 37.75,
+      "quoted_on": "2023-06-29"
+    },
+    {
+      "sku_id": "SKU-0385",
+      "unit_price": 35.14,
+      "quoted_on": "2024-06-26"
+    },
+    {
+      "sku_id": "SKU-0386",
+      "unit_price": 28.4,
+      "quoted_on": "2024-02-07"
+    },
+    {
+      "sku_id": "SKU-0386",
+      "unit_price": 30.52,
+      "quoted_on": "2024-02-21"
+    },
+    {
+      "sku_id": "SKU-0386",
+      "unit_price": 31.94,
+      "quoted_on": "2024-07-12"
+    },
+    {
+      "sku_id": "SKU-0387",
+      "unit_price": 216.91,
+      "quoted_on": "2023-06-17"
+    },
+    {
+      "sku_id": "SKU-0387",
+      "unit_price": 213.23,
+      "quoted_on": "2023-09-28"
+    },
+    {
+      "sku_id": "SKU-0387",
+      "unit_price": 200.45,
+      "quoted_on": "2023-05-06"
+    },
+    {
+      "sku_id": "SKU-0390",
+      "unit_price": 387.99,
+      "quoted_on": "2024-04-11"
+    },
+    {
+      "sku_id": "SKU-0391",
+      "unit_price": 8.44,
+      "quoted_on": "2023-07-18"
+    },
+    {
+      "sku_id": "SKU-0392",
+      "unit_price": 133.8,
+      "quoted_on": "2024-07-21"
+    },
+    {
+      "sku_id": "SKU-0392",
+      "unit_price": 137.67,
+      "quoted_on": "2023-05-15"
+    },
+    {
+      "sku_id": "SKU-0393",
+      "unit_price": 272.7,
+      "quoted_on": "2024-02-20"
+    },
+    {
+      "sku_id": "SKU-0393",
+      "unit_price": 270.22,
+      "quoted_on": "2023-06-05"
+    },
+    {
+      "sku_id": "SKU-0394",
+      "unit_price": 294.99,
+      "quoted_on": "2024-05-11"
+    },
+    {
+      "sku_id": "SKU-0396",
+      "unit_price": 355.39,
+      "quoted_on": "2023-03-25"
+    },
+    {
+      "sku_id": "SKU-0396",
+      "unit_price": 335.4,
+      "quoted_on": "2023-10-08"
+    },
+    {
+      "sku_id": "SKU-0396",
+      "unit_price": 324.54,
+      "quoted_on": "2023-09-25"
+    },
+    {
+      "sku_id": "SKU-0397",
+      "unit_price": 320.94,
+      "quoted_on": "2023-09-12"
+    },
+    {
+      "sku_id": "SKU-0397",
+      "unit_price": 315.51,
+      "quoted_on": "2023-04-03"
+    },
+    {
+      "sku_id": "SKU-0397",
+      "unit_price": 336.7,
+      "quoted_on": "2023-04-05"
+    },
+    {
+      "sku_id": "SKU-0398",
+      "unit_price": 307.33,
+      "quoted_on": "2023-01-08"
+    },
+    {
+      "sku_id": "SKU-0398",
+      "unit_price": 277.61,
+      "quoted_on": "2024-07-06"
+    },
+    {
+      "sku_id": "SKU-0398",
+      "unit_price": 304.61,
+      "quoted_on": "2023-10-28"
+    },
+    {
+      "sku_id": "SKU-0399",
+      "unit_price": 355.17,
+      "quoted_on": "2023-04-29"
+    },
+    {
+      "sku_id": "SKU-0399",
+      "unit_price": 331.19,
+      "quoted_on": "2023-08-31"
+    },
+    {
+      "sku_id": "SKU-0400",
+      "unit_price": 349.49,
+      "quoted_on": "2023-05-16"
+    },
+    {
+      "sku_id": "SKU-0401",
+      "unit_price": 116.97,
+      "quoted_on": "2023-09-09"
+    },
+    {
+      "sku_id": "SKU-0401",
+      "unit_price": 113.73,
+      "quoted_on": "2023-10-13"
+    },
+    {
+      "sku_id": "SKU-0402",
+      "unit_price": 90.0,
+      "quoted_on": "2023-11-01"
+    },
+    {
+      "sku_id": "SKU-0402",
+      "unit_price": 88.97,
+      "quoted_on": "2024-04-29"
+    },
+    {
+      "sku_id": "SKU-0403",
+      "unit_price": 387.94,
+      "quoted_on": "2023-01-28"
+    },
+    {
+      "sku_id": "SKU-0403",
+      "unit_price": 376.75,
+      "quoted_on": "2023-07-19"
+    },
+    {
+      "sku_id": "SKU-0404",
+      "unit_price": 418.12,
+      "quoted_on": "2023-06-21"
+    },
+    {
+      "sku_id": "SKU-0404",
+      "unit_price": 397.89,
+      "quoted_on": "2023-09-08"
+    },
+    {
+      "sku_id": "SKU-0405",
+      "unit_price": 102.1,
+      "quoted_on": "2023-08-11"
+    },
+    {
+      "sku_id": "SKU-0405",
+      "unit_price": 107.87,
+      "quoted_on": "2023-08-29"
+    },
+    {
+      "sku_id": "SKU-0406",
+      "unit_price": 80.26,
+      "quoted_on": "2024-02-04"
+    },
+    {
+      "sku_id": "SKU-0407",
+      "unit_price": 304.49,
+      "quoted_on": "2023-08-12"
+    },
+    {
+      "sku_id": "SKU-0407",
+      "unit_price": 336.69,
+      "quoted_on": "2023-01-28"
+    },
+    {
+      "sku_id": "SKU-0408",
+      "unit_price": 133.24,
+      "quoted_on": "2024-01-12"
+    },
+    {
+      "sku_id": "SKU-0409",
+      "unit_price": 146.82,
+      "quoted_on": "2024-03-26"
+    },
+    {
+      "sku_id": "SKU-0409",
+      "unit_price": 152.41,
+      "quoted_on": "2024-02-02"
+    },
+    {
+      "sku_id": "SKU-0409",
+      "unit_price": 144.08,
+      "quoted_on": "2024-04-20"
+    },
+    {
+      "sku_id": "SKU-0411",
+      "unit_price": 160.19,
+      "quoted_on": "2023-05-01"
+    },
+    {
+      "sku_id": "SKU-0411",
+      "unit_price": 173.45,
+      "quoted_on": "2023-07-15"
+    },
+    {
+      "sku_id": "SKU-0412",
+      "unit_price": 198.29,
+      "quoted_on": "2023-12-28"
+    },
+    {
+      "sku_id": "SKU-0413",
+      "unit_price": 404.97,
+      "quoted_on": "2023-07-06"
+    },
+    {
+      "sku_id": "SKU-0413",
+      "unit_price": 382.73,
+      "quoted_on": "2023-04-24"
+    },
+    {
+      "sku_id": "SKU-0413",
+      "unit_price": 403.33,
+      "quoted_on": "2023-04-18"
+    },
+    {
+      "sku_id": "SKU-0414",
+      "unit_price": 313.22,
+      "quoted_on": "2024-03-29"
+    },
+    {
+      "sku_id": "SKU-0415",
+      "unit_price": 36.39,
+      "quoted_on": "2023-01-26"
+    },
+    {
+      "sku_id": "SKU-0415",
+      "unit_price": 34.7,
+      "quoted_on": "2023-01-21"
+    },
+    {
+      "sku_id": "SKU-0415",
+      "unit_price": 37.06,
+      "quoted_on": "2024-02-25"
+    },
+    {
+      "sku_id": "SKU-0416",
+      "unit_price": 346.0,
+      "quoted_on": "2023-02-17"
+    },
+    {
+      "sku_id": "SKU-0417",
+      "unit_price": 130.07,
+      "quoted_on": "2023-04-19"
+    },
+    {
+      "sku_id": "SKU-0417",
+      "unit_price": 142.28,
+      "quoted_on": "2023-02-14"
+    },
+    {
+      "sku_id": "SKU-0417",
+      "unit_price": 144.42,
+      "quoted_on": "2024-07-28"
+    },
+    {
+      "sku_id": "SKU-0418",
+      "unit_price": 270.73,
+      "quoted_on": "2023-12-31"
+    },
+    {
+      "sku_id": "SKU-0418",
+      "unit_price": 283.05,
+      "quoted_on": "2023-09-29"
+    },
+    {
+      "sku_id": "SKU-0419",
+      "unit_price": 235.56,
+      "quoted_on": "2023-02-10"
+    },
+    {
+      "sku_id": "SKU-0420",
+      "unit_price": 269.99,
+      "quoted_on": "2023-09-07"
+    },
+    {
+      "sku_id": "SKU-0421",
+      "unit_price": 17.95,
+      "quoted_on": "2023-06-10"
+    },
+    {
+      "sku_id": "SKU-0422",
+      "unit_price": 148.63,
+      "quoted_on": "2023-01-27"
+    },
+    {
+      "sku_id": "SKU-0422",
+      "unit_price": 150.17,
+      "quoted_on": "2023-09-03"
+    },
+    {
+      "sku_id": "SKU-0423",
+      "unit_price": 110.49,
+      "quoted_on": "2023-03-08"
+    },
+    {
+      "sku_id": "SKU-0423",
+      "unit_price": 123.97,
+      "quoted_on": "2023-04-06"
+    },
+    {
+      "sku_id": "SKU-0424",
+      "unit_price": 408.88,
+      "quoted_on": "2023-07-01"
+    },
+    {
+      "sku_id": "SKU-0425",
+      "unit_price": 257.66,
+      "quoted_on": "2023-03-06"
+    },
+    {
+      "sku_id": "SKU-0426",
+      "unit_price": 319.74,
+      "quoted_on": "2023-12-09"
+    },
+    {
+      "sku_id": "SKU-0426",
+      "unit_price": 331.6,
+      "quoted_on": "2024-03-28"
+    },
+    {
+      "sku_id": "SKU-0426",
+      "unit_price": 355.77,
+      "quoted_on": "2023-07-02"
+    },
+    {
+      "sku_id": "SKU-0427",
+      "unit_price": 375.39,
+      "quoted_on": "2024-01-03"
+    },
+    {
+      "sku_id": "SKU-0427",
+      "unit_price": 400.37,
+      "quoted_on": "2024-01-06"
+    },
+    {
+      "sku_id": "SKU-0428",
+      "unit_price": 237.43,
+      "quoted_on": "2023-09-11"
+    },
+    {
+      "sku_id": "SKU-0428",
+      "unit_price": 250.15,
+      "quoted_on": "2024-05-06"
+    },
+    {
+      "sku_id": "SKU-0429",
+      "unit_price": 16.7,
+      "quoted_on": "2023-08-25"
+    },
+    {
+      "sku_id": "SKU-0429",
+      "unit_price": 17.33,
+      "quoted_on": "2024-03-02"
+    },
+    {
+      "sku_id": "SKU-0429",
+      "unit_price": 15.99,
+      "quoted_on": "2024-05-31"
+    },
+    {
+      "sku_id": "SKU-0430",
+      "unit_price": 339.16,
+      "quoted_on": "2024-05-09"
+    },
+    {
+      "sku_id": "SKU-0431",
+      "unit_price": 165.97,
+      "quoted_on": "2023-12-03"
+    },
+    {
+      "sku_id": "SKU-0431",
+      "unit_price": 165.64,
+      "quoted_on": "2023-08-28"
+    },
+    {
+      "sku_id": "SKU-0432",
+      "unit_price": 236.28,
+      "quoted_on": "2024-08-19"
+    },
+    {
+      "sku_id": "SKU-0432",
+      "unit_price": 253.16,
+      "quoted_on": "2023-09-27"
+    },
+    {
+      "sku_id": "SKU-0433",
+      "unit_price": 412.98,
+      "quoted_on": "2024-08-20"
+    },
+    {
+      "sku_id": "SKU-0433",
+      "unit_price": 390.51,
+      "quoted_on": "2024-05-19"
+    },
+    {
+      "sku_id": "SKU-0434",
+      "unit_price": 330.64,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0434",
+      "unit_price": 302.1,
+      "quoted_on": "2024-06-25"
+    },
+    {
+      "sku_id": "SKU-0434",
+      "unit_price": 321.74,
+      "quoted_on": "2023-06-22"
+    },
+    {
+      "sku_id": "SKU-0435",
+      "unit_price": 212.48,
+      "quoted_on": "2024-05-27"
+    },
+    {
+      "sku_id": "SKU-0435",
+      "unit_price": 221.42,
+      "quoted_on": "2023-07-09"
+    },
+    {
+      "sku_id": "SKU-0436",
+      "unit_price": 267.93,
+      "quoted_on": "2024-01-23"
+    },
+    {
+      "sku_id": "SKU-0436",
+      "unit_price": 271.1,
+      "quoted_on": "2023-03-11"
+    },
+    {
+      "sku_id": "SKU-0436",
+      "unit_price": 277.06,
+      "quoted_on": "2024-02-14"
+    },
+    {
+      "sku_id": "SKU-0437",
+      "unit_price": 45.09,
+      "quoted_on": "2024-03-14"
+    },
+    {
+      "sku_id": "SKU-0437",
+      "unit_price": 50.33,
+      "quoted_on": "2023-06-01"
+    },
+    {
+      "sku_id": "SKU-0437",
+      "unit_price": 47.48,
+      "quoted_on": "2024-04-02"
+    },
+    {
+      "sku_id": "SKU-0439",
+      "unit_price": 226.7,
+      "quoted_on": "2024-01-20"
+    },
+    {
+      "sku_id": "SKU-0439",
+      "unit_price": 252.23,
+      "quoted_on": "2023-04-05"
+    },
+    {
+      "sku_id": "SKU-0441",
+      "unit_price": 412.48,
+      "quoted_on": "2023-10-21"
+    },
+    {
+      "sku_id": "SKU-0441",
+      "unit_price": 400.47,
+      "quoted_on": "2023-09-18"
+    },
+    {
+      "sku_id": "SKU-0441",
+      "unit_price": 409.35,
+      "quoted_on": "2024-08-22"
+    },
+    {
+      "sku_id": "SKU-0442",
+      "unit_price": 393.18,
+      "quoted_on": "2024-04-16"
+    },
+    {
+      "sku_id": "SKU-0443",
+      "unit_price": 52.82,
+      "quoted_on": "2024-01-01"
+    },
+    {
+      "sku_id": "SKU-0443",
+      "unit_price": 53.78,
+      "quoted_on": "2023-07-12"
+    },
+    {
+      "sku_id": "SKU-0443",
+      "unit_price": 56.91,
+      "quoted_on": "2023-06-22"
+    },
+    {
+      "sku_id": "SKU-0444",
+      "unit_price": 202.61,
+      "quoted_on": "2023-06-09"
+    },
+    {
+      "sku_id": "SKU-0445",
+      "unit_price": 175.52,
+      "quoted_on": "2023-01-03"
+    },
+    {
+      "sku_id": "SKU-0445",
+      "unit_price": 176.5,
+      "quoted_on": "2023-06-13"
+    },
+    {
+      "sku_id": "SKU-0445",
+      "unit_price": 190.1,
+      "quoted_on": "2023-01-24"
+    },
+    {
+      "sku_id": "SKU-0446",
+      "unit_price": 280.52,
+      "quoted_on": "2024-07-08"
+    },
+    {
+      "sku_id": "SKU-0446",
+      "unit_price": 274.65,
+      "quoted_on": "2024-03-12"
+    },
+    {
+      "sku_id": "SKU-0446",
+      "unit_price": 270.86,
+      "quoted_on": "2023-12-03"
+    },
+    {
+      "sku_id": "SKU-0448",
+      "unit_price": 28.85,
+      "quoted_on": "2023-06-28"
+    },
+    {
+      "sku_id": "SKU-0449",
+      "unit_price": 356.61,
+      "quoted_on": "2023-09-21"
+    },
+    {
+      "sku_id": "SKU-0449",
+      "unit_price": 368.2,
+      "quoted_on": "2023-11-02"
+    },
+    {
+      "sku_id": "SKU-0450",
+      "unit_price": 292.45,
+      "quoted_on": "2024-07-01"
+    },
+    {
+      "sku_id": "SKU-0451",
+      "unit_price": 274.27,
+      "quoted_on": "2023-12-23"
+    },
+    {
+      "sku_id": "SKU-0451",
+      "unit_price": 281.01,
+      "quoted_on": "2024-08-01"
+    },
+    {
+      "sku_id": "SKU-0451",
+      "unit_price": 262.19,
+      "quoted_on": "2023-11-13"
+    },
+    {
+      "sku_id": "SKU-0452",
+      "unit_price": 210.35,
+      "quoted_on": "2024-03-10"
+    },
+    {
+      "sku_id": "SKU-0453",
+      "unit_price": 81.18,
+      "quoted_on": "2023-06-19"
+    },
+    {
+      "sku_id": "SKU-0453",
+      "unit_price": 82.73,
+      "quoted_on": "2024-08-22"
+    },
+    {
+      "sku_id": "SKU-0453",
+      "unit_price": 86.56,
+      "quoted_on": "2024-02-18"
+    },
+    {
+      "sku_id": "SKU-0455",
+      "unit_price": 217.06,
+      "quoted_on": "2023-01-07"
+    },
+    {
+      "sku_id": "SKU-0455",
+      "unit_price": 235.36,
+      "quoted_on": "2023-02-15"
+    },
+    {
+      "sku_id": "SKU-0456",
+      "unit_price": 354.64,
+      "quoted_on": "2023-01-22"
+    },
+    {
+      "sku_id": "SKU-0456",
+      "unit_price": 339.11,
+      "quoted_on": "2023-03-19"
+    },
+    {
+      "sku_id": "SKU-0456",
+      "unit_price": 337.89,
+      "quoted_on": "2023-04-14"
+    },
+    {
+      "sku_id": "SKU-0457",
+      "unit_price": 246.07,
+      "quoted_on": "2024-01-08"
+    },
+    {
+      "sku_id": "SKU-0457",
+      "unit_price": 237.84,
+      "quoted_on": "2023-08-15"
+    },
+    {
+      "sku_id": "SKU-0457",
+      "unit_price": 261.29,
+      "quoted_on": "2024-08-12"
+    },
+    {
+      "sku_id": "SKU-0459",
+      "unit_price": 301.98,
+      "quoted_on": "2023-05-06"
+    },
+    {
+      "sku_id": "SKU-0459",
+      "unit_price": 277.6,
+      "quoted_on": "2023-06-24"
+    },
+    {
+      "sku_id": "SKU-0460",
+      "unit_price": 297.45,
+      "quoted_on": "2023-07-11"
+    },
+    {
+      "sku_id": "SKU-0460",
+      "unit_price": 316.05,
+      "quoted_on": "2024-06-23"
+    },
+    {
+      "sku_id": "SKU-0460",
+      "unit_price": 316.0,
+      "quoted_on": "2023-12-31"
+    },
+    {
+      "sku_id": "SKU-0461",
+      "unit_price": 32.35,
+      "quoted_on": "2024-03-03"
+    },
+    {
+      "sku_id": "SKU-0463",
+      "unit_price": 268.54,
+      "quoted_on": "2024-07-02"
+    },
+    {
+      "sku_id": "SKU-0463",
+      "unit_price": 299.85,
+      "quoted_on": "2024-08-10"
+    },
+    {
+      "sku_id": "SKU-0463",
+      "unit_price": 262.95,
+      "quoted_on": "2024-02-15"
+    },
+    {
+      "sku_id": "SKU-0464",
+      "unit_price": 395.23,
+      "quoted_on": "2023-02-18"
+    },
+    {
+      "sku_id": "SKU-0464",
+      "unit_price": 383.75,
+      "quoted_on": "2023-04-25"
+    },
+    {
+      "sku_id": "SKU-0464",
+      "unit_price": 366.05,
+      "quoted_on": "2024-06-06"
+    },
+    {
+      "sku_id": "SKU-0465",
+      "unit_price": 252.33,
+      "quoted_on": "2024-02-05"
+    },
+    {
+      "sku_id": "SKU-0465",
+      "unit_price": 288.09,
+      "quoted_on": "2023-06-26"
+    },
+    {
+      "sku_id": "SKU-0465",
+      "unit_price": 267.08,
+      "quoted_on": "2023-08-16"
+    },
+    {
+      "sku_id": "SKU-0467",
+      "unit_price": 389.77,
+      "quoted_on": "2023-09-26"
+    },
+    {
+      "sku_id": "SKU-0468",
+      "unit_price": 51.84,
+      "quoted_on": "2023-06-03"
+    },
+    {
+      "sku_id": "SKU-0468",
+      "unit_price": 51.68,
+      "quoted_on": "2024-03-13"
+    },
+    {
+      "sku_id": "SKU-0468",
+      "unit_price": 57.31,
+      "quoted_on": "2023-01-27"
+    },
+    {
+      "sku_id": "SKU-0470",
+      "unit_price": 273.03,
+      "quoted_on": "2024-02-14"
+    },
+    {
+      "sku_id": "SKU-0470",
+      "unit_price": 312.82,
+      "quoted_on": "2024-07-04"
+    },
+    {
+      "sku_id": "SKU-0471",
+      "unit_price": 414.57,
+      "quoted_on": "2024-04-25"
+    },
+    {
+      "sku_id": "SKU-0471",
+      "unit_price": 396.85,
+      "quoted_on": "2024-05-03"
+    },
+    {
+      "sku_id": "SKU-0472",
+      "unit_price": 347.46,
+      "quoted_on": "2023-07-06"
+    },
+    {
+      "sku_id": "SKU-0472",
+      "unit_price": 351.43,
+      "quoted_on": "2024-04-01"
+    },
+    {
+      "sku_id": "SKU-0472",
+      "unit_price": 347.29,
+      "quoted_on": "2023-09-26"
+    },
+    {
+      "sku_id": "SKU-0473",
+      "unit_price": 279.15,
+      "quoted_on": "2024-03-16"
+    },
+    {
+      "sku_id": "SKU-0474",
+      "unit_price": 57.32,
+      "quoted_on": "2023-05-06"
+    },
+    {
+      "sku_id": "SKU-0474",
+      "unit_price": 50.01,
+      "quoted_on": "2023-02-09"
+    },
+    {
+      "sku_id": "SKU-0474",
+      "unit_price": 50.96,
+      "quoted_on": "2023-10-29"
+    },
+    {
+      "sku_id": "SKU-0475",
+      "unit_price": 240.44,
+      "quoted_on": "2024-04-16"
+    },
+    {
+      "sku_id": "SKU-0476",
+      "unit_price": 67.07,
+      "quoted_on": "2023-08-26"
+    },
+    {
+      "sku_id": "SKU-0476",
+      "unit_price": 69.43,
+      "quoted_on": "2023-10-30"
+    },
+    {
+      "sku_id": "SKU-0476",
+      "unit_price": 74.71,
+      "quoted_on": "2023-05-19"
+    },
+    {
+      "sku_id": "SKU-0478",
+      "unit_price": 293.17,
+      "quoted_on": "2023-08-01"
+    },
+    {
+      "sku_id": "SKU-0478",
+      "unit_price": 278.76,
+      "quoted_on": "2024-02-21"
+    },
+    {
+      "sku_id": "SKU-0478",
+      "unit_price": 299.96,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0479",
+      "unit_price": 331.59,
+      "quoted_on": "2024-04-28"
+    },
+    {
+      "sku_id": "SKU-0479",
+      "unit_price": 376.72,
+      "quoted_on": "2023-05-06"
+    },
+    {
+      "sku_id": "SKU-0480",
+      "unit_price": 333.18,
+      "quoted_on": "2023-12-18"
+    },
+    {
+      "sku_id": "SKU-0480",
+      "unit_price": 341.38,
+      "quoted_on": "2024-07-20"
+    },
+    {
+      "sku_id": "SKU-0481",
+      "unit_price": 21.43,
+      "quoted_on": "2024-01-01"
+    },
+    {
+      "sku_id": "SKU-0481",
+      "unit_price": 20.55,
+      "quoted_on": "2023-04-15"
+    },
+    {
+      "sku_id": "SKU-0481",
+      "unit_price": 21.89,
+      "quoted_on": "2023-12-11"
+    },
+    {
+      "sku_id": "SKU-0482",
+      "unit_price": 236.98,
+      "quoted_on": "2023-11-15"
+    },
+    {
+      "sku_id": "SKU-0482",
+      "unit_price": 241.23,
+      "quoted_on": "2023-11-25"
+    },
+    {
+      "sku_id": "SKU-0482",
+      "unit_price": 242.67,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0483",
+      "unit_price": 323.66,
+      "quoted_on": "2024-05-26"
+    },
+    {
+      "sku_id": "SKU-0483",
+      "unit_price": 320.35,
+      "quoted_on": "2024-07-14"
+    },
+    {
+      "sku_id": "SKU-0485",
+      "unit_price": 275.96,
+      "quoted_on": "2024-05-04"
+    },
+    {
+      "sku_id": "SKU-0485",
+      "unit_price": 261.41,
+      "quoted_on": "2024-05-22"
+    },
+    {
+      "sku_id": "SKU-0487",
+      "unit_price": 358.73,
+      "quoted_on": "2024-08-14"
+    },
+    {
+      "sku_id": "SKU-0488",
+      "unit_price": 127.19,
+      "quoted_on": "2023-04-04"
+    },
+    {
+      "sku_id": "SKU-0488",
+      "unit_price": 116.3,
+      "quoted_on": "2023-10-15"
+    },
+    {
+      "sku_id": "SKU-0488",
+      "unit_price": 131.97,
+      "quoted_on": "2024-03-24"
+    },
+    {
+      "sku_id": "SKU-0490",
+      "unit_price": 193.19,
+      "quoted_on": "2024-06-27"
+    },
+    {
+      "sku_id": "SKU-0490",
+      "unit_price": 206.9,
+      "quoted_on": "2024-08-22"
+    },
+    {
+      "sku_id": "SKU-0491",
+      "unit_price": 239.73,
+      "quoted_on": "2023-11-06"
+    },
+    {
+      "sku_id": "SKU-0493",
+      "unit_price": 381.98,
+      "quoted_on": "2024-06-19"
+    },
+    {
+      "sku_id": "SKU-0493",
+      "unit_price": 368.41,
+      "quoted_on": "2023-02-03"
+    },
+    {
+      "sku_id": "SKU-0493",
+      "unit_price": 378.58,
+      "quoted_on": "2023-01-25"
+    },
+    {
+      "sku_id": "SKU-0495",
+      "unit_price": 221.61,
+      "quoted_on": "2023-01-30"
+    },
+    {
+      "sku_id": "SKU-0495",
+      "unit_price": 231.23,
+      "quoted_on": "2024-02-22"
+    },
+    {
+      "sku_id": "SKU-0496",
+      "unit_price": 183.75,
+      "quoted_on": "2023-03-21"
+    },
+    {
+      "sku_id": "SKU-0496",
+      "unit_price": 199.39,
+      "quoted_on": "2023-03-06"
+    },
+    {
+      "sku_id": "SKU-0497",
+      "unit_price": 106.66,
+      "quoted_on": "2024-01-01"
+    },
+    {
+      "sku_id": "SKU-0498",
+      "unit_price": 118.54,
+      "quoted_on": "2023-11-19"
+    },
+    {
+      "sku_id": "SKU-0498",
+      "unit_price": 127.91,
+      "quoted_on": "2024-06-11"
+    },
+    {
+      "sku_id": "SKU-0498",
+      "unit_price": 118.01,
+      "quoted_on": "2023-02-07"
+    },
+    {
+      "sku_id": "SKU-0499",
+      "unit_price": 239.3,
+      "quoted_on": "2023-06-30"
+    },
+    {
+      "sku_id": "SKU-0500",
+      "unit_price": 376.67,
+      "quoted_on": "2023-11-16"
+    },
+    {
+      "sku_id": "SKU-0500",
+      "unit_price": 340.5,
+      "quoted_on": "2024-01-01"
+    },
+    {
+      "sku_id": "SKU-0501",
+      "unit_price": 137.11,
+      "quoted_on": "2023-12-02"
+    },
+    {
+      "sku_id": "SKU-0501",
+      "unit_price": 140.02,
+      "quoted_on": "2023-06-26"
+    },
+    {
+      "sku_id": "SKU-0501",
+      "unit_price": 136.73,
+      "quoted_on": "2024-05-04"
+    },
+    {
+      "sku_id": "SKU-0502",
+      "unit_price": 133.02,
+      "quoted_on": "2023-08-31"
+    },
+    {
+      "sku_id": "SKU-0502",
+      "unit_price": 124.8,
+      "quoted_on": "2024-06-06"
+    },
+    {
+      "sku_id": "SKU-0502",
+      "unit_price": 136.06,
+      "quoted_on": "2023-05-20"
+    },
+    {
+      "sku_id": "SKU-0503",
+      "unit_price": 213.68,
+      "quoted_on": "2024-06-24"
+    },
+    {
+      "sku_id": "SKU-0504",
+      "unit_price": 197.84,
+      "quoted_on": "2023-09-02"
+    },
+    {
+      "sku_id": "SKU-0504",
+      "unit_price": 210.71,
+      "quoted_on": "2023-01-15"
+    },
+    {
+      "sku_id": "SKU-0504",
+      "unit_price": 224.12,
+      "quoted_on": "2023-12-19"
+    },
+    {
+      "sku_id": "SKU-0505",
+      "unit_price": 12.13,
+      "quoted_on": "2023-07-11"
+    },
+    {
+      "sku_id": "SKU-0505",
+      "unit_price": 11.7,
+      "quoted_on": "2023-03-20"
+    },
+    {
+      "sku_id": "SKU-0505",
+      "unit_price": 11.13,
+      "quoted_on": "2024-08-03"
+    },
+    {
+      "sku_id": "SKU-0506",
+      "unit_price": 195.12,
+      "quoted_on": "2023-11-20"
+    },
+    {
+      "sku_id": "SKU-0506",
+      "unit_price": 202.17,
+      "quoted_on": "2023-03-24"
+    },
+    {
+      "sku_id": "SKU-0506",
+      "unit_price": 205.13,
+      "quoted_on": "2023-12-15"
+    },
+    {
+      "sku_id": "SKU-0507",
+      "unit_price": 87.28,
+      "quoted_on": "2023-05-06"
+    },
+    {
+      "sku_id": "SKU-0507",
+      "unit_price": 85.71,
+      "quoted_on": "2023-06-30"
+    },
+    {
+      "sku_id": "SKU-0508",
+      "unit_price": 23.91,
+      "quoted_on": "2023-02-17"
+    },
+    {
+      "sku_id": "SKU-0508",
+      "unit_price": 21.7,
+      "quoted_on": "2023-10-01"
+    },
+    {
+      "sku_id": "SKU-0508",
+      "unit_price": 24.05,
+      "quoted_on": "2024-04-24"
+    },
+    {
+      "sku_id": "SKU-0509",
+      "unit_price": 363.71,
+      "quoted_on": "2024-07-22"
+    },
+    {
+      "sku_id": "SKU-0510",
+      "unit_price": 207.59,
+      "quoted_on": "2024-07-19"
+    },
+    {
+      "sku_id": "SKU-0511",
+      "unit_price": 362.01,
+      "quoted_on": "2023-03-22"
+    },
+    {
+      "sku_id": "SKU-0512",
+      "unit_price": 361.54,
+      "quoted_on": "2023-10-07"
+    },
+    {
+      "sku_id": "SKU-0513",
+      "unit_price": 324.62,
+      "quoted_on": "2024-05-14"
+    },
+    {
+      "sku_id": "SKU-0513",
+      "unit_price": 340.42,
+      "quoted_on": "2023-11-28"
+    },
+    {
+      "sku_id": "SKU-0514",
+      "unit_price": 179.51,
+      "quoted_on": "2024-01-18"
+    },
+    {
+      "sku_id": "SKU-0514",
+      "unit_price": 174.02,
+      "quoted_on": "2023-12-07"
+    },
+    {
+      "sku_id": "SKU-0514",
+      "unit_price": 156.11,
+      "quoted_on": "2023-07-14"
+    },
+    {
+      "sku_id": "SKU-0515",
+      "unit_price": 81.84,
+      "quoted_on": "2023-07-22"
+    },
+    {
+      "sku_id": "SKU-0515",
+      "unit_price": 84.51,
+      "quoted_on": "2023-10-01"
+    },
+    {
+      "sku_id": "SKU-0515",
+      "unit_price": 87.83,
+      "quoted_on": "2023-02-01"
+    },
+    {
+      "sku_id": "SKU-0516",
+      "unit_price": 30.03,
+      "quoted_on": "2023-04-01"
+    },
+    {
+      "sku_id": "SKU-0516",
+      "unit_price": 31.24,
+      "quoted_on": "2023-10-19"
+    },
+    {
+      "sku_id": "SKU-0516",
+      "unit_price": 31.77,
+      "quoted_on": "2023-09-14"
+    },
+    {
+      "sku_id": "SKU-0517",
+      "unit_price": 307.76,
+      "quoted_on": "2023-06-06"
+    },
+    {
+      "sku_id": "SKU-0518",
+      "unit_price": 423.63,
+      "quoted_on": "2023-09-23"
+    },
+    {
+      "sku_id": "SKU-0518",
+      "unit_price": 381.07,
+      "quoted_on": "2024-05-08"
+    },
+    {
+      "sku_id": "SKU-0519",
+      "unit_price": 50.39,
+      "quoted_on": "2024-01-19"
+    },
+    {
+      "sku_id": "SKU-0519",
+      "unit_price": 53.09,
+      "quoted_on": "2023-12-12"
+    },
+    {
+      "sku_id": "SKU-0521",
+      "unit_price": 143.97,
+      "quoted_on": "2024-07-17"
+    },
+    {
+      "sku_id": "SKU-0521",
+      "unit_price": 145.09,
+      "quoted_on": "2023-02-16"
+    },
+    {
+      "sku_id": "SKU-0522",
+      "unit_price": 293.4,
+      "quoted_on": "2024-02-04"
+    },
+    {
+      "sku_id": "SKU-0522",
+      "unit_price": 312.02,
+      "quoted_on": "2023-05-14"
+    },
+    {
+      "sku_id": "SKU-0523",
+      "unit_price": 220.27,
+      "quoted_on": "2023-01-01"
+    },
+    {
+      "sku_id": "SKU-0524",
+      "unit_price": 19.22,
+      "quoted_on": "2023-03-03"
+    },
+    {
+      "sku_id": "SKU-0525",
+      "unit_price": 147.91,
+      "quoted_on": "2023-06-06"
+    },
+    {
+      "sku_id": "SKU-0525",
+      "unit_price": 135.3,
+      "quoted_on": "2023-01-04"
+    },
+    {
+      "sku_id": "SKU-0526",
+      "unit_price": 178.04,
+      "quoted_on": "2023-05-14"
+    },
+    {
+      "sku_id": "SKU-0526",
+      "unit_price": 186.02,
+      "quoted_on": "2024-02-18"
+    },
+    {
+      "sku_id": "SKU-0526",
+      "unit_price": 183.85,
+      "quoted_on": "2024-05-01"
+    },
+    {
+      "sku_id": "SKU-0527",
+      "unit_price": 220.42,
+      "quoted_on": "2024-03-14"
+    },
+    {
+      "sku_id": "SKU-0528",
+      "unit_price": 261.18,
+      "quoted_on": "2023-07-29"
+    },
+    {
+      "sku_id": "SKU-0528",
+      "unit_price": 268.57,
+      "quoted_on": "2023-08-10"
+    },
+    {
+      "sku_id": "SKU-0529",
+      "unit_price": 441.66,
+      "quoted_on": "2024-06-28"
+    },
+    {
+      "sku_id": "SKU-0529",
+      "unit_price": 380.33,
+      "quoted_on": "2023-05-05"
+    },
+    {
+      "sku_id": "SKU-0530",
+      "unit_price": 123.23,
+      "quoted_on": "2023-03-07"
+    },
+    {
+      "sku_id": "SKU-0530",
+      "unit_price": 131.07,
+      "quoted_on": "2023-09-27"
+    },
+    {
+      "sku_id": "SKU-0531",
+      "unit_price": 328.01,
+      "quoted_on": "2023-09-20"
+    },
+    {
+      "sku_id": "SKU-0532",
+      "unit_price": 307.64,
+      "quoted_on": "2024-07-16"
+    },
+    {
+      "sku_id": "SKU-0532",
+      "unit_price": 290.23,
+      "quoted_on": "2023-09-24"
+    },
+    {
+      "sku_id": "SKU-0532",
+      "unit_price": 307.71,
+      "quoted_on": "2023-07-11"
+    },
+    {
+      "sku_id": "SKU-0534",
+      "unit_price": 281.59,
+      "quoted_on": "2023-06-13"
+    },
+    {
+      "sku_id": "SKU-0534",
+      "unit_price": 268.11,
+      "quoted_on": "2023-01-12"
+    },
+    {
+      "sku_id": "SKU-0534",
+      "unit_price": 260.29,
+      "quoted_on": "2023-10-09"
+    },
+    {
+      "sku_id": "SKU-0535",
+      "unit_price": 227.49,
+      "quoted_on": "2023-10-31"
+    },
+    {
+      "sku_id": "SKU-0536",
+      "unit_price": 321.65,
+      "quoted_on": "2023-06-22"
+    },
+    {
+      "sku_id": "SKU-0536",
+      "unit_price": 306.56,
+      "quoted_on": "2024-02-01"
+    },
+    {
+      "sku_id": "SKU-0536",
+      "unit_price": 310.92,
+      "quoted_on": "2023-04-01"
+    },
+    {
+      "sku_id": "SKU-0537",
+      "unit_price": 12.12,
+      "quoted_on": "2024-06-15"
+    },
+    {
+      "sku_id": "SKU-0538",
+      "unit_price": 381.71,
+      "quoted_on": "2023-07-27"
+    },
+    {
+      "sku_id": "SKU-0539",
+      "unit_price": 310.21,
+      "quoted_on": "2023-09-04"
+    },
+    {
+      "sku_id": "SKU-0540",
+      "unit_price": 319.16,
+      "quoted_on": "2024-08-10"
+    },
+    {
+      "sku_id": "SKU-0540",
+      "unit_price": 294.95,
+      "quoted_on": "2024-07-26"
+    },
+    {
+      "sku_id": "SKU-0540",
+      "unit_price": 278.73,
+      "quoted_on": "2024-04-20"
+    },
+    {
+      "sku_id": "SKU-0541",
+      "unit_price": 75.18,
+      "quoted_on": "2024-03-29"
+    },
+    {
+      "sku_id": "SKU-0541",
+      "unit_price": 77.44,
+      "quoted_on": "2023-02-26"
+    },
+    {
+      "sku_id": "SKU-0541",
+      "unit_price": 77.91,
+      "quoted_on": "2024-05-05"
+    },
+    {
+      "sku_id": "SKU-0542",
+      "unit_price": 248.43,
+      "quoted_on": "2024-05-02"
+    },
+    {
+      "sku_id": "SKU-0542",
+      "unit_price": 252.57,
+      "quoted_on": "2024-07-27"
+    },
+    {
+      "sku_id": "SKU-0543",
+      "unit_price": 65.6,
+      "quoted_on": "2023-11-23"
+    },
+    {
+      "sku_id": "SKU-0543",
+      "unit_price": 64.51,
+      "quoted_on": "2024-04-29"
+    },
+    {
+      "sku_id": "SKU-0543",
+      "unit_price": 62.79,
+      "quoted_on": "2024-03-23"
+    },
+    {
+      "sku_id": "SKU-0544",
+      "unit_price": 14.22,
+      "quoted_on": "2024-05-04"
+    },
+    {
+      "sku_id": "SKU-0545",
+      "unit_price": 50.36,
+      "quoted_on": "2024-01-20"
+    },
+    {
+      "sku_id": "SKU-0546",
+      "unit_price": 137.45,
+      "quoted_on": "2023-08-16"
+    },
+    {
+      "sku_id": "SKU-0546",
+      "unit_price": 138.46,
+      "quoted_on": "2023-01-12"
+    },
+    {
+      "sku_id": "SKU-0547",
+      "unit_price": 281.79,
+      "quoted_on": "2024-08-15"
+    },
+    {
+      "sku_id": "SKU-0547",
+      "unit_price": 273.71,
+      "quoted_on": "2023-11-04"
+    },
+    {
+      "sku_id": "SKU-0547",
+      "unit_price": 297.52,
+      "quoted_on": "2023-07-01"
+    },
+    {
+      "sku_id": "SKU-0548",
+      "unit_price": 323.37,
+      "quoted_on": "2023-10-02"
+    },
+    {
+      "sku_id": "SKU-0548",
+      "unit_price": 320.08,
+      "quoted_on": "2023-10-13"
+    },
+    {
+      "sku_id": "SKU-0548",
+      "unit_price": 323.18,
+      "quoted_on": "2024-08-21"
+    },
+    {
+      "sku_id": "SKU-0549",
+      "unit_price": 358.49,
+      "quoted_on": "2024-07-25"
+    },
+    {
+      "sku_id": "SKU-0550",
+      "unit_price": 25.87,
+      "quoted_on": "2024-02-13"
+    },
+    {
+      "sku_id": "SKU-0551",
+      "unit_price": 86.2,
+      "quoted_on": "2024-03-15"
+    },
+    {
+      "sku_id": "SKU-0551",
+      "unit_price": 88.78,
+      "quoted_on": "2023-04-24"
+    },
+    {
+      "sku_id": "SKU-0551",
+      "unit_price": 91.56,
+      "quoted_on": "2023-06-17"
+    },
+    {
+      "sku_id": "SKU-0553",
+      "unit_price": 135.7,
+      "quoted_on": "2024-04-21"
+    },
+    {
+      "sku_id": "SKU-0553",
+      "unit_price": 136.75,
+      "quoted_on": "2023-10-24"
+    },
+    {
+      "sku_id": "SKU-0554",
+      "unit_price": 384.83,
+      "quoted_on": "2024-08-04"
+    },
+    {
+      "sku_id": "SKU-0555",
+      "unit_price": 144.4,
+      "quoted_on": "2023-12-06"
+    },
+    {
+      "sku_id": "SKU-0555",
+      "unit_price": 154.4,
+      "quoted_on": "2023-08-14"
+    },
+    {
+      "sku_id": "SKU-0555",
+      "unit_price": 153.15,
+      "quoted_on": "2024-04-15"
+    },
+    {
+      "sku_id": "SKU-0556",
+      "unit_price": 286.35,
+      "quoted_on": "2024-06-13"
+    },
+    {
+      "sku_id": "SKU-0557",
+      "unit_price": 277.84,
+      "quoted_on": "2023-03-12"
+    },
+    {
+      "sku_id": "SKU-0557",
+      "unit_price": 284.55,
+      "quoted_on": "2023-07-01"
+    },
+    {
+      "sku_id": "SKU-0557",
+      "unit_price": 274.17,
+      "quoted_on": "2024-01-21"
+    },
+    {
+      "sku_id": "SKU-0559",
+      "unit_price": 222.16,
+      "quoted_on": "2024-04-25"
+    },
+    {
+      "sku_id": "SKU-0559",
+      "unit_price": 230.65,
+      "quoted_on": "2023-06-23"
+    },
+    {
+      "sku_id": "SKU-0559",
+      "unit_price": 226.63,
+      "quoted_on": "2023-12-16"
+    },
+    {
+      "sku_id": "SKU-0560",
+      "unit_price": 387.64,
+      "quoted_on": "2024-06-17"
+    },
+    {
+      "sku_id": "SKU-0560",
+      "unit_price": 383.6,
+      "quoted_on": "2023-01-05"
+    },
+    {
+      "sku_id": "SKU-0560",
+      "unit_price": 387.39,
+      "quoted_on": "2024-02-16"
+    },
+    {
+      "sku_id": "SKU-0561",
+      "unit_price": 127.72,
+      "quoted_on": "2023-08-07"
+    },
+    {
+      "sku_id": "SKU-0562",
+      "unit_price": 280.89,
+      "quoted_on": "2023-09-23"
+    },
+    {
+      "sku_id": "SKU-0562",
+      "unit_price": 303.58,
+      "quoted_on": "2023-03-21"
+    },
+    {
+      "sku_id": "SKU-0563",
+      "unit_price": 149.34,
+      "quoted_on": "2024-06-23"
+    },
+    {
+      "sku_id": "SKU-0563",
+      "unit_price": 139.9,
+      "quoted_on": "2024-06-22"
+    },
+    {
+      "sku_id": "SKU-0563",
+      "unit_price": 137.98,
+      "quoted_on": "2024-04-08"
+    },
+    {
+      "sku_id": "SKU-0564",
+      "unit_price": 333.83,
+      "quoted_on": "2024-02-29"
+    },
+    {
+      "sku_id": "SKU-0565",
+      "unit_price": 52.23,
+      "quoted_on": "2023-10-10"
+    },
+    {
+      "sku_id": "SKU-0565",
+      "unit_price": 52.23,
+      "quoted_on": "2024-06-29"
+    },
+    {
+      "sku_id": "SKU-0566",
+      "unit_price": 148.56,
+      "quoted_on": "2024-07-10"
+    },
+    {
+      "sku_id": "SKU-0566",
+      "unit_price": 147.7,
+      "quoted_on": "2024-05-17"
+    },
+    {
+      "sku_id": "SKU-0566",
+      "unit_price": 166.89,
+      "quoted_on": "2023-09-14"
+    },
+    {
+      "sku_id": "SKU-0567",
+      "unit_price": 357.35,
+      "quoted_on": "2024-03-03"
+    },
+    {
+      "sku_id": "SKU-0568",
+      "unit_price": 308.41,
+      "quoted_on": "2024-01-21"
+    },
+    {
+      "sku_id": "SKU-0568",
+      "unit_price": 339.6,
+      "quoted_on": "2023-06-17"
+    },
+    {
+      "sku_id": "SKU-0569",
+      "unit_price": 118.83,
+      "quoted_on": "2023-12-17"
+    },
+    {
+      "sku_id": "SKU-0569",
+      "unit_price": 112.16,
+      "quoted_on": "2023-09-07"
+    },
+    {
+      "sku_id": "SKU-0570",
+      "unit_price": 155.41,
+      "quoted_on": "2023-07-21"
+    },
+    {
+      "sku_id": "SKU-0570",
+      "unit_price": 135.89,
+      "quoted_on": "2023-08-05"
+    },
+    {
+      "sku_id": "SKU-0571",
+      "unit_price": 116.65,
+      "quoted_on": "2024-03-19"
+    },
+    {
+      "sku_id": "SKU-0572",
+      "unit_price": 84.57,
+      "quoted_on": "2024-05-01"
+    },
+    {
+      "sku_id": "SKU-0572",
+      "unit_price": 79.88,
+      "quoted_on": "2023-03-04"
+    },
+    {
+      "sku_id": "SKU-0572",
+      "unit_price": 82.82,
+      "quoted_on": "2024-04-17"
+    },
+    {
+      "sku_id": "SKU-0573",
+      "unit_price": 407.72,
+      "quoted_on": "2024-02-18"
+    },
+    {
+      "sku_id": "SKU-0573",
+      "unit_price": 400.81,
+      "quoted_on": "2024-05-27"
+    },
+    {
+      "sku_id": "SKU-0573",
+      "unit_price": 385.26,
+      "quoted_on": "2023-04-28"
+    },
+    {
+      "sku_id": "SKU-0574",
+      "unit_price": 54.73,
+      "quoted_on": "2023-05-05"
+    },
+    {
+      "sku_id": "SKU-0575",
+      "unit_price": 244.77,
+      "quoted_on": "2024-05-04"
+    },
+    {
+      "sku_id": "SKU-0576",
+      "unit_price": 269.2,
+      "quoted_on": "2024-06-05"
+    },
+    {
+      "sku_id": "SKU-0576",
+      "unit_price": 261.44,
+      "quoted_on": "2024-05-04"
+    },
+    {
+      "sku_id": "SKU-0576",
+      "unit_price": 274.73,
+      "quoted_on": "2023-08-30"
+    },
+    {
+      "sku_id": "SKU-0577",
+      "unit_price": 255.83,
+      "quoted_on": "2023-12-28"
+    },
+    {
+      "sku_id": "SKU-0577",
+      "unit_price": 285.92,
+      "quoted_on": "2023-07-13"
+    },
+    {
+      "sku_id": "SKU-0577",
+      "unit_price": 273.51,
+      "quoted_on": "2023-03-21"
+    },
+    {
+      "sku_id": "SKU-0578",
+      "unit_price": 183.46,
+      "quoted_on": "2023-04-28"
+    },
+    {
+      "sku_id": "SKU-0578",
+      "unit_price": 177.62,
+      "quoted_on": "2023-12-24"
+    },
+    {
+      "sku_id": "SKU-0579",
+      "unit_price": 40.07,
+      "quoted_on": "2024-07-12"
+    },
+    {
+      "sku_id": "SKU-0579",
+      "unit_price": 45.59,
+      "quoted_on": "2023-11-12"
+    },
+    {
+      "sku_id": "SKU-0580",
+      "unit_price": 4.27,
+      "quoted_on": "2023-10-28"
+    },
+    {
+      "sku_id": "SKU-0580",
+      "unit_price": 3.8,
+      "quoted_on": "2023-04-08"
+    },
+    {
+      "sku_id": "SKU-0581",
+      "unit_price": 410.35,
+      "quoted_on": "2023-12-24"
+    },
+    {
+      "sku_id": "SKU-0581",
+      "unit_price": 374.0,
+      "quoted_on": "2024-06-11"
+    },
+    {
+      "sku_id": "SKU-0581",
+      "unit_price": 412.13,
+      "quoted_on": "2023-07-07"
+    },
+    {
+      "sku_id": "SKU-0582",
+      "unit_price": 387.34,
+      "quoted_on": "2024-04-25"
+    },
+    {
+      "sku_id": "SKU-0582",
+      "unit_price": 404.08,
+      "quoted_on": "2023-03-14"
+    },
+    {
+      "sku_id": "SKU-0583",
+      "unit_price": 187.49,
+      "quoted_on": "2023-05-28"
+    },
+    {
+      "sku_id": "SKU-0583",
+      "unit_price": 209.34,
+      "quoted_on": "2023-07-18"
+    },
+    {
+      "sku_id": "SKU-0583",
+      "unit_price": 195.57,
+      "quoted_on": "2023-08-05"
+    },
+    {
+      "sku_id": "SKU-0584",
+      "unit_price": 427.17,
+      "quoted_on": "2023-02-10"
+    },
+    {
+      "sku_id": "SKU-0584",
+      "unit_price": 417.62,
+      "quoted_on": "2023-11-06"
+    },
+    {
+      "sku_id": "SKU-0585",
+      "unit_price": 266.02,
+      "quoted_on": "2023-06-09"
+    },
+    {
+      "sku_id": "SKU-0586",
+      "unit_price": 38.98,
+      "quoted_on": "2023-08-03"
+    },
+    {
+      "sku_id": "SKU-0587",
+      "unit_price": 229.84,
+      "quoted_on": "2024-03-19"
+    },
+    {
+      "sku_id": "SKU-0587",
+      "unit_price": 232.31,
+      "quoted_on": "2023-04-12"
+    },
+    {
+      "sku_id": "SKU-0588",
+      "unit_price": 373.15,
+      "quoted_on": "2023-05-08"
+    },
+    {
+      "sku_id": "SKU-0589",
+      "unit_price": 79.65,
+      "quoted_on": "2023-08-14"
+    },
+    {
+      "sku_id": "SKU-0589",
+      "unit_price": 73.56,
+      "quoted_on": "2023-05-03"
+    },
+    {
+      "sku_id": "SKU-0590",
+      "unit_price": 70.81,
+      "quoted_on": "2023-10-08"
+    },
+    {
+      "sku_id": "SKU-0591",
+      "unit_price": 443.64,
+      "quoted_on": "2023-12-20"
+    },
+    {
+      "sku_id": "SKU-0591",
+      "unit_price": 406.93,
+      "quoted_on": "2024-01-07"
+    },
+    {
+      "sku_id": "SKU-0591",
+      "unit_price": 398.04,
+      "quoted_on": "2023-06-09"
+    },
+    {
+      "sku_id": "SKU-0592",
+      "unit_price": 217.32,
+      "quoted_on": "2023-09-04"
+    },
+    {
+      "sku_id": "SKU-0593",
+      "unit_price": 432.26,
+      "quoted_on": "2023-07-27"
+    },
+    {
+      "sku_id": "SKU-0593",
+      "unit_price": 432.5,
+      "quoted_on": "2024-06-20"
+    },
+    {
+      "sku_id": "SKU-0593",
+      "unit_price": 430.82,
+      "quoted_on": "2024-01-03"
+    },
+    {
+      "sku_id": "SKU-0594",
+      "unit_price": 342.14,
+      "quoted_on": "2023-04-07"
+    },
+    {
+      "sku_id": "SKU-0594",
+      "unit_price": 362.49,
+      "quoted_on": "2024-02-19"
+    },
+    {
+      "sku_id": "SKU-0595",
+      "unit_price": 248.7,
+      "quoted_on": "2023-11-12"
+    },
+    {
+      "sku_id": "SKU-0595",
+      "unit_price": 225.16,
+      "quoted_on": "2024-01-06"
+    },
+    {
+      "sku_id": "SKU-0596",
+      "unit_price": 385.3,
+      "quoted_on": "2024-08-13"
+    },
+    {
+      "sku_id": "SKU-0596",
+      "unit_price": 418.72,
+      "quoted_on": "2023-09-29"
+    },
+    {
+      "sku_id": "SKU-0596",
+      "unit_price": 383.85,
+      "quoted_on": "2023-05-30"
+    },
+    {
+      "sku_id": "SKU-0597",
+      "unit_price": 397.9,
+      "quoted_on": "2023-11-27"
+    },
+    {
+      "sku_id": "SKU-0597",
+      "unit_price": 420.81,
+      "quoted_on": "2023-08-28"
+    },
+    {
+      "sku_id": "SKU-0598",
+      "unit_price": 216.18,
+      "quoted_on": "2024-03-24"
+    },
+    {
+      "sku_id": "SKU-0598",
+      "unit_price": 220.81,
+      "quoted_on": "2023-05-30"
+    },
+    {
+      "sku_id": "SKU-0598",
+      "unit_price": 193.35,
+      "quoted_on": "2023-02-26"
+    },
+    {
+      "sku_id": "SKU-0599",
+      "unit_price": 374.34,
+      "quoted_on": "2023-02-12"
+    },
+    {
+      "sku_id": "SKU-0600",
+      "unit_price": 79.98,
+      "quoted_on": "2023-01-14"
+    },
+    {
+      "sku_id": "SKU-0600",
+      "unit_price": 76.93,
+      "quoted_on": "2024-02-16"
+    },
+    {
+      "sku_id": "SKU-0600",
+      "unit_price": 75.17,
+      "quoted_on": "2024-06-21"
+    },
+    {
+      "sku_id": "SKU-0601",
+      "unit_price": 74.02,
+      "quoted_on": "2023-01-21"
+    },
+    {
+      "sku_id": "SKU-0601",
+      "unit_price": 64.35,
+      "quoted_on": "2024-02-12"
+    },
+    {
+      "sku_id": "SKU-0601",
+      "unit_price": 67.58,
+      "quoted_on": "2024-01-12"
+    },
+    {
+      "sku_id": "SKU-0602",
+      "unit_price": 115.22,
+      "quoted_on": "2024-07-01"
+    },
+    {
+      "sku_id": "SKU-0602",
+      "unit_price": 106.06,
+      "quoted_on": "2024-06-04"
+    },
+    {
+      "sku_id": "SKU-0602",
+      "unit_price": 112.72,
+      "quoted_on": "2023-04-06"
+    },
+    {
+      "sku_id": "SKU-0603",
+      "unit_price": 312.1,
+      "quoted_on": "2024-02-26"
+    },
+    {
+      "sku_id": "SKU-0604",
+      "unit_price": 225.03,
+      "quoted_on": "2023-11-04"
+    },
+    {
+      "sku_id": "SKU-0604",
+      "unit_price": 225.28,
+      "quoted_on": "2024-01-26"
+    },
+    {
+      "sku_id": "SKU-0604",
+      "unit_price": 240.24,
+      "quoted_on": "2024-05-07"
+    },
+    {
+      "sku_id": "SKU-0605",
+      "unit_price": 72.31,
+      "quoted_on": "2023-08-19"
+    },
+    {
+      "sku_id": "SKU-0606",
+      "unit_price": 394.82,
+      "quoted_on": "2024-02-16"
+    },
+    {
+      "sku_id": "SKU-0606",
+      "unit_price": 396.64,
+      "quoted_on": "2023-01-15"
+    },
+    {
+      "sku_id": "SKU-0606",
+      "unit_price": 361.48,
+      "quoted_on": "2023-05-17"
+    },
+    {
+      "sku_id": "SKU-0607",
+      "unit_price": 223.96,
+      "quoted_on": "2023-09-19"
+    },
+    {
+      "sku_id": "SKU-0607",
+      "unit_price": 201.34,
+      "quoted_on": "2023-05-16"
+    },
+    {
+      "sku_id": "SKU-0608",
+      "unit_price": 295.37,
+      "quoted_on": "2023-12-31"
+    },
+    {
+      "sku_id": "SKU-0609",
+      "unit_price": 63.51,
+      "quoted_on": "2023-05-03"
+    },
+    {
+      "sku_id": "SKU-0609",
+      "unit_price": 62.29,
+      "quoted_on": "2024-01-06"
+    },
+    {
+      "sku_id": "SKU-0609",
+      "unit_price": 56.02,
+      "quoted_on": "2024-05-31"
+    },
+    {
+      "sku_id": "SKU-0610",
+      "unit_price": 106.3,
+      "quoted_on": "2023-08-20"
+    },
+    {
+      "sku_id": "SKU-0611",
+      "unit_price": 100.85,
+      "quoted_on": "2024-08-07"
+    },
+    {
+      "sku_id": "SKU-0612",
+      "unit_price": 400.45,
+      "quoted_on": "2024-07-23"
+    },
+    {
+      "sku_id": "SKU-0613",
+      "unit_price": 315.79,
+      "quoted_on": "2023-09-10"
+    },
+    {
+      "sku_id": "SKU-0613",
+      "unit_price": 304.95,
+      "quoted_on": "2023-10-15"
+    },
+    {
+      "sku_id": "SKU-0614",
+      "unit_price": 258.42,
+      "quoted_on": "2024-05-23"
+    },
+    {
+      "sku_id": "SKU-0614",
+      "unit_price": 256.93,
+      "quoted_on": "2024-05-16"
+    },
+    {
+      "sku_id": "SKU-0614",
+      "unit_price": 294.68,
+      "quoted_on": "2023-03-18"
+    },
+    {
+      "sku_id": "SKU-0615",
+      "unit_price": 28.06,
+      "quoted_on": "2024-04-29"
+    },
+    {
+      "sku_id": "SKU-0615",
+      "unit_price": 26.38,
+      "quoted_on": "2023-08-27"
+    },
+    {
+      "sku_id": "SKU-0615",
+      "unit_price": 26.66,
+      "quoted_on": "2023-06-13"
+    },
+    {
+      "sku_id": "SKU-0616",
+      "unit_price": 132.38,
+      "quoted_on": "2023-04-21"
+    },
+    {
+      "sku_id": "SKU-0616",
+      "unit_price": 132.28,
+      "quoted_on": "2023-09-08"
+    },
+    {
+      "sku_id": "SKU-0617",
+      "unit_price": 201.79,
+      "quoted_on": "2023-12-15"
+    },
+    {
+      "sku_id": "SKU-0619",
+      "unit_price": 46.89,
+      "quoted_on": "2023-04-02"
+    },
+    {
+      "sku_id": "SKU-0620",
+      "unit_price": 126.25,
+      "quoted_on": "2024-07-07"
+    },
+    {
+      "sku_id": "SKU-0620",
+      "unit_price": 129.51,
+      "quoted_on": "2023-12-22"
+    },
+    {
+      "sku_id": "SKU-0621",
+      "unit_price": 94.62,
+      "quoted_on": "2024-03-13"
+    },
+    {
+      "sku_id": "SKU-0622",
+      "unit_price": 69.41,
+      "quoted_on": "2023-06-02"
+    },
+    {
+      "sku_id": "SKU-0622",
+      "unit_price": 65.2,
+      "quoted_on": "2023-12-31"
+    },
+    {
+      "sku_id": "SKU-0622",
+      "unit_price": 66.22,
+      "quoted_on": "2024-05-29"
+    },
+    {
+      "sku_id": "SKU-0623",
+      "unit_price": 244.68,
+      "quoted_on": "2023-02-17"
+    },
+    {
+      "sku_id": "SKU-0623",
+      "unit_price": 265.13,
+      "quoted_on": "2024-02-10"
+    },
+    {
+      "sku_id": "SKU-0623",
+      "unit_price": 242.51,
+      "quoted_on": "2023-06-17"
+    },
+    {
+      "sku_id": "SKU-0625",
+      "unit_price": 239.67,
+      "quoted_on": "2023-10-24"
+    },
+    {
+      "sku_id": "SKU-0625",
+      "unit_price": 215.38,
+      "quoted_on": "2024-01-16"
+    },
+    {
+      "sku_id": "SKU-0626",
+      "unit_price": 88.54,
+      "quoted_on": "2023-05-20"
+    },
+    {
+      "sku_id": "SKU-0626",
+      "unit_price": 86.88,
+      "quoted_on": "2024-06-20"
+    },
+    {
+      "sku_id": "SKU-0626",
+      "unit_price": 91.99,
+      "quoted_on": "2023-07-03"
+    },
+    {
+      "sku_id": "SKU-0627",
+      "unit_price": 296.57,
+      "quoted_on": "2023-12-21"
+    },
+    {
+      "sku_id": "SKU-0627",
+      "unit_price": 335.39,
+      "quoted_on": "2023-07-16"
+    },
+    {
+      "sku_id": "SKU-0628",
+      "unit_price": 36.58,
+      "quoted_on": "2024-02-03"
+    },
+    {
+      "sku_id": "SKU-0628",
+      "unit_price": 36.06,
+      "quoted_on": "2023-09-13"
+    },
+    {
+      "sku_id": "SKU-0629",
+      "unit_price": 300.36,
+      "quoted_on": "2024-05-23"
+    },
+    {
+      "sku_id": "SKU-0630",
+      "unit_price": 233.61,
+      "quoted_on": "2024-02-16"
+    },
+    {
+      "sku_id": "SKU-0630",
+      "unit_price": 228.6,
+      "quoted_on": "2024-04-22"
+    },
+    {
+      "sku_id": "SKU-0631",
+      "unit_price": 232.19,
+      "quoted_on": "2023-02-13"
+    },
+    {
+      "sku_id": "SKU-0632",
+      "unit_price": 254.05,
+      "quoted_on": "2024-02-16"
+    },
+    {
+      "sku_id": "SKU-0633",
+      "unit_price": 129.3,
+      "quoted_on": "2023-12-31"
+    },
+    {
+      "sku_id": "SKU-0633",
+      "unit_price": 143.1,
+      "quoted_on": "2023-09-27"
+    },
+    {
+      "sku_id": "SKU-0633",
+      "unit_price": 146.51,
+      "quoted_on": "2023-10-09"
+    },
+    {
+      "sku_id": "SKU-0634",
+      "unit_price": 51.95,
+      "quoted_on": "2023-10-20"
+    },
+    {
+      "sku_id": "SKU-0636",
+      "unit_price": 229.51,
+      "quoted_on": "2024-04-08"
+    },
+    {
+      "sku_id": "SKU-0638",
+      "unit_price": 204.03,
+      "quoted_on": "2023-01-16"
+    },
+    {
+      "sku_id": "SKU-0638",
+      "unit_price": 191.24,
+      "quoted_on": "2023-02-10"
+    },
+    {
+      "sku_id": "SKU-0639",
+      "unit_price": 195.27,
+      "quoted_on": "2024-07-03"
+    },
+    {
+      "sku_id": "SKU-0639",
+      "unit_price": 188.39,
+      "quoted_on": "2024-05-22"
+    },
+    {
+      "sku_id": "SKU-0639",
+      "unit_price": 192.67,
+      "quoted_on": "2024-02-10"
+    },
+    {
+      "sku_id": "SKU-0640",
+      "unit_price": 305.23,
+      "quoted_on": "2024-05-26"
+    },
+    {
+      "sku_id": "SKU-0640",
+      "unit_price": 281.53,
+      "quoted_on": "2023-09-08"
+    },
+    {
+      "sku_id": "SKU-0641",
+      "unit_price": 334.85,
+      "quoted_on": "2023-11-02"
+    },
+    {
+      "sku_id": "SKU-0641",
+      "unit_price": 355.85,
+      "quoted_on": "2024-08-01"
+    },
+    {
+      "sku_id": "SKU-0642",
+      "unit_price": 256.26,
+      "quoted_on": "2023-12-02"
+    },
+    {
+      "sku_id": "SKU-0642",
+      "unit_price": 244.2,
+      "quoted_on": "2023-12-28"
+    },
+    {
+      "sku_id": "SKU-0643",
+      "unit_price": 145.21,
+      "quoted_on": "2023-05-18"
+    },
+    {
+      "sku_id": "SKU-0644",
+      "unit_price": 382.99,
+      "quoted_on": "2023-02-15"
+    },
+    {
+      "sku_id": "SKU-0644",
+      "unit_price": 411.49,
+      "quoted_on": "2023-02-21"
+    },
+    {
+      "sku_id": "SKU-0645",
+      "unit_price": 28.58,
+      "quoted_on": "2023-06-06"
+    },
+    {
+      "sku_id": "SKU-0645",
+      "unit_price": 28.3,
+      "quoted_on": "2023-05-07"
+    },
+    {
+      "sku_id": "SKU-0645",
+      "unit_price": 30.19,
+      "quoted_on": "2023-11-08"
+    },
+    {
+      "sku_id": "SKU-0646",
+      "unit_price": 15.07,
+      "quoted_on": "2023-07-09"
+    },
+    {
+      "sku_id": "SKU-0646",
+      "unit_price": 14.53,
+      "quoted_on": "2024-06-16"
+    },
+    {
+      "sku_id": "SKU-0646",
+      "unit_price": 14.56,
+      "quoted_on": "2024-03-23"
+    },
+    {
+      "sku_id": "SKU-0647",
+      "unit_price": 345.05,
+      "quoted_on": "2024-03-14"
+    },
+    {
+      "sku_id": "SKU-0647",
+      "unit_price": 320.61,
+      "quoted_on": "2024-02-24"
+    },
+    {
+      "sku_id": "SKU-0648",
+      "unit_price": 433.4,
+      "quoted_on": "2023-03-15"
+    },
+    {
+      "sku_id": "SKU-0648",
+      "unit_price": 384.76,
+      "quoted_on": "2023-05-03"
+    },
+    {
+      "sku_id": "SKU-0649",
+      "unit_price": 178.48,
+      "quoted_on": "2024-04-05"
+    },
+    {
+      "sku_id": "SKU-0649",
+      "unit_price": 163.11,
+      "quoted_on": "2023-01-29"
+    },
+    {
+      "sku_id": "SKU-0650",
+      "unit_price": 165.11,
+      "quoted_on": "2023-12-12"
+    },
+    {
+      "sku_id": "SKU-0650",
+      "unit_price": 165.85,
+      "quoted_on": "2024-07-21"
+    }
+  ]
+}

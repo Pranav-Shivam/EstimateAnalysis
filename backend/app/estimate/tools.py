@@ -129,6 +129,11 @@ def handle_tool(ctx: ToolContext, name: str, arguments: dict) -> dict:
         inspect.signature(handler).bind(ctx, **arguments)
     except TypeError as exc:
         return {"error": f"bad arguments for {name}: {exc}"}
+    # Every tool parameter is a string. A wrong-typed value would reach a text column in Postgres, which aborts
+    # the whole transaction and poisons the session for the rest of the run.
+    for arg_name, value in arguments.items():
+        if not isinstance(value, str):
+            return {"error": f"bad arguments for {name}: {arg_name} must be a string"}
     return handler(ctx, **arguments)
 
 

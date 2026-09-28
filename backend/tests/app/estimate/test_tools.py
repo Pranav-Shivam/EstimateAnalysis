@@ -1,5 +1,7 @@
 from datetime import date
 
+import pytest
+
 from app.estimate.tools import (
     TOOL_SPECS, ToolContext, check_stock, get_related_parts, handle_tool, lookup_customer, predict_price,
     search_price_book,
@@ -138,6 +140,23 @@ def test_handle_tool_reports_unknown_tool_and_bad_arguments(db_session):
 
     assert "unknown tool" in handle_tool(_ctx(db_session), "delete_everything", {})["error"]
     assert "bad arguments" in handle_tool(_ctx(db_session), "check_stock", {"wrong": 1})["error"]
+
+
+@pytest.mark.parametrize("bad_value", [123, ["SKU-E-A1"], None, {"id": "SKU-E-A1"}])
+def test_handle_tool_rejects_non_string_arguments_before_running_the_handler(db_session, bad_value):
+    seed_world(db_session)
+
+    result = handle_tool(_ctx(db_session), "search_price_book", {"query": bad_value})
+
+    assert result == {"error": "bad arguments for search_price_book: query must be a string"}
+
+
+def test_handle_tool_still_runs_a_call_with_string_arguments(db_session):
+    seed_world(db_session)
+
+    result = handle_tool(_ctx(db_session), "search_price_book", {"query": "SKU-E-A1"})
+
+    assert result["results"][0]["sku_id"] == "SKU-E-A1"
 
 
 def test_tool_specs_name_every_handler_plus_submit_draft():

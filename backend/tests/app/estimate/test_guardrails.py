@@ -203,6 +203,15 @@ def test_invented_list_price_is_blocked(db_session):
     assert "does not match" in violations[0].message
 
 
+def test_price_off_by_less_than_a_cent_is_blocked_because_prices_must_match_exactly(db_session):
+    seed_world(db_session)
+
+    violations = check_price_provenance(db_session, _draft([_line(unit_price=100.004)]))
+
+    assert "does not match" in violations[0].message
+    assert check_price_provenance(db_session, _draft([_line(unit_price=100.0)])) == []
+
+
 def test_list_source_on_gap_sku_is_blocked(db_session):
     seed_world(db_session)
 

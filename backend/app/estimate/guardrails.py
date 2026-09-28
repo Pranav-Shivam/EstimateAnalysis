@@ -9,7 +9,9 @@ from app.reference_data.models import Contract, Sku
 from app.reference_data.repository import get_contract, get_customer, get_sku
 
 # Tolerance checks are written as `not diff <= TOL` so a NaN or infinite value fails instead of slipping through.
-PRICE_TOLERANCE = 0.005
+# Prices are 2-decimal floats the agent copies verbatim from a tool result, so the intended rule is an exact match;
+# the tolerance only absorbs float representation noise.
+PRICE_TOLERANCE = 1e-9
 PCT_TOLERANCE = 1e-9
 
 

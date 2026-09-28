@@ -3111,7 +3111,7 @@ In `docs/roadmap.md`, under Phase 3 add a line `Status: complete (see docs/super
 
 - [ ] **Step 4: Full verification**
 
-Run: `uv run pytest -q` (all pass), `uv run python scripts/data_gen/validate.py` (`all checks passed`), and grep the repo diff for em dashes: `git diff main...HEAD | grep -c "—"` should print 0 (adjust the base branch name to `master` if `main` does not exist).
+Run: `uv run pytest -q` (all pass), `uv run python scripts/data_gen/validate.py` (`all checks passed`), and grep the repo diff for em dashes: `git diff master...HEAD | grep -cP 'â'` should print 0 (the repo's default branch is `master`).
 
 - [ ] **Step 5: Commit**
 

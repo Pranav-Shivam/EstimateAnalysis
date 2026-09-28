@@ -118,6 +118,21 @@ def test_text_only_turn_is_nudged_to_submit(db_session):
     assert state["status"] == "ready"
 
 
+def test_empty_completion_is_sent_back_with_string_content(db_session):
+    from core.llm.openai_agent_client import AgentTurn
+
+    def after_nudge(messages):
+        assistant = [m for m in messages if m["role"] == "assistant"]
+        assert assistant[0]["content"] == ""
+        assert "tool_calls" not in assistant[0]
+        assert "submit_draft" in messages[-1]["content"]
+        return submit_turn(_draft([_line()]))
+
+    state, _ = _run(db_session, [AgentTurn(content=None, tool_calls=[]), after_nudge])
+
+    assert state["status"] == "ready"
+
+
 def test_malformed_submit_draft_arguments_get_an_error_and_do_not_count(db_session):
     def second(messages):
         assert messages[-1]["role"] == "tool"

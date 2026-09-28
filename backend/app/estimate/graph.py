@@ -28,7 +28,8 @@ class AgentState(TypedDict):
 
 
 def _assistant_message(turn) -> dict:
-    message: dict = {"role": "assistant", "content": turn.content}
+    # The API allows null content only alongside tool_calls; an empty completion must be sent back as "".
+    message: dict = {"role": "assistant", "content": turn.content if turn.tool_calls else turn.content or ""}
     if turn.tool_calls:
         message["tool_calls"] = [
             {"id": c.id, "type": "function", "function": {"name": c.name, "arguments": json.dumps(c.arguments)}}

@@ -75,6 +75,31 @@ def test_a_second_run_clears_assignments_from_the_first(db_session, graph_client
     assert _community_of(graph_client, graph_ns, "SKU-L-X1") != 9999
 
 
+def test_run_communities_never_writes_community_id_into_another_namespace(db_session, graph_client, graph_ns, make_reader):
+    """(Review Focus) The Leiden projection's ns filter must scope both the read and the write-back; a regression
+    there would leak community_id onto every other populated namespace, main included."""
+    other = f"test-other-{uuid.uuid4().hex[:8]}"
+    graph_client.write(
+        "CREATE (a:SKU {ns: $ns, key: $ka, id: 'OTHER-SKU-A'}) "
+        "CREATE (b:SKU {ns: $ns, key: $kb, id: 'OTHER-SKU-B'}) "
+        "CREATE (f:ProductFamily {ns: $ns, key: $kf, id: 'OTHER-FAM'}) "
+        "CREATE (a)-[:REQUIRES]->(b) "
+        "CREATE (a)-[:IN_FAMILY]->(f)",
+        ns=other, ka=node_key(other, "OTHER-SKU-A"), kb=node_key(other, "OTHER-SKU-B"),
+        kf=node_key(other, "OTHER-FAM"),
+    )
+    try:
+        seed_clusters(db_session)
+        make_reader()
+
+        run_communities(graph_client, graph_ns)
+
+        rows = graph_client.read("MATCH (n {ns: $ns}) RETURN n.community_id AS community_id", ns=other)
+        assert rows and all(row["community_id"] is None for row in rows)
+    finally:
+        graph_client.write("MATCH (n {ns: $ns}) DETACH DELETE n", ns=other)
+
+
 def test_an_empty_namespace_has_no_communities(graph_client, graph_ns):
     summary = run_communities(graph_client, graph_ns)
 

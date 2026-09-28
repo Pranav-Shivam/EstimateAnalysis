@@ -87,11 +87,15 @@ uv run python main.py
 
 ## Phase 3: Agent, pricing tools, guardrails
 
-Prerequisites: everything from Phase 2, plus the pricing data generated and loaded:
+Prerequisites: everything from Phase 2, plus the pricing data loaded (`data/pricing.json` is committed):
 ```
-uv run python scripts/data_gen/price_gen.py          # writes data/pricing.json (already committed)
 uv run alembic upgrade head                          # migration 0002
 uv run python scripts/load_data.py                   # loads requirements, discounts, price gaps, history
+```
+
+Regenerate `data/pricing.json` only if the catalog, customers or scenario cases change (output is deterministic):
+```
+uv run python scripts/data_gen/price_gen.py --force
 ```
 
 `POST /v1/estimate` with `{"quote_request_id": "<uuid>", "as_of": "2024-09-01"}` (`as_of` optional, defaults to

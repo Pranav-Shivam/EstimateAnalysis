@@ -1,4 +1,4 @@
-from data_gen.validate import check_determinism, check_referential_integrity, check_scenario_coverage
+from data_gen.validate import check_determinism, check_pricing, check_referential_integrity, check_scenario_coverage
 
 
 def _valid_catalog():
@@ -141,3 +141,49 @@ def test_check_determinism_catches_a_non_deterministic_function():
 
     failures = check_determinism(regenerate)
     assert any("catalog.json" in f for f in failures)
+
+
+def _valid_pricing():
+    return {
+        "discounts": {"CTR-0001": 10.0},
+        "gap_sku_ids": ["SKU-0002"],
+        "history": [{"sku_id": "SKU-0001", "unit_price": 0.9, "quoted_on": "2024-01-01"}],
+    }
+
+
+def test_pricing_passes_for_valid_data():
+    assert check_pricing(_valid_catalog(), _valid_customers(), _valid_pricing()) == []
+
+
+def test_pricing_catches_contract_without_discount():
+    pricing = _valid_pricing()
+    pricing["discounts"] = {}
+
+    assert any("CTR-0001" in f for f in check_pricing(_valid_catalog(), _valid_customers(), pricing))
+
+
+def test_pricing_catches_gap_sku_with_history():
+    pricing = _valid_pricing()
+    pricing["history"].append({"sku_id": "SKU-0002", "unit_price": 1.0, "quoted_on": "2024-01-01"})
+
+    assert any("SKU-0002" in f and "history" in f for f in check_pricing(_valid_catalog(), _valid_customers(), pricing))
+
+
+def test_pricing_catches_priced_sku_without_history():
+    pricing = _valid_pricing()
+    pricing["gap_sku_ids"] = []
+
+    assert any("SKU-0002" in f for f in check_pricing(_valid_catalog(), _valid_customers(), pricing))
+
+
+def test_pricing_catches_unknown_references():
+    pricing = _valid_pricing()
+    pricing["gap_sku_ids"] = ["SKU-9999"]
+    pricing["discounts"]["CTR-9999"] = 5.0
+    pricing["history"].append({"sku_id": "SKU-8888", "unit_price": 1.0, "quoted_on": "2024-01-01"})
+
+    failures = check_pricing(_valid_catalog(), _valid_customers(), pricing)
+
+    assert any("SKU-9999" in f for f in failures)
+    assert any("CTR-9999" in f for f in failures)
+    assert any("SKU-8888" in f for f in failures)

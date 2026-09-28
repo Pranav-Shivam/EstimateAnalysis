@@ -83,6 +83,32 @@ def check_scenario_coverage(scenarios: list[dict]) -> list[str]:
     return failures
 
 
+def check_pricing(catalog: list[dict], customers: list[dict], pricing: dict) -> list[str]:
+    failures = []
+    sku_ids = {s["sku_id"] for s in catalog}
+    contract_ids = {c["contract_id"] for customer in customers for c in customer["contracts"]}
+    gap = set(pricing["gap_sku_ids"])
+    history_sku_ids = {row["sku_id"] for row in pricing["history"]}
+
+    for contract_id in sorted(contract_ids - set(pricing["discounts"])):
+        failures.append(f"pricing: contract {contract_id} has no discount")
+    for contract_id in sorted(set(pricing["discounts"]) - contract_ids):
+        failures.append(f"pricing: discount for unknown contract {contract_id}")
+    for sku_id in sorted(gap - sku_ids):
+        failures.append(f"pricing: gap SKU {sku_id} is not in the catalog")
+    for sku_id in sorted(history_sku_ids - sku_ids):
+        failures.append(f"pricing: history references unknown SKU {sku_id}")
+    for sku_id in sorted(gap & history_sku_ids):
+        failures.append(f"pricing: gap SKU {sku_id} must not have price history")
+    for sku_id in sorted(sku_ids - gap - history_sku_ids):
+        failures.append(f"pricing: priced SKU {sku_id} has no price history")
+    for row in pricing["history"]:
+        if row["unit_price"] <= 0:
+            failures.append(f"pricing: non-positive history price for {row['sku_id']}")
+
+    return failures
+
+
 def check_determinism(regenerate_fn) -> list[str]:
     """regenerate_fn() returns (catalog, customers) freshly built from config; called twice and compared
     structurally (Python == on the loaded lists/dicts), not byte-for-byte, since JSON key order is not
@@ -102,13 +128,19 @@ def main() -> None:
     parser.add_argument("--catalog", type=Path, default=DATA_DIR / "catalog.json")
     parser.add_argument("--customers", type=Path, default=DATA_DIR / "customers.json")
     parser.add_argument("--scenarios", type=Path, default=DATA_DIR / "scenarios.json")
+    parser.add_argument("--pricing", type=Path, default=DATA_DIR / "pricing.json")
     args = parser.parse_args()
 
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
     customers = json.loads(args.customers.read_text(encoding="utf-8"))
     scenarios = json.loads(args.scenarios.read_text(encoding="utf-8"))
+    pricing = json.loads(args.pricing.read_text(encoding="utf-8"))
 
-    failures = check_referential_integrity(catalog, customers, scenarios) + check_scenario_coverage(scenarios)
+    failures = (
+        check_referential_integrity(catalog, customers, scenarios)
+        + check_scenario_coverage(scenarios)
+        + check_pricing(catalog, customers, pricing)
+    )
 
     if failures:
         print("VALIDATION FAILED:")

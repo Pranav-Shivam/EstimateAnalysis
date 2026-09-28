@@ -46,13 +46,32 @@ def test_next_turn_raises_agent_error_on_api_failure():
     fake = MagicMock()
     fake.chat.completions.create.side_effect = RuntimeError("rate limited")
 
-    with pytest.raises(AgentError):
+    with pytest.raises(AgentError) as excinfo:
         OpenAIAgentClient(client=fake).next_turn([], [])
+
+    assert isinstance(excinfo.value.__cause__, RuntimeError)
 
 
 def test_next_turn_raises_agent_error_on_malformed_tool_arguments():
     fake = MagicMock()
     fake.chat.completions.create.return_value = _response(tool_calls=[_tool_call("c1", "check_stock", "{not json")])
+
+    with pytest.raises(AgentError):
+        OpenAIAgentClient(client=fake).next_turn([], [])
+
+
+def test_next_turn_raises_agent_error_when_response_has_no_choices():
+    fake = MagicMock()
+    fake.chat.completions.create.return_value = MagicMock(choices=[])
+
+    with pytest.raises(AgentError):
+        OpenAIAgentClient(client=fake).next_turn([], [])
+
+
+@pytest.mark.parametrize("arguments", ["[]", '"x"', "null", "3", None])
+def test_next_turn_raises_agent_error_when_tool_arguments_are_not_a_json_object(arguments):
+    fake = MagicMock()
+    fake.chat.completions.create.return_value = _response(tool_calls=[_tool_call("c1", "check_stock", arguments)])
 
     with pytest.raises(AgentError):
         OpenAIAgentClient(client=fake).next_turn([], [])

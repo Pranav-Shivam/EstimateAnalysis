@@ -33,12 +33,19 @@ class OpenAIAgentClient:
         except Exception as exc:
             raise AgentError(f"OpenAI agent call failed: {exc}") from exc
 
+        if not response.choices:
+            raise AgentError("OpenAI returned no choices")
         message = response.choices[0].message
-        try:
-            tool_calls = [
-                ToolCall(id=call.id, name=call.function.name, arguments=json.loads(call.function.arguments))
-                for call in (message.tool_calls or [])
-            ]
-        except json.JSONDecodeError as exc:
-            raise AgentError(f"OpenAI returned malformed tool arguments: {exc}") from exc
+        tool_calls = [_parse_tool_call(call) for call in (message.tool_calls or [])]
         return AgentTurn(content=message.content, tool_calls=tool_calls)
+
+
+def _parse_tool_call(call) -> ToolCall:
+    name = call.function.name
+    try:
+        arguments = json.loads(call.function.arguments)
+    except (json.JSONDecodeError, TypeError) as exc:
+        raise AgentError(f"OpenAI returned malformed arguments for tool {name}: {exc}") from exc
+    if not isinstance(arguments, dict):
+        raise AgentError(f"OpenAI returned non-object arguments for tool {name}: got {type(arguments).__name__}")
+    return ToolCall(id=call.id, name=name, arguments=arguments)

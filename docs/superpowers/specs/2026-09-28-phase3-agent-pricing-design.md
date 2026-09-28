@@ -36,17 +36,17 @@ Layer order follows `docs/backend-structure.txt`: route, service, repository, DB
   - `contracts.discount_pct` (numeric, not null; the migration backfills existing rows).
   - New table `sku_requirements` (`sku_id`, `required_sku_id`), because `REQUIRES` currently lives only in `catalog.json`.
   - New table `price_history`.
-  - New table `estimate_drafts` (`id` UUID, `quote_request_id` FK, `status`, `draft` JSONB, `violations` JSONB, `iterations` int, `created_at`).
+  - New table `estimate_drafts` (`id` UUID, `quote_request_id` FK, `status`, `draft` JSONB nullable, `violations` JSONB, `iterations` int, `reason` text nullable, `created_at`).
 - `scripts/load_data.py` loads requirements, discounts, gap flags and history. `validate.py` gains checks for `pricing.json`: every contract has a discount, gap SKUs have no history, history references real SKUs.
 
 ### Module `app/estimate/`
 
-- `schemas.py`: `DraftLine` (sku_id, quantity, unit_price, price_source, discount_pct), `Adjustment` (kind, from, to, reason), `Violation` (guardrail, line index or null, message), `EstimateDraft` (customer_id, contract_id, as_of, lines, adjustments, totals). Totals are computed by code.
+- `schemas.py`: `DraftLine` (sku_id, quantity, unit_price, price_source, discount_pct), `Adjustment` (kind, from, to, reason), `Violation` (guardrail, line index or null, message), `EstimateDraft` (customer_id, contract_id, lines, adjustments, flags), `Totals`, `EstimateResult` (status, as_of, draft, totals, violations, iterations, reason). `flags` are free-text reviewer notes the agent adds when it cannot auto-fix (for example an out-of-stock replacement); a draft with flags ends as `needs_review` even when every guardrail passes. Totals are computed by code, never submitted by the agent.
 - `tools.py`: plain functions over a session, each returning data plus its source:
   - `lookup_customer`: customer, contract terms, whether the contract is active on `as_of`.
   - `search_price_book`: list price and last realized price, or "unpriced".
   - `check_stock`.
-  - `get_replacement`: discontinued SKU to replacement, plus required parts.
+  - `get_related_parts`: a SKU's replacement (if discontinued) and its required parts.
   - `predict_price`: category-peer median with low/high, tagged `predicted`.
 - `guardrails.py`: pure functions (draft plus reference data in, list of violations out).
 - `graph.py`: the LangGraph wiring.
@@ -61,8 +61,8 @@ Layer order follows `docs/backend-structure.txt`: route, service, repository, DB
 agent (GPT-4o, tool calling) --tool calls--> tools --> agent
 agent --submit_draft--> guardrails
 guardrails --pass--> END (status ready)
-guardrails --fail, retries < 3--> agent (violation messages appended)
-guardrails --fail, retries == 3--> END (status needs_review)
+guardrails --fail, fewer than 3 retries used--> agent (violation messages appended)
+guardrails --fail, 3 retries already used--> END (status needs_review)
 tool-step cap of 12 --> END (status needs_review)
 ```
 
@@ -82,7 +82,7 @@ Violations are returned to the agent as per-line messages.
 
 - LLM call failure raises a typed `AgentError`, surfaced by the route as 502 (mirrors `ExtractionError`).
 - Unknown `quote_request_id`: 404.
-- Loop caps end the run as `needs_review`, never as an error and never as `ready`.
+- Loop caps end the run as `needs_review`, never as an error and never as `ready`. "3 retries" means up to 4 submissions: the first, then 3 re-submissions after guardrail failures. The 12-step cap counts agent turns.
 
 ## Testing
 
@@ -98,4 +98,5 @@ Violations are returned to the agent as per-line messages.
 - No live-OpenAI run over the 60 real emails. It costs real money; it will not run without explicit approval.
 - Phase 2 dedupe is not idempotent and has no timestamps. Phase 3 does not depend on either.
 - `DATASET_AS_OF` is a synthetic-data convention, not production behavior.
+- The three guardrails do not block a draft that leaves a discontinued SKU in place or omits a required part; those two cases are handled by agent policy only in Phase 3 (the graph in Phase 4 is the natural place to enforce them).
 - Predicted prices are noise-level accurate because Phase 1 list prices are random per SKU. They are tagged and low-confidence by design; calibration is Phase 5.

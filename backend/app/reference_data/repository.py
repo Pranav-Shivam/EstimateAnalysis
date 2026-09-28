@@ -3,7 +3,9 @@ from datetime import date
 from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
-from app.reference_data.models import Contract, Customer, PriceHistory, Site, Sku, SkuRequirement
+from app.reference_data.models import (
+    Contact, Contract, Customer, PriceHistory, ProductFamily, Project, Site, Sku, SkuRequirement,
+)
 
 
 def upsert_sku(
@@ -113,3 +115,74 @@ def skus_with_list_price_in_category(session: Session, category: str) -> list[Sk
     return list(session.scalars(
         select(Sku).where(Sku.category == category, Sku.list_price.is_not(None)).order_by(Sku.sku_id)
     ))
+
+
+def upsert_family(session: Session, *, family_id: str, name: str, category: str) -> None:
+    row = session.get(ProductFamily, family_id)
+    if row is None:
+        row = ProductFamily(family_id=family_id)
+        session.add(row)
+    row.name = name
+    row.category = category
+
+
+def set_sku_family(session: Session, sku_id: str, family_id: str) -> None:
+    sku = session.get(Sku, sku_id)
+    if sku is None:
+        raise ValueError(f"structure references unknown SKU {sku_id}")
+    sku.family_id = family_id
+
+
+def upsert_project(session: Session, *, project_id: str, customer_id: str, site_id: str, name: str) -> None:
+    row = session.get(Project, project_id)
+    if row is None:
+        row = Project(project_id=project_id)
+        session.add(row)
+    row.customer_id = customer_id
+    row.site_id = site_id
+    row.name = name
+
+
+def upsert_contact(
+    session: Session, *, contact_id: str, customer_id: str, name: str, email: str, phone: str,
+) -> None:
+    row = session.get(Contact, contact_id)
+    if row is None:
+        row = Contact(contact_id=contact_id)
+        session.add(row)
+    row.customer_id = customer_id
+    row.name = name
+    row.email = email
+    row.phone = phone
+
+
+def all_contracts(session: Session) -> list[Contract]:
+    return list(session.scalars(select(Contract).order_by(Contract.contract_id)))
+
+
+def all_sites(session: Session) -> list[Site]:
+    return list(session.scalars(select(Site).order_by(Site.site_id)))
+
+
+def all_requirements(session: Session) -> list[SkuRequirement]:
+    return list(session.scalars(select(SkuRequirement).order_by(SkuRequirement.sku_id, SkuRequirement.required_sku_id)))
+
+
+def all_families(session: Session) -> list[ProductFamily]:
+    return list(session.scalars(select(ProductFamily).order_by(ProductFamily.family_id)))
+
+
+def all_projects(session: Session) -> list[Project]:
+    return list(session.scalars(select(Project).order_by(Project.project_id)))
+
+
+def all_contacts(session: Session) -> list[Contact]:
+    return list(session.scalars(select(Contact).order_by(Contact.contact_id)))
+
+
+def sites_for_customer(session: Session, customer_id: str) -> list[Site]:
+    return list(session.scalars(select(Site).where(Site.customer_id == customer_id).order_by(Site.site_id)))
+
+
+def project_for_site(session: Session, site_id: str) -> Project | None:
+    return session.scalar(select(Project).where(Project.site_id == site_id))

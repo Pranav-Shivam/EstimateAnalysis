@@ -2,10 +2,11 @@ from datetime import date
 
 import pytest
 
-from load_data import load_catalog, load_customers, load_pricing
-from app.reference_data.models import Contract, Sku
+from load_data import load_catalog, load_customers, load_pricing, load_structure
+from app.reference_data.models import Contact, Contract, ProductFamily, Project, Sku
 from app.reference_data.repository import (
-    all_customers, all_skus, get_contract, get_sku, latest_realized_price, required_sku_ids,
+    all_customers, all_skus, get_contract, get_sku, latest_realized_price, project_for_site,
+    required_sku_ids, sites_for_customer,
 )
 
 
@@ -123,3 +124,77 @@ def test_load_pricing_rejects_unknown_references(db_session):
 
     with pytest.raises(ValueError):
         load_pricing(db_session, {"discounts": {"CTR-NOPE": 5.0}, "gap_sku_ids": [], "history": []})
+
+
+def _structure_customers():
+    return [{
+        "customer_id": "CUST-ST1", "name": "Struct Co", "account_tier": "Standard",
+        "contacts": [
+            {"name": "Ravi Kumar", "email": "ravi@struct.example", "phone": "555-0001"},
+            {"name": "Kiran Rao", "email": "kiran@struct.example", "phone": "555-0002"},
+        ],
+        "sites": [{"site_id": "SITE-ST1", "address": "1 Main St, Town, ST", "zip": "11111"}],
+        "contracts": [],
+    }]
+
+
+def _structure():
+    return {
+        "families": [{"family_id": "FAM-ST1", "name": "Copper Adapter", "category": "Cat-ST"}],
+        "sku_family": {"SKU-ST1": "FAM-ST1"},
+        "projects": [{"project_id": "PRJ-ST1", "customer_id": "CUST-ST1", "site_id": "SITE-ST1", "name": "job"}],
+    }
+
+
+def _structure_catalog():
+    return [{"sku_id": "SKU-ST1", "name": "Copper Adapter 1 in", "category": "Cat-ST", "list_price": 5.0,
+             "discontinued": False, "replaced_by": None, "in_stock": True, "requires": []}]
+
+
+def test_load_customers_loads_contacts_with_derived_ids(db_session):
+    load_customers(db_session, _structure_customers())
+    db_session.flush()
+
+    assert db_session.get(Contact, "CUST-ST1-C1").name == "Ravi Kumar"
+    assert db_session.get(Contact, "CUST-ST1-C2").email == "kiran@struct.example"
+
+
+def test_load_customers_is_idempotent_for_contacts(db_session):
+    load_customers(db_session, _structure_customers())
+    load_customers(db_session, _structure_customers())
+    db_session.flush()
+
+    assert db_session.get(Contact, "CUST-ST1-C2").phone == "555-0002"
+
+
+def test_load_structure_links_skus_families_and_projects(db_session):
+    load_catalog(db_session, _structure_catalog())
+    load_customers(db_session, _structure_customers())
+
+    load_structure(db_session, _structure())
+    db_session.flush()
+
+    assert db_session.get(Sku, "SKU-ST1").family_id == "FAM-ST1"
+    assert db_session.get(ProductFamily, "FAM-ST1").name == "Copper Adapter"
+    assert project_for_site(db_session, "SITE-ST1").project_id == "PRJ-ST1"
+    assert [s.site_id for s in sites_for_customer(db_session, "CUST-ST1")] == ["SITE-ST1"]
+
+
+def test_load_structure_is_idempotent(db_session):
+    load_catalog(db_session, _structure_catalog())
+    load_customers(db_session, _structure_customers())
+
+    load_structure(db_session, _structure())
+    load_structure(db_session, _structure())
+    db_session.flush()
+
+    assert db_session.get(Project, "PRJ-ST1").name == "job"
+
+
+def test_load_structure_rejects_an_unknown_sku(db_session):
+    load_customers(db_session, _structure_customers())
+    structure = _structure()
+    structure["sku_family"] = {"SKU-NOPE": "FAM-ST1"}
+
+    with pytest.raises(ValueError, match="SKU-NOPE"):
+        load_structure(db_session, structure)

@@ -17,6 +17,7 @@ class Sku(Base):
     discontinued: Mapped[bool]
     replaced_by: Mapped[str | None] = mapped_column(ForeignKey("skus.sku_id"))
     in_stock: Mapped[bool]
+    family_id: Mapped[str | None] = mapped_column(ForeignKey("product_families.family_id"))
 
 
 class Customer(Base):
@@ -69,3 +70,31 @@ class PriceHistory(Base):
     sku_id: Mapped[str] = mapped_column(ForeignKey("skus.sku_id"), index=True)
     unit_price: Mapped[float]
     quoted_on: Mapped[date]
+
+
+class ProductFamily(Base):
+    __tablename__ = "product_families"
+
+    family_id: Mapped[str] = mapped_column(primary_key=True)
+    name: Mapped[str]
+    category: Mapped[str]
+
+
+class Project(Base):
+    __tablename__ = "projects"
+
+    project_id: Mapped[str] = mapped_column(primary_key=True)
+    customer_id: Mapped[str] = mapped_column(ForeignKey("customers.customer_id"))
+    # One project per site: a resolved site identifies its project.
+    site_id: Mapped[str] = mapped_column(ForeignKey("sites.site_id"), unique=True)
+    name: Mapped[str]
+
+
+class Contact(Base):
+    __tablename__ = "contacts"
+
+    contact_id: Mapped[str] = mapped_column(primary_key=True)
+    customer_id: Mapped[str] = mapped_column(ForeignKey("customers.customer_id"))
+    name: Mapped[str]
+    email: Mapped[str]
+    phone: Mapped[str]

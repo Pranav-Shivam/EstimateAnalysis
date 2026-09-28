@@ -8,7 +8,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app.reference_data.models import Contract, Sku
 from app.reference_data.repository import (
-    replace_price_history, upsert_contract, upsert_customer, upsert_requirement, upsert_site, upsert_sku,
+    replace_price_history, set_sku_family, upsert_contact, upsert_contract, upsert_customer, upsert_family,
+    upsert_project, upsert_requirement, upsert_site, upsert_sku,
 )
 from core.config.settings import Settings
 from core.db.session import make_engine, make_session_factory
@@ -37,6 +38,14 @@ def load_catalog(session, catalog: list[dict]) -> None:
 def load_customers(session, customers: list[dict]) -> None:
     for customer in customers:
         upsert_customer(session, customer_id=customer["customer_id"], name=customer["name"], account_tier=customer["account_tier"])
+        # Sessions run with autoflush off, and Contact has no relationship() to Customer for the ORM to infer
+        # insert order from, so the customer row must be flushed before contacts referencing it are added.
+        session.flush()
+        for number, contact in enumerate(customer["contacts"], start=1):
+            upsert_contact(
+                session, contact_id=f"{customer['customer_id']}-C{number}", customer_id=customer["customer_id"],
+                name=contact["name"], email=contact["email"], phone=contact["phone"],
+            )
         for site in customer["sites"]:
             upsert_site(session, site_id=site["site_id"], customer_id=customer["customer_id"], address=site["address"], zip_code=site["zip"])
         for contract in customer["contracts"]:
@@ -72,10 +81,26 @@ def load_pricing(session, pricing: dict) -> None:
         replace_price_history(session, sku_id, rows)
 
 
+def load_structure(session, structure: dict) -> None:
+    # Sessions run with autoflush off: SKUs, customers and sites loaded earlier must be flushed to be linked.
+    session.flush()
+    for family in structure["families"]:
+        upsert_family(session, family_id=family["family_id"], name=family["name"], category=family["category"])
+    session.flush()
+    for sku_id, family_id in structure["sku_family"].items():
+        set_sku_family(session, sku_id, family_id)
+    for project in structure["projects"]:
+        upsert_project(
+            session, project_id=project["project_id"], customer_id=project["customer_id"],
+            site_id=project["site_id"], name=project["name"],
+        )
+
+
 def run(data_dir: Path = DATA_DIR) -> None:
     catalog = json.loads((data_dir / "catalog.json").read_text(encoding="utf-8"))
     customers = json.loads((data_dir / "customers.json").read_text(encoding="utf-8"))
     pricing = json.loads((data_dir / "pricing.json").read_text(encoding="utf-8"))
+    structure = json.loads((data_dir / "structure.json").read_text(encoding="utf-8"))
 
     settings = Settings()
     engine = make_engine(settings.database_url)
@@ -84,11 +109,13 @@ def run(data_dir: Path = DATA_DIR) -> None:
         load_catalog(session, catalog)
         load_customers(session, customers)
         load_pricing(session, pricing)
+        load_structure(session, structure)
         session.commit()
         redacted_url = re.sub(r"//([^:/@]+):[^@]*@", r"//\1:***@", settings.database_url)
         print(
             f"loaded {len(catalog)} SKUs, {len(customers)} customers, "
-            f"{len(pricing['history'])} price history rows into {redacted_url}"
+            f"{len(pricing['history'])} price history rows, "
+            f"{len(structure['families'])} families, {len(structure['projects'])} projects into {redacted_url}"
         )
     finally:
         session.close()

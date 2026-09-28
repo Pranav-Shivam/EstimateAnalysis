@@ -1,3 +1,4 @@
+import hashlib
 from datetime import date
 
 from sqlalchemy import delete, select
@@ -186,3 +187,24 @@ def sites_for_customer(session: Session, customer_id: str) -> list[Site]:
 
 def project_for_site(session: Session, site_id: str) -> Project | None:
     return session.scalar(select(Project).where(Project.site_id == site_id))
+
+
+def reference_fingerprint(session: Session) -> str:
+    """Digest of the reference rows the graph guardrail depends on. The graph stores it at rebuild time; a
+    mismatch later means Postgres moved on and the graph is stale."""
+    digest = hashlib.md5(usedforsecurity=False)
+    statements = (
+        select(Sku.sku_id, Sku.category, Sku.discontinued, Sku.replaced_by, Sku.family_id, Sku.in_stock)
+        .order_by(Sku.sku_id),
+        select(SkuRequirement.sku_id, SkuRequirement.required_sku_id)
+        .order_by(SkuRequirement.sku_id, SkuRequirement.required_sku_id),
+        select(
+            Contract.contract_id, Contract.customer_id, Contract.covered_categories, Contract.effective_from,
+            Contract.effective_to, Contract.discount_pct,
+        ).order_by(Contract.contract_id),
+    )
+    for statement in statements:
+        for row in session.execute(statement):
+            digest.update(repr(tuple(row)).encode("utf-8"))
+        digest.update(b"|")
+    return digest.hexdigest()

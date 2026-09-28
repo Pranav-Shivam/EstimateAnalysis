@@ -10,5 +10,20 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql
 
+  neo4j:
+    image: neo4j:2026.09.0-community
+    container_name: neo4j-estimate
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/neo4j-dev-password
+      NEO4J_PLUGINS: '["graph-data-science"]'
+    ports:
+      - "17474:7474"
+      - "17687:7687"
+    volumes:
+      - neo4j_estimate_data:/data
+
 volumes:
   postgres_data:
+  neo4j_estimate_data:
+    name: neo4j_estimate_data

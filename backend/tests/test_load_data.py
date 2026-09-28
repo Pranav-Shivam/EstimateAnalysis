@@ -1,3 +1,4 @@
+import copy
 from datetime import date
 
 import pytest
@@ -161,10 +162,13 @@ def test_load_customers_loads_contacts_with_derived_ids(db_session):
 
 def test_load_customers_is_idempotent_for_contacts(db_session):
     load_customers(db_session, _structure_customers())
-    load_customers(db_session, _structure_customers())
+
+    changed = copy.deepcopy(_structure_customers())
+    changed[0]["contacts"][1]["phone"] = "555-9999"
+    load_customers(db_session, changed)
     db_session.flush()
 
-    assert db_session.get(Contact, "CUST-ST1-C2").phone == "555-0002"
+    assert db_session.get(Contact, "CUST-ST1-C2").phone == "555-9999"
 
 
 def test_load_structure_links_skus_families_and_projects(db_session):
@@ -185,10 +189,12 @@ def test_load_structure_is_idempotent(db_session):
     load_customers(db_session, _structure_customers())
 
     load_structure(db_session, _structure())
-    load_structure(db_session, _structure())
+    changed = copy.deepcopy(_structure())
+    changed["projects"][0]["name"] = "revised job"
+    load_structure(db_session, changed)
     db_session.flush()
 
-    assert db_session.get(Project, "PRJ-ST1").name == "job"
+    assert db_session.get(Project, "PRJ-ST1").name == "revised job"
 
 
 def test_load_structure_rejects_an_unknown_sku(db_session):

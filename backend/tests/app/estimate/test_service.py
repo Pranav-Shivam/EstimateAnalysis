@@ -1,14 +1,15 @@
 import uuid
 
 import pytest
-from sqlalchemy import select
+from sqlalchemy import select, text
 
+from app.estimate.constant import MAX_AGENT_STEPS
 from app.estimate.models import EstimateDraftRow
 from app.estimate.repository import get_estimate_draft
 from app.estimate.service import run_estimate
 from app.intake.repository import save_quote_request
 from core.llm.openai_agent_client import AgentError
-from tests.app.estimate.fakes import ScriptedLLM, submit_turn
+from tests.app.estimate.fakes import ScriptedLLM, submit_turn, text_turn
 from tests.app.estimate.seed import AS_OF, seed_world
 
 
@@ -65,6 +66,43 @@ def test_run_estimate_persists_needs_review_with_violations(db_session):
     stored = get_estimate_draft(db_session, run.row.id)
     assert stored.violations[0]["guardrail"] == "contract_discount"
     assert stored.reason is not None
+
+
+def test_run_estimate_persists_needs_review_when_agent_never_submits(db_session):
+    seed_world(db_session)
+    request = _quote_request(db_session)
+    llm = ScriptedLLM([text_turn() for _ in range(MAX_AGENT_STEPS)])
+
+    run = run_estimate(db_session, request.id, AS_OF, llm)
+
+    assert run.result.status == "needs_review"
+    assert run.result.draft is None
+    assert run.result.totals is None
+    assert run.result.iterations == 0
+    assert run.result.reason is not None
+    stored = get_estimate_draft(db_session, run.row.id)
+    assert stored.draft is None
+    draft_is_sql_null = db_session.execute(
+        text("select draft is null from estimate_drafts where id = :id"), {"id": run.row.id}
+    ).scalar()
+    assert draft_is_sql_null is True
+
+
+def test_run_estimate_persists_needs_review_for_a_flagged_draft(db_session):
+    seed_world(db_session)
+    request = _quote_request(db_session)
+    flagged = _good_draft()
+    flagged["flags"] = ["replacement SKU is out of stock"]
+    llm = ScriptedLLM([submit_turn(flagged)])
+
+    run = run_estimate(db_session, request.id, AS_OF, llm)
+
+    assert run.result.status == "needs_review"
+    assert run.result.violations == []
+    stored = get_estimate_draft(db_session, run.row.id)
+    assert stored.violations == []
+    assert stored.reason is not None
+    assert stored.draft["flags"] == ["replacement SKU is out of stock"]
 
 
 def test_run_estimate_rejects_unknown_quote_request(db_session):

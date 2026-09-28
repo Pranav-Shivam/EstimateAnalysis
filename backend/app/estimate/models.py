@@ -15,7 +15,7 @@ class EstimateDraftRow(Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     quote_request_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("quote_requests.id"))
     status: Mapped[str] = mapped_column(Text)
-    draft: Mapped[dict | None] = mapped_column(JSONB)
+    draft: Mapped[dict | None] = mapped_column(JSONB(none_as_null=True))
     violations: Mapped[list] = mapped_column(JSONB)
     iterations: Mapped[int]
     reason: Mapped[str | None] = mapped_column(Text)

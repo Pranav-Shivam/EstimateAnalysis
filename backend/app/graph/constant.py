@@ -12,3 +12,13 @@ MAX_CHAIN_HOPS = 10
 # A same-customer DISTINCT pair overlapping at least this much is a variant of the earlier request. It sits below the
 # classifier's CONTENT_SUPERSET_FLOOR (0.4, which makes revisions) so partial overlap that is not a superset counts.
 VARIANT_MIN_JACCARD = 0.2
+# A fixed seed makes Leiden deterministic; without it two runs can label communities differently.
+LEIDEN_SEED = 42
+LEIDEN_GAMMA = 1.0
+LOCAL_MAX_HOPS = 2
+LOCAL_MAX_NODES = 50
+LOCAL_MAX_PATHS = 500
+# Hubs appear in a local result only as leaves. Walking through one would return every member of the category or family.
+HUB_LABELS = ("PricingCategory", "ProductFamily")
+MAX_EXAMPLE_SKUS = 5
+MAX_MEMBER_NAMES = 30

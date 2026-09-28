@@ -1,5 +1,6 @@
 import logging
 import uuid
+from collections import Counter
 from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
@@ -7,13 +8,14 @@ from sqlalchemy.orm import Session
 from app.dedupe.repository import all_verdict_request_ids, verdicts_for_request
 from app.estimate.models import EstimateDraftRow
 from app.estimate.repository import all_estimate_draft_ids, get_estimate_draft, previous_estimate_draft
-from app.graph.constant import VARIANT_MIN_JACCARD
-from app.graph.helper import match_site
+from app.graph.constant import LOCAL_MAX_HOPS, LOCAL_MAX_NODES, VARIANT_MIN_JACCARD
+from app.graph.helper import build_community_stats, match_site
 from app.graph.repository import (
-    count_edges_by_type, count_nodes_by_label, drop_namespace, ensure_constraints, merge_edges, merge_nodes,
-    replace_price_variance,
+    clear_communities, count_edges_by_type, count_nodes_by_label, drop_namespace, ensure_constraints,
+    fetch_community_members, fetch_local_paths, fetch_node, merge_edges, merge_nodes, replace_price_variance,
+    run_leiden, write_communities,
 )
-from app.graph.schemas import RebuildSummary
+from app.graph.schemas import CommunityRunSummary, CommunityStats, LocalResult, RebuildSummary
 from app.intake.models import QuoteRequestRow
 from app.intake.repository import all_quote_request_ids, get_quote_request
 from app.reference_data.repository import (
@@ -202,3 +204,46 @@ def sync_best_effort(description: str, sync, *args) -> None:
         sync(*args)
     except GraphError:
         logger.warning("graph sync failed for %s; run a rebuild to repair the graph", description, exc_info=True)
+
+
+class NodeNotFound(Exception):
+    pass
+
+
+def run_communities(client: GraphClient, ns: str) -> CommunityRunSummary:
+    assignments = run_leiden(client, ns)
+    clear_communities(client, ns)
+    write_communities(client, ns, assignments)
+    sku_sizes = Counter(a["community"] for a in assignments if a["label"] == "SKU")
+    return CommunityRunSummary(
+        community_count=len(sku_sizes), largest_community_size=max(sku_sizes.values(), default=0),
+    )
+
+
+def global_stats(client: GraphClient, ns: str) -> list[CommunityStats]:
+    return build_community_stats(fetch_community_members(client, ns))
+
+
+def local_query(client: GraphClient, ns: str, node_id: str, hops: int = LOCAL_MAX_HOPS) -> LocalResult:
+    center = fetch_node(client, ns, node_id)
+    if center is None:
+        raise NodeNotFound(f"no node {node_id} in the graph")
+    hops = max(1, min(int(hops), LOCAL_MAX_HOPS))
+
+    nodes: dict[str, dict] = {center["id"]: center}
+    truncated = False
+    kept_paths = []
+    for row in fetch_local_paths(client, ns, node_id, hops):
+        new = [n for n in row["nodes"] if n["id"] not in nodes]
+        # A path is added whole or not at all, so the result never holds a node cut off from the centre.
+        if len(nodes) + len(new) > LOCAL_MAX_NODES:
+            truncated = True
+            continue
+        nodes.update({n["id"]: n for n in new})
+        kept_paths.append(row)
+
+    edges: dict[tuple[str, str, str], dict] = {}
+    for row in kept_paths:
+        for edge in row["edges"]:
+            edges[(edge["source"], edge["type"], edge["target"])] = edge
+    return LocalResult(center=node_id, nodes=list(nodes.values()), edges=list(edges.values()), truncated=truncated)

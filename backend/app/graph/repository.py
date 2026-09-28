@@ -1,6 +1,8 @@
 from collections.abc import Iterator
 
-from app.graph.constant import BATCH_SIZE, EDGE_TYPES, MAX_CHAIN_HOPS, NODE_LABELS
+from app.graph.constant import (
+    BATCH_SIZE, EDGE_TYPES, HUB_LABELS, LEIDEN_GAMMA, LEIDEN_SEED, LOCAL_MAX_PATHS, MAX_CHAIN_HOPS, NODE_LABELS,
+)
 from core.graph.client import GraphClient
 
 
@@ -121,3 +123,80 @@ def fetch_fingerprint(client: GraphClient, ns: str) -> str | None:
         "MATCH (m:GraphMeta {key: $key}) RETURN m.reference_fingerprint AS fingerprint", key=node_key(ns, ns),
     )
     return rows[0]["fingerprint"] if rows else None
+
+
+def _projection_name(ns: str) -> str:
+    return f"leiden-{ns}"
+
+
+def _drop_projection(client: GraphClient, name: str) -> None:
+    client.write("CALL gds.graph.drop($name, false) YIELD graphName RETURN graphName", name=name)
+
+
+def run_leiden(client: GraphClient, ns: str) -> list[dict]:
+    """Leiden over this namespace's SKUs and families. Pricing categories are left out: with five hubs they would
+    make every community just a category. Returns [{"key", "label", "community"}]."""
+    name = _projection_name(ns)
+    _drop_projection(client, name)
+    try:
+        projected = client.write(
+            "MATCH (a)-[r:IN_FAMILY|REQUIRES|REPLACED_BY]->(b) WHERE a.ns = $ns AND b.ns = $ns "
+            "WITH gds.graph.project($name, a, b, {relationshipType: type(r)}, {undirectedRelationshipTypes: ['*']}) AS g "
+            "RETURN g.graphName AS name",
+            name=name, ns=ns,
+        )
+        # Aggregating over zero matches still returns one row, with a null name and no projection created.
+        if not projected or projected[0]["name"] is None:
+            return []
+        return client.read(
+            "CALL gds.leiden.stream($name, {randomSeed: $seed, gamma: $gamma, concurrency: 1}) YIELD nodeId, communityId "
+            "RETURN gds.util.asNode(nodeId).key AS key, labels(gds.util.asNode(nodeId))[0] AS label, "
+            "communityId AS community ORDER BY key",
+            name=name, seed=LEIDEN_SEED, gamma=LEIDEN_GAMMA,
+        )
+    finally:
+        _drop_projection(client, name)
+
+
+def clear_communities(client: GraphClient, ns: str) -> None:
+    client.write("MATCH (n {ns: $ns}) WHERE n.community_id IS NOT NULL REMOVE n.community_id", ns=ns)
+
+
+def write_communities(client: GraphClient, ns: str, assignments: list[dict]) -> None:
+    for batch in _batches(assignments):
+        client.write(
+            "UNWIND $rows AS row MATCH (n {key: row.key}) SET n.community_id = row.community", rows=batch,
+        )
+
+
+def fetch_community_members(client: GraphClient, ns: str) -> list[dict]:
+    return client.read(
+        "MATCH (s:SKU {ns: $ns}) WHERE s.community_id IS NOT NULL "
+        "OPTIONAL MATCH (s)-[:IN_FAMILY]->(f:ProductFamily) "
+        "RETURN s.id AS sku_id, s.name AS name, s.category AS category, s.discontinued AS discontinued, "
+        "s.community_id AS community, f.name AS family, EXISTS { (s)-[:REQUIRES]->() } AS has_requirements "
+        "ORDER BY s.id",
+        ns=ns,
+    )
+
+
+def fetch_node(client: GraphClient, ns: str, node_id: str) -> dict | None:
+    rows = client.read(
+        "MATCH (n {key: $key}) RETURN n.id AS id, labels(n)[0] AS label", key=node_key(ns, node_id),
+    )
+    return rows[0] if rows else None
+
+
+def fetch_local_paths(client: GraphClient, ns: str, node_id: str, hops: int) -> list[dict]:
+    """Paths of 1 to `hops` relationships from a node, never passing through a hub node. Nearer paths first."""
+    if not isinstance(hops, int):
+        raise ValueError("hops must be an integer")
+    not_hub = " AND ".join(f"NOT x:{label}" for label in HUB_LABELS)
+    return client.read(
+        f"MATCH p = (s {{key: $key}})-[*1..{hops}]-(m) "
+        f"WHERE m.ns = $ns AND all(x IN nodes(p)[1..-1] WHERE {not_hub}) "
+        "RETURN [n IN nodes(p) | {id: n.id, label: labels(n)[0]}] AS nodes, "
+        "[r IN relationships(p) | {type: type(r), source: startNode(r).id, target: endNode(r).id}] AS edges "
+        f"ORDER BY length(p), m.id LIMIT {LOCAL_MAX_PATHS}",
+        key=node_key(ns, node_id), ns=ns,
+    )

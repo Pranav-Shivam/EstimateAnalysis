@@ -58,3 +58,31 @@ class ContractCoverage:
     covered_categories: tuple[str, ...]
     covered: bool
     active_on_as_of: bool
+
+
+@dataclass(frozen=True)
+class CommunityStats:
+    community_id: int
+    size: int
+    families: tuple[str, ...]
+    dominant_category: str
+    dominant_category_share: float
+    discontinued_count: int
+    requirement_count: int
+    example_sku_ids: tuple[str, ...]
+    member_names: tuple[str, ...]
+    member_hash: str
+
+
+@dataclass(frozen=True)
+class CommunityRunSummary:
+    community_count: int
+    largest_community_size: int
+
+
+@dataclass(frozen=True)
+class LocalResult:
+    center: str
+    nodes: list[dict]
+    edges: list[dict]
+    truncated: bool

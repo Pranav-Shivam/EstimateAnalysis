@@ -84,3 +84,20 @@ uv run python main.py
 
 `POST /v1/intake` with `{"email_text": "..."}` extracts and stores a structured quote request.
 `POST /v1/dedupe/{quote_request_id}` classifies it against existing requests as `DUPLICATE_OF`, `REVISION_OF`, or `DISTINCT`.
+
+## Phase 3: Agent, pricing tools, guardrails
+
+Prerequisites: everything from Phase 2, plus the pricing data generated and loaded:
+```
+uv run python scripts/data_gen/price_gen.py          # writes data/pricing.json (already committed)
+uv run alembic upgrade head                          # migration 0002
+uv run python scripts/load_data.py                   # loads requirements, discounts, price gaps, history
+```
+
+`POST /v1/estimate` with `{"quote_request_id": "<uuid>", "as_of": "2024-09-01"}` (`as_of` optional, defaults to
+`DATASET_AS_OF`) runs the LangGraph agent over a stored quote request and returns a priced draft with status `ready`
+or `needs_review`, plus any guardrail violations. The agent calls OpenAI (real API cost); the test suite never does.
+
+The guardrails (contract discount, required fields, price provenance) are plain functions in
+`app/estimate/guardrails.py`. `tests/test_phase3_acceptance.py` proves that a discount on an uncovered category is
+blocked for all 10 planted `discount_category_mismatch` cases.

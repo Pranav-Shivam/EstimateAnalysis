@@ -31,6 +31,7 @@ What: LangGraph agent loop, tool set (CRM/customer lookup, price book search, st
 Depends on: Phase 1's catalog/customer/contract data; Phase 2's structured `QuoteRequest` as the agent's input.
 Done when: the agent produces a priced draft estimate for a Phase 1 scenario email, with guardrails provably blocking at least one deliberately-planted bad discount case.
 Why third: this is the core "does it actually price things right" loop; evals and the graph make it trustworthy, but the loop has to exist first for them to have something to check.
+Status: complete (see docs/superpowers/specs/2026-09-28-phase3-agent-pricing-design.md).
 
 ## Phase 4: Knowledge graph
 

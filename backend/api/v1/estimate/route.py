@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from api.v1.estimate.request import EstimateRequest
 from api.v1.estimate.response import EstimateResponse
 from app.estimate.constant import DATASET_AS_OF
-from app.estimate.service import run_estimate
+from app.estimate.service import QuoteRequestNotFound, run_estimate
 from core.config.settings import Settings
 from core.db.session import get_session
 from core.llm.openai_agent_client import AgentError, OpenAIAgentClient
@@ -27,7 +27,7 @@ def create_estimate(
 ) -> EstimateResponse:
     try:
         run = run_estimate(session, body.quote_request_id, body.as_of or DATASET_AS_OF, llm_client)
-    except ValueError as exc:
+    except QuoteRequestNotFound as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc
     except AgentError as exc:
         raise HTTPException(status_code=502, detail="agent failed to produce an estimate") from exc

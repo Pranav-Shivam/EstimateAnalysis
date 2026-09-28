@@ -14,6 +14,10 @@ from app.estimate.tools import ToolContext
 from app.intake.repository import get_quote_request
 
 
+class QuoteRequestNotFound(Exception):
+    pass
+
+
 @dataclass
 class EstimateRunResult:
     row: EstimateDraftRow
@@ -23,7 +27,7 @@ class EstimateRunResult:
 def run_estimate(session: Session, quote_request_id: uuid.UUID, as_of: date, llm_client) -> EstimateRunResult:
     quote_request = get_quote_request(session, quote_request_id)
     if quote_request is None:
-        raise ValueError(f"quote request {quote_request_id} not found")
+        raise QuoteRequestNotFound(f"quote request {quote_request_id} not found")
 
     ctx = ToolContext(session=session, as_of=as_of, request_customer_id=quote_request.customer_id)
     state = run_agent(llm_client, ctx, build_request_message(quote_request, as_of))

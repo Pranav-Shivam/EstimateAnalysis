@@ -6,7 +6,7 @@ from sqlalchemy import select, text
 from app.estimate.constant import MAX_AGENT_STEPS
 from app.estimate.models import EstimateDraftRow
 from app.estimate.repository import get_estimate_draft
-from app.estimate.service import run_estimate
+from app.estimate.service import QuoteRequestNotFound, run_estimate
 from app.intake.repository import save_quote_request
 from core.llm.openai_agent_client import AgentError
 from tests.app.estimate.fakes import ScriptedLLM, submit_turn, text_turn
@@ -144,7 +144,7 @@ def test_discount_is_never_ready_when_the_request_has_no_resolved_customer(db_se
 
 
 def test_run_estimate_rejects_unknown_quote_request(db_session):
-    with pytest.raises(ValueError):
+    with pytest.raises(QuoteRequestNotFound):
         run_estimate(db_session, uuid.uuid4(), AS_OF, ScriptedLLM([]))
 
 

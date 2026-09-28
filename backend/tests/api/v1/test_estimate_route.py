@@ -1,6 +1,7 @@
 import uuid
 from types import SimpleNamespace
 
+import pytest
 from fastapi.testclient import TestClient
 
 from api.v1.estimate import route as route_module
@@ -80,6 +81,18 @@ def test_estimate_endpoint_returns_404_for_unknown_quote_request(db_session):
     response = _post(db_session, ScriptedLLM([]), {"quote_request_id": str(uuid.uuid4())})
 
     assert response.status_code == 404
+
+
+def test_a_value_error_inside_the_run_is_not_reported_as_a_missing_quote_request(db_session):
+    seed_world(db_session)
+    row = _request_row(db_session)
+
+    class BrokenLLM:
+        def next_turn(self, messages, tools):
+            raise ValueError("boom")
+
+    with pytest.raises(ValueError, match="boom"):
+        _post(db_session, BrokenLLM(), {"quote_request_id": str(row.id)})
 
 
 def test_estimate_endpoint_returns_502_when_the_agent_call_fails(db_session):

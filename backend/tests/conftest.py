@@ -5,6 +5,7 @@ import pytest
 
 from core.db.session import make_engine, make_session_factory
 from core.graph.client import GraphUnavailable, get_graph_client
+from tests.graph_support import build_reader
 
 TEST_DATABASE_URL = os.environ.get(
     "DATABASE_URL", "postgresql+psycopg://postgres:postgres@localhost:5433/estimate_analysis"
@@ -46,3 +47,11 @@ def graph_client():
     except GraphUnavailable as exc:
         pytest.fail(f"Neo4j is not reachable ({exc}). Start it with: docker start neo4j-estimate", pytrace=False)
     return client
+
+
+@pytest.fixture
+def make_reader(db_session, graph_client, graph_ns):
+    def _make():
+        return build_reader(db_session, graph_client, graph_ns)
+
+    return _make

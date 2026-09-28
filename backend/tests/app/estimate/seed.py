@@ -1,5 +1,6 @@
 from datetime import date
 
+from app.reference_data.models import Sku
 from app.reference_data.repository import (
     replace_price_history, set_sku_family, upsert_contact, upsert_contract, upsert_customer, upsert_family,
     upsert_project, upsert_requirement, upsert_site, upsert_sku,
@@ -63,4 +64,26 @@ def seed_structure(session) -> None:
         session, contact_id="CUST-E1-C1", customer_id="CUST-E1", name="Ravi Kumar",
         email="ravi@vexthorn.example.com", phone="555-0100",
     )
+    session.flush()
+
+
+def seed_chain_world(session) -> None:
+    """Extends seed_world with the chains the graph must walk.
+
+    SKU-E-OLD2 (discontinued) replaced by SKU-E-OLD (discontinued) replaced by live SKU-E-A1. SKU-E-DEAD is
+    discontinued with no replacement. SKU-E-CYC1 and SKU-E-CYC2 are discontinued and replace each other.
+    SKU-E-D0 .. SKU-E-D11 is a discontinued chain ending at SKU-E-A1, 12 hops from D0 and past the 10-hop bound.
+    SKU-E-NEEDOLD is live and requires the discontinued SKU-E-OLD."""
+    deep_ids = [f"SKU-E-D{i}" for i in range(12)]
+    for sku_id in ("SKU-E-OLD2", "SKU-E-DEAD", "SKU-E-CYC1", "SKU-E-CYC2", *deep_ids):
+        _sku(session, sku_id, sku_id, "Cat-E-A", 5.0, discontinued=True, in_stock=False)
+    _sku(session, "SKU-E-NEEDOLD", "Needs An Old Part", "Cat-E-B", 7.0)
+    session.flush()
+
+    links = {"SKU-E-OLD2": "SKU-E-OLD", "SKU-E-CYC1": "SKU-E-CYC2", "SKU-E-CYC2": "SKU-E-CYC1"}
+    links.update({deep_ids[i]: deep_ids[i + 1] for i in range(11)})
+    links[deep_ids[11]] = "SKU-E-A1"
+    for sku_id, target in links.items():
+        session.get(Sku, sku_id).replaced_by = target
+    upsert_requirement(session, sku_id="SKU-E-NEEDOLD", required_sku_id="SKU-E-OLD")
     session.flush()

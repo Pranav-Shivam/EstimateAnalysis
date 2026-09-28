@@ -1,3 +1,4 @@
+import math
 from datetime import date
 
 from app.estimate.guardrails import (
@@ -201,3 +202,63 @@ def test_run_guardrails_passes_a_clean_draft(db_session):
     seed_world(db_session)
 
     assert run_guardrails(db_session, _draft([_line(discount_pct=10.0)]), AS_OF) == []
+
+
+# non-finite numbers must never pass
+
+def _messages(violations, guardrail):
+    return [v.message for v in violations if v.guardrail == guardrail]
+
+
+def test_nan_list_unit_price_is_blocked(db_session):
+    seed_world(db_session)
+    draft = _draft([_line(unit_price=math.nan)])
+
+    assert any("unit_price must be a finite number" in m for m in _messages(check_required_fields(draft), "required_fields"))
+    assert any("does not match" in m for m in _messages(check_price_provenance(db_session, draft), "price_provenance"))
+    assert run_guardrails(db_session, draft, AS_OF) != []
+
+
+def test_nan_predicted_unit_price_is_blocked(db_session):
+    seed_world(db_session)
+    draft = _draft([_line(sku_id="SKU-E-GAP", unit_price=math.nan, price_source="predicted")])
+
+    assert any("unit_price must be a finite number" in m for m in _messages(check_required_fields(draft), "required_fields"))
+    assert any("does not match" in m for m in _messages(check_price_provenance(db_session, draft), "price_provenance"))
+    assert run_guardrails(db_session, draft, AS_OF) != []
+
+
+def test_inf_unit_price_is_blocked(db_session):
+    seed_world(db_session)
+    draft = _draft([_line(unit_price=math.inf)])
+
+    assert any("unit_price must be a finite number" in m for m in _messages(check_required_fields(draft), "required_fields"))
+    assert any("does not match" in m for m in _messages(check_price_provenance(db_session, draft), "price_provenance"))
+    assert run_guardrails(db_session, draft, AS_OF) != []
+
+
+def test_nan_discount_pct_is_blocked(db_session):
+    seed_world(db_session)
+    draft = _draft([_line(discount_pct=math.nan)])
+
+    assert any("discount_pct must be a finite number" in m for m in _messages(check_required_fields(draft), "required_fields"))
+    assert any("does not match" in m for m in _messages(check_contract_discount(db_session, draft, AS_OF), "contract_discount"))
+    assert run_guardrails(db_session, draft, AS_OF) != []
+
+
+def test_inf_discount_pct_is_blocked(db_session):
+    seed_world(db_session)
+    draft = _draft([_line(discount_pct=math.inf)])
+
+    assert any("discount_pct must be a finite number" in m for m in _messages(check_required_fields(draft), "required_fields"))
+    assert any("does not match" in m for m in _messages(check_contract_discount(db_session, draft, AS_OF), "contract_discount"))
+    assert run_guardrails(db_session, draft, AS_OF) != []
+
+
+def test_non_finite_number_violation_carries_the_line_index():
+    violations = check_required_fields(_draft([_line(), _line(unit_price=math.nan, discount_pct=math.inf)]))
+
+    assert sorted(v.message for v in violations) == [
+        "line discount_pct must be a finite number", "line unit_price must be a finite number",
+    ]
+    assert all(v.line_index == 1 for v in violations)

@@ -1,3 +1,4 @@
+import math
 from datetime import date
 
 from sqlalchemy.orm import Session
@@ -7,6 +8,7 @@ from app.estimate.schemas import DraftLine, EstimateDraft, Violation
 from app.reference_data.models import Contract, Sku
 from app.reference_data.repository import get_contract, get_sku
 
+# Tolerance checks are written as `not diff <= TOL` so a NaN or infinite value fails instead of slipping through.
 PRICE_TOLERANCE = 0.005
 PCT_TOLERANCE = 1e-9
 
@@ -27,6 +29,14 @@ def check_required_fields(draft: EstimateDraft) -> list[Violation]:
         if line.unit_price is None or line.price_source is None:
             violations.append(Violation(
                 guardrail="required_fields", line_index=index, message="line must have a unit price and a price source",
+            ))
+        if line.unit_price is not None and not math.isfinite(line.unit_price):
+            violations.append(Violation(
+                guardrail="required_fields", line_index=index, message="line unit_price must be a finite number",
+            ))
+        if not math.isfinite(line.discount_pct):
+            violations.append(Violation(
+                guardrail="required_fields", line_index=index, message="line discount_pct must be a finite number",
             ))
     return violations
 
@@ -50,7 +60,7 @@ def _provenance_problem(session: Session, line: DraftLine, sku: Sku) -> str | No
     if line.price_source == "list":
         if sku.list_price is None:
             return f"SKU {sku.sku_id} has no list price; its price must come from predict_price"
-        if abs(line.unit_price - sku.list_price) > PRICE_TOLERANCE:
+        if not abs(line.unit_price - sku.list_price) <= PRICE_TOLERANCE:
             return f"unit_price {line.unit_price} does not match list price {sku.list_price} for {sku.sku_id}"
         return None
 
@@ -59,7 +69,7 @@ def _provenance_problem(session: Session, line: DraftLine, sku: Sku) -> str | No
     prediction = predict_price_for_sku(session, sku)
     if prediction is None:
         return f"price for {sku.sku_id} cannot be predicted (too few priced peers in its category)"
-    if abs(line.unit_price - prediction.price) > PRICE_TOLERANCE:
+    if not abs(line.unit_price - prediction.price) <= PRICE_TOLERANCE:
         return f"unit_price {line.unit_price} does not match predicted price {prediction.price} for {sku.sku_id}"
     return None
 
@@ -101,7 +111,7 @@ def _discount_problem(contract: Contract, category: str, discount_pct: float, as
         return f"discount {discount_pct}% not allowed: category {category} is not covered by contract {contract.contract_id}"
     if not (contract.effective_from <= as_of <= contract.effective_to):
         return f"discount not allowed: contract {contract.contract_id} is not active on {as_of.isoformat()}"
-    if abs(discount_pct - contract.discount_pct) > PCT_TOLERANCE:
+    if not abs(discount_pct - contract.discount_pct) <= PCT_TOLERANCE:
         return f"discount {discount_pct}% does not match contract {contract.contract_id} discount {contract.discount_pct}%"
     return None
 

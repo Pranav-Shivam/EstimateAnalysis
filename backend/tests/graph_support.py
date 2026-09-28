@@ -62,3 +62,14 @@ class FailingGraphClient:
 
     def write(self, query, **params):
         raise GraphUnavailable("Neo4j is unavailable: test double")
+
+
+class FakeSummarizer:
+    """Records every prompt and returns a distinct summary per call. Never touches the network."""
+
+    def __init__(self) -> None:
+        self.prompts: list[str] = []
+
+    def summarize(self, prompt: str) -> str:
+        self.prompts.append(prompt)
+        return f"Fake summary number {len(self.prompts)}."

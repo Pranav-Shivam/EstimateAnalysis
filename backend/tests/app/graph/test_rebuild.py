@@ -1,6 +1,10 @@
 import uuid
 
-from app.graph.repository import count_edges_by_type, count_nodes_by_label, ensure_constraints, node_key
+import pytest
+
+from app.graph.repository import (
+    count_edges_by_type, count_nodes_by_label, ensure_constraints, merge_edges, merge_nodes, node_key,
+)
 from app.graph.service import rebuild_reference_graph
 from app.reference_data.models import Contract
 from app.reference_data.repository import reference_fingerprint, upsert_contract
@@ -134,3 +138,38 @@ def test_graph_meta_stores_the_reference_fingerprint(db_session, graph_client, g
 def test_ensure_constraints_can_run_twice(graph_client):
     ensure_constraints(graph_client)
     ensure_constraints(graph_client)
+
+
+def test_merge_nodes_rejects_an_unknown_label(graph_client, graph_ns):
+    with pytest.raises(ValueError):
+        merge_nodes(graph_client, graph_ns, "NotARealLabel", [{"id": "x", "props": {}}])
+
+
+def test_merge_edges_rejects_an_unknown_edge_type(graph_client, graph_ns):
+    with pytest.raises(ValueError):
+        merge_edges(graph_client, graph_ns, "NOT_A_REAL_EDGE", "SKU", "SKU", [{"from": "a", "to": "b", "props": {}}])
+
+
+def test_merge_edges_matches_nodes_by_namespaced_key_not_bare_id(graph_client, graph_ns):
+    # Two namespaces holding a node under the same raw id, distinguished by a marker property. Matching by the
+    # namespaced key must resolve to this test's own node only; matching by bare id would be ambiguous across
+    # namespaces and could wire an edge onto a node this test never touched.
+    other = f"test-other-{uuid.uuid4().hex[:8]}"
+    try:
+        merge_nodes(graph_client, graph_ns, "SKU", [
+            {"id": "SHARED-ID", "props": {"marker": "mine"}},
+            {"id": "TARGET-ID", "props": {"marker": "mine"}},
+        ])
+        merge_nodes(graph_client, other, "SKU", [
+            {"id": "SHARED-ID", "props": {"marker": "theirs"}},
+            {"id": "TARGET-ID", "props": {"marker": "theirs"}},
+        ])
+
+        merge_edges(graph_client, graph_ns, "REQUIRES", "SKU", "SKU", [
+            {"from": "SHARED-ID", "to": "TARGET-ID", "props": {}},
+        ])
+
+        assert _edges(graph_client, graph_ns, "SHARED-ID", "REQUIRES", "TARGET-ID") == 1
+        assert _edges(graph_client, other, "SHARED-ID", "REQUIRES", "TARGET-ID") == 0
+    finally:
+        graph_client.write("MATCH (n {ns: $ns}) DETACH DELETE n", ns=other)

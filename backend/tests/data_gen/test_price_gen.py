@@ -17,6 +17,7 @@ def _catalog(n=40):
     ]
     catalog[0]["discontinued"] = True
     catalog[0]["replaced_by"] = "SKU-0002"
+    catalog[1]["requires"] = ["SKU-0005"]
     catalog[2]["requires"] = ["SKU-0004"]
     return catalog
 
@@ -57,11 +58,16 @@ def test_gap_skus_are_about_ten_percent_and_have_no_history():
     assert gap.isdisjoint({row["sku_id"] for row in pricing["history"]})
 
 
-def test_scenario_skus_replacements_and_required_parts_are_never_gaps():
-    pricing = generate_pricing(DEFAULT, _catalog(), _customers(), _cases())
-    protected = {"SKU-0001", "SKU-0002", "SKU-0003", "SKU-0004", "SKU-0010"}
+def test_scenario_skus_replacements_and_required_parts_are_never_gaps(monkeypatch):
+    monkeypatch.setattr("data_gen.price_gen.GAP_FRACTION", 1.0)
+    catalog = _catalog()
+    pricing = generate_pricing(DEFAULT, catalog, _customers(), _cases())
+    all_sku_ids = {sku["sku_id"] for sku in catalog}
+    # Cases reference 0001, 0003 and 0010. 0002 is 0001's replacement, 0005 is that replacement's
+    # required part, and 0004 is 0003's required part.
+    protected = {"SKU-0001", "SKU-0002", "SKU-0003", "SKU-0004", "SKU-0005", "SKU-0010"}
 
-    assert protected.isdisjoint(pricing["gap_sku_ids"])
+    assert set(pricing["gap_sku_ids"]) == all_sku_ids - protected
 
 
 def test_every_priced_sku_has_history_within_realized_range():
@@ -87,18 +93,28 @@ def test_write_pricing_refuses_to_overwrite_without_force(tmp_path):
     assert json.loads(path.read_text(encoding="utf-8"))["discounts"] == {"CTR-1": 5.0}
 
 
-def test_real_dataset_gap_never_touches_scenario_skus():
+def test_real_dataset_gap_never_touches_scenario_skus(monkeypatch):
+    monkeypatch.setattr("data_gen.price_gen.GAP_FRACTION", 1.0)
     catalog = json.loads((DATA_DIR / "catalog.json").read_text(encoding="utf-8"))
     customers = json.loads((DATA_DIR / "customers.json").read_text(encoding="utf-8"))
     cases = json.loads((DATA_DIR / "scenario_cases.json").read_text(encoding="utf-8"))
 
     pricing = generate_pricing(DEFAULT, catalog, customers, cases)
 
+    by_id = {sku["sku_id"]: sku for sku in catalog}
     referenced = set()
     for case in cases:
         entities = case["entities"]
         referenced.update(entities.get("sku_ids", []))
         if "sku_id" in entities:
             referenced.add(entities["sku_id"])
-    assert referenced.isdisjoint(pricing["gap_sku_ids"])
-    assert len(pricing["discounts"]) == len(customers)
+    closure = set(referenced)
+    for sku_id in referenced:
+        closure.update(by_id[sku_id]["requires"])
+        replacement_id = by_id[sku_id]["replaced_by"]
+        if replacement_id:
+            closure.add(replacement_id)
+            closure.update(by_id[replacement_id]["requires"])
+
+    assert set(pricing["gap_sku_ids"]) == set(by_id) - closure
+    assert len(pricing["discounts"]) == sum(len(customer["contracts"]) for customer in customers)

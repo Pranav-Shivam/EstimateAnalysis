@@ -25,6 +25,7 @@ def _protected_sku_ids(catalog: list[dict], scenario_cases: list[dict]) -> set[s
     referenced: set[str] = set()
     for case in scenario_cases:
         entities = case["entities"]
+        # Only the sku_id / sku_ids keys carry SKU ids; other entity keys are not SKUs.
         referenced.update(entities.get("sku_ids", []))
         if "sku_id" in entities:
             referenced.add(entities["sku_id"])

@@ -51,6 +51,21 @@ def test_summarize_saves_each_summary_and_reports_counts(db_session):
     assert get_summaries(db_session, [fresh.member_hash]) == {fresh.member_hash: "Fake summary number 1."}
 
 
+def test_on_saved_runs_only_after_its_summary_is_already_saved(db_session):
+    """`on_saved` is the caller's commit boundary. If it fired before the row was flushed, a failure on a later
+    community would lose a summary that looked already paid for. Prove the ordering by having `on_saved`
+    read back, through the same session, the summary for the community that was just processed."""
+    pending, seen = [_stats("A"), _stats("B", community_id=2)], []
+
+    def on_saved():
+        stats = pending[len(seen)]
+        seen.append(get_summaries(db_session, [stats.member_hash]).get(stats.member_hash))
+
+    summarize_communities(db_session, FakeSummarizer(), pending, on_saved=on_saved)
+
+    assert seen == ["Fake summary number 1.", "Fake summary number 2."]
+
+
 def test_a_second_run_makes_no_calls(db_session):
     stats = [_stats("A"), _stats("B", community_id=2)]
     summarizer = FakeSummarizer()

@@ -6,6 +6,7 @@ from app.estimate.tools import (
     TOOL_SPECS, ToolContext, check_stock, get_related_parts, handle_tool, lookup_customer, predict_price,
     search_price_book,
 )
+from app.reference_data.repository import upsert_sku
 from tests.app.estimate.seed import AS_OF, seed_world
 
 
@@ -66,6 +67,19 @@ def test_search_price_book_by_fuzzy_name_ranks_best_first(db_session):
     results = search_price_book(_ctx(db_session), query="Zorpwidget Alpha 9000")["results"]
 
     assert results[0]["sku_id"] == "SKU-E-A1"
+
+
+def test_search_price_book_breaks_name_ties_by_sku_id(db_session):
+    seed_world(db_session)
+    for sku_id in ("SKU-TIE-2", "SKU-TIE-1"):
+        upsert_sku(db_session, sku_id=sku_id, name="Quillfargle Tiebreak Unit", category="Cat-TIE", list_price=5.0,
+                   discontinued=False, replaced_by=None, in_stock=True)
+    db_session.flush()
+
+    results = search_price_book(_ctx(db_session), query="Quillfargle Tiebreak Unit")["results"]
+
+    ids = [r["sku_id"] for r in results]
+    assert ids.index("SKU-TIE-1") < ids.index("SKU-TIE-2")
 
 
 def test_search_price_book_reports_gap_sku_as_unpriced(db_session):

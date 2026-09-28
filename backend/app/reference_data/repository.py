@@ -59,11 +59,11 @@ def upsert_contract(
 
 
 def all_customers(session: Session) -> list[Customer]:
-    return list(session.scalars(select(Customer)))
+    return list(session.scalars(select(Customer).order_by(Customer.customer_id)))
 
 
 def all_skus(session: Session) -> list[Sku]:
-    return list(session.scalars(select(Sku)))
+    return list(session.scalars(select(Sku).order_by(Sku.sku_id)))
 
 
 def contracts_for_customer(session: Session, customer_id: str) -> list[Contract]:

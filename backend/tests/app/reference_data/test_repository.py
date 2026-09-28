@@ -116,3 +116,18 @@ def test_skus_with_list_price_in_category_excludes_gaps(db_session):
     ids = [s.sku_id for s in skus_with_list_price_in_category(db_session, "Cat-RP-Only")]
 
     assert ids == ["SKU-RP7"]
+
+
+def test_all_skus_and_all_customers_are_ordered_by_id(db_session):
+    for sku_id in ("SKU-ORD-2", "SKU-ORD-1"):
+        upsert_sku(db_session, sku_id=sku_id, name="Same Name", category="Cat", list_price=1.0,
+                   discontinued=False, replaced_by=None, in_stock=True)
+    for customer_id in ("CUST-ORD-2", "CUST-ORD-1"):
+        upsert_customer(db_session, customer_id=customer_id, name="Same Name", account_tier="Standard")
+    db_session.flush()
+
+    sku_ids = [s.sku_id for s in all_skus(db_session)]
+    customer_ids = [c.customer_id for c in all_customers(db_session)]
+
+    assert sku_ids == sorted(sku_ids)
+    assert customer_ids == sorted(customer_ids)

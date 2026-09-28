@@ -23,7 +23,7 @@ Out (later phases): LLM judge and confidence (Phase 5), tracing and the consolid
 ## Decisions (agreed during brainstorming)
 
 1. **Schema scope: the article's full 10 nodes and 15 edges.** Recommended alternative was the 4-node core; the owner chose the full schema. Consequence: Phase 4 also extends the data generators and Postgres.
-2. **The three edges with no source in the article's terms are defined from data the system holds.** VARIANT_OF: QuoteRequest to QuoteRequest, same customer, a `DISTINCT` verdict whose `content_jaccard` is at or above `VARIANT_MIN_JACCARD` (a named constant chosen in the plan from the real verdict distribution). SUPERSEDES: Quote to Quote, a later `estimate_drafts` row for the same quote request supersedes the earlier one. PRICE_VARIANCE: Quote to SKU, one edge per draft line that carries a discount or a predicted price, with properties `list_price`, `unit_price`, `discount_pct`, `price_source`, `net_unit_price`.
+2. **The three edges with no source in the article's terms are defined from data the system holds.** VARIANT_OF: QuoteRequest to QuoteRequest, same customer, a `DISTINCT` verdict whose `content_jaccard` is at or above `VARIANT_MIN_JACCARD` (0.2, below the classifier's 0.4 revision floor; the dev verdict table is empty, so the value comes from the classifier's own thresholds). SUPERSEDES: Quote to Quote, a later `estimate_drafts` row for the same quote request supersedes the earlier one. PRICE_VARIANCE: Quote to SKU, one edge per draft line that carries a discount or a predicted price, with properties `list_price`, `unit_price`, `discount_pct`, `price_source`, `net_unit_price`.
 3. **Postgres stays authoritative; the graph is a derived, rebuildable projection.** Nothing writes to the graph independently. `rebuild_graph` wipes and reloads a namespace from Postgres. Runtime entities (QuoteRequest, Quote, verdict edges) are also synced incrementally after the route commits, best-effort: a sync failure is logged and never fails the request. Any drift is healed by a rebuild.
 4. **Graph tools augment the SQL tools.** SQL keeps `lookup_customer`, `search_price_book`, `check_stock`, `predict_price`. `get_related_parts` becomes graph-backed and `check_contract_coverage` is new. Each question has one owner.
 5. **Guardrails use the graph, anchored on intake.** Intake's `resolved_line_items` (code-resolved SKU ids) are the anchor, not the draft. Chosen over draft-only checks because a draft-only rule is bypassed by dropping the offending line (the same class as the Phase 3 customer bypass).
@@ -44,7 +44,7 @@ Layer order follows `docs/backend-structure.txt`: route, service, repository, DB
 
 ### Data additions
 
-- `scripts/data_gen/structure_gen.py`, seeded with its own offset like the other generators, writes `data/structure.json`. Phase 1 and Phase 3 outputs are not modified.
+- `scripts/data_gen/structure_gen.py` writes `data/structure.json`. It uses no RNG (families come from the SKU name stem and each site gets one project), so it is deterministic without a seed. Phase 1 and Phase 3 outputs are not modified.
   - `families`: `family_id`, `name`, derived from the SKU name stem (the name minus its size and finish suffix), and the `sku_id` to `family_id` mapping.
   - `projects`: exactly one per site (`project_id`, `customer_id`, `site_id`, `name`), so a resolved site gives a unique project.
 - Contacts come from the existing `customers.json`. Each gets a deterministic id `<customer_id>-C<n>`.

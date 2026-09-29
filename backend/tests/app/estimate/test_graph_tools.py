@@ -9,6 +9,7 @@ from app.estimate.tools import (
 from app.reference_data.models import Sku
 from app.reference_data.repository import upsert_sku
 from app.retrieval.models import SkuEmbedding
+from core.tracing.langfuse_client import TraceHandle
 from tests.app.estimate.seed import AS_OF, seed_chain_world, seed_world
 from tests.graph_support import FailingGraphReader, UnusedGraph, make_ctx
 
@@ -194,3 +195,36 @@ def test_tool_specs_describe_the_new_tools_with_string_parameters():
     assert specs["check_contract_coverage"]["parameters"]["required"] == ["customer_id", "sku_id"]
     assert specs["ask_knowledge"]["parameters"]["required"] == ["question"]
     assert "live_sku_id" in specs["get_related_parts"]["description"]
+
+
+class RecordingTraceHandle:
+    def __init__(self):
+        self.opened = []
+
+    def span(self, name, **metadata):
+        self.opened.append((name, metadata))
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def update(self, **metadata):
+        pass
+
+
+def test_handle_tool_opens_a_span_named_after_the_tool(db_session, make_reader):
+    make_reader()
+    trace = RecordingTraceHandle()
+    ctx = _ctx(db_session, make_reader, trace=trace)
+
+    handle_tool(ctx, "check_stock", {"sku_id": "SKU-E-A1"})
+
+    assert trace.opened == [("tool_call", {"tool": "check_stock"})]
+
+
+def test_tool_context_defaults_to_a_no_op_trace_handle():
+    ctx = ToolContext(session=None, as_of=None, graph=None, knowledge=None, request_customer_id=None, request_sku_ids=())
+    assert isinstance(ctx.trace, TraceHandle)

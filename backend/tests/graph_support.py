@@ -148,12 +148,15 @@ class FakeEmbedder:
         return [value / norm for value in vector]
 
 
-def make_ctx(session, graph, *, as_of=AS_OF, customer_id=None, sku_ids=(), embedder=None) -> ToolContext:
+def make_ctx(session, graph, *, as_of=AS_OF, customer_id=None, sku_ids=(), embedder=None, trace=None) -> ToolContext:
     knowledge = KnowledgeService(session=session, graph=graph, embedder=embedder or FakeEmbedder())
-    return ToolContext(
-        session=session, as_of=as_of, graph=graph, knowledge=knowledge, request_customer_id=customer_id,
-        request_sku_ids=tuple(sku_ids),
-    )
+    kwargs = {
+        "session": session, "as_of": as_of, "graph": graph, "knowledge": knowledge, "request_customer_id": customer_id,
+        "request_sku_ids": tuple(sku_ids),
+    }
+    if trace is not None:
+        kwargs["trace"] = trace
+    return ToolContext(**kwargs)
 
 
 class FailingGraphReader:

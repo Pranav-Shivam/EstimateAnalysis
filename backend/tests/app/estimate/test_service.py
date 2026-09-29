@@ -9,13 +9,14 @@ from app.estimate.repository import get_estimate_draft
 from app.estimate.service import QuoteRequestNotFound, run_estimate
 from app.intake.repository import save_quote_request
 from core.llm.openai_agent_client import AgentError
+from core.tracing.langfuse_client import TracingClient
 from tests.app.estimate.fakes import ScriptedLLM, submit_turn, text_turn
 from tests.app.estimate.seed import AS_OF, seed_chain_world, seed_world
 from tests.graph_support import FakeEmbedder, UnusedGraph
 
 
 def _run(db_session, make_reader, request_id, llm):
-    return run_estimate(db_session, request_id, AS_OF, llm, make_reader(), FakeEmbedder())
+    return run_estimate(db_session, request_id, AS_OF, llm, make_reader(), FakeEmbedder(), TracingClient(None))
 
 
 def _quote_request(session, customer_id="CUST-E1", contract_id="CTR-E1", sku_id="SKU-E-A1"):
@@ -150,7 +151,9 @@ def test_discount_is_never_ready_when_the_request_has_no_resolved_customer(db_se
 
 def test_run_estimate_rejects_unknown_quote_request(db_session):
     with pytest.raises(QuoteRequestNotFound):
-        run_estimate(db_session, uuid.uuid4(), AS_OF, ScriptedLLM([]), UnusedGraph(), FakeEmbedder())
+        run_estimate(
+            db_session, uuid.uuid4(), AS_OF, ScriptedLLM([]), UnusedGraph(), FakeEmbedder(), TracingClient(None),
+        )
 
 
 def test_run_estimate_propagates_agent_error_and_saves_nothing(db_session, make_reader):
@@ -194,7 +197,10 @@ def test_a_stale_graph_is_persisted_as_needs_review_without_a_draft(db_session, 
     seed_world(db_session)
     request = _quote_request(db_session)
 
-    run = run_estimate(db_session, request.id, AS_OF, ScriptedLLM([]), GraphReader(graph_client, graph_ns), FakeEmbedder())
+    run = run_estimate(
+        db_session, request.id, AS_OF, ScriptedLLM([]), GraphReader(graph_client, graph_ns), FakeEmbedder(),
+        TracingClient(None),
+    )
 
     assert run.result.status == "needs_review" and "out of date" in run.result.reason
     assert run.result.draft is None and run.result.iterations == 0

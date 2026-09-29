@@ -90,7 +90,11 @@ def build_graph(llm, ctx: ToolContext):
                     **update, "violations": [], "status": "needs_review",
                     "reason": "knowledge graph is out of date with the reference data; rebuild it",
                 }
-            graph_check = check_graph_integrity(ctx.graph, draft, ctx.request_sku_ids)
+            with ctx.trace.span("graph_integrity_check") as span:
+                graph_check = check_graph_integrity(ctx.graph, draft, ctx.request_sku_ids)
+                span.update(output={
+                    "violation_count": len(graph_check.violations), "unreplaceable": graph_check.unreplaceable,
+                })
             # A rebuild drops GraphMeta first and writes it back last, so if it started during the reads above,
             # the graph is no longer current now. Nothing those reads concluded can be trusted in that case.
             if not graph_is_current(ctx.session, ctx.graph):

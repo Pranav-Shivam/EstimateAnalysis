@@ -13,6 +13,7 @@ from core.db.session import get_session
 from core.graph.client import GraphClient, get_graph_client, get_graph_namespace
 from core.llm.openai_agent_client import AgentError, OpenAIAgentClient
 from core.llm.openai_embedding_client import OpenAIEmbeddingClient
+from core.tracing.langfuse_client import TracingClient, get_tracing_client
 
 router = APIRouter(prefix="/v1/estimate", tags=["estimate"])
 
@@ -32,11 +33,12 @@ def create_estimate(
     graph_client: GraphClient = Depends(get_graph_client),
     ns: str = Depends(get_graph_namespace),
     embedder: OpenAIEmbeddingClient = Depends(get_embedding_client),
+    tracing: TracingClient = Depends(get_tracing_client),
 ) -> EstimateResponse:
     try:
         run = run_estimate(
             session, body.quote_request_id, body.as_of or DATASET_AS_OF, llm_client,
-            GraphReader(graph_client, ns), embedder,
+            GraphReader(graph_client, ns), embedder, tracing,
         )
     except QuoteRequestNotFound as exc:
         raise HTTPException(status_code=404, detail=str(exc)) from exc

@@ -7,6 +7,7 @@ from app.estimate.service import run_estimate
 from app.estimate.tools import get_related_parts
 from app.intake.repository import save_quote_request
 from app.reference_data.repository import all_customers, all_skus, contracts_for_customer, get_sku, required_sku_ids
+from core.tracing.langfuse_client import TracingClient
 from load_data import load_catalog, load_customers, load_pricing
 from tests.app.estimate.fakes import ScriptedLLM, submit_turn
 from tests.graph_support import FakeEmbedder, make_ctx
@@ -78,7 +79,7 @@ def test_every_planted_bad_discount_is_blocked_and_ends_needs_review(db_session,
         bad = _draft_with_discount(db_session, case, contract.discount_pct)
         llm = ScriptedLLM([submit_turn(bad, call_id=f"c{i}") for i in range(4)])
 
-        run = run_estimate(db_session, request.id, DATASET_AS_OF, llm, graph, FakeEmbedder())
+        run = run_estimate(db_session, request.id, DATASET_AS_OF, llm, graph, FakeEmbedder(), TracingClient(None))
 
         assert run.result.status == "needs_review", case["case_id"]
         assert run.result.violations[0].guardrail == "contract_discount", case["case_id"]
@@ -103,7 +104,7 @@ def test_a_draft_borrowing_another_customers_covering_contract_never_ends_ready(
     borrowed["contract_id"] = donor_contract.contract_id
     llm = ScriptedLLM([submit_turn(borrowed, call_id=f"c{i}") for i in range(4)])
 
-    run = run_estimate(db_session, request.id, DATASET_AS_OF, llm, graph, FakeEmbedder())
+    run = run_estimate(db_session, request.id, DATASET_AS_OF, llm, graph, FakeEmbedder(), TracingClient(None))
 
     assert run.result.status == "needs_review"
     assert run.result.violations[0].guardrail == "customer_identity"
@@ -121,7 +122,9 @@ def test_every_planted_bad_discount_passes_once_the_discount_is_removed(db_sessi
             submit_turn(_draft_with_discount(db_session, case, 0.0), call_id="call-2"),
         ]
 
-        run = run_estimate(db_session, request.id, DATASET_AS_OF, ScriptedLLM(turns), graph, FakeEmbedder())
+        run = run_estimate(
+            db_session, request.id, DATASET_AS_OF, ScriptedLLM(turns), graph, FakeEmbedder(), TracingClient(None),
+        )
 
         assert run.result.status == "ready", case["case_id"]
         assert run.result.iterations == 2, case["case_id"]
@@ -146,7 +149,10 @@ def test_discount_on_a_covered_category_is_allowed_for_the_same_customers(db_ses
         }
         request = _quote_request(db_session, case, sku_id=covered_sku.sku_id)
 
-        run = run_estimate(db_session, request.id, DATASET_AS_OF, ScriptedLLM([submit_turn(draft)]), graph, FakeEmbedder())
+        run = run_estimate(
+            db_session, request.id, DATASET_AS_OF, ScriptedLLM([submit_turn(draft)]), graph, FakeEmbedder(),
+            TracingClient(None),
+        )
 
         assert run.result.status == "ready", case["case_id"]
 

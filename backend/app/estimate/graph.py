@@ -5,10 +5,11 @@ from langgraph.graph import END, START, StateGraph
 from pydantic import ValidationError
 
 from app.estimate.constant import MAX_AGENT_STEPS, MAX_GUARDRAIL_RETRIES, RECURSION_LIMIT
-from app.estimate.guardrails import run_guardrails
+from app.estimate.guardrails import check_graph_integrity, graph_is_current, run_guardrails
 from app.estimate.prompts import SYSTEM_PROMPT
 from app.estimate.schemas import EstimateDraft, Violation
 from app.estimate.tools import TOOL_SPECS, ToolContext, handle_tool
+from core.graph.client import GraphError
 from core.llm.openai_agent_client import ToolCall
 
 SUBMIT_TOOL = "submit_draft"
@@ -80,11 +81,19 @@ def build_graph(llm, ctx: ToolContext):
 
     def guardrails_node(state: AgentState) -> dict:
         draft = state["pending_draft"]
-        violations = run_guardrails(ctx.session, draft, ctx.as_of, ctx.request_customer_id)
-        update: dict = {
-            "pending_draft": None, "last_draft": draft, "violations": violations,
-            "submissions": state["submissions"] + 1,
-        }
+        update: dict = {"pending_draft": None, "last_draft": draft, "submissions": state["submissions"] + 1}
+        try:
+            graph_check = check_graph_integrity(ctx.graph, draft, ctx.request_sku_ids)
+        except GraphError as exc:
+            return {**update, "violations": [], "status": "needs_review", "reason": f"knowledge graph unavailable: {exc}"}
+
+        violations = run_guardrails(ctx.session, draft, ctx.as_of, ctx.request_customer_id) + graph_check.violations
+        update["violations"] = violations
+        if graph_check.unreplaceable:
+            return {
+                **update, "status": "needs_review",
+                "reason": "no live replacement exists for " + ", ".join(graph_check.unreplaceable),
+            }
         if not violations:
             if draft.flags:
                 return {**update, "status": "needs_review", "reason": "draft carries flags for the reviewer"}
@@ -111,10 +120,24 @@ def build_graph(llm, ctx: ToolContext):
     return graph.compile()
 
 
-def run_agent(llm, ctx: ToolContext, request_message: str) -> AgentState:
-    initial: AgentState = {
+def _initial_state(request_message: str) -> AgentState:
+    return {
         "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": request_message}],
         "tool_calls": [], "pending_draft": None, "last_draft": None, "violations": [],
         "retries": 0, "submissions": 0, "steps": 0, "status": None, "reason": None,
     }
+
+
+def run_agent(llm, ctx: ToolContext, request_message: str) -> AgentState:
+    initial = _initial_state(request_message)
+    # Verify the graph before spending any model call: a run the guardrails cannot check must not start.
+    try:
+        current = graph_is_current(ctx.session, ctx.graph)
+    except GraphError as exc:
+        return {**initial, "status": "needs_review", "reason": f"knowledge graph unavailable: {exc}"}
+    if not current:
+        return {
+            **initial, "status": "needs_review",
+            "reason": "knowledge graph is out of date with the reference data; rebuild it",
+        }
     return build_graph(llm, ctx).invoke(initial, config={"recursion_limit": RECURSION_LIMIT})

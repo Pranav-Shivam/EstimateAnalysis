@@ -2,9 +2,10 @@ import pytest
 
 from app.estimate.constant import MAX_AGENT_STEPS
 from app.estimate.graph import run_agent
+from app.reference_data.models import Sku
 from tests.app.estimate.fakes import ScriptedLLM, call_turn, submit_turn, text_turn
 from tests.app.estimate.seed import seed_chain_world, seed_world
-from tests.graph_support import make_ctx
+from tests.graph_support import FailingGraphReader, TogglableReader, make_ctx
 
 
 def _line(sku_id="SKU-E-A1", quantity=1, unit_price=100.0, price_source="list", discount_pct=0.0):
@@ -79,7 +80,7 @@ def test_planted_bad_discount_is_blocked_then_corrected(run):
     def corrected(messages):
         assert messages[-1]["role"] == "user"
         assert "not covered" in messages[-1]["content"]
-        return submit_turn(_draft([_line(sku_id="SKU-E-B1", unit_price=50.0)]), call_id="call-2")
+        return submit_turn(_draft([_line(sku_id="SKU-E-B1", unit_price=50.0), _line()]), call_id="call-2")
 
     state, _ = run([submit_turn(_bad_discount_draft()), corrected])
 
@@ -227,7 +228,7 @@ def test_predicted_price_from_the_tool_is_accepted_when_used_verbatim(run):
         line = _line(sku_id="SKU-E-GAP", unit_price=20.0, price_source="predicted")
         return submit_turn(_draft([line]), call_id="call-2")
 
-    state, _ = run([call_turn("predict_price", {"sku_id": "SKU-E-GAP"}), after_prediction])
+    state, _ = run([call_turn("predict_price", {"sku_id": "SKU-E-GAP"}), after_prediction], sku_ids=())
 
     assert state["status"] == "ready"
     assert state["last_draft"].lines[0].price_source == "predicted"
@@ -237,8 +238,91 @@ def test_made_up_predicted_price_is_blocked_and_ends_needs_review(run):
     made_up = _draft([_line(sku_id="SKU-E-GAP", unit_price=99.0, price_source="predicted")])
     turns = [submit_turn(made_up, call_id=f"call-{i}") for i in range(4)]
 
-    state, _ = run(turns)
+    state, _ = run(turns, sku_ids=())
 
     assert state["status"] == "needs_review"
     assert state["violations"][0].guardrail == "price_provenance"
     assert "predicted price" in state["violations"][0].message
+
+
+def test_a_discontinued_sku_left_in_the_draft_is_blocked_then_swapped(run):
+    def corrected(messages):
+        feedback = messages[-1]["content"]
+        assert "SKU-E-OLD is discontinued" in feedback and "SKU-E-A1" in feedback
+        return submit_turn(_draft([_line()]), call_id="call-2")
+
+    stale = _draft([_line(sku_id="SKU-E-OLD", unit_price=80.0)])
+
+    state, _ = run([submit_turn(stale), corrected], sku_ids=("SKU-E-OLD",))
+
+    assert state["status"] == "ready"
+    assert state["submissions"] == 2
+    assert [line.sku_id for line in state["last_draft"].lines] == ["SKU-E-A1"]
+
+
+def test_a_missing_required_part_is_blocked_then_added(run):
+    def corrected(messages):
+        assert "SKU-E-B1 requires SKU-E-A1" in messages[-1]["content"]
+        return submit_turn(_draft([_line(sku_id="SKU-E-B1", unit_price=50.0), _line()]), call_id="call-2")
+
+    without_part = _draft([_line(sku_id="SKU-E-B1", unit_price=50.0)])
+
+    state, _ = run([submit_turn(without_part), corrected], sku_ids=("SKU-E-B1",))
+
+    assert state["status"] == "ready"
+    assert [line.sku_id for line in state["last_draft"].lines] == ["SKU-E-B1", "SKU-E-A1"]
+
+
+def test_an_unreplaceable_sku_ends_needs_review_at_once_without_retries(run):
+    """(Review Focus) No live replacement exists, so a retry cannot help."""
+    dead = _draft([_line(sku_id="SKU-E-DEAD", unit_price=5.0)])
+
+    state, llm = run([submit_turn(dead)], sku_ids=("SKU-E-DEAD",))
+
+    assert state["status"] == "needs_review"
+    assert state["submissions"] == 1 and state["retries"] == 0
+    assert len(llm.calls) == 1
+    assert "SKU-E-DEAD" in state["reason"] and "no live replacement" in state["reason"]
+
+
+def test_a_graph_that_is_down_ends_the_run_before_any_model_call(db_session):
+    """(Review Focus) Fail closed, and do not spend model calls on a run that cannot be verified."""
+    seed_world(db_session)
+    llm = ScriptedLLM([])
+    ctx = make_ctx(db_session, FailingGraphReader(), customer_id="CUST-E1", sku_ids=("SKU-E-A1",))
+
+    state = run_agent(llm, ctx, "please quote 1 SKU-E-A1")
+
+    assert state["status"] == "needs_review"
+    assert "knowledge graph unavailable" in state["reason"]
+    assert llm.calls == [] and state["last_draft"] is None and state["submissions"] == 0
+
+
+def test_a_stale_graph_ends_the_run_before_any_model_call(db_session, make_reader):
+    """(Review Focus) The graph was built before Postgres changed."""
+    seed_world(db_session)
+    reader = make_reader()
+    db_session.get(Sku, "SKU-E-A1").discontinued = True
+    db_session.flush()
+    llm = ScriptedLLM([])
+
+    state = run_agent(llm, make_ctx(db_session, reader, customer_id="CUST-E1", sku_ids=("SKU-E-A1",)), "quote")
+
+    assert state["status"] == "needs_review"
+    assert "out of date" in state["reason"]
+    assert llm.calls == [] and state["last_draft"] is None
+
+
+def test_a_graph_that_goes_down_mid_run_ends_needs_review_and_keeps_the_draft(run):
+    """(Review Focus) The freshness check passed, then Neo4j went away before the guardrails ran."""
+    holder = {}
+
+    def take_the_graph_away(messages):
+        holder["reader"].down = True
+        return submit_turn(_draft([_line()]))
+
+    state, _ = run([take_the_graph_away], wrap_reader=lambda reader: holder.setdefault("reader", TogglableReader(reader)))
+
+    assert state["status"] == "needs_review"
+    assert "knowledge graph unavailable" in state["reason"]
+    assert state["last_draft"] is not None and state["submissions"] == 1

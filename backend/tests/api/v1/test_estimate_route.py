@@ -33,8 +33,9 @@ def _post(session, llm, body):
         app.dependency_overrides.clear()
 
 
-def test_estimate_endpoint_returns_a_ready_draft(db_session):
+def test_estimate_endpoint_returns_a_ready_draft(db_session, make_reader):
     seed_world(db_session)
+    make_reader()
     row = _request_row(db_session)
     draft = {"customer_id": "CUST-E1", "contract_id": "CTR-E1", "lines": [
         {"sku_id": "SKU-E-A1", "quantity": 2, "unit_price": 100.0, "price_source": "list", "discount_pct": 10.0}]}
@@ -50,8 +51,9 @@ def test_estimate_endpoint_returns_a_ready_draft(db_session):
     assert body["estimate_id"]
 
 
-def test_estimate_endpoint_reports_blocked_draft_as_needs_review(db_session):
+def test_estimate_endpoint_reports_blocked_draft_as_needs_review(db_session, make_reader):
     seed_world(db_session)
+    make_reader()
     row = _request_row(db_session)
     bad = {"customer_id": "CUST-E1", "contract_id": "CTR-E1", "lines": [
         {"sku_id": "SKU-E-B1", "quantity": 1, "unit_price": 50.0, "price_source": "list", "discount_pct": 10.0}]}
@@ -64,8 +66,9 @@ def test_estimate_endpoint_reports_blocked_draft_as_needs_review(db_session):
     assert body["violations"][0]["guardrail"] == "contract_discount"
 
 
-def test_estimate_endpoint_accepts_an_explicit_as_of(db_session):
+def test_estimate_endpoint_accepts_an_explicit_as_of(db_session, make_reader):
     seed_world(db_session)
+    make_reader()
     row = _request_row(db_session)
     draft = {"customer_id": "CUST-E1", "contract_id": "CTR-E1", "lines": [
         {"sku_id": "SKU-E-A1", "quantity": 1, "unit_price": 100.0, "price_source": "list", "discount_pct": 10.0}]}
@@ -85,8 +88,9 @@ def test_estimate_endpoint_returns_404_for_unknown_quote_request(db_session):
     assert response.status_code == 404
 
 
-def test_a_value_error_inside_the_run_is_not_reported_as_a_missing_quote_request(db_session):
+def test_a_value_error_inside_the_run_is_not_reported_as_a_missing_quote_request(db_session, make_reader):
     seed_world(db_session)
+    make_reader()
     row = _request_row(db_session)
 
     class BrokenLLM:
@@ -97,8 +101,9 @@ def test_a_value_error_inside_the_run_is_not_reported_as_a_missing_quote_request
         _post(db_session, BrokenLLM(), {"quote_request_id": str(row.id)})
 
 
-def test_estimate_endpoint_returns_502_when_the_agent_call_fails(db_session):
+def test_estimate_endpoint_returns_502_when_the_agent_call_fails(db_session, make_reader):
     seed_world(db_session)
+    make_reader()
     row = _request_row(db_session)
 
     class FailingLLM:
@@ -154,3 +159,28 @@ def test_estimate_endpoint_still_answers_when_the_graph_sync_fails(db_session, m
         app.dependency_overrides.pop(get_graph_client, None)
 
     assert response.status_code == 200
+
+
+def test_estimate_endpoint_reports_needs_review_when_the_graph_was_never_built(db_session):
+    seed_world(db_session)
+    row = _request_row(db_session)
+
+    response = _post(db_session, ScriptedLLM([]), {"quote_request_id": str(row.id)})
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["status"] == "needs_review" and "out of date" in body["reason"]
+    assert body["draft"] is None
+
+
+def test_estimate_endpoint_reports_needs_review_when_the_graph_is_down(db_session):
+    seed_world(db_session)
+    row = _request_row(db_session)
+    app.dependency_overrides[get_graph_client] = lambda: FailingGraphClient()
+    try:
+        response = _post(db_session, ScriptedLLM([]), {"quote_request_id": str(row.id)})
+    finally:
+        app.dependency_overrides.pop(get_graph_client, None)
+
+    assert response.status_code == 200
+    assert "knowledge graph unavailable" in response.json()["reason"]

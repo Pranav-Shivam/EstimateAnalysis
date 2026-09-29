@@ -10,7 +10,7 @@ from app.estimate.service import QuoteRequestNotFound, run_estimate
 from app.intake.repository import save_quote_request
 from core.llm.openai_agent_client import AgentError
 from tests.app.estimate.fakes import ScriptedLLM, submit_turn, text_turn
-from tests.app.estimate.seed import AS_OF, seed_world
+from tests.app.estimate.seed import AS_OF, seed_chain_world, seed_world
 from tests.graph_support import FakeEmbedder, UnusedGraph
 
 
@@ -18,12 +18,12 @@ def _run(db_session, make_reader, request_id, llm):
     return run_estimate(db_session, request_id, AS_OF, llm, make_reader(), FakeEmbedder())
 
 
-def _quote_request(session, customer_id="CUST-E1", contract_id="CTR-E1"):
+def _quote_request(session, customer_id="CUST-E1", contract_id="CTR-E1", sku_id="SKU-E-A1"):
     return save_quote_request(
         session, raw_email_text="need 3 Zorpwidget Alpha 9000",
         parsed_json={"resolved_line_items": [{"sku_name_as_written": "Zorpwidget Alpha 9000",
-                                              "sku_id": "SKU-E-A1", "quantity": "3"}]},
-        content_fingerprint={"sku_ids": ["SKU-E-A1"]}, style_fingerprint={"tokens": []},
+                                              "sku_id": sku_id, "quantity": "3"}]},
+        content_fingerprint={"sku_ids": [sku_id]}, style_fingerprint={"tokens": []},
         customer_id=customer_id, contract_id=contract_id,
     )
 
@@ -168,3 +168,34 @@ def test_run_estimate_propagates_agent_error_and_saves_nothing(db_session, make_
         select(EstimateDraftRow).where(EstimateDraftRow.quote_request_id == request.id)
     ).all()
     assert saved == []
+
+
+def test_the_guardrail_is_anchored_on_the_skus_intake_resolved(db_session, make_reader):
+    seed_world(db_session)
+    seed_chain_world(db_session)
+    request = _quote_request(db_session, sku_id="SKU-E-OLD")
+    swapped = _good_draft()
+    dropped = {**_good_draft(), "lines": [
+        {"sku_id": "SKU-E-P1", "quantity": 1, "unit_price": 10.0, "price_source": "list", "discount_pct": 0.0}]}
+
+    ready = _run(db_session, make_reader, request.id, ScriptedLLM([submit_turn(swapped)]))
+    blocked = _run(db_session, make_reader, request.id, ScriptedLLM([submit_turn(dropped, call_id=f"c{i}") for i in range(4)]))
+
+    assert ready.result.status == "ready"
+    assert blocked.result.status == "needs_review"
+    assert any("the request asks for SKU-E-OLD" in v.message for v in blocked.result.violations)
+    stored = get_estimate_draft(db_session, blocked.row.id)
+    assert any("the request asks for SKU-E-OLD" in v["message"] for v in stored.violations)
+
+
+def test_a_stale_graph_is_persisted_as_needs_review_without_a_draft(db_session, graph_client, graph_ns):
+    from app.graph.reader import GraphReader
+
+    seed_world(db_session)
+    request = _quote_request(db_session)
+
+    run = run_estimate(db_session, request.id, AS_OF, ScriptedLLM([]), GraphReader(graph_client, graph_ns), FakeEmbedder())
+
+    assert run.result.status == "needs_review" and "out of date" in run.result.reason
+    assert run.result.draft is None and run.result.iterations == 0
+    assert get_estimate_draft(db_session, run.row.id).draft is None

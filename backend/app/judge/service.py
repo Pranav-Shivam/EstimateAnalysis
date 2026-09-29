@@ -41,7 +41,7 @@ class ReviewItemNotResolvable(Exception):
 class ReviewItemResolution:
     row: ReviewItemRow
     eval_case: EvalCase
-    consolidation_enqueued: bool
+    consolidation_required: bool
 
 
 @dataclass
@@ -141,13 +141,4 @@ def resolve_review_item(
     case = build_eval_case(row, outcome, next_eval_case_id(session))
     save_eval_case(session, case)
 
-    consolidation_enqueued = False
-    if outcome == "corrected":
-        # Deferred import: building the procrastinate App is only needed on this path, and importing
-        # app.judge.service must stay cheap for every caller that never resolves a correction.
-        from app.consolidation.tasks import consolidate_review_item_task
-
-        consolidate_review_item_task.defer(review_item_id=str(row.id))
-        consolidation_enqueued = True
-
-    return ReviewItemResolution(row=row, eval_case=case, consolidation_enqueued=consolidation_enqueued)
+    return ReviewItemResolution(row=row, eval_case=case, consolidation_required=outcome == "corrected")

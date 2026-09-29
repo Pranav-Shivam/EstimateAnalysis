@@ -1,6 +1,8 @@
 # backend/tests/app/reference_data/test_repository.py
 from datetime import date
 
+import pytest
+
 from app.reference_data.models import Contract, Customer, Sku
 from app.reference_data.repository import (
     add_contract_coverage,
@@ -158,3 +160,17 @@ def test_add_contract_coverage_is_idempotent(db_session):
     add_contract_coverage(db_session, "CTR-E1", "Cat-E-A")
 
     assert db_session.get(Contract, "CTR-E1").covered_categories == ["Cat-E-A"]
+
+
+def test_set_sku_list_price_raises_for_unknown_sku(db_session):
+    seed_world(db_session)
+
+    with pytest.raises(ValueError):
+        set_sku_list_price(db_session, "SKU-NOPE", 10.0)
+
+
+def test_add_contract_coverage_raises_for_unknown_contract(db_session):
+    seed_world(db_session)
+
+    with pytest.raises(ValueError):
+        add_contract_coverage(db_session, "CTR-NOPE", "Cat-E-A")

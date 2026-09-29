@@ -87,11 +87,15 @@ def get_contract(session: Session, contract_id: str) -> Contract | None:
 
 def set_sku_list_price(session: Session, sku_id: str, list_price: float) -> None:
     sku = session.get(Sku, sku_id)
+    if sku is None:
+        raise ValueError(f"consolidation references unknown SKU {sku_id}")
     sku.list_price = list_price
 
 
 def add_contract_coverage(session: Session, contract_id: str, category: str) -> None:
     contract = session.get(Contract, contract_id)
+    if contract is None:
+        raise ValueError(f"consolidation references unknown contract {contract_id}")
     if category not in contract.covered_categories:
         contract.covered_categories = [*contract.covered_categories, category]
 

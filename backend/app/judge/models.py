@@ -33,4 +33,19 @@ class ReviewItemRow(Base):
     evidence: Mapped[dict] = mapped_column(JSONB)
     line_index: Mapped[int | None]
     status: Mapped[str] = mapped_column(Text, server_default=text("'open'"))
+    outcome: Mapped[str | None] = mapped_column(Text)
+    correction: Mapped[dict | None] = mapped_column(JSONB)
+    resolved_at: Mapped[datetime | None]
+    created_at: Mapped[datetime] = mapped_column(server_default=func.now())
+
+
+class EvalCaseRow(Base):
+    __tablename__ = "eval_cases"
+
+    id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    source_review_item_id: Mapped[uuid.UUID | None] = mapped_column(UUID(as_uuid=True), ForeignKey("review_items.id"))
+    case_id: Mapped[str] = mapped_column(Text, unique=True)
+    label: Mapped[str] = mapped_column(Text)
+    estimate_status: Mapped[str] = mapped_column(Text)
+    evidence: Mapped[list] = mapped_column(JSONB)
     created_at: Mapped[datetime] = mapped_column(server_default=func.now())

@@ -2,6 +2,7 @@ import uuid
 
 from app.estimate.repository import save_estimate_draft
 from app.intake.repository import save_quote_request
+from app.judge.models import EvalCaseRow
 from app.judge.repository import get_judge_verdict, list_open_review_items, save_judge_verdict, save_review_item
 from tests.app.estimate.seed import seed_world
 
@@ -48,3 +49,33 @@ def test_review_item_appears_in_open_list(db_session):
 
     open_ids = [row.id for row in list_open_review_items(db_session)]
     assert item.id in open_ids
+
+
+def test_review_item_row_has_resolution_columns(db_session):
+    estimate_id = _estimate_draft_id(db_session)
+    verdict = save_judge_verdict(
+        db_session, estimate_id=estimate_id, model="m", dimensions=[], overall_confidence=0.1,
+        flagged_dimension="price_provenance", trusted=False,
+    )
+    row = save_review_item(
+        db_session, judge_verdict_id=verdict.id, estimate_id=verdict.estimate_id, dimension="price_provenance",
+        fact="thin evidence", evidence={"lines": []}, line_index=None,
+    )
+
+    assert row.outcome is None
+    assert row.correction is None
+    assert row.resolved_at is None
+
+
+def test_eval_case_row_round_trips(db_session):
+    row = EvalCaseRow(
+        id=uuid.uuid4(), source_review_item_id=None, case_id="rc-0001", label="escalate",
+        estimate_status="ready", evidence=[{"line_index": 0, "sku_id": "SKU-X"}],
+    )
+    db_session.add(row)
+    db_session.flush()
+
+    fetched = db_session.get(EvalCaseRow, row.id)
+    assert fetched.case_id == "rc-0001"
+    assert fetched.label == "escalate"
+    assert fetched.evidence == [{"line_index": 0, "sku_id": "SKU-X"}]

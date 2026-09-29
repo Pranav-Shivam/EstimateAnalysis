@@ -27,6 +27,15 @@ https://arxiv.org/pdf/2407.18370
 
 Found via search, not read in full this session. Formal framework for when a judge should defer to a human rather than auto-decide; directly relevant to the human-in-the-loop gate design (the 0.85 auto-send threshold in the source article). Worth reading in full before finalizing the actual threshold value for this project.
 
+## Threshold-selection method (read in full 2026-09-29 for Phase 5)
+
+**arXiv 2407.18370, "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement"**
+https://arxiv.org/abs/2407.18370
+
+- Core idea: do not trust every judge verdict at a fixed cutoff picked in advance. Instead, pick a target human-agreement level (this project uses Cohen's kappa, per the Future AGI bands above: >0.6 acceptable, >0.8 strong), then calibrate a confidence threshold on a labeled dataset so that verdicts at or above the threshold are trusted (auto-pass) and verdicts below it escalate to a human.
+- Concrete threshold-selection procedure a small golden set supports: sweep candidate thresholds over the judge's overall confidence score, and at each candidate compute Cohen's kappa between (judge verdict at that threshold: trust vs escalate) and the golden set's human labels; pick the lowest threshold whose kappa still clears the acceptable band, maximizing coverage (how much can be auto-passed) without dropping below the agreement bar.
+- This is the "selective evaluation" framing: a cheaper judge with selective escalation can beat a stronger judge trusted unconditionally. Reported result: Mistral-7B with this method reached over 80% human agreement at about 80% coverage, while GPT-4 trusted unconditionally almost never reached 80% agreement.
+
 ## Practical takeaway for this project
 
 The source article's 0.85 auto-send threshold should not be copied as a magic number. Per this research: build the golden set from real reviewer corrections first (this project has none yet since it's pre-data), then derive the threshold from where Cohen's kappa against human labels crosses an acceptable band (>0.6) or a strong band (>0.8), and re-check it every time the agent model, prompt, or graph schema changes, consistent with what the source article itself says ("0.85 isn't a magic number, it's whatever your reviewers' data says it should be").

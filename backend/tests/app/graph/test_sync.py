@@ -7,12 +7,16 @@ import pytest
 from app.dedupe.repository import save_verdict
 from app.estimate.models import EstimateDraftRow
 from app.graph.constant import VARIANT_MIN_JACCARD
+from app.graph.reader import GraphReader
 from app.graph.repository import node_key
 from app.graph.service import (
-    GraphRebuildInProgress, rebuild_graph, sync_best_effort, sync_dedupe_verdicts, sync_quote, sync_quote_request,
+    GraphRebuildInProgress, rebuild_graph, sync_best_effort, sync_contract_coverage, sync_dedupe_verdicts,
+    sync_quote, sync_quote_request, sync_requirement, sync_sku,
 )
 from app.intake.repository import save_quote_request
-from app.reference_data.repository import reference_fingerprint
+from app.reference_data.repository import (
+    add_contract_coverage, reference_fingerprint, set_sku_list_price, upsert_requirement,
+)
 from core.graph.client import GraphUnavailable
 from tests.app.estimate.seed import seed_structure, seed_world
 from tests.graph_support import (
@@ -356,3 +360,44 @@ def test_failing_graph_client_is_a_graph_unavailable_source(db_session, graph_ns
 
     with pytest.raises(GraphUnavailable):
         sync_quote_request(db_session, FailingGraphClient(), graph_ns, row.id)
+
+
+def test_sync_sku_updates_the_price_property(db_session, graph_client, graph_ns, make_reader):
+    _world(db_session, make_reader)
+    set_sku_list_price(db_session, "SKU-E-GAP", 42.5)
+
+    sync_sku(db_session, graph_client, graph_ns, "SKU-E-GAP")
+
+    assert graph_node(graph_client, graph_ns, "SKU-E-GAP")["props"]["list_price"] == 42.5
+
+
+def test_sync_requirement_adds_the_edge_and_keeps_the_graph_current(db_session, graph_client, graph_ns, make_reader):
+    _world(db_session, make_reader)
+    upsert_requirement(db_session, sku_id="SKU-E-GAP", required_sku_id="SKU-E-A1")
+    db_session.flush()
+
+    sync_requirement(db_session, graph_client, graph_ns, "SKU-E-GAP", "SKU-E-A1")
+
+    assert graph_edge_count(graph_client, graph_ns, "SKU-E-GAP", "REQUIRES", "SKU-E-A1") == 1
+    assert GraphReader(graph_client, graph_ns).stored_fingerprint() == reference_fingerprint(db_session)
+
+
+def test_sync_contract_coverage_adds_the_edge_and_keeps_the_graph_current(db_session, graph_client, graph_ns, make_reader):
+    _world(db_session, make_reader)
+    add_contract_coverage(db_session, "CTR-E1", "Cat-E-B")
+    db_session.flush()
+
+    sync_contract_coverage(db_session, graph_client, graph_ns, "CTR-E1", "Cat-E-B")
+
+    assert graph_edge_count(graph_client, graph_ns, "CTR-E1", "COVERS", "Cat-E-B") == 1
+    assert GraphReader(graph_client, graph_ns).stored_fingerprint() == reference_fingerprint(db_session)
+
+
+def test_sync_contract_coverage_creates_a_brand_new_category_node(db_session, graph_client, graph_ns, make_reader):
+    _world(db_session, make_reader)
+    add_contract_coverage(db_session, "CTR-E1", "Cat-E-NEW")
+    db_session.flush()
+
+    sync_contract_coverage(db_session, graph_client, graph_ns, "CTR-E1", "Cat-E-NEW")
+
+    assert graph_node(graph_client, graph_ns, "Cat-E-NEW") is not None

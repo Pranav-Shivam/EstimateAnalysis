@@ -183,6 +183,36 @@ def sync_quote(session: Session, client: GraphClient, ns: str, estimate_id: uuid
     replace_price_variance(client, ns, str(row.id), _price_variance_rows(session, row))
 
 
+def sync_sku(session: Session, client: GraphClient, ns: str, sku_id: str) -> None:
+    sku = get_sku(session, sku_id)
+    if sku is None:
+        return
+    merge_nodes(client, ns, "SKU", [{"id": sku.sku_id, "props": {
+        "name": sku.name, "category": sku.category, "list_price": sku.list_price,
+        "discontinued": sku.discontinued, "in_stock": sku.in_stock,
+    }}])
+
+
+def _touch_graph_meta(session: Session, client: GraphClient, ns: str) -> None:
+    """Corrections to SkuRequirement or Contract.covered_categories change reference_fingerprint(); without this,
+    graph_is_current() would see the fact as applied but the graph as stale, and block every future estimate."""
+    merge_nodes(client, ns, "GraphMeta", [{"id": ns, "props": {
+        "reference_fingerprint": reference_fingerprint(session),
+        "built_at": datetime.now(timezone.utc).isoformat(),
+    }}])
+
+
+def sync_requirement(session: Session, client: GraphClient, ns: str, sku_id: str, required_sku_id: str) -> None:
+    merge_edges(client, ns, "REQUIRES", "SKU", "SKU", [_edge(sku_id, required_sku_id)])
+    _touch_graph_meta(session, client, ns)
+
+
+def sync_contract_coverage(session: Session, client: GraphClient, ns: str, contract_id: str, category: str) -> None:
+    merge_nodes(client, ns, "PricingCategory", [{"id": category, "props": {}}])
+    merge_edges(client, ns, "COVERS", "Contract", "PricingCategory", [_edge(contract_id, category)])
+    _touch_graph_meta(session, client, ns)
+
+
 class GraphRebuildInProgress(Exception):
     pass
 

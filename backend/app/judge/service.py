@@ -1,6 +1,6 @@
 import uuid
 from dataclasses import asdict, dataclass
-from datetime import date
+from datetime import date, datetime, timezone
 
 from sqlalchemy.orm import Session
 
@@ -10,14 +10,38 @@ from app.graph.reader import GraphReader
 from app.judge.constant import CALIBRATION_PATH, DEFAULT_CONFIDENCE_THRESHOLD
 from app.judge.evidence import LineEvidence, build_evidence
 from app.judge.prompts import JUDGE_SYSTEM_PROMPT
-from app.judge.repository import save_judge_verdict, save_review_item
-from app.judge.schemas import DimensionScore, JudgeVerdict, ReviewItem
+from app.judge.models import ReviewItemRow
+from app.judge.repository import (
+    get_review_item, next_eval_case_id, save_eval_case, save_judge_verdict, save_review_item,
+)
+from app.judge.schemas import (
+    RESOLVABLE_DIMENSIONS, DimensionScore, EvalCase, JudgeVerdict, ReviewItem, build_eval_case, validate_correction,
+)
 from app.judge.scoring import ScoredDimension, gate, rollup
 from core.llm.anthropic_judge_client import JUDGE_MODEL, AnthropicJudgeClient
 
 
 class EstimateNotFound(Exception):
     pass
+
+
+class ReviewItemNotFound(Exception):
+    pass
+
+
+class ReviewItemAlreadyResolved(Exception):
+    pass
+
+
+class ReviewItemNotResolvable(Exception):
+    pass
+
+
+@dataclass
+class ReviewItemResolution:
+    row: ReviewItemRow
+    eval_case: EvalCase
+    consolidation_enqueued: bool
 
 
 @dataclass
@@ -93,3 +117,37 @@ def run_judge(
         review_item = ReviewItem(dimension=verdict.flagged_dimension, fact=fact, evidence=evidence, line_index=line_index)
 
     return JudgeRunResult(verdict=verdict, verdict_id=verdict_row.id, review_item=review_item)
+
+
+def resolve_review_item(
+    session: Session, review_item_id: uuid.UUID, outcome: str, correction: dict | None,
+) -> ReviewItemResolution:
+    row = get_review_item(session, review_item_id)
+    if row is None:
+        raise ReviewItemNotFound(f"review item {review_item_id} not found")
+    if row.status != "open":
+        raise ReviewItemAlreadyResolved(f"review item {review_item_id} is already {row.status!r}")
+    if row.dimension not in RESOLVABLE_DIMENSIONS:
+        raise ReviewItemNotResolvable(f"dimension {row.dimension!r} is not resolvable through this endpoint")
+    if outcome == "corrected":
+        validate_correction(session, row.dimension, correction, row.evidence)
+
+    row.status = outcome
+    row.outcome = outcome
+    row.correction = correction if outcome == "corrected" else None
+    row.resolved_at = datetime.now(timezone.utc)
+    session.flush()
+
+    case = build_eval_case(row, outcome, next_eval_case_id(session))
+    save_eval_case(session, case)
+
+    consolidation_enqueued = False
+    if outcome == "corrected":
+        # Deferred import: building the procrastinate App is only needed on this path, and importing
+        # app.judge.service must stay cheap for every caller that never resolves a correction.
+        from app.consolidation.tasks import consolidate_review_item_task
+
+        consolidate_review_item_task.defer(review_item_id=str(row.id))
+        consolidation_enqueued = True
+
+    return ReviewItemResolution(row=row, eval_case=case, consolidation_enqueued=consolidation_enqueued)

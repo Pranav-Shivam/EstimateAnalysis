@@ -11,7 +11,7 @@ Done when: a planted correction (simulating a human fixing a predicted price, pe
 ## Scope
 
 In:
-- Migration 0006: `review_items` gains `outcome`, `correction`, `resolved_at`; new `eval_cases` table; procrastinate's own schema.
+- Migration 0006: `review_items` gains `outcome`, `correction`, `resolved_at`; new `eval_cases` table. Migration 0007: procrastinate's own schema.
 - `POST /v1/review/{review_item_id}/resolve`: records approve/correct, builds an eval case, enqueues consolidation on correct.
 - `app/consolidation/`: procrastinate task, three correction handlers, one per judge dimension:
   - `price_provenance` → writes `Sku.list_price`.
@@ -108,7 +108,7 @@ class EvalCaseRow(Base):
 - `tasks.py`:
   ```python
   from procrastinate import App
-  app = App(connector=...)  # PsycopgConnector, built from settings.database_url in the entrypoint
+  app = App(connector=...)  # PsycopgConnector, built from settings.database_url
 
   @app.task(name="consolidate_review_item")
   def consolidate_review_item(review_item_id: str) -> None: ...
@@ -119,6 +119,7 @@ class EvalCaseRow(Base):
   - `"contract_discount"` → `add_contract_coverage(session, contract_id, category)` (idempotent: append only if `category not in contract.covered_categories`) → `sync_best_effort("contract coverage correction", sync_contract_coverage, session, client, ns, contract_id, category)`.
   - any other `dimension` → `logger.warning("no consolidation handler for dimension %s", dimension)`, no-op (defensive only: `resolve_review_item` already rejects an unrecognized dimension at correction time, per decision 4, so this path is unreachable in practice and exists only so a future dimension added without a handler fails loudly instead of crashing the worker).
   - marks the review item `status = "consolidated"`, commits.
+- The API opens this app sync in its FastAPI lifespan (`main.py`): the resolve route is a sync `def`, and an async connector never opened async hands sync `.defer()` callers its own sync pool. The worker opens it async.
 - Task is a plain function; tests call `consolidate_review_item(review_item_id=...)` directly against a session fixture rather than requiring a running worker (procrastinate tasks are ordinary callables when not `.defer()`-dispatched through a live app/worker).
 
 ### `app/reference_data/repository.py` additions
@@ -166,8 +167,9 @@ def sync_contract_coverage(session: Session, client: GraphClient, ns: str, contr
 ### `backend/scripts/run_worker.py`
 
 ```python
-from app.consolidation.tasks import app as procrastinate_app
-# procrastinate CLI entrypoint: `python run_worker.py` runs `procrastinate_app.run_worker()`
+from app.consolidation.tasks import run_worker
+# `python scripts/run_worker.py` from backend/ runs the worker; run_worker() opens the app async on a
+# SelectorEventLoop, since psycopg's async pool cannot run on Windows' default Proactor loop.
 ```
 Not started by the test suite or by any other script; a manually-run background process, same operational category as the FastAPI server itself.
 
@@ -206,7 +208,7 @@ Instrumentation points (one trace per run, child spans within it):
 ### Migration 0006
 
 - `alembic revision` altering `review_items` (3 new nullable columns) and creating `eval_cases`.
-- procrastinate's own schema, applied via its documented `procrastinate schema --apply` SQL, folded into the same migration file (or an immediately-preceding one if procrastinate's tooling requires running its SQL outside alembic's `op.execute` — confirmed during implementation, not assumed here).
+- procrastinate's own schema lives in its own revision, 0007: it executes the `schema.sql` packaged with the installed procrastinate (the SQL `procrastinate schema --apply` runs) through the driver cursor, and its downgrade drops every procrastinate table, function and type.
 - `migrations/env.py`: register `app.judge` (already registered from Phase 5, `EvalCaseRow` lives in the same module so no new import needed) and `app.consolidation` if it defines any SQLAlchemy models beyond procrastinate's own tables (it doesn't, per this design — no entry needed, but verified during implementation since Phase 5's own gap was exactly this kind of miss).
 
 ## Testing

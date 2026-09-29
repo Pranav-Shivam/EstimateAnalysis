@@ -6,7 +6,7 @@
 
 **Architecture:** A new `POST /v1/review/{review_item_id}/resolve` endpoint records a reviewer's approve/correct decision, always growing a real eval set (`eval_cases`) from production corrections. A `corrected` outcome enqueues a `procrastinate` (ADR-0003) background task that writes the missing reference fact straight into the Postgres table the relevant code guardrail already reads (`Sku.list_price`, a new `SkuRequirement` row, or an appended `Contract.covered_categories` entry), then best-effort syncs the one Neo4j node/edge affected. `scripts/calibrate_judge.py` gains a false-auto-send ceiling check computed from the golden set plus `eval_cases`. A thin `TracingClient` wraps the real Langfuse SDK and no-ops with no configured instance, instrumented at the estimate agent loop, its tool calls, its graph-integrity check, and dedupe's verdict decisions.
 
-**Tech Stack:** FastAPI, SQLAlchemy 2.x (sync), Alembic, `procrastinate` (`SyncPsycopgConnector`), `langfuse` Python SDK, pytest against a real local Postgres (5433) and Neo4j (17687).
+**Tech Stack:** FastAPI, SQLAlchemy 2.x (sync), Alembic, `procrastinate` (`PsycopgConnector`), `langfuse` Python SDK, pytest against a real local Postgres (5433) and Neo4j (17687).
 
 **Spec:** `docs/superpowers/specs/2026-09-29-phase6-llmops-tracing-design.md`
 
@@ -19,7 +19,7 @@
 - SQLAlchemy sessions run with `autoflush=False` (already the project default via `make_session_factory`); call `session.flush()` explicitly wherever a later read in the same function needs to see an uncommitted write, matching existing repository functions' own comments on this.
 - Stage files by explicit path only in any commit; never `git add -A` or `git add .`.
 - Layer order is route -> service -> repository -> DB/LLM, per `docs/backend-structure.txt`. Follow this codebase's existing conventions exactly: constructor/`Depends`-injected clients (never a global singleton client), frozen dataclasses for per-run contexts, domain exceptions defined near where they are raised and mapped to HTTP status codes only at the route layer.
-- `procrastinate`'s connector is `SyncPsycopgConnector` (synchronous), matching this codebase's fully-synchronous SQLAlchemy/FastAPI style; never the async connector.
+- `procrastinate`'s connector is `PsycopgConnector` (async). The worker needs it (a sync connector cannot run a worker); the API opens the same app sync in its lifespan so the sync resolve route can `.defer()`. Superseded the original `SyncPsycopgConnector` choice in the final review fix wave.
 - `FALSE_AUTO_SEND_CEILING = 0.05` (5%) is the release gate's ceiling constant.
 - `eval_cases.case_id` uses an `"rc-"` prefix (reviewer-corrected); the hand-authored golden set's is `"jg-"`.
 - Only `price_provenance`, `graph_completion`, and `contract_discount` review items are resolvable through `POST /v1/review/{id}/resolve`; a `dimension == "guardrail"` (fast-path) review item is rejected, not silently accepted (see Task 7's design note).

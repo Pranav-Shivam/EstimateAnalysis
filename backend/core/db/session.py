@@ -17,14 +17,14 @@ def make_session_factory(engine: Engine) -> sessionmaker:
 
 
 @lru_cache
-def _app_session_factory() -> sessionmaker:
+def app_session_factory() -> sessionmaker:
     settings = Settings()
     engine = make_engine(settings.database_url)
     return make_session_factory(engine)
 
 
 def get_session() -> Iterator[Session]:
-    session = _app_session_factory()()
+    session = app_session_factory()()
     try:
         yield session
         session.commit()

@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 
 from api.v1.review.request import ResolveReviewItemRequest
 from api.v1.review.response import ResolveReviewItemResponse, ReviewItemListResponse
+from app.consolidation.tasks import consolidate_review_item_task
 from app.judge.repository import list_open_review_items
 from app.judge.schemas import InvalidCorrection
 from app.judge.service import (
@@ -45,10 +46,6 @@ def resolve(
     # run against a still-open row, and a failed commit would leave an orphan job.
     session.commit()
     if result.consolidation_required:
-        # Deferred import: building the procrastinate App is only needed on this path, and importing
-        # this route module must stay cheap for every request that never resolves a correction.
-        from app.consolidation.tasks import consolidate_review_item_task
-
         consolidate_review_item_task.defer(review_item_id=str(review_item_id))
     return ResolveReviewItemResponse(
         id=result.row.id, status=result.row.status, outcome=result.row.outcome, correction=result.row.correction,

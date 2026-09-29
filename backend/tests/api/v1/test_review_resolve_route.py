@@ -87,6 +87,22 @@ def test_resolve_rejects_an_invalid_correction_with_422(db_session):
     assert response.status_code == 422
 
 
+def test_resolve_rejects_a_corrected_outcome_without_a_correction_with_422(db_session):
+    row = _open_review_item(db_session)
+
+    response = _post(db_session, row.id, {"outcome": "corrected"})
+
+    assert response.status_code == 422
+
+
+def test_resolve_rejects_a_price_correction_missing_its_price_with_422(db_session):
+    row = _open_review_item(db_session)
+
+    response = _post(db_session, row.id, {"outcome": "corrected", "correction": {"sku_id": "SKU-E-GAP"}})
+
+    assert response.status_code == 422
+
+
 def test_resolve_rejects_an_unknown_outcome_with_422(db_session):
     row = _open_review_item(db_session)
 

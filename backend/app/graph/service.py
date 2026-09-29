@@ -12,7 +12,7 @@ from app.graph.constant import LOCAL_MAX_HOPS, LOCAL_MAX_NODES, VARIANT_MIN_JACC
 from app.graph.helper import build_community_stats, match_site
 from app.graph.lock import try_lock_rebuild, unlock_rebuild
 from app.graph.repository import (
-    clear_communities, count_edges_by_type, count_nodes_by_label, drop_namespace, ensure_constraints,
+    advance_fingerprint, clear_communities, count_edges_by_type, count_nodes_by_label, drop_namespace, ensure_constraints,
     fetch_community_members, fetch_local_paths, fetch_node, merge_edges, merge_nodes, replace_price_variance,
     run_leiden, write_communities,
 )
@@ -32,8 +32,13 @@ def _edge(source: str, target: str) -> dict:
     return {"from": source, "to": target, "props": {}}
 
 
-def rebuild_reference_graph(session: Session, client: GraphClient, ns: str) -> None:
-    """Wipe and reload the reference part of one namespace from Postgres. Idempotent."""
+def rebuild_reference_graph(session: Session, client: GraphClient, ns: str) -> str:
+    """Wipe and reload the reference part of one namespace from Postgres. Idempotent. Returns the fingerprint it
+    stamped."""
+    # Taken before any reference row is read. Each read sees whatever is committed when it runs, so a correction
+    # committed mid-rebuild may or may not be in the graph; stamping the earlier state makes the graph read as
+    # stale in that case (a rebuild repairs it) instead of current while possibly missing the correction.
+    fingerprint = reference_fingerprint(session)
     skus = all_skus(session)
     contracts = all_contracts(session)
     projects = all_projects(session)
@@ -84,9 +89,9 @@ def rebuild_reference_graph(session: Session, client: GraphClient, ns: str) -> N
     merge_edges(client, ns, "AT_SITE", "Project", "Site", [_edge(p.project_id, p.site_id) for p in projects])
 
     merge_nodes(client, ns, "GraphMeta", [{"id": ns, "props": {
-        "reference_fingerprint": reference_fingerprint(session),
-        "built_at": datetime.now(timezone.utc).isoformat(),
+        "reference_fingerprint": fingerprint, "built_at": datetime.now(timezone.utc).isoformat(),
     }}])
+    return fingerprint
 
 
 def _created_at(row) -> str | None:
@@ -193,24 +198,44 @@ def sync_sku(session: Session, client: GraphClient, ns: str, sku_id: str) -> Non
     }}])
 
 
-def _touch_graph_meta(session: Session, client: GraphClient, ns: str) -> None:
+class GraphSyncIncomplete(GraphError):
+    """A single-fact sync could not write its edge because an endpoint node is not in the graph."""
+
+
+def _merge_one_edge(client: GraphClient, ns: str, edge_type: str, from_label: str, to_label: str, source: str,
+                    target: str) -> None:
+    if merge_edges(client, ns, edge_type, from_label, to_label, [_edge(source, target)]) == 0:
+        raise GraphSyncIncomplete(f"no {from_label} {source} or no {to_label} {target} in graph namespace {ns}")
+
+
+def _advance_graph_meta(session: Session, client: GraphClient, ns: str, previous_fingerprint: str) -> None:
     """Corrections to SkuRequirement or Contract.covered_categories change reference_fingerprint(); without this,
-    graph_is_current() would see the fact as applied but the graph as stale, and block every future estimate."""
-    merge_nodes(client, ns, "GraphMeta", [{"id": ns, "props": {
-        "reference_fingerprint": reference_fingerprint(session),
-        "built_at": datetime.now(timezone.utc).isoformat(),
-    }}])
+    graph_is_current() would see the graph as stale after every correction and block every future estimate.
+
+    The new fingerprint is stamped only if the graph was current before this correction (it still holds
+    `previous_fingerprint`, read before the Postgres write). A graph already stale, from an earlier failed sync
+    or a rebuild still loading, holds some other value or no GraphMeta at all, and must stay stale until a rebuild:
+    stamping it would mark current a graph that is missing some other fact."""
+    advanced = advance_fingerprint(
+        client, ns, previous_fingerprint, reference_fingerprint(session), datetime.now(timezone.utc).isoformat(),
+    )
+    if not advanced:
+        logger.warning("graph namespace %s was already stale; left stale, run a rebuild to repair it", ns)
 
 
-def sync_requirement(session: Session, client: GraphClient, ns: str, sku_id: str, required_sku_id: str) -> None:
-    merge_edges(client, ns, "REQUIRES", "SKU", "SKU", [_edge(sku_id, required_sku_id)])
-    _touch_graph_meta(session, client, ns)
+def sync_requirement(
+    session: Session, client: GraphClient, ns: str, sku_id: str, required_sku_id: str, previous_fingerprint: str,
+) -> None:
+    _merge_one_edge(client, ns, "REQUIRES", "SKU", "SKU", sku_id, required_sku_id)
+    _advance_graph_meta(session, client, ns, previous_fingerprint)
 
 
-def sync_contract_coverage(session: Session, client: GraphClient, ns: str, contract_id: str, category: str) -> None:
+def sync_contract_coverage(
+    session: Session, client: GraphClient, ns: str, contract_id: str, category: str, previous_fingerprint: str,
+) -> None:
     merge_nodes(client, ns, "PricingCategory", [{"id": category, "props": {}}])
-    merge_edges(client, ns, "COVERS", "Contract", "PricingCategory", [_edge(contract_id, category)])
-    _touch_graph_meta(session, client, ns)
+    _merge_one_edge(client, ns, "COVERS", "Contract", "PricingCategory", contract_id, category)
+    _advance_graph_meta(session, client, ns, previous_fingerprint)
 
 
 class GraphRebuildInProgress(Exception):
@@ -223,7 +248,7 @@ def rebuild_graph(session: Session, client: GraphClient, ns: str) -> RebuildSumm
     if not try_lock_rebuild(session, ns):
         raise GraphRebuildInProgress(f"a rebuild of graph namespace {ns} is already running")
     try:
-        rebuild_reference_graph(session, client, ns)
+        fingerprint = rebuild_reference_graph(session, client, ns)
         for request_id in all_quote_request_ids(session):
             sync_quote_request(session, client, ns, request_id)
         for request_id in all_verdict_request_ids(session):
@@ -231,7 +256,7 @@ def rebuild_graph(session: Session, client: GraphClient, ns: str) -> RebuildSumm
         for estimate_id in all_estimate_draft_ids(session):
             sync_quote(session, client, ns, estimate_id)
         return RebuildSummary(
-            namespace=ns, fingerprint=reference_fingerprint(session),
+            namespace=ns, fingerprint=fingerprint,
             node_counts=count_nodes_by_label(client, ns), edge_counts=count_edges_by_type(client, ns),
         )
     finally:

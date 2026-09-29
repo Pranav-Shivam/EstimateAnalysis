@@ -43,19 +43,24 @@ def merge_nodes(client: GraphClient, ns: str, label: str, rows: list[dict]) -> N
 
 def merge_edges(
     client: GraphClient, ns: str, edge_type: str, from_label: str, to_label: str, rows: list[dict],
-) -> None:
+) -> int:
+    """Returns how many rows found both endpoint nodes. A row whose endpoint is missing is skipped silently by
+    MATCH, so a caller that must know the edge exists compares this against len(rows)."""
     _require(edge_type, EDGE_TYPES, "edge type")
     _require(from_label, NODE_LABELS, "label")
     _require(to_label, NODE_LABELS, "label")
     query = (
         f"UNWIND $rows AS row MATCH (a:{from_label} {{key: row.source}}) MATCH (b:{to_label} {{key: row.target}}) "
-        f"MERGE (a)-[r:{edge_type}]->(b) SET r += row.props"
+        f"MERGE (a)-[r:{edge_type}]->(b) SET r += row.props RETURN count(r) AS merged"
     )
+    merged = 0
     for batch in _batches(rows):
-        client.write(
+        result = client.write(
             query,
             rows=[{"source": node_key(ns, r["from"]), "target": node_key(ns, r["to"]), "props": r["props"]} for r in batch],
         )
+        merged += result[0]["merged"]
+    return merged
 
 
 def count_nodes_by_label(client: GraphClient, ns: str) -> dict[str, int]:
@@ -116,6 +121,22 @@ def replace_price_variance(client: GraphClient, ns: str, quote_id: str, rows: li
             quote_key=quote_key,
             rows=[{"sku_key": node_key(ns, r["sku_id"]), "props": r["props"]} for r in rows],
         )
+
+
+def advance_fingerprint(client: GraphClient, ns: str, expected: str, fingerprint: str, built_at: str) -> bool:
+    """Compare-and-set on the stored fingerprint: replaced only while it still equals `expected`. MATCH, not MERGE,
+    so a namespace mid-rebuild (GraphMeta dropped, not yet rewritten) is left alone. Setting `_LOCK_` first takes
+    the node's write lock before the fingerprint is read (Neo4j's documented lost-update idiom), so two concurrent
+    calls cannot both see `expected`; it is removed in the same transaction and never visible."""
+    rows = client.write(
+        "MATCH (m:GraphMeta {key: $key}) SET m._LOCK_ = true "
+        "WITH m, m.reference_fingerprint = $expected AS matches "
+        "SET m.reference_fingerprint = CASE WHEN matches THEN $fingerprint ELSE m.reference_fingerprint END, "
+        "m.built_at = CASE WHEN matches THEN $built_at ELSE m.built_at END "
+        "REMOVE m._LOCK_ RETURN matches",
+        key=node_key(ns, ns), expected=expected, fingerprint=fingerprint, built_at=built_at,
+    )
+    return bool(rows) and rows[0]["matches"]
 
 
 def fetch_fingerprint(client: GraphClient, ns: str) -> str | None:

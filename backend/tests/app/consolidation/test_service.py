@@ -3,13 +3,14 @@ import uuid
 import pytest
 
 from app.consolidation.service import consolidate_review_item
+from app.estimate.guardrails import graph_is_current
 from app.estimate.repository import save_estimate_draft
 from app.intake.repository import save_quote_request
 from app.judge.models import JudgeVerdictRow, ReviewItemRow
 from app.reference_data.models import Contract, Sku, SkuRequirement
 from app.reference_data.repository import reference_fingerprint
 from tests.app.estimate.seed import seed_world
-from tests.graph_support import graph_edge_count, graph_node
+from tests.graph_support import FailingGraphClient, graph_edge_count, graph_node
 
 
 def _estimate_draft_id(session) -> uuid.UUID:
@@ -105,6 +106,27 @@ def test_contract_discount_handler_adds_coverage_and_keeps_graph_current(db_sess
     assert graph_edge_count(graph_client, graph_ns, "CTR-E1", "COVERS", "Cat-E-B") == 1
     from app.graph.reader import GraphReader
     assert GraphReader(graph_client, graph_ns).stored_fingerprint() == reference_fingerprint(db_session)
+
+
+def test_a_later_consolidation_never_marks_current_a_graph_an_earlier_failed_sync_left_stale(
+    db_session, graph_client, graph_ns, make_reader,
+):
+    reader = _world(db_session, make_reader)
+    first = _corrected_review_item(
+        db_session, "graph_completion", {"sku_id": "SKU-E-GAP", "required_sku_id": "SKU-E-A1"},
+        {"lines": [{"line_index": 0, "sku_id": "SKU-E-GAP"}]},
+    )
+    second = _corrected_review_item(
+        db_session, "contract_discount", {"contract_id": "CTR-E1", "category": "Cat-E-B"},
+        {"lines": [{"line_index": 0, "sku_id": "SKU-E-B1", "contract_id": "CTR-E1"}]},
+    )
+
+    # Neo4j blips during the first consolidation: Postgres gets the fact, the graph does not.
+    consolidate_review_item(db_session, FailingGraphClient(), graph_ns, first.id)
+    consolidate_review_item(db_session, graph_client, graph_ns, second.id)
+
+    assert graph_edge_count(graph_client, graph_ns, "SKU-E-GAP", "REQUIRES", "SKU-E-A1") == 0
+    assert graph_is_current(db_session, reader) is False
 
 
 def test_consolidate_review_item_rejects_a_row_not_in_corrected_status(db_session, graph_client, graph_ns):

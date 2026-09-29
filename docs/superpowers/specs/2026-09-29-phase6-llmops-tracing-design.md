@@ -164,6 +164,8 @@ def sync_contract_coverage(session: Session, client: GraphClient, ns: str, contr
     merge_nodes(client, ns, "PricingCategory", [{"id": category, "props": {}}])
     merge_edges(client, ns, "COVERS", "Contract", "PricingCategory", [_edge(contract_id, category)])
 ```
+`sync_requirement`/`sync_contract_coverage` also take the `reference_fingerprint` the handler read before its Postgres write. They raise `GraphSyncIncomplete` (a `GraphError`, so `sync_best_effort` logs it) when the edge's endpoint node is missing, and then compare-and-set `GraphMeta`: the post-correction fingerprint is stamped only while the stored one still equals the pre-write value, so a graph already stale (an earlier failed sync, a rebuild mid-load with no `GraphMeta`) stays stale until a rebuild. `rebuild_reference_graph` reads the fingerprint it stamps before reading any reference row, so a correction committed mid-rebuild leaves the graph stale rather than current.
+
 `sync_sku` mirrors the existing `SKU` merge shape inside `rebuild_reference_graph`, scoped to one node. `sync_requirement`/`sync_contract_coverage` reuse the existing `merge_edges`/`_edge` helpers already in this file, no new merge logic. `sync_contract_coverage` merges the `PricingCategory` node first since the category may be brand new (a contract can cover a category no SKU uses yet, same reasoning `rebuild_reference_graph` already documents for its own category-node merge).
 
 ### `backend/scripts/run_worker.py`

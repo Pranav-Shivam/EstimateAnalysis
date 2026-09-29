@@ -4,7 +4,9 @@ from sqlalchemy.orm import Session
 
 from app.graph.service import sync_best_effort, sync_contract_coverage, sync_requirement, sync_sku
 from app.judge.repository import lock_review_item
-from app.reference_data.repository import add_contract_coverage, set_sku_list_price, upsert_requirement
+from app.reference_data.repository import (
+    add_contract_coverage, reference_fingerprint, set_sku_list_price, upsert_requirement,
+)
 from core.graph.client import GraphClient
 
 
@@ -14,21 +16,31 @@ def _consolidate_price_provenance(session: Session, client: GraphClient, ns: str
     sync_best_effort("sku price correction", sync_sku, session, client, ns, sku_id)
 
 
+# The two handlers below change reference_fingerprint(). Each reads it before its write, so the graph sync can tell
+# whether the graph was current beforehand (see graph.service._advance_graph_meta). Sessions run with autoflush off
+# (core/db/session.py), so the write is flushed before the sync reads the post-correction fingerprint.
+
+
 def _consolidate_graph_completion(session: Session, client: GraphClient, ns: str, correction: dict) -> None:
     sku_id, required_sku_id = correction["sku_id"], correction["required_sku_id"]
+    previous_fingerprint = reference_fingerprint(session)
     upsert_requirement(session, sku_id=sku_id, required_sku_id=required_sku_id)
-    # Sessions here run with autoflush off (core/db/session.py); _touch_graph_meta reads reference_fingerprint()
-    # via a plain select, so the merged row above must be flushed first or the graph gets stamped with the
-    # pre-correction fingerprint. Same flush-before-sync shape as tests/app/graph/test_sync.py.
     session.flush()
-    sync_best_effort("sku requirement correction", sync_requirement, session, client, ns, sku_id, required_sku_id)
+    sync_best_effort(
+        "sku requirement correction", sync_requirement, session, client, ns, sku_id, required_sku_id,
+        previous_fingerprint,
+    )
 
 
 def _consolidate_contract_discount(session: Session, client: GraphClient, ns: str, correction: dict) -> None:
     contract_id, category = correction["contract_id"], correction["category"]
+    previous_fingerprint = reference_fingerprint(session)
     add_contract_coverage(session, contract_id, category)
     session.flush()
-    sync_best_effort("contract coverage correction", sync_contract_coverage, session, client, ns, contract_id, category)
+    sync_best_effort(
+        "contract coverage correction", sync_contract_coverage, session, client, ns, contract_id, category,
+        previous_fingerprint,
+    )
 
 
 _HANDLERS = {

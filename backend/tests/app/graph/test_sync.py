@@ -9,13 +9,14 @@ from app.estimate.models import EstimateDraftRow
 from app.graph.constant import VARIANT_MIN_JACCARD
 from app.graph.reader import GraphReader
 from app.graph.repository import node_key
+from app.graph import service as graph_service
 from app.graph.service import (
-    GraphRebuildInProgress, rebuild_graph, sync_best_effort, sync_contract_coverage, sync_dedupe_verdicts,
-    sync_quote, sync_quote_request, sync_requirement, sync_sku,
+    GraphRebuildInProgress, GraphSyncIncomplete, rebuild_graph, rebuild_reference_graph, sync_best_effort,
+    sync_contract_coverage, sync_dedupe_verdicts, sync_quote, sync_quote_request, sync_requirement, sync_sku,
 )
 from app.intake.repository import save_quote_request
 from app.reference_data.repository import (
-    add_contract_coverage, reference_fingerprint, set_sku_list_price, upsert_requirement,
+    add_contract_coverage, reference_fingerprint, set_sku_list_price, upsert_requirement, upsert_sku,
 )
 from core.graph.client import GraphUnavailable
 from tests.app.estimate.seed import seed_structure, seed_world
@@ -371,33 +372,118 @@ def test_sync_sku_updates_the_price_property(db_session, graph_client, graph_ns,
     assert graph_node(graph_client, graph_ns, "SKU-E-GAP")["props"]["list_price"] == 42.5
 
 
+def _stored(graph_client, graph_ns):
+    return GraphReader(graph_client, graph_ns).stored_fingerprint()
+
+
+def _mark_stale(graph_client, graph_ns):
+    graph_client.write(
+        "MATCH (m:GraphMeta {key: $key}) SET m.reference_fingerprint = 'stale'", key=node_key(graph_ns, graph_ns),
+    )
+
+
 def test_sync_requirement_adds_the_edge_and_keeps_the_graph_current(db_session, graph_client, graph_ns, make_reader):
     _world(db_session, make_reader)
+    previous = reference_fingerprint(db_session)
     upsert_requirement(db_session, sku_id="SKU-E-GAP", required_sku_id="SKU-E-A1")
     db_session.flush()
 
-    sync_requirement(db_session, graph_client, graph_ns, "SKU-E-GAP", "SKU-E-A1")
+    sync_requirement(db_session, graph_client, graph_ns, "SKU-E-GAP", "SKU-E-A1", previous)
 
     assert graph_edge_count(graph_client, graph_ns, "SKU-E-GAP", "REQUIRES", "SKU-E-A1") == 1
-    assert GraphReader(graph_client, graph_ns).stored_fingerprint() == reference_fingerprint(db_session)
+    assert _stored(graph_client, graph_ns) == reference_fingerprint(db_session)
 
 
 def test_sync_contract_coverage_adds_the_edge_and_keeps_the_graph_current(db_session, graph_client, graph_ns, make_reader):
     _world(db_session, make_reader)
+    previous = reference_fingerprint(db_session)
     add_contract_coverage(db_session, "CTR-E1", "Cat-E-B")
     db_session.flush()
 
-    sync_contract_coverage(db_session, graph_client, graph_ns, "CTR-E1", "Cat-E-B")
+    sync_contract_coverage(db_session, graph_client, graph_ns, "CTR-E1", "Cat-E-B", previous)
 
     assert graph_edge_count(graph_client, graph_ns, "CTR-E1", "COVERS", "Cat-E-B") == 1
-    assert GraphReader(graph_client, graph_ns).stored_fingerprint() == reference_fingerprint(db_session)
+    assert _stored(graph_client, graph_ns) == reference_fingerprint(db_session)
 
 
 def test_sync_contract_coverage_creates_a_brand_new_category_node(db_session, graph_client, graph_ns, make_reader):
     _world(db_session, make_reader)
+    previous = reference_fingerprint(db_session)
     add_contract_coverage(db_session, "CTR-E1", "Cat-E-NEW")
     db_session.flush()
 
-    sync_contract_coverage(db_session, graph_client, graph_ns, "CTR-E1", "Cat-E-NEW")
+    sync_contract_coverage(db_session, graph_client, graph_ns, "CTR-E1", "Cat-E-NEW", previous)
 
     assert graph_node(graph_client, graph_ns, "Cat-E-NEW") is not None
+
+
+def test_sync_requirement_leaves_an_already_stale_graph_stale(db_session, graph_client, graph_ns, make_reader):
+    # An earlier correction's sync failed, so the graph is missing that fact. Stamping the current fingerprint
+    # now would mark the graph current while it still lacks it.
+    _world(db_session, make_reader)
+    _mark_stale(graph_client, graph_ns)
+    previous = reference_fingerprint(db_session)
+    upsert_requirement(db_session, sku_id="SKU-E-GAP", required_sku_id="SKU-E-A1")
+    db_session.flush()
+
+    sync_requirement(db_session, graph_client, graph_ns, "SKU-E-GAP", "SKU-E-A1", previous)
+
+    assert graph_edge_count(graph_client, graph_ns, "SKU-E-GAP", "REQUIRES", "SKU-E-A1") == 1
+    assert _stored(graph_client, graph_ns) == "stale"
+
+
+def test_sync_requirement_to_a_node_missing_from_the_graph_raises_and_leaves_the_graph_unstamped(
+    db_session, graph_client, graph_ns, make_reader,
+):
+    _world(db_session, make_reader)
+    stored_before = _stored(graph_client, graph_ns)
+    upsert_sku(
+        db_session, sku_id="SKU-E-NEWPART", name="Added after the build", category="Cat-E-A", list_price=1.0,
+        discontinued=False, replaced_by=None, in_stock=True,
+    )
+    db_session.flush()
+    previous = reference_fingerprint(db_session)
+    upsert_requirement(db_session, sku_id="SKU-E-GAP", required_sku_id="SKU-E-NEWPART")
+    db_session.flush()
+
+    with pytest.raises(GraphSyncIncomplete):
+        sync_requirement(db_session, graph_client, graph_ns, "SKU-E-GAP", "SKU-E-NEWPART", previous)
+
+    assert _stored(graph_client, graph_ns) == stored_before
+    assert _stored(graph_client, graph_ns) != reference_fingerprint(db_session)
+
+
+def test_sync_contract_coverage_never_recreates_graph_meta_a_rebuild_has_dropped(
+    db_session, graph_client, graph_ns, make_reader,
+):
+    # Mid-rebuild the namespace is empty; GraphMeta must only reappear when the rebuild writes it last.
+    _world(db_session, make_reader)
+    previous = reference_fingerprint(db_session)
+    graph_client.write("MATCH (n {ns: $ns}) DETACH DELETE n", ns=graph_ns)
+    add_contract_coverage(db_session, "CTR-E1", "Cat-E-B")
+    db_session.flush()
+
+    with pytest.raises(GraphSyncIncomplete):
+        sync_contract_coverage(db_session, graph_client, graph_ns, "CTR-E1", "Cat-E-B", previous)
+
+    assert graph_node(graph_client, graph_ns, graph_ns) is None
+
+
+def test_rebuild_stamps_the_fingerprint_taken_before_it_read_reference_data(
+    db_session, graph_client, graph_ns, monkeypatch,
+):
+    # A correction committed while the rebuild is reading must leave the graph stale, never current: the rebuild
+    # cannot know whether its reads saw the correction, so it stamps the state from before any of them.
+    seed_world(db_session)
+    real_all_requirements = graph_service.all_requirements
+
+    def correction_lands_mid_rebuild(session):
+        upsert_requirement(session, sku_id="SKU-E-GAP", required_sku_id="SKU-E-A1")
+        session.flush()
+        return real_all_requirements(session)
+
+    monkeypatch.setattr(graph_service, "all_requirements", correction_lands_mid_rebuild)
+
+    rebuild_reference_graph(db_session, graph_client, graph_ns)
+
+    assert _stored(graph_client, graph_ns) != reference_fingerprint(db_session)

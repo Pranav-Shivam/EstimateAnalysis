@@ -91,3 +91,23 @@ def test_score_raises_on_an_out_of_range_score():
 
     with pytest.raises(JudgeError, match="not a number in"):
         client.score([], "system prompt")
+
+
+def test_score_raises_on_a_non_dict_dimension_entry():
+    payload = _good_payload()
+    payload["dimensions"][0] = "price_provenance"
+    fake = _FakeAnthropic(response=_tool_use_response(payload))
+    client = AnthropicJudgeClient(client=fake)
+
+    with pytest.raises(JudgeError, match="is not an object"):
+        client.score([], "system prompt")
+
+
+def test_score_raises_on_a_boolean_score():
+    payload = _good_payload()
+    payload["dimensions"][0]["score"] = True
+    fake = _FakeAnthropic(response=_tool_use_response(payload))
+    client = AnthropicJudgeClient(client=fake)
+
+    with pytest.raises(JudgeError, match="not a number in"):
+        client.score([], "system prompt")

@@ -75,6 +75,8 @@ def _parse_scores(payload: dict) -> RawJudgeScore:
     dimensions = []
     seen = set()
     for entry in raw_dimensions:
+        if not isinstance(entry, dict):
+            raise JudgeError(f"dimension entry {entry!r} is not an object")
         name = entry.get("name")
         score = entry.get("score")
         rationale = entry.get("rationale")
@@ -83,7 +85,7 @@ def _parse_scores(payload: dict) -> RawJudgeScore:
         if name in seen:
             raise JudgeError(f"dimension {name!r} was scored more than once")
         seen.add(name)
-        if not isinstance(score, (int, float)) or not (0.0 <= score <= 1.0):
+        if isinstance(score, bool) or not isinstance(score, (int, float)) or not (0.0 <= score <= 1.0):
             raise JudgeError(f"dimension {name!r} score {score!r} is not a number in [0, 1]")
         if not isinstance(rationale, str) or not rationale.strip():
             raise JudgeError(f"dimension {name!r} has no rationale")

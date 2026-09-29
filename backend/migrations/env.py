@@ -11,6 +11,7 @@ from app.intake import models as intake_models  # noqa: F401
 from app.dedupe import models as dedupe_models  # noqa: F401
 from app.estimate import models as estimate_models  # noqa: F401
 from app.retrieval import models as retrieval_models  # noqa: F401
+from app.judge import models as judge_models  # noqa: F401
 
 config = context.config
 

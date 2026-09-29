@@ -40,15 +40,18 @@ def main() -> None:
         print("dry run: pass --yes to call the API")
         return
 
+    fast_path_cases = [c for c in cases if c["estimate_status"] != "ready"]
+    for case in fast_path_cases:
+        assert case["label"] == "escalate", (
+            f"fast-path case {case['case_id']} must be labeled escalate, got {case['label']!r}"
+        )
+
     settings = Settings()
     client = AnthropicJudgeClient(client=Anthropic(api_key=settings.anthropic_api_key))
     scores: list[float] = []
     labels: list[bool] = []
-    for case in cases:
+    for case in ready_cases:
         labels.append(case["label"] == "trust")
-        if case["estimate_status"] != "ready":
-            scores.append(0.0)
-            continue
         lines = [_line_evidence_from_dict(d) for d in case["evidence"]]
         raw = client.score([asdict(line) for line in lines], JUDGE_SYSTEM_PROMPT)
         scored = [ScoredDimension(name=d.name, score=d.score, rationale=d.rationale) for d in raw.dimensions]

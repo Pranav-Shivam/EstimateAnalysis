@@ -47,6 +47,7 @@ What: LLM-as-judge (cross-vendor per ADR-0004), scoring against price book/contr
 Depends on: Phase 3's agent output and Phase 4's graph evidence paths to score against.
 Done when: the judge correctly flags the Phase 1 scenarios seeded as low-confidence (e.g. a SKU price that was predicted, not looked up) and passes the clean ones, measured against the scenario set's known ground truth.
 Why fifth: needs something real to judge; building the judge before the agent and graph exist would mean scoring against nothing.
+Status: complete (see docs/superpowers/specs/2026-09-29-phase5-judge-review-design.md). Cross-vendor judge (Claude Haiku scoring GPT-4o drafts) scores 3 dimensions rolled up by minimum, gated on a threshold calibrated from a 32-case hand-labeled golden set via Cohen's kappa (threshold 0.85, kappa 1.0). A `needs_review` draft short-circuits the judge at zero cost. The real `--yes` calibration run against the live Anthropic API has not happened yet (no API key); the acceptance test proves the calibration pipeline against the golden set's own hand-assigned scores instead.
 
 ## Phase 6: LLMOps and tracing
 

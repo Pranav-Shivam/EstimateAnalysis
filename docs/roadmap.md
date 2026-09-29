@@ -39,6 +39,7 @@ What: Neo4j schema (10 node types, 15 edge types per the article), entity/relati
 Depends on: Phase 1's data to build the graph from; Phase 3's agent to actually call it as a tool.
 Done when: the agent (Phase 3) correctly resolves at least the three planted mistake types from Phase 1's scenarios (discontinued-SKU swap, missing required part, wrong-category discount) by traversing the graph, not by guessing from text.
 Why fourth, not first: per the article and `docs/research/graphrag-vs-vector-rag.md`, the graph is the most expensive piece to keep correct and only pays off once there's an agent loop and real scenarios to justify it. Building it before Phase 3 would mean building relationships with nothing yet consuming them.
+Status: complete (see docs/superpowers/specs/2026-09-28-phase4-knowledge-graph-design.md). The full 10 node and 15 edge schema is built from Postgres as a rebuildable projection; Leiden, local and global modes, LLM community summaries (cached, cost-gated), the pgvector arm and the rule-based router are in. Embeddings and community summaries have not been generated against the real data: both scripts are dry runs until run with --yes.
 
 ## Phase 5: Evals and review workflow
 

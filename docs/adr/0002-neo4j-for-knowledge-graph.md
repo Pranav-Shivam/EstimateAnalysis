@@ -23,3 +23,5 @@ Only Neo4j was evaluated. The developer deferred the choice ("whichever is easy"
 
 ## Notes
 Decided during stack-selection discussion; carried into `README.md` tech stack table.
+
+Verified 2026-09-28: `neo4j:2026.09.0-community` with `NEO4J_PLUGINS='["graph-data-science"]'` starts cleanly and `gds.version()` returns 2026.09.0, so Leiden works on Community edition. The image tag is pinned in `docker-compose.yml` because an auto-fetched GDS build has failed on other Neo4j versions. Host ports 17474 and 17687 are used to avoid the defaults. See `docs/research/neo4j-gds-leiden-community.md`.

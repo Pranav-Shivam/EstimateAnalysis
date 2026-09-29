@@ -106,3 +106,35 @@ Each call to `POST /v1/estimate` is a new attempt and writes a new `estimate_dra
 The guardrails (contract discount, required fields, customer identity, price provenance) are plain functions in
 `app/estimate/guardrails.py`. `tests/test_phase3_acceptance.py` proves that a discount on an uncovered category is
 blocked for all 10 planted `discount_category_mismatch` cases.
+
+## Phase 4: knowledge graph
+
+Neo4j 2026.09 Community with the GDS plugin runs in Docker on host ports 17474 (browser) and 17687 (Bolt); the defaults are avoided on purpose. Start it with `docker compose up -d neo4j` (or `docker start neo4j-estimate` if the container already exists). Postgres stays authoritative: the graph is a rebuildable, namespaced projection (`GRAPH_NAMESPACE`, default `main`).
+
+Apply the schema and load the new reference data (product families, one project per site, contacts):
+
+```
+uv run alembic upgrade head
+uv run python scripts/load_data.py
+```
+
+Build or refresh the graph and recompute the Leiden communities (an API call, not a script):
+
+```
+curl -X POST http://localhost:8000/v1/graph/rebuild
+```
+
+Ask a question; the router picks SQL, graph-local, graph-global or vector search and returns the evidence:
+
+```
+curl -X POST http://localhost:8000/v1/retrieval/ask -H "Content-Type: application/json" -d '{"question": "what does SKU-0601 require"}'
+```
+
+Two scripts call paid APIs, and both are dry runs until `--yes` is passed. Run them bare first to see the plan and the token estimate:
+
+```
+uv run python scripts/embed_skus.py          # SKU embeddings for the vector route
+uv run python scripts/summarize_communities.py   # one LLM summary per community, cached in Postgres
+```
+
+Tests need Neo4j running. Each test gets its own graph namespace and drops it afterwards, so tests never touch the `main` graph. If Neo4j is down the suite fails with the command to start it.

@@ -60,7 +60,7 @@ This system is the combination: an agent loop with hard guardrails, a knowledge 
 
 ## Status
 
-Proof of concept, in progress. Synthetic data generation is the current phase. No production data source exists; the dataset is generated to be structurally realistic (referential integrity, graph relationships, discontinued/substitute/required-part patterns) so every downstream component has something real to reason over.
+Proof of concept, in progress. Phases 1 to 4 are built: synthetic data generation, intake and dedupe, the pricing agent with code guardrails, and the Neo4j knowledge graph (the article's 10 node and 15 edge types, Leiden communities, local and global query modes, and a router over SQL, graph and vector search) with graph-backed guardrails that block a left-in discontinued SKU or a missing required part. No production data source exists; the dataset is generated to be structurally realistic (referential integrity, graph relationships, discontinued/substitute/required-part patterns) so every downstream component has something real to reason over.
 
 ## Sources
 

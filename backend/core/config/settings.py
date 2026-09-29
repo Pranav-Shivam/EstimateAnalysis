@@ -13,3 +13,6 @@ class Settings(BaseSettings):
     neo4j_password: str = "neo4j-dev-password"
     # Every graph node carries its namespace, so tests share one Neo4j without touching the real graph.
     graph_namespace: str = "main"
+    langfuse_public_key: str | None = None
+    langfuse_secret_key: str | None = None
+    langfuse_host: str | None = None

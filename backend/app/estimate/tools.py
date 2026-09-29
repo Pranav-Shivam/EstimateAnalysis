@@ -1,6 +1,6 @@
 import inspect
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date
 
 from sqlalchemy.orm import Session
@@ -16,6 +16,7 @@ from app.retrieval.service import KnowledgeService
 from app.retrieval.vector import EmbeddingsNotBuilt
 from core.graph.client import GraphError
 from core.llm.openai_embedding_client import EmbeddingError
+from core.tracing.langfuse_client import TraceHandle
 
 
 @dataclass(frozen=True)
@@ -30,6 +31,7 @@ class ToolContext:
     # The SKUs intake resolved from the request lines by code. The graph guardrail anchors on them for the same
     # reason: the draft's own lines are model output, so dropping a requested line must not pass unnoticed.
     request_sku_ids: tuple[str, ...]
+    trace: TraceHandle = field(default_factory=lambda: TraceHandle(None, None))
 
 
 def _sku_entry(session: Session, sku: Sku) -> dict:
@@ -178,7 +180,10 @@ def handle_tool(ctx: ToolContext, name: str, arguments: dict) -> dict:
     for arg_name, value in arguments.items():
         if not isinstance(value, str):
             return {"error": f"bad arguments for {name}: {arg_name} must be a string"}
-    return handler(ctx, **arguments)
+    with ctx.trace.span("tool_call", tool=name) as span:
+        result = handler(ctx, **arguments)
+        span.update(output=result)
+        return result
 
 
 def _function_spec(name: str, description: str, parameters: dict) -> dict:

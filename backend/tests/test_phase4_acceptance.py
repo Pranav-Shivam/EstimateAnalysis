@@ -6,6 +6,7 @@ from app.estimate.service import run_estimate
 from app.intake.repository import save_quote_request
 from app.reference_data.repository import contracts_for_customer, get_sku, required_sku_ids
 from core.llm.openai_agent_client import AgentTurn, ToolCall
+from core.tracing.langfuse_client import TracingClient
 from load_data import load_catalog, load_customers, load_pricing, load_structure
 from tests.graph_support import FakeEmbedder
 
@@ -156,7 +157,9 @@ def _request(session, case):
 
 
 def _run(session, graph, case, agent):
-    return run_estimate(session, _request(session, case).id, DATASET_AS_OF, agent, graph, FakeEmbedder())
+    return run_estimate(
+        session, _request(session, case).id, DATASET_AS_OF, agent, graph, FakeEmbedder(), TracingClient(None),
+    )
 
 
 def _quoted_ids(run):

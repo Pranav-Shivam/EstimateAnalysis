@@ -6,6 +6,7 @@ class Settings(BaseSettings):
 
     database_url: str
     openai_api_key: str
+    anthropic_api_key: str
     # Dev defaults match docker-compose.yml. Host port 17687 avoids the Neo4j default and local collisions.
     neo4j_uri: str = "bolt://localhost:17687"
     neo4j_user: str = "neo4j"

@@ -37,6 +37,7 @@ def test_an_unreachable_server_raises_graph_unavailable():
 def test_a_wrong_password_raises_graph_unavailable(graph_client, monkeypatch):
     monkeypatch.setenv("DATABASE_URL", "postgresql+psycopg://u:p@localhost:5433/db")
     monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
     settings = Settings(_env_file=None)
     client = GraphClient(settings.neo4j_uri, settings.neo4j_user, "definitely-wrong")
     try:

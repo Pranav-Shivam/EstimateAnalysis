@@ -7,10 +7,11 @@ from app.estimate.repository import save_estimate_draft
 from app.intake.repository import save_quote_request
 from core.db.session import get_session
 from core.graph.client import get_graph_client
+from core.llm.anthropic_judge_client import JudgeError
 from main import app
 from tests.app.estimate.seed import seed_world
 from tests.app.judge.fakes import ScriptedJudgeClient
-from tests.graph_support import FailingGraphClient
+from tests.graph_support import FailingGraphClient, QueryFailingGraphClient
 
 
 def _estimate_row(session, status="ready"):
@@ -116,3 +117,29 @@ def test_judge_endpoint_returns_503_when_the_graph_is_down(db_session):
         app.dependency_overrides.pop(get_graph_client, None)
 
     assert response.status_code == 503
+
+
+def test_judge_endpoint_returns_502_when_the_graph_query_fails(db_session):
+    seed_world(db_session)
+    row = _estimate_row(db_session)
+    app.dependency_overrides[get_graph_client] = lambda: QueryFailingGraphClient()
+    try:
+        response = _post(db_session, _trusted_client(), row.id)
+    finally:
+        app.dependency_overrides.pop(get_graph_client, None)
+
+    assert response.status_code == 502
+
+
+def test_judge_endpoint_returns_502_when_the_judge_call_fails(db_session, make_reader):
+    seed_world(db_session)
+    make_reader()
+    row = _estimate_row(db_session)
+
+    class FailingJudgeClient:
+        def score(self, evidence, system_prompt):
+            raise JudgeError("boom")
+
+    response = _post(db_session, FailingJudgeClient(), row.id)
+
+    assert response.status_code == 502

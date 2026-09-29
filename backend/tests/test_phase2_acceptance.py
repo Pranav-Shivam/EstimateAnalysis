@@ -3,6 +3,7 @@ from pathlib import Path
 
 from app.intake.repository import save_quote_request
 from app.dedupe.service import run_dedupe
+from core.tracing.langfuse_client import TracingClient
 from load_data import load_catalog, load_customers
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
@@ -54,7 +55,7 @@ def test_dedupe_classifier_matches_phase1_ground_truth(db_session):
     for case_ids in duplicate_pairs.values():
         assert len(case_ids) == 2
         second_row = rows_by_case_id[case_ids[1]]
-        verdicts = run_dedupe(db_session, second_row.id)
+        verdicts = run_dedupe(db_session, second_row.id, TracingClient(None))
         matched = [v for v in verdicts if v.candidate_quote_request_id == rows_by_case_id[case_ids[0]].id]
         assert len(matched) == 1
         assert matched[0].verdict == "DUPLICATE_OF"
@@ -64,7 +65,7 @@ def test_dedupe_classifier_matches_phase1_ground_truth(db_session):
     for case_ids in revision_pairs.values():
         assert len(case_ids) == 2
         revision_row = rows_by_case_id[case_ids[1]]
-        verdicts = run_dedupe(db_session, revision_row.id)
+        verdicts = run_dedupe(db_session, revision_row.id, TracingClient(None))
         matched = [v for v in verdicts if v.candidate_quote_request_id == rows_by_case_id[case_ids[0]].id]
         assert len(matched) == 1
         assert matched[0].verdict == "REVISION_OF"
@@ -75,5 +76,5 @@ def test_dedupe_classifier_matches_phase1_ground_truth(db_session):
     non_pair_cases = [c for c in scenarios if c["scenario_type"] in non_pair_types]
     for case in non_pair_cases:
         row = rows_by_case_id[case["case_id"]]
-        verdicts = run_dedupe(db_session, row.id)
+        verdicts = run_dedupe(db_session, row.id, TracingClient(None))
         assert all(v.verdict == "DISTINCT" for v in verdicts)

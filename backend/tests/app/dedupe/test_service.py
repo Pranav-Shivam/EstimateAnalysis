@@ -4,6 +4,7 @@ from datetime import date
 from app.dedupe.service import run_dedupe
 from app.intake.repository import save_quote_request
 from app.reference_data.repository import upsert_contract, upsert_customer, upsert_site
+from core.tracing.langfuse_client import TracingClient
 
 
 def _seed_customer_and_site(db_session):
@@ -28,7 +29,7 @@ def test_run_dedupe_flags_identical_sku_set_as_duplicate(db_session):
     second = _make_request(db_session, "CUST-A", "SITE-A", ["SKU-A", "SKU-B"])
     db_session.flush()
 
-    verdicts = run_dedupe(db_session, second.id)
+    verdicts = run_dedupe(db_session, second.id, TracingClient(None))
     assert len(verdicts) == 1
     assert verdicts[0].candidate_quote_request_id == first.id
     assert verdicts[0].verdict == "DUPLICATE_OF"
@@ -40,7 +41,7 @@ def test_run_dedupe_flags_superset_as_revision(db_session):
     revision = _make_request(db_session, "CUST-A", "SITE-A", ["SKU-A", "SKU-B"])
     db_session.flush()
 
-    verdicts = run_dedupe(db_session, revision.id)
+    verdicts = run_dedupe(db_session, revision.id, TracingClient(None))
     assert verdicts[0].verdict == "REVISION_OF"
 
 
@@ -49,7 +50,7 @@ def test_run_dedupe_excludes_the_target_itself_from_candidates(db_session):
     only_request = _make_request(db_session, "CUST-A", "SITE-A", ["SKU-A"])
     db_session.flush()
 
-    verdicts = run_dedupe(db_session, only_request.id)
+    verdicts = run_dedupe(db_session, only_request.id, TracingClient(None))
     assert verdicts == []
 
 
@@ -57,14 +58,14 @@ def test_run_dedupe_unresolved_customer_and_site_yields_no_candidates(db_session
     request = _make_request(db_session, None, None, [])
     db_session.flush()
 
-    verdicts = run_dedupe(db_session, request.id)
+    verdicts = run_dedupe(db_session, request.id, TracingClient(None))
     assert verdicts == []
 
 
 def test_run_dedupe_raises_for_unknown_quote_request(db_session):
     import pytest
     with pytest.raises(ValueError):
-        run_dedupe(db_session, uuid.uuid4())
+        run_dedupe(db_session, uuid.uuid4(), TracingClient(None))
 
 
 def test_run_dedupe_blocks_on_shared_contract_alone(db_session):
@@ -84,7 +85,58 @@ def test_run_dedupe_blocks_on_shared_contract_alone(db_session):
     second = _make_request(db_session, "CUST-B", "SITE-B", ["SKU-X"], contract_id="CTR-SHARED")
     db_session.flush()
 
-    verdicts = run_dedupe(db_session, second.id)
+    verdicts = run_dedupe(db_session, second.id, TracingClient(None))
     assert len(verdicts) == 1
     assert verdicts[0].candidate_quote_request_id == first.id
     assert "same_contract" in verdicts[0].signals_fired
+
+
+class RecordingTraceHandle:
+    def __init__(self):
+        self.opened = []
+
+    def span(self, name, **metadata):
+        self.opened.append((name, metadata))
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+    def update(self, **metadata):
+        pass
+
+
+class RecordingTracingClient:
+    def __init__(self):
+        self.handle = RecordingTraceHandle()
+
+    def trace(self, name, **metadata):
+        # The root trace open is deliberately not recorded into self.handle.opened:
+        # that list tracks span opens only, matching what this test asserts on.
+        return self.handle
+
+
+def test_run_dedupe_opens_a_span_per_verdict(db_session):
+    _seed_customer_and_site(db_session)
+    first = _make_request(db_session, "CUST-A", "SITE-A", ["SKU-A", "SKU-B"])
+    second = _make_request(db_session, "CUST-A", "SITE-A", ["SKU-A", "SKU-B"])
+    db_session.flush()
+    tracing = RecordingTracingClient()
+
+    verdicts = run_dedupe(db_session, second.id, tracing)
+
+    assert len(verdicts) == 1
+    assert tracing.handle.opened == [("dedupe_verdict", {"candidate_id": str(first.id)})]
+
+
+def test_run_dedupe_works_with_no_tracing_configured(db_session):
+    _seed_customer_and_site(db_session)
+    only_request = _make_request(db_session, "CUST-A", "SITE-A", ["SKU-A"])
+    db_session.flush()
+
+    verdicts = run_dedupe(db_session, only_request.id, TracingClient(None))
+
+    assert verdicts == []

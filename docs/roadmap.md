@@ -55,6 +55,7 @@ What: Langfuse tracing (one trace per run, every tool call/graph hop/dedupe deci
 Depends on: Phases 2-5 all producing traceable events; this phase instruments what already exists rather than building new user-facing behavior.
 Done when: a deliberately-planted correction (simulating a human fixing a predicted price) shows up as a new graph edge or semantic fact, and a subsequent identical scenario skips human review as a result.
 Why sixth: this is the "memory that compounds" story from the article, the payoff only demonstrates once every earlier phase is producing the events it consolidates.
+Status: complete (see docs/superpowers/specs/2026-09-29-phase6-llmops-tracing-design.md). A reviewer correction posted to `POST /v1/review/{id}/resolve` is validated, stored with a full-evidence eval case, and consolidated by a `procrastinate` worker into a permanent fact (SKU list price, required part, or contract coverage) plus its graph edge; acceptance tests prove a later identical scenario is no longer flagged for all three dimensions. Langfuse tracing is a no-op without keys and has never been pointed at a hosted service. The release gate on false-auto-send rate is in `scripts/calibrate_judge.py` (dry run by default). Known gaps: trace payloads record full tool results rather than args, the gate's denominator is all ready cases, and a failed graph sync needs a manual rebuild.
 
 ## Phase 7: Frontend (review queue UI)
 

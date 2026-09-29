@@ -1,9 +1,10 @@
 import uuid
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from app.judge.models import JudgeVerdictRow, ReviewItemRow
+from app.judge.models import EvalCaseRow, JudgeVerdictRow, ReviewItemRow
+from app.judge.schemas import EvalCase
 
 
 def save_judge_verdict(
@@ -44,3 +45,22 @@ def list_open_review_items(session: Session) -> list[ReviewItemRow]:
             .order_by(ReviewItemRow.created_at, ReviewItemRow.id)
         )
     )
+
+
+def get_review_item(session: Session, review_item_id: uuid.UUID) -> ReviewItemRow | None:
+    return session.get(ReviewItemRow, review_item_id)
+
+
+def next_eval_case_id(session: Session) -> str:
+    count = session.scalar(select(func.count()).select_from(EvalCaseRow))
+    return f"rc-{count + 1:04d}"
+
+
+def save_eval_case(session: Session, case: EvalCase) -> EvalCaseRow:
+    row = EvalCaseRow(
+        id=uuid.uuid4(), source_review_item_id=case.source_review_item_id, case_id=case.case_id, label=case.label,
+        estimate_status=case.estimate_status, evidence=case.evidence,
+    )
+    session.add(row)
+    session.flush()
+    return row

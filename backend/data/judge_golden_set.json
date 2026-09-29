@@ -1,0 +1,1154 @@
+[
+  {
+    "case_id": "jg-0001",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-CLEAN1: list price, no discount claimed, no required parts outstanding. Nothing here needs a second look.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-CLEAN1",
+        "unit_price": 50.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 50.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-CLEAN1",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0002",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-CLEAN2: list price, no discount claimed, no required parts outstanding. Nothing here needs a second look.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-CLEAN2",
+        "unit_price": 60.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 60.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-CLEAN2",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0003",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-CLEAN3: list price, no discount claimed, no required parts outstanding. Nothing here needs a second look.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-CLEAN3",
+        "unit_price": 70.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 70.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-CLEAN3",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0004",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-CLEAN4: list price, no discount claimed, no required parts outstanding. Nothing here needs a second look.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-CLEAN4",
+        "unit_price": 80.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 80.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-CLEAN4",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0005",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-CLEAN5: list price, no discount claimed, no required parts outstanding. Nothing here needs a second look.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-CLEAN5",
+        "unit_price": 90.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 90.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-CLEAN5",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0006",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-THIN6: predicted price from only 3 peers with a wide low/high spread; too thin to trust unreviewed.",
+    "scores": {
+      "price_provenance": 0.3,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-THIN6",
+        "unit_price": 90.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 90.0,
+          "peer_count": 3,
+          "low": 63.0,
+          "high": 117.0
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-THIN6",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0007",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-THIN7: predicted price from only 4 peers with a wide low/high spread; too thin to trust unreviewed.",
+    "scores": {
+      "price_provenance": 0.3,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-THIN7",
+        "unit_price": 95.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 95.0,
+          "peer_count": 4,
+          "low": 66.5,
+          "high": 123.5
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-THIN7",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0008",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-THIN8: predicted price from only 3 peers with a wide low/high spread; too thin to trust unreviewed.",
+    "scores": {
+      "price_provenance": 0.3,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-THIN8",
+        "unit_price": 100.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 100.0,
+          "peer_count": 3,
+          "low": 70.0,
+          "high": 130.0
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-THIN8",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0009",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-THIN9: predicted price from only 4 peers with a wide low/high spread; too thin to trust unreviewed.",
+    "scores": {
+      "price_provenance": 0.3,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-THIN9",
+        "unit_price": 105.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 105.0,
+          "peer_count": 4,
+          "low": 73.5,
+          "high": 136.5
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-THIN9",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0010",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-THIN10: predicted price from only 3 peers with a wide low/high spread; too thin to trust unreviewed.",
+    "scores": {
+      "price_provenance": 0.3,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-THIN10",
+        "unit_price": 110.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 110.0,
+          "peer_count": 3,
+          "low": 77.0,
+          "high": 143.0
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-THIN10",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0011",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-THIN11: predicted price from only 4 peers with a wide low/high spread; too thin to trust unreviewed.",
+    "scores": {
+      "price_provenance": 0.3,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-THIN11",
+        "unit_price": 115.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 115.0,
+          "peer_count": 4,
+          "low": 80.5,
+          "high": 149.5
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-THIN11",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0012",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-THIN12: predicted price from only 3 peers with a wide low/high spread; too thin to trust unreviewed.",
+    "scores": {
+      "price_provenance": 0.3,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-THIN12",
+        "unit_price": 120.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 120.0,
+          "peer_count": 3,
+          "low": 84.0,
+          "high": 156.0
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-THIN12",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0013",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-STRONG13: predicted price from 31 peers with a tight low/high band; strong enough evidence to trust.",
+    "scores": {
+      "price_provenance": 0.85,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-STRONG13",
+        "unit_price": 125.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 125.0,
+          "peer_count": 31,
+          "low": 121.875,
+          "high": 128.125
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-STRONG13",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0014",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-STRONG14: predicted price from 32 peers with a tight low/high band; strong enough evidence to trust.",
+    "scores": {
+      "price_provenance": 0.85,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-STRONG14",
+        "unit_price": 130.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 130.0,
+          "peer_count": 32,
+          "low": 126.75,
+          "high": 133.25
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-STRONG14",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0015",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-STRONG15: predicted price from 33 peers with a tight low/high band; strong enough evidence to trust.",
+    "scores": {
+      "price_provenance": 0.85,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-STRONG15",
+        "unit_price": 135.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 135.0,
+          "peer_count": 33,
+          "low": 131.625,
+          "high": 138.375
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-STRONG15",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0016",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-STRONG16: predicted price from 34 peers with a tight low/high band; strong enough evidence to trust.",
+    "scores": {
+      "price_provenance": 0.85,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-STRONG16",
+        "unit_price": 140.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 140.0,
+          "peer_count": 34,
+          "low": 136.5,
+          "high": 143.5
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-STRONG16",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0017",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-STRONG17: predicted price from 35 peers with a tight low/high band; strong enough evidence to trust.",
+    "scores": {
+      "price_provenance": 0.85,
+      "contract_discount": 1.0,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-STRONG17",
+        "unit_price": 145.0,
+        "price": {
+          "price_source": "predicted",
+          "list_price": null,
+          "predicted_price": 145.0,
+          "peer_count": 35,
+          "low": 141.375,
+          "high": 148.625
+        },
+        "contract": {
+          "discount_pct": 0.0,
+          "contract_id": null,
+          "covered": null,
+          "active_on_as_of": null,
+          "days_to_expiry": null
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-STRONG17",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0018",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-HEALTHY18: discount matches the contract and it is not due to expire for 560 days.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.9,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-HEALTHY18",
+        "unit_price": 170.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 170.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 560
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-HEALTHY18",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0019",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-HEALTHY19: discount matches the contract and it is not due to expire for 580 days.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.9,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-HEALTHY19",
+        "unit_price": 175.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 175.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 580
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-HEALTHY19",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0020",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-HEALTHY20: discount matches the contract and it is not due to expire for 600 days.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.9,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-HEALTHY20",
+        "unit_price": 180.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 180.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 600
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-HEALTHY20",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0021",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-HEALTHY21: discount matches the contract and it is not due to expire for 620 days.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.9,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-HEALTHY21",
+        "unit_price": 185.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 185.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 620
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-HEALTHY21",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0022",
+    "label": "trust",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-HEALTHY22: discount matches the contract and it is not due to expire for 640 days.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.9,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-HEALTHY22",
+        "unit_price": 190.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 190.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 640
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-HEALTHY22",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0023",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-EXPIRING23: discount matches the contract today, but it expires in 23 days; worth a human check before it goes out.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.4,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-EXPIRING23",
+        "unit_price": 195.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 195.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 23
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-EXPIRING23",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0024",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-EXPIRING24: discount matches the contract today, but it expires in 24 days; worth a human check before it goes out.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.4,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-EXPIRING24",
+        "unit_price": 200.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 200.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 24
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-EXPIRING24",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0025",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-EXPIRING25: discount matches the contract today, but it expires in 25 days; worth a human check before it goes out.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.4,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-EXPIRING25",
+        "unit_price": 205.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 205.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 25
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-EXPIRING25",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0026",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-EXPIRING26: discount matches the contract today, but it expires in 26 days; worth a human check before it goes out.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.4,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-EXPIRING26",
+        "unit_price": 210.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 210.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 26
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-EXPIRING26",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0027",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-EXPIRING27: discount matches the contract today, but it expires in 27 days; worth a human check before it goes out.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.4,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-EXPIRING27",
+        "unit_price": 215.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 215.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 27
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-EXPIRING27",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0028",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-EXPIRING28: discount matches the contract today, but it expires in 28 days; worth a human check before it goes out.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.4,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-EXPIRING28",
+        "unit_price": 220.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 220.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 28
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-EXPIRING28",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0029",
+    "label": "escalate",
+    "estimate_status": "ready",
+    "rationale": "SKU-G-EXPIRING29: discount matches the contract today, but it expires in 29 days; worth a human check before it goes out.",
+    "scores": {
+      "price_provenance": 0.95,
+      "contract_discount": 0.4,
+      "graph_completion": 0.95
+    },
+    "evidence": [
+      {
+        "line_index": 0,
+        "sku_id": "SKU-G-EXPIRING29",
+        "unit_price": 225.0,
+        "price": {
+          "price_source": "list",
+          "list_price": 225.0,
+          "predicted_price": null,
+          "peer_count": null,
+          "low": null,
+          "high": null
+        },
+        "contract": {
+          "discount_pct": 10.0,
+          "contract_id": "CTR-G1",
+          "covered": true,
+          "active_on_as_of": true,
+          "days_to_expiry": 29
+        },
+        "graph": {
+          "discontinued": false,
+          "live_sku_id": "SKU-G-EXPIRING29",
+          "required_part_ids": [],
+          "missing_required_part_ids": []
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "jg-0030",
+    "label": "escalate",
+    "estimate_status": "needs_review",
+    "rationale": "SKU-G-BLOCKED1: guardrails already rejected this draft; the judge must defer without scoring it.",
+    "guardrail_reason": "SKU SKU-G-BLOCKED1 is discontinued; quote its live replacement instead"
+  },
+  {
+    "case_id": "jg-0031",
+    "label": "escalate",
+    "estimate_status": "needs_review",
+    "rationale": "SKU-G-BLOCKED2: guardrails already rejected this draft; the judge must defer without scoring it.",
+    "guardrail_reason": "the request asks for SKU-G-REQ; the draft must quote it"
+  },
+  {
+    "case_id": "jg-0032",
+    "label": "escalate",
+    "estimate_status": "needs_review",
+    "rationale": "SKU-G-BLOCKED3: guardrails already rejected this draft; the judge must defer without scoring it.",
+    "guardrail_reason": "SKU-G-BLOCKED3 requires SKU-G-PART; the draft must include it"
+  }
+]

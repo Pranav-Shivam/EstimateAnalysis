@@ -21,5 +21,6 @@ def test_request_message_contains_email_resolved_ids_and_date():
 
 
 def test_system_prompt_states_the_policy():
-    for phrase in ("submit_draft", "get_related_parts", "predict_price", "discount", "flags"):
+    for phrase in ("submit_draft", "get_related_parts", "predict_price", "discount", "flags", "check_contract_coverage",
+                   "live_sku_id", "ask_knowledge"):
         assert phrase in SYSTEM_PROMPT

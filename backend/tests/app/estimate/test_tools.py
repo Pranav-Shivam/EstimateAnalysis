@@ -3,15 +3,15 @@ from datetime import date
 import pytest
 
 from app.estimate.tools import (
-    TOOL_SPECS, ToolContext, check_stock, get_related_parts, handle_tool, lookup_customer, predict_price,
-    search_price_book,
+    TOOL_SPECS, check_stock, handle_tool, lookup_customer, predict_price, search_price_book,
 )
 from app.reference_data.repository import upsert_sku
 from tests.app.estimate.seed import AS_OF, seed_world
+from tests.graph_support import UnusedGraph, make_ctx
 
 
 def _ctx(session, as_of=AS_OF):
-    return ToolContext(session=session, as_of=as_of)
+    return make_ctx(session, UnusedGraph(), as_of=as_of)
 
 
 def test_lookup_customer_by_id_returns_contract_terms(db_session):
@@ -100,24 +100,6 @@ def test_check_stock_reports_stock_and_discontinued(db_session):
     assert "error" in check_stock(_ctx(db_session), sku_id="SKU-NOPE")
 
 
-def test_get_related_parts_returns_replacement_for_discontinued_sku(db_session):
-    seed_world(db_session)
-
-    result = get_related_parts(_ctx(db_session), sku_id="SKU-E-OLD")
-
-    assert result["replacement"]["sku_id"] == "SKU-E-A1"
-    assert result["required_parts"] == []
-
-
-def test_get_related_parts_returns_required_parts(db_session):
-    seed_world(db_session)
-
-    result = get_related_parts(_ctx(db_session), sku_id="SKU-E-B1")
-
-    assert result["replacement"] is None
-    assert [p["sku_id"] for p in result["required_parts"]] == ["SKU-E-A1"]
-
-
 def test_predict_price_for_gap_sku_is_tagged_predicted(db_session):
     seed_world(db_session)
 
@@ -177,5 +159,6 @@ def test_tool_specs_name_every_handler_plus_submit_draft():
     names = {spec["function"]["name"] for spec in TOOL_SPECS}
 
     assert names == {
-        "lookup_customer", "search_price_book", "check_stock", "get_related_parts", "predict_price", "submit_draft",
+        "lookup_customer", "search_price_book", "check_stock", "get_related_parts", "check_contract_coverage",
+        "predict_price", "ask_knowledge", "submit_draft",
     }

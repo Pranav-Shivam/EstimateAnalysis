@@ -4,11 +4,12 @@ from pathlib import Path
 from app.estimate.constant import DATASET_AS_OF
 from app.estimate.pricing import predict_price_for_sku
 from app.estimate.service import run_estimate
-from app.estimate.tools import ToolContext, get_related_parts
+from app.estimate.tools import get_related_parts
 from app.intake.repository import save_quote_request
 from app.reference_data.repository import all_customers, all_skus, contracts_for_customer, get_sku
 from load_data import load_catalog, load_customers, load_pricing
 from tests.app.estimate.fakes import ScriptedLLM, submit_turn
+from tests.graph_support import FakeEmbedder, make_ctx
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
@@ -49,8 +50,9 @@ def _draft_with_discount(session, case, discount_pct):
     }
 
 
-def test_every_planted_bad_discount_is_blocked_and_ends_needs_review(db_session):
+def test_every_planted_bad_discount_is_blocked_and_ends_needs_review(db_session, make_reader):
     _load_world(db_session)
+    graph = make_reader()
     cases = _scenarios("discount_category_mismatch")
     assert len(cases) == 10
 
@@ -64,15 +66,16 @@ def test_every_planted_bad_discount_is_blocked_and_ends_needs_review(db_session)
         bad = _draft_with_discount(db_session, case, contract.discount_pct)
         llm = ScriptedLLM([submit_turn(bad, call_id=f"c{i}") for i in range(4)])
 
-        run = run_estimate(db_session, request.id, DATASET_AS_OF, llm)
+        run = run_estimate(db_session, request.id, DATASET_AS_OF, llm, graph, FakeEmbedder())
 
         assert run.result.status == "needs_review", case["case_id"]
         assert run.result.violations[0].guardrail == "contract_discount", case["case_id"]
         assert "not covered" in run.result.violations[0].message, case["case_id"]
 
 
-def test_a_draft_borrowing_another_customers_covering_contract_never_ends_ready(db_session):
+def test_a_draft_borrowing_another_customers_covering_contract_never_ends_ready(db_session, make_reader):
     _load_world(db_session)
+    graph = make_reader()
     case = _scenarios("discount_category_mismatch")[0]
     entities = case["entities"]
     category = get_sku(db_session, entities["sku_id"]).category
@@ -88,14 +91,15 @@ def test_a_draft_borrowing_another_customers_covering_contract_never_ends_ready(
     borrowed["contract_id"] = donor_contract.contract_id
     llm = ScriptedLLM([submit_turn(borrowed, call_id=f"c{i}") for i in range(4)])
 
-    run = run_estimate(db_session, request.id, DATASET_AS_OF, llm)
+    run = run_estimate(db_session, request.id, DATASET_AS_OF, llm, graph, FakeEmbedder())
 
     assert run.result.status == "needs_review"
     assert run.result.violations[0].guardrail == "customer_identity"
 
 
-def test_every_planted_bad_discount_passes_once_the_discount_is_removed(db_session):
+def test_every_planted_bad_discount_passes_once_the_discount_is_removed(db_session, make_reader):
     _load_world(db_session)
+    graph = make_reader()
 
     for case in _scenarios("discount_category_mismatch"):
         contract = contracts_for_customer(db_session, case["entities"]["customer_id"])[0]
@@ -105,14 +109,15 @@ def test_every_planted_bad_discount_passes_once_the_discount_is_removed(db_sessi
             submit_turn(_draft_with_discount(db_session, case, 0.0), call_id="call-2"),
         ]
 
-        run = run_estimate(db_session, request.id, DATASET_AS_OF, ScriptedLLM(turns))
+        run = run_estimate(db_session, request.id, DATASET_AS_OF, ScriptedLLM(turns), graph, FakeEmbedder())
 
         assert run.result.status == "ready", case["case_id"]
         assert run.result.iterations == 2, case["case_id"]
 
 
-def test_discount_on_a_covered_category_is_allowed_for_the_same_customers(db_session):
+def test_discount_on_a_covered_category_is_allowed_for_the_same_customers(db_session, make_reader):
     _load_world(db_session)
+    graph = make_reader()
 
     for case in _scenarios("discount_category_mismatch"):
         contract = contracts_for_customer(db_session, case["entities"]["customer_id"])[0]
@@ -128,14 +133,15 @@ def test_discount_on_a_covered_category_is_allowed_for_the_same_customers(db_ses
         }
         request = _quote_request(db_session, case)
 
-        run = run_estimate(db_session, request.id, DATASET_AS_OF, ScriptedLLM([submit_turn(draft)]))
+        run = run_estimate(db_session, request.id, DATASET_AS_OF, ScriptedLLM([submit_turn(draft)]), graph, FakeEmbedder())
 
         assert run.result.status == "ready", case["case_id"]
 
 
-def test_discontinued_swap_cases_expose_a_live_replacement_to_the_agent(db_session):
+def test_discontinued_swap_cases_expose_a_live_replacement_to_the_agent(db_session, make_reader):
     _load_world(db_session)
-    ctx = ToolContext(session=db_session, as_of=DATASET_AS_OF)
+    graph = make_reader()
+    ctx = make_ctx(db_session, graph, as_of=DATASET_AS_OF)
 
     for case in _scenarios("discontinued_swap"):
         related = get_related_parts(ctx, sku_id=case["entities"]["sku_id"])
@@ -144,9 +150,10 @@ def test_discontinued_swap_cases_expose_a_live_replacement_to_the_agent(db_sessi
         assert related["replacement"]["discontinued"] is False, case["case_id"]
 
 
-def test_missing_required_part_cases_expose_the_required_parts_to_the_agent(db_session):
+def test_missing_required_part_cases_expose_the_required_parts_to_the_agent(db_session, make_reader):
     _load_world(db_session)
-    ctx = ToolContext(session=db_session, as_of=DATASET_AS_OF)
+    graph = make_reader()
+    ctx = make_ctx(db_session, graph, as_of=DATASET_AS_OF)
 
     for case in _scenarios("missing_required_part"):
         related = get_related_parts(ctx, sku_id=case["entities"]["sku_id"])

@@ -2,12 +2,15 @@ import math
 import re
 import zlib
 
+from app.estimate.tools import ToolContext
 from app.graph.reader import GraphReader
 from app.graph.repository import node_key
 from app.graph.service import rebuild_reference_graph
 from app.reference_data.repository import set_sku_family, upsert_family, upsert_requirement, upsert_sku
+from app.retrieval.service import KnowledgeService
 from core.graph.client import GraphUnavailable
 from core.llm.openai_embedding_client import EMBEDDING_DIMENSIONS
+from tests.app.estimate.seed import AS_OF
 
 
 def build_reader(session, client, ns) -> GraphReader:
@@ -98,3 +101,69 @@ class FakeEmbedder:
             vector[zlib.crc32(token.encode("utf-8")) % EMBEDDING_DIMENSIONS] += 1.0
         norm = math.sqrt(sum(value * value for value in vector)) or 1.0
         return [value / norm for value in vector]
+
+
+def make_ctx(session, graph, *, as_of=AS_OF, customer_id=None, sku_ids=(), embedder=None) -> ToolContext:
+    knowledge = KnowledgeService(session=session, graph=graph, embedder=embedder or FakeEmbedder())
+    return ToolContext(
+        session=session, as_of=as_of, graph=graph, knowledge=knowledge, request_customer_id=customer_id,
+        request_sku_ids=tuple(sku_ids),
+    )
+
+
+class FailingGraphReader:
+    """A reader whose graph is down. `client` is a `FailingGraphClient` (not None) so a caller that reaches past
+    the reader's own methods straight to `.client.read`, as the knowledge service's graph_local route does, still
+    sees a graph outage rather than an AttributeError."""
+
+    client = FailingGraphClient()
+    ns = "down"
+
+    def sku_chain(self, sku_id):
+        raise GraphUnavailable("Neo4j is unavailable: test double")
+
+    def required_parts(self, sku_id):
+        raise GraphUnavailable("Neo4j is unavailable: test double")
+
+    def contract_coverage(self, customer_id, sku_id, as_of):
+        raise GraphUnavailable("Neo4j is unavailable: test double")
+
+    def stored_fingerprint(self):
+        raise GraphUnavailable("Neo4j is unavailable: test double")
+
+
+class TogglableReader:
+    """Delegates to a real reader until `down` is set, then behaves like a graph outage. Lets a test take the graph
+    away in the middle of an agent run."""
+
+    def __init__(self, inner) -> None:
+        self._inner = inner
+        self.down = False
+
+    @property
+    def client(self):
+        return self._inner.client
+
+    @property
+    def ns(self):
+        return self._inner.ns
+
+    def _check(self) -> None:
+        if self.down:
+            raise GraphUnavailable("Neo4j went away mid-run: test double")
+
+    def sku_chain(self, sku_id):
+        self._check()
+        return self._inner.sku_chain(sku_id)
+
+    def required_parts(self, sku_id):
+        self._check()
+        return self._inner.required_parts(sku_id)
+
+    def contract_coverage(self, customer_id, sku_id, as_of):
+        self._check()
+        return self._inner.contract_coverage(customer_id, sku_id, as_of)
+
+    def stored_fingerprint(self):
+        self._check()
+        return self._inner.stored_fingerprint()

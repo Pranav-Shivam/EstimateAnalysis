@@ -11,6 +11,11 @@ from app.intake.repository import save_quote_request
 from core.llm.openai_agent_client import AgentError
 from tests.app.estimate.fakes import ScriptedLLM, submit_turn, text_turn
 from tests.app.estimate.seed import AS_OF, seed_world
+from tests.graph_support import FakeEmbedder, UnusedGraph
+
+
+def _run(db_session, make_reader, request_id, llm):
+    return run_estimate(db_session, request_id, AS_OF, llm, make_reader(), FakeEmbedder())
 
 
 def _quote_request(session, customer_id="CUST-E1", contract_id="CTR-E1"):
@@ -31,12 +36,12 @@ def _good_draft():
     }
 
 
-def test_run_estimate_computes_totals_and_persists_the_draft(db_session):
+def test_run_estimate_computes_totals_and_persists_the_draft(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session)
     llm = ScriptedLLM([submit_turn(_good_draft())])
 
-    run = run_estimate(db_session, request.id, AS_OF, llm)
+    run = _run(db_session, make_reader, request.id, llm)
 
     assert run.result.status == "ready"
     assert run.result.totals.list_total == 300.0
@@ -50,7 +55,7 @@ def test_run_estimate_computes_totals_and_persists_the_draft(db_session):
     assert stored.violations == []
 
 
-def test_run_estimate_persists_needs_review_with_violations(db_session):
+def test_run_estimate_persists_needs_review_with_violations(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session)
     bad = _good_draft()
@@ -58,7 +63,7 @@ def test_run_estimate_persists_needs_review_with_violations(db_session):
                      "discount_pct": 10.0}]
     llm = ScriptedLLM([submit_turn(bad, call_id=f"c{i}") for i in range(4)])
 
-    run = run_estimate(db_session, request.id, AS_OF, llm)
+    run = _run(db_session, make_reader, request.id, llm)
 
     assert run.result.status == "needs_review"
     assert run.result.iterations == 4
@@ -68,12 +73,12 @@ def test_run_estimate_persists_needs_review_with_violations(db_session):
     assert stored.reason is not None
 
 
-def test_run_estimate_persists_needs_review_when_agent_never_submits(db_session):
+def test_run_estimate_persists_needs_review_when_agent_never_submits(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session)
     llm = ScriptedLLM([text_turn() for _ in range(MAX_AGENT_STEPS)])
 
-    run = run_estimate(db_session, request.id, AS_OF, llm)
+    run = _run(db_session, make_reader, request.id, llm)
 
     assert run.result.status == "needs_review"
     assert run.result.draft is None
@@ -88,14 +93,14 @@ def test_run_estimate_persists_needs_review_when_agent_never_submits(db_session)
     assert draft_is_sql_null is True
 
 
-def test_run_estimate_persists_needs_review_for_a_flagged_draft(db_session):
+def test_run_estimate_persists_needs_review_for_a_flagged_draft(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session)
     flagged = _good_draft()
     flagged["flags"] = ["replacement SKU is out of stock"]
     llm = ScriptedLLM([submit_turn(flagged)])
 
-    run = run_estimate(db_session, request.id, AS_OF, llm)
+    run = _run(db_session, make_reader, request.id, llm)
 
     assert run.result.status == "needs_review"
     assert run.result.violations == []
@@ -105,12 +110,12 @@ def test_run_estimate_persists_needs_review_for_a_flagged_draft(db_session):
     assert stored.draft["flags"] == ["replacement SKU is out of stock"]
 
 
-def test_draft_for_another_customers_contract_never_ends_ready(db_session):
+def test_draft_for_another_customers_contract_never_ends_ready(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session, customer_id="CUST-E2", contract_id=None)
     llm = ScriptedLLM([submit_turn(_good_draft(), call_id=f"c{i}") for i in range(4)])
 
-    run = run_estimate(db_session, request.id, AS_OF, llm)
+    run = _run(db_session, make_reader, request.id, llm)
 
     assert run.result.status == "needs_review"
     assert run.result.totals.discount_total == 30.0
@@ -119,25 +124,25 @@ def test_draft_for_another_customers_contract_never_ends_ready(db_session):
     assert get_estimate_draft(db_session, run.row.id).status == "needs_review"
 
 
-def test_draft_for_a_nonexistent_customer_never_ends_ready(db_session):
+def test_draft_for_a_nonexistent_customer_never_ends_ready(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session)
     invented = {**_good_draft(), "customer_id": "CUST-NOPE", "contract_id": None}
     invented["lines"] = [{**invented["lines"][0], "discount_pct": 0.0}]
     llm = ScriptedLLM([submit_turn(invented, call_id=f"c{i}") for i in range(4)])
 
-    run = run_estimate(db_session, request.id, AS_OF, llm)
+    run = _run(db_session, make_reader, request.id, llm)
 
     assert run.result.status == "needs_review"
     assert "unknown customer" in run.result.violations[0].message
 
 
-def test_discount_is_never_ready_when_the_request_has_no_resolved_customer(db_session):
+def test_discount_is_never_ready_when_the_request_has_no_resolved_customer(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session, customer_id=None, contract_id=None)
     llm = ScriptedLLM([submit_turn(_good_draft(), call_id=f"c{i}") for i in range(4)])
 
-    run = run_estimate(db_session, request.id, AS_OF, llm)
+    run = _run(db_session, make_reader, request.id, llm)
 
     assert run.result.status == "needs_review"
     assert any(v.guardrail == "contract_discount" and "did not resolve" in v.message for v in run.result.violations)
@@ -145,10 +150,10 @@ def test_discount_is_never_ready_when_the_request_has_no_resolved_customer(db_se
 
 def test_run_estimate_rejects_unknown_quote_request(db_session):
     with pytest.raises(QuoteRequestNotFound):
-        run_estimate(db_session, uuid.uuid4(), AS_OF, ScriptedLLM([]))
+        run_estimate(db_session, uuid.uuid4(), AS_OF, ScriptedLLM([]), UnusedGraph(), FakeEmbedder())
 
 
-def test_run_estimate_propagates_agent_error_and_saves_nothing(db_session):
+def test_run_estimate_propagates_agent_error_and_saves_nothing(db_session, make_reader):
     seed_world(db_session)
     request = _quote_request(db_session)
 
@@ -157,7 +162,7 @@ def test_run_estimate_propagates_agent_error_and_saves_nothing(db_session):
             raise AgentError("boom")
 
     with pytest.raises(AgentError):
-        run_estimate(db_session, request.id, AS_OF, FailingLLM())
+        _run(db_session, make_reader, request.id, FailingLLM())
 
     saved = db_session.scalars(
         select(EstimateDraftRow).where(EstimateDraftRow.quote_request_id == request.id)

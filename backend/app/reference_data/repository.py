@@ -85,6 +85,17 @@ def get_contract(session: Session, contract_id: str) -> Contract | None:
     return session.get(Contract, contract_id)
 
 
+def set_sku_list_price(session: Session, sku_id: str, list_price: float) -> None:
+    sku = session.get(Sku, sku_id)
+    sku.list_price = list_price
+
+
+def add_contract_coverage(session: Session, contract_id: str, category: str) -> None:
+    contract = session.get(Contract, contract_id)
+    if category not in contract.covered_categories:
+        contract.covered_categories = [*contract.covered_categories, category]
+
+
 def upsert_requirement(session: Session, *, sku_id: str, required_sku_id: str) -> None:
     # Sessions here run with autoflush off: flush first so merge sees a row added by an earlier call and does not duplicate it.
     session.flush()

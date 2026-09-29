@@ -1,8 +1,9 @@
 # backend/tests/app/reference_data/test_repository.py
 from datetime import date
 
-from app.reference_data.models import Customer, Sku
+from app.reference_data.models import Contract, Customer, Sku
 from app.reference_data.repository import (
+    add_contract_coverage,
     all_customers,
     all_skus,
     contracts_for_customer,
@@ -12,6 +13,7 @@ from app.reference_data.repository import (
     latest_realized_price,
     replace_price_history,
     required_sku_ids,
+    set_sku_list_price,
     skus_with_list_price_in_category,
     upsert_contract,
     upsert_customer,
@@ -19,6 +21,7 @@ from app.reference_data.repository import (
     upsert_site,
     upsert_sku,
 )
+from tests.app.estimate.seed import seed_world
 
 
 def test_upsert_sku_inserts_then_updates(db_session):
@@ -131,3 +134,27 @@ def test_all_skus_and_all_customers_are_ordered_by_id(db_session):
 
     assert sku_ids == sorted(sku_ids)
     assert customer_ids == sorted(customer_ids)
+
+
+def test_set_sku_list_price_updates_the_row(db_session):
+    seed_world(db_session)
+
+    set_sku_list_price(db_session, "SKU-E-GAP", 42.50)
+
+    assert db_session.get(Sku, "SKU-E-GAP").list_price == 42.50
+
+
+def test_add_contract_coverage_appends_a_new_category(db_session):
+    seed_world(db_session)
+
+    add_contract_coverage(db_session, "CTR-E1", "Cat-E-B")
+
+    assert db_session.get(Contract, "CTR-E1").covered_categories == ["Cat-E-A", "Cat-E-B"]
+
+
+def test_add_contract_coverage_is_idempotent(db_session):
+    seed_world(db_session)
+
+    add_contract_coverage(db_session, "CTR-E1", "Cat-E-A")
+
+    assert db_session.get(Contract, "CTR-E1").covered_categories == ["Cat-E-A"]

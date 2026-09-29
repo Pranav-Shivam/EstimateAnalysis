@@ -3,6 +3,7 @@ import pytest
 from app.estimate.constant import MAX_AGENT_STEPS
 from app.estimate.graph import run_agent
 from app.reference_data.models import Sku
+from app.reference_data.repository import upsert_requirement, upsert_sku
 from tests.app.estimate.fakes import ScriptedLLM, call_turn, submit_turn, text_turn
 from tests.app.estimate.seed import seed_chain_world, seed_world
 from tests.graph_support import FailingGraphReader, TogglableReader, make_ctx
@@ -326,3 +327,75 @@ def test_a_graph_that_goes_down_mid_run_ends_needs_review_and_keeps_the_draft(ru
     assert state["status"] == "needs_review"
     assert "knowledge graph unavailable" in state["reason"]
     assert state["last_draft"] is not None and state["submissions"] == 1
+
+
+def test_a_required_parts_chain_deeper_than_the_retry_budget_ends_needs_review(db_session, make_reader):
+    """(Review Focus) check_graph_integrity surfaces one new layer of missing required parts per pass. A chain
+    that fits inside the retry budget must still reach ready; one hop deeper must exhaust it and end needs_review
+    with the violation still present, never silently pass because retries ran out."""
+    seed_world(db_session)
+    for n in range(1, 6):
+        upsert_sku(db_session, sku_id=f"SKU-L-R{n}", name=f"r{n}", category="Cat-L", list_price=1.0,
+                   discontinued=False, replaced_by=None, in_stock=True)
+    for n in range(1, 5):
+        upsert_sku(db_session, sku_id=f"SKU-L-S{n}", name=f"s{n}", category="Cat-L", list_price=1.0,
+                   discontinued=False, replaced_by=None, in_stock=True)
+    db_session.flush()
+    for n in range(1, 5):
+        upsert_requirement(db_session, sku_id=f"SKU-L-R{n}", required_sku_id=f"SKU-L-R{n + 1}")
+    for n in range(1, 4):
+        upsert_requirement(db_session, sku_id=f"SKU-L-S{n}", required_sku_id=f"SKU-L-S{n + 1}")
+    db_session.flush()
+    reader = make_reader()
+
+    def draft(*sku_ids):
+        lines = [{"sku_id": s, "quantity": 1, "unit_price": 1.0, "price_source": "list", "discount_pct": 0.0}
+                 for s in sku_ids]
+        return {"customer_id": "CUST-E1", "contract_id": None, "lines": lines}
+
+    within_budget = ScriptedLLM([
+        submit_turn(draft("SKU-L-S1"), call_id="s0"),
+        submit_turn(draft("SKU-L-S1", "SKU-L-S2"), call_id="s1"),
+        submit_turn(draft("SKU-L-S1", "SKU-L-S2", "SKU-L-S3"), call_id="s2"),
+        submit_turn(draft("SKU-L-S1", "SKU-L-S2", "SKU-L-S3", "SKU-L-S4"), call_id="s3"),
+    ])
+    exceeds_budget = ScriptedLLM([
+        submit_turn(draft("SKU-L-R1"), call_id="r0"),
+        submit_turn(draft("SKU-L-R1", "SKU-L-R2"), call_id="r1"),
+        submit_turn(draft("SKU-L-R1", "SKU-L-R2", "SKU-L-R3"), call_id="r2"),
+        submit_turn(draft("SKU-L-R1", "SKU-L-R2", "SKU-L-R3", "SKU-L-R4"), call_id="r3"),
+    ])
+
+    within = run_agent(
+        within_budget, make_ctx(db_session, reader, customer_id="CUST-E1", sku_ids=("SKU-L-S1",)),
+        "please quote 1 SKU-L-S1",
+    )
+    exceeds = run_agent(
+        exceeds_budget, make_ctx(db_session, reader, customer_id="CUST-E1", sku_ids=("SKU-L-R1",)),
+        "please quote 1 SKU-L-R1",
+    )
+
+    assert within["status"] == "ready" and within["submissions"] == 4
+    assert exceeds["status"] == "needs_review" and exceeds["submissions"] == 4
+    assert any(v.guardrail == "graph_integrity" for v in exceeds["violations"])
+    assert "SKU-L-R4 requires SKU-L-R5" in exceeds["violations"][-1].message
+
+
+def test_a_graph_that_becomes_stale_mid_run_ends_needs_review_before_reaching_ready(run, db_session):
+    """(Review Focus) Freshness is checked on every submission, not once before the loop: reference data can
+    change between two submissions inside a single multi-turn run, and the later one must not slip through
+    against a reader built from the old data."""
+    def go_stale_then_correct(messages):
+        assert "SKU-E-B1 requires SKU-E-A1" in messages[-1]["content"]
+        db_session.get(Sku, "SKU-E-A1").discontinued = True
+        db_session.flush()
+        return submit_turn(_draft([_line(sku_id="SKU-E-B1", unit_price=50.0), _line()]), call_id="call-2")
+
+    without_part = _draft([_line(sku_id="SKU-E-B1", unit_price=50.0)])
+
+    state, llm = run([submit_turn(without_part), go_stale_then_correct], sku_ids=("SKU-E-B1",))
+
+    assert state["status"] == "needs_review"
+    assert "out of date" in state["reason"]
+    assert state["last_draft"] is not None and state["submissions"] == 2
+    assert len(llm.calls) == 2

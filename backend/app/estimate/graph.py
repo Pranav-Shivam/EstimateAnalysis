@@ -83,6 +83,13 @@ def build_graph(llm, ctx: ToolContext):
         draft = state["pending_draft"]
         update: dict = {"pending_draft": None, "last_draft": draft, "submissions": state["submissions"] + 1}
         try:
+            # Checked on every pass, not just once before the loop starts: reference data can change between
+            # two submissions inside a single multi-turn run, and a stale graph must never approve a later one.
+            if not graph_is_current(ctx.session, ctx.graph):
+                return {
+                    **update, "violations": [], "status": "needs_review",
+                    "reason": "knowledge graph is out of date with the reference data; rebuild it",
+                }
             graph_check = check_graph_integrity(ctx.graph, draft, ctx.request_sku_ids)
         except GraphError as exc:
             return {**update, "violations": [], "status": "needs_review", "reason": f"knowledge graph unavailable: {exc}"}

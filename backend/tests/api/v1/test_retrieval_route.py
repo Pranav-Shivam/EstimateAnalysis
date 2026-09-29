@@ -10,7 +10,7 @@ from core.graph.client import get_graph_client
 from core.llm.openai_embedding_client import EmbeddingError
 from main import app
 from tests.app.estimate.seed import seed_structure, seed_world
-from tests.graph_support import FailingGraphClient, FakeEmbedder
+from tests.graph_support import FailingGraphClient, FakeEmbedder, QueryFailingGraphClient
 
 
 def _ask(db_session, question, embedder=None, overrides=None):
@@ -93,6 +93,17 @@ def test_a_graph_question_with_the_graph_down_is_a_503(db_session):
     )
 
     assert response.status_code == 503
+
+
+def test_a_graph_question_whose_query_fails_is_a_502(db_session):
+    seed_world(db_session)
+
+    response = _ask(
+        db_session, "what does SKU-E-B1 require", overrides={get_graph_client: lambda: QueryFailingGraphClient()},
+    )
+
+    assert response.status_code == 502
+    assert response.json()["detail"] == "graph query failed"
 
 
 def test_a_sql_question_still_works_with_the_graph_down(db_session):

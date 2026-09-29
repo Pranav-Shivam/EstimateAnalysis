@@ -8,7 +8,7 @@ from app.retrieval.service import KnowledgeService
 from app.retrieval.vector import EmbeddingsNotBuilt
 from core.config.settings import Settings
 from core.db.session import get_session
-from core.graph.client import GraphClient, GraphUnavailable, get_graph_client, get_graph_namespace
+from core.graph.client import GraphClient, GraphError, GraphUnavailable, get_graph_client, get_graph_namespace
 from core.llm.openai_embedding_client import EmbeddingError, OpenAIEmbeddingClient
 
 router = APIRouter(prefix="/v1/retrieval", tags=["retrieval"])
@@ -34,6 +34,8 @@ def ask(
         result = service.ask(body.question)
     except GraphUnavailable as exc:
         raise HTTPException(status_code=503, detail="knowledge graph unavailable") from exc
+    except GraphError as exc:
+        raise HTTPException(status_code=502, detail="graph query failed") from exc
     except EmbeddingsNotBuilt as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     except EmbeddingError as exc:

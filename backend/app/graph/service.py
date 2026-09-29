@@ -10,6 +10,7 @@ from app.estimate.models import EstimateDraftRow
 from app.estimate.repository import all_estimate_draft_ids, get_estimate_draft, previous_estimate_draft
 from app.graph.constant import LOCAL_MAX_HOPS, LOCAL_MAX_NODES, VARIANT_MIN_JACCARD
 from app.graph.helper import build_community_stats, match_site
+from app.graph.lock import try_lock_rebuild, unlock_rebuild
 from app.graph.repository import (
     clear_communities, count_edges_by_type, count_nodes_by_label, drop_namespace, ensure_constraints,
     fetch_community_members, fetch_local_paths, fetch_node, merge_edges, merge_nodes, replace_price_variance,
@@ -182,19 +183,29 @@ def sync_quote(session: Session, client: GraphClient, ns: str, estimate_id: uuid
     replace_price_variance(client, ns, str(row.id), _price_variance_rows(session, row))
 
 
+class GraphRebuildInProgress(Exception):
+    pass
+
+
 def rebuild_graph(session: Session, client: GraphClient, ns: str) -> RebuildSummary:
-    """Reload the whole namespace, runtime entities included, from Postgres."""
-    rebuild_reference_graph(session, client, ns)
-    for request_id in all_quote_request_ids(session):
-        sync_quote_request(session, client, ns, request_id)
-    for request_id in all_verdict_request_ids(session):
-        sync_dedupe_verdicts(session, client, ns, request_id)
-    for estimate_id in all_estimate_draft_ids(session):
-        sync_quote(session, client, ns, estimate_id)
-    return RebuildSummary(
-        namespace=ns, fingerprint=reference_fingerprint(session),
-        node_counts=count_nodes_by_label(client, ns), edge_counts=count_edges_by_type(client, ns),
-    )
+    """Reload the whole namespace, runtime entities included, from Postgres. Two overlapping rebuilds of one
+    namespace could leave a half-loaded graph carrying a current fingerprint, so only one may run at a time."""
+    if not try_lock_rebuild(session, ns):
+        raise GraphRebuildInProgress(f"a rebuild of graph namespace {ns} is already running")
+    try:
+        rebuild_reference_graph(session, client, ns)
+        for request_id in all_quote_request_ids(session):
+            sync_quote_request(session, client, ns, request_id)
+        for request_id in all_verdict_request_ids(session):
+            sync_dedupe_verdicts(session, client, ns, request_id)
+        for estimate_id in all_estimate_draft_ids(session):
+            sync_quote(session, client, ns, estimate_id)
+        return RebuildSummary(
+            namespace=ns, fingerprint=reference_fingerprint(session),
+            node_counts=count_nodes_by_label(client, ns), edge_counts=count_edges_by_type(client, ns),
+        )
+    finally:
+        unlock_rebuild(session, ns)
 
 
 def sync_best_effort(description: str, sync, *args) -> None:

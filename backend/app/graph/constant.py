@@ -20,5 +20,7 @@ LOCAL_MAX_NODES = 50
 LOCAL_MAX_PATHS = 500
 # Hubs appear in a local result only as leaves. Walking through one would return every member of the category or family.
 HUB_LABELS = ("PricingCategory", "ProductFamily")
+# Postgres advisory locks are keyed by two ints; this fixed first int keeps the rebuild lock apart from any other use.
+REBUILD_LOCK_CLASSID = 928374
 MAX_EXAMPLE_SKUS = 5
 MAX_MEMBER_NAMES = 30

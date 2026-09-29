@@ -1,14 +1,18 @@
 import math
 import re
 import zlib
+from contextlib import contextmanager
+
+from sqlalchemy.orm import Session
 
 from app.estimate.tools import ToolContext
+from app.graph.lock import try_lock_rebuild, unlock_rebuild
 from app.graph.reader import GraphReader
 from app.graph.repository import node_key
 from app.graph.service import rebuild_reference_graph
 from app.reference_data.repository import set_sku_family, upsert_family, upsert_requirement, upsert_sku
 from app.retrieval.service import KnowledgeService
-from core.graph.client import GraphUnavailable
+from core.graph.client import GraphQueryFailed, GraphUnavailable
 from core.llm.openai_embedding_client import EMBEDDING_DIMENSIONS
 from tests.app.estimate.seed import AS_OF
 
@@ -70,6 +74,47 @@ class FailingGraphClient:
 
     def write(self, query, **params):
         raise GraphUnavailable("Neo4j is unavailable: test double")
+
+
+class QueryFailingGraphClient:
+    """A graph client whose server is up but rejects every query (a Cypher error, a GDS error, a timeout)."""
+
+    def read(self, query, **params):
+        raise GraphQueryFailed("Neo4j query failed: test double")
+
+    def write(self, query, **params):
+        raise GraphQueryFailed("Neo4j query failed: test double")
+
+
+def lock_is_free(db_session, ns) -> bool:
+    """Whether another Postgres session could take the rebuild lock for `ns` right now. Releases it again."""
+    with _other_session(db_session) as other:
+        taken = try_lock_rebuild(other, ns)
+        if taken:
+            unlock_rebuild(other, ns)
+        return taken
+
+
+@contextmanager
+def rebuild_lock_held_elsewhere(db_session, ns):
+    """Hold the rebuild lock for `ns` from a second Postgres session, as a concurrent rebuild would."""
+    with _other_session(db_session) as other:
+        assert try_lock_rebuild(other, ns)
+        try:
+            yield
+        finally:
+            unlock_rebuild(other, ns)
+
+
+@contextmanager
+def _other_session(db_session):
+    connection = db_session.get_bind().engine.connect()
+    session = Session(bind=connection)
+    try:
+        yield session
+    finally:
+        session.close()
+        connection.close()
 
 
 class FakeSummarizer:

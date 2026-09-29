@@ -9,13 +9,15 @@ from app.estimate.models import EstimateDraftRow
 from app.graph.constant import VARIANT_MIN_JACCARD
 from app.graph.repository import node_key
 from app.graph.service import (
-    rebuild_graph, sync_best_effort, sync_dedupe_verdicts, sync_quote, sync_quote_request,
+    GraphRebuildInProgress, rebuild_graph, sync_best_effort, sync_dedupe_verdicts, sync_quote, sync_quote_request,
 )
 from app.intake.repository import save_quote_request
 from app.reference_data.repository import reference_fingerprint
 from core.graph.client import GraphUnavailable
 from tests.app.estimate.seed import seed_structure, seed_world
-from tests.graph_support import FailingGraphClient, graph_edge_count, graph_node
+from tests.graph_support import (
+    FailingGraphClient, graph_edge_count, graph_node, lock_is_free, rebuild_lock_held_elsewhere,
+)
 
 
 def _world(db_session, make_reader):
@@ -300,6 +302,30 @@ def test_rebuild_graph_restores_runtime_entities_from_postgres(db_session, graph
     assert first.fingerprint == reference_fingerprint(db_session)
     assert first.node_counts["QuoteRequest"] >= 2 and first.node_counts["Quote"] >= 1
     assert first.edge_counts["DUPLICATE_OF"] >= 1
+
+
+def test_a_rebuild_is_refused_while_another_rebuild_of_the_namespace_holds_the_lock(db_session, graph_client, graph_ns):
+    """(Final review) Overlapping rebuilds can leave a half-loaded graph with a current fingerprint."""
+    seed_world(db_session)
+
+    with rebuild_lock_held_elsewhere(db_session, graph_ns):
+        with pytest.raises(GraphRebuildInProgress):
+            rebuild_graph(db_session, graph_client, graph_ns)
+        assert graph_node(graph_client, graph_ns, graph_ns) is None
+
+    rebuild_graph(db_session, graph_client, graph_ns)
+    assert graph_node(graph_client, graph_ns, graph_ns)["labels"] == ["GraphMeta"]
+
+
+def test_the_rebuild_lock_is_released_after_a_rebuild_succeeds_or_fails(db_session, graph_client, graph_ns):
+    seed_world(db_session)
+
+    rebuild_graph(db_session, graph_client, graph_ns)
+    assert lock_is_free(db_session, graph_ns)
+
+    with pytest.raises(GraphUnavailable):
+        rebuild_graph(db_session, FailingGraphClient(), graph_ns)
+    assert lock_is_free(db_session, graph_ns)
 
 
 def test_sync_best_effort_swallows_graph_errors_and_logs(caplog):

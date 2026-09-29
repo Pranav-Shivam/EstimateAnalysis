@@ -1,7 +1,10 @@
+import threading
+
 import pytest
 
 from app.estimate.constant import MAX_AGENT_STEPS
 from app.estimate.graph import run_agent
+from app.graph import service as graph_service
 from app.reference_data.models import Sku
 from app.reference_data.repository import upsert_requirement, upsert_sku
 from tests.app.estimate.fakes import ScriptedLLM, call_turn, submit_turn, text_turn
@@ -399,3 +402,76 @@ def test_a_graph_that_becomes_stale_mid_run_ends_needs_review_before_reaching_re
     assert "out of date" in state["reason"]
     assert state["last_draft"] is not None and state["submissions"] == 2
     assert len(llm.calls) == 2
+
+
+class RebuildDuringGuardrailReads:
+    """Wraps the real reader. On the first chain or required-parts read after the guardrail pass's own freshness
+    check (the second stored_fingerprint call; the first is run_agent's pre-check), it starts a real
+    rebuild_reference_graph of the same namespace in a thread and holds it at its first call to `pause_at`, so the
+    guardrail's reads see the namespace mid-rebuild. Every read still goes to the real Neo4j."""
+
+    def __init__(self, inner, session, client, ns, monkeypatch, pause_at):
+        self._inner, self.client, self.ns = inner, inner.client, inner.ns
+        self._fingerprint_reads = 0
+        self._started = False
+        self._paused, self._release = threading.Event(), threading.Event()
+        real = getattr(graph_service, pause_at)
+        first = [True]
+
+        def held(*args, **kwargs):
+            if first[0]:
+                first[0] = False
+                self._paused.set()
+                self._release.wait(30)
+            return real(*args, **kwargs)
+
+        monkeypatch.setattr(graph_service, pause_at, held)
+        self._thread = threading.Thread(target=graph_service.rebuild_reference_graph, args=(session, client, ns))
+
+    def _start_rebuild_once(self):
+        if self._fingerprint_reads >= 2 and not self._started:
+            self._started = True
+            self._thread.start()
+            assert self._paused.wait(30), "the rebuild never reached its pause point"
+
+    def stored_fingerprint(self):
+        self._fingerprint_reads += 1
+        return self._inner.stored_fingerprint()
+
+    def sku_chain(self, sku_id):
+        self._start_rebuild_once()
+        return self._inner.sku_chain(sku_id)
+
+    def required_parts(self, sku_id):
+        self._start_rebuild_once()
+        return self._inner.required_parts(sku_id)
+
+    def finish(self):
+        self._release.set()
+        if self._started:
+            self._thread.join(60)
+
+
+@pytest.mark.parametrize("pause_at", ["merge_nodes", "merge_edges"])
+@pytest.mark.parametrize("requested, line", [
+    ("SKU-E-OLD", _line(sku_id="SKU-E-OLD", unit_price=80.0)),
+    ("SKU-E-B1", _line(sku_id="SKU-E-B1", unit_price=50.0)),
+], ids=["discontinued_left_in", "required_part_missing"])
+def test_a_rebuild_running_during_the_guardrail_reads_never_ends_ready(
+    db_session, graph_client, graph_ns, make_reader, monkeypatch, pause_at, requested, line,
+):
+    """(Final review, Critical) The freshness check passed, then a rebuild of the same namespace wiped it (paused at
+    merge_nodes) or reloaded only its nodes (paused at merge_edges) while the integrity rules were reading. An empty
+    or edgeless graph makes those rules find nothing wrong, so the pass must re-check freshness afterwards."""
+    seed_world(db_session)
+    seed_chain_world(db_session)
+    reader = RebuildDuringGuardrailReads(make_reader(), db_session, graph_client, graph_ns, monkeypatch, pause_at)
+    ctx = make_ctx(db_session, reader, customer_id="CUST-E1", sku_ids=(requested,))
+    try:
+        state = run_agent(ScriptedLLM([submit_turn(_draft([line]))]), ctx, f"please quote 1 {requested}")
+    finally:
+        reader.finish()
+
+    assert reader._started, "the rebuild was never started, so the race was not exercised"
+    assert state["status"] == "needs_review"
+    assert "changed while this draft was being checked" in state["reason"]

@@ -125,6 +125,9 @@ def test_ensure_constraints_can_run_twice(graph_client):
     ensure_constraints(graph_client)
     ensure_constraints(graph_client)
 
+    rows = graph_client.read("SHOW CONSTRAINTS YIELD name WHERE name = 'sku_key' RETURN count(*) AS c")
+    assert rows == [{"c": 1}]
+
 
 def test_merge_nodes_rejects_an_unknown_label(graph_client, graph_ns):
     with pytest.raises(ValueError):

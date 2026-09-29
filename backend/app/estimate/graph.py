@@ -91,6 +91,13 @@ def build_graph(llm, ctx: ToolContext):
                     "reason": "knowledge graph is out of date with the reference data; rebuild it",
                 }
             graph_check = check_graph_integrity(ctx.graph, draft, ctx.request_sku_ids)
+            # A rebuild drops GraphMeta first and writes it back last, so if it started during the reads above,
+            # the graph is no longer current now. Nothing those reads concluded can be trusted in that case.
+            if not graph_is_current(ctx.session, ctx.graph):
+                return {
+                    **update, "violations": [], "status": "needs_review",
+                    "reason": "knowledge graph changed while this draft was being checked; a rebuild ran mid-check",
+                }
         except GraphError as exc:
             return {**update, "violations": [], "status": "needs_review", "reason": f"knowledge graph unavailable: {exc}"}
 

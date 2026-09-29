@@ -8,7 +8,29 @@ from app.graph.repository import node_key
 from app.graph.service import NodeNotFound, global_stats, local_query, run_communities
 from app.reference_data.repository import upsert_requirement, upsert_sku
 from tests.app.estimate.seed import seed_structure, seed_world
+from core.graph.client import GraphQueryFailed
 from tests.graph_support import graph_node, seed_clusters
+
+
+def test_leiden_checks_that_gds_is_loaded_before_building_any_projection(graph_client, graph_ns):
+    """(Spec risk) A missing or broken GDS plugin must fail on a plain version check, before any projection."""
+    queries = []
+
+    class NoGds:
+        def read(self, query, **params):
+            queries.append(query)
+            if "gds.version" in query:
+                raise GraphQueryFailed("Neo4j query failed: unknown function gds.version")
+            return graph_client.read(query, **params)
+
+        def write(self, query, **params):
+            queries.append(query)
+            return graph_client.write(query, **params)
+
+    with pytest.raises(GraphQueryFailed):
+        run_communities(NoGds(), graph_ns)
+
+    assert len(queries) == 1 and "gds.version" in queries[0]
 
 
 def _sku(session, sku_id, category, *, discontinued=False):

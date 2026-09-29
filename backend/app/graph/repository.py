@@ -136,6 +136,8 @@ def _drop_projection(client: GraphClient, name: str) -> None:
 def run_leiden(client: GraphClient, ns: str) -> list[dict]:
     """Leiden over this namespace's SKUs and families. Pricing categories are left out: with five hubs they would
     make every community just a category. Returns [{"key", "label", "community"}]."""
+    # Fails fast with GraphQueryFailed when the GDS plugin is missing or broken, before any projection is built.
+    client.read("RETURN gds.version() AS version")
     name = _projection_name(ns)
     _drop_projection(client, name)
     try:

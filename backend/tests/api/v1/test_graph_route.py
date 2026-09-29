@@ -5,7 +5,7 @@ from core.db.session import get_session
 from core.graph.client import get_graph_client
 from main import app
 from tests.app.estimate.seed import seed_structure, seed_world
-from tests.graph_support import FailingGraphClient, graph_node
+from tests.graph_support import FailingGraphClient, QueryFailingGraphClient, graph_node, rebuild_lock_held_elsewhere
 
 
 def _rebuild(db_session, overrides=None):
@@ -44,3 +44,22 @@ def test_rebuild_is_a_503_when_the_graph_is_down(db_session):
     response = _rebuild(db_session, overrides={get_graph_client: lambda: FailingGraphClient()})
 
     assert response.status_code == 503
+
+
+def test_rebuild_is_a_502_when_a_graph_query_fails(db_session):
+    seed_world(db_session)
+
+    response = _rebuild(db_session, overrides={get_graph_client: lambda: QueryFailingGraphClient()})
+
+    assert response.status_code == 502
+    assert response.json()["detail"] == "graph query failed"
+
+
+def test_rebuild_is_a_409_while_another_rebuild_of_the_namespace_runs(db_session, graph_ns):
+    seed_world(db_session)
+
+    with rebuild_lock_held_elsewhere(db_session, graph_ns):
+        response = _rebuild(db_session)
+
+    assert response.status_code == 409
+    assert graph_ns in response.json()["detail"]

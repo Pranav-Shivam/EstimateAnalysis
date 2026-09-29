@@ -24,6 +24,7 @@ from app.reference_data.models import Sku
 from app.reference_data.repository import upsert_sku
 from core.db.session import make_engine, make_session_factory
 from main import app
+from tests.app.judge.fakes import full_line_evidence
 from tests.conftest import TEST_DATABASE_URL
 
 CORRECTED_PRICE = 42.5
@@ -65,7 +66,11 @@ def committed_review_item(committed_session):
     item = save_review_item(
         session, judge_verdict_id=verdict.id, estimate_id=estimate.id, dimension="price_provenance",
         fact="price is a peer-median prediction",
-        evidence={"lines": [{"line_index": 0, "sku_id": sku_id, "price_source": "predicted"}]}, line_index=0,
+        evidence={
+            "lines": [{"line_index": 0, "sku_id": sku_id, "price_source": "predicted"}],
+            "line_evidence": [full_line_evidence(sku_id)],
+        },
+        line_index=0,
     )
     item_id = item.id
     session.commit()

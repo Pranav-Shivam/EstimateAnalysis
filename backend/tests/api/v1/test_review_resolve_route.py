@@ -10,8 +10,12 @@ from app.judge.repository import save_judge_verdict, save_review_item
 from core.db.session import get_session
 from main import app
 from tests.app.estimate.seed import seed_world
+from tests.app.judge.fakes import full_line_evidence
 
-PRICE_EVIDENCE = {"lines": [{"line_index": 0, "sku_id": "SKU-E-GAP", "price_source": "predicted"}]}
+PRICE_EVIDENCE = {
+    "lines": [{"line_index": 0, "sku_id": "SKU-E-GAP", "price_source": "predicted"}],
+    "line_evidence": [full_line_evidence("SKU-E-GAP")],
+}
 
 
 def _open_review_item(session, dimension="price_provenance"):

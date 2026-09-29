@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from anthropic import Anthropic
 from sqlalchemy import select
+from sqlalchemy.orm import Session
 
 from app.judge.calibration import calibrate, false_auto_send_rate
 from app.judge.constant import CALIBRATION_PATH, FALSE_AUTO_SEND_CEILING, KAPPA_ACCEPTABLE
@@ -30,37 +31,25 @@ def _line_evidence_from_dict(d: dict) -> LineEvidence:
     )
 
 
-def _load_eval_cases() -> list[dict]:
-    session = make_session_factory(make_engine(Settings().database_url))()
-    try:
-        rows = session.scalars(select(EvalCaseRow)).all()
-        return [
-            {
-                "case_id": row.case_id, "label": row.label, "estimate_status": row.estimate_status,
-                "evidence": [{"line_index": e.get("line_index", 0), "sku_id": e["sku_id"], **_line_defaults(e)} for e in row.evidence],
-            }
-            for row in rows
-        ]
-    finally:
-        session.close()
+class MalformedEvalCase(Exception):
+    pass
 
 
-def _line_defaults(e: dict) -> dict:
-    """Reviewer-corrected eval cases carry the flat per-line evidence dict app/judge/service.py's
-    _dimension_evidence() produces, not the golden set's nested price/contract/graph shape. Normalize it here so
-    _line_evidence_from_dict() can consume both."""
-    return {
-        "unit_price": e.get("unit_price", 0.0),
-        "price": {"price_source": e.get("price_source", "list"), "list_price": e.get("list_price"),
-                   "predicted_price": e.get("predicted_price"), "peer_count": e.get("peer_count"),
-                   "low": e.get("low"), "high": e.get("high")},
-        "contract": {"discount_pct": e.get("discount_pct", 0.0), "contract_id": e.get("contract_id"),
-                     "covered": e.get("covered"), "active_on_as_of": e.get("active_on_as_of"),
-                     "days_to_expiry": e.get("days_to_expiry")},
-        "graph": {"discontinued": e.get("discontinued", False), "live_sku_id": e.get("live_sku_id"),
-                  "required_part_ids": e.get("required_part_ids", []),
-                  "missing_required_part_ids": e.get("missing_required_part_ids", [])},
-    }
+def load_eval_cases(session: Session) -> list[dict]:
+    """Reviewer-resolved eval cases, whose evidence is every line's full evidence in the golden set's shape. A case
+    that does not parse fails the run: scoring it on filled-in defaults would gate a release on made-up data."""
+    cases = []
+    for row in session.scalars(select(EvalCaseRow).order_by(EvalCaseRow.case_id)):
+        try:
+            for line in row.evidence:
+                _line_evidence_from_dict(line)
+        except (KeyError, TypeError) as exc:
+            raise MalformedEvalCase(f"eval case {row.case_id} does not hold full line evidence: {exc!r}") from exc
+        cases.append({
+            "case_id": row.case_id, "label": row.label, "estimate_status": row.estimate_status,
+            "evidence": row.evidence,
+        })
+    return cases
 
 
 class NoAcceptableThreshold(Exception):
@@ -117,7 +106,11 @@ def main() -> None:
     args = parser.parse_args()
 
     golden_cases = json.loads(GOLDEN_SET_PATH.read_text(encoding="utf-8"))
-    eval_cases = _load_eval_cases()
+    session = make_session_factory(make_engine(Settings().database_url))()
+    try:
+        eval_cases = load_eval_cases(session)
+    finally:
+        session.close()
     cases = golden_cases + eval_cases
     ready_count = len([c for c in cases if c["estimate_status"] == "ready"])
     print(f"{len(cases)} cases total ({len(golden_cases)} golden set, {len(eval_cases)} reviewer-corrected), "

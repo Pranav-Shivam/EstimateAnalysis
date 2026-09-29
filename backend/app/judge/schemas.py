@@ -55,7 +55,7 @@ class EvalCase(BaseModel):
 def build_eval_case(row: ReviewItemRow, outcome: str, case_id: str) -> EvalCase:
     return EvalCase(
         case_id=case_id, label="trust" if outcome == "approved" else "escalate",
-        estimate_status="ready", evidence=row.evidence["lines"], source_review_item_id=row.id,
+        estimate_status="ready", evidence=row.evidence["line_evidence"], source_review_item_id=row.id,
     )
 
 

@@ -100,7 +100,11 @@ def run_judge(
         )
         flagged_score = next(d for d in dimensions if d.name == flagged)
         fact = flagged_score.rationale
-        evidence = {"dimension": flagged, "lines": flagged_score.evidence}
+        # "lines" is the flagged dimension's slice a reviewer reads; "line_evidence" is every line's full evidence,
+        # the golden set's shape, so a resolution's eval case can be re-scored on exactly what the judge saw.
+        evidence = {
+            "dimension": flagged, "lines": flagged_score.evidence, "line_evidence": [asdict(line) for line in lines],
+        }
         line_index = flagged_score.evidence[0]["line_index"] if len(flagged_score.evidence) == 1 else None
 
     verdict_row = save_judge_verdict(
@@ -133,6 +137,10 @@ def resolve_review_item(
         raise ReviewItemAlreadyResolved(f"review item {review_item_id} is already {row.status!r}")
     if row.dimension not in RESOLVABLE_DIMENSIONS:
         raise ReviewItemNotResolvable(f"dimension {row.dimension!r} is not resolvable through this endpoint")
+    if "line_evidence" not in row.evidence:
+        raise ReviewItemNotResolvable(
+            f"review item {review_item_id} predates full line evidence, so it cannot become an eval case"
+        )
     if outcome == "corrected":
         validate_correction(session, row.dimension, correction, row.evidence)
 

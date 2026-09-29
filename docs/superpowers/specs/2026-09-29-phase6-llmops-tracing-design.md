@@ -179,7 +179,7 @@ Not started by the test suite or by any other script; a manually-run background 
 
 ### `scripts/calibrate_judge.py` changes
 
-- loads `judge_golden_set.json` cases as today, **and** all `EvalCaseRow` rows from Postgres, concatenated before scoring.
+- loads `judge_golden_set.json` cases as today, **and** all `EvalCaseRow` rows from Postgres, concatenated before scoring. An eval case's evidence is every line's full evidence (all three dimensions plus `unit_price`), which `run_judge` stores on the review item as `evidence["line_evidence"]` beside the flagged slice in `evidence["lines"]`; a review item without it is not resolvable, and an eval case whose evidence does not parse fails the run rather than being scored on defaults.
 - after computing `result` via `calibrate(...)`, also computes `false_auto_send_rate` at `result.threshold`: `calibration.py`'s `CalibrationResult` dataclass gains a `pairs: list[tuple[bool, bool]]` field, populated by `calibrate()` from its winning candidate's sweep; a new pure function `false_auto_send_rate(pairs: list[tuple[bool, bool]]) -> float` returns `sum(1 for trust, human in pairs if trust and not human) / len(pairs)`.
 - new constant `FALSE_AUTO_SEND_CEILING = 0.05` in `app/judge/constant.py`.
 - if `false_auto_send_rate > FALSE_AUTO_SEND_CEILING`: prints which cases would auto-send wrongly (case_id, score, label) and exits 1 **without** writing `calibration.json`. This is the release gate: a threshold that clears kappa but breaches the ceiling is not released.

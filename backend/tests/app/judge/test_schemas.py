@@ -5,6 +5,7 @@ import pytest
 from app.judge.models import ReviewItemRow
 from app.judge.schemas import InvalidCorrection, build_eval_case, validate_correction
 from tests.app.estimate.seed import seed_world
+from tests.app.judge.fakes import full_line_evidence
 
 PRICE_EVIDENCE = {"lines": [{"line_index": 0, "sku_id": "SKU-E-GAP", "price_source": "predicted", "list_price": None}]}
 GRAPH_EVIDENCE = {"lines": [{"line_index": 0, "sku_id": "SKU-E-B1", "required_part_ids": [], "missing_required_part_ids": []}]}
@@ -81,16 +82,20 @@ def test_validate_correction_rejects_an_unresolvable_dimension(db_session):
         validate_correction(db_session, "guardrail", {}, evidence={"violations": []})
 
 
-def test_build_eval_case_uses_trust_label_for_an_approved_outcome():
-    row = _row("price_provenance", PRICE_EVIDENCE)
+FULL_LINE = full_line_evidence("SKU-E-GAP")
+
+
+def test_build_eval_case_carries_every_lines_full_evidence_not_just_the_flagged_dimension():
+    # The release gate re-scores eval cases; with only the flagged dimension's slice it would score a $0 line.
+    row = _row("price_provenance", {**PRICE_EVIDENCE, "line_evidence": [FULL_LINE]})
     case = build_eval_case(row, "approved", "rc-0001")
     assert case.label == "trust"
     assert case.estimate_status == "ready"
-    assert case.evidence == PRICE_EVIDENCE["lines"]
+    assert case.evidence == [FULL_LINE]
     assert case.source_review_item_id == row.id
 
 
 def test_build_eval_case_uses_escalate_label_for_a_corrected_outcome():
-    row = _row("graph_completion", GRAPH_EVIDENCE)
+    row = _row("graph_completion", {**GRAPH_EVIDENCE, "line_evidence": [FULL_LINE]})
     case = build_eval_case(row, "corrected", "rc-0002")
     assert case.label == "escalate"

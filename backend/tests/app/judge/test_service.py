@@ -13,7 +13,7 @@ from app.judge.service import (
     run_judge,
 )
 from tests.app.estimate.seed import AS_OF, seed_world
-from tests.app.judge.fakes import ScriptedJudgeClient
+from tests.app.judge.fakes import ScriptedJudgeClient, full_line_evidence
 from tests.graph_support import UnusedGraph
 
 
@@ -86,6 +86,12 @@ def test_ready_draft_below_threshold_creates_a_review_item_naming_one_dimension(
     assert run.verdict.flagged_dimension == "graph_completion"
     assert run.review_item.dimension == "graph_completion"
     assert run.review_item.line_index == 0
+    # Every line's full evidence, in the golden set's shape, rides along for the eval case a resolution builds.
+    (line,) = run.review_item.evidence["line_evidence"]
+    assert line["unit_price"] == 100.0
+    assert line["price"]["price_source"] == "list"
+    assert line["contract"]["discount_pct"] == 0.0
+    assert line["graph"]["live_sku_id"] == "SKU-E-A1"
 
 
 def test_flagged_dimension_spanning_two_lines_leaves_line_index_none(db_session, make_reader):
@@ -114,7 +120,10 @@ def test_unknown_estimate_raises(db_session):
         run_judge(db_session, UnusedGraph(), AS_OF, uuid.uuid4(), ScriptedJudgeClient([]))
 
 
-PRICE_EVIDENCE = {"lines": [{"line_index": 0, "sku_id": "SKU-E-GAP", "price_source": "predicted"}]}
+PRICE_EVIDENCE = {
+    "lines": [{"line_index": 0, "sku_id": "SKU-E-GAP", "price_source": "predicted"}],
+    "line_evidence": [full_line_evidence("SKU-E-GAP")],
+}
 
 
 def _open_review_item(session, dimension="price_provenance", evidence=None, fact="thin evidence"):
@@ -136,6 +145,14 @@ def _open_review_item(session, dimension="price_provenance", evidence=None, fact
 def test_resolve_review_item_returns_404_equivalent_for_an_unknown_id(db_session):
     with pytest.raises(ReviewItemNotFound):
         resolve_review_item(db_session, uuid.uuid4(), "approved", None)
+
+
+def test_a_review_item_without_full_line_evidence_is_not_resolvable(db_session):
+    # Its eval case could only be re-scored on invented evidence, so the release gate would measure nothing real.
+    seed_world(db_session)
+    row = _open_review_item(db_session, evidence={"lines": PRICE_EVIDENCE["lines"]})
+    with pytest.raises(ReviewItemNotResolvable):
+        resolve_review_item(db_session, row.id, "approved", None)
 
 
 def test_approving_records_the_outcome_and_a_trust_eval_case_without_requiring_consolidation(db_session):

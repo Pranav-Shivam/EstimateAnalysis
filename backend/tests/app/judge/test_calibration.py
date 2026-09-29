@@ -1,4 +1,4 @@
-from app.judge.calibration import calibrate, cohens_kappa
+from app.judge.calibration import calibrate, cohens_kappa, false_auto_send_rate
 
 
 def test_kappa_is_one_for_perfect_agreement():
@@ -25,3 +25,18 @@ def test_calibrate_returns_none_when_no_threshold_clears_the_bar():
     labels = [False, True, True, False]
 
     assert calibrate(scores, labels, acceptable_kappa=0.6) is None
+
+
+def test_false_auto_send_rate_counts_only_wrongly_trusted_cases():
+    pairs = [(True, True), (True, False), (False, False), (False, True)]
+    assert false_auto_send_rate(pairs) == 0.25
+
+
+def test_false_auto_send_rate_is_zero_when_nothing_is_wrongly_trusted():
+    assert false_auto_send_rate([(True, True), (False, False)]) == 0.0
+
+
+def test_calibrate_result_carries_the_winning_pairs():
+    result = calibrate(scores=[0.9, 0.9, 0.2], labels=[True, True, False], acceptable_kappa=0.6)
+    assert result is not None
+    assert len(result.pairs) == 3

@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from app.judge.scoring import gate
 
@@ -7,6 +7,7 @@ from app.judge.scoring import gate
 class CalibrationResult:
     threshold: float
     kappa: float
+    pairs: list[tuple[bool, bool]] = field(default_factory=list)
 
 
 def cohens_kappa(pairs: list[tuple[bool, bool]]) -> float:
@@ -23,6 +24,13 @@ def cohens_kappa(pairs: list[tuple[bool, bool]]) -> float:
     return (agree - expected) / (1 - expected)
 
 
+def false_auto_send_rate(pairs: list[tuple[bool, bool]]) -> float:
+    """Fraction of cases the judge would auto-send (trust) that a human actually labeled wrong."""
+    if not pairs:
+        return 0.0
+    return sum(1 for trust, human in pairs if trust and not human) / len(pairs)
+
+
 def calibrate(scores: list[float], labels: list[bool], acceptable_kappa: float) -> CalibrationResult | None:
     """Sweeps every observed confidence score as a candidate threshold and returns the LOWEST one whose
     kappa against the golden set's human labels still clears acceptable_kappa: the lowest threshold
@@ -34,5 +42,5 @@ def calibrate(scores: list[float], labels: list[bool], acceptable_kappa: float) 
         pairs = [(gate(score, candidate), label) for score, label in zip(scores, labels)]
         kappa = cohens_kappa(pairs)
         if kappa >= acceptable_kappa and (best is None or candidate < best.threshold):
-            best = CalibrationResult(threshold=candidate, kappa=kappa)
+            best = CalibrationResult(threshold=candidate, kappa=kappa, pairs=pairs)
     return best

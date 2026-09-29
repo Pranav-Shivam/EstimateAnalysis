@@ -7,8 +7,8 @@ import pytest
 from app.dedupe.repository import save_verdict
 from app.estimate.models import EstimateDraftRow
 from app.graph.constant import VARIANT_MIN_JACCARD
-from app.graph.repository import node_key
 from app.graph.reader import GraphReader
+from app.graph.repository import node_key
 from app.graph.service import (
     GraphRebuildInProgress, rebuild_graph, sync_best_effort, sync_contract_coverage, sync_dedupe_verdicts,
     sync_quote, sync_quote_request, sync_requirement, sync_sku,

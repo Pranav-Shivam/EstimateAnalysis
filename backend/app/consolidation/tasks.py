@@ -2,7 +2,9 @@ import asyncio
 import uuid
 
 import procrastinate
+from sqlalchemy.exc import OperationalError
 
+from app.consolidation.constant import CONSOLIDATION_MAX_ATTEMPTS, CONSOLIDATION_RETRY_EXPONENTIAL_WAIT
 from app.consolidation.service import consolidate_review_item
 from core.config.settings import Settings
 from core.db.session import app_session_factory
@@ -19,7 +21,13 @@ def _conninfo(database_url: str) -> str:
 app = procrastinate.App(connector=procrastinate.PsycopgConnector(conninfo=_conninfo(Settings().database_url)))
 
 
-@app.task(name="consolidate_review_item")
+@app.task(
+    name="consolidate_review_item",
+    retry=procrastinate.RetryStrategy(
+        max_attempts=CONSOLIDATION_MAX_ATTEMPTS, exponential_wait=CONSOLIDATION_RETRY_EXPONENTIAL_WAIT,
+        retry_exceptions=[OperationalError],
+    ),
+)
 def consolidate_review_item_task(review_item_id: str) -> None:
     session = app_session_factory()()
     try:

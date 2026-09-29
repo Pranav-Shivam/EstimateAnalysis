@@ -104,6 +104,19 @@ def test_resolve_rejects_an_already_resolved_item_with_409(db_session):
     assert response.status_code == 409
 
 
+def test_resolving_the_same_correction_again_re_enqueues_consolidation(db_session):
+    row = _open_review_item(db_session)
+    body = {"outcome": "corrected", "correction": {"sku_id": "SKU-E-GAP", "corrected_unit_price": 42.5}}
+    _post(db_session, row.id, body)
+    connector = testing.InMemoryConnector()
+
+    response = _post(db_session, row.id, body, connector)
+
+    assert response.status_code == 200
+    assert response.json()["consolidation_enqueued"] is True
+    assert len(connector.jobs) == 1
+
+
 def test_resolve_rejects_a_non_resolvable_dimension_with_400(db_session):
     row = _open_review_item(db_session, dimension="guardrail")
 

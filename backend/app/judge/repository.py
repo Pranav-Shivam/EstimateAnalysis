@@ -47,8 +47,10 @@ def list_open_review_items(session: Session) -> list[ReviewItemRow]:
     )
 
 
-def get_review_item(session: Session, review_item_id: uuid.UUID) -> ReviewItemRow | None:
-    return session.get(ReviewItemRow, review_item_id)
+def lock_review_item(session: Session, review_item_id: uuid.UUID) -> ReviewItemRow | None:
+    """SELECT ... FOR UPDATE, held until the transaction ends, and always a fresh read: a caller that checks the
+    row's status and then changes it must not race another transaction doing the same."""
+    return session.get(ReviewItemRow, review_item_id, with_for_update=True, populate_existing=True)
 
 
 def next_eval_case_id(session: Session) -> str:

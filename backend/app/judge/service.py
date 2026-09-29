@@ -12,7 +12,7 @@ from app.judge.evidence import LineEvidence, build_evidence
 from app.judge.prompts import JUDGE_SYSTEM_PROMPT
 from app.judge.models import ReviewItemRow
 from app.judge.repository import (
-    get_review_item, next_eval_case_id, save_eval_case, save_judge_verdict, save_review_item,
+    lock_review_item, next_eval_case_id, save_eval_case, save_judge_verdict, save_review_item,
 )
 from app.judge.schemas import (
     RESOLVABLE_DIMENSIONS, DimensionScore, EvalCase, JudgeVerdict, ReviewItem, build_eval_case, validate_correction,
@@ -40,7 +40,7 @@ class ReviewItemNotResolvable(Exception):
 @dataclass
 class ReviewItemResolution:
     row: ReviewItemRow
-    eval_case: EvalCase
+    eval_case: EvalCase | None  # None on a redrive, which records no new eval case
     consolidation_required: bool
 
 
@@ -122,9 +122,13 @@ def run_judge(
 def resolve_review_item(
     session: Session, review_item_id: uuid.UUID, outcome: str, correction: dict | None,
 ) -> ReviewItemResolution:
-    row = get_review_item(session, review_item_id)
+    row = lock_review_item(session, review_item_id)
     if row is None:
         raise ReviewItemNotFound(f"review item {review_item_id} not found")
+    if row.status == "corrected" and outcome == "corrected" and correction == row.correction:
+        # The same correction again, before its consolidation ran: a redrive for a job that was never enqueued or
+        # was lost. The eval case already exists, so only the enqueue is repeated.
+        return ReviewItemResolution(row=row, eval_case=None, consolidation_required=True)
     if row.status != "open":
         raise ReviewItemAlreadyResolved(f"review item {review_item_id} is already {row.status!r}")
     if row.dimension not in RESOLVABLE_DIMENSIONS:

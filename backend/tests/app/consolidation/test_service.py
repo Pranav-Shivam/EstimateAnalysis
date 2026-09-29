@@ -5,7 +5,7 @@ import pytest
 from app.consolidation.service import consolidate_review_item
 from app.estimate.repository import save_estimate_draft
 from app.intake.repository import save_quote_request
-from app.judge.models import EvalCaseRow, JudgeVerdictRow, ReviewItemRow
+from app.judge.models import JudgeVerdictRow, ReviewItemRow
 from app.reference_data.models import Contract, Sku, SkuRequirement
 from app.reference_data.repository import reference_fingerprint
 from tests.app.estimate.seed import seed_world
@@ -124,3 +124,20 @@ def test_consolidate_review_item_rejects_a_row_not_in_corrected_status(db_sessio
 
     with pytest.raises(ValueError):
         consolidate_review_item(db_session, graph_client, graph_ns, row.id)
+
+
+def test_consolidating_an_already_consolidated_item_is_a_no_op(db_session, graph_client, graph_ns, make_reader):
+    # A redelivered job (a retry after the commit landed, or a redrive) must not fail the worker or rewrite the fact.
+    _world(db_session, make_reader)
+    row = _corrected_review_item(
+        db_session, "price_provenance", {"sku_id": "SKU-E-GAP", "corrected_unit_price": 42.5},
+        {"lines": [{"line_index": 0, "sku_id": "SKU-E-GAP"}]},
+    )
+    consolidate_review_item(db_session, graph_client, graph_ns, row.id)
+    db_session.get(Sku, "SKU-E-GAP").list_price = 99.0
+    db_session.flush()
+
+    consolidate_review_item(db_session, graph_client, graph_ns, row.id)
+
+    assert db_session.get(ReviewItemRow, row.id).status == "consolidated"
+    assert db_session.get(Sku, "SKU-E-GAP").list_price == 99.0

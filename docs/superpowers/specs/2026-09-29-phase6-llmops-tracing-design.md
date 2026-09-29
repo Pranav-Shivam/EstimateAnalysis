@@ -78,7 +78,7 @@ class ReviewItemRow(Base):
 ### `app/judge/service.py` additions
 
 `resolve_review_item(session, review_item_id, outcome, correction) -> ReviewItemRow`:
-- loads the row (404-equivalent `ReviewItemNotFound` if missing, `status != 'open'` raises `ReviewItemAlreadyResolved`)
+- loads the row with `SELECT ... FOR UPDATE` so concurrent resolves serialize (404-equivalent `ReviewItemNotFound` if missing, `status != 'open'` raises `ReviewItemAlreadyResolved`). One exception: `corrected` again with the identical correction on a row still `corrected` is a redrive. It records no new eval case and only re-enqueues consolidation, the recovery path when the first enqueue was lost.
 - if `outcome == "corrected"`: validates `correction` against `row.dimension`, per decision 4's per-dimension shape (`validate_correction(dimension, correction, evidence) -> None`, new pure function in `app/judge/schemas.py`, raises `InvalidCorrection` on any mismatch); an unrecognized `dimension` (no handler exists) also raises `InvalidCorrection` rather than silently accepting a correction nothing will ever consolidate
 - updates `status`, `outcome`, `correction`, `resolved_at`
 - calls `build_eval_case(row, outcome)` (new pure function in `app/judge/schemas.py`, mirroring how `evidence.py` builds other dataclasses, since `calibration.py` stays I/O-free per its current pure-function shape) to build an `EvalCase` value, then `repository.save_eval_case(session, case)` persists it as an `EvalCaseRow`
@@ -119,6 +119,7 @@ class EvalCaseRow(Base):
   - `"contract_discount"` → `add_contract_coverage(session, contract_id, category)` (idempotent: append only if `category not in contract.covered_categories`) → `sync_best_effort("contract coverage correction", sync_contract_coverage, session, client, ns, contract_id, category)`.
   - any other `dimension` → `logger.warning("no consolidation handler for dimension %s", dimension)`, no-op (defensive only: `resolve_review_item` already rejects an unrecognized dimension at correction time, per decision 4, so this path is unreachable in practice and exists only so a future dimension added without a handler fails loudly instead of crashing the worker).
   - marks the review item `status = "consolidated"`, commits.
+  - locks the row first; a row already `consolidated` (a redelivered or redriven job) is a no-op. The task retries `OperationalError` (dropped connection, deadlock) with exponential backoff, at most 5 attempts; any other error fails the job at once.
 - The API opens this app sync in its FastAPI lifespan (`main.py`): the resolve route is a sync `def`, and an async connector never opened async hands sync `.defer()` callers its own sync pool. The worker opens it async.
 - Task is a plain function; tests call `consolidate_review_item(review_item_id=...)` directly against a session fixture rather than requiring a running worker (procrastinate tasks are ordinary callables when not `.defer()`-dispatched through a live app/worker).
 

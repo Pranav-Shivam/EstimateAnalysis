@@ -3,7 +3,7 @@ import uuid
 from sqlalchemy.orm import Session
 
 from app.graph.service import sync_best_effort, sync_contract_coverage, sync_requirement, sync_sku
-from app.judge.repository import get_review_item
+from app.judge.repository import lock_review_item
 from app.reference_data.repository import add_contract_coverage, set_sku_list_price, upsert_requirement
 from core.graph.client import GraphClient
 
@@ -39,9 +39,12 @@ _HANDLERS = {
 
 
 def consolidate_review_item(session: Session, client: GraphClient, ns: str, review_item_id: uuid.UUID) -> None:
-    row = get_review_item(session, review_item_id)
+    row = lock_review_item(session, review_item_id)
     if row is None:
         raise ValueError(f"review item {review_item_id} not found")
+    if row.status == "consolidated":
+        # A redelivered or redriven job whose earlier run already committed: the fact is written, nothing to do.
+        return
     if row.status != "corrected":
         raise ValueError(f"review item {review_item_id} is {row.status!r}, expected 'corrected'")
 

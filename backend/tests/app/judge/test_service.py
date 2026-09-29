@@ -1,9 +1,11 @@
 import uuid
 
 import pytest
+from sqlalchemy import event, select
 
 from app.estimate.repository import save_estimate_draft
 from app.intake.repository import save_quote_request
+from app.judge.models import EvalCaseRow
 from app.judge.repository import save_judge_verdict, save_review_item
 from app.judge.schemas import InvalidCorrection
 from app.judge.service import (
@@ -179,3 +181,58 @@ def test_a_guardrail_fast_path_review_item_is_not_resolvable(db_session):
     row = _open_review_item(db_session, dimension="guardrail", evidence={"violations": ["blocked"]}, fact="blocked")
     with pytest.raises(ReviewItemNotResolvable):
         resolve_review_item(db_session, row.id, "approved", None)
+
+
+def test_re_resolving_a_corrected_item_with_the_same_correction_redrives_consolidation_without_a_new_eval_case(
+    db_session,
+):
+    seed_world(db_session)
+    row = _open_review_item(db_session)
+    correction = {"sku_id": "SKU-E-GAP", "corrected_unit_price": 42.5}
+    resolve_review_item(db_session, row.id, "corrected", correction)
+
+    again = resolve_review_item(db_session, row.id, "corrected", correction)
+
+    assert again.consolidation_required is True
+    assert again.eval_case is None
+    assert again.row.status == "corrected"
+    eval_cases = db_session.scalars(select(EvalCaseRow).where(EvalCaseRow.source_review_item_id == row.id)).all()
+    assert len(eval_cases) == 1
+
+
+def test_re_resolving_a_corrected_item_with_a_different_correction_is_rejected(db_session):
+    seed_world(db_session)
+    row = _open_review_item(db_session)
+    resolve_review_item(db_session, row.id, "corrected", {"sku_id": "SKU-E-GAP", "corrected_unit_price": 42.5})
+
+    with pytest.raises(ReviewItemAlreadyResolved):
+        resolve_review_item(db_session, row.id, "corrected", {"sku_id": "SKU-E-GAP", "corrected_unit_price": 50.0})
+
+
+def test_approving_an_already_corrected_item_is_rejected(db_session):
+    seed_world(db_session)
+    row = _open_review_item(db_session)
+    resolve_review_item(db_session, row.id, "corrected", {"sku_id": "SKU-E-GAP", "corrected_unit_price": 42.5})
+
+    with pytest.raises(ReviewItemAlreadyResolved):
+        resolve_review_item(db_session, row.id, "approved", None)
+
+
+def test_resolving_locks_the_review_item_row_before_reading_its_status(db_session):
+    seed_world(db_session)
+    row = _open_review_item(db_session)
+    statements = []
+
+    def record(conn, cursor, statement, parameters, context, executemany):
+        statements.append(statement)
+
+    engine = db_session.get_bind().engine
+    event.listen(engine, "before_cursor_execute", record)
+    try:
+        resolve_review_item(db_session, row.id, "approved", None)
+    finally:
+        event.remove(engine, "before_cursor_execute", record)
+
+    # Two concurrent resolves must serialize on the row, or both see 'open' and write contradictory eval cases.
+    first_read = next(s for s in statements if "FROM review_items" in s)
+    assert "FOR UPDATE" in first_read

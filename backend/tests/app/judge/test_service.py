@@ -1,9 +1,7 @@
 import uuid
 
 import pytest
-from procrastinate import testing
 
-from app.consolidation.tasks import app as consolidation_app
 from app.estimate.repository import save_estimate_draft
 from app.intake.repository import save_quote_request
 from app.judge.repository import save_judge_verdict, save_review_item
@@ -138,44 +136,35 @@ def test_resolve_review_item_returns_404_equivalent_for_an_unknown_id(db_session
         resolve_review_item(db_session, uuid.uuid4(), "approved", None)
 
 
-def test_approving_records_the_outcome_and_a_trust_eval_case_with_no_task_enqueued(db_session):
+def test_approving_records_the_outcome_and_a_trust_eval_case_without_requiring_consolidation(db_session):
     seed_world(db_session)
     row = _open_review_item(db_session)
-    in_memory = testing.InMemoryConnector()
-    with consolidation_app.replace_connector(in_memory):
-        result = resolve_review_item(db_session, row.id, "approved", None)
+    result = resolve_review_item(db_session, row.id, "approved", None)
 
     assert result.row.status == "approved"
     assert result.row.outcome == "approved"
     assert result.eval_case.label == "trust"
-    assert result.consolidation_enqueued is False
-    assert in_memory.jobs == {}
+    assert result.consolidation_required is False
 
 
-def test_correcting_records_the_outcome_and_an_escalate_eval_case_and_enqueues_consolidation(db_session):
+def test_correcting_records_the_outcome_and_an_escalate_eval_case_and_requires_consolidation(db_session):
     seed_world(db_session)
     row = _open_review_item(db_session)
     correction = {"sku_id": "SKU-E-GAP", "corrected_unit_price": 42.5}
-    in_memory = testing.InMemoryConnector()
-    with consolidation_app.replace_connector(in_memory):
-        result = resolve_review_item(db_session, row.id, "corrected", correction)
+    result = resolve_review_item(db_session, row.id, "corrected", correction)
 
     assert result.row.status == "corrected"
     assert result.row.correction == correction
     assert result.eval_case.label == "escalate"
-    assert result.consolidation_enqueued is True
-    assert len(in_memory.jobs) == 1
-    assert str(row.id) in str(list(in_memory.jobs.values())[0])
+    assert result.consolidation_required is True
 
 
 def test_resolving_an_already_resolved_item_is_rejected(db_session):
     seed_world(db_session)
     row = _open_review_item(db_session)
-    in_memory = testing.InMemoryConnector()
-    with consolidation_app.replace_connector(in_memory):
+    resolve_review_item(db_session, row.id, "approved", None)
+    with pytest.raises(ReviewItemAlreadyResolved):
         resolve_review_item(db_session, row.id, "approved", None)
-        with pytest.raises(ReviewItemAlreadyResolved):
-            resolve_review_item(db_session, row.id, "approved", None)
 
 
 def test_correcting_with_a_sku_the_review_item_never_named_is_rejected(db_session):

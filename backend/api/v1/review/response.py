@@ -13,3 +13,11 @@ class ReviewItemListResponse(BaseModel):
     line_index: int | None
     status: str
     created_at: datetime
+
+
+class ResolveReviewItemResponse(BaseModel):
+    id: uuid.UUID
+    status: str
+    outcome: str
+    correction: dict | None
+    consolidation_enqueued: bool

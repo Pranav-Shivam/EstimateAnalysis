@@ -1,6 +1,6 @@
 # 05. Demo Path (5 minutes)
 
-A click path through the running app, with what I say at each step. All entities below come from the synthetic seeded data. The screenshots in `images/` were taken from the running app on 2026-09-30 with headless Chrome, against the state this file describes (4 open flags, nothing resolved yet).
+A click path through the running app, with what I say at each step. All entities below come from the synthetic seeded data. The screenshots in `images/` were taken from the running app on 2026-09-30 with headless Chrome, against the state this file describes (4 open flags, nothing resolved yet). They were retaken the same day after the UI polish pass (human labels, two-column quote detail, graph back and forward), so they match the current screens.
 
 ## Before I start
 
@@ -23,15 +23,15 @@ What I say:
 
 ## Step 2. Quote detail with evidence (90 seconds)
 
-Click "Open quote" on the first row (Price source). This is quote `sc-0051`, customer `CUST-0121`, Sterling Mechanical.
+Click the first row (Price source), or its "Open quote" link. This is quote `sc-0051`, customer `CUST-0121`, Sterling Mechanical.
 
 ![Quote detail with a predicted-price flag and evidence](images/02-quote-detail-price-flag.png)
 
-What I see: the customer email, the estimate lines, the totals, the judge's three scores, and a "Check this" card with the evidence.
+What I see: the customer email on the left; on the right, the estimate, with the "Check this" card and its evidence first ("Needs your review"), then the line items and totals, then the judge's three scores.
 
 What I say:
-- "Top: the original email. Messy, no part numbers. Below: the estimate. Line one, SKU-0271, Brass Union 2-1/2 in, is marked `predicted`. Line two has a list price and a 12 percent contract discount."
-- "The judge scored three dimensions. Price source got 20 percent, and the other two got 95 and 90. The overall confidence is the lowest one, 0.20, so this goes to a human."
+- "Left: the original email. Messy, no part numbers. Right: the estimate, with the one fact to check at the top. Line one, SKU-0271, Brass Union 2-1/2 in, is marked Predicted. Line two has a list price and a 12 percent contract discount."
+- "The judge scored three dimensions. Price source got 20 percent, and the other two got 95 and 90. The overall confidence is the lowest one, 20 percent, so this goes to a human."
 - "The evidence card shows what the judge saw: predicted price 247.66, from 171 peers, in a band of 140.07 to 349.73. The reviewer can approve it as is, or correct the price."
 - "Two honest notes. The 0.20 is a scripted score in this demo. With the real judge and its prompt anchors, 171 peers would probably not score that low, because the anchor only forces a low score under 10 peers. And the quantities are 1 even though the email says 4 and 2, because the scripted extraction sets every quantity to 1."
 - "This SKU has no list price because the seed removes it on purpose, to plant a pricing gap. The dataset's own unpriced SKUs appear in none of the scenarios."
@@ -56,6 +56,7 @@ Now open `http://localhost:7050/graph?node=SKU-0601` (or search "SKU-0601" and c
 What I say:
 - "This is SKU-0601, an aftermarket belt. It sits in the Aftermarket Belt family, it is priced in the HVAC-Parts category, and another part, an aftermarket motor mount, requires it."
 - "This is the case behind the second flag in the queue: the belt was quoted with no required part recorded. The graph is how the system answers 'what does this part need', in one hop, with a visible path."
+- "The back and forward arrows, and the trail above the graph, step through what I explored, so I can drill into a type or a node and come straight back to the overview."
 - "I would not draw the whole graph live. It is 1712 nodes. I built it in levels: schema first, then a type's 60 most connected nodes, then one hop at a time."
 
 ## Step 4. Dashboard (45 seconds)

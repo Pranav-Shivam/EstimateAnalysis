@@ -50,6 +50,13 @@ docker compose up --build
 
 Then open http://localhost:7050. The first start sets everything up (database, demo data, knowledge graph) and takes a few minutes; later starts are quick. No API keys are needed for the demo. Details, ports and the manual route are in `docs/new-machine-setup.md`.
 
+`--build` is only needed on the first run and after changes to code, a Dockerfile or dependencies. Otherwise start the existing images:
+
+```bash
+docker compose up        # add -d to run in the background
+docker compose down      # stop; data volumes are kept (add -v to delete them)
+```
+
 ## Tech Stack
 
 | Layer | Choice |

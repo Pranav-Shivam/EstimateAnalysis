@@ -40,6 +40,16 @@ Most quoting automation optimizes for speed alone, or retrieval alone:
 
 This system is the combination: an agent loop with hard guardrails, a knowledge graph for the relationships vector search can't reach, a calibrated eval gate instead of blind trust, and a dedupe layer built on relationships and dual fingerprints instead of string matching. Each piece alone is available off the shelf. The combination, with memory that compounds instead of resetting every run, is not.
 
+## Run it
+
+With Docker installed:
+
+```bash
+docker compose up --build
+```
+
+Then open http://localhost:5173. The first start sets everything up (database, demo data, knowledge graph) and takes a few minutes; later starts are quick. No API keys are needed for the demo. Details, ports and the manual route are in `docs/new-machine-setup.md`.
+
 ## Tech Stack
 
 | Layer | Choice |

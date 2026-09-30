@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { fireEvent, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { json, mockApi, renderWithProviders } from '../test/render'
@@ -123,5 +123,48 @@ describe('GraphPage', () => {
 
     expect(await screen.findByText('node Widget')).toBeInTheDocument()
     expect(screen.getByText('node Gasket')).toBeInTheDocument()
+  })
+  it('goes back and forward through the steps explored, without refetching', async () => {
+    const schemaCalls = vi.fn(schema)
+    mockApi({
+      'GET /v1/graph/schema': schemaCalls,
+      'GET /v1/graph/nodes': () => json({ nodes: [sku, part], truncated: false }),
+    })
+    renderWithProviders(<GraphPage />, { route: '/graph' })
+    expect(screen.getByRole('button', { name: 'Back' })).toBeDisabled()
+
+    fireEvent.click(await screen.findByText('node SKU (650)'))
+    expect(await screen.findByText('node Widget')).toBeInTheDocument()
+
+    await userEvent.click(screen.getByRole('button', { name: 'Back' }))
+    expect(screen.getByText('node SKU (650)')).toBeInTheDocument()
+    expect(screen.queryByText('node Widget')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Forward' })).toBeEnabled()
+
+    await userEvent.click(screen.getByRole('button', { name: 'Forward' }))
+    expect(screen.getByText('node Widget')).toBeInTheDocument()
+    expect(schemaCalls).toHaveBeenCalledTimes(1)
+  })
+
+  it('shows the path explored and jumps to any earlier step from it', async () => {
+    mockApi({
+      'GET /v1/graph/schema': schema,
+      'GET /v1/graph/nodes': () => json({ nodes: [sku], truncated: false }),
+      'GET /v1/graph/nodes/SKU-1/neighbors': () => json(hood()),
+    })
+    renderWithProviders(<GraphPage />, { route: '/graph' })
+
+    fireEvent.click(await screen.findByText('node SKU (650)'))
+    fireEvent.click(await screen.findByText('node Widget'))
+    expect(await screen.findByText('node Gasket')).toBeInTheDocument()
+
+    const path = within(screen.getByRole('navigation', { name: 'Exploration path' }))
+    expect(path.getByRole('button', { name: 'SKU' })).toBeInTheDocument()
+    expect(path.getByText('Widget')).toBeInTheDocument()
+
+    await userEvent.click(path.getByRole('button', { name: 'Overview' }))
+
+    expect(screen.getByText('node SKU (650)')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Forward' })).toBeEnabled()
   })
 })

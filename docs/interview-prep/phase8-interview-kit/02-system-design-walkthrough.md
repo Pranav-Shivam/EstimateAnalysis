@@ -2,7 +2,7 @@
 
 This is the project told as a worked answer to: "Design a system that turns messy B2B quote-request emails into correct, priced estimates." Module paths are under `backend/app` unless stated. ADRs are in `docs/adr`.
 
-Before the walkthrough, one honest note about scope. Each stage is its own module and its own endpoint. There is no single "run the whole pipeline" trigger in the running app. The seeded demo chains the stages in `backend/scripts/demo/seed.py`, with scripted stand-ins for the three model clients. I say this early so nobody discovers it later.
+Before the walkthrough, one honest note about scope. Each stage is its own module and its own endpoint. There is no single "run the whole pipeline" trigger in the running app. The seeded demo chains the stages in `backend/scripts/demo/seed.py`, with scripted stand-ins for the three model clients. A second script, `backend/scripts/run_live_estimates.py`, chains intake, dedupe and the agent with the real OpenAI models, for a measured run (see file 04). I say this early so nobody discovers it later.
 
 ## The data flow (matches the code)
 
@@ -150,7 +150,7 @@ Use this skeleton. The right column is this project as the example.
 | 11. Learning loop | How does a fix become permanent? | Correction becomes a fact and a graph edge |
 | 12. Failure modes | What happens when a dependency is down or stale? | Fail closed: graph stale means `needs_review` |
 | 13. Observability | How would you debug one bad quote? | Trace per run, spans per tool, metrics on rates |
-| 14. Cost and latency | Where do the tokens go? | Not measured yet. A named gap. |
+| 14. Cost and latency | Where do the tokens go? | Measured once in a script: about 2.5 cents and 13 seconds per quote before the judge. Not yet in the product. |
 | 15. Scale and next steps | What breaks at 100x? | Queue, single-transaction agent runs, regex router (see file 04) |
 
 The habit that makes this land: at each row, say what I built, what I did not, and how I would know.

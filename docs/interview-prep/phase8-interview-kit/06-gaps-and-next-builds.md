@@ -2,18 +2,18 @@
 
 An honest map of this project against eight capability areas an applied AI engineering role covers. Each is marked **Shown**, **Partly**, or **Not shown**, with the file or doc that proves it. For every Partly and Not shown, there is the smallest build that would close it, with an effort estimate.
 
-None of these builds are done. This file only lists them. Effort estimates are my own rough guesses for one person, and they exclude live-API spend, which I would keep under a few dollars each.
+Only one build has been done since this map was first written: the live agent run (areas 2 and 6). Everything else here is only listed. Effort estimates are my own rough guesses for one person, and they exclude live-API spend, which I would keep under a few dollars each.
 
 ## Summary
 
 | Area | Status | One-line reason |
 |---|---|---|
 | Eval engineering | Shown (small scale) | Judge, golden set, kappa, sweep, and release gate all exist and ran live. The set is small and templated. |
-| Agent and loop engineering (LangGraph) | Partly | State machine, limits, and fail-closed behavior are built and tested. Never run live. |
+| Agent and loop engineering (LangGraph) | Shown (small scale) | State machine, limits, and fail-closed behavior are built and tested, and ran live once over 40 emails. One run, no variance data. |
 | Graph and retrieval engineering | Partly | Graph and router are built. Retrieval quality was never measured. |
 | Context and memory | Partly | Graph and correction memory work. Skills, customer facts, and episodic recall are not built. |
 | Observability and tracing | Partly | Spans are coded and tested with fakes. Never used against a real Langfuse. |
-| Latency and cost engineering | Not shown | No token, latency, or cost measurement. No cache. |
+| Latency and cost engineering | Partly | Measured once in a script (tokens, seconds, dollars per stage). Not stored per quote, not on the dashboard, judge excluded. No cache. |
 | Prompt engineering and versioning | Partly | Prompts changed with evidence. No version is stored with outputs. |
 | Fine-tune versus RAG versus prompt | Partly (decision level only) | I have reasoned answers. I ran no comparison. |
 
@@ -39,7 +39,7 @@ None of these builds are done. This file only lists them. Effort estimates are m
 
 ---
 
-## 2. Agent and loop engineering with LangGraph: Partly
+## 2. Agent and loop engineering with LangGraph: Shown (small scale)
 
 **What is shown**
 - State machine with agent, tools, and guardrails nodes and conditional edges: `backend/app/estimate/graph.py`.
@@ -48,12 +48,20 @@ None of these builds are done. This file only lists them. Effort estimates are m
 - Tool-argument validation so a bad argument cannot abort the database transaction: `backend/app/estimate/tools.py`.
 - A scripted agent driving the loop for tests: `backend/tests/app/estimate/fakes.py`, `backend/tests/test_phase4_acceptance.py`.
 
+- A live run over 40 emails (10 each of discontinued swap, missing required part, wrong-category discount, clean) with the real GPT-4o agent, scored against the answer key: 30 correct, 9 sent to review with the right draft, 1 escalated (unknown customer), 0 wrong drafts marked ready. One run, $1.04 by my meter. Script: `backend/scripts/run_live_estimates.py`, tests: `backend/tests/scripts/test_live_run.py`, results: `backend/data/live_run_report.json`. The run happens in one transaction that is rolled back, so the dev database is untouched.
+
 **What is missing**
-- No live run of the GPT-4o agent. Its behavior on real model output is unmeasured.
+- Repeat runs. Intake results moved between my three runs (parts resolved 42, 43, and 44 of 60), so agent results likely move too, and I have no spread.
+- Scoring beyond parts and discounts: quantities are not checked.
+- The judge has not scored those live drafts, so live false-auto-send is unmeasured.
 - No LangGraph checkpointing or human-interrupt use. The human step happens after the run, in the review queue.
 - The agent run holds one database transaction across up to 12 model calls (`../phase3-interview.md`).
+- Intake in front of the agent is weak: the resolver ignores a part number typed in the email (44 of 60 parts resolved, 4 of 10 duplicate pairs found). Fixing it is the highest-value next change.
 
-**Smallest build.** A cost-gated script (dry run by default, `--yes` to spend) that runs intake and the agent live over the 60 emails and scores the outcome against the answer key: status, whether discontinued swaps and required parts were handled, and discount correctness. Report a table of pass rates by scenario type. Effort: about 1 day, live spend well under ten dollars at this size.
+**Smallest builds.**
+1. Fix the resolver to read a part number from the email text, then re-run the script and report before and after. Effort: about half a day, a dollar of spend.
+2. Run the script 3 times and report the spread per scenario type, and add a quantity check. Effort: about half a day, about $3 of spend.
+3. Score the live drafts with the judge and report live false-auto-send. Effort: about half a day.
 
 ---
 
@@ -110,19 +118,23 @@ None of these builds are done. This file only lists them. Effort estimates are m
 
 ---
 
-## 6. Latency and cost engineering: Not shown
+## 6. Latency and cost engineering: Partly
 
 **What is shown**
 - Cost gates for the paid batch jobs: both `embed_skus.py` and `summarize_communities.py` are dry runs by default and print a token estimate before `--yes`: `backend/app/retrieval/vector.py`, `backend/app/retrieval/summarizer.py`.
 - A zero-cost fast path: a `needs_review` draft skips the judge model: `backend/app/judge/service.py`.
 - Summaries cached by content hash, and the restore snapshot so paid output is not paid twice: `backend/data/llm_snapshot.json.gz`.
 
-**What is missing**
-- Any measurement of tokens, dollars, or seconds per quote.
-- The in-process cache ADR-0003 names. There is no cache in the code.
-- Any load test.
+- Measured once: per stage, from the live run. Extraction about 2 seconds and 0.2 cents per email. Agent run median 11 seconds (90th percentile 29, worst 40), about 2.3 cents average (worst about 6 cents), about 4.5 model calls and 7.8 thousand input tokens per run. Source: `backend/data/live_run_report.json`, meter in `backend/scripts/live_run/meter.py`. The seconds include the SDK waiting out a 30,000 tokens-per-minute rate limit, so they overstate a normal run.
 
-**Smallest build.** Capture input and output tokens and wall time per stage (extraction, each agent turn, judge) from the client responses. Store them on the estimate and verdict rows. Add a dashboard panel with median and 95th percentile latency, and cost per quote from a price table in settings. Effort: about 1 day. It needs the live agent run from area 2 to have real numbers.
+**What is missing**
+- Anything in the product. The numbers live in a script report, not on estimate rows, traces, or the dashboard.
+- The judge's cost and latency (it did not run on the live drafts).
+- Prices are from third-party pages, not OpenAI's own (`docs/research/openai-pricing-for-live-run.md`).
+- The in-process cache ADR-0003 names. There is no cache in the code.
+- Any load test, and only 40 runs at one point in time.
+
+**Smallest build.** Capture input and output tokens and wall time per stage inside the app, using the same meter idea, and store them on the estimate and verdict rows. Add a dashboard panel with median and 95th percentile latency and cost per quote. Effort: about 1 day.
 
 ---
 
@@ -158,11 +170,12 @@ None of these builds are done. This file only lists them. Effort estimates are m
 
 ## Order I would build them in
 
-1. Live agent run over the 60 emails (area 2). It unlocks real numbers for areas 5, 6, and 8.
-2. Cost and latency per quote (area 6).
-3. Retrieval precision and recall check (area 3), the most direct answer to "how do you evaluate retrieval".
-4. Prompt hash and calibration binding (area 7), the cheapest and prevents a real failure.
-5. Local Langfuse trace (area 5).
-6. Judge variance and hold-out (area 1).
-7. Episodic recall tool (area 4).
-8. Extraction comparison ADR (area 8).
+1. Fix the intake resolver for typed part numbers and re-run the live script (area 2). It is the biggest measured weakness and the cheapest fix.
+2. Repeat runs for spread, score the live drafts with the judge (areas 2 and 1).
+3. Cost and latency per quote in the product (area 6).
+4. Retrieval precision and recall check (area 3), the most direct answer to "how do you evaluate retrieval".
+5. Prompt hash and calibration binding (area 7), the cheapest and prevents a real failure.
+6. Local Langfuse trace (area 5).
+7. Judge variance and hold-out (area 1).
+8. Episodic recall tool (area 4).
+9. Extraction comparison ADR (area 8).

@@ -38,7 +38,7 @@ Say these four beats in this order. It takes about 40 seconds.
 >
 > Fourth, when a human corrects that fact, it becomes a permanent price, requirement, or contract edge. The next identical quote does not get flagged.
 >
-> It runs on synthetic data, so I am careful about what it proves. It proves the design and the plumbing. It does not prove model quality on real emails.
+> It runs on synthetic data, so I am careful about what it proves. It proves the design and the plumbing. I also ran the real GPT-4o agent over 40 test emails once, for about a dollar. The agent did well. The intake step in front of it was weaker than I expected, and that is my next fix.
 
 That is about 250 words, which is roughly 90 seconds at a relaxed pace.
 
@@ -80,7 +80,7 @@ Use this when the interviewer says "walk me through it". Pause at each heading. 
 
 ### What it does not prove (30 seconds)
 
-> Three limits I want you to hear from me. The data is synthetic. The judge was run live on my golden set, but I have not run the GPT-4o agent live over the emails. The demo uses scripted stand-ins for the model calls, so it proves plumbing, not model judgment. And there is no cost or latency measurement yet. Those are the next things I would build.
+> Four things I want you to hear from me. The data is synthetic. I ran the real GPT-4o intake over all 60 emails and the real agent over 40 of them, once. The agent finished 30 of the 40 correctly, sent 9 more to review with the right draft, and none went out wrong on the checks I scored. But intake resolved the right parts on only 44 of 60 emails, because it ignores a part number typed in the email, and duplicate detection was right on 4 of 10 pairs live. The test that scored 10 of 10 injects the answer key. Third, the seeded demo still uses scripted stand-ins, so it proves plumbing, not model judgment. Fourth, the judge has not scored those live drafts yet. Those are the next things I would build.
 
 ## The lessons from the rebuild (pick one or two)
 
@@ -90,10 +90,12 @@ Use these for beat (d), or when asked "what did you learn".
 2. **A mock proves you call the queue, not that the queue works.** Every task was green with 650 tests. A final review found the worker could not start and nothing created the queue tables. A real smoke test then found a third bug on Windows. Source: `../phase6-interview.md`.
 3. **A calibration gate is only useful if it can fail.** Mine failed on the first real run, which is the reason to have it. Source: `../phase5-interview.md`.
 4. **Measure each layer before optimizing.** A page that "loaded slowly" had a 14 ms API and a 20-second layout. Source: `../phase7-interview.md`.
-5. **A non-goal in a spec is a decision the user must be able to see.** I had quietly dropped the live graph view. Source: `../phase7-interview.md`.
+5. **A test that injects the answer key does not test the step before it.** My dedupe test scored 10 of 10 because it fed in the correct SKU sets. Run end to end with the real model, the same classifier got 4 of 10, because intake failed to resolve the parts. Source: `backend/data/live_run_report.json`.
+6. **A non-goal in a spec is a decision the user must be able to see.** I had quietly dropped the live graph view. Source: `../phase7-interview.md`.
 
 ## What I never say
 
 - No company names, no work metrics, no work outcomes.
 - No claim that the POC has real users, real data, or production traffic.
 - No claim that the demo shows a live model. The seeded demo uses scripted stand-ins.
+- No claim that dedupe works at 10 of 10. That number comes from a test that injects the answer key. Live it was 4 of 10.

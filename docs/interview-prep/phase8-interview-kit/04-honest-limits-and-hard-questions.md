@@ -10,7 +10,11 @@ A senior engineer names the weak spots before being asked. I use this as a short
 
 1. **The data is synthetic.** Everything is generated: 650 SKUs, 125 customers, 60 emails with planted situations. So the system is shown to work on data shaped the way I expect real data to be shaped. It says nothing about real email variety. [`backend/data`, `docs/roadmap.md` Phase 1]
 
-2. **I have not run the GPT-4o agent or extraction live over the emails.** Live paid calls that did happen: embeddings and community summaries (OpenAI, about 20 thousand tokens), and the judge over the golden set (Anthropic). The agent loop and the intake extraction have only run against scripted stand-ins. No doc records a live run, and the roadmap lists a trigger for one as an open input. [`../phase3-interview.md` last section, `docs/roadmap.md` Phase 8]
+2. **The live GPT-4o run was small and single-shot.** On 2026-09-30 I ran real intake over all 60 emails and the real agent over 40 (10 per scenario type: discontinued swap, missing required part, wrong-category discount, clean), once, for $1.04 by my meter. Earlier smoke runs, and the run before I added rate-limit retries, gave slightly different intake numbers, so results move between runs. The judge has not scored those live drafts. The agent scoring checks which parts are on the draft and whether a discount was wrongly applied, not quantities or prices (the guardrails own prices). [`backend/data/live_run_report.json`, `backend/scripts/run_live_estimates.py`]
+
+2b. **Live intake is weaker than the tests suggested.** The right parts were resolved on 44 of 60 emails and the right customer on 51 of 60. Nearly all part misses are emails that type a part number ("Name (SKU-0601)"): the resolver matches names and ignores the number. 9 of 10 missing-required-part emails were affected. Customer misses are mostly emails signed with a first name only. I have not fixed this. [`backend/data/live_run_report.json`, `backend/app/intake/resolution.py`]
+
+2c. **Live dedupe got 4 of 10 pairs; the 10 of 10 test injects the answer key.** The misses come from 2b (empty part sets) and from an unresolved customer on the earlier email, so blocking found no candidate. There were no false merges. [`backend/data/live_run_report.json`, `backend/tests/test_phase2_acceptance.py`]
 
 3. **The seeded demo uses scripted stand-ins, not a live model.** The demo's judge scores are fixed numbers (for example 0.2 for a doubted fact, 0.95 for a trusted one), and every quote's line quantities are 1 even when the email says 4. The stored model name on a verdict still reads `claude-haiku-4-5-20251001`, so I say out loud that the demo scores are scripted. What is real in the demo is everything downstream of the model calls. [`backend/scripts/demo/fakes.py`, screenshot 02]
 
@@ -28,7 +32,7 @@ A senior engineer names the weak spots before being asked. I use this as a short
 
 10. **Contract dates use a fixed constant.** `DATASET_AS_OF = 2024-09-01`, because the synthetic contracts span 2023 to 2027 and only 9 of 125 are active on the real current date. The judge also uses this constant, not each estimate's own as-of date. [`backend/app/estimate/constant.py`, `../phase5-interview.md`]
 
-11. **No cost or latency measurement, and no cache.** ADR-0003 names an in-process `cachetools` cache. There is no such dependency or cache in the code. [`backend/pyproject.toml`, `grep` for cache use]
+11. **Cost and latency were measured once, in a script, not in the product.** They are not stored per quote, not on the dashboard, and exclude the judge. The latency figures include the SDK waiting out rate-limit retries on a 30,000 tokens-per-minute organization limit. Prices come from third-party pages, not OpenAI's own (`docs/research/openai-pricing-for-live-run.md`). ADR-0003 also names an in-process `cachetools` cache. There is no such dependency or cache in the code. [`backend/pyproject.toml`, `grep` for cache use]
 
 12. **Tracing has never touched a hosted service.** Langfuse is a no-op without keys. Tool spans record full results, which would send customer names and discounts to a hosted service once turned on. [`../phase6-interview.md`]
 
@@ -74,8 +78,8 @@ Pointer: `backend/scripts/calibrate_judge.py`, `../phase6-interview.md`.
 
 "Four things. Blocking: only compare requests sharing a customer, site, or contract. Content: a duplicate needs an identical, non-empty SKU set. A revision needs a strict superset with at least 40 percent overlap, so one shared bolt does not link a big order. Default: anything else is distinct, so the failure direction is 'do not merge'. And a verdict is a row and a graph edge, not a delete, so a wrong merge is reversible.
 
-The limits: the 40 percent floor is my choice and was not tuned on data. There is no time dimension, so a legitimate reorder of the same parts looks like a duplicate. And the test data was built from the same logic the classifier checks."
-Pointer: `backend/app/dedupe/fingerprints.py`, `../phase2-interview.md`, story 3.
+The limits: the 40 percent floor is my choice and was not tuned on data. There is no time dimension, so a legitimate reorder of the same parts looks like a duplicate. And the test data was built from the same logic the classifier checks. When I ran it live with the real model in front of it, it got 4 of 10 pairs, but every miss was a missed match, and there were zero false merges. So the safe direction held. The cost was under-merging, caused by intake not resolving part numbers."
+Pointer: `backend/app/dedupe/fingerprints.py`, `../phase2-interview.md`, `backend/data/live_run_report.json`, story 3.
 
 ### 6. What breaks at 100x volume?
 
@@ -96,8 +100,8 @@ Pointer: file 06 (retrieval row), `backend/app/retrieval/router.py`.
 
 ### 8. What is the cost and latency per quote?
 
-"I have not measured it, and I will not invent a number. Here is the structure. A quote is one extraction call, up to 12 agent turns each with tool calls, at most four draft submissions, and one judge call, or zero if the guardrails already rejected the draft. The judge calibration script estimates about 400 tokens per judge call, which is an estimate in the script, not a measurement. What I would do: log tokens and wall time per stage as trace attributes, then show median and 95th percentile on the dashboard."
-Pointer: `backend/app/estimate/constant.py`, file 06 (latency and cost row).
+"I measured it once, in a script, on 2026-09-30. Extraction was about 2 seconds and a fifth of a cent per email. The agent run took a median of 11 seconds, 90th percentile 29, worst 40, and cost about 2.3 cents on average, worst about 6 cents. It averaged about 4.5 model calls and 7.8 thousand input tokens per run. So roughly 2.5 cents per quote, plus the judge, which I did not include. Three caveats. The seconds include the SDK waiting out rate limits, so they overstate a normal run. The prices come from third-party pages. And it is 40 runs, once. Structure: one extraction call, up to 12 agent turns, at most four submissions, and one judge call, or none if the guardrails already rejected the draft. Next I would store tokens and time per stage on each row and show median and 95th percentile on the dashboard."
+Pointer: `backend/data/live_run_report.json`, `backend/scripts/live_run/meter.py`, `docs/research/openai-pricing-for-live-run.md`, file 06.
 
 ### 9. What would you do with real data?
 
@@ -118,5 +122,5 @@ Pointer: `../phase1-interview.md` (review process), `../phase3-interview.md` (ho
 
 ### 12. What is the weakest part, and what would you not trust?
 
-"Model quality on real emails, because the agent has not run live and the demo is scripted. Second, the judge's threshold, because it comes from 29 templated cases. Third, the graph-completion dimension, because the golden set has no case that stresses it. What I do trust: the code-level guardrails and the fail-closed behavior, because those are deterministic and each was attacked by a reviewer, including a NaN bypass and a rebuild race. The right next step is to run the live agent over the 60 emails and measure it against the answer key."
-Pointer: Part A above, file 06.
+"Intake. The live run showed it resolves the right parts on only 44 of 60 emails, because it ignores a part number typed in the email, and that made live duplicate detection 4 of 10. I found that by running the real model, not from my tests. Second, the judge's threshold, because it comes from 29 templated cases, and the judge has not scored the live drafts. Third, the graph-completion dimension, because the golden set has no case that stresses it. What I do trust more: the agent plus guardrails. Over 40 live runs, 30 were correct, 9 went to review with the right draft, 1 escalated because the customer was unknown, and none went out wrong on the checks I scored. That is one run of 40, so it is a first data point, not a claim. The right next step is fixing the resolver and re-running."
+Pointer: Part A above (2, 2b, 2c), `backend/data/live_run_report.json`, file 06.

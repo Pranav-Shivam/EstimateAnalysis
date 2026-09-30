@@ -60,11 +60,13 @@ A note on voice. This project was built with AI coding assistants doing implemen
 - The 40 percent floor exists so a request for one bolt does not become a "revision" of an unrelated fifty-item order just because that bolt appears in both.
 - Two empty sets must never count as identical. If SKU resolution failed for two requests, both sets are empty, and a naive overlap calculation would call them duplicates. The code treats empty as never matching.
 
-**Result.** An acceptance test runs the real classifier over the 60 synthetic emails against their planted answer key (5 duplicate pairs, 5 revision pairs, the rest distinct) and every verdict matches. Source: `../phase2-interview.md`. I re-ran the suite on 2026-09-30. That test passes on a clean database and fails on the seeded dev database, because it counts absolute rows. That is documented in `docs/new-machine-setup.md`.
+**Result.** An acceptance test runs the real classifier over the 60 synthetic emails against their planted answer key (5 duplicate pairs, 5 revision pairs, the rest distinct) and every verdict matches. Source: `../phase2-interview.md`. That test passes on a clean database and fails on the seeded dev database, because it counts absolute rows (`docs/new-machine-setup.md`).
+
+**The result I trust more.** That test inserts the correct SKU sets directly, so it never runs the model. On 2026-09-30 I ran the real GPT-4o intake in front of the same classifier, on the same 10 pairs. Only 4 pairs came out right (`backend/data/live_run_report.json`, one run; earlier smoke runs gave 3 and 5, so the number moves). The classifier was not the problem. Intake failed to resolve the parts: it looks names up but ignores a part number typed in the email, such as "Aftermarket Belt 20x25 (SKU-0601)", so the SKU set came out empty and the pair looked distinct. Two revision pairs also got no verdict at all, because the earlier email's customer was never resolved and blocking found no shared customer. There were zero false merges: every miss was a missed match, in the safe direction.
 
 **What I say about the style fingerprint.** It is computed and stored, and its similarity is saved on each verdict, but it does not change the label today. Only the content fingerprint decides. I say that up front rather than let the two-fingerprint claim sound bigger than it is.
 
-**What I would do differently.** Use the style fingerprint for a real purpose, such as flagging near-identical text as a resend, and add a time dimension. Right now a genuine reorder weeks later of the same parts looks like a duplicate, because requests carry no meaningful timestamp in the dedupe logic.
+**What I would do differently.** Run the live check when I built the test, not at the end. Fix the resolver to read a part number typed in the email, then re-run and compare. Use the style fingerprint for a real purpose, such as flagging near-identical text as a resend, and add a time dimension. Right now a genuine reorder weeks later of the same parts looks like a duplicate, because requests carry no meaningful timestamp in the dedupe logic.
 
 ---
 

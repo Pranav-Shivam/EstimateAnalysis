@@ -45,5 +45,6 @@ The per-phase docs (`../phase1-interview.md` to `../phase7-interview.md`) are th
 
 - Backend tests: 747 collected. On the dev database that already holds the seeded demo, 745 pass and 2 fail (`test_phase2_acceptance` and `test_phase7_acceptance`, which count absolute rows). Both are documented in `docs/new-machine-setup.md`. Run on 2026-09-30.
 - Frontend tests: 81 pass (Vitest). Run on 2026-09-30.
+- Live run: `backend/scripts/run_live_estimates.py` ran the real GPT-4o intake over all 60 emails and the real agent over 40, once, on 2026-09-30, for $1.04 by its own meter. Results are in `backend/data/live_run_report.json`. Dollar figures use third-party prices (`docs/research/openai-pricing-for-live-run.md`).
 - Screenshots in `images/` were taken from the running app on 2026-09-30 with headless Chrome against the seeded demo data.
 - Calibration numbers come from `backend/data/judge_calibration.json` and `../phase5-interview.md`.

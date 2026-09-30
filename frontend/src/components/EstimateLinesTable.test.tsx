@@ -19,8 +19,9 @@ describe('EstimateLinesTable', () => {
   it('shows each line with its price source, line total and the totals', () => {
     render(<EstimateLinesTable estimate={estimate()} skus={skus} />)
 
-    expect(screen.getByText('SKU-1 (Widget)')).toBeInTheDocument()
-    expect(screen.getByText('predicted')).toBeInTheDocument()
+    expect(screen.getByText('Widget')).toBeInTheDocument()
+    expect(screen.getByText('SKU-1')).toBeInTheDocument()
+    expect(screen.getByText('Predicted')).toBeInTheDocument()
     expect(screen.getAllByText('$40.00').length).toBeGreaterThan(0)
     expect(screen.getByText('Net total')).toBeInTheDocument()
   })

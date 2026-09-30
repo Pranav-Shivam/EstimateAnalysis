@@ -29,7 +29,7 @@ describe('QueuePage', () => {
 
     renderWithProviders(<QueuePage />)
 
-    expect(await screen.findByText('The queue is clear.')).toBeInTheDocument()
+    expect(await screen.findByText('The queue is clear. Nothing needs a reviewer right now.')).toBeInTheDocument()
   })
 
   it('asks for resolved items when the filter changes and shows their outcome', async () => {
@@ -46,7 +46,7 @@ describe('QueuePage', () => {
     await userEvent.click(await screen.findByText('Resolved'))
 
     expect(await screen.findByText('an old fact')).toBeInTheDocument()
-    expect(screen.getByText('corrected')).toBeInTheDocument()
+    expect(screen.getByText('Corrected')).toBeInTheDocument()
   })
 
   it('shows the backend detail when the request fails', async () => {

@@ -4,8 +4,8 @@ import { dateTime, errorMessage, money, percent } from './format'
 describe('money', () => {
   it('formats dollars and marks a missing amount', () => {
     expect(money(1234.5)).toBe('$1,234.50')
-    expect(money(null)).toBe('n/a')
-    expect(money(undefined)).toBe('n/a')
+    expect(money(null)).toBe('Not recorded')
+    expect(money(undefined)).toBe('Not recorded')
   })
 })
 

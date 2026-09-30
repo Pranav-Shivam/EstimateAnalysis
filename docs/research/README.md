@@ -10,5 +10,6 @@ Findings from web research done for this project, saved here so they don't need 
 | [llm-judge-calibration.md](llm-judge-calibration.md) | How to calibrate an LLM-as-judge confidence threshold against human reviewer agreement (Cohen's kappa bands, golden-set sizing) |
 | [pricing-model-and-guardrails.md](pricing-model-and-guardrails.md) | CPQ contracted-pricing shape (list price + scoped discount + effective dates), agent gate/stopping-condition guidance, and the gap: no source found for price prediction of SKUs with no history |
 | [frontend-stack-versions.md](frontend-stack-versions.md) | Verified latest versions of the Phase 7 frontend stack (React, Vite, Tailwind, antd, TypeScript, testing tools) and the documented Tailwind 4 + Ant Design 6 cascade-layer setup |
+| [review-ui-ux.md](review-ui-ux.md) | Reviewer app UX: human-in-the-loop queue design, confidence display, data table alignment and row patterns, antd 6 theme tokens, rendering LLM markdown safely |
 
 Each file records: what was verified by directly fetching the source, what came from search only (secondary, unverified), and what came back blocked (403/429) so it isn't retried needlessly.

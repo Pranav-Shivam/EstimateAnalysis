@@ -1,7 +1,7 @@
 const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
 
 export function money(value: number | null | undefined): string {
-  return value === null || value === undefined ? 'n/a' : currency.format(value)
+  return value === null || value === undefined ? 'Not recorded' : currency.format(value)
 }
 
 export function percent(value: number | null): string {

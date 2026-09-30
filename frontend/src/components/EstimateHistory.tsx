@@ -1,33 +1,58 @@
-import { Alert, Empty, Tabs, Tag } from 'antd'
+import { Alert, Empty, Tabs } from 'antd'
+import type { ReactNode } from 'react'
 import type { QuoteEstimate, QuoteSkuInfo } from '../api/types'
 import { dateTime } from '../lib/format'
+import { estimateStatus } from '../lib/labels'
 import { EstimateLinesTable } from './EstimateLinesTable'
 import { FlaggedFactCard } from './FlaggedFactCard'
 import { JudgePanel } from './JudgePanel'
+import { LabelTag } from './LabelTag'
 
 interface Props {
   estimates: QuoteEstimate[]
   skus: Record<string, QuoteSkuInfo>
 }
 
+function Section({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <section className="flex flex-col gap-3">
+      <h2 className="m-0 text-xs font-semibold tracking-wide text-slate-500 uppercase">{title}</h2>
+      {children}
+    </section>
+  )
+}
+
 function EstimatePanel({ estimate, skus }: { estimate: QuoteEstimate; skus: Record<string, QuoteSkuInfo> }) {
   const autoSent = estimate.judge_verdict?.trusted === true && estimate.review_items.length === 0
+  const submissions = `${estimate.iterations} submission${estimate.iterations === 1 ? '' : 's'}`
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex items-center gap-3">
-        <Tag color={estimate.status === 'ready' ? 'green' : 'red'}>{estimate.status}</Tag>
-        <span className="text-gray-500">
-          {estimate.iterations} submission(s), created {dateTime(estimate.created_at)}
+    <div className="flex flex-col gap-8">
+      <div className="flex flex-wrap items-center gap-3">
+        <LabelTag label={estimateStatus(estimate.status)} />
+        <span className="text-slate-500">
+          {submissions} to the guardrails, created {dateTime(estimate.created_at)}
         </span>
       </div>
       {autoSent && (
-        <Alert type="success" title="Auto-sent: the judge trusted this estimate, so no reviewer action was needed." />
+        <Alert
+          type="success"
+          showIcon
+          title="Auto-sent: the judge trusted this estimate, so no reviewer action was needed."
+        />
       )}
-      <EstimateLinesTable estimate={estimate} skus={skus} />
-      <JudgePanel verdict={estimate.judge_verdict} />
-      {estimate.review_items.map((item) => (
-        <FlaggedFactCard key={item.id} item={item} skus={skus} />
-      ))}
+      {estimate.review_items.length > 0 && (
+        <Section title="Needs your review">
+          {estimate.review_items.map((item) => (
+            <FlaggedFactCard key={item.id} item={item} skus={skus} />
+          ))}
+        </Section>
+      )}
+      <Section title="Line items">
+        <EstimateLinesTable estimate={estimate} skus={skus} />
+      </Section>
+      <Section title="Judge">
+        <JudgePanel verdict={estimate.judge_verdict} />
+      </Section>
     </div>
   )
 }

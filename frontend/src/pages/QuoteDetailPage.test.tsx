@@ -30,7 +30,7 @@ describe('QuoteDetailPage', () => {
     renderDetail()
 
     expect(await screen.findByText('Hi, please quote two Widgets.')).toBeInTheDocument()
-    expect(screen.getByText('DUPLICATE_OF')).toBeInTheDocument()
+    expect(screen.getAllByText('Duplicate').length).toBe(2)
     expect(screen.getByText(/the price is a peer-median prediction/)).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Approve as is' })).toBeInTheDocument()
   })

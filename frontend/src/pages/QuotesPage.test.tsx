@@ -24,7 +24,8 @@ describe('QuotesPage', () => {
     expect(await screen.findByRole('link', { name: 'sc-0001' })).toHaveAttribute('href', '/quotes/q1')
     expect(screen.getByText('Auto-send')).toBeInTheDocument()
     expect(screen.getByText('Not judged')).toBeInTheDocument()
-    expect(screen.getByText('duplicate')).toBeInTheDocument()
-    expect(screen.getByText('none')).toBeInTheDocument()
+    // One is the column header, the other the tag on the duplicate row.
+    expect(screen.getAllByText('Duplicate')).toHaveLength(2)
+    expect(screen.getByText('No estimate')).toBeInTheDocument()
   })
 })

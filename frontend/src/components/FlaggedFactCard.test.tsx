@@ -160,7 +160,7 @@ describe('FlaggedFactCard read-only states', () => {
     renderWithProviders(<FlaggedFactCard item={item} skus={skus} />)
 
     expect(screen.getByText('Applied to the reference data.')).toBeInTheDocument()
-    expect(screen.getByText(/corrected_unit_price/)).toBeInTheDocument()
+    expect(screen.getByText('Corrected unit price')).toBeInTheDocument()
     expect(screen.queryByRole('button')).not.toBeInTheDocument()
   })
 

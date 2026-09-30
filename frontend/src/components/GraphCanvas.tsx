@@ -74,5 +74,5 @@ export function GraphCanvas({ graph, selectedId, onExpand }: Props) {
     if (selectedId) instance.getElementById(selectedId).select()
   }, [graph, selectedId])
 
-  return <div ref={container} className="h-[560px] w-full rounded border border-gray-200" data-testid="graph-canvas" />
+  return <div ref={container} className="h-[560px] w-full rounded-lg border border-slate-200 bg-white" data-testid="graph-canvas" />
 }

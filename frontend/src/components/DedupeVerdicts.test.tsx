@@ -23,8 +23,8 @@ describe('DedupeVerdicts', () => {
     )
 
     expect(screen.getByRole('link', { name: 'Open earlier request' })).toHaveAttribute('href', '/quotes/q-other')
-    expect(screen.getByText('DUPLICATE_OF')).toBeInTheDocument()
+    expect(screen.getByText('Duplicate')).toBeInTheDocument()
     expect(screen.getByText('100.0%')).toBeInTheDocument()
-    expect(screen.getByText('identical_sku_set')).toBeInTheDocument()
+    expect(screen.getByText('Same item list')).toBeInTheDocument()
   })
 })

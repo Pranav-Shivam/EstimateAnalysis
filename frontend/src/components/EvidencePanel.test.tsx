@@ -17,7 +17,7 @@ describe('EvidencePanel', () => {
     )
 
     expect(screen.getByText('SKU-1 (Widget)')).toBeInTheDocument()
-    expect(screen.getByText('predicted')).toBeInTheDocument()
+    expect(screen.getByText('Predicted')).toBeInTheDocument()
     expect(screen.getByText('$20.00')).toBeInTheDocument()
     expect(screen.getByText('$10.00 to $30.00')).toBeInTheDocument()
   })

@@ -20,6 +20,9 @@ function RateCard({ title, rate, detail, definition }: RateCardProps) {
   )
 }
 
+// GraphMeta holds the graph's own build fingerprint; it is not data a reviewer cares about.
+const withoutBookkeeping = ({ GraphMeta: _meta, ...counts }: Record<string, number>) => counts
+
 export function DashboardPage() {
   const { data, error, isLoading } = useMetrics()
   const graphStats = useGraphStats()
@@ -59,7 +62,7 @@ export function DashboardPage() {
           color="#fa541c"
         />
         {graphStats.data ? (
-          <CountBarChart title="Graph nodes by type" counts={graphStats.data.node_counts} emptyText="Graph is empty" />
+          <CountBarChart title="Graph nodes by type" counts={withoutBookkeeping(graphStats.data.node_counts)} emptyText="Graph is empty" />
         ) : (
           <Alert type="info" title={graphStats.error?.message ?? 'Loading graph counts'} />
         )}

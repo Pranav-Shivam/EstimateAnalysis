@@ -223,3 +223,70 @@ def fetch_local_paths(client: GraphClient, ns: str, node_id: str, hops: int) -> 
         f"ORDER BY length(p), m.id LIMIT {LOCAL_MAX_PATHS}",
         key=node_key(ns, node_id), ns=ns,
     )
+
+
+def search_nodes(client: GraphClient, ns: str, text: str, limit: int) -> list[dict]:
+    return client.read(
+        "MATCH (n {ns: $ns}) WHERE NOT n:GraphMeta "
+        "AND (toLower(n.id) CONTAINS toLower($text) OR toLower(coalesce(n.name, '')) CONTAINS toLower($text)) "
+        "RETURN n.id AS id, labels(n)[0] AS label, coalesce(n.name, n.id) AS name, n.community_id AS community "
+        "ORDER BY n.id LIMIT $limit",
+        ns=ns, text=text, limit=limit,
+    )
+
+
+def fetch_neighborhood(client: GraphClient, ns: str, node_id: str, limit: int) -> dict | None:
+    """The node and its one-hop neighbors with the edges to them: up to limit + 1 rows so a caller can tell the
+    result was cut. None when the node is absent."""
+    key = node_key(ns, node_id)
+    center = client.read(
+        "MATCH (n {key: $key}) RETURN n.id AS id, labels(n)[0] AS label, coalesce(n.name, n.id) AS name, "
+        "n.community_id AS community",
+        key=key,
+    )
+    if not center:
+        return None
+    rows = client.read(
+        "MATCH (c {key: $key})-[r]-(m) WHERE m.ns = $ns AND NOT m:GraphMeta "
+        "RETURN m.id AS id, labels(m)[0] AS label, coalesce(m.name, m.id) AS name, m.community_id AS community, "
+        "type(r) AS type, startNode(r).id AS source, endNode(r).id AS target LIMIT $fetch",
+        key=key, ns=ns, fetch=limit + 1,
+    )
+    return {"center": center[0], "rows": rows}
+
+
+def count_edges_between_labels(client: GraphClient, ns: str) -> list[dict]:
+    return client.read(
+        "MATCH (a {ns: $ns})-[r]->(b {ns: $ns}) WHERE NOT a:GraphMeta AND NOT b:GraphMeta "
+        "RETURN labels(a)[0] AS source, labels(b)[0] AS target, type(r) AS type, count(r) AS count "
+        "ORDER BY source, type, target",
+        ns=ns,
+    )
+
+
+def list_nodes_by_label(client: GraphClient, ns: str, label: str, limit: int) -> list[dict]:
+    """A label's most connected nodes first, so the ones worth exploring are the ones shown."""
+    _require(label, NODE_LABELS, "label")
+    return client.read(
+        f"MATCH (n:{label} {{ns: $ns}}) "
+        "RETURN n.id AS id, labels(n)[0] AS label, coalesce(n.name, n.id) AS name, n.community_id AS community "
+        "ORDER BY COUNT { (n)--() } DESC, n.id LIMIT $limit",
+        ns=ns, limit=limit,
+    )
+
+
+def fetch_all_nodes(client: GraphClient, ns: str) -> list[dict]:
+    return client.read(
+        "MATCH (n {ns: $ns}) WHERE NOT n:GraphMeta "
+        "RETURN n.id AS id, labels(n)[0] AS label, coalesce(n.name, n.id) AS name, n.community_id AS community "
+        "ORDER BY n.id",
+        ns=ns,
+    )
+
+
+def fetch_all_edges(client: GraphClient, ns: str) -> list[dict]:
+    return client.read(
+        "MATCH (a {ns: $ns})-[r]->(b {ns: $ns}) WHERE NOT a:GraphMeta AND NOT b:GraphMeta "
+        "RETURN a.id AS source, b.id AS target, type(r) AS type",
+        ns=ns,
+    )

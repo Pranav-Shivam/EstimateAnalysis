@@ -3,7 +3,7 @@ import uuid
 from app.estimate.repository import save_estimate_draft
 from app.intake.repository import save_quote_request
 from app.judge.models import EvalCaseRow
-from app.judge.repository import get_judge_verdict, list_open_review_items, save_judge_verdict, save_review_item
+from app.judge.repository import get_judge_verdict, list_review_items, save_judge_verdict, save_review_item
 from tests.app.estimate.seed import seed_world
 
 
@@ -47,7 +47,7 @@ def test_review_item_appears_in_open_list(db_session):
         fact="missing required part", evidence={"missing": ["SKU-X"]}, line_index=0,
     )
 
-    open_ids = [row.id for row in list_open_review_items(db_session)]
+    open_ids = [row.id for row in list_review_items(db_session, "open")]
     assert item.id in open_ids
 
 

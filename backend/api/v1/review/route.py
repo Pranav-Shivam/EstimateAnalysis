@@ -1,4 +1,5 @@
 import uuid
+from typing import Literal
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
@@ -6,7 +7,8 @@ from sqlalchemy.orm import Session
 from api.v1.review.request import ResolveReviewItemRequest
 from api.v1.review.response import ResolveReviewItemResponse, ReviewItemListResponse
 from app.consolidation.tasks import consolidate_review_item_task
-from app.judge.repository import list_open_review_items
+from app.estimate.repository import quote_request_ids_for_estimates
+from app.judge.repository import list_review_items
 from app.judge.schemas import InvalidCorrection
 from app.judge.service import (
     ReviewItemAlreadyResolved, ReviewItemNotFound, ReviewItemNotResolvable, resolve_review_item,
@@ -17,13 +19,19 @@ router = APIRouter(prefix="/v1/review", tags=["review"])
 
 
 @router.get("", response_model=list[ReviewItemListResponse])
-def list_review_items(session: Session = Depends(get_session)) -> list[ReviewItemListResponse]:
+def list_items(
+    status: Literal["open", "resolved", "all"] = "open", session: Session = Depends(get_session),
+) -> list[ReviewItemListResponse]:
+    items = list_review_items(session, status)
+    quote_request_ids = quote_request_ids_for_estimates(session, [item.estimate_id for item in items])
     return [
         ReviewItemListResponse(
-            id=item.id, estimate_id=item.estimate_id, dimension=item.dimension, fact=item.fact,
-            evidence=item.evidence, line_index=item.line_index, status=item.status, created_at=item.created_at,
+            id=item.id, estimate_id=item.estimate_id, quote_request_id=quote_request_ids[item.estimate_id],
+            dimension=item.dimension, fact=item.fact, evidence=item.evidence, line_index=item.line_index,
+            status=item.status, outcome=item.outcome, correction=item.correction, resolved_at=item.resolved_at,
+            created_at=item.created_at,
         )
-        for item in list_open_review_items(session)
+        for item in items
     ]
 
 

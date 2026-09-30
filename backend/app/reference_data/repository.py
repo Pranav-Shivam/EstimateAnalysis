@@ -223,3 +223,9 @@ def reference_fingerprint(session: Session) -> str:
             digest.update(repr(tuple(row)).encode("utf-8"))
         digest.update(b"|")
     return digest.hexdigest()
+
+
+def skus_by_ids(session: Session, sku_ids: set[str]) -> list[Sku]:
+    if not sku_ids:
+        return []
+    return list(session.scalars(select(Sku).where(Sku.sku_id.in_(sku_ids))))

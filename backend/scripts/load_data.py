@@ -96,27 +96,32 @@ def load_structure(session, structure: dict) -> None:
         )
 
 
-def run(data_dir: Path = DATA_DIR) -> None:
+def load_all(session, data_dir: Path = DATA_DIR) -> str:
     catalog = json.loads((data_dir / "catalog.json").read_text(encoding="utf-8"))
     customers = json.loads((data_dir / "customers.json").read_text(encoding="utf-8"))
     pricing = json.loads((data_dir / "pricing.json").read_text(encoding="utf-8"))
     structure = json.loads((data_dir / "structure.json").read_text(encoding="utf-8"))
 
+    load_catalog(session, catalog)
+    load_customers(session, customers)
+    load_pricing(session, pricing)
+    load_structure(session, structure)
+    return (
+        f"loaded {len(catalog)} SKUs, {len(customers)} customers, "
+        f"{len(pricing['history'])} price history rows, "
+        f"{len(structure['families'])} families, {len(structure['projects'])} projects"
+    )
+
+
+def run(data_dir: Path = DATA_DIR) -> None:
     settings = Settings()
     engine = make_engine(settings.database_url)
     session = make_session_factory(engine)()
     try:
-        load_catalog(session, catalog)
-        load_customers(session, customers)
-        load_pricing(session, pricing)
-        load_structure(session, structure)
+        summary = load_all(session, data_dir)
         session.commit()
         redacted_url = re.sub(r"//([^:/@]+):[^@]*@", r"//\1:***@", settings.database_url)
-        print(
-            f"loaded {len(catalog)} SKUs, {len(customers)} customers, "
-            f"{len(pricing['history'])} price history rows, "
-            f"{len(structure['families'])} families, {len(structure['projects'])} projects into {redacted_url}"
-        )
+        print(f"{summary} into {redacted_url}")
     finally:
         session.close()
 

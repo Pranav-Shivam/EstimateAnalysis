@@ -36,3 +36,12 @@ def previous_estimate_draft(session: Session, row: EstimateDraftRow) -> Estimate
         .order_by(EstimateDraftRow.created_at.desc())
         .limit(1)
     ).first()
+
+
+def quote_request_ids_for_estimates(session: Session, estimate_ids: list[uuid.UUID]) -> dict[uuid.UUID, uuid.UUID]:
+    if not estimate_ids:
+        return {}
+    rows = session.execute(
+        select(EstimateDraftRow.id, EstimateDraftRow.quote_request_id).where(EstimateDraftRow.id.in_(estimate_ids))
+    )
+    return {estimate_id: quote_request_id for estimate_id, quote_request_id in rows}

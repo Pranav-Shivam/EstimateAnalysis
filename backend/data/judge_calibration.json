@@ -1,0 +1,8 @@
+{
+  "threshold": 0.85,
+  "kappa": 1.0,
+  "golden_set_size": 32,
+  "eval_case_count": 0,
+  "false_auto_send_rate": 0.0,
+  "computed_at": "2026-09-30"
+}

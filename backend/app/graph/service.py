@@ -8,13 +8,16 @@ from sqlalchemy.orm import Session
 from app.dedupe.repository import all_verdict_request_ids, verdicts_for_request
 from app.estimate.models import EstimateDraftRow
 from app.estimate.repository import all_estimate_draft_ids, get_estimate_draft, previous_estimate_draft
-from app.graph.constant import LOCAL_MAX_HOPS, LOCAL_MAX_NODES, VARIANT_MIN_JACCARD
+from app.graph.constant import (
+    LABEL_LIST_LIMIT, LOCAL_MAX_HOPS, LOCAL_MAX_NODES, NEIGHBOR_LIMIT, SEARCH_LIMIT, VARIANT_MIN_JACCARD,
+)
 from app.graph.helper import build_community_stats, match_site
 from app.graph.lock import try_lock_rebuild, unlock_rebuild
 from app.graph.repository import (
-    advance_fingerprint, clear_communities, count_edges_by_type, count_nodes_by_label, drop_namespace, ensure_constraints,
-    fetch_community_members, fetch_local_paths, fetch_node, merge_edges, merge_nodes, replace_price_variance,
-    run_leiden, write_communities,
+    advance_fingerprint, clear_communities, count_edges_between_labels, count_edges_by_type, count_nodes_by_label,
+    drop_namespace, ensure_constraints, fetch_all_edges, fetch_all_nodes, list_nodes_by_label,
+    fetch_community_members, fetch_local_paths, fetch_neighborhood, fetch_node, merge_edges, merge_nodes,
+    replace_price_variance, run_leiden, search_nodes, write_communities,
 )
 from app.graph.schemas import CommunityRunSummary, CommunityStats, LocalResult, RebuildSummary
 from app.intake.models import QuoteRequestRow
@@ -313,3 +316,42 @@ def local_query(client: GraphClient, ns: str, node_id: str, hops: int = LOCAL_MA
         for edge in row["edges"]:
             edges[(edge["source"], edge["type"], edge["target"])] = edge
     return LocalResult(center=node_id, nodes=list(nodes.values()), edges=list(edges.values()), truncated=truncated)
+
+
+class GraphNodeNotFound(Exception):
+    pass
+
+
+def search(client: GraphClient, ns: str, text: str) -> list[dict]:
+    return search_nodes(client, ns, text.strip(), SEARCH_LIMIT)
+
+
+def neighborhood(client: GraphClient, ns: str, node_id: str) -> dict:
+    found = fetch_neighborhood(client, ns, node_id, NEIGHBOR_LIMIT)
+    if found is None:
+        raise GraphNodeNotFound(node_id)
+    rows = found["rows"][:NEIGHBOR_LIMIT]
+    nodes = {r["id"]: {key: r[key] for key in ("id", "label", "name", "community")} for r in rows}
+    edges = [{"source": r["source"], "target": r["target"], "type": r["type"]} for r in rows]
+    return {
+        "center": found["center"], "nodes": list(nodes.values()), "edges": edges,
+        "truncated": len(found["rows"]) > NEIGHBOR_LIMIT,
+    }
+
+
+def schema_stats(client: GraphClient, ns: str) -> dict:
+    return {"node_counts": count_nodes_by_label(client, ns), "edge_counts": count_edges_by_type(client, ns)}
+
+
+def schema_overview(client: GraphClient, ns: str) -> dict:
+    counts = {label: n for label, n in count_nodes_by_label(client, ns).items() if label != "GraphMeta"}
+    return {"node_counts": counts, "edges": count_edges_between_labels(client, ns)}
+
+
+def nodes_of_label(client: GraphClient, ns: str, label: str) -> dict:
+    rows = list_nodes_by_label(client, ns, label, LABEL_LIST_LIMIT + 1)
+    return {"nodes": rows[:LABEL_LIST_LIMIT], "truncated": len(rows) > LABEL_LIST_LIMIT}
+
+
+def full_graph(client: GraphClient, ns: str) -> dict:
+    return {"nodes": fetch_all_nodes(client, ns), "edges": fetch_all_edges(client, ns)}

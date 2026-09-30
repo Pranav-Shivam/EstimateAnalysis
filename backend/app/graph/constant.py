@@ -24,3 +24,8 @@ HUB_LABELS = ("PricingCategory", "ProductFamily")
 REBUILD_LOCK_CLASSID = 928374
 MAX_EXAMPLE_SKUS = 5
 MAX_MEMBER_NAMES = 30
+# The explorer returns at most this many neighbors of a node; a hub with more is reported as truncated.
+NEIGHBOR_LIMIT = 60
+SEARCH_LIMIT = 15
+# One label listed in the explorer returns at most this many nodes, most connected first.
+LABEL_LIST_LIMIT = 60

@@ -1,4 +1,5 @@
 import uuid
+from typing import Literal
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
@@ -37,14 +38,13 @@ def get_judge_verdict(session: Session, verdict_id: uuid.UUID) -> JudgeVerdictRo
     return session.get(JudgeVerdictRow, verdict_id)
 
 
-def list_open_review_items(session: Session) -> list[ReviewItemRow]:
-    return list(
-        session.scalars(
-            select(ReviewItemRow)
-            .where(ReviewItemRow.status == "open")
-            .order_by(ReviewItemRow.created_at, ReviewItemRow.id)
-        )
-    )
+def list_review_items(session: Session, status: Literal["open", "resolved", "all"] = "open") -> list[ReviewItemRow]:
+    statement = select(ReviewItemRow).order_by(ReviewItemRow.created_at, ReviewItemRow.id)
+    if status == "open":
+        statement = statement.where(ReviewItemRow.status == "open")
+    elif status == "resolved":
+        statement = statement.where(ReviewItemRow.status != "open")
+    return list(session.scalars(statement))
 
 
 def lock_review_item(session: Session, review_item_id: uuid.UUID) -> ReviewItemRow | None:

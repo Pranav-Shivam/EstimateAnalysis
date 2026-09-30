@@ -70,15 +70,39 @@ Say these plainly. There is no UI to trigger the pipeline, because that needs pa
 - Rates: auto-send = trusted verdicts / all verdicts; correction = corrected items / resolved items; duplicate = requests with a `DUPLICATE_OF` verdict / requests with any dedupe verdict. A rate is null, never 0, when its denominator is 0, and the dashboard says "no data yet".
 - Seed: `scripts/seed_demo.py` (dry run by default, `--yes` writes, `--replay` re-runs resolved quotes). Roles: clean x2, discontinued, price gap, graph gap, contract gap, duplicate pair, revision pair, blocked (guardrail).
 - Frontend: React 19.3, Vite 8, Tailwind 4.3, antd 6.6, TanStack Query 5, react-router 8, Vitest 5; TypeScript pinned to 5.9.3.
-- Tests: 730 backend, 63 frontend, up from 689 backend before this phase.
+- Tests at the end of the phase (after the graph explorer): 747 backend on a fresh database, 81 frontend; 689 backend before the phase.
 - Observed in a browser: queue with 4 flags, price detail with evidence, client-side price validation, guardrail read-only, three corrections, replay, two-estimate quote detail, dashboard rates.
 - Known gaps: no pipeline-trigger UI, guardrail items read-only, evidence is a stored snapshot, scripted judge, no auth, deferred minors.
 
-## Addendum: graph explorer and dashboard charts
+## Addendum: the graph explorer, dashboard charts and moving to another machine
 
-- Why it exists: Phase 7 first showed graph evidence only as text from the judge's stored snapshot. A reviewer could not see the relationships that make the graph worth having, so `/graph` renders the live Neo4j neighborhood.
-- How it works: `GET /v1/graph/search`, `/v1/graph/nodes/{id}/neighbors` and `/v1/graph/stats`. Each click expands one hop, merged client-side into keyed maps so re-expanding never duplicates. Cytoscape draws it, colored by node label, with the edge type printed on each edge.
-- Design choice worth defending: neighbors are capped at 60 and the response says `truncated`. A category hub has hundreds of members; returning them all would make the picture unreadable and the query slow, and silently cutting would mislead.
-- Dashboard: bar charts of flags per dimension (a new `flags_by_dimension` count on `/v1/metrics`) and graph node and edge counts by type from Neo4j.
-- Tests: 737 backend passing on a fresh database, 76 frontend. Two backend acceptance tests (phase 2 and phase 7) count absolute rows, so they fail on a database that already holds the seeded demo; this is the known "absolute totals" minor.
-- Not verified in a browser by me: the canvas layout itself. The API, types, build and component logic are tested; the visual layout needs a look.
+### The first version showed graph evidence as text. Why was that wrong, and how did you find out?
+
+The phase's own spec had a line, "evidence is a stored snapshot, not a live graph view", which quietly dropped the thing that makes a knowledge graph worth building: being able to see and walk the relationships. I found out when the owner ran the app and asked where the graph was. The honest answer was that I had scoped it out while planning and not flagged it as a loss. The lesson I would say in an interview: a "non-goal" in a spec is a decision the user has to be able to see, so I now call out any feature the roadmap promised that a spec defers.
+
+### How is the graph explorer organised, and why not just draw everything?
+
+Levels. The graph has 1712 nodes and 2506 edges, which drawn at once is an unreadable hairball. So the page opens on the schema map (one circle per node type, one arrow per relationship type, with counts), a click on a type loads its 60 most connected nodes, and a click on any node adds its neighbors one hop at a time. A separate button draws everything for people who want the whole picture, with names hidden at that size. Neighbor lists are capped at 60 and the response carries a `truncated` flag, because a category hub has hundreds of members and silently cutting would mislead.
+
+### You reported "too slow to load". What was actually slow?
+
+Not what it looked like. The API answered in 14 ms and the page itself rendered in about 1.4 seconds. I timed the layout on the real full graph in Node: Cytoscape's built-in `cose` layout took 20.5 seconds for 1712 nodes, freezing the tab. I tried fCoSE, which did the same graph in 0.2 seconds at draft quality (5 seconds at full quality), and switched to it. The general point: measure each layer separately before optimizing, and time the suspected culprit on real data instead of guessing.
+
+### Two more things a screenshot caught that no test could
+
+I could not click in headless Chrome, but I could load pages and look. A small graph was fitted to the box and zoomed until its labels filled the screen, so I capped the zoom. Every click re-randomised the layout, which would scramble the picture as you hop, so expansion now keeps existing positions. The dashboard's edge chart drew only every other label because the axis skipped what it could not fit, and the bars were caught mid-animation. All of that passed 81 tests, because tests check behaviour, not appearance.
+
+### How would this run on another machine without paying the LLM providers again?
+
+Everything that cost an LLM call is exported to one file, `data/llm_snapshot.json.gz` (650 SKU embeddings and 56 community summaries, 4 MB). A restore script loads it with no API call. It refuses to load if any embedded SKU is missing from the database, because embeddings attached to the wrong products would make vector search quietly wrong. The graph is a rebuildable projection of Postgres, the demo quotes come from scripted stand-ins, and the judge calibration is a small JSON file, so nothing else costs money. I proved it on a fresh database with deliberately invalid API keys: 650 embeddings and 56 summaries restored, the embedding script reported 0 SKUs needing work, and vector search returned sensible neighbors. The steps are in `docs/new-machine-setup.md`. The community summaries are keyed by a hash of each community's SKUs and Leiden runs with a fixed seed, which is why restored summaries still match a rebuilt graph.
+
+### What did the test suite say on the dev database, and what does it tell you?
+
+Two acceptance tests fail on the seeded dev database and pass on a fresh one, because they count absolute rows and the seed adds 11 quotes. Same class of bug as Phase 2's shared-database lesson. It is a known minor, not a regression, and I confirmed it by running the full suite (747 passing) against a clean database.
+
+### Facts for this addendum
+
+- Routes added: `/v1/graph/search`, `/v1/graph/nodes/{id}/neighbors`, `/v1/graph/nodes?label=`, `/v1/graph/schema`, `/v1/graph/full`, `/v1/graph/stats`; `/v1/metrics` gained `flags_by_dimension`.
+- The dev graph has 10 node types and 12 of the 15 edge types; `FOR_PROJECT`, `VARIANT_OF` and `SUPERSEDES` never occur in the demo data.
+- Quote nodes have no name property, so the explorer labels them with their UUID.
+- Layout timings on 1712 nodes: `cose` 20.5 s (300 iterations) and 44 s (1000), fCoSE 0.2 s draft and 5.2 s default.

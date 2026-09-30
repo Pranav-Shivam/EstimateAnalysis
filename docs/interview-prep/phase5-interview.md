@@ -73,9 +73,27 @@ Two separate surprises, both caught by stopping to ask rather than pushing throu
 - Fast path: a `needs_review` draft never reaches the LLM or the graph; the verdict is built straight from the guardrail's own reason, at zero cost.
 - Golden set: 32 hand-authored, hand-scored synthetic cases (`data/judge_golden_set.json`), 15 trust / 17 escalate, deliberately sized (7-case escalate clusters, not 5) so the calibration sweep is forced toward perfect separation rather than a merely-acceptable one.
 - Calibration method (the "Trust or Escalate" paper): sweep every observed confidence score as a candidate threshold, keep the lowest one whose Cohen's kappa against the golden set clears 0.6, refuse to write a threshold if none does.
-- Real run result: threshold 0.85, kappa 1.0 over the 29 real (non-fast-path) golden-set cases.
-- No real Anthropic API call anywhere in this phase. `scripts/calibrate_judge.py` is dry-run by default; `--yes` (the flag that spends real money) was never passed. The threshold in the running service falls back to a documented placeholder (0.8) until a real calibration run happens.
+- Calibration over the 29 real (non-fast-path) golden-set cases: threshold 0.85, kappa 1.0. While the phase was built this came from the golden set's own hand-assigned scores; the live-Haiku run happened afterwards (see the addendum below) and, after a prompt fix, agreed: threshold 0.85, kappa 1.00, false-auto-send 0.000, stored in `data/judge_calibration.json`.
+- `scripts/calibrate_judge.py` is dry-run by default and `--yes` spends real money (29 Haiku calls, about 11k tokens). Without a calibration file the running service falls back to a documented placeholder threshold (0.8).
 - New tables: `judge_verdicts`, `review_items`. New routes: `POST /v1/judge/{estimate_id}`, `GET /v1/review`.
 - 598 automated tests, up from 551 before this phase, all passing. Still zero real OpenAI or Anthropic calls anywhere in the suite.
 - Eight implementation tasks (five independent, dispatched in a fan-out cluster; three serial), several needed a fix round; one whole-branch review at the end (on the most capable model available) found two cross-cutting bugs no single task's review could see: kappa inflation from fast-path cases, and a missing `migrations/env.py` model registration that would have made a future autogenerate migration silently drop both new tables.
 - Known, deliberately deferred gap: the judge always evaluates contract expiry against a fixed dataset date (`DATASET_AS_OF`), not the specific estimate's own `as_of`, because `estimate_drafts` doesn't persist that value yet. Latent today (the POC always uses the default date), needs a schema change to close properly.
+
+## Addendum: the first real calibration run (2026-09-30)
+
+### You calibrated against hand-made scores. What happened when you finally ran the real judge?
+
+It failed its own release gate, which is the gate doing its job. With live Claude Haiku scoring the 29 real golden cases, 3 would have auto-sent when a human labeled them escalate: a price predicted from only 4 peers with a wide band, and two contracts expiring in 26 and 27 days. Haiku noticed the risk in each (its rationale said "moderate risk of lapsing") but scored them 0.65 to 0.73, which sits in the same range as legitimately trusted cases, so no threshold separated them. False-auto-send was 10.3% against a 5% ceiling, so the script refused to write a threshold.
+
+### How did you fix it without just tuning until the number passed?
+
+Three decisions. First, I looked at what separated the two label groups in the golden set before changing anything: every escalate case had 3 to 4 peers or under 30 days to expiry, every trust case had 31 or more peers or 560 or more days. That wide gap meant a round policy number could not be reverse-engineered from the three misses. Second, I put the policy in the judge prompt as explicit anchors (fewer than 10 peers scores 0.4 or lower, a contract expiring within 30 days scores 0.5 or lower) rather than editing the labels or raising the ceiling, because relabeling or loosening the ceiling weakens the safety standard to make a number pass. Third, I ran calibration twice more to check the fix was stable: both gave threshold 0.85, kappa 1.00, false-auto-send 0.000.
+
+### What is the honest caveat on that result?
+
+The golden set has 32 cases and I tuned the prompt against it, so a pass is real but weak evidence. The same prompt also missed 3 cases on one run and 4 on the next before the fix, so the judge is not deterministic. The remedy is to keep growing the set from reviewer corrections (Phase 6 already stores full-evidence eval cases) and to re-run calibration after any prompt or model change.
+
+### Why did the first live call fail before scoring anything?
+
+The API key was organization-scoped, and Anthropic answered 400 asking for an `anthropic-workspace-id` header. Nothing was scored or charged. The fix was operational, not code: create the key inside a workspace. I chose that over adding a workspace-id setting and header to the client, because it keeps configuration out of code for what is really a key-type mismatch.

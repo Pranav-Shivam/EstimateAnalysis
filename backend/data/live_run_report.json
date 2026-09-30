@@ -1,0 +1,1529 @@
+{
+  "date": "2026-09-30",
+  "cap_usd": 5.0,
+  "cases": {
+    "sc-0001": {
+      "type": "discontinued_swap",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Zenith Contractors",
+      "sku_names_as_written": [
+        "Chrome Sprayer Corner-Mount"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0542"
+      ],
+      "extraction_seconds": 2.33,
+      "extraction_usd": 0.00201,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "SKU-0542 is discontinued with no direct live replacement. Quoted the closest live substitute."
+        ],
+        "draft_skus": [
+          "SKU-0072"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 6.47,
+        "usd": 0.02454
+      }
+    },
+    "sc-0002": {
+      "type": "discontinued_swap",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Peak Plumbing",
+      "sku_names_as_written": [
+        "Chrome Stopper Standard"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0355"
+      ],
+      "extraction_seconds": 2.12,
+      "extraction_usd": 0.00189,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "SKU-0355 is out of stock and replaced with SKU-0638"
+        ],
+        "draft_skus": [
+          "SKU-0270",
+          "SKU-0638"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 6.14,
+        "usd": 0.0159
+      }
+    },
+    "sc-0003": {
+      "type": "discontinued_swap",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": null,
+      "sku_names_as_written": [
+        "Commercial Compressor 4 Ton"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0357"
+      ],
+      "extraction_seconds": 2.63,
+      "extraction_usd": 0.00178,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 4,
+        "reason": "guardrail violations persisted after 3 retries",
+        "violations": [
+          "customer_identity"
+        ],
+        "flags": [
+          "No customer match for 'Anil' and submission requires customer resolution."
+        ],
+        "draft_skus": [
+          "SKU-0496"
+        ],
+        "outcome": "wrong_escalation",
+        "seconds": 29.36,
+        "usd": 0.03177
+      }
+    },
+    "sc-0004": {
+      "type": "discontinued_swap",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": null,
+      "sku_names_as_written": [
+        "PVC Bushing 1/2 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0430"
+      ],
+      "extraction_seconds": 1.86,
+      "extraction_usd": 0.00197,
+      "agent": {
+        "status": "ready",
+        "iterations": 2,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0281"
+        ],
+        "outcome": "correct",
+        "seconds": 25.18,
+        "usd": 0.03336
+      }
+    },
+    "sc-0005": {
+      "type": "discontinued_swap",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Summit Group",
+      "sku_names_as_written": [
+        "Chrome Trap Compact"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0545"
+      ],
+      "extraction_seconds": 1.43,
+      "extraction_usd": 0.00172,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "SKU-0545 is not covered by contract CTR-0089; no discount available."
+        ],
+        "draft_skus": [
+          "SKU-0081"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 18.88,
+        "usd": 0.0189
+      }
+    },
+    "sc-0006": {
+      "type": "discontinued_swap",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Summit Group",
+      "sku_names_as_written": [
+        "Copper Adapter 2 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0083"
+      ],
+      "extraction_seconds": 2.01,
+      "extraction_usd": 0.00182,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "Original SKU SKU-0083 is discontinued and out of stock. Substituted with SKU-0195."
+        ],
+        "draft_skus": [
+          "SKU-0195"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 4.96,
+        "usd": 0.01884
+      }
+    },
+    "sc-0007": {
+      "type": "discontinued_swap",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Nexus Mechanical",
+      "sku_names_as_written": [
+        "Universal Contactor 16x20"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0122"
+      ],
+      "extraction_seconds": 2.55,
+      "extraction_usd": 0.0018,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "SKU-0122 is discontinued and is replaced by SKU-0017."
+        ],
+        "draft_skus": [
+          "SKU-0017",
+          "SKU-0407"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 16.9,
+        "usd": 0.01588
+      }
+    },
+    "sc-0008": {
+      "type": "discontinued_swap",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Crown HVAC",
+      "sku_names_as_written": [
+        "OEM Thermostat 20x25"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0236"
+      ],
+      "extraction_seconds": 2.31,
+      "extraction_usd": 0.00206,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0361"
+        ],
+        "outcome": "correct",
+        "seconds": 18.81,
+        "usd": 0.01879
+      }
+    },
+    "sc-0009": {
+      "type": "discontinued_swap",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Advanced Co.",
+      "sku_names_as_written": [
+        "PVC Adapter 1-1/2 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0137"
+      ],
+      "extraction_seconds": 3.51,
+      "extraction_usd": 0.00179,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "SKU-0137 (PVC Adapter 1-1/2 in) is discontinued and substituted with SKU-0102 (Galvanized Adapter 2 in), but stock and pricing conditions are satisfactory."
+        ],
+        "draft_skus": [
+          "SKU-0102"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 14.56,
+        "usd": 0.02157
+      }
+    },
+    "sc-0010": {
+      "type": "discontinued_swap",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": null,
+      "sku_names_as_written": [
+        "Weatherproof Conduit 50A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0183"
+      ],
+      "extraction_seconds": 1.72,
+      "extraction_usd": 0.00186,
+      "agent": {
+        "status": "ready",
+        "iterations": 2,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0570"
+        ],
+        "outcome": "correct",
+        "seconds": 25.95,
+        "usd": 0.02995
+      }
+    },
+    "sc-0011": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Sterling Mechanical",
+      "sku_names_as_written": [
+        "Aftermarket Belt 20x25 (SKU-0601)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.08,
+      "extraction_usd": 0.00199,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0601"
+        ],
+        "outcome": "correct",
+        "seconds": 4.56,
+        "usd": 0.01646
+      }
+    },
+    "sc-0012": {
+      "type": "missing_required_part",
+      "customer_ok": false,
+      "skus_ok": false,
+      "customer_as_written": null,
+      "sku_names_as_written": [
+        "Universal Capacitor 16x20 (SKU-0206)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 1.93,
+      "extraction_usd": 0.00211,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0014",
+          "SKU-0206"
+        ],
+        "outcome": "correct",
+        "seconds": 8.39,
+        "usd": 0.03
+      }
+    },
+    "sc-0013": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Highline Services",
+      "sku_names_as_written": [
+        "Stainless Faucet Compact"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0156"
+      ],
+      "extraction_seconds": 2.14,
+      "extraction_usd": 0.0019,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "Confirm if the assumed quantity for SKU-0156 is correct."
+        ],
+        "draft_skus": [
+          "SKU-0082",
+          "SKU-0156"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 17.15,
+        "usd": 0.01749
+      }
+    },
+    "sc-0014": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Bluewater Services",
+      "sku_names_as_written": [
+        "Brass Aerator Deck-Mount (SKU-0507)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.18,
+      "extraction_usd": 0.00207,
+      "agent": {
+        "status": "ready",
+        "iterations": 3,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0259",
+          "SKU-0420",
+          "SKU-0507"
+        ],
+        "outcome": "correct",
+        "seconds": 21.07,
+        "usd": 0.05771
+      }
+    },
+    "sc-0015": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Advanced HVAC",
+      "sku_names_as_written": [
+        "Standard Wire Nut 50A (SKU-0078)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 1.8,
+      "extraction_usd": 0.00191,
+      "agent": {
+        "status": "ready",
+        "iterations": 2,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0078",
+          "SKU-0336"
+        ],
+        "outcome": "correct",
+        "seconds": 25.62,
+        "usd": 0.03324
+      }
+    },
+    "sc-0016": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Ironclad Services",
+      "sku_names_as_written": [
+        "PEX Tee 1 in (SKU-0578)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.27,
+      "extraction_usd": 0.00193,
+      "agent": {
+        "status": "ready",
+        "iterations": 2,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0372",
+          "SKU-0578"
+        ],
+        "outcome": "correct",
+        "seconds": 40.33,
+        "usd": 0.04393
+      }
+    },
+    "sc-0017": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Cascade Mechanical",
+      "sku_names_as_written": [
+        "OEM Capacitor 16x20 (SKU-0127)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 3.32,
+      "extraction_usd": 0.00206,
+      "agent": {
+        "status": "ready",
+        "iterations": 2,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0127",
+          "SKU-0376"
+        ],
+        "outcome": "correct",
+        "seconds": 32.48,
+        "usd": 0.04242
+      }
+    },
+    "sc-0018": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Ironclad Contractors",
+      "sku_names_as_written": [
+        "Residential Furnace 2 Ton (SKU-0290)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 1.76,
+      "extraction_usd": 0.00204,
+      "agent": {
+        "status": "ready",
+        "iterations": 2,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0290",
+          "SKU-0445"
+        ],
+        "outcome": "correct",
+        "seconds": 19.89,
+        "usd": 0.03341
+      }
+    },
+    "sc-0019": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Peak Contractors",
+      "sku_names_as_written": [
+        "Standard Switch 200A (SKU-0337)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.31,
+      "extraction_usd": 0.002,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 1,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "Standard Switch 200A (SKU-0337) is out of stock."
+        ],
+        "draft_skus": [
+          "SKU-0164",
+          "SKU-0337"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 19.6,
+        "usd": 0.03354
+      }
+    },
+    "sc-0020": {
+      "type": "missing_required_part",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Nexus Co",
+      "sku_names_as_written": [
+        "Residential Compressor 2 Ton (SKU-0146)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.02,
+      "extraction_usd": 0.00204,
+      "agent": {
+        "status": "needs_review",
+        "iterations": 2,
+        "reason": "draft carries flags for the reviewer",
+        "violations": [],
+        "flags": [
+          "Freight estimate for usual address required."
+        ],
+        "draft_skus": [
+          "SKU-0132",
+          "SKU-0146"
+        ],
+        "outcome": "correct_flagged",
+        "seconds": 34.28,
+        "usd": 0.04002
+      }
+    },
+    "sc-0021": {
+      "type": "discount_category_mismatch",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Elite Mechanical",
+      "sku_names_as_written": [
+        "Heavy-Duty Conduit 60A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0041"
+      ],
+      "extraction_seconds": 1.87,
+      "extraction_usd": 0.00225,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0041"
+        ],
+        "outcome": "correct",
+        "seconds": 5.45,
+        "usd": 0.01375
+      }
+    },
+    "sc-0022": {
+      "type": "discount_category_mismatch",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": "Vikram Patel",
+      "sku_names_as_written": [
+        "Heavy-Duty Switch 100A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0239"
+      ],
+      "extraction_seconds": 2.23,
+      "extraction_usd": 0.00199,
+      "agent": {
+        "status": "ready",
+        "iterations": 3,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0239"
+        ],
+        "outcome": "correct",
+        "seconds": 8.49,
+        "usd": 0.03188
+      }
+    },
+    "sc-0023": {
+      "type": "discount_category_mismatch",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": null,
+      "sku_names_as_written": [
+        "High-Efficiency Evaporator Coil 2 Ton",
+        "SKU-0079"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0079"
+      ],
+      "extraction_seconds": 1.87,
+      "extraction_usd": 0.00232,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0079"
+        ],
+        "outcome": "correct",
+        "seconds": 7.86,
+        "usd": 0.01819
+      }
+    },
+    "sc-0024": {
+      "type": "discount_category_mismatch",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Metro Co",
+      "sku_names_as_written": [
+        "Copper Cap 1-1/2 in fittings"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.29,
+      "extraction_usd": 0.00222,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0274"
+        ],
+        "outcome": "correct",
+        "seconds": 23.77,
+        "usd": 0.01801
+      }
+    },
+    "sc-0025": {
+      "type": "discount_category_mismatch",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Precision Co",
+      "sku_names_as_written": [
+        "Stainless Faucet Compact"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0156"
+      ],
+      "extraction_seconds": 1.73,
+      "extraction_usd": 0.00195,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0082",
+          "SKU-0156"
+        ],
+        "outcome": "correct",
+        "seconds": 16.12,
+        "usd": 0.01882
+      }
+    },
+    "sc-0026": {
+      "type": "discount_category_mismatch",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Coastal Mechanical",
+      "sku_names_as_written": [
+        "Heavy-Duty Switch 15A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0368"
+      ],
+      "extraction_seconds": 1.82,
+      "extraction_usd": 0.00187,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0368"
+        ],
+        "outcome": "correct",
+        "seconds": 10.82,
+        "usd": 0.01367
+      }
+    },
+    "sc-0027": {
+      "type": "discount_category_mismatch",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": null,
+      "sku_names_as_written": [
+        "Heavy-Duty Breaker 50A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0358"
+      ],
+      "extraction_seconds": 1.82,
+      "extraction_usd": 0.00209,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0358"
+        ],
+        "outcome": "correct",
+        "seconds": 11.03,
+        "usd": 0.01709
+      }
+    },
+    "sc-0028": {
+      "type": "discount_category_mismatch",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Highline Plumbing",
+      "sku_names_as_written": [
+        "Heavy-Duty Switch 15A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0368"
+      ],
+      "extraction_seconds": 1.9,
+      "extraction_usd": 0.00188,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0368"
+        ],
+        "outcome": "correct",
+        "seconds": 10.86,
+        "usd": 0.00958
+      }
+    },
+    "sc-0029": {
+      "type": "discount_category_mismatch",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Metro Co",
+      "sku_names_as_written": [
+        "Standard Breaker 60A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0084"
+      ],
+      "extraction_seconds": 1.7,
+      "extraction_usd": 0.00189,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0084"
+        ],
+        "outcome": "correct",
+        "seconds": 6.2,
+        "usd": 0.01353
+      }
+    },
+    "sc-0030": {
+      "type": "discount_category_mismatch",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Metro Mechanical",
+      "sku_names_as_written": [
+        "Heavy-Duty Junction Box 20A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0557"
+      ],
+      "extraction_seconds": 1.87,
+      "extraction_usd": 0.00187,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0557"
+        ],
+        "outcome": "correct",
+        "seconds": 8.91,
+        "usd": 0.01374
+      }
+    },
+    "sc-0031": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Peak Plumbing",
+      "sku_names_as_written": [
+        "Aftermarket Thermostat 16x20",
+        "Plastic Drain Wall-Mount"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0121",
+        "SKU-0243"
+      ],
+      "extraction_seconds": 2.23,
+      "extraction_usd": 0.00203
+    },
+    "sc-0032": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Peak Plumbing",
+      "sku_names_as_written": [
+        "SKU-0121 (Aftermarket Thermostat 16x20)",
+        "SKU-0243 (Plastic Drain Wall-Mount)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 3.43,
+      "extraction_usd": 0.00224,
+      "dedupe": {
+        "expected": "DUPLICATE_OF",
+        "got": "DISTINCT",
+        "ok": false
+      }
+    },
+    "sc-0033": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Apex Co",
+      "sku_names_as_written": [
+        "Brass Tee 1-1/4 in",
+        "Universal Filter Large"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0133",
+        "SKU-0155"
+      ],
+      "extraction_seconds": 2.23,
+      "extraction_usd": 0.00217
+    },
+    "sc-0034": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Apex Co",
+      "sku_names_as_written": [
+        "Brass Tee 1-1/4 in",
+        "Universal Filter Large"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0133",
+        "SKU-0155"
+      ],
+      "extraction_seconds": 2.26,
+      "extraction_usd": 0.00209,
+      "dedupe": {
+        "expected": "DUPLICATE_OF",
+        "got": "DUPLICATE_OF",
+        "ok": true
+      }
+    },
+    "sc-0035": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Prairie Co",
+      "sku_names_as_written": [
+        "SKU-0068 Universal Capacitor Large",
+        "SKU-0294 Standard Junction Box 60A"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 1.97,
+      "extraction_usd": 0.00216
+    },
+    "sc-0036": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Prairie Co",
+      "sku_names_as_written": [
+        "Universal Capacitor Large (SKU-0068)",
+        "Standard Junction Box 60A (SKU-0294)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 1.85,
+      "extraction_usd": 0.00223,
+      "dedupe": {
+        "expected": "DUPLICATE_OF",
+        "got": "DISTINCT",
+        "ok": false
+      }
+    },
+    "sc-0037": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Highline Mechanical",
+      "sku_names_as_written": [
+        "Galvanized Cap 2-1/2 in (SKU-0568)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 1.71,
+      "extraction_usd": 0.00213
+    },
+    "sc-0038": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Highline Mechanical",
+      "sku_names_as_written": [
+        "SKU-0568 Galvanized Cap 2-1/2 in"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.41,
+      "extraction_usd": 0.00177,
+      "dedupe": {
+        "expected": "DUPLICATE_OF",
+        "got": "DISTINCT",
+        "ok": false
+      }
+    },
+    "sc-0039": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": false,
+      "customer_as_written": "Titan Plumbing",
+      "sku_names_as_written": [
+        "GFCI Wire Nut 50A (SKU-0070)",
+        "PVC Tee 2 in (SKU-0555)"
+      ],
+      "resolved_sku_ids": [],
+      "extraction_seconds": 2.49,
+      "extraction_usd": 0.0023
+    },
+    "sc-0040": {
+      "type": "duplicate_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Titan Plumbing",
+      "sku_names_as_written": [
+        "GFCI Wire Nut 50A",
+        "PVC Tee 2 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0070",
+        "SKU-0555"
+      ],
+      "extraction_seconds": 2.12,
+      "extraction_usd": 0.00206,
+      "dedupe": {
+        "expected": "DUPLICATE_OF",
+        "got": "DISTINCT",
+        "ok": false
+      }
+    },
+    "sc-0041": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Ironclad Plumbing",
+      "sku_names_as_written": [
+        "Heavy-Duty Belt Medium"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0307"
+      ],
+      "extraction_seconds": 1.86,
+      "extraction_usd": 0.00201
+    },
+    "sc-0042": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Ironclad Plumbing",
+      "sku_names_as_written": [
+        "Heavy-Duty Belt Medium",
+        "Brass Aerator Compact"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0307",
+        "SKU-0530"
+      ],
+      "extraction_seconds": 3.17,
+      "extraction_usd": 0.00235,
+      "dedupe": {
+        "expected": "REVISION_OF",
+        "got": "REVISION_OF",
+        "ok": true
+      }
+    },
+    "sc-0043": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Riverside HVAC",
+      "sku_names_as_written": [
+        "Standard Wire Nut 50A",
+        "Brass Nipple 1-1/4 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0078",
+        "SKU-0342"
+      ],
+      "extraction_seconds": 2.48,
+      "extraction_usd": 0.00227
+    },
+    "sc-0044": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Riverside HVAC",
+      "sku_names_as_written": [
+        "Standard Wire Nut 50A",
+        "Brass Nipple 1-1/4 in",
+        "Copper Cap 1-1/2 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0078",
+        "SKU-0342",
+        "SKU-0274"
+      ],
+      "extraction_seconds": 2.24,
+      "extraction_usd": 0.00291,
+      "dedupe": {
+        "expected": "REVISION_OF",
+        "got": "REVISION_OF",
+        "ok": true
+      }
+    },
+    "sc-0045": {
+      "type": "revision_pair",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": null,
+      "sku_names_as_written": [
+        "Heavy-Duty Belt Small"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0479"
+      ],
+      "extraction_seconds": 1.88,
+      "extraction_usd": 0.00168
+    },
+    "sc-0046": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Apex Plumbing",
+      "sku_names_as_written": [
+        "Heavy-Duty Belt Small",
+        "Heavy-Duty Belt 16x20"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0479",
+        "SKU-0428"
+      ],
+      "extraction_seconds": 2.38,
+      "extraction_usd": 0.00209,
+      "dedupe": {
+        "expected": "REVISION_OF",
+        "got": null,
+        "ok": false
+      }
+    },
+    "sc-0047": {
+      "type": "revision_pair",
+      "customer_ok": false,
+      "skus_ok": true,
+      "customer_as_written": "Harbor HVAC Services",
+      "sku_names_as_written": [
+        "PEX Coupling 2-1/2 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0301"
+      ],
+      "extraction_seconds": 2.29,
+      "extraction_usd": 0.00198
+    },
+    "sc-0048": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Harbor HVAC",
+      "sku_names_as_written": [
+        "PEX Coupling 2-1/2 in",
+        "Residential Furnace 4 Ton"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0301",
+        "SKU-0579"
+      ],
+      "extraction_seconds": 2.56,
+      "extraction_usd": 0.00234,
+      "dedupe": {
+        "expected": "REVISION_OF",
+        "got": null,
+        "ok": false
+      }
+    },
+    "sc-0049": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Titan Group",
+      "sku_names_as_written": [
+        "Standard Wire Nut 50A",
+        "Heavy-Duty Switch 60A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0078",
+        "SKU-0544"
+      ],
+      "extraction_seconds": 2.5,
+      "extraction_usd": 0.00227
+    },
+    "sc-0050": {
+      "type": "revision_pair",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Titan Group",
+      "sku_names_as_written": [
+        "Standard Wire Nut 50A",
+        "Heavy-Duty Switch 60A",
+        "PVC Coupling 2 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0078",
+        "SKU-0544",
+        "SKU-0295"
+      ],
+      "extraction_seconds": 2.23,
+      "extraction_usd": 0.00251,
+      "dedupe": {
+        "expected": "REVISION_OF",
+        "got": "REVISION_OF",
+        "ok": true
+      }
+    },
+    "sc-0051": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Sterling Mechanical",
+      "sku_names_as_written": [
+        "Brass Union 2-1/2 in",
+        "Matte Black Sprayer Wall-Mount"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0271",
+        "SKU-0143"
+      ],
+      "extraction_seconds": 2.05,
+      "extraction_usd": 0.00271,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0143",
+          "SKU-0271"
+        ],
+        "outcome": "correct",
+        "seconds": 5.86,
+        "usd": 0.02218
+      }
+    },
+    "sc-0052": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Union Group",
+      "sku_names_as_written": [
+        "PVC Cap 2-1/2 in",
+        "GFCI Junction Box 60A",
+        "Aftermarket Thermostat 16x20"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0396",
+        "SKU-0572",
+        "SKU-0121"
+      ],
+      "extraction_seconds": 3.38,
+      "extraction_usd": 0.00298,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0121",
+          "SKU-0396",
+          "SKU-0572"
+        ],
+        "outcome": "correct",
+        "seconds": 6.35,
+        "usd": 0.01899
+      }
+    },
+    "sc-0053": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Total Mechanical",
+      "sku_names_as_written": [
+        "PVC Nipple 1-1/2 in",
+        "Weatherproof Switch 15A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0535",
+        "SKU-0157"
+      ],
+      "extraction_seconds": 2.63,
+      "extraction_usd": 0.00249,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0157",
+          "SKU-0535"
+        ],
+        "outcome": "correct",
+        "seconds": 13.84,
+        "usd": 0.01662
+      }
+    },
+    "sc-0054": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Harbor HVAC",
+      "sku_names_as_written": [
+        "Standard Breaker 20A",
+        "OEM Gasket Medium"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0437",
+        "SKU-0414"
+      ],
+      "extraction_seconds": 1.92,
+      "extraction_usd": 0.00233,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0414",
+          "SKU-0437"
+        ],
+        "outcome": "correct",
+        "seconds": 9.38,
+        "usd": 0.01625
+      }
+    },
+    "sc-0055": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Total Services",
+      "sku_names_as_written": [
+        "Copper Coupling 1-1/4 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0170"
+      ],
+      "extraction_seconds": 1.56,
+      "extraction_usd": 0.00175,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0170"
+        ],
+        "outcome": "correct",
+        "seconds": 3.57,
+        "usd": 0.01328
+      }
+    },
+    "sc-0056": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Summit Plumbing",
+      "sku_names_as_written": [
+        "Chrome Shutoff Corner-Mount",
+        "Universal Capacitor Small",
+        "PVC Adapter 1 in"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0007",
+        "SKU-0360",
+        "SKU-0335"
+      ],
+      "extraction_seconds": 2.11,
+      "extraction_usd": 0.00316,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0007",
+          "SKU-0335",
+          "SKU-0360"
+        ],
+        "outcome": "correct",
+        "seconds": 10.83,
+        "usd": 0.01897
+      }
+    },
+    "sc-0057": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Elite Plumbing",
+      "sku_names_as_written": [
+        "Galvanized Union 1 in",
+        "Copper Union 2 in",
+        "OEM Belt Large"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0228",
+        "SKU-0141",
+        "SKU-0180"
+      ],
+      "extraction_seconds": 3.05,
+      "extraction_usd": 0.00293,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0141",
+          "SKU-0180",
+          "SKU-0228",
+          "SKU-0289"
+        ],
+        "outcome": "correct",
+        "seconds": 10.95,
+        "usd": 0.02142
+      }
+    },
+    "sc-0058": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Ironclad Plumbing",
+      "sku_names_as_written": [
+        "Standard Breaker 60A"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0084"
+      ],
+      "extraction_seconds": 1.61,
+      "extraction_usd": 0.0018,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0084"
+        ],
+        "outcome": "correct",
+        "seconds": 11.43,
+        "usd": 0.01329
+      }
+    },
+    "sc-0059": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Union Plumbing",
+      "sku_names_as_written": [
+        "PEX Tee 1 in",
+        "Chrome Sprayer Compact"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0578",
+        "SKU-0540"
+      ],
+      "extraction_seconds": 2.63,
+      "extraction_usd": 0.00223,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0372",
+          "SKU-0540",
+          "SKU-0578"
+        ],
+        "outcome": "correct",
+        "seconds": 9.5,
+        "usd": 0.01708
+      }
+    },
+    "sc-0060": {
+      "type": "clean_distinct",
+      "customer_ok": true,
+      "skus_ok": true,
+      "customer_as_written": "Metro Plumbing",
+      "sku_names_as_written": [
+        "Standard Breaker 20A",
+        "Chrome Shutoff Compact"
+      ],
+      "resolved_sku_ids": [
+        "SKU-0437",
+        "SKU-0140"
+      ],
+      "extraction_seconds": 2.52,
+      "extraction_usd": 0.00213,
+      "agent": {
+        "status": "ready",
+        "iterations": 1,
+        "reason": null,
+        "violations": [],
+        "flags": [],
+        "draft_skus": [
+          "SKU-0140",
+          "SKU-0437"
+        ],
+        "outcome": "correct",
+        "seconds": 5.27,
+        "usd": 0.01285
+      }
+    }
+  },
+  "stopped_at_cap": null,
+  "spent_usd": 1.0441,
+  "stages": {
+    "extraction": {
+      "calls": 60,
+      "input_tokens": 19307,
+      "output_tokens": 7892,
+      "seconds": 132.46256519998133,
+      "usd": 0.12718749999999998
+    },
+    "agent": {
+      "calls": 178,
+      "input_tokens": 312390,
+      "output_tokens": 13591,
+      "seconds": 581.3500938999059,
+      "usd": 0.916885
+    }
+  },
+  "summary": {
+    "extraction_customer_ok": "51/60",
+    "extraction_skus_ok": "44/60",
+    "dedupe_pairs_ok": "4/10",
+    "agent_outcomes_by_type": {
+      "discontinued_swap": {
+        "correct_flagged": 6,
+        "wrong_escalation": 1,
+        "correct": 3
+      },
+      "missing_required_part": {
+        "correct": 7,
+        "correct_flagged": 3
+      },
+      "discount_category_mismatch": {
+        "correct": 10
+      },
+      "clean_distinct": {
+        "correct": 10
+      }
+    },
+    "agent_correct": 30,
+    "agent_correct_flagged": 9,
+    "agent_wrong_ready": 0,
+    "agent_runs": 40
+  }
+}

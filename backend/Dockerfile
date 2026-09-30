@@ -9,5 +9,5 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY . .
 ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1
 
-EXPOSE 8000
+EXPOSE 7060
 CMD ["python", "main.py"]

@@ -121,13 +121,13 @@ uv run python scripts/load_data.py
 Build or refresh the graph and recompute the Leiden communities (an API call, not a script):
 
 ```
-curl -X POST http://localhost:8000/v1/graph/rebuild
+curl -X POST http://localhost:7060/v1/graph/rebuild
 ```
 
 Ask a question; the router picks SQL, graph-local, graph-global or vector search and returns the evidence:
 
 ```
-curl -X POST http://localhost:8000/v1/retrieval/ask -H "Content-Type: application/json" -d '{"question": "what does SKU-0601 require"}'
+curl -X POST http://localhost:7060/v1/retrieval/ask -H "Content-Type: application/json" -d '{"question": "what does SKU-0601 require"}'
 ```
 
 Two scripts call paid APIs, and both are dry runs until `--yes` is passed. Run them bare first to see the plan and the token estimate:

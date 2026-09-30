@@ -1,6 +1,6 @@
 # The whole application: `docker compose up --build` starts the databases, runs the one-shot setup (migrations,
 # reference data, saved LLM output, demo quotes, graph), then the API, the correction worker and the web app.
-# The web app is at http://localhost:5173 and the API at http://localhost:8000.
+# The web app is at http://localhost:7050 and the API at http://localhost:7060.
 #
 # For local development without containers for the app, start only the databases:
 #   docker compose up -d postgres neo4j
@@ -14,7 +14,7 @@ x-backend-env: &backend-env
   # placeholders are enough until you run a paid step; export real keys before `docker compose up` for that.
   OPENAI_API_KEY: ${OPENAI_API_KEY:-not-set}
   ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-not-set}
-  CORS_ALLOWED_ORIGINS: '["http://localhost:${WEB_PORT:-5173}"]'
+  CORS_ALLOWED_ORIGINS: '["http://localhost:${WEB_PORT:-7050}"]'
 
 services:
   postgres:
@@ -65,12 +65,12 @@ services:
     build: ./backend
     environment: *backend-env
     ports:
-      - "${API_PORT:-8000}:8000"
+      - "${API_PORT:-7060}:7060"
     depends_on:
       init:
         condition: service_completed_successfully
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/v1/metrics')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:7060/v1/metrics')"]
       interval: 5s
       retries: 20
 
@@ -86,9 +86,9 @@ services:
     build:
       context: ./frontend
       args:
-        VITE_API_URL: http://localhost:${API_PORT:-8000}
+        VITE_API_URL: http://localhost:${API_PORT:-7060}
     ports:
-      - "${WEB_PORT:-5173}:80"
+      - "${WEB_PORT:-7050}:80"
     depends_on:
       api:
         condition: service_healthy

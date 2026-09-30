@@ -48,7 +48,7 @@ With Docker installed:
 docker compose up --build
 ```
 
-Then open http://localhost:5173. The first start sets everything up (database, demo data, knowledge graph) and takes a few minutes; later starts are quick. No API keys are needed for the demo. Details, ports and the manual route are in `docs/new-machine-setup.md`.
+Then open http://localhost:7050. The first start sets everything up (database, demo data, knowledge graph) and takes a few minutes; later starts are quick. No API keys are needed for the demo. Details, ports and the manual route are in `docs/new-machine-setup.md`.
 
 ## Tech Stack
 

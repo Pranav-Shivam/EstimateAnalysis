@@ -4,7 +4,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 # The API address is baked into the bundle at build time, because the browser calls the API directly.
-ARG VITE_API_URL=http://localhost:8000
+ARG VITE_API_URL=http://localhost:7060
 ENV VITE_API_URL=$VITE_API_URL
 RUN npm run build
 

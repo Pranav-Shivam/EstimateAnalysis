@@ -66,7 +66,7 @@ Say these plainly. There is no UI to trigger the pipeline, because that needs pa
 
 ## Quick-reference facts
 
-- New endpoints: `GET /v1/review?status=open|resolved|all`, `GET /v1/quotes`, `GET /v1/quotes/{id}`, `GET /v1/metrics`. CORS allows `http://localhost:5173` from a setting.
+- New endpoints: `GET /v1/review?status=open|resolved|all`, `GET /v1/quotes`, `GET /v1/quotes/{id}`, `GET /v1/metrics`. CORS allows `http://localhost:7050` from a setting.
 - Rates: auto-send = trusted verdicts / all verdicts; correction = corrected items / resolved items; duplicate = requests with a `DUPLICATE_OF` verdict / requests with any dedupe verdict. A rate is null, never 0, when its denominator is 0, and the dashboard says "no data yet".
 - Seed: `scripts/seed_demo.py` (dry run by default, `--yes` writes, `--replay` re-runs resolved quotes). Roles: clean x2, discontinued, price gap, graph gap, contract gap, duplicate pair, revision pair, blocked (guardrail).
 - Frontend: React 19.3, Vite 8, Tailwind 4.3, antd 6.6, TanStack Query 5, react-router 8, Vitest 5; TypeScript pinned to 5.9.3.

@@ -4,13 +4,13 @@ A click path through the running app, with what I say at each step. All entities
 
 ## Before I start
 
-- Start the stack with `docs/new-machine-setup.md`: databases, schema, reference data, LLM snapshot, `seed_demo.py --yes`, the API on port 8000, a graph rebuild, and the UI on port 5173.
-- Check: `curl localhost:8000/v1/graph/stats` shows 650 SKU nodes, and the review queue shows 4 open flags.
+- Start the stack with `docs/new-machine-setup.md`: databases, schema, reference data, LLM snapshot, `seed_demo.py --yes`, the API on port 7060, a graph rebuild, and the UI on port 7050.
+- Check: `curl localhost:7060/v1/graph/stats` shows 650 SKU nodes, and the review queue shows 4 open flags.
 - Say this once at the start: "Everything you will see is synthetic. The model calls in the seed are scripted stand-ins, so the judge scores are fixed numbers. What is real is everything downstream: intake resolution, dedupe, guardrails, graph checks, evidence, review, and consolidation."
 
 ## Step 1. Review queue (60 seconds)
 
-Open `http://localhost:5173/`.
+Open `http://localhost:7050/`.
 
 ![Review queue with four open flags](images/01-review-queue.png)
 
@@ -49,7 +49,7 @@ What I say:
 - "The arrows I care about are REPLACED_BY, 32 of them, which is how a discontinued part points at its replacement. REQUIRES, 91, which is which part needs which accessory. And COVERS, 319, which is which contract covers which pricing category."
 - "Three relationship types in the schema never occur in this data: FOR_PROJECT, VARIANT_OF, and SUPERSEDES. I would rather tell you than have you spot it."
 
-Now open `http://localhost:5173/graph?node=SKU-0601` (or search "SKU-0601" and click the result).
+Now open `http://localhost:7050/graph?node=SKU-0601` (or search "SKU-0601" and click the result).
 
 ![Graph neighborhood of SKU-0601](images/04-graph-sku-neighbors.png)
 
@@ -95,5 +95,5 @@ This step was observed in a real browser on 2026-09-30, per `docs/roadmap.md` Ph
 ## If something is off
 
 - Queue shows fewer than 4 flags: the demo was already replayed or corrected. Reload the data and re-seed, per `docs/new-machine-setup.md`.
-- Graph page is empty: run `curl -X POST http://localhost:8000/v1/graph/rebuild`.
+- Graph page is empty: run `curl -X POST http://localhost:7060/v1/graph/rebuild`.
 - Charts or labels look cut: reload the page. Charts skip animation on purpose.

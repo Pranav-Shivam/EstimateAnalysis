@@ -2,7 +2,7 @@ from fastapi.testclient import TestClient
 
 from main import app
 
-ALLOWED = "http://localhost:5173"
+ALLOWED = "http://localhost:7050"
 
 
 def _preflight(origin: str):

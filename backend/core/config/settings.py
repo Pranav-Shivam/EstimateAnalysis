@@ -17,4 +17,4 @@ class Settings(BaseSettings):
     langfuse_secret_key: str | None = None
     langfuse_host: str | None = None
     # The Vite dev server's origin. The API has no auth, so CORS is the only browser-side gate.
-    cors_allowed_origins: list[str] = ["http://localhost:5173"]
+    cors_allowed_origins: list[str] = ["http://localhost:7050"]

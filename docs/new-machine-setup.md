@@ -22,11 +22,11 @@ docker compose up --build
 
 This starts Postgres and Neo4j, runs a one-shot setup container, then starts the API, the correction worker and the web app. The setup checks before it acts, so a second start changes nothing: it applies migrations, loads the reference data and the saved LLM output only if the database is empty, seeds the demo quotes only if none exist, and rebuilds the graph only if it is stale or something changed. When it finishes:
 
-- Web app: http://localhost:5173
-- API: http://localhost:8000 (docs at /docs)
+- Web app: http://localhost:7050
+- API: http://localhost:7060 (docs at /docs)
 - The review queue shows 4 open flags.
 
-No API key is needed. Set `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in your shell before `docker compose up` only if you plan to run a paid step. To change host ports (for example if 5173 or 8000 is taken), set `WEB_PORT`, `API_PORT`, `POSTGRES_PORT`, `NEO4J_HTTP_PORT` or `NEO4J_BOLT_PORT`. `docker compose down` keeps the data; `docker compose down -v` deletes it. The first start is slow because Neo4j downloads its graph plugin, and it needs internet.
+No API key is needed. Set `OPENAI_API_KEY` and `ANTHROPIC_API_KEY` in your shell before `docker compose up` only if you plan to run a paid step. To change host ports (for example if 7050 or 7060 is taken), set `WEB_PORT`, `API_PORT`, `POSTGRES_PORT`, `NEO4J_HTTP_PORT` or `NEO4J_BOLT_PORT`. `docker compose down` keeps the data; `docker compose down -v` deletes it. The first start is slow because Neo4j downloads its graph plugin, and it needs internet.
 
 Verified on 2026-09-30 in a Linux Docker engine (WSL Ubuntu): first start reached the same state as the manual steps below (4 open flags, 650 SKU nodes, 2506 graph edges), and a stop and start kept the data.
 
@@ -55,11 +55,11 @@ uv run python scripts/restore_llm_data.py
 # 4. demo quotes (dry run without --yes)
 uv run python scripts/seed_demo.py --yes
 
-# 5. API on :8000, then rebuild the graph so quotes and communities are in Neo4j
+# 5. API on :7060, then rebuild the graph so quotes and communities are in Neo4j
 uv run python main.py
-curl -X POST http://localhost:8000/v1/graph/rebuild
+curl -X POST http://localhost:7060/v1/graph/rebuild
 
-# 6. UI on :5173, from frontend/ in a second terminal
+# 6. UI on :7050, from frontend/ in a second terminal
 cd ../frontend
 npm install
 npm run dev
@@ -70,7 +70,7 @@ Step 3 must come after step 2: the snapshot refuses to load if its SKUs are not 
 ## Checking it worked
 
 - `uv run python scripts/embed_skus.py` (dry run) should say `0 SKUs need an embedding`.
-- `http://localhost:8000/v1/graph/stats` should show 650 SKU nodes.
+- `http://localhost:7060/v1/graph/stats` should show 650 SKU nodes.
 - The UI review queue should show 4 open flags.
 
 ## Refreshing the snapshot

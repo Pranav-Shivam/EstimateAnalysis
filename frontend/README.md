@@ -12,13 +12,13 @@ The reviewer's screen for the quote estimation agent. It has a live knowledge-gr
 
 ```bash
 cd backend && uv run python scripts/seed_demo.py --yes    # demo quotes; plants a graph gap and a price gap
-cd backend && uv run python main.py                       # API on :8000
-cd frontend && npm install && npm run dev                 # UI on :5173
+cd backend && uv run python main.py                       # API on :7060
+cd frontend && npm install && npm run dev                 # UI on :7050
 ```
 
 `seed_demo.py` without `--yes` is a dry run. After correcting flags in the UI, run `uv run python scripts/seed_demo.py --replay --yes` from `backend/` to re-run estimate and judge for the corrected quotes; the quote detail then shows a second, clean estimate.
 
-The API URL comes from `VITE_API_URL` (default `http://localhost:8000`). The backend allows the origin in its `cors_allowed_origins` setting (default `http://localhost:5173`).
+The API URL comes from `VITE_API_URL` (default `http://localhost:7060`). The backend allows the origin in its `cors_allowed_origins` setting (default `http://localhost:7050`).
 
 ## API types
 

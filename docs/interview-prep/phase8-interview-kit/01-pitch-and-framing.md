@@ -38,7 +38,7 @@ Say these four beats in this order. It takes about 40 seconds.
 >
 > Fourth, when a human corrects that fact, it becomes a permanent price, requirement, or contract edge. The next identical quote does not get flagged.
 >
-> It runs on synthetic data, so I am careful about what it proves. It proves the design and the plumbing. I also ran the real GPT-4o agent over 40 test emails once, for about a dollar. The agent did well. The intake step in front of it was weaker than I expected, and that is my next fix.
+> It runs on synthetic data, so I am careful about what it proves. It proves the design and the plumbing. I also ran the real GPT-4o agent over 40 test emails. The final run cost about a dollar, and about two dollars across three runs while I built it. The agent did well. The intake step in front of it was weaker than I expected, and that is my next fix.
 
 That is about 250 words, which is roughly 90 seconds at a relaxed pace.
 
@@ -80,7 +80,7 @@ Use this when the interviewer says "walk me through it". Pause at each heading. 
 
 ### What it does not prove (30 seconds)
 
-> Four things I want you to hear from me. The data is synthetic. I ran the real GPT-4o intake over all 60 emails and the real agent over 40 of them, once. The agent finished 30 of the 40 correctly, sent 9 more to review with the right draft, and none went out wrong on the checks I scored. But intake resolved the right parts on only 44 of 60 emails, because it ignores a part number typed in the email, and duplicate detection was right on 4 of 10 pairs live. The test that scored 10 of 10 injects the answer key. Third, the seeded demo still uses scripted stand-ins, so it proves plumbing, not model judgment. Fourth, the judge has not scored those live drafts yet. Those are the next things I would build.
+> Four things I want you to hear from me. The data is synthetic. I ran the real GPT-4o intake over all 60 emails and the real agent over 40 of them, in the final of three runs. The agent finished 30 of the 40 correctly, sent 9 more to review with the right draft, and none went out wrong on the checks I scored. But intake resolved the right parts on only 44 of 60 emails, because it ignores a part number typed in the email, and duplicate detection was right on 4 of 10 pairs live. The test that scored 10 of 10 injects the answer key. Third, the seeded demo still uses scripted stand-ins, so it proves plumbing, not model judgment. Fourth, the judge has not scored those live drafts yet. Those are the next things I would build.
 
 ## The lessons from the rebuild (pick one or two)
 

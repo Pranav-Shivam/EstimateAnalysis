@@ -48,7 +48,7 @@ Only one build has been done since this map was first written: the live agent ru
 - Tool-argument validation so a bad argument cannot abort the database transaction: `backend/app/estimate/tools.py`.
 - A scripted agent driving the loop for tests: `backend/tests/app/estimate/fakes.py`, `backend/tests/test_phase4_acceptance.py`.
 
-- A live run over 40 emails (10 each of discontinued swap, missing required part, wrong-category discount, clean) with the real GPT-4o agent, scored against the answer key: 30 correct, 9 sent to review with the right draft, 1 escalated (unknown customer), 0 wrong drafts marked ready. One run, $1.04 by my meter. Script: `backend/scripts/run_live_estimates.py`, tests: `backend/tests/scripts/test_live_run.py`, results: `backend/data/live_run_report.json`. The run happens in one transaction that is rolled back, so the dev database is untouched.
+- A live run over 40 emails (10 each of discontinued swap, missing required part, wrong-category discount, clean) with the real GPT-4o agent, scored against the answer key: 30 correct, 9 sent to review with the right draft, 1 escalated (unknown customer), 0 wrong drafts marked ready. The final of three runs; it cost $1.04 by my meter, and about $1.94 across all three. Script: `backend/scripts/run_live_estimates.py`, tests: `backend/tests/scripts/test_live_run.py`, results: `backend/data/live_run_report.json`. The run happens in one transaction that is rolled back, so the dev database is untouched.
 
 **What is missing**
 - Repeat runs. Intake results moved between my three runs (parts resolved 42, 43, and 44 of 60), so agent results likely move too, and I have no spread.

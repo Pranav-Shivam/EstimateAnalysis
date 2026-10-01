@@ -13,7 +13,7 @@ from app.estimate.models import EstimateDraftRow
 from app.metrics.service import compute_metrics
 from app.quotes.service import get_quote_detail, list_quotes
 from demo.scenarios import _needed, select_cases
-from demo.seed import pending_replays, replay, seed
+from demo.seed import pending_replays, replay, seed, seed_remaining
 from load_data import DATA_DIR, load_all
 from tests.graph_support import build_reader
 
@@ -99,3 +99,17 @@ def test_planted_gaps_touch_no_other_selected_case(db_session):
     for case in cases:
         if case not in gaps:
             assert footprint(case).isdisjoint(planted), f"{case.role} shares a planted SKU"
+
+
+def test_seed_remaining_brings_every_scenario_into_the_app(db_session, graph_client, graph_ns):
+    load_all(db_session)
+    build_reader(db_session, graph_client, graph_ns)
+    scenarios, catalog = _load("scenarios.json"), _load("catalog.json")
+    cases = select_cases(db_session, scenarios, catalog, DATASET_AS_OF)
+    seed(db_session, graph_client, graph_ns, cases, scenarios)
+
+    added = seed_remaining(db_session, graph_client, graph_ns, cases, scenarios)
+
+    assert added == len(scenarios) - len(cases)
+    assert {q.case_id for q in list_quotes(db_session)} == {s["case_id"] for s in scenarios}
+    assert seed_remaining(db_session, graph_client, graph_ns, cases, scenarios) == 0

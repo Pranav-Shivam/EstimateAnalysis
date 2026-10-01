@@ -15,7 +15,7 @@ from core.db.session import make_engine, make_session_factory
 from core.graph.client import GraphError, get_graph_client
 from demo.fakes import DemoSetupError
 from demo.scenarios import select_cases
-from demo.seed import DemoExpectationFailed, pending_replays, replay, seed
+from demo.seed import DemoExpectationFailed, pending_replays, replay, seed, seed_remaining
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
@@ -70,8 +70,10 @@ def main(argv: list[str] | None = None) -> int:
         if not args.yes:
             print("dry run: pass --yes to seed (this plants a graph gap and writes quotes)")
             return 0
-        seeded = seed(session, get_graph_client(), settings.graph_namespace, cases, _load("scenarios.json"))
-        print(f"seeded {len(seeded)} quote(s)")
+        client, scenarios = get_graph_client(), _load("scenarios.json")
+        seeded = seed(session, client, settings.graph_namespace, cases, scenarios)
+        print(f"seeded {len(seeded)} demo quote(s)")
+        print(f"seeded {seed_remaining(session, client, settings.graph_namespace, cases, scenarios)} other quote(s)")
         return 0
     except (DemoSetupError, DemoExpectationFailed, GraphError) as exc:
         print(f"seed failed: {exc}", file=sys.stderr)

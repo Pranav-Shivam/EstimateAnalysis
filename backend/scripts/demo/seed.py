@@ -95,30 +95,58 @@ def seed(
 
     reader = GraphReader(client, ns)
     extraction = ScriptedExtractionClient(scenarios)
-    judge = DemoJudgeClient(
-        graph_watch={c.graph_gap[0] for c in cases if c.graph_gap},
-        contract_watch={c.scenario["entities"]["sku_id"] for c in cases if c.role == "contract_gap"},
-    )
+    judge = _seed_judge(cases)
     tracing = TracingClient(None)
 
     seeded = []
     for case in cases:
-        request = process_email(session, case.scenario["email_text"], extraction, case_id=case.case_id).row
-        session.commit()
-        dedupe = run_dedupe(session, request.id, tracing)
-        session.commit()
-
-        draft = build_draft(session, reader, request, DATASET_AS_OF)
-        agent = ScriptedAgentClient(blocked_draft(draft) if case.role == "blocked" else draft)
-        estimate = run_estimate(session, request.id, DATASET_AS_OF, agent, reader, UnusedEmbedder(), tracing)
-        session.commit()
-        judged = run_judge(session, reader, DATASET_AS_OF, estimate.row.id, judge)
-        session.commit()
-
+        request, dedupe, estimate, judged = _run_scenario(
+            session, reader, extraction, judge, tracing, case.scenario, blocked=case.role == "blocked",
+        )
         dimension = judged.review_item.dimension if judged.review_item else None
         _check(case, estimate.result.status, judged.verdict.trusted, dimension, [v.verdict for v in dedupe])
         seeded.append(SeededCase(case, request.id, estimate.row.id, judged.verdict.trusted, dimension))
     return seeded
+
+
+def seed_remaining(session: Session, client: GraphClient, ns: str, cases: list[DemoCase], scenarios: list[dict]) -> int:
+    """Runs every scenario `seed` did not pick through the same pipeline, so the app holds the whole dataset. These
+    quotes carry no expected outcome: each lands wherever the scripted stand-ins and the planted gaps take it."""
+    seeded_ids = set(session.scalars(select(QuoteRequestRow.case_id).where(QuoteRequestRow.case_id.is_not(None))))
+    reader = GraphReader(client, ns)
+    extraction = ScriptedExtractionClient(scenarios)
+    judge = _seed_judge(cases)
+    tracing = TracingClient(None)
+    remaining = [scenario for scenario in scenarios if scenario["case_id"] not in seeded_ids]
+    for scenario in remaining:
+        _run_scenario(session, reader, extraction, judge, tracing, scenario, blocked=False)
+    return len(remaining)
+
+
+def _seed_judge(cases: list[DemoCase]) -> DemoJudgeClient:
+    return DemoJudgeClient(
+        graph_watch={c.graph_gap[0] for c in cases if c.graph_gap},
+        contract_watch={c.scenario["entities"]["sku_id"] for c in cases if c.role == "contract_gap"},
+    )
+
+
+def _run_scenario(
+    session: Session, reader: GraphReader, extraction: ScriptedExtractionClient, judge: DemoJudgeClient,
+    tracing: TracingClient, scenario: dict, blocked: bool,
+):
+    """Intake, dedupe, estimate and judge for one scenario email, committing after each stage as production does."""
+    request = process_email(session, scenario["email_text"], extraction, case_id=scenario["case_id"]).row
+    session.commit()
+    dedupe = run_dedupe(session, request.id, tracing)
+    session.commit()
+
+    draft = build_draft(session, reader, request, DATASET_AS_OF)
+    agent = ScriptedAgentClient(blocked_draft(draft) if blocked else draft)
+    estimate = run_estimate(session, request.id, DATASET_AS_OF, agent, reader, UnusedEmbedder(), tracing)
+    session.commit()
+    judged = run_judge(session, reader, DATASET_AS_OF, estimate.row.id, judge)
+    session.commit()
+    return request, dedupe, estimate, judged
 
 
 def _seeded_requests(session: Session) -> list[QuoteRequestRow]:
